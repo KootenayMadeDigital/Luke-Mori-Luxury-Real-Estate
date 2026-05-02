@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { MountainScene } from "@/components/ui/MountainScene";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { brandImages } from "@/lib/data";
 
 export function Hero() {
   return (
@@ -8,6 +10,19 @@ export function Hero() {
       id="top"
       className="relative flex min-h-screen min-h-[100svh] items-center overflow-hidden pb-24 pt-32 sm:pb-28 sm:pt-36"
     >
+      {/* Real Nelson landscape behind the SVG scene, heavily darkened */}
+      <div className="absolute inset-0 z-0" aria-hidden>
+        <Image
+          src={brandImages.nelsonLandscape}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-[var(--color-bg)]/60" />
+      </div>
+
       <MountainScene />
 
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14">
@@ -38,7 +53,7 @@ export function Hero() {
         <Reveal delay={460}>
           <div className="mb-20 flex flex-wrap gap-4">
             <Button href="#consult" variant="primary">Request Private Consultation</Button>
-            <Button href="#areas" variant="ghost" arrow>Explore Signature Areas</Button>
+            <Button href="/listings" variant="ghost" arrow>View Active Listings</Button>
           </div>
         </Reveal>
 

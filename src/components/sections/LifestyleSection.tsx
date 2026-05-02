@@ -31,7 +31,7 @@ export function LifestyleSection() {
               className="border-b border-r border-[var(--color-line)]"
             >
               <a
-                href="#consult"
+                href={t.href ?? "/contact"}
                 className="group relative flex h-full flex-col gap-3 p-9 transition-colors duration-400 hover:bg-[var(--color-surface)] sm:p-10 sm:pb-10 lg:min-h-[260px]"
               >
                 <span
