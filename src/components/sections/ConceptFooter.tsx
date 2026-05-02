@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { BrandMark, Brand } from "@/components/ui/BrandMark";
+import { Brand } from "@/components/ui/BrandMark";
 import { Button } from "@/components/ui/Button";
 import { contact, brandImages } from "@/lib/data";
 
@@ -61,7 +61,7 @@ export function ConceptFooter() {
         {/* KMD concept block */}
         <Reveal className="mx-auto mb-20 max-w-[820px] text-center md:mb-24">
           <div className="mb-7 inline-flex items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-            <BrandMark className="size-[22px] text-[var(--color-bronze)]" />
+            <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
             Kootenay Made Digital
           </div>
           <h2 className="m-0 mb-6 font-serif font-light leading-[1.15] tracking-[-0.01em] [font-size:clamp(26px,3.6vw,42px)]">
