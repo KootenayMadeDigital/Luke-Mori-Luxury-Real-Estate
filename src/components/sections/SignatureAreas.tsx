@@ -12,15 +12,15 @@ export function SignatureAreas() {
         <Reveal className="mb-20 max-w-[760px]">
           <Eyebrow>Signature Areas</Eyebrow>
           <SectionHeading className="mt-7">
-            A neighbourhood is a thesis.
+            Luke is the human map
             <br />
             <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-              Choose carefully.
+              of the lake market.
             </em>
           </SectionHeading>
           <SectionLede>
-            The Kootenays don&apos;t have suburbs. They have addresses with reputations.
-            These are the corridors where Nelson&apos;s most considered properties tend to sit.
+            The Kootenays don&apos;t have suburbs. They have corridors with reputations,
+            microclimates, shorelines, builder histories, and buyer profiles. Start here before you tour.
           </SectionLede>
         </Reveal>
 
@@ -51,13 +51,43 @@ export function SignatureAreas() {
                 <p className="m-0 mb-6 flex-1 text-[15px] leading-[1.65] text-[var(--color-text-muted)]">
                   {a.body}
                 </p>
-                <div className="border-t border-[var(--color-line)] pt-5 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
-                  {a.tags}
+                <p className="m-0 mb-7 border-l border-[var(--color-bronze)] pl-5 text-[13px] leading-[1.65] text-[var(--color-text-muted)]">
+                  {a.intent}
+                </p>
+                <div className="mt-auto border-t border-[var(--color-line)] pt-5">
+                  <div className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
+                    {a.tags}
+                  </div>
+                  <a
+                    href={a.href}
+                    className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]"
+                  >
+                    {a.cta}
+                    <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={220} className="mt-12 border border-[var(--color-line)] bg-[var(--color-surface)] p-8 md:p-10">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
+            <div>
+              <div className="mb-4 text-[10px] font-medium uppercase tracking-[0.26em] text-[var(--color-bronze)]">
+                Area fit advisory
+              </div>
+              <h3 className="m-0 font-serif text-[28px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)] md:text-[34px]">
+                The first question is not price. It is fit.
+              </h3>
+            </div>
+            <p className="m-0 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">
+              Waterfront buyers compare shoreline and sun. Nelson buyers compare walkability and grade. Acreage buyers compare access, water, outbuildings, and winter maintenance. A serious search begins by narrowing the lifestyle brief, then the listings.
+            </p>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

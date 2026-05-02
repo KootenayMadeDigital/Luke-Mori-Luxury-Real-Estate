@@ -219,6 +219,9 @@ export type Area = {
   name: string;
   body: string;
   tags: string;
+  intent: string;
+  href: string;
+  cta: string;
   feature?: boolean;
   artId: "johns" | "fairview" | "rosemont" | "northshore" | "balfour" | "kaslo";
 };
@@ -229,6 +232,9 @@ export const signatureAreas: Area[] = [
     name: "John's Walk & Sproat Drive",
     body: "Walk-to-water sanctuary on the city's most quietly coveted lakefront stretch, the kind of address that rarely lists, and almost never twice in a generation.",
     tags: "Waterfront · Walk-to-Beach · Heritage Lots",
+    intent: "For buyers who want lake proximity, old Nelson character, and the rare confidence of an address that already has a reputation.",
+    href: "/listings/waterfront",
+    cta: "View Waterfront",
     feature: true,
     artId: "johns",
   },
@@ -237,6 +243,9 @@ export const signatureAreas: Area[] = [
     name: "Fairview & Uphill",
     body: "Larger, newer builds with full city-and-lake exposure. Higher elevation, extended summer sun, and Baker Street culture a downhill walk away.",
     tags: "View Homes · Architectural · Walk to Downtown",
+    intent: "For buyers who want the daily Nelson rhythm, more view exposure, and a home that still feels connected to town.",
+    href: "/nelson/nelson",
+    cta: "Explore Nelson",
     artId: "fairview",
   },
   {
@@ -244,6 +253,9 @@ export const signatureAreas: Area[] = [
     name: "Rosemont",
     body: "Established families, wide lots, and proximity to Granite Pointe Golf Club. Quiet, settled, and increasingly rare in this size class.",
     tags: "Acreage Adjacent · Golf · Established",
+    intent: "For buyers who want quieter streets, family scale, golf proximity, and room to breathe without leaving the city.",
+    href: "/nelson/nelson",
+    cta: "Compare City Areas",
     artId: "rosemont",
   },
   {
@@ -251,6 +263,9 @@ export const signatureAreas: Area[] = [
     name: "Johnstone Road & North Shore",
     body: "Cross 'Bob', the Big Orange Bridge, and the lake opens. Highway 3A's waterfront corridor toward Balfour holds Nelson's most cinematic private residences.",
     tags: "Lakefront · Private Acreage · Boathouses",
+    intent: "For privacy-led waterfront searches where the approach, the shoreline, and the distance from public attention all matter.",
+    href: "/nelson/north-shore",
+    cta: "Study North Shore",
     feature: true,
     artId: "northshore",
   },
@@ -259,6 +274,9 @@ export const signatureAreas: Area[] = [
     name: "Balfour & Kootenay Lake",
     body: "Where the West Arm meets the main lake. Deep water, deep privacy, and the kind of generational waterfront acreage that rarely transacts in public.",
     tags: "Deep Water · Generational · Private Marina",
+    intent: "For deep-water second homes, legacy lake holdings, and buyers who value quiet access over downtown proximity.",
+    href: "/nelson/balfour",
+    cta: "Study Balfour",
     artId: "balfour",
   },
   {
@@ -266,6 +284,9 @@ export const signatureAreas: Area[] = [
     name: "Kaslo & Slocan Valley",
     body: "Beyond the city, heritage timber estates, river-frontage acreage, and serious second-home buyers seeking distance without isolation.",
     tags: "Heritage · Acreage · Retreat Properties",
+    intent: "For retreat buyers who want timber, river frontage, mountain quiet, and a wider radius than Nelson proper.",
+    href: "/nelson/slocan-valley",
+    cta: "Study Retreat Areas",
     artId: "kaslo",
   },
 ];
@@ -439,16 +460,80 @@ export const sellerPromises: Promise[] = [
 
 /* ---------- Lifestyle tiles ---------- */
 
-export type LifestyleTile = { num: string; title: string; body: string; href?: string };
+export type LifestyleTile = {
+  num: string;
+  title: string;
+  kicker: string;
+  body: string;
+  href: string;
+  cta: string;
+};
 
 export const lifestyleTiles: LifestyleTile[] = [
-  { num: "01", title: "Lakefront", body: "Direct beach, dock potential, and morning water on the bedroom ceiling.", href: "/listings/waterfront" },
-  { num: "02", title: "Ski Access", body: "Powder mornings at Whitewater, dinner on Baker Street the same evening.", href: "/contact" },
-  { num: "03", title: "Walkable Nelson", body: "Heritage, café, gallery, lake, under fifteen minutes from your front door.", href: "/nelson/nelson" },
-  { num: "04", title: "Acreage", body: "Forested privacy, room for outbuildings, and a driveway long enough to matter.", href: "/contact" },
-  { num: "05", title: "Privacy", body: "End-of-road, tree-buffered, off the search results, and off the radar.", href: "/contact" },
-  { num: "06", title: "Mountain Views", body: "Selkirks to the south, Purcells across the lake, and the right pane of glass between.", href: "/contact" },
-  { num: "07", title: "Second-Home", body: "Lock-and-leave, professionally managed, ready for the weekend you decide to fly in.", href: "/buyers/international" },
+  {
+    num: "01",
+    title: "Lakefront",
+    kicker: "Dock, beach, morning water",
+    body: "Direct lake access, protected shoreline, and the ownership questions that need answering before a waterfront tour matters.",
+    href: "/listings/waterfront",
+    cta: "View waterfront",
+  },
+  {
+    num: "02",
+    title: "Walkable Nelson",
+    kicker: "Baker Street, galleries, lake",
+    body: "Heritage streets, coffee, culture, Lakeside Park, and the rare homes that make daily Nelson life feel effortless.",
+    href: "/nelson/nelson",
+    cta: "Explore Nelson",
+  },
+  {
+    num: "03",
+    title: "North Shore Privacy",
+    kicker: "Highway 3A, water, discretion",
+    body: "A quieter lakefront corridor where the driveway, exposure, beach, and neighbour distance matter as much as the house.",
+    href: "/nelson/north-shore",
+    cta: "Study North Shore",
+  },
+  {
+    num: "04",
+    title: "Acreage",
+    kicker: "Space, timber, outbuildings",
+    body: "Forested privacy, workshop potential, family compounds, and enough land to make the approach feel intentional.",
+    href: "/nelson/blewett",
+    cta: "Find acreage fit",
+  },
+  {
+    num: "05",
+    title: "Ski Access",
+    kicker: "Whitewater mornings, town evenings",
+    body: "A search built around winter rhythm, road comfort, gear storage, and the distance between first chair and dinner.",
+    href: "/buyers/relocation",
+    cta: "Plan ski lifestyle",
+  },
+  {
+    num: "06",
+    title: "Second Home",
+    kicker: "Lock-and-leave, managed, ready",
+    body: "Weekend arrival, caretaker coverage, winterisation, security, and the systems that make absentee ownership calm.",
+    href: "/buyers/international",
+    cta: "Ask ownership questions",
+  },
+  {
+    num: "07",
+    title: "Relocation",
+    kicker: "Schools, seasons, soft landing",
+    body: "A search that starts with daily life: school runs, healthcare, winter reality, commute patterns, and first-year fit.",
+    href: "/buyers/relocation",
+    cta: "Plan relocation call",
+  },
+  {
+    num: "08",
+    title: "International / Absentee",
+    kicker: "Advisors, wires, local care",
+    body: "Foreign-buyer review, tax counsel, FX timing, property management, and the local team needed before closing.",
+    href: "/buyers/international",
+    cta: "Buy from afar",
+  },
 ];
 
 /* ---------- Real testimonials (verbatim with names) ---------- */

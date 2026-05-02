@@ -16,6 +16,44 @@ export const metadata: Metadata = {
     "About Nelson, B.C. and the Kootenay Lake region, neighbourhoods, lifestyle, and the local intelligence behind every property we represent.",
 };
 
+const areaFitIndex = [
+  {
+    desire: "Walkable culture",
+    area: "Nelson",
+    href: "/nelson/nelson",
+    route: "Baker Street, Uphill, Fairview, Rosemont, Mountain Station.",
+    next: "Explore Nelson",
+  },
+  {
+    desire: "Lakefront privacy",
+    area: "North Shore",
+    href: "/nelson/north-shore",
+    route: "Highway 3A, waterfront, beach access, and quieter approaches.",
+    next: "Study North Shore",
+  },
+  {
+    desire: "Deep-water second home",
+    area: "Balfour",
+    href: "/nelson/balfour",
+    route: "Main-lake exposure, ferry rhythm, marina thinking, and generational waterfront.",
+    next: "Study Balfour",
+  },
+  {
+    desire: "Acreage near town",
+    area: "Blewett",
+    href: "/nelson/blewett",
+    route: "Pastoral privacy, wooded lots, water systems, outbuildings, and a short Nelson drive.",
+    next: "Compare acreage",
+  },
+  {
+    desire: "Retreat property",
+    area: "Slocan Valley",
+    href: "/nelson/slocan-valley",
+    route: "River frontage, heritage timber, smaller communities, and a quieter pace north of Nelson.",
+    next: "Study retreats",
+  },
+];
+
 export default function NelsonHubPage() {
   return (
     <PageLayout>
@@ -23,7 +61,7 @@ export default function NelsonHubPage() {
         eyebrow="About Nelson"
         title="The Queen City"
         emphasis="and the Kootenays."
-        lede="Five corridors of considered real estate, from heritage downtown Nelson to the deep-water privacy of Balfour. Each with its own character, its own price points, and its own kind of buyer."
+        lede="Five corridors of considered real estate, from heritage downtown Nelson to the deep-water privacy of Balfour. Each with its own character, its own price points, its own seasonal logic, and its own kind of buyer."
         image={brandImages.nelsonLandscape}
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
         meta={[
@@ -47,7 +85,7 @@ export default function NelsonHubPage() {
             </SectionHeading>
             <SectionLede>
               Pick a region, each page covers the local market dynamics, the lifestyle, and
-              the kind of property worth looking for there.
+              the kind of property worth looking for there. This is the map before the MLS map.
             </SectionLede>
           </Reveal>
 
@@ -85,6 +123,9 @@ export default function NelsonHubPage() {
                     <p className="m-0 mb-6 font-serif text-[15px] italic text-[var(--color-text-muted)]">
                       {a.tagline}
                     </p>
+                    <p className="m-0 mb-6 text-[13px] font-medium uppercase tracking-[0.18em] text-[var(--color-text-dim)]">
+                      {a.focus}
+                    </p>
                     <span className="mt-auto inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                       Explore the area
                       <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
@@ -99,10 +140,68 @@ export default function NelsonHubPage() {
         </Container>
       </section>
 
+      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
+            <div>
+              <Eyebrow>Area Fit Index</Eyebrow>
+              <SectionHeading className="mt-7">
+                Start with the reason,
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  then choose the corridor.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Luke&apos;s value is not only knowing which homes are listed. It is knowing which parts of the lake and valley are worth your time before you ever book a showing.
+            </SectionLede>
+          </Reveal>
+
+          <div className="overflow-hidden border border-[var(--color-line)]">
+            {areaFitIndex.map((item, i) => (
+              <Reveal
+                key={item.desire}
+                className="grid grid-cols-1 gap-5 border-b border-[var(--color-line)] bg-[var(--color-bg)] p-7 last:border-b-0 transition-colors hover:bg-[var(--color-surface)] md:grid-cols-[0.6fr_0.7fr_1.2fr_auto] md:items-center md:p-8"
+                delay={i * 55}
+              >
+                <div className="text-[10px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  {item.desire}
+                </div>
+                <h3 className="m-0 font-serif text-[26px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {item.area}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
+                  {item.route}
+                </p>
+                <Link href={item.href} className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]">
+                  {item.next}
+                  <svg viewBox="0 0 16 16" aria-hidden className="size-[14px]">
+                    <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={220} className="mt-10 flex flex-wrap justify-center gap-3">
+            {[
+              { href: "/listings/waterfront", label: "View waterfront" },
+              { href: "/buyers", label: "Buyer lifestyle selector" },
+              { href: "/contact", label: "Request private access" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+                {item.label}
+              </Link>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
+
       <InquiryCTA
         eyebrow="Local Intelligence"
         title="Don't know which corridor"
-        emphasis="suits you?"
+        emphasis="suits the life?"
         body="A 30-minute conversation usually narrows it to two. From there, we tour the third, to confirm what the first two told us. Local intelligence is the practice."
       />
     </PageLayout>

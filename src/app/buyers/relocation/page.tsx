@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
@@ -41,14 +42,41 @@ const facets = [
   },
 ];
 
+const scoutingRoutes = [
+  {
+    href: "/nelson/nelson",
+    title: "Walkable Nelson",
+    fit: "Best when daily life should orbit Baker Street, Lakeside Park, schools, restaurants, and a short town rhythm.",
+    test: "Walk it in the rain, park twice, climb the grade, then decide if the charm still feels easy.",
+  },
+  {
+    href: "/nelson/north-shore",
+    title: "North Shore Privacy",
+    fit: "Best when lake access, quieter neighbours, and Highway 3A privacy matter more than being in the city grid.",
+    test: "Drive the corridor at school-run time, check shoreline exposure, and compare summer access with winter maintenance.",
+  },
+  {
+    href: "/nelson/blewett",
+    title: "Acreage Near Town",
+    fit: "Best when you want timber, space, workshops, gardens, or family compound potential without losing Nelson completely.",
+    test: "Measure the driveway, water system, outbuildings, road condition, and actual door-to-Baker time.",
+  },
+  {
+    href: "/nelson/slocan-valley",
+    title: "Retreat Country",
+    fit: "Best when quiet wealth, river frontage, heritage timber, and distance from town are the point, not a compromise.",
+    test: "Spend a full day there, not a drive-through. The valley rewards buyers who understand its pace.",
+  },
+];
+
 export default function RelocationPage() {
   return (
     <PageLayout>
       <SubpageHero
         eyebrow="Relocation"
         title="A soft landing,"
-        emphasis="in a careful place."
-        lede="Most people who move here had been thinking about it for years. Once you commit, the work shifts to the practical: schools, healthcare, where to actually live, and how to spend the first ninety days. Here's the local intelligence."
+        emphasis="before a serious buy."
+        lede="Most people who move here had been thinking about it for years. Once you commit, the work shifts to the practical: schools, healthcare, where to actually live, how winter changes the decision, and how to spend the first ninety days. Here's the local intelligence."
         image={brandImages.bakerStreet}
         crumbs={[
           { label: "Home", href: "/" },
@@ -95,11 +123,73 @@ export default function RelocationPage() {
         </Container>
       </section>
 
+      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-end">
+            <div>
+              <Eyebrow>First Scouting Route</Eyebrow>
+              <SectionHeading className="mt-7">
+                Tour the life,
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  not just the house.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              A relocation search should test the daily pattern before the offer. These routes help narrow the map before the market starts making noise.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {scoutingRoutes.map((route, i) => (
+              <Reveal key={route.title} delay={(i % 2) * 70}>
+                <Link
+                  href={route.href}
+                  className="group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 transition-[transform,border-color] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)] sm:p-9"
+                >
+                  <span className="mb-4 text-[10px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                    Area fit {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="m-0 mb-4 font-serif text-[28px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                    {route.title}
+                  </h3>
+                  <p className="m-0 mb-5 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
+                    {route.fit}
+                  </p>
+                  <p className="m-0 mb-7 flex-1 border-l border-[var(--color-bronze)] pl-5 text-[13px] leading-[1.65] text-[var(--color-text-dim)]">
+                    Test: {route.test}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                    Study the area
+                    <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={180} className="mt-10 grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
+            {[
+              { href: "/buyers", label: "Buyer lifestyle selector" },
+              { href: "/listings/waterfront", label: "View waterfront" },
+              { href: "/contact", label: "Plan relocation call" },
+            ].map((item) => (
+              <Link key={item.href + item.label} href={item.href} className="bg-[var(--color-bg)] p-6 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-bronze-light)]">
+                {item.label}
+              </Link>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
+
       <InquiryCTA
         eyebrow="Relocation Inquiry"
         title="Two trips."
-        emphasis="One conversation."
-        body="Start with a 30-minute call from wherever you are now, we'll talk through your timeline, your needs, and what's worth doing on your first scouting visit. Then we'll plan the trips."
+        emphasis="One careful map."
+        body="Start with a 30-minute call from wherever you are now. We'll talk through your timeline, your needs, and what's worth doing on your first scouting visit. Then we'll plan the routes."
       />
     </PageLayout>
   );

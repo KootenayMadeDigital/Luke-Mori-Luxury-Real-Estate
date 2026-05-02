@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
@@ -49,6 +50,25 @@ const origins = [
   { region: "Eastern Europe", note: "Investment-grade waterfront and acreage." },
 ];
 
+const absenteeDesk = [
+  {
+    title: "Regulatory Pre-Flight",
+    body: "Confirm the current federal and provincial purchase landscape before a property is shortlisted, especially for non-Canadian principals.",
+  },
+  {
+    title: "Advisor Bench",
+    body: "Coordinate tax, legal, immigration, private banking, notary, and insurance introductions before travel dates harden.",
+  },
+  {
+    title: "Ownership Systems",
+    body: "Property management, winterisation, caretaker access, security, inspections, and the local routines that protect a lock-and-leave home.",
+  },
+  {
+    title: "Private Touring",
+    body: "Curated days around waterfront, Balfour, North Shore, Nelson, acreage, or retreat properties, with only serious contenders on the route.",
+  },
+];
+
 export default function InternationalBuyersPage() {
   return (
     <PageLayout>
@@ -56,7 +76,7 @@ export default function InternationalBuyersPage() {
         eyebrow="International Buyers"
         title="Buying from"
         emphasis="anywhere."
-        lede="A focused playbook for non-Canadian principals purchasing real estate in the Kootenay region. The federal and provincial landscape, the local network of advisors, and the practical realities of cross-border ownership."
+        lede="A focused playbook for non-Canadian principals, second-home buyers, and absentee owners purchasing real estate in the Kootenay region. The federal and provincial landscape, the local network of advisors, and the practical realities of cross-border ownership."
         image={brandImages.procterLakeHouse}
         crumbs={[
           { label: "Home", href: "/" },
@@ -111,6 +131,55 @@ export default function InternationalBuyersPage() {
 
       <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
         <Container>
+          <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
+            <div>
+              <Eyebrow>Absentee Ownership Desk</Eyebrow>
+              <SectionHeading className="mt-7">
+                The house is only
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  half the work.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Cross-border and second-home purchases succeed when the local operating system is built before closing. The right advisors, the right caretaker, the right property rhythm.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-4">
+            {absenteeDesk.map((item, i) => (
+              <Reveal key={item.title} delay={i * 60} className="bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 block font-serif text-[22px] italic text-[var(--color-bronze)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[25px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {item.title}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                  {item.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={220} className="mt-10 flex flex-wrap justify-center gap-3 border border-[var(--color-line)] bg-[var(--color-bg)] p-5">
+            {[
+              { href: "/listings/waterfront", label: "View waterfront" },
+              { href: "/nelson/balfour", label: "Study Balfour" },
+              { href: "/contact", label: "Request private access" },
+              { href: "/buyers/relocation", label: "Plan scouting trip" },
+            ].map((item) => (
+              <Link key={item.href + item.label} href={item.href} className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+                {item.label}
+              </Link>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <Container>
           <Reveal className="mx-auto max-w-[760px] text-center">
             <Eyebrow centered>Where Buyers Come From</Eyebrow>
             <SectionHeading centered className="mt-7">
@@ -138,8 +207,8 @@ export default function InternationalBuyersPage() {
       <InquiryCTA
         eyebrow="International Inquiry"
         title="Buying from afar?"
-        emphasis="Start with a conversation."
-        body="A 30-minute call walks through the regulatory landscape, the local market, and what's actually possible from where you're sitting. No commitment, no pressure, just clarity."
+        emphasis="Build the local bench first."
+        body="A 30-minute call walks through the regulatory landscape, the local market, the advisor bench, and what's actually possible from where you're sitting. No commitment, no pressure, just clarity."
       />
     </PageLayout>
   );

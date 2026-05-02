@@ -12,6 +12,53 @@ import { nelsonAreas } from "@/lib/data";
 
 type Params = { slug: string };
 
+const areaFitBriefs: Record<
+  string,
+  {
+    rightFor: string;
+    watchFor: string;
+    startWith: string;
+    listingHref: string;
+    listingCta: string;
+  }
+> = {
+  nelson: {
+    rightFor: "Buyers who want Baker Street, schools, culture, lake access, restaurants, and a daily rhythm that feels walkable before it feels rural.",
+    watchFor: "Street grade, parking, renovation appetite, heritage-home maintenance, and the difference between charming and inconvenient.",
+    startWith: "Compare Downtown, Uphill, Mountain Station, Rosemont, and Fairview before judging any single address.",
+    listingHref: "/listings/luxury",
+    listingCta: "View luxury listings",
+  },
+  "north-shore": {
+    rightFor: "Waterfront and privacy buyers who want the lake to feel immediate, but still want Nelson close enough for dinner.",
+    watchFor: "Highway 3A rhythm, shoreline orientation, dock potential, winter maintenance, and how public or private the approach feels.",
+    startWith: "Drive the corridor east from the Big Orange Bridge and mark where the lake starts feeling like the life you want.",
+    listingHref: "/listings/waterfront",
+    listingCta: "View waterfront",
+  },
+  balfour: {
+    rightFor: "Deep-water second-home buyers, legacy waterfront families, and owners who value marina thinking and privacy over town proximity.",
+    watchFor: "Ferry rhythm, service expectations, shoreline exposure, moorage questions, and whether the main-lake pace suits you year round.",
+    startWith: "Study the difference between West Arm convenience and main-lake privacy before shortlisting a property.",
+    listingHref: "/listings/waterfront",
+    listingCta: "View waterfront",
+  },
+  blewett: {
+    rightFor: "Acreage buyers who want timber, privacy, workshops, gardens, family-compound potential, and Nelson still within reach.",
+    watchFor: "Water systems, road maintenance, outbuildings, exposure, insurance, and the real door-to-Baker drive in every season.",
+    startWith: "Decide how much land you will actually maintain before chasing acreage for its own sake.",
+    listingHref: "/buyers/relocation",
+    listingCta: "Plan relocation call",
+  },
+  "slocan-valley": {
+    rightFor: "Retreat buyers who want river frontage, heritage timber, small-community rhythm, and space that feels removed without feeling abandoned.",
+    watchFor: "Distance, services, winter driving, river exposure, internet, and whether quiet still feels like luxury after a full day there.",
+    startWith: "Tour the valley slowly, from South Slocan toward New Denver, and let pace matter as much as price.",
+    listingHref: "/buyers/international",
+    listingCta: "Ask second-home questions",
+  },
+};
+
 export function generateStaticParams() {
   return nelsonAreas.map((a) => ({ slug: a.slug }));
 }
@@ -33,13 +80,14 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
   if (!area) return notFound();
 
   const others = nelsonAreas.filter((a) => a.slug !== slug);
+  const fitBrief = areaFitBriefs[area.slug];
 
   return (
     <PageLayout>
       <SubpageHero
         eyebrow={area.name}
-        title={area.tagline.replace(/[.]$/, "")}
-        emphasis="."
+        title={area.name}
+        emphasis={area.tagline.replace(/[.]$/, "")}
         lede={area.intro}
         image={area.hero}
         crumbs={[
@@ -81,6 +129,55 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
+            <div>
+              <Eyebrow>Buyer Fit Brief</Eyebrow>
+              <SectionHeading className="mt-7">
+                How to read
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  {area.name} properly.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              The right corridor makes a property easier to own. The wrong one makes even a beautiful home feel like friction.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
+            {[
+              { label: "Right for", body: fitBrief.rightFor },
+              { label: "Watch for", body: fitBrief.watchFor },
+              { label: "Start with", body: fitBrief.startWith },
+            ].map((item, i) => (
+              <Reveal key={item.label} delay={i * 70} className="bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 block text-[10px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  {item.label}
+                </span>
+                <p className="m-0 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">
+                  {item.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={220} className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link href={fitBrief.listingHref} className="rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bg)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]">
+              {fitBrief.listingCta}
+            </Link>
+            <Link href="/nelson" className="rounded-full border border-[var(--color-line-strong)] px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+              Compare all areas
+            </Link>
+            <Link href="/contact" className="rounded-full border border-[var(--color-line-strong)] px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+              Request private access
+            </Link>
+          </Reveal>
         </Container>
       </section>
 
