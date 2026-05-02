@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { LoadingReveal } from "@/components/ui/LoadingReveal";
-import { ConceptBanner } from "@/components/sections/ConceptBanner";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { IntentConcierge } from "@/components/sections/IntentConcierge";
@@ -35,7 +34,6 @@ export default function LukeMoriLuxuryConcept() {
       >
         Skip to content
       </a>
-      <ConceptBanner />
       <Nav />
       <main id="main">
         <Hero />

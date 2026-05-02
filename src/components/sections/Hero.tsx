@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[92svh] items-start overflow-hidden pb-20 pt-16 sm:pb-28 sm:pt-28 lg:items-center lg:pb-36 lg:pt-44"
+      className="relative flex min-h-[92svh] items-start overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20 lg:pb-32 lg:pt-10"
     >
       <div className="absolute inset-0 z-0" aria-hidden>
         <Image
