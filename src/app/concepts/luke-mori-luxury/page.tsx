@@ -16,6 +16,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { PrivateAccess } from "@/components/sections/PrivateAccess";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
 import { TemplateRouteLedger } from "@/components/sections/TemplateRouteLedger";
+import { SectionTransition } from "@/components/sections/SectionTransition";
 import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
@@ -58,17 +59,23 @@ export default function LukeMoriLuxuryConcept() {
       />
       <main id="main">
         <Hero />
+        <SectionTransition eyebrow="Chapter 01" title="Begin with the mandate." tone="bronze" />
         <IntentConcierge />
         <CredentialsStrip />
         <PressStrip />
+        <SectionTransition eyebrow="Chapter 02" title="Proof before persuasion." align="right" tone="office" />
         <AuthorityStrip />
         <MoriStandard />
         <TrustLedger />
+        <SectionTransition eyebrow="Chapter 03" title="The map becomes the market." align="left" tone="lake" />
         <SignatureAreas />
         <FeaturedEstates />
+        <SectionTransition eyebrow="Chapter 04" title="A serious property gets launched." align="right" tone="bronze" />
         <SellerSection />
+        <SectionTransition eyebrow="Chapter 05" title="Buy by life, not by filter." align="left" tone="lake" />
         <LifestyleSection />
         <Testimonials />
+        <SectionTransition eyebrow="Chapter 06" title="Private access, private routing." tone="office" />
         <PrivateAccess />
         <PrivateInquiryPaths
           id="private-inquiry"
@@ -77,8 +84,10 @@ export default function LukeMoriLuxuryConcept() {
           emphasis="on the mandate."
           body="The same page now serves four serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation and second-home clients, and agents or brokerages evaluating Kootenay Made Digital."
         />
+        <SectionTransition eyebrow="Chapter 07" title="The concept becomes a system." align="right" tone="bronze" />
         <TemplateRouteLedger />
         <RecentlyConcluded />
+        <SectionTransition eyebrow="Final room" title="Leave with the private brief." tone="office" />
         <LeadMagnet />
       </main>
       <ConceptFooter />
