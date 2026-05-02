@@ -27,7 +27,7 @@ export default function AboutPage() {
         title="A local"
         emphasis="who's on your side."
         lede={lukeBio.short}
-        image={brandImages.nelsonLandscape}
+        image={brandImages.lukeLeaningPortrait}
         crumbs={[{ label: "Home", href: "/" }, { label: "About Luke" }]}
         meta={[
           { value: "150+", label: "Lifetime Clients" },

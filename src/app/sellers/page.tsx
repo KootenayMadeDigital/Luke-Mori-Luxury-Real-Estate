@@ -35,7 +35,7 @@ export const metadata = buildPageMetadata({
   description:
     "Seller representation for Nelson and Kootenay Lake real estate, cinematic film, editorial photography, controlled exposure, and a five-step process built for the price your home actually deserves.",
   path: "/sellers",
-  image: brandImages.procterLakeHouse,
+  image: brandImages.sellerDining,
 });
 
 export default function SellersPage() {
@@ -46,7 +46,7 @@ export default function SellersPage() {
         title="Selling a home,"
         emphasis="the way it deserves."
         lede="Exceptional service, innovative marketing, and years of local experience. Cinematic film, editorial photography, a dedicated property site, and a controlled rollout, built around your discretion, your timeline, and the price your home actually deserves."
-        image={brandImages.procterLakeHouse}
+        image={brandImages.sellerDining}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
         meta={[
           { value: "Launched", label: "Not Uploaded" },

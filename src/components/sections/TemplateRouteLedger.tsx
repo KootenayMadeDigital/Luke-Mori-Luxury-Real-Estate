@@ -48,8 +48,14 @@ const routeLedger = [
 
 export function TemplateRouteLedger() {
   return (
-    <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-28 md:py-32">
-      <Container>
+    <section className="relative overflow-hidden border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-28 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-screen"
+        style={{ backgroundImage: "url('/generated/kootenay-contour-texture.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+        aria-hidden
+      />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.96),rgba(10,11,13,0.72),rgba(10,11,13,0.96))]" aria-hidden />
+      <Container className="relative z-10">
         <Reveal className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[0.84fr_1fr] lg:items-end">
           <div>
             <Eyebrow>KMD Vertical Template</Eyebrow>

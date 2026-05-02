@@ -307,10 +307,26 @@ export const pressLogos: PressLogo[] = [
 export const brandImages = {
   nelsonLandscape:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5bb50e2b484db46c921_nelson-bc-looking-north.webp",
+  westArmKootenayLake:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbd01452436a306385f19_west-arm-kootenay-lake.webp",
+  balfourKootenayLake:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbf4350d03715e52475f0_balfour-kootenay-lake.webp",
+  taghumBeach:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c47aa9f90e17c6340bf24_taghum-beach-nelson-bc.jpeg",
+  slocanLake:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c4642fd23523853ddcfc5_slocan-lake.jpeg",
   procterLakeHouse:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc3e63cf060ba15246859_procter-lake-house-nelson-bc.webp",
   procterLivingRoom:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5047afaca9df841c013_procter-lake-house-living-room.webp",
+  buyerInterior:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/643f5f72973c035fce6e7603_luke-mori-buyer.webp",
+  sellerDining:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc24f50e2b484db43de69_beautiful-modern-dining-room.webp",
+  sellerStudy:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc17ef700d10a31fbc3d8_staged-white-study-room.webp",
+  lukeSellerSign:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/643f6020da8384104ee7c2c1_luke-mori-seller.webp",
   orangeBridge:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc64304b2f02d85dcc491_orange-bridge-nelson-bc.webp",
   bakerStreet:
@@ -325,6 +341,12 @@ export const brandImages = {
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dcbc6df0f35f336976444_sailboats-on-kootenay-lake.webp",
   lukePortrait:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645d8fbc8db94236ab1c3f92_luke-mori-sitting-on-grey-couch.webp",
+  lukeLeaningPortrait:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc0db19116cf9403bfdb8_luke-mori-leaning-against-couch.webp",
+  lukeFrame:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc04c452436a3063b3e97_luke-mori-adjusting-picture-frame.webp",
+  lukeAwardPhoto:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dca656c5fd39678a8eafc_luxury-lifestyle-award-luke-mori.webp",
   lukeContact:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/6508c07354741e28df5af2c6_IMG_4049.JPG",
   signature:
@@ -731,7 +753,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~10,000",
     avgPrice: "$800,000",
     focus: "Heritage · Walkable · Lake & Mountain Lifestyle",
-    hero: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbe517afaca9df83bb128_baker-street-nelson-bc.jpg",
+    hero: brandImages.orangeBridge,
     highlights: [
       { title: "Baker Street", body: "Heritage buildings, boutique shops, and coffee houses anchor the city's downtown spine." },
       { title: "Whitewater Resort", body: "World-class skiing and snowboarding with approximately 12 metres of annual snowfall." },
@@ -754,7 +776,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~4,000",
     avgPrice: "$900,000",
     focus: "Waterfront · Boating · Beach",
-    hero: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbec43c5ce9bf7bf969e7_kayaking-kootenay-lake.webp",
+    hero: brandImages.westArmKootenayLake,
     highlights: [
       { title: "Kokanee Creek Provincial Park", body: "Camping, RV sites, hiking trails, sandy beach, and seasonal salmon spawning viewing." },
       { title: "West Arm Sailing", body: "Ideal conditions for sailing enthusiasts of all levels, protected water with consistent afternoon wind." },
@@ -770,7 +792,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~600",
     avgPrice: "$1,150,000",
     focus: "Deep Water · Marina · Generational Estates",
-    hero: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dcbc6df0f35f336976444_sailboats-on-kootenay-lake.webp",
+    hero: brandImages.balfourKootenayLake,
     highlights: [
       { title: "Kootenay Lake Ferry", body: "The world's longest free ferry connects Balfour to the East Shore, Crawford Bay, Riondel, and the Purcell Range." },
       { title: "Balfour Golf Course", body: "Eighteen holes carved between the lake and the surrounding mountains, a Kootenay institution." },
@@ -786,7 +808,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~1,500",
     avgPrice: "$1,050,000",
     focus: "Acreage · Privacy · Country Living",
-    hero: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5bb50e2b484db46c921_nelson-bc-looking-north.webp",
+    hero: brandImages.taghumBeach,
     highlights: [
       { title: "Wooded Acreage", body: "Five-to-twenty-acre parcels with mature timber, pasture, and creek frontage, most never appear on the open market." },
       { title: "Family Estates", body: "Multi-generation properties, agricultural use, and the kind of land that gets passed down rather than sold." },
@@ -802,7 +824,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~5,000 (valley-wide)",
     avgPrice: "$850,000",
     focus: "Riverfront · Heritage · Retreat Properties",
-    hero: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dcb933c5ce9bf7b047b0d_kokanee-creek-beach.webp",
+    hero: brandImages.slocanLake,
     highlights: [
       { title: "Slocan River", body: "Some of British Columbia's finest fly-fishing, and the kind of river-frontage acreage that anchors generational holdings." },
       { title: "Heritage Timber Estates", body: "Hand-built homes by Hamill Creek and other regional timber-frame masters dot the valley." },

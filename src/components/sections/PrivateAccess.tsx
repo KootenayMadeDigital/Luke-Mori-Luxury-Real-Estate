@@ -10,29 +10,12 @@ export function PrivateAccess() {
       id="private"
       className="relative overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg)] py-36 md:py-44"
     >
-      {/* Background scene */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
-        <svg viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" className="size-full">
-          <defs>
-            <radialGradient id="pg" cx="50%" cy="40%" r="60%">
-              <stop offset="0%" stopColor="#1a1812" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#0a0b0d" stopOpacity="1" />
-            </radialGradient>
-          </defs>
-          <rect width="1600" height="600" fill="url(#pg)" />
-          <path
-            d="M0 420 L160 360 L320 400 L480 350 L640 390 L800 340 L960 380 L1120 340 L1280 380 L1440 350 L1600 380 L1600 600 L0 600 Z"
-            fill="#0a0b0d"
-            opacity="0.9"
-          />
-        </svg>
         <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 50% 50%, transparent 30%, rgba(10,11,13,0.85) 100%)",
-          }}
+          className="absolute inset-0 opacity-45 saturate-[0.72]"
+          style={{ backgroundImage: "url('/generated/dark-lake-atmosphere.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
         />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(10,11,13,0.18)_0%,rgba(10,11,13,0.9)_72%,rgba(10,11,13,1)_100%)]" />
       </div>
 
       <Container className="relative z-10">
