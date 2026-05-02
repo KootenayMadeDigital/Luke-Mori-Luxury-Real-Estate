@@ -427,14 +427,14 @@ export const recentlyConcluded: ConcludedItem[] = [
 export type Promise = { num: string; title: string; body: string };
 
 export const sellerPromises: Promise[] = [
-  { num: "i.", title: "Cinematic film & drone", body: "A 60-second property film built for placement, not for autoplay-mute scrolling." },
-  { num: "ii.", title: "Editorial property copy", body: "Your home written about the way it deserves to be remembered, not described." },
-  { num: "iii.", title: "Private launch strategy", body: "A staged release, pocket list to network, then private preview, then market." },
-  { num: "iv.", title: "Targeted buyer outreach", body: "A real list of relocating principals, ski-buyers, and second-home families. Vetted." },
-  { num: "v.", title: "Dedicated property website", body: "Every signature listing is built its own site. The property as a destination." },
-  { num: "vi.", title: "Paid & social distribution", body: "Geotargeted campaigns into Vancouver, Calgary, and the international second-home market." },
-  { num: "vii.", title: "High-end photography", body: "Architectural-grade interior and twilight exterior, the standard, not the upgrade." },
-  { num: "viii.", title: "Discreet inquiry handling", body: "No mass auto-replies. Every serious inquiry is answered personally, by name." },
+  { num: "01", title: "Confidential valuation", body: "A private read on value, comparable pressure, buyer depth, and the price line that should not be crossed." },
+  { num: "02", title: "Editorial positioning", body: "The property is framed before it is exposed: legacy, lifestyle, architecture, land, privacy, and scarcity." },
+  { num: "03", title: "Film, photo, and copy", body: "Cinematic film, architectural photography, floor-plan clarity, and writing that makes the home feel considered." },
+  { num: "04", title: "Dedicated property page", body: "A private-office presentation built around the address, not a generic portal card surrounded by competitors." },
+  { num: "05", title: "Qualified buyer rollout", body: "Controlled release to serious principals, relocation buyers, second-home families, and trusted agent networks." },
+  { num: "06", title: "Discreet showing protocol", body: "Showings are scheduled around privacy, readiness, and intent, with casual traffic filtered before it reaches the door." },
+  { num: "07", title: "Negotiation discipline", body: "Offer strategy, leverage, timing, and terms are handled as one plan, not as a reaction to the loudest bidder." },
+  { num: "08", title: "Closing discretion", body: "From accepted offer to possession, the process stays calm, documented, and deliberately quiet." },
 ];
 
 /* ---------- Lifestyle tiles ---------- */

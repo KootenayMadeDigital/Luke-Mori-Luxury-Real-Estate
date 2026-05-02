@@ -7,7 +7,7 @@ import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { PhotoGallery } from "@/components/listing/PhotoGallery";
 import { ListingTile } from "@/components/listing/ListingTile";
@@ -25,6 +25,8 @@ import {
 import { contact } from "@/lib/data";
 
 type Params = { slug: string };
+type EditorialFact = { label: string; value: string };
+type ContextPanel = { label: string; title: string; body: string };
 
 export function generateStaticParams() {
   return allListings.map((l) => ({ slug: l.slug }));
@@ -76,6 +78,104 @@ function buildJsonLd(l: Listing) {
   };
 }
 
+function joinHumanList(items: string[]): string {
+  if (items.length <= 1) return items[0] || "";
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
+function hasDisplayValue(value: string): boolean {
+  const v = value.trim();
+  return Boolean(v && v !== "Not listed");
+}
+
+function buildEditorialFacts(l: Listing): EditorialFact[] {
+  const facts: EditorialFact[] = [];
+  const push = (label: string, value: string) => {
+    if (hasDisplayValue(value)) facts.push({ label, value });
+  };
+
+  push("Price", l.price);
+  push("Area", l.location);
+  push("Property type", l.propertyType);
+  if (l.beds && l.beds > 0) push("Bedrooms", String(l.beds));
+  if (l.baths && l.baths > 0) push("Bathrooms", formatBaths(l));
+  if (l.sqft && l.sqft > 0) push("Interior", `${l.sqft.toLocaleString("en-US")} sq ft`);
+  push("Lot", formatLot(l));
+  if (l.yearBuilt && l.yearBuilt > 1700) push("Built", String(l.yearBuilt));
+  if (l.photoCount > 0) push("Gallery", `${l.photoCount} real listing photos`);
+  push("MLS®", l.listingId || "");
+
+  return facts.slice(0, 8);
+}
+
+function buildEditorialSummary(l: Listing): string[] {
+  const summary: string[] = [];
+  const opening = [
+    l.propertyType || "Active listing",
+    l.location ? `in ${l.location}` : "",
+    l.price ? `offered at ${l.price}` : "",
+  ].filter(Boolean);
+
+  if (opening.length > 0) summary.push(`${opening.join(", ")}.`);
+
+  const physicalFacts = [
+    l.beds && l.beds > 0 ? `${l.beds} bedrooms` : "",
+    l.baths && l.baths > 0 ? `${formatBaths(l)} bathrooms` : "",
+    l.sqft && l.sqft > 0 ? `${l.sqft.toLocaleString("en-US")} sq ft of interior space` : "",
+    hasDisplayValue(formatLot(l)) ? `${formatLot(l)} lot` : "",
+    l.yearBuilt && l.yearBuilt > 1700 ? `built in ${l.yearBuilt}` : "",
+  ].filter(Boolean);
+
+  if (physicalFacts.length > 0) {
+    summary.push(`Published facts note ${joinHumanList(physicalFacts)}.`);
+  }
+
+  const sourceFacts = [
+    l.listingAgent ? `listed by ${l.listingAgent}` : "",
+    l.listingBrokerage ? `with ${l.listingBrokerage}` : "",
+    l.listingId ? `MLS® ${l.listingId}` : "",
+  ].filter(Boolean);
+
+  if (sourceFacts.length > 0) summary.push(`Source record: ${sourceFacts.join(", ")}.`);
+  if (l.photoCount > 0) {
+    summary.push(`The public gallery includes ${l.photoCount} real listing ${l.photoCount === 1 ? "photo" : "photos"}.`);
+  }
+
+  return summary.slice(0, 4);
+}
+
+function buildContextPanels(l: Listing): ContextPanel[] {
+  const lot = formatLot(l);
+  const scaleFacts = [
+    l.propertyType,
+    l.sqft && l.sqft > 0 ? `${l.sqft.toLocaleString("en-US")} sq ft` : "",
+    hasDisplayValue(lot) ? lot : "",
+  ].filter(Boolean);
+
+  return [
+    {
+      label: "01",
+      title: "Area and arrival",
+      body: l.location
+        ? `The source listing identifies the area as ${l.location}. A private showing should test approach, privacy, light, sound, and everyday fit.`
+        : "The public record does not name a precise area. A private showing should test approach, privacy, light, sound, and everyday fit.",
+    },
+    {
+      label: "02",
+      title: "Lifestyle fit",
+      body: scaleFacts.length > 0
+        ? `The known property facts are ${joinHumanList(scaleFacts)}. Use the visit to decide how that scale actually lives, not just how it reads online.`
+        : "Use the visit to decide how the property actually lives, not just how it reads online.",
+    },
+    {
+      label: "03",
+      title: "Private due diligence",
+      body: "Serious buyers should review the public facts first, then use Luke's local context for comparables, timing, access, and offer discipline.",
+    },
+  ];
+}
+
 export default async function ListingDetailPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const l = getListingBySlug(slug);
@@ -83,8 +183,10 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
 
   const lukes = isLukesOwn(l);
   const detailRows = buildDetailRows(l);
+  const editorialFacts = buildEditorialFacts(l);
+  const editorialSummary = buildEditorialSummary(l);
+  const contextPanels = buildContextPanels(l);
 
-  // Three "more like this", same location preferred, fall back to top luxury.
   const sameLocation = allListings
     .filter((x) => x.slug !== l.slug && x.location === l.location)
     .slice(0, 3);
@@ -93,13 +195,11 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
 
   return (
     <PageLayout>
-      {/* Schema.org structured data for SEO and AI search engines */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(l)) }}
       />
 
-      {/* CINEMATIC HERO */}
       <section className="relative h-[88vh] min-h-[600px] overflow-hidden bg-[var(--color-bg)]">
         {l.heroPhoto && (
           <>
@@ -180,7 +280,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           </Reveal>
         </Container>
 
-        {/* Photo count chip */}
         {l.photoCount > 0 && (
           <a
             href="#gallery"
@@ -194,7 +293,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         )}
       </section>
 
-      {/* SPEC HAIRLINE */}
       <section className="border-b border-[var(--color-line)] bg-[var(--color-bg)] py-9 md:py-11">
         <Container>
           <ul className="grid grid-cols-2 gap-y-7 sm:grid-cols-4 sm:gap-x-10">
@@ -222,49 +320,91 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </Container>
       </section>
 
-      {/* DESCRIPTION + STICKY INQUIRY */}
       <section className="bg-[var(--color-bg)] py-24 md:py-28">
         <Container>
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.34fr_0.86fr] lg:gap-20">
             <div>
               <Reveal>
-                <Eyebrow>The Property</Eyebrow>
+                <Eyebrow>Arrival / Overview</Eyebrow>
               </Reveal>
               <Reveal delay={120}>
                 <SectionHeading className="mt-7">
-                  About this
+                  The public facts,
                   <br />
                   <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    home.
+                    privately framed.
                   </em>
                 </SectionHeading>
               </Reveal>
-              <Reveal delay={240}>
-                <div className="mt-8 space-y-5 text-[17px] leading-[1.8] text-[var(--color-text-muted)]">
-                  {l.descriptionParagraphs.length > 0
-                    ? l.descriptionParagraphs.map((p, i) => <p key={i}>{p}</p>)
-                    : l.description && <p>{l.description}</p>}
-                </div>
+              <Reveal delay={220}>
+                <SectionLede className="mt-7 max-w-[760px]">
+                  This page treats the listing like a property brief: what is known, what the public record says, and what a serious buyer should inspect in person.
+                </SectionLede>
               </Reveal>
 
-              {/* Listing source */}
-              <Reveal delay={360}>
-                <p className="mt-10 border-t border-[var(--color-line)] pt-6 text-[11px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
-                  <span className="text-[var(--color-bronze)]">Listed by</span>{" "}
-                  {l.listingAgent || ","}
-                  {l.listingBrokerage && (
-                    <>
-                      {" "}
-                      <span className="text-[var(--color-text-dim)]">at</span>{" "}
-                      {l.listingBrokerage}
-                    </>
-                  )}
-                </p>
+              {editorialFacts.length > 0 && (
+                <Reveal delay={300}>
+                  <dl className="mt-10 grid grid-cols-2 gap-px bg-[var(--color-line)] sm:grid-cols-4">
+                    {editorialFacts.map((fact) => (
+                      <div key={fact.label} className="bg-[var(--color-surface)] p-5 sm:p-6">
+                        <dt className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                          {fact.label}
+                        </dt>
+                        <dd className="m-0 font-serif text-[20px] font-light leading-[1.2] text-[var(--color-text)] sm:text-[22px]">
+                          {fact.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </Reveal>
+              )}
+
+              {editorialSummary.length > 0 && (
+                <Reveal delay={380}>
+                  <div className="mt-10 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-7 sm:p-8">
+                    <p className="m-0 mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-bronze)]">
+                      Editorial Summary
+                    </p>
+                    <div className="space-y-4 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">
+                      {editorialSummary.map((sentence) => (
+                        <p key={sentence} className="m-0">
+                          {sentence}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
+              )}
+
+              <Reveal delay={460}>
+                <div className="mt-16 border-t border-[var(--color-line)] pt-14">
+                  <Eyebrow>The Property Story</Eyebrow>
+                  <h2 className="m-0 mt-6 max-w-[720px] font-serif font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)] [font-size:clamp(32px,4vw,54px)]">
+                    Read the home before you tour it.
+                  </h2>
+                  <div className="mt-8 space-y-5 text-[17px] leading-[1.8] text-[var(--color-text-muted)]">
+                    {l.descriptionParagraphs.length > 0
+                      ? l.descriptionParagraphs.map((p, i) => <p key={i}>{p}</p>)
+                      : l.description && <p>{l.description}</p>}
+                  </div>
+
+                  <p className="mt-10 border-t border-[var(--color-line)] pt-6 text-[11px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
+                    <span className="text-[var(--color-bronze)]">Listed by</span>{" "}
+                    {l.listingAgent || "Not listed"}
+                    {l.listingBrokerage && (
+                      <>
+                        {" "}
+                        <span className="text-[var(--color-text-dim)]">at</span>{" "}
+                        {l.listingBrokerage}
+                      </>
+                    )}
+                  </p>
+                </div>
               </Reveal>
             </div>
 
             <Reveal delay={300}>
-              <aside className="sticky top-32 border border-[var(--color-line)] bg-[var(--color-surface)] p-8">
+              <aside className="sticky top-32 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.9)] sm:p-8">
                 {l.price && (
                   <div className="mb-6 border-b border-[var(--color-line)] pb-6">
                     <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
@@ -279,12 +419,27 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   </div>
                 )}
 
-                <h3 className="m-0 mb-3 font-serif text-[22px] font-light leading-[1.2] tracking-[-0.005em]">
-                  Inquire privately
+                <h3 className="m-0 mb-3 font-serif text-[25px] font-light leading-[1.15] tracking-[-0.005em]">
+                  Inquire with intent.
                 </h3>
                 <p className="m-0 mb-6 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  Direct line to Luke or his private team, replies are personal, within one business day. Showings arranged with discretion.
+                  Direct line to Luke or his private team. Ask for the showing, the source context, or preferred seller terms before you spend a day on the road.
                 </p>
+
+                <ul className="mb-7 space-y-3 border-y border-[var(--color-line)] py-6 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
+                  <li className="flex items-center gap-3">
+                    <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
+                    Confirm fit and timing
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
+                    Request showing windows
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
+                    Review source facts first
+                  </li>
+                </ul>
 
                 <div className="mb-6 space-y-3 text-[13px]">
                   <a
@@ -313,7 +468,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                     rel="noreferrer"
                     className="mt-4 block text-center text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)] transition-colors hover:text-[var(--color-bronze)]"
                   >
-                    View source listing →
+                    View source listing
                   </a>
                 )}
               </aside>
@@ -322,9 +477,34 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </Container>
       </section>
 
-      {/* DETAIL TABLE */}
+      {l.photoCount > 0 && (
+        <section
+          id="gallery"
+          className="scroll-mt-24 border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28"
+        >
+          <Container>
+            <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-8">
+              <div>
+                <Eyebrow>Gallery</Eyebrow>
+                <SectionHeading className="mt-6">
+                  The listing,
+                  <br />
+                  <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                    frame by frame.
+                  </em>
+                </SectionHeading>
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
+                {l.photoCount} real listing photos · Click to expand
+              </span>
+            </Reveal>
+            <PhotoGallery photos={l.photos} alt={l.address} />
+          </Container>
+        </section>
+      )}
+
       {detailRows.length > 4 && (
-        <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <section className="border-y border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
           <Container>
             <Reveal className="mb-12 max-w-[760px]">
               <Eyebrow>Property Details</Eyebrow>
@@ -341,7 +521,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 <Reveal
                   key={row.label + i}
                   delay={(i % 6) * 40}
-                  className="grid grid-cols-[140px_1fr] items-baseline gap-4 bg-[var(--color-bg-2)] px-6 py-5 transition-colors hover:bg-[var(--color-surface)] sm:grid-cols-[180px_1fr] sm:px-8 sm:py-6"
+                  className="grid grid-cols-[140px_1fr] items-baseline gap-4 bg-[var(--color-bg)] px-6 py-5 transition-colors hover:bg-[var(--color-surface)] sm:grid-cols-[180px_1fr] sm:px-8 sm:py-6"
                 >
                   <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     {row.label}
@@ -356,9 +536,8 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </section>
       )}
 
-      {/* ROOM DIMENSIONS */}
       {l.rooms && l.rooms.length > 0 && (
-        <section className="bg-[var(--color-bg)] py-24 md:py-28">
+        <section className="bg-[var(--color-bg-2)] py-24 md:py-28">
           <Container>
             <Reveal className="mb-14 max-w-[760px]">
               <Eyebrow>Room Dimensions</Eyebrow>
@@ -399,30 +578,53 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </section>
       )}
 
-      {/* GALLERY */}
-      {l.photoCount > 0 && (
-        <section
-          id="gallery"
-          className="scroll-mt-24 border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28"
-        >
-          <Container>
-            <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-8">
-              <div>
-                <Eyebrow>Gallery</Eyebrow>
-                <SectionHeading className="mt-6">
-                  {l.photoCount} frames.
-                </SectionHeading>
-              </div>
-              <span className="text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
-                Click any photo to expand · Esc to close
-              </span>
-            </Reveal>
-            <PhotoGallery photos={l.photos} alt={l.address} />
-          </Container>
-        </section>
-      )}
+      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end md:gap-16">
+            <div>
+              <Eyebrow>Location / Lifestyle Context</Eyebrow>
+              <SectionHeading className="mt-7">
+                The address is only
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  the first filter.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede>
+              Public listing data can tell you the area, scale, and source facts. A private advisory call should clarify the lived reality: arrival, privacy, light, access, timing, and fit.
+            </SectionLede>
+          </Reveal>
 
-      {/* RELATED */}
+          <div className="grid grid-cols-1 border border-[var(--color-line)] md:grid-cols-3">
+            {contextPanels.map((panel, i) => (
+              <Reveal
+                key={panel.title}
+                delay={i * 90}
+                className={`p-7 sm:p-8 ${i > 0 ? "border-t border-[var(--color-line)] md:border-l md:border-t-0" : ""}`}
+              >
+                <span className="mb-8 inline-flex size-10 items-center justify-center rounded-full border border-[var(--color-line-strong)] font-serif text-[14px] italic text-[var(--color-bronze-light)]">
+                  {panel.label}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[24px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {panel.title}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.75] text-[var(--color-text-muted)]">
+                  {panel.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <InquiryCTA
+        eyebrow="Private Showing"
+        title="Some properties are best"
+        emphasis="experienced in person."
+        body="Showings are scheduled directly with Luke or his private team. Tell us when you are in town, and we will arrange the visit, the context, and the conversation."
+      />
+
       {related.length > 0 && (
         <section className="bg-[var(--color-bg)] py-24 md:py-28">
           <Container>
@@ -446,13 +648,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           </Container>
         </section>
       )}
-
-      <InquiryCTA
-        eyebrow="Private Showing"
-        title="Some properties are best"
-        emphasis="experienced in person."
-        body="Showings are scheduled directly with Luke or his private team. Tell us when you're in town, we'll arrange the visit, the context, and the conversation."
-      />
     </PageLayout>
   );
 }

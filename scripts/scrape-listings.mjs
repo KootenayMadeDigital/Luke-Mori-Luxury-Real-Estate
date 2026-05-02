@@ -153,7 +153,7 @@ function pickPrimaryListingId(groups, html) {
 function extractStatPairs(html) {
   const pairs = {};
 
-  // Pattern A — top-line stats: <h3 ...>Label</h3>...<div ...text-size-large...>VALUE</div>
+  // Pattern A , top-line stats: <h3 ...>Label</h3>...<div ...text-size-large...>VALUE</div>
   const reA = /<h3[^>]*>([^<]+?)<\/h3>[\s\S]{0,200}?<div[^>]*text-size-large[^>]*>([^<]+?)<\/div>/g;
   for (const m of html.matchAll(reA)) {
     const k = stripTags(m[1]).replace(/:$/, "").trim();
@@ -161,7 +161,7 @@ function extractStatPairs(html) {
     if (k && v && !(k in pairs)) pairs[k] = v;
   }
 
-  // Pattern B — detail stat key/value with `:` suffix
+  // Pattern B , detail stat key/value with `:` suffix
   //   <h3 class="listing_stat-key">Built:</h3><div class="text-weight-medium ...">2010</div>
   const reB = /<h3[^>]*listing_stat-key[^>]*>([^<]+?)<\/h3>[\s\S]{0,200}?<div[^>]*text-weight-medium[^>]*>([^<]+?)<\/div>/g;
   for (const m of html.matchAll(reB)) {
@@ -317,8 +317,8 @@ function deriveAddressFromSlug(slug) {
 function cleanAddress(title, slug) {
   if (!title) return deriveAddressFromSlug(slug);
   return title
-    .replace(/\s*[-—|]\s*Luke Mori.*$/i, "")
-    .replace(/\s*[-—|]\s*MLS®?.*$/i, "")
+    .replace(/\s*[-,|]\s*Luke Mori.*$/i, "")
+    .replace(/\s*[-,|]\s*MLS®?.*$/i, "")
     .trim();
 }
 
@@ -495,7 +495,7 @@ async function main() {
 
   if (failed.length) {
     console.log("\nFailed URLs:");
-    for (const f of failed.slice(0, 10)) console.log(`  ${f.url} — ${f.error}`);
+    for (const f of failed.slice(0, 10)) console.log(`  ${f.url} , ${f.error}`);
     if (failed.length > 10) console.log(`  …and ${failed.length - 10} more`);
   }
 }
