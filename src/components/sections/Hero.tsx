@@ -14,15 +14,15 @@ export function Hero() {
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="/generated/dark-lake-atmosphere.webp"
-          className="absolute inset-0 size-full object-cover opacity-[0.48] saturate-[0.82]"
+          preload="auto"
+          poster="/video/luke-mori-header-poster.webp"
+          className="absolute inset-0 size-full object-cover opacity-[0.78] saturate-[0.92] brightness-[1.14] contrast-[1.04]"
         >
           <source src="/video/luke-mori-header.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-[rgba(10,11,13,0.58)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(212,184,150,0.19),transparent_27%),radial-gradient(circle_at_82%_36%,rgba(255,255,255,0.08),transparent_24%),linear-gradient(90deg,rgba(10,11,13,0.99)_0%,rgba(10,11,13,0.84)_42%,rgba(10,11,13,0.96)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.6)_0%,rgba(10,11,13,0.18)_42%,rgba(10,11,13,0.86)_100%)]" />
+        <div className="absolute inset-0 bg-[rgba(10,11,13,0.24)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(212,184,150,0.15),transparent_27%),radial-gradient(circle_at_82%_36%,rgba(255,255,255,0.06),transparent_24%),linear-gradient(90deg,rgba(10,11,13,0.92)_0%,rgba(10,11,13,0.56)_44%,rgba(10,11,13,0.86)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.52)_0%,rgba(10,11,13,0.08)_42%,rgba(10,11,13,0.82)_100%)]" />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1320px] grid-cols-1 items-start gap-10 px-5 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
