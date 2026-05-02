@@ -14,7 +14,7 @@ import { sellerSteps, brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Selling with Luke · Seller Representation",
   description:
-    "Seller representation for Nelson and Kootenay Lake real estate — cinematic film, editorial photography, controlled exposure, and a five-step process built for the price your home actually deserves.",
+    "Seller representation for Nelson and Kootenay Lake real estate, cinematic film, editorial photography, controlled exposure, and a five-step process built for the price your home actually deserves.",
 };
 
 export default function SellersPage() {
@@ -24,7 +24,7 @@ export default function SellersPage() {
         eyebrow="For Sellers"
         title="Selling a home,"
         emphasis="the way it deserves."
-        lede="Exceptional service, innovative marketing, and years of local experience. Cinematic film, editorial photography, a dedicated property site, and a controlled rollout — built around your discretion, your timeline, and the price your home actually deserves."
+        lede="Exceptional service, innovative marketing, and years of local experience. Cinematic film, editorial photography, a dedicated property site, and a controlled rollout, built around your discretion, your timeline, and the price your home actually deserves."
         image={brandImages.procterLakeHouse}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
         meta={[
@@ -39,7 +39,7 @@ export default function SellersPage() {
         eyebrow="The Seller Process"
         title="Five steps,"
         emphasis="executed properly."
-        lede="From the first conversation to possession day. The work is the same regardless of price — only the marketing investment scales."
+        lede="From the first conversation to possession day. The work is the same regardless of price, only the marketing investment scales."
         steps={sellerSteps}
       />
 

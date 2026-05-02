@@ -1,4 +1,4 @@
-/* The cinematic hero artwork. Pure SVG/CSS — no image dependencies.
+/* The cinematic hero artwork. Pure SVG/CSS, no image dependencies.
    Layered mountain ranges, starlit sky, mirrored lake reflection. */
 
 export function MountainScene() {

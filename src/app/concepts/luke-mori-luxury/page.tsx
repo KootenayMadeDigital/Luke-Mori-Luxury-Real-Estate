@@ -3,6 +3,7 @@ import { LoadingReveal } from "@/components/ui/LoadingReveal";
 import { ConceptBanner } from "@/components/sections/ConceptBanner";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
+import { IntentConcierge } from "@/components/sections/IntentConcierge";
 import { CredentialsStrip } from "@/components/sections/CredentialsStrip";
 import { AuthorityStrip } from "@/components/sections/AuthorityStrip";
 import { PressStrip } from "@/components/sections/PressStrip";
@@ -20,7 +21,7 @@ import { ConceptFooter } from "@/components/sections/ConceptFooter";
 export const metadata: Metadata = {
   title: "Nelson & Kootenay Lake Luxury Real Estate · Concept",
   description:
-    "Luke Mori Luxury — a concept by Kootenay Made Digital. Lakefront estates, architectural view homes, and rare Kootenay properties, represented with discretion and taste.",
+    "Luke Mori Luxury, a concept by Kootenay Made Digital. Lakefront estates, architectural view homes, and rare Kootenay properties, represented with discretion and taste.",
   alternates: { canonical: "/concepts/luke-mori-luxury" },
 };
 
@@ -38,12 +39,13 @@ export default function LukeMoriLuxuryConcept() {
       <Nav />
       <main id="main">
         <Hero />
+        <IntentConcierge />
         <CredentialsStrip />
         <PressStrip />
         <AuthorityStrip />
+        <MoriStandard />
         <SignatureAreas />
         <FeaturedEstates />
-        <MoriStandard />
         <SellerSection />
         <LifestyleSection />
         <Testimonials />

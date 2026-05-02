@@ -11,7 +11,7 @@ import { contact, brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Contact · Private Consultation",
   description:
-    "Direct contact for Luke Mori — Nelson and Kootenay Lake luxury real estate. Phone, email, office address, and a private consultation form. Replies are personal, within one business day.",
+    "Direct contact for Luke Mori, Nelson and Kootenay Lake luxury real estate. Phone, email, office address, and a private consultation form. Replies are personal, within one business day.",
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="A direct line."
         emphasis="A personal reply."
-        lede="Replies are personal, within one business day, by Luke or his private team. Phone, email, or the form below — pick whichever suits."
+        lede="Replies are personal, within one business day, by Luke or his private team. Phone, email, or the form below, pick whichever suits."
         image={brandImages.nelsonLandscape}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />

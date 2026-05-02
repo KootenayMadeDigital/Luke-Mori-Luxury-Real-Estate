@@ -72,11 +72,11 @@ export function ConceptFooter() {
           </h2>
           <p className="m-0 mb-9 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
             A speculative concept demonstrating a higher standard of luxury real estate web
-            experience for the Nelson and Kootenay Lake market. Not affiliated with — or endorsed
-            by — Luke Mori. Property descriptions, photography, and statistics shown are sourced
+            experience for the Nelson and Kootenay Lake market. Not affiliated with, or endorsed
+            by, Luke Mori. Property descriptions, photography, and statistics shown are sourced
             from publicly available material on lukemori.com to demonstrate concept fidelity.
           </p>
-          <Button href="mailto:hello@kootenaymade.example" variant="primary">
+          <Button href="mailto:hello@kootenaymade.ca" variant="primary">
             Build a private luxury experience for your brand
           </Button>
         </Reveal>
@@ -86,7 +86,7 @@ export function ConceptFooter() {
           <div>
             <Brand href="/" />
             <p className="mt-6 max-w-[320px] text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-              Nelson &amp; Kootenay Lake luxury real estate — represented with discretion, taste,
+              Nelson &amp; Kootenay Lake luxury real estate, represented with discretion, taste,
               and local intelligence. {contact.brokerage}.
             </p>
             <div className="mt-7 space-y-2.5 text-[13px] tracking-[0.02em]">
@@ -145,7 +145,7 @@ export function ConceptFooter() {
 
         <div className="mt-16 border-t border-[var(--color-line)] pt-7 pb-8">
           <div className="flex flex-col gap-2 text-[11px] tracking-[0.05em] text-[var(--color-text-dim)] md:flex-row md:items-center md:justify-between md:gap-6">
-            <span>© 2026 Concept · Kootenay Made Digital — Speculative work, not a live site</span>
+            <span>© 2026 Concept · Kootenay Made Digital, Speculative work, not a live site</span>
             <span>
               Listings, testimonials, and photography sourced from lukemori.com under fair-comment concept use.
             </span>

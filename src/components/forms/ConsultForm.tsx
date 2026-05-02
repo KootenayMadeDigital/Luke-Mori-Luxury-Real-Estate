@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-/* Concept-only form. No external service is called — submitting reveals an
+/* Concept-only form. No external service is called, submitting reveals an
    inline confirmation. The structure is real so it can be wired up later. */
 
 const roles = [
@@ -115,7 +115,7 @@ export function ConsultForm() {
           </strong>
           A member of the private division will be in touch within one business day.
           <em className="mt-3 block font-serif text-[12px] italic text-[var(--color-text-dim)]">
-            (Concept demo — no information was sent.)
+            (Concept demo, no information was sent.)
           </em>
         </div>
       )}

@@ -84,7 +84,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
   const lukes = isLukesOwn(l);
   const detailRows = buildDetailRows(l);
 
-  // Three "more like this" — same location preferred, fall back to top luxury.
+  // Three "more like this", same location preferred, fall back to top luxury.
   const sameLocation = allListings
     .filter((x) => x.slug !== l.slug && x.location === l.location)
     .slice(0, 3);
@@ -251,7 +251,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               <Reveal delay={360}>
                 <p className="mt-10 border-t border-[var(--color-line)] pt-6 text-[11px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
                   <span className="text-[var(--color-bronze)]">Listed by</span>{" "}
-                  {l.listingAgent || "—"}
+                  {l.listingAgent || ","}
                   {l.listingBrokerage && (
                     <>
                       {" "}
@@ -283,7 +283,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   Inquire privately
                 </h3>
                 <p className="m-0 mb-6 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  Direct line to Luke or his private team — replies are personal, within one business day. Showings arranged with discretion.
+                  Direct line to Luke or his private team, replies are personal, within one business day. Showings arranged with discretion.
                 </p>
 
                 <div className="mb-6 space-y-3 text-[13px]">
@@ -451,7 +451,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         eyebrow="Private Showing"
         title="Some properties are best"
         emphasis="experienced in person."
-        body="Showings are scheduled directly with Luke or his private team. Tell us when you're in town — we'll arrange the visit, the context, and the conversation."
+        body="Showings are scheduled directly with Luke or his private team. Tell us when you're in town, we'll arrange the visit, the context, and the conversation."
       />
     </PageLayout>
   );

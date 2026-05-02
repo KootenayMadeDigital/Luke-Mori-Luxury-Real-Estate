@@ -13,7 +13,7 @@ import { nelsonAreas, brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "About Nelson · The Kootenay Region",
   description:
-    "About Nelson, B.C. and the Kootenay Lake region — neighbourhoods, lifestyle, and the local intelligence behind every property we represent.",
+    "About Nelson, B.C. and the Kootenay Lake region, neighbourhoods, lifestyle, and the local intelligence behind every property we represent.",
 };
 
 export default function NelsonHubPage() {
@@ -23,7 +23,7 @@ export default function NelsonHubPage() {
         eyebrow="About Nelson"
         title="The Queen City"
         emphasis="and the Kootenays."
-        lede="Five corridors of considered real estate — from heritage downtown Nelson to the deep-water privacy of Balfour. Each with its own character, its own price points, and its own kind of buyer."
+        lede="Five corridors of considered real estate, from heritage downtown Nelson to the deep-water privacy of Balfour. Each with its own character, its own price points, and its own kind of buyer."
         image={brandImages.nelsonLandscape}
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
         meta={[
@@ -46,7 +46,7 @@ export default function NelsonHubPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Pick a region — each page covers the local market dynamics, the lifestyle, and
+              Pick a region, each page covers the local market dynamics, the lifestyle, and
               the kind of property worth looking for there.
             </SectionLede>
           </Reveal>
@@ -103,7 +103,7 @@ export default function NelsonHubPage() {
         eyebrow="Local Intelligence"
         title="Don't know which corridor"
         emphasis="suits you?"
-        body="A 30-minute conversation usually narrows it to two. From there, we tour the third — to confirm what the first two told us. Local intelligence is the practice."
+        body="A 30-minute conversation usually narrows it to two. From there, we tour the third, to confirm what the first two told us. Local intelligence is the practice."
       />
     </PageLayout>
   );

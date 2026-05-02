@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { testimonials } from "@/lib/data";
 
-/* Quiet client voice — three editorial pull-quotes, attributed without
+/* Quiet client voice, three editorial pull-quotes, attributed without
    names so it reads as discreet rather than testimonial-chasing. */
 
 export function Testimonials() {

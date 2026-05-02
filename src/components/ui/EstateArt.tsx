@@ -1,4 +1,4 @@
-/* Per-estate editorial SVG artwork — four bespoke compositions. */
+/* Per-estate editorial SVG artwork, four bespoke compositions. */
 
 import type { Estate } from "@/lib/data";
 
@@ -131,7 +131,7 @@ function Heritage() {
       <rect x="180" y="220" width="440" height="220" fill="#0e0a06" opacity="0.92" />
       {/* Roof line */}
       <polygon points="170,220 400,170 630,220" fill="#070504" />
-      {/* Windows — three rows */}
+      {/* Windows, three rows */}
       <rect x="220" y="240" width="60" height="80" fill="#d4b896" opacity="0.24" />
       <rect x="310" y="240" width="60" height="80" fill="#d4b896" opacity="0.18" />
       <rect x="400" y="240" width="80" height="80" fill="#d4b896" opacity="0.30" />

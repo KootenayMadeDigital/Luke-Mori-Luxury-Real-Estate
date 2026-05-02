@@ -46,7 +46,7 @@ export function PrivateAccess() {
             </em>
           </SectionHeading>
           <SectionLede align="center" className="mb-12">
-            A private inventory of unlisted estates — represented for owners who require complete discretion.
+            A private inventory of unlisted estates, represented for owners who require complete discretion.
             Access is granted on an introductory basis, by request.
           </SectionLede>
           <Button href="#consult" variant="primary" size="lg">

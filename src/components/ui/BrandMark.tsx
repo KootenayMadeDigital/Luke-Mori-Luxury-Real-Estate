@@ -4,13 +4,30 @@ type Props = {
 
 export function BrandMark({ className = "" }: Props) {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden className={className}>
+    <svg viewBox="0 0 36 36" aria-hidden className={className}>
       <path
-        d="M3 25 L12 11 L18 18 L22 14 L29 25 Z"
+        d="M4.5 24.5 L12.2 15.6 L17.1 21.1 L21.8 16.7 L31.5 24.5"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.1"
+        strokeWidth="1.05"
+        strokeLinecap="round"
         strokeLinejoin="round"
+      />
+      <path
+        d="M7.2 27.2 C12.7 25.5 17.8 25.5 23.1 27.2 C25.7 28 28 28 30.8 27.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+        opacity="0.72"
+      />
+      <path
+        d="M18 8.2 V22.8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="0.65"
+        strokeLinecap="round"
+        opacity="0.42"
       />
     </svg>
   );

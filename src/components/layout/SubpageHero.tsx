@@ -14,7 +14,7 @@ type Props = {
   meta?: { label: string; value: string }[];
 };
 
-/* The standard subpage hero — eyebrow, large serif title (with optional
+/* The standard subpage hero, eyebrow, large serif title (with optional
    italic emphasis line), short lede, optional background image with
    heavy darken, optional breadcrumbs, optional meta hairline. */
 

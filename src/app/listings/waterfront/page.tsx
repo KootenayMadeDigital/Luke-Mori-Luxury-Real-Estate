@@ -10,7 +10,7 @@ import { brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Waterfront Real Estate · Nelson & Kootenay Lake",
   description:
-    "Lakefront, riverfront, and beach-front real estate in the Nelson region — Kootenay Lake's West Arm, the Highway 3A North Shore corridor, and the Slocan and Kootenay rivers.",
+    "Lakefront, riverfront, and beach-front real estate in the Nelson region, Kootenay Lake's West Arm, the Highway 3A North Shore corridor, and the Slocan and Kootenay rivers.",
 };
 
 export default function WaterfrontPage() {
@@ -22,7 +22,7 @@ export default function WaterfrontPage() {
         eyebrow={`Waterfront · ${wf.length.toLocaleString()} Properties`}
         title="Lake. River."
         emphasis="Direct access."
-        lede="Every active waterfront property in the catalog — Kootenay Lake's West Arm, the Highway 3A North Shore corridor, the Slocan and Kootenay rivers. Direct frontage, dock potential, and the kind of view people spend a lifetime chasing."
+        lede="Every active waterfront property in the catalog, Kootenay Lake's West Arm, the Highway 3A North Shore corridor, the Slocan and Kootenay rivers. Direct frontage, dock potential, and the kind of view people spend a lifetime chasing."
         image={brandImages.kayaking}
         crumbs={[
           { label: "Home", href: "/" },
@@ -47,7 +47,7 @@ export default function WaterfrontPage() {
         eyebrow="Waterfront Inquiry"
         title="Waterfront rarely lasts."
         emphasis="Move first."
-        body="Most of the region's best waterfront moves quietly. Tell us what you're after — water orientation, depth, dock, year-round access — and we'll surface it before it lists publicly."
+        body="Most of the region's best waterfront moves quietly. Tell us what you're after, water orientation, depth, dock, year-round access, and we'll surface it before it lists publicly."
       />
     </PageLayout>
   );

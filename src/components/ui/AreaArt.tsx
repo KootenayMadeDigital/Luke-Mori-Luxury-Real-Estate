@@ -1,4 +1,4 @@
-/* Per-area editorial SVG artwork — six bespoke compositions, no images. */
+/* Per-area editorial SVG artwork, six bespoke compositions, no images. */
 
 import type { Area } from "@/lib/data";
 

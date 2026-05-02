@@ -18,12 +18,12 @@ const considerations = [
   {
     k: "I.",
     title: "Foreign-Buyer Regulation",
-    body: "Canadian federal restrictions on residential property purchases by non-Canadians have evolved significantly since 2023. Nelson and the Kootenays sit largely outside the most restricted urban zones — but every transaction is reviewed against current rules before we proceed.",
+    body: "Canadian federal restrictions on residential property purchases by non-Canadians have evolved significantly since 2023. Nelson and the Kootenays sit largely outside the most restricted urban zones, but every transaction is reviewed against current rules before we proceed.",
   },
   {
     k: "II.",
     title: "Provincial & Local Tax",
-    body: "B.C. Property Transfer Tax, Speculation & Vacancy Tax, and Foreign-Buyer Tax thresholds. The Kootenay region falls outside the Foreign-Buyer Tax zone — a meaningful advantage relative to Vancouver, Victoria, and the Lower Mainland.",
+    body: "B.C. Property Transfer Tax, Speculation & Vacancy Tax, and Foreign-Buyer Tax thresholds. The Kootenay region falls outside the Foreign-Buyer Tax zone, a meaningful advantage relative to Vancouver, Victoria, and the Lower Mainland.",
   },
   {
     k: "III.",
@@ -33,17 +33,17 @@ const considerations = [
   {
     k: "IV.",
     title: "Currency & Wire Strategy",
-    body: "USD/CAD movement of 3–5% can move the needle on a $2M property by $60–$100K. We coordinate with your treasury or FX advisor to time the conversion against your closing — not the listing date.",
+    body: "USD/CAD movement of 3-5% can move the needle on a $2M property by $60-$100K. We coordinate with your treasury or FX advisor to time the conversion against your closing, not the listing date.",
   },
   {
     k: "V.",
     title: "Property Management",
-    body: "For second-home and lock-and-leave buyers — vetted local property managers, winterisation specialists, security, and the kind of caretaker relationships that make absentee ownership work.",
+    body: "For second-home and lock-and-leave buyers, vetted local property managers, winterisation specialists, security, and the kind of caretaker relationships that make absentee ownership work.",
   },
 ];
 
 const origins = [
-  { region: "United States", note: "Pacific Northwest in particular — Seattle, Portland, the Bay Area." },
+  { region: "United States", note: "Pacific Northwest in particular, Seattle, Portland, the Bay Area." },
   { region: "United Kingdom", note: "London-based principals seeking a North American second home." },
   { region: "Australia & Hong Kong", note: "Long-haul second-home and family relocation." },
   { region: "Eastern Europe", note: "Investment-grade waterfront and acreage." },
@@ -139,7 +139,7 @@ export default function InternationalBuyersPage() {
         eyebrow="International Inquiry"
         title="Buying from afar?"
         emphasis="Start with a conversation."
-        body="A 30-minute call walks through the regulatory landscape, the local market, and what's actually possible from where you're sitting. No commitment, no pressure — just clarity."
+        body="A 30-minute call walks through the regulatory landscape, the local market, and what's actually possible from where you're sitting. No commitment, no pressure, just clarity."
       />
     </PageLayout>
   );

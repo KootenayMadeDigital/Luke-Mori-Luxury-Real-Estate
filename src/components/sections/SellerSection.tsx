@@ -31,7 +31,7 @@ export function SellerSection() {
             <Reveal delay={240}>
               <SectionLede className="mb-10">
                 Most agents post a property. We launch one. Cinematic film, editorial copy, a dedicated
-                property site, and a controlled, qualified buyer rollout — built around your discretion,
+                property site, and a controlled, qualified buyer rollout, built around your discretion,
                 your timeline, and the price your home actually deserves.
               </SectionLede>
             </Reveal>

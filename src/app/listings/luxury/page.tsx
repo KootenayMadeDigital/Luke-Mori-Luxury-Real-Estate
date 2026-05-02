@@ -10,7 +10,7 @@ import { brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Luxury Real Estate · Nelson & Kootenay Lake",
   description:
-    "Luxury real estate in Nelson, Kootenay Lake, and the broader Kootenay region — every active property listed at $1M and above. Lakefront estates, architectural view homes, and private acreage.",
+    "Luxury real estate in Nelson, Kootenay Lake, and the broader Kootenay region, every active property listed at $1M and above. Lakefront estates, architectural view homes, and private acreage.",
 };
 
 export default function LuxuryListingsPage() {
@@ -27,7 +27,7 @@ export default function LuxuryListingsPage() {
         eyebrow={`Luxury · ${luxe.length.toLocaleString()} Properties`}
         title="Nelson &amp; Kootenay Lake"
         emphasis="luxury real estate."
-        lede="The top of the regional market — every active property at $1M and above. Lakefront estates, architectural view homes, private mountain acreage, and heritage residences. Each represented with cinematic marketing and the discretion the calibre demands."
+        lede="The top of the regional market, every active property at $1M and above. Lakefront estates, architectural view homes, private mountain acreage, and heritage residences. Each represented with cinematic marketing and the discretion the calibre demands."
         image={brandImages.procterLakeHouse}
         crumbs={[
           { label: "Home", href: "/" },
@@ -52,7 +52,7 @@ export default function LuxuryListingsPage() {
         eyebrow="Private Access"
         title="The best homes"
         emphasis="don't list."
-        body="A private inventory of unlisted estates — represented for owners who require complete discretion. Access is granted on an introductory basis, by request."
+        body="A private inventory of unlisted estates, represented for owners who require complete discretion. Access is granted on an introductory basis, by request."
       />
     </PageLayout>
   );

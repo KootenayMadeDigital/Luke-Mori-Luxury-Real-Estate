@@ -15,36 +15,34 @@ type Props = {
 };
 
 const base =
-  "group inline-flex items-center justify-center gap-3 rounded-[1px] font-medium uppercase transition-[background,color,border-color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]";
+  "group inline-flex items-center justify-center rounded-full font-semibold uppercase transition-[background,color,border-color,transform,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.985]";
 
 const sizes: Record<Size, string> = {
-  md: "px-8 py-[18px] text-[11px] tracking-[0.22em]",
-  lg: "px-10 py-[22px] text-[12px] tracking-[0.22em]",
+  md: "gap-3 px-6 py-3 text-[10px] tracking-[0.2em] sm:px-7 sm:py-3.5",
+  lg: "gap-3.5 px-7 py-4 text-[11px] tracking-[0.22em] sm:px-9 sm:py-5",
 };
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[var(--color-bronze)] text-[var(--color-bg)] border border-[var(--color-bronze)] hover:bg-[var(--color-bronze-light)] hover:border-[var(--color-bronze-light)]",
+    "border border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-bg)] shadow-[0_18px_46px_-28px_rgba(212,184,150,0.9)] hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]",
   ghost:
-    "bg-transparent text-[var(--color-text)] border border-[var(--color-line-strong)] hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]",
+    "border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.025)] text-[var(--color-text)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)]",
 };
 
 function ArrowIcon() {
   return (
-    <svg
-      viewBox="0 0 16 16"
-      aria-hidden
-      className="size-[14px] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-[3px]"
-    >
-      <path
-        d="M3 8h10M9 4l4 4-4 4"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-[rgba(10,11,13,0.12)] text-current transition-[transform,background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 group-hover:-translate-y-[1px] group-hover:scale-105 group-hover:bg-[rgba(10,11,13,0.2)]">
+      <svg viewBox="0 0 16 16" aria-hidden className="size-[14px]">
+        <path
+          d="M3 8h10M9 4l4 4-4 4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
   );
 }
 
@@ -58,7 +56,8 @@ export function Button({
   children,
   className = "",
 }: Props) {
-  const cls = `${base} ${sizes[size]} ${variants[variant]} ${full ? "w-full" : ""} ${className}`;
+  const ghostClass = variant === "ghost" ? "ghost-button" : "";
+  const cls = `${base} ${sizes[size]} ${variants[variant]} ${ghostClass} ${full ? "w-full" : ""} ${className}`;
   if (href) {
     return (
       <a href={href} className={cls}>

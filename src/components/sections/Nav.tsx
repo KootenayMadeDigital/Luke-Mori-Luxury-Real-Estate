@@ -14,53 +14,61 @@ type NavGroup = {
 
 const navGroups: NavGroup[] = [
   {
-    label: "Listings",
+    label: "Advisory",
+    href: "/#concierge",
+    items: [
+      { label: "Seller Strategy", href: "/#sellers", description: "Pricing, launch sequence, qualified showings, and discretion." },
+      { label: "Private Access", href: "/#private", description: "Quiet inventory, luxury listings, and vetted introductions." },
+      { label: "Relocation Guide", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
+      { label: "KMD Concept", href: "https://kootenaymade.ca/contact", description: "For agents and brokerages evaluating a private concept build." },
+    ],
+  },
+  {
+    label: "Properties",
     href: "/listings",
     items: [
-      { label: "All Active Listings", href: "/listings", description: "The current market — curated." },
+      { label: "All Active Listings", href: "/listings", description: "The current market, carefully organized." },
       { label: "Luxury", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
       { label: "Waterfront", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },
       { label: "Recently Sold", href: "/listings/sold", description: "A discreet ledger of placements." },
     ],
   },
   {
-    label: "Buyers",
-    href: "/buyers",
-    items: [
-      { label: "Buying with Luke", href: "/buyers", description: "The five-step process — and the things between." },
-      { label: "International Buyers", href: "/buyers/international", description: "Non-Canadian principals, regulatory landscape." },
-      { label: "Relocation", href: "/buyers/relocation", description: "Vancouver, Calgary, abroad — landing soft." },
-    ],
-  },
-  {
-    label: "Sellers",
-    href: "/sellers",
-    items: [
-      { label: "Selling with Luke", href: "/sellers", description: "Cinematic film, editorial copy, controlled exposure." },
-    ],
-  },
-  {
-    label: "About Nelson",
+    label: "Places",
     href: "/nelson",
     items: [
-      { label: "Nelson", href: "/nelson/nelson", description: "The Queen City — Baker Street and the West Arm." },
-      { label: "North Shore", href: "/nelson/north-shore", description: "Highway 3A — where the lake opens." },
+      { label: "Nelson", href: "/nelson/nelson", description: "The Queen City, Baker Street, and the West Arm." },
+      { label: "North Shore", href: "/nelson/north-shore", description: "Highway 3A, where the lake opens." },
       { label: "Balfour", href: "/nelson/balfour", description: "Where the West Arm meets the main lake." },
       { label: "Blewett", href: "/nelson/blewett", description: "Country acreage, ten minutes from town." },
       { label: "Slocan Valley", href: "/nelson/slocan-valley", description: "Riverfront, heritage timber, quiet wealth." },
     ],
   },
   {
-    label: "About Luke",
+    label: "Principal",
     href: "/about",
     items: [
       { label: "About Luke", href: "/about", description: "Born and raised in Nelson. Founder, Luke Mori at Fair Realty." },
-      { label: "Awards & Testimonials", href: "/testimonials", description: "Voted Best Luxury Broker BC, 2021 & 2024." },
+      { label: "Awards & Testimonials", href: "/testimonials", description: "Voted Best Luxury Broker BC, 2021 and 2024." },
       { label: "FAQ", href: "/faq", description: "The questions worth asking before you call." },
       { label: "Contact", href: "/contact", description: "Phone, email, office. Replies are personal." },
     ],
   },
 ];
+
+function Chevron() {
+  return (
+    <svg viewBox="0 0 12 12" aria-hidden className="size-2.5 opacity-60">
+      <path
+        d="M2 4 L6 8 L10 4"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.2"
+      />
+    </svg>
+  );
+}
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -87,27 +95,26 @@ export function Nav() {
 
   return (
     <>
-      {/* Top contact bar — disappears when scrolled */}
       <div
-        className={`relative z-[105] hidden border-b border-[var(--color-line)] bg-[#07080a] transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:block ${
-          scrolled ? "max-h-0 overflow-hidden opacity-0" : "max-h-12 opacity-100"
+        className={`relative z-[105] hidden overflow-hidden bg-[#07080a] transition-[max-height,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] md:block ${
+          scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
         }`}
       >
         <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between px-5 py-2.5 sm:px-8 md:px-10 lg:px-12 xl:px-14">
-          <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-[var(--color-text-dim)]">
-            Fair Realty · 191 Baker Street, Nelson, BC
+          <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-text-dim)]">
+            Private office · {contact.office}
           </span>
           <div className="flex items-center gap-6 text-[11px] tracking-[0.16em] text-[var(--color-text-muted)]">
             <a
               href={contact.emailHref}
-              className="uppercase transition-colors hover:text-[var(--color-bronze-light)]"
+              className="uppercase transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]"
             >
               <span className="text-[var(--color-bronze)]">E</span> {contact.email}
             </a>
             <span className="h-3 w-px bg-[var(--color-line-strong)]" />
             <a
               href={contact.phoneHref}
-              className="uppercase transition-colors hover:text-[var(--color-bronze-light)]"
+              className="uppercase transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]"
             >
               <span className="text-[var(--color-bronze)]">P</span> {contact.phone}
             </a>
@@ -116,152 +123,175 @@ export function Nav() {
       </div>
 
       <header
-        className={`sticky top-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          scrolled
-            ? "border-b border-[var(--color-line)] bg-[rgba(10,11,13,0.88)] py-3 backdrop-blur-[14px] backdrop-saturate-150"
-            : "border-b border-transparent bg-[var(--color-bg)] py-4"
-        }`}
+        className="sticky top-3 z-[100] px-3 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5"
         onMouseLeave={() => setOpenGroup(null)}
       >
-        <div className="mx-auto flex w-full max-w-[1320px] items-center gap-8 px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14">
-          <Brand href="/" />
+        <div
+          className={`relative mx-auto max-w-[1320px] rounded-full border p-1.5 shadow-[0_24px_70px_-46px_rgba(0,0,0,0.95)] backdrop-blur-xl backdrop-saturate-150 transition-[border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            scrolled
+              ? "border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.78)]"
+              : "border-[rgba(212,184,150,0.14)] bg-[rgba(10,11,13,0.42)]"
+          }`}
+        >
+          <div className="relative flex min-h-[64px] items-center gap-6 rounded-full bg-[rgba(10,11,13,0.74)] px-4 sm:px-5 lg:px-6">
+            <Brand href="/" />
 
-          <nav className="ml-auto hidden lg:flex" aria-label="Primary">
-            <ul className="flex items-center gap-9">
-              {navGroups.map((group) => (
-                <li
-                  key={group.label}
-                  className="relative"
-                  onMouseEnter={() => setOpenGroup(group.label)}
-                >
-                  <Link
-                    href={group.href ?? "#"}
-                    className={`group relative flex items-center gap-1.5 py-2 text-[12px] font-medium uppercase tracking-[0.16em] transition-colors duration-200 ${
-                      openGroup === group.label
-                        ? "text-[var(--color-text)]"
-                        : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
-                    }`}
+            <nav className="ml-auto hidden lg:flex" aria-label="Primary">
+              <ul className="flex items-center gap-2">
+                {navGroups.map((group) => (
+                  <li
+                    key={group.label}
+                    className="relative"
+                    onMouseEnter={() => setOpenGroup(group.label)}
                   >
-                    {group.label}
-                    <svg viewBox="0 0 12 12" aria-hidden className="size-2.5 opacity-60">
-                      <path
-                        d="M2 4 L6 8 L10 4"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <span className="pointer-events-none absolute bottom-0 left-1/2 h-px w-0 bg-[var(--color-bronze)] transition-[width,left] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:left-0 group-hover:w-full" />
-                  </Link>
-
-                  {/* Dropdown */}
-                  <div
-                    className={`absolute left-1/2 top-full -translate-x-1/2 pt-3 transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                      openGroup === group.label
-                        ? "pointer-events-auto opacity-100"
-                        : "pointer-events-none translate-y-1 opacity-0"
-                    }`}
-                  >
-                    <div className="min-w-[320px] border border-[var(--color-line-strong)] bg-[#0e1013] p-2 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]">
-                      {group.items.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block border-l-2 border-transparent px-4 py-3 transition-[background,border-color] duration-200 hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)]"
-                          onClick={() => setOpenGroup(null)}
-                        >
-                          <div className="font-serif text-[16px] font-normal text-[var(--color-text)]">
-                            {item.label}
-                          </div>
-                          {item.description && (
-                            <div className="mt-1 text-[12px] leading-[1.5] text-[var(--color-text-muted)]">
-                              {item.description}
-                            </div>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <Link
-            href="/contact"
-            className="group ml-auto hidden shrink-0 items-center gap-2.5 rounded-[1px] border border-[var(--color-line-strong)] px-[18px] py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-[background,color,border-color] duration-200 hover:border-[var(--color-bronze)] hover:bg-[var(--color-bronze)] hover:text-[var(--color-bg)] sm:inline-flex lg:ml-6"
-          >
-            <span>Private Consultation</span>
-            <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-[3px]">
-              <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-
-          {/* Mobile burger */}
-          <button
-            type="button"
-            aria-label="Open menu"
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen(true)}
-            className="ml-auto inline-flex size-10 shrink-0 items-center justify-center border border-[var(--color-line-strong)] lg:hidden"
-          >
-            <span className="flex flex-col gap-1.5">
-              <span className="block h-px w-5 bg-[var(--color-text)]" />
-              <span className="block h-px w-5 bg-[var(--color-text)]" />
-              <span className="block h-px w-5 bg-[var(--color-text)]" />
-            </span>
-          </button>
-        </div>
-
-        <ScrollProgress />
-      </header>
-
-      {/* Mobile menu */}
-      <div
-        className={`fixed inset-0 z-[200] flex flex-col bg-[var(--color-bg)] transition-opacity duration-300 lg:hidden ${
-          mobileOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        aria-hidden={!mobileOpen}
-      >
-        <div className="flex items-center justify-between border-b border-[var(--color-line)] px-5 py-4 sm:px-8">
-          <Brand href="/" />
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={() => setMobileOpen(false)}
-            className="inline-flex size-10 items-center justify-center border border-[var(--color-line-strong)]"
-          >
-            <svg viewBox="0 0 16 16" className="size-4" aria-hidden>
-              <path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" strokeWidth="1.2" />
-            </svg>
-          </button>
-        </div>
-        <div className="flex-1 overflow-y-auto px-5 py-8 sm:px-8">
-          {navGroups.map((g) => (
-            <div key={g.label} className="border-b border-[var(--color-line)] py-6">
-              <Link
-                href={g.href ?? "#"}
-                onClick={() => setMobileOpen(false)}
-                className="block font-serif text-[28px] font-light text-[var(--color-text)]"
-              >
-                {g.label}
-              </Link>
-              <ul className="mt-3 space-y-2">
-                {g.items.map((it) => (
-                  <li key={it.href}>
                     <Link
-                      href={it.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="block py-1 text-[14px] text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-bronze-light)]"
+                      href={group.href ?? "#"}
+                      className={`group relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] transition-[background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        openGroup === group.label
+                          ? "bg-[rgba(212,184,150,0.09)] text-[var(--color-text)]"
+                          : "text-[var(--color-text-muted)] hover:bg-[rgba(212,184,150,0.06)] hover:text-[var(--color-text)]"
+                      }`}
                     >
-                      {it.label}
+                      {group.label}
+                      <Chevron />
                     </Link>
+
+                    <div
+                      className={`absolute left-1/2 top-full -translate-x-1/2 pt-4 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        openGroup === group.label
+                          ? "pointer-events-auto translate-y-0 opacity-100"
+                          : "pointer-events-none translate-y-2 opacity-0"
+                      }`}
+                    >
+                      <div className="rounded-[1.6rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.055)] p-1.5 shadow-[0_34px_82px_-44px_rgba(0,0,0,0.95)]">
+                        <div className="min-w-[344px] rounded-[calc(1.6rem-0.375rem)] bg-[#0e1013] p-2 shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
+                          {group.items.map((item) => {
+                            const external = item.href.startsWith("http");
+                            return (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                target={external ? "_blank" : undefined}
+                                rel={external ? "noreferrer" : undefined}
+                                className="block rounded-[1.1rem] px-4 py-3.5 transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:bg-[rgba(212,184,150,0.07)]"
+                                onClick={() => setOpenGroup(null)}
+                              >
+                                <div className="font-serif text-[18px] font-light leading-[1.1] text-[var(--color-text)]">
+                                  {item.label}
+                                </div>
+                                {item.description && (
+                                  <div className="mt-1.5 text-[12px] leading-[1.5] text-[var(--color-text-muted)]">
+                                    {item.description}
+                                  </div>
+                                )}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
-            </div>
-          ))}
+            </nav>
+
+            <Link
+              href="/#consult"
+              className="group ml-auto hidden shrink-0 items-center gap-3 rounded-full border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.025)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-[background,color,border-color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[1px] hover:border-[var(--color-bronze)] hover:bg-[var(--color-bronze)] hover:text-[var(--color-bg)] sm:inline-flex lg:ml-4"
+            >
+              <span>Private Consultation</span>
+              <span className="inline-flex size-7 items-center justify-center rounded-full bg-[rgba(212,184,150,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
+                <svg viewBox="0 0 16 16" aria-hidden className="size-[13px]">
+                  <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
+                </svg>
+              </span>
+            </Link>
+
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((value) => !value)}
+              className="relative ml-auto inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-line-strong)] transition-[border-color,background] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] lg:hidden"
+            >
+              <span className="relative block h-4 w-5" aria-hidden>
+                <span
+                  className={`absolute left-0 top-0 block h-px w-5 bg-[var(--color-text)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    mobileOpen ? "translate-y-[7px] rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-[7px] block h-px w-5 bg-[var(--color-text)] transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    mobileOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`absolute bottom-0 left-0 block h-px w-5 bg-[var(--color-text)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
+                  }`}
+                />
+              </span>
+            </button>
+
+            <ScrollProgress />
+          </div>
+        </div>
+      </header>
+
+      <div
+        className={`fixed inset-0 z-[95] bg-[rgba(10,11,13,0.96)] px-5 pb-8 pt-28 backdrop-blur-2xl transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-8 lg:hidden ${
+          mobileOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
+        }`}
+        aria-hidden={!mobileOpen}
+      >
+        <div className="flex h-full flex-col overflow-y-auto">
+          <div className="mb-8 rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.04)] p-5">
+            <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
+              Private Advisory
+            </p>
+            <p className="m-0 mt-3 max-w-[320px] font-serif text-[30px] font-light leading-[1.05] text-[var(--color-text)]">
+              Luxury sellers, private buyers, relocators, and concept viewers each get their own route.
+            </p>
+          </div>
+
+          <div className="grid gap-4">
+            {navGroups.map((g, groupIndex) => (
+              <div
+                key={g.label}
+                className={`rounded-[1.4rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-5 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  mobileOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                }`}
+                style={{ transitionDelay: mobileOpen ? `${120 + groupIndex * 70}ms` : "0ms" }}
+              >
+                <Link
+                  href={g.href ?? "#"}
+                  onClick={() => setMobileOpen(false)}
+                  className="block font-serif text-[30px] font-light leading-none text-[var(--color-text)]"
+                >
+                  {g.label}
+                </Link>
+                <ul className="mt-4 grid gap-2">
+                  {g.items.map((it) => {
+                    const external = it.href.startsWith("http");
+                    return (
+                      <li key={it.href}>
+                        <Link
+                          href={it.href}
+                          target={external ? "_blank" : undefined}
+                          rel={external ? "noreferrer" : undefined}
+                          onClick={() => setMobileOpen(false)}
+                          className="block rounded-full px-3 py-2 text-[13px] font-medium text-[var(--color-text-muted)] transition-[background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
+                        >
+                          {it.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+
           <div className="mt-8 space-y-3 border-t border-[var(--color-line)] pt-8 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
             <a href={contact.emailHref} className="block hover:text-[var(--color-bronze-light)]">
               <span className="text-[var(--color-bronze)]">E</span> {contact.email}

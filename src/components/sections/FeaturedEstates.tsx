@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { featuredListings, buildSpecs, isLukesOwn } from "@/lib/listings";
 
-/* Featured Estates — Luke's three highest-priced active listings.
+/* Featured Estates, Luke's three highest-priced active listings.
    Each card links to its dedicated property page. */
 
 export function FeaturedEstates() {
@@ -28,7 +28,7 @@ export function FeaturedEstates() {
             </SectionHeading>
           </div>
           <SectionLede>
-            Three properties launched with the full standard — cinematic film, editorial copy, and
+            Three properties launched with the full standard, cinematic film, editorial copy, and
             a dedicated property experience. The property as protagonist.
           </SectionLede>
         </Reveal>

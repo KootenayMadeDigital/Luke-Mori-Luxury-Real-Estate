@@ -22,7 +22,7 @@ export default function TestimonialsPage() {
         eyebrow="Awards & Testimonials"
         title="On the record."
         emphasis="On their words."
-        lede="Recognition from the industry — and the words of buyers and sellers we&apos;ve had the privilege of representing across Nelson and the Kootenay region."
+        lede="Recognition from the industry, and the words of buyers and sellers we&apos;ve had the privilege of representing across Nelson and the Kootenay region."
         image={brandImages.bakerStreet}
         crumbs={[{ label: "Home", href: "/" }, { label: "Awards & Testimonials" }]}
         meta={[
@@ -46,13 +46,13 @@ export default function TestimonialsPage() {
               </em>
             </SectionHeading>
             <SectionLede align="center" className="mb-10">
-              Awarded by the Luxury Lifestyle Awards in both 2021 and again in 2024 — the only
+              Awarded by the Luxury Lifestyle Awards in both 2021 and again in 2024, the only
               two-time recipient in the Nelson and Kootenay region.
             </SectionLede>
             <div className="relative mx-auto h-20 w-72 opacity-90">
               <Image
                 src={brandImages.awardBadge}
-                alt="Best Luxury Real Estate Broker — Luxury Lifestyle Awards"
+                alt="Best Luxury Real Estate Broker, Luxury Lifestyle Awards"
                 fill
                 sizes="288px"
                 className="object-contain"
@@ -116,7 +116,7 @@ export default function TestimonialsPage() {
         eyebrow="Add Your Voice"
         title="When the work is done well,"
         emphasis="people remember."
-        body="If you've worked with us and would like to add your voice, get in touch. Otherwise — start with a private consultation."
+        body="If you've worked with us and would like to add your voice, get in touch. Otherwise, start with a private consultation."
       />
     </PageLayout>
   );

@@ -17,15 +17,15 @@ export const metadata: Metadata = {
 const facets = [
   {
     title: "Schools",
-    body: "Public, independent, and Waldorf options across Nelson and the surrounding valley. Selkirk College for post-secondary. School District 8 covers most of the region — strong, community-rooted, with multiple French-immersion streams.",
+    body: "Public, independent, and Waldorf options across Nelson and the surrounding valley. Selkirk College for post-secondary. School District 8 covers most of the region, strong, community-rooted, with multiple French-immersion streams.",
   },
   {
     title: "Healthcare",
-    body: "Kootenay Lake Hospital in Nelson is the regional referral centre. Cranbrook (1.5 hours) and Trail (1 hour) for tertiary care. Family physician access varies — we'll be honest about waitlists and walk you through the local clinics.",
+    body: "Kootenay Lake Hospital in Nelson is the regional referral centre. Cranbrook (1.5 hours) and Trail (1 hour) for tertiary care. Family physician access varies, we'll be honest about waitlists and walk you through the local clinics.",
   },
   {
     title: "Climate",
-    body: "Continental mountain climate. Long, sunlit summers (40 °C extremes; lake-cooled). Cold, snowy winters with 12 m of powder at Whitewater. Spring and fall are short and beautiful. Dress for elevation — the lake is two hundred metres lower than Uphill.",
+    body: "Continental mountain climate. Long, sunlit summers (40 °C extremes; lake-cooled). Cold, snowy winters with 12 m of powder at Whitewater. Spring and fall are short and beautiful. Dress for elevation, the lake is two hundred metres lower than Uphill.",
   },
   {
     title: "Commute & Connectivity",
@@ -33,11 +33,11 @@ const facets = [
   },
   {
     title: "Daily Life",
-    body: "Baker Street is the cultural and social spine — independent restaurants, the Capitol Theatre, the Civic, gallery openings, and farmers' markets. Most weekends the trail or the lake takes precedence.",
+    body: "Baker Street is the cultural and social spine, independent restaurants, the Capitol Theatre, the Civic, gallery openings, and farmers' markets. Most weekends the trail or the lake takes precedence.",
   },
   {
     title: "What to Test First",
-    body: "Two trips, ideally — one in summer (lake, trail, garden energy), one in February (snow, ski, and the dark months). Nelson is loved best by people who've experienced both ends of the year.",
+    body: "Two trips, ideally, one in summer (lake, trail, garden energy), one in February (snow, ski, and the dark months). Nelson is loved best by people who've experienced both ends of the year.",
   },
 ];
 
@@ -99,7 +99,7 @@ export default function RelocationPage() {
         eyebrow="Relocation Inquiry"
         title="Two trips."
         emphasis="One conversation."
-        body="Start with a 30-minute call from wherever you are now — we'll talk through your timeline, your needs, and what's worth doing on your first scouting visit. Then we'll plan the trips."
+        body="Start with a 30-minute call from wherever you are now, we'll talk through your timeline, your needs, and what's worth doing on your first scouting visit. Then we'll plan the trips."
       />
     </PageLayout>
   );

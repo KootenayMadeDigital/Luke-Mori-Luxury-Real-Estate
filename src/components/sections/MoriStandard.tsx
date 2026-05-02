@@ -4,9 +4,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { brandImages, lukeBio } from "@/lib/data";
 
-/* The principal section — Luke's real portrait, signature, and the three
-   working principles that define the practice. */
-
 export function MoriStandard() {
   return (
     <section
@@ -22,31 +19,31 @@ export function MoriStandard() {
 
       <Container className="relative">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
-          {/* Real portrait of Luke, framed editorially */}
           <Reveal>
-            <div className="relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
-              <Image
-                src={brandImages.lukePortrait}
-                alt="Luke Mori, Principal"
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,11,13,0.85)] via-[rgba(10,11,13,0.1)] to-transparent" />
-              {/* Inset frame line */}
-              <div className="pointer-events-none absolute inset-3 border border-[rgba(212,184,150,0.2)]" />
+            <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.05)] p-1.5">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-surface)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
+                <Image
+                  src={brandImages.lukePortrait}
+                  alt="Luke Mori, Principal"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,11,13,0.88)] via-[rgba(10,11,13,0.1)] to-transparent" />
+                <div className="pointer-events-none absolute inset-4 rounded-[1.45rem] border border-[rgba(212,184,150,0.2)]" />
 
-              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                <div>
-                  <div className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                    Principal
+                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
+                  <div>
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
+                      Principal
+                    </div>
+                    <div className="mt-2 font-serif text-[26px] font-light text-[var(--color-text)]">
+                      Luke Mori
+                    </div>
                   </div>
-                  <div className="mt-2 font-serif text-[24px] font-light text-[var(--color-text)]">
-                    Luke Mori
+                  <div className="text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
+                    Nelson, B.C.
                   </div>
-                </div>
-                <div className="text-right text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
-                  Nelson, B.C.
                 </div>
               </div>
             </div>
@@ -57,19 +54,18 @@ export function MoriStandard() {
               <Eyebrow>The Mori Standard</Eyebrow>
             </Reveal>
             <Reveal delay={120}>
-              <h2 className="m-0 mb-8 mt-7 font-serif font-light leading-[1.05] tracking-[-0.01em] [font-size:clamp(36px,5vw,64px)]">
-                A different kind of
+              <h2 className="m-0 mb-8 mt-7 font-serif font-light leading-[1.02] tracking-[-0.015em] [font-size:clamp(38px,5vw,68px)]">
+                Local fluency,
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  local expert.
+                  practiced privately.
                 </em>
               </h2>
             </Reveal>
 
             <Reveal delay={240}>
-              <p className="m-0 mb-10 max-w-[600px] text-[17px] leading-[1.7] text-[var(--color-text-muted)]">
-                {lukeBio.short} The work is built on three principles that the rest of the local
-                market still hasn&apos;t caught up to.
+              <p className="m-0 mb-10 max-w-[620px] text-[17px] leading-[1.7] text-[var(--color-text-muted)]">
+                {lukeBio.short} This concept frames that authority with a more deliberate luxury operating system: quieter intake, stronger proof, and presentation worthy of the properties.
               </p>
             </Reveal>
 
@@ -85,7 +81,7 @@ export function MoriStandard() {
                     {item.k}
                   </span>
                   <div>
-                    <h4 className="m-0 mb-2 font-serif text-[22px] font-normal leading-[1.25] tracking-[-0.005em] text-[var(--color-text)]">
+                    <h4 className="m-0 mb-2 font-serif text-[22px] font-light leading-[1.25] tracking-[-0.005em] text-[var(--color-text)]">
                       {item.title}
                     </h4>
                     <p className="m-0 max-w-[540px] text-[15px] leading-[1.65] text-[var(--color-text-muted)]">
@@ -97,7 +93,7 @@ export function MoriStandard() {
             </ul>
 
             <Reveal delay={620} className="mt-12 border-t border-[var(--color-line)] pt-8">
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
                 <div className="relative h-12 w-44">
                   <Image
                     src={brandImages.signature}
@@ -111,7 +107,7 @@ export function MoriStandard() {
                   />
                 </div>
                 <span className="font-serif text-[14px] italic text-[var(--color-text-dim)]">
-                  Luke Mori — Principal, Luxury Division
+                  Luke Mori, Principal, Luxury Division
                 </span>
               </div>
             </Reveal>

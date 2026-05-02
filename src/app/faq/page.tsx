@@ -11,7 +11,7 @@ import { faqs, brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Frequently asked questions about luxury real estate representation in Nelson and the Kootenays — pricing, off-market access, international buyers, listing timelines.",
+    "Frequently asked questions about luxury real estate representation in Nelson and the Kootenays, pricing, off-market access, international buyers, listing timelines.",
 };
 
 export default function FaqPage() {
@@ -69,7 +69,7 @@ export default function FaqPage() {
         eyebrow="Ask Anything"
         title="Question not answered?"
         emphasis="We probably know the answer."
-        body="If your question isn't on the list, just ask. The first conversation is always the most useful — for both of us."
+        body="If your question isn't on the list, just ask. The first conversation is always the most useful, for both of us."
       />
     </PageLayout>
   );

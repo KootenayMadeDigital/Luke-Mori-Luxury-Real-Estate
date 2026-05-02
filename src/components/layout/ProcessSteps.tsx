@@ -12,7 +12,7 @@ type Props = {
   steps: ProcessStep[];
 };
 
-/* Reusable five-step process module — used by both /buyers and /sellers. */
+/* Reusable five-step process module, used by both /buyers and /sellers. */
 
 export function ProcessSteps({ eyebrow, title, emphasis, lede, steps }: Props) {
   return (

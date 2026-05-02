@@ -8,7 +8,7 @@ type Props = {
   showAgent?: boolean;
 };
 
-/* Listing tile — used on the listings index, the luxury / waterfront indexes,
+/* Listing tile, used on the listings index, the luxury / waterfront indexes,
    and the related-properties strip on detail pages. */
 
 export function ListingTile({ listing: l, variant = "default", showAgent = false }: Props) {

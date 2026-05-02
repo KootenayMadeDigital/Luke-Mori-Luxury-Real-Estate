@@ -19,7 +19,7 @@ export function LifestyleSection() {
             </em>
           </SectionHeading>
           <SectionLede>
-            Specs are downstream. Start with the kind of life — we&apos;ll show you the addresses that produce it.
+            Specs are downstream. Start with the kind of life, we&apos;ll show you the addresses that produce it.
           </SectionLede>
         </Reveal>
 

@@ -64,7 +64,7 @@ export function PhotoGallery({ photos, alt }: Props) {
             >
               <Image
                 src={src}
-                alt={`${alt} — frame ${i + 1}`}
+                alt={`${alt}, frame ${i + 1}`}
                 fill
                 sizes={i === 0 ? "100vw" : "(min-width: 768px) 50vw, 100vw"}
                 className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
@@ -128,7 +128,7 @@ export function PhotoGallery({ photos, alt }: Props) {
           >
             <Image
               src={photos[openIndex]}
-              alt={`${alt} — frame ${openIndex + 1}`}
+              alt={`${alt}, frame ${openIndex + 1}`}
               fill
               sizes="100vw"
               className="object-contain p-4 sm:p-8"

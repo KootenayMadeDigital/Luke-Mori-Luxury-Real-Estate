@@ -172,7 +172,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         eyebrow={`${area.name} Inquiry`}
         title={`Looking in ${area.name}?`}
         emphasis="Start here."
-        body={`Tell us what you're looking for in ${area.name} — current listings, off-market introductions, or just a conversation about whether this corridor fits the life you have in mind.`}
+        body={`Tell us what you're looking for in ${area.name}, current listings, off-market introductions, or just a conversation about whether this corridor fits the life you have in mind.`}
       />
     </PageLayout>
   );

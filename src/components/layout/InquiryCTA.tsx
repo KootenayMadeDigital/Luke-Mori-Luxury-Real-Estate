@@ -11,13 +11,13 @@ type Props = {
 };
 
 /* Reusable bottom-of-page inquiry block. Defaults are tuned for general
-   subpages — pass props to customise per page. */
+   subpages, pass props to customise per page. */
 
 export function InquiryCTA({
   eyebrow = "Private Inquiry",
   title = "Ready when you are.",
   emphasis,
-  body = "A private consultation is the start of every relationship — buyers, sellers, relocators. Replies are personal, within one business day, by Luke or his private team.",
+  body = "A private consultation is the start of every relationship, buyers, sellers, relocators. Replies are personal, within one business day, by Luke or his private team.",
 }: Props) {
   return (
     <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-28 md:py-32">

@@ -2,39 +2,47 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { credentials } from "@/lib/data";
 
-/* A discreet credentials hairline placed directly under the hero.
-   Uses Luke Mori's real public proof signals as the concept's headline ledger. */
-
 export function CredentialsStrip() {
   return (
-    <section className="border-y border-[var(--color-line)] bg-[var(--color-bg)] py-10 md:py-12">
+    <section className="bg-[var(--color-bg)] py-12 md:py-14">
       <Container>
-        <div className="grid grid-cols-2 items-center gap-y-8 md:grid-cols-[auto_1fr] md:gap-x-12">
-          <Reveal className="col-span-2 flex items-center gap-4 md:col-span-1">
-            <span className="block h-px w-10 bg-[var(--color-bronze)]" />
-            <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-              On the Record
-            </span>
-          </Reveal>
+        <Reveal>
+          <div className="rounded-[2rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.045)] p-1.5">
+            <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[#090a0c] md:grid-cols-[0.72fr_1.28fr]">
+              <div className="flex flex-col justify-between border-b border-[var(--color-line)] p-6 md:border-b-0 md:border-r md:p-8">
+                <div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--color-bronze)]">
+                    First-Viewport Proof
+                  </span>
+                  <h2 className="m-0 mt-4 max-w-[14ch] font-serif text-[31px] font-light leading-[1.02] tracking-[-0.01em] text-[var(--color-text)] md:text-[38px]">
+                    A private practice with public receipts.
+                  </h2>
+                </div>
+                <p className="m-0 mt-7 max-w-[380px] text-[13px] leading-[1.75] text-[var(--color-text-muted)]">
+                  Sales volume, award history, press visibility, and local fluency appear before the visitor has to hunt for trust.
+                </p>
+              </div>
 
-          <ul className="col-span-2 grid grid-cols-2 gap-y-6 md:col-span-1 md:grid-cols-4 md:gap-x-8">
-            {credentials.map((c, i) => (
-              <Reveal
-                key={c.label}
-                as="li"
-                delay={i * 80}
-                className="flex flex-col gap-1.5 border-l border-[var(--color-line)] pl-5 md:pl-6"
-              >
-                <span className="font-serif text-[24px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] md:text-[28px]">
-                  {c.value}
-                </span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
-                  {c.label}
-                </span>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
+              <ul className="grid grid-cols-2 md:grid-cols-4">
+                {credentials.map((c, i) => (
+                  <li
+                    key={c.label}
+                    className="border-b border-r border-[var(--color-line)] p-5 last:border-r-0 md:border-b-0 md:p-7"
+                  >
+                    <Reveal delay={i * 70}>
+                      <span className="block font-serif text-[30px] font-light leading-none tracking-[-0.01em] text-[var(--color-bronze-light)] md:text-[36px]">
+                        {c.value}
+                      </span>
+                      <span className="mt-4 block max-w-[12ch] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+                        {c.label}
+                      </span>
+                    </Reveal>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

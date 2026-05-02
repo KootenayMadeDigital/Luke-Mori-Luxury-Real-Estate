@@ -14,7 +14,7 @@ import { buyerSteps, brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Buying with Luke · Buyer Representation",
   description:
-    "Buyer representation in Nelson and Kootenay Lake luxury real estate — local intelligence, off-market access, and a five-step process built for relocating, second-home, and discerning regional buyers.",
+    "Buyer representation in Nelson and Kootenay Lake luxury real estate, local intelligence, off-market access, and a five-step process built for relocating, second-home, and discerning regional buyers.",
 };
 
 export default function BuyersPage() {
@@ -24,7 +24,7 @@ export default function BuyersPage() {
         eyebrow="For Buyers"
         title="Buying a home,"
         emphasis="quietly and well."
-        lede="In-depth local market intelligence, cutting-edge marketing technology, and unparalleled service for the Nelson and Kootenay Lake region. Whether you're relocating, buying a second home, or trading up locally — the work is the same: representation that respects your time and your discretion."
+        lede="In-depth local market intelligence, cutting-edge marketing technology, and unparalleled service for the Nelson and Kootenay Lake region. Whether you're relocating, buying a second home, or trading up locally, the work is the same: representation that respects your time and your discretion."
         image={brandImages.procterLivingRoom}
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers" }]}
         meta={[
@@ -67,7 +67,7 @@ export default function BuyersPage() {
                 href: "/buyers/international",
                 eyebrow: "International",
                 title: "Non-Canadian Principals",
-                body: "U.S., U.K., Australian, and Hong Kong buyers — regulatory landscape, foreign-buyer considerations, currency strategy, and local advisor introductions.",
+                body: "U.S., U.K., Australian, and Hong Kong buyers, regulatory landscape, foreign-buyer considerations, currency strategy, and local advisor introductions.",
               },
               {
                 href: "/buyers/relocation",
@@ -109,7 +109,7 @@ export default function BuyersPage() {
         eyebrow="Buyer Inquiry"
         title="Tell us what you want."
         emphasis="We'll show you what's there."
-        body="The first conversation is always the most important one. Whether you're three years out or three weeks — start by telling us what kind of life you want here."
+        body="The first conversation is always the most important one. Whether you're three years out or three weeks, start by telling us what kind of life you want here."
       />
     </PageLayout>
   );

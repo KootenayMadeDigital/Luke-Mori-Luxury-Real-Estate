@@ -56,7 +56,7 @@ export function ListingsBrowser({
     return () => window.clearTimeout(t);
   }, [query]);
 
-  // Filter/sort changes happen via user clicks below — those reset page inline.
+  // Filter/sort changes happen via user clicks below, those reset page inline.
 
   const filtered = useMemo(() => {
     let arr = listings;

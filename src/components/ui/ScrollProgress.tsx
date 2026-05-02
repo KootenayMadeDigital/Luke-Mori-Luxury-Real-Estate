@@ -30,7 +30,7 @@ export function ScrollProgress() {
     >
       <div
         className="h-full origin-left bg-[var(--color-bronze)]"
-        style={{ transform: `scaleX(${progress})`, transition: "transform 90ms linear" }}
+        style={{ transform: `scaleX(${progress})`, transition: "transform 140ms cubic-bezier(0.16,1,0.3,1)" }}
       />
     </div>
   );

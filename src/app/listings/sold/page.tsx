@@ -9,7 +9,7 @@ import { recentlyConcluded, brandImages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Recently Sold · Nelson Real Estate",
   description:
-    "Recently sold luxury real estate in Nelson and the Kootenays — a discreet ledger of placements. Lakefront estates, view homes, walk-to-water residences, and architectural acreage.",
+    "Recently sold luxury real estate in Nelson and the Kootenays, a discreet ledger of placements. Lakefront estates, view homes, walk-to-water residences, and architectural acreage.",
 };
 
 export default function SoldPage() {
@@ -83,7 +83,7 @@ export default function SoldPage() {
         eyebrow="Considering Selling"
         title="Your property deserves"
         emphasis="this calibre of representation."
-        body="Cinematic film, editorial photography, a controlled launch, and a real buyer network. Every property gets the same standard — regardless of price point."
+        body="Cinematic film, editorial photography, a controlled launch, and a real buyer network. Every property gets the same standard, regardless of price point."
       />
     </PageLayout>
   );

@@ -83,12 +83,12 @@ export function isLukesOwn(l: Listing): boolean {
   return /\bluke\s+mori\b/i.test(l.listingAgent);
 }
 
-/* Luxury tier — properties at $1M+ with full residential data. */
+/* Luxury tier, properties at $1M+ with full residential data. */
 export const luxuryListings: Listing[] = allListings.filter(
   (l) => (l.priceNumber ?? 0) >= 1_000_000
 );
 
-/* Waterfront — pull from neighbourhood / description / property type. */
+/* Waterfront, pull from neighbourhood / description / property type. */
 const waterfrontKeywords =
   /(waterfront|lakefront|lake\s*front|riverfront|beach\s*front|on\s+the\s+lake|kootenay\s+lake|lake\s+access|river\s+frontage|dock|moorage)/i;
 
@@ -124,30 +124,30 @@ export function sortByPhotosDesc(list: Listing[]): Listing[] {
 /* ---------------- Featured selection ---------------- */
 
 /* Curated featured-estates pulled from Luke's own active listings,
-   sorted by price desc — the top three become the home-page features. */
+   sorted by price desc, the top three become the home-page features. */
 export const featuredListings: Listing[] = sortByPriceDesc(lukesOwnListings).slice(0, 3);
 
 /* ---------------- Helpers for display ---------------- */
 
 export function formatBeds(l: Listing): string {
-  return l.beds && l.beds > 0 ? String(l.beds) : "—";
+  return l.beds && l.beds > 0 ? String(l.beds) : ",";
 }
 export function formatBaths(l: Listing): string {
-  if (!l.baths || l.baths === 0) return "—";
+  if (!l.baths || l.baths === 0) return ",";
   return Number.isInteger(l.baths) ? String(l.baths) : l.baths.toFixed(1);
 }
 export function formatSqft(l: Listing): string {
-  return l.sqft && l.sqft > 0 ? l.sqft.toLocaleString("en-US") : "—";
+  return l.sqft && l.sqft > 0 ? l.sqft.toLocaleString("en-US") : ",";
 }
 export function formatLot(l: Listing): string {
   if (l.lotAcres && l.lotAcres > 0) {
     if (l.lotAcres >= 1) return `${l.lotAcres.toLocaleString("en-US")} ac`;
     return `${l.lotAcres} ac`;
   }
-  return l.lotSize || "—";
+  return l.lotSize || ",";
 }
 export function formatYear(l: Listing): string {
-  return l.yearBuilt && l.yearBuilt > 1700 ? String(l.yearBuilt) : "—";
+  return l.yearBuilt && l.yearBuilt > 1700 ? String(l.yearBuilt) : ",";
 }
 
 /* ---------------- Spec list helper ---------------- */
