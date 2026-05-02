@@ -91,13 +91,13 @@ export default function AboutPage() {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,11,13,0.85)] via-[rgba(10,11,13,0.1)] to-transparent" />
                 <div className="pointer-events-none absolute inset-3 border border-[rgba(212,184,150,0.2)]" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.26em] text-[var(--color-bronze-light)] drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
                     Principal
                   </div>
                   <div className="mt-2 font-serif text-[26px] font-light text-[var(--color-text)]">
                     Luke Mori
                   </div>
-                  <div className="mt-1.5 font-serif text-[14px] italic text-[var(--color-text-dim)]">
+                  <div className="mt-1.5 font-serif text-[15px] font-medium italic text-[rgba(239,234,226,0.84)] drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)]">
                     {lukeBio.bornAndRaised}
                   </div>
                 </div>
@@ -118,12 +118,12 @@ export default function AboutPage() {
                 </SectionHeading>
               </Reveal>
               <Reveal delay={240}>
-                <p className="m-0 mb-8 font-serif text-[20px] italic leading-[1.5] text-[var(--color-text)]">
+                <p className="m-0 mb-8 font-serif text-[22px] font-medium italic leading-[1.55] text-[var(--color-text)]">
                   &ldquo;{lukeBio.approach}&rdquo;
                 </p>
               </Reveal>
               <Reveal delay={360}>
-                <p className="m-0 mb-12 max-w-[600px] text-[16px] leading-[1.7] text-[var(--color-text-muted)]">
+                <p className="m-0 mb-12 max-w-[600px] text-[17px] font-medium leading-[1.75] text-[var(--color-text-muted)]">
                   {lukeBio.philosophy}
                 </p>
               </Reveal>
@@ -143,7 +143,7 @@ export default function AboutPage() {
                       <h4 className="m-0 mb-2 font-serif text-[22px] font-normal leading-[1.25] tracking-[-0.005em] text-[var(--color-text)]">
                         {p.title}
                       </h4>
-                      <p className="m-0 max-w-[540px] text-[15px] leading-[1.65] text-[var(--color-text-muted)]">
+                      <p className="m-0 max-w-[540px] text-[16px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
                         {p.body}
                       </p>
                     </div>
@@ -152,21 +152,21 @@ export default function AboutPage() {
               </ul>
 
               <Reveal delay={780} className="mt-12 border-t border-[var(--color-line)] pt-8">
-                <div className="flex items-center gap-6">
-                  <div className="relative h-12 w-44">
+                <div className="flex flex-col gap-5 rounded-2xl border border-[var(--color-line)] bg-[rgba(244,239,230,0.58)] p-5 shadow-[0_18px_50px_rgba(35,55,50,0.08)] sm:flex-row sm:items-center sm:gap-6">
+                  <div className="relative h-14 w-52 shrink-0">
                     <Image
                       src={brandImages.signature}
                       alt="Luke Mori signature"
                       fill
-                      sizes="180px"
+                      sizes="210px"
                       className="object-contain object-left"
                       style={{
                         filter:
-                          "brightness(0) saturate(100%) invert(85%) sepia(15%) saturate(450%) hue-rotate(8deg) brightness(95%)",
+                          "brightness(0) saturate(100%) invert(12%) sepia(15%) saturate(914%) hue-rotate(120deg) brightness(92%) contrast(96%)",
                       }}
                     />
                   </div>
-                  <span className="font-serif text-[14px] italic text-[var(--color-text-dim)]">
+                  <span className="text-microcopy font-sans uppercase text-[var(--color-text-muted)]">
                     {lukeBio.brokerage}
                   </span>
                 </div>

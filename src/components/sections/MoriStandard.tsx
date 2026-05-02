@@ -34,14 +34,14 @@ export function MoriStandard() {
 
                 <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
                   <div>
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.26em] text-[var(--color-bronze-light)] drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
                       Principal
                     </div>
                     <div className="mt-2 font-serif text-[26px] font-light text-[var(--color-text)]">
                       Luke Mori
                     </div>
                   </div>
-                  <div className="text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
+                  <div className="text-right text-[11px] font-bold uppercase tracking-[0.18em] text-[rgba(239,234,226,0.86)] drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)]">
                     Nelson, B.C.
                   </div>
                 </div>
@@ -64,7 +64,7 @@ export function MoriStandard() {
             </Reveal>
 
             <Reveal delay={240}>
-              <p className="m-0 mb-10 max-w-[620px] text-[17px] leading-[1.7] text-[var(--color-text-muted)]">
+              <p className="m-0 mb-10 max-w-[620px] text-[18px] font-medium leading-[1.75] text-[var(--color-text-muted)]">
                 {lukeBio.short} This concept frames that authority with a more deliberate luxury operating system: quieter intake, stronger proof, and presentation worthy of the properties.
               </p>
             </Reveal>
@@ -84,7 +84,7 @@ export function MoriStandard() {
                     <h4 className="m-0 mb-2 font-serif text-[22px] font-light leading-[1.25] tracking-[-0.005em] text-[var(--color-text)]">
                       {item.title}
                     </h4>
-                    <p className="m-0 max-w-[540px] text-[15px] leading-[1.65] text-[var(--color-text-muted)]">
+                    <p className="m-0 max-w-[540px] text-[16px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
                       {item.body}
                     </p>
                   </div>
@@ -93,20 +93,20 @@ export function MoriStandard() {
             </ul>
 
             <Reveal delay={620} className="mt-12 border-t border-[var(--color-line)] pt-8">
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
-                <div className="relative h-12 w-44">
+              <div className="flex flex-col gap-5 rounded-2xl border border-[var(--color-line)] bg-[rgba(255,247,235,0.42)] p-5 shadow-[0_18px_50px_rgba(63,46,31,0.08)] sm:flex-row sm:items-center sm:gap-6">
+                <div className="relative h-14 w-52 shrink-0">
                   <Image
                     src={brandImages.signature}
                     alt="Luke Mori signature"
                     fill
-                    sizes="180px"
+                    sizes="210px"
                     className="object-contain object-left"
                     style={{
-                      filter: "brightness(0) saturate(100%) invert(85%) sepia(15%) saturate(450%) hue-rotate(8deg) brightness(95%)",
+                      filter: "brightness(0) saturate(100%) invert(14%) sepia(18%) saturate(1068%) hue-rotate(347deg) brightness(92%) contrast(94%)",
                     }}
                   />
                 </div>
-                <span className="font-serif text-[14px] italic text-[var(--color-text-dim)]">
+                <span className="text-microcopy font-sans uppercase text-[var(--color-text-muted)]">
                   Luke Mori, Principal, Luxury Division
                 </span>
               </div>
