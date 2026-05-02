@@ -44,9 +44,9 @@ export const metadata: Metadata = {
       "A premium concept homepage for Nelson and Kootenay Lake luxury real estate, designed by Kootenay Made Digital.",
   },
   icons: {
-    icon: [{ url: "/luke-mori-luxury-mark.svg", type: "image/svg+xml" }],
-    shortcut: [{ url: "/luke-mori-luxury-mark.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/luke-mori-luxury-mark.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/luke-mori-luxury-mark.webp", type: "image/webp" }],
+    shortcut: [{ url: "/luke-mori-luxury-mark.webp", type: "image/webp" }],
+    apple: [{ url: "/luke-mori-luxury-mark.webp", type: "image/webp" }],
   },
 };
 
