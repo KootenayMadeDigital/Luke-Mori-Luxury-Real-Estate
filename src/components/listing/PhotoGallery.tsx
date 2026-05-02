@@ -68,7 +68,6 @@ export function PhotoGallery({ photos, alt }: Props) {
                 fill
                 sizes={i === 0 ? "100vw" : "(min-width: 768px) 50vw, 100vw"}
                 className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-                priority={i === 0}
               />
               {i === 0 && (
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,11,13,0.5)]" />
@@ -132,7 +131,6 @@ export function PhotoGallery({ photos, alt }: Props) {
               fill
               sizes="100vw"
               className="object-contain p-4 sm:p-8"
-              priority
             />
 
             {/* Prev / Next */}

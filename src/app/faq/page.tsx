@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { Container } from "@/components/ui/Container";
@@ -8,11 +8,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { faqs, brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Frequently Asked Questions",
   description:
     "Frequently asked questions about luxury real estate representation in Nelson and the Kootenays, pricing, off-market access, international buyers, listing timelines.",
-};
+  path: "/faq",
+  image: brandImages.orangeBridge,
+});
 
 export default function FaqPage() {
   return (

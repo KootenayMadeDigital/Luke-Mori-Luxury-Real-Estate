@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { LoadingReveal } from "@/components/ui/LoadingReveal";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { IntentConcierge } from "@/components/sections/IntentConcierge";
@@ -15,16 +15,23 @@ import { LifestyleSection } from "@/components/sections/LifestyleSection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { PrivateAccess } from "@/components/sections/PrivateAccess";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
+import { TemplateRouteLedger } from "@/components/sections/TemplateRouteLedger";
 import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
+import { buildPageGraphJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Nelson & Kootenay Lake Luxury Real Estate · Concept",
-  description:
-    "Luke Mori Luxury, a concept by Kootenay Made Digital. Lakefront estates, architectural view homes, and rare Kootenay properties, represented with discretion and taste.",
-  alternates: { canonical: "/concepts/luke-mori-luxury" },
-};
+const title = "Nelson & Kootenay Lake Luxury Real Estate · Concept";
+const description =
+  "Luke Mori Luxury, a concept by Kootenay Made Digital. Lakefront estates, architectural view homes, and rare Kootenay properties, represented with discretion and taste.";
+const path = "/concepts/luke-mori-luxury";
+
+export const metadata = buildPageMetadata({
+  title,
+  description,
+  path,
+  image: "/luke-mori-luxury-logo-full.webp",
+});
 
 export default function LukeMoriLuxuryConcept() {
   return (
@@ -37,6 +44,18 @@ export default function LukeMoriLuxuryConcept() {
         Skip to content
       </a>
       <Nav />
+      <JsonLd
+        data={buildPageGraphJsonLd({
+          title,
+          description,
+          path,
+          image: "/luke-mori-luxury-logo-full.webp",
+          breadcrumbs: [
+            { name: "Home", path: "/" },
+            { name: "Luke Mori Luxury Concept", path },
+          ],
+        })}
+      />
       <main id="main">
         <Hero />
         <IntentConcierge />
@@ -58,6 +77,7 @@ export default function LukeMoriLuxuryConcept() {
           emphasis="on the mandate."
           body="The same page now serves four serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation and second-home clients, and agents or brokerages evaluating Kootenay Made Digital."
         />
+        <TemplateRouteLedger />
         <RecentlyConcluded />
         <LeadMagnet />
       </main>

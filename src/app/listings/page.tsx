@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { Container } from "@/components/ui/Container";
@@ -7,11 +7,13 @@ import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { allListings, lukesOwnListings, luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Active Listings · Nelson & Kootenay Real Estate",
   description:
     "Browse every active real estate listing across Nelson, Kootenay Lake, and the broader Kootenay region, featured estates listed by Luke Mori plus the full MLS catalog represented through his portal.",
-};
+  path: "/listings",
+  image: brandImages.procterLakeHouse,
+});
 
 export default function ListingsIndexPage() {
   const total = allListings.length;

@@ -56,10 +56,10 @@ export function ConsultForm() {
                   value={r.value}
                   checked={active}
                   onChange={() => setRole(r.value)}
-                  className="sr-only"
+                  className="peer sr-only"
                 />
                 <span
-                  className={`inline-block rounded-[1px] border px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] transition-colors duration-200 ${
+                  className={`inline-block rounded-[1px] border px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] transition-colors duration-200 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-[var(--color-bronze-light)] ${
                     active
                       ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-bg)]"
                       : "border-[var(--color-line-strong)] text-[var(--color-text-muted)] hover:border-[var(--color-bronze)] hover:text-[var(--color-text)]"

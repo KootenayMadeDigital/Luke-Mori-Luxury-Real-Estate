@@ -23,7 +23,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
     <section className="relative overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg)] pb-20 pt-32 md:pb-28 md:pt-40">
       {image && (
         <div className="absolute inset-0 z-0" aria-hidden>
-          <Image src={image} alt="" fill priority sizes="100vw" className="object-cover opacity-25" />
+          <Image src={image} alt="" fill preload sizes="100vw" className="object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)]/40 via-[var(--color-bg)]/70 to-[var(--color-bg)]" />
         </div>
       )}
@@ -46,7 +46,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
                       {c.label}
                     </a>
                   ) : (
-                    <span>{c.label}</span>
+                    <span aria-current="page">{c.label}</span>
                   )}
                   {i < crumbs.length - 1 && (
                     <span className="text-[var(--color-line-strong)]">/</span>

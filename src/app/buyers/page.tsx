@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
@@ -11,11 +11,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { buyerSteps, brandImages, lifestyleTiles } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Buying with Luke · Buyer Representation",
   description:
     "Buyer representation in Nelson and Kootenay Lake luxury real estate, local intelligence, off-market access, and a five-step process built for relocating, second-home, and discerning regional buyers.",
-};
+  path: "/buyers",
+  image: brandImages.procterLivingRoom,
+});
 
 const buyerResourceCards = [
   {

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
@@ -9,11 +9,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { testimonials, brandImages, trustPrinciples } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Awards & Testimonials · Luke Mori",
   description:
     "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards (2021 & 2024). Verbatim client testimonials from buyers and sellers across Nelson and the Kootenay region.",
-};
+  path: "/testimonials",
+  image: brandImages.awardBadge,
+});
 
 export default function TestimonialsPage() {
   return (

@@ -1,16 +1,18 @@
-import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { recentlyConcluded, brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Recently Sold · Nelson Real Estate",
   description:
     "Recently sold luxury real estate in Nelson and the Kootenays, a discreet ledger of placements. Lakefront estates, view homes, walk-to-water residences, and architectural acreage.",
-};
+  path: "/listings/sold",
+  image: brandImages.orangeBridge,
+});
 
 export default function SoldPage() {
   const total = recentlyConcluded.reduce((acc, c) => {

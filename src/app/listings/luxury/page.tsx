@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { Container } from "@/components/ui/Container";
@@ -7,11 +7,13 @@ import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Luxury Real Estate · Nelson & Kootenay Lake",
   description:
     "Luxury real estate in Nelson, Kootenay Lake, and the broader Kootenay region, every active property listed at $1M and above. Lakefront estates, architectural view homes, and private acreage.",
-};
+  path: "/listings/luxury",
+  image: brandImages.procterLakeHouse,
+});
 
 export default function LuxuryListingsPage() {
   const luxe = sortByPriceDesc(luxuryListings);

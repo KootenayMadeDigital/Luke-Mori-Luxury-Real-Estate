@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -9,11 +9,13 @@ import { ConsultForm } from "@/components/forms/ConsultForm";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
 import { contact, brandImages, privateOfficeSteps } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact · Private Consultation",
   description:
     "Direct contact for Luke Mori, Nelson and Kootenay Lake luxury real estate. Phone, email, office address, and a private consultation form. Replies are personal, within one business day.",
-};
+  path: "/contact",
+  image: brandImages.nelsonLandscape,
+});
 
 export default function ContactPage() {
   return (

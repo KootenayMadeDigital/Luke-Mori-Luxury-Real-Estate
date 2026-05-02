@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
@@ -9,11 +9,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "International Buyers · Nelson Real Estate",
   description:
     "A buyer playbook for international principals purchasing real estate in British Columbia. Foreign-buyer regulation, local advisors, currency strategy, and the realities of cross-border ownership.",
-};
+  path: "/buyers/international",
+  image: brandImages.procterLakeHouse,
+});
 
 const considerations = [
   {

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
@@ -9,11 +9,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Relocation · Moving to Nelson & the Kootenays",
   description:
     "A relocation playbook for moving to Nelson, B.C. and the Kootenay Lake region. Schools, neighbourhoods, climate, healthcare, and the local context that makes the move actually work.",
-};
+  path: "/buyers/relocation",
+  image: brandImages.bakerStreet,
+});
 
 const facets = [
   {

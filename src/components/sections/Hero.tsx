@@ -15,7 +15,7 @@ export function Hero() {
           src={brandImages.nelsonLandscape}
           alt=""
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover opacity-[0.34]"
         />

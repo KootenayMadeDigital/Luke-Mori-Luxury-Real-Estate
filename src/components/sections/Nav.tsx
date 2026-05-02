@@ -125,6 +125,12 @@ export function Nav() {
       <header
         className="sticky top-3 z-[100] px-3 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5"
         onMouseLeave={() => setOpenGroup(null)}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            setOpenGroup(null);
+            setMobileOpen(false);
+          }
+        }}
       >
         <div
           className={`relative mx-auto max-w-[1320px] rounded-full border p-1.5 shadow-[0_24px_70px_-46px_rgba(0,0,0,0.95)] backdrop-blur-xl backdrop-saturate-150 transition-[border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -146,6 +152,7 @@ export function Nav() {
                   >
                     <Link
                       href={group.href ?? "#"}
+                      onFocus={() => setOpenGroup(group.label)}
                       className={`group relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] transition-[background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         openGroup === group.label
                           ? "bg-[rgba(212,184,150,0.09)] text-[var(--color-text)]"
@@ -174,6 +181,7 @@ export function Nav() {
                                 target={external ? "_blank" : undefined}
                                 rel={external ? "noreferrer" : undefined}
                                 className="block rounded-[1.1rem] px-4 py-3.5 transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:bg-[rgba(212,184,150,0.07)]"
+                                onFocus={() => setOpenGroup(group.label)}
                                 onClick={() => setOpenGroup(null)}
                               >
                                 <div className="font-serif text-[18px] font-light leading-[1.1] text-[var(--color-text)]">
@@ -211,6 +219,7 @@ export function Nav() {
               type="button"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
               onClick={() => setMobileOpen((value) => !value)}
               className="relative ml-auto inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-line-strong)] transition-[border-color,background] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] lg:hidden"
             >
@@ -239,8 +248,11 @@ export function Nav() {
       </header>
 
       <div
+        id="mobile-navigation"
+        role="navigation"
+        aria-label="Mobile navigation"
         className={`fixed inset-0 z-[95] bg-[rgba(10,11,13,0.96)] px-5 pb-8 pt-28 backdrop-blur-2xl transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-8 lg:hidden ${
-          mobileOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
+          mobileOpen ? "pointer-events-auto visible translate-y-0 opacity-100" : "pointer-events-none invisible -translate-y-3 opacity-0"
         }`}
         aria-hidden={!mobileOpen}
       >

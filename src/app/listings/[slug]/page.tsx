@@ -9,6 +9,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { PhotoGallery } from "@/components/listing/PhotoGallery";
 import { ListingTile } from "@/components/listing/ListingTile";
 import {
@@ -23,6 +24,7 @@ import {
   type Listing,
 } from "@/lib/listings";
 import { contact } from "@/lib/data";
+import { buildListingJsonLd, buildPageMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 type EditorialFact = { label: string; value: string };
@@ -41,41 +43,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     l.description.length > 200
       ? l.description.slice(0, 197).trimEnd() + "…"
       : l.description;
-  return {
+  return buildPageMetadata({
     title: `${l.address} · ${priceTitle}${l.location || "Nelson Real Estate"}`,
     description: desc,
-    alternates: { canonical: `/listings/${l.slug}` },
-    openGraph: {
-      title: `${l.address}${l.price ? ` · ${l.price}` : ""}`,
-      description: desc,
-      images: l.heroPhoto ? [l.heroPhoto] : [],
-      type: "website",
-    },
-  };
-}
-
-function buildJsonLd(l: Listing) {
-  const specs = [];
-  if (l.beds) specs.push({ "@type": "QuantitativeValue", name: "Bedrooms", value: l.beds });
-  if (l.baths) specs.push({ "@type": "QuantitativeValue", name: "Bathrooms", value: l.baths });
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: l.address,
-    description: l.description?.slice(0, 500),
-    image: l.photos.slice(0, 5),
-    additionalProperty: specs,
-    brand: { "@type": "RealEstateAgent", name: l.listingAgent || "Luke Mori" },
-    offers: l.priceNumber
-      ? {
-          "@type": "Offer",
-          price: l.priceNumber,
-          priceCurrency: "CAD",
-          availability: "https://schema.org/InStock",
-          seller: { "@type": "RealEstateAgent", name: l.listingAgent || "Luke Mori" },
-        }
-      : undefined,
-  };
+    path: `/listings/${l.slug}`,
+    image: l.heroPhoto || undefined,
+  });
 }
 
 function joinHumanList(items: string[]): string {
@@ -195,10 +168,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
 
   return (
     <PageLayout>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(l)) }}
-      />
+      <JsonLd data={buildListingJsonLd(l)} />
 
       <section className="relative h-[88vh] min-h-[600px] overflow-hidden bg-[var(--color-bg)]">
         {l.heroPhoto && (
@@ -207,7 +177,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               src={l.heroPhoto}
               alt={l.address}
               fill
-              priority
+              preload
               sizes="100vw"
               className="object-cover"
             />
@@ -231,7 +201,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 </>
               )}
               <span className="text-[var(--color-line-strong)]">/</span>
-              <span className="truncate text-[var(--color-text-dim)]">{l.address}</span>
+              <span aria-current="page" className="truncate text-[var(--color-text-dim)]">{l.address}</span>
             </nav>
           </Reveal>
 

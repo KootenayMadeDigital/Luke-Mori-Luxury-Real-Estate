@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildBaseJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -29,19 +31,23 @@ export const metadata: Metadata = {
   authors: [{ name: "Kootenay Made Digital" }],
   creator: "Kootenay Made Digital",
   publisher: "Kootenay Made Digital",
-  robots: { index: false, follow: false, nocache: true },
+  robots: { index: false, follow: true, nocache: true },
   openGraph: {
     type: "website",
     title: "Luke Mori Luxury Concept · Nelson & Kootenay Lake Real Estate",
     description:
       "A premium concept homepage for Nelson and Kootenay Lake luxury real estate, designed by Kootenay Made Digital.",
     siteName: "Luke Mori Luxury (Concept)",
+    url: "/concepts/luke-mori-luxury",
+    locale: "en_CA",
+    images: [{ url: "/luke-mori-luxury-logo-full.webp", alt: "Luke Mori Luxury concept mark" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Luke Mori Luxury Concept · Nelson & Kootenay Lake Real Estate",
     description:
       "A premium concept homepage for Nelson and Kootenay Lake luxury real estate, designed by Kootenay Made Digital.",
+    images: ["/luke-mori-luxury-logo-full.webp"],
   },
   icons: {
     icon: [{ url: "/luke-mori-luxury-mark.webp", type: "image/webp" }],
@@ -61,7 +67,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jakarta.variable}`}>
-      <body>{children}</body>
+      <body>
+        <JsonLd data={buildBaseJsonLd()} />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ProcessSteps } from "@/components/layout/ProcessSteps";
@@ -30,11 +30,13 @@ const sellerProofStack = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Selling with Luke · Seller Representation",
   description:
     "Seller representation for Nelson and Kootenay Lake real estate, cinematic film, editorial photography, controlled exposure, and a five-step process built for the price your home actually deserves.",
-};
+  path: "/sellers",
+  image: brandImages.procterLakeHouse,
+});
 
 export default function SellersPage() {
   return (

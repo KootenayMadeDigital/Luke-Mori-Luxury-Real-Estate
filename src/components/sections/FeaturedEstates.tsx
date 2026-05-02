@@ -56,7 +56,6 @@ export function FeaturedEstates() {
                       fill
                       sizes="(min-width: 1024px) 60vw, 100vw"
                       className="object-cover transition-transform duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
-                      priority={i === 0}
                     />
                   )}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,11,13,0.5)]" />

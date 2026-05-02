@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { Container } from "@/components/ui/Container";
@@ -7,11 +7,13 @@ import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { waterfrontListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Waterfront Real Estate · Nelson & Kootenay Lake",
   description:
     "Lakefront, riverfront, and beach-front real estate in the Nelson region, Kootenay Lake's West Arm, the Highway 3A North Shore corridor, and the Slocan and Kootenay rivers.",
-};
+  path: "/listings/waterfront",
+  image: brandImages.kayaking,
+});
 
 export default function WaterfrontPage() {
   const wf = sortByPriceDesc(waterfrontListings);

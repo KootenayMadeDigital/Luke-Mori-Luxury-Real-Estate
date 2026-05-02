@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
@@ -10,11 +10,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { nelsonAreas, brandImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About Nelson · The Kootenay Region",
   description:
     "About Nelson, B.C. and the Kootenay Lake region, neighbourhoods, lifestyle, and the local intelligence behind every property we represent.",
-};
+  path: "/nelson",
+  image: brandImages.nelsonLandscape,
+});
 
 const areaFitIndex = [
   {

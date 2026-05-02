@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
@@ -67,11 +68,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const a = nelsonAreas.find((x) => x.slug === slug);
   if (!a) return { title: "Area Not Found" };
-  return {
+  return buildPageMetadata({
     title: `${a.name} · Nelson Area Guide`,
     description: a.intro,
-    openGraph: { images: [a.hero] },
-  };
+    path: `/nelson/${a.slug}`,
+    image: a.hero,
+  });
 }
 
 export default async function NelsonAreaPage({ params }: { params: Promise<Params> }) {
