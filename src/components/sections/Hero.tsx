@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[92svh] items-start overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20 lg:pb-32 lg:pt-10"
+      className="relative flex min-h-[92svh] items-start overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20 lg:pb-28 lg:pt-10"
     >
       <div className="absolute inset-0 z-0" aria-hidden>
         <Image
@@ -25,16 +25,9 @@ export function Hero() {
 
       <MountainScene />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1320px] grid-cols-1 items-end gap-14 px-5 sm:px-8 md:px-10 lg:grid-cols-[1.04fr_0.72fr] lg:px-12 xl:px-14">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1320px] grid-cols-1 items-start gap-10 px-5 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
         <div>
           <Reveal>
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.52)] px-3.5 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)] sm:mb-8">
-              <span className="inline-block size-1.5 rounded-full bg-[var(--color-bronze)]" />
-              Private Kootenay Lake Representation
-            </div>
-          </Reveal>
-
-          <Reveal delay={120}>
             <h1 className="m-0 max-w-[12.5ch] font-serif font-light leading-[0.93] tracking-[-0.025em] text-[var(--color-text)] [font-size:clamp(50px,8.6vw,132px)]">
               Luxury property,
               <br />
@@ -44,13 +37,13 @@ export function Hero() {
             </h1>
           </Reveal>
 
-          <Reveal delay={260}>
-            <p className="m-0 mt-7 max-w-[650px] font-light leading-[1.68] text-[var(--color-text-muted)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-9">
+          <Reveal delay={180}>
+            <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[var(--color-text-muted)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
               A private office for lakefront estates, architectural view homes, relocation buyers, and second-home mandates across Nelson, Kootenay Lake, and the quieter corridors money notices first.
             </p>
           </Reveal>
 
-          <Reveal delay={340}>
+          <Reveal delay={260}>
             <ul className="mt-7 grid max-w-[620px] grid-cols-3 gap-2 border-y border-[var(--color-line)] py-4 lg:hidden">
               {heroProofSignals.map((signal) => (
                 <li key={signal.label} className="min-w-0">
@@ -65,8 +58,8 @@ export function Hero() {
             </ul>
           </Reveal>
 
-          <Reveal delay={420}>
-            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
+          <Reveal delay={340}>
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
               <Button href="#sellers" variant="primary" size="lg" arrow>
                 Seller Strategy
               </Button>
@@ -76,7 +69,7 @@ export function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={560}>
+          <Reveal delay={460}>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:mt-7 sm:gap-x-6 sm:text-[11px] sm:tracking-[0.2em]">
               <a href="/buyers/relocation" className="transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]">
                 Relocation Guide
@@ -91,8 +84,8 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={360}>
-          <aside className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.055)] p-1.5 shadow-[0_34px_90px_-54px_rgba(0,0,0,0.95)]">
+        <Reveal delay={160}>
+          <aside className="hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.055)] p-1.5 shadow-[0_34px_90px_-54px_rgba(0,0,0,0.95)] lg:block lg:translate-y-2 xl:translate-y-4">
             <div className="rounded-[calc(2rem-0.375rem)] bg-[rgba(10,11,13,0.76)] p-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.07)] sm:p-6 lg:p-7">
               <div className="flex items-start justify-between gap-6 border-b border-[var(--color-line)] pb-6">
                 <div>
