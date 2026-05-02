@@ -339,6 +339,20 @@ export const brandImages = {
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dcb933c5ce9bf7b047b0d_kokanee-creek-beach.webp",
   sailboats:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dcbc6df0f35f336976444_sailboats-on-kootenay-lake.webp",
+  ainsworth:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dcc76d70f00fded6e2d86_ainsworth.webp",
+  balfourFerry:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/644c94282e553d49e931eb19_balfour-ferry.webp",
+  balfourGolf:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dcc566c5fd39678aa9ce8_balfour-golf-course.jpeg",
+  morningMountain:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c49ba6e6e26c70b04aa56_morning-mountain-biking-blewett.jpeg",
+  blewettSchool:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c482b99fdbc39f99f1ad2_blewett-elementary-school.jpeg",
+  frogPeakCafe:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c46630832a07999c1b3d4_frog-peak-cafe-slocan-valley.jpeg",
+  valhallaMountains:
+    "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c46889d38854a3709eb19_valhalla-mountains-british-columbia.jpeg",
   lukePortrait:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645d8fbc8db94236ab1c3f92_luke-mori-sitting-on-grey-couch.webp",
   lukeLeaningPortrait:
@@ -368,6 +382,8 @@ export type Area = {
   href: string;
   cta: string;
   feature?: boolean;
+  image: string;
+  imageAlt: string;
   artId: "johns" | "fairview" | "rosemont" | "northshore" | "balfour" | "kaslo";
 };
 
@@ -381,6 +397,8 @@ export const signatureAreas: Area[] = [
     href: "/listings/waterfront",
     cta: "View Waterfront",
     feature: true,
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/64586ce6a1f16d469d0f7850_922-SPROAT-DRIVE-nelson.webp",
+    imageAlt: "922 Sproat Drive in Nelson near the lakefront",
     artId: "johns",
   },
   {
@@ -391,6 +409,8 @@ export const signatureAreas: Area[] = [
     intent: "For buyers who want the daily Nelson rhythm, more view exposure, and a home that still feels connected to town.",
     href: "/nelson/nelson",
     cta: "Explore Nelson",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/64586bfb34d3540cbe512e68_1009-OBSERVATORY-STREET-nelson.webp",
+    imageAlt: "1009 Observatory Street in Nelson",
     artId: "fairview",
   },
   {
@@ -401,6 +421,8 @@ export const signatureAreas: Area[] = [
     intent: "For buyers who want quieter streets, family scale, golf proximity, and room to breathe without leaving the city.",
     href: "/nelson/nelson",
     cta: "Compare City Areas",
+    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69dfba17f69ba07cd6e87dae_10381969_1.jpeg",
+    imageAlt: "1107 Robertson Avenue in Nelson",
     artId: "rosemont",
   },
   {
@@ -412,6 +434,8 @@ export const signatureAreas: Area[] = [
     href: "/nelson/north-shore",
     cta: "Study North Shore",
     feature: true,
+    image: brandImages.westArmKootenayLake,
+    imageAlt: "West Arm of Kootenay Lake on the North Shore",
     artId: "northshore",
   },
   {
@@ -422,6 +446,8 @@ export const signatureAreas: Area[] = [
     intent: "For deep-water second homes, legacy lake holdings, and buyers who value quiet access over downtown proximity.",
     href: "/nelson/balfour",
     cta: "Study Balfour",
+    image: brandImages.balfourKootenayLake,
+    imageAlt: "Balfour and Kootenay Lake",
     artId: "balfour",
   },
   {
@@ -432,6 +458,8 @@ export const signatureAreas: Area[] = [
     intent: "For retreat buyers who want timber, river frontage, mountain quiet, and a wider radius than Nelson proper.",
     href: "/nelson/slocan-valley",
     cta: "Study Retreat Areas",
+    image: brandImages.slocanLake,
+    imageAlt: "Slocan Lake in British Columbia",
     artId: "kaslo",
   },
 ];
@@ -739,6 +767,7 @@ export type NelsonArea = {
   avgPrice: string;
   focus: string;
   hero: string;
+  scenes: { title: string; alt: string; image: string }[];
   highlights: { title: string; body: string }[];
   neighbourhoods?: { name: string; body: string }[];
 };
@@ -754,6 +783,11 @@ export const nelsonAreas: NelsonArea[] = [
     avgPrice: "$800,000",
     focus: "Heritage · Walkable · Lake & Mountain Lifestyle",
     hero: brandImages.orangeBridge,
+    scenes: [
+      { title: "Whitewater", alt: "Skiing powder at Whitewater Ski Resort near Nelson", image: brandImages.whitewater },
+      { title: "Baker Street", alt: "Baker Street in downtown Nelson BC", image: brandImages.bakerStreet },
+      { title: "Kootenay Lake", alt: "Kayaking on Kootenay Lake near Nelson BC", image: brandImages.kayaking },
+    ],
     highlights: [
       { title: "Baker Street", body: "Heritage buildings, boutique shops, and coffee houses anchor the city's downtown spine." },
       { title: "Whitewater Resort", body: "World-class skiing and snowboarding with approximately 12 metres of annual snowfall." },
@@ -777,6 +811,11 @@ export const nelsonAreas: NelsonArea[] = [
     avgPrice: "$900,000",
     focus: "Waterfront · Boating · Beach",
     hero: brandImages.westArmKootenayLake,
+    scenes: [
+      { title: "West Arm", alt: "Kayaking Kootenay Lake on the North Shore", image: brandImages.kayaking },
+      { title: "Kokanee Creek", alt: "Kokanee Creek Park beach", image: brandImages.kokaneeBeach },
+      { title: "Sailing Water", alt: "Sailboats on Kootenay Lake near Nelson", image: brandImages.sailboats },
+    ],
     highlights: [
       { title: "Kokanee Creek Provincial Park", body: "Camping, RV sites, hiking trails, sandy beach, and seasonal salmon spawning viewing." },
       { title: "West Arm Sailing", body: "Ideal conditions for sailing enthusiasts of all levels, protected water with consistent afternoon wind." },
@@ -793,6 +832,11 @@ export const nelsonAreas: NelsonArea[] = [
     avgPrice: "$1,150,000",
     focus: "Deep Water · Marina · Generational Estates",
     hero: brandImages.balfourKootenayLake,
+    scenes: [
+      { title: "Ainsworth", alt: "Ainsworth Hot Springs near Kootenay Lake", image: brandImages.ainsworth },
+      { title: "Ferry Rhythm", alt: "Balfour ferry on Kootenay Lake", image: brandImages.balfourFerry },
+      { title: "Balfour Golf", alt: "Balfour Golf Course", image: brandImages.balfourGolf },
+    ],
     highlights: [
       { title: "Kootenay Lake Ferry", body: "The world's longest free ferry connects Balfour to the East Shore, Crawford Bay, Riondel, and the Purcell Range." },
       { title: "Balfour Golf Course", body: "Eighteen holes carved between the lake and the surrounding mountains, a Kootenay institution." },
@@ -809,6 +853,11 @@ export const nelsonAreas: NelsonArea[] = [
     avgPrice: "$1,050,000",
     focus: "Acreage · Privacy · Country Living",
     hero: brandImages.taghumBeach,
+    scenes: [
+      { title: "Taghum", alt: "Taghum Beach near Nelson BC", image: brandImages.taghumBeach },
+      { title: "Morning Mountain", alt: "Morning Mountain biking near Blewett BC", image: brandImages.morningMountain },
+      { title: "Blewett School", alt: "Blewett Elementary School", image: brandImages.blewettSchool },
+    ],
     highlights: [
       { title: "Wooded Acreage", body: "Five-to-twenty-acre parcels with mature timber, pasture, and creek frontage, most never appear on the open market." },
       { title: "Family Estates", body: "Multi-generation properties, agricultural use, and the kind of land that gets passed down rather than sold." },
@@ -825,6 +874,11 @@ export const nelsonAreas: NelsonArea[] = [
     avgPrice: "$850,000",
     focus: "Riverfront · Heritage · Retreat Properties",
     hero: brandImages.slocanLake,
+    scenes: [
+      { title: "Slocan Lake", alt: "Slocan Lake in British Columbia", image: brandImages.slocanLake },
+      { title: "Frog Peak", alt: "Frog Peak Cafe in Slocan Valley", image: brandImages.frogPeakCafe },
+      { title: "Valhalla", alt: "Valhalla Mountain Range in British Columbia", image: brandImages.valhallaMountains },
+    ],
     highlights: [
       { title: "Slocan River", body: "Some of British Columbia's finest fly-fishing, and the kind of river-frontage acreage that anchors generational holdings." },
       { title: "Heritage Timber Estates", body: "Hand-built homes by Hamill Creek and other regional timber-frame masters dot the valley." },

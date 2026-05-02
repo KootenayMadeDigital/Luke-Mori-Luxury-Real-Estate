@@ -1,8 +1,6 @@
-import Image from "next/image";
-import { MountainScene } from "@/components/ui/MountainScene";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { brandImages, contact, heroProofSignals } from "@/lib/data";
+import { contact, heroProofSignals } from "@/lib/data";
 
 export function Hero() {
   return (
@@ -10,25 +8,27 @@ export function Hero() {
       id="top"
       className="relative flex min-h-[92svh] items-start overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20 lg:pb-28 lg:pt-10"
     >
-      <div className="absolute inset-0 z-0" aria-hidden>
-        <Image
-          src={brandImages.nelsonLandscape}
-          alt=""
-          fill
-          preload
-          sizes="100vw"
-          className="object-cover opacity-[0.34]"
-        />
-        <div className="absolute inset-0 bg-[rgba(10,11,13,0.62)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(212,184,150,0.17),transparent_28%),radial-gradient(circle_at_82%_36%,rgba(255,255,255,0.08),transparent_24%),linear-gradient(90deg,rgba(10,11,13,0.98)_0%,rgba(10,11,13,0.72)_46%,rgba(10,11,13,0.94)_100%)]" />
+      <div className="absolute inset-0 z-0 bg-[var(--color-bg)]" aria-hidden>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/generated/dark-lake-atmosphere.webp"
+          className="absolute inset-0 size-full object-cover opacity-[0.48] saturate-[0.82]"
+        >
+          <source src="/video/luke-mori-header.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[rgba(10,11,13,0.58)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(212,184,150,0.19),transparent_27%),radial-gradient(circle_at_82%_36%,rgba(255,255,255,0.08),transparent_24%),linear-gradient(90deg,rgba(10,11,13,0.99)_0%,rgba(10,11,13,0.84)_42%,rgba(10,11,13,0.96)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.6)_0%,rgba(10,11,13,0.18)_42%,rgba(10,11,13,0.86)_100%)]" />
       </div>
-
-      <MountainScene />
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1320px] grid-cols-1 items-start gap-10 px-5 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
         <div>
           <Reveal>
-            <h1 className="m-0 max-w-[12.5ch] font-serif font-light leading-[0.93] tracking-[-0.025em] text-[var(--color-text)] [font-size:clamp(50px,8.6vw,132px)]">
+            <h1 className="m-0 max-w-[12.5ch] font-serif font-light leading-[0.93] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(50px,8.6vw,132px)]">
               Luxury property,
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
@@ -38,7 +38,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={180}>
-            <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[var(--color-text-muted)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
+            <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
               A private office for lakefront estates, architectural view homes, relocation buyers, and second-home mandates across Nelson, Kootenay Lake, and the quieter corridors money notices first.
             </p>
           </Reveal>

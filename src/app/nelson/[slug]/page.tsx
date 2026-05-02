@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
@@ -104,6 +105,30 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
           { value: "Active", label: "Representation" },
         ]}
       />
+
+      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg)] py-8 md:py-10">
+        <Container>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {area.scenes.map((scene, index) => (
+              <Reveal key={scene.title} delay={index * 70}>
+                <figure className="group relative m-0 aspect-[16/10] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)]">
+                  <Image
+                    src={scene.image}
+                    alt={scene.alt}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.72))]" aria-hidden />
+                  <figcaption className="absolute bottom-4 left-4 right-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text)]">
+                    {scene.title}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* Highlights */}
       <section className="bg-[var(--color-bg)] py-24 md:py-28">

@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { AreaArt } from "@/components/ui/AreaArt";
 import { signatureAreas } from "@/lib/data";
 
 export function SignatureAreas() {
@@ -35,10 +35,14 @@ export function SignatureAreas() {
               }`}
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <div className="size-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]">
-                  <AreaArt artId={a.artId} />
-                </div>
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,11,13,0.6)]" />
+                <Image
+                  src={a.image}
+                  alt={a.imageAlt}
+                  fill
+                  sizes={a.feature ? "(min-width: 1024px) 66vw, (min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
+                  className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.24)_42%,rgba(10,11,13,0.72))]" />
               </div>
 
               <div className="flex flex-1 flex-col p-9 sm:p-10">
