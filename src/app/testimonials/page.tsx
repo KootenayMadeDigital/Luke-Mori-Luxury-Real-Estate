@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { testimonials, brandImages } from "@/lib/data";
+import { testimonials, brandImages, trustPrinciples } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Awards & Testimonials · Luke Mori",
@@ -63,8 +63,44 @@ export default function TestimonialsPage() {
         </Container>
       </section>
 
-      {/* Testimonials grid */}
       <section className="bg-[var(--color-bg)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
+            <div>
+              <Eyebrow>How to Read the Record</Eyebrow>
+              <SectionHeading className="mt-7">
+                Proof is not decoration.
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  It is risk control.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Awards, press, and client voice only matter when they explain how a transaction is handled. The point is a calmer decision, a cleaner process, and a result the client can trust.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
+            {trustPrinciples.map((principle, i) => (
+              <Reveal key={principle.title} delay={i * 80} className="bg-[var(--color-bg-2)] p-8 sm:p-9">
+                <span className="mb-5 block font-serif text-[20px] italic text-[var(--color-bronze)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {principle.title}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                  {principle.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Testimonials grid */}
+      <section className="border-t border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>Client Voice</Eyebrow>

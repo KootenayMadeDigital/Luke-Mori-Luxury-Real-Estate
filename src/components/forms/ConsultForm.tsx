@@ -6,10 +6,11 @@ import { useState, type FormEvent } from "react";
    inline confirmation. The structure is real so it can be wired up later. */
 
 const roles = [
-  { value: "buyer", label: "Prospective Buyer" },
-  { value: "seller", label: "Considering Selling" },
-  { value: "relocating", label: "Relocating" },
+  { value: "seller", label: "Luxury Seller" },
+  { value: "buyer", label: "Private Buyer" },
+  { value: "relocation", label: "Relocation" },
   { value: "second-home", label: "Second Home" },
+  { value: "brokerage", label: "Agent / Brokerage" },
 ];
 
 export function ConsultForm() {
@@ -29,10 +30,10 @@ export function ConsultForm() {
     >
       <div className="mb-9 border-b border-[var(--color-line)] pb-7">
         <h3 className="m-0 mb-3 font-serif text-[26px] font-normal leading-[1.2] tracking-[-0.005em]">
-          Request the Guide &amp; a Private Consultation
+          Open a Private File
         </h3>
         <p className="m-0 text-[14px] leading-[1.6] text-[var(--color-text-muted)]">
-          Replies are personal, within one business day, by Luke or his private team.
+          Seller strategy, buyer access, relocation planning, second-home ownership, or concept review. Replies are personal, within one business day.
         </p>
       </div>
 
@@ -42,7 +43,7 @@ export function ConsultForm() {
 
       <fieldset className="mb-6 border-0 p-0">
         <legend className="mb-3 block text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
-          I am a
+          File type
         </legend>
         <div className="flex flex-wrap gap-2">
           {roles.map((r) => {
@@ -82,7 +83,7 @@ export function ConsultForm() {
         <textarea
           name="notes"
           rows={3}
-          placeholder="Lakefront on the North Shore, walk-to-Baker heritage, ski property near Whitewater…"
+          placeholder="Address, timeline, privacy needs, lakefront search, walk-to-Baker heritage, ski property near Whitewater, or concept review."
           className="w-full resize-y rounded-none border-0 border-b border-[var(--color-line-strong)] bg-transparent py-3 font-sans text-[16px] font-light text-[var(--color-text)] outline-none transition-colors duration-200 focus:border-[var(--color-bronze)]"
         />
       </label>
@@ -92,7 +93,7 @@ export function ConsultForm() {
         disabled={submitted}
         className="group mt-3 inline-flex w-full items-center justify-center gap-3 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-8 py-[18px] text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-bg)] transition-[background,border-color,opacity] duration-300 hover:bg-[var(--color-bronze-light)] hover:border-[var(--color-bronze-light)] disabled:opacity-60"
       >
-        {submitted ? "Sent" : "Request the Guide"}
+        {submitted ? "File Opened" : "Open Private File"}
         {!submitted && (
           <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-[3px]">
             <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
@@ -101,8 +102,7 @@ export function ConsultForm() {
       </button>
 
       <p className="mt-5 text-center text-[12px] leading-[1.6] text-[var(--color-text-dim)]">
-        By requesting, you&apos;ll receive the guide and a personal follow-up.
-        Your inquiry is held in confidence.
+        Your inquiry is held in confidence. This concept form is ready to wire into a private CRM or email workflow.
       </p>
 
       {submitted && (
@@ -113,7 +113,7 @@ export function ConsultForm() {
           <strong className="mb-2 block font-serif text-[18px] font-normal text-[var(--color-bronze-light)]">
             Thank you.
           </strong>
-          A member of the private division will be in touch within one business day.
+          Your private file has been noted. A member of the private division would be in touch within one business day.
           <em className="mt-3 block font-serif text-[12px] italic text-[var(--color-text-dim)]">
             (Concept demo, no information was sent.)
           </em>

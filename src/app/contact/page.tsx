@@ -6,7 +6,8 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ConsultForm } from "@/components/forms/ConsultForm";
-import { contact, brandImages } from "@/lib/data";
+import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
+import { contact, brandImages, privateOfficeSteps } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact · Private Consultation",
@@ -18,12 +19,20 @@ export default function ContactPage() {
   return (
     <PageLayout>
       <SubpageHero
-        eyebrow="Contact"
-        title="A direct line."
-        emphasis="A personal reply."
-        lede="Replies are personal, within one business day, by Luke or his private team. Phone, email, or the form below, pick whichever suits."
+        eyebrow="Private Contact"
+        title="Choose the file."
+        emphasis="Keep it discreet."
+        lede="Seller strategy, private buyer access, relocation, second-home ownership, or a concept review for Kootenay Made Digital. The first reply is personal, within one business day, by Luke or his private team."
         image={brandImages.nelsonLandscape}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+      />
+
+      <PrivateInquiryPaths
+        compact
+        eyebrow="Inquiry Routing"
+        title="Start with intent,"
+        emphasis="not a blank form."
+        body="The fastest path is the honest one. Tell us whether this is a seller file, buyer search, relocation or second-home question, or a concept review for an agent or brokerage. The next step changes accordingly."
       />
 
       <section className="bg-[var(--color-bg)] py-24 md:py-28">
@@ -35,17 +44,17 @@ export default function ContactPage() {
               </Reveal>
               <Reveal delay={120}>
                 <SectionHeading className="mt-7">
-                  Three ways
+                  Direct access,
                   <br />
                   <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    to reach us.
+                    no reception maze.
                   </em>
                 </SectionHeading>
               </Reveal>
               <Reveal delay={240}>
                 <SectionLede className="mb-10">
-                  For anything urgent, the phone is fastest. For showings and detailed inquiries,
-                  email or the form to the right is best.
+                  For anything urgent, call. For an address, private access request, relocation question,
+                  or concept review, the form creates the cleanest brief.
                 </SectionLede>
               </Reveal>
 
@@ -111,6 +120,37 @@ export default function ContactPage() {
             <Reveal delay={300}>
               <ConsultForm />
             </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 max-w-[760px]">
+            <Eyebrow>What Happens Next</Eyebrow>
+            <SectionHeading className="mt-7">
+              A private reply,
+              <br />
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                then a useful step.
+              </em>
+            </SectionHeading>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
+            {privateOfficeSteps.map((step, i) => (
+              <Reveal key={step.num} delay={i * 80} className="bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-6 block font-serif text-[22px] italic tracking-[0.08em] text-[var(--color-bronze)]">
+                  {step.num}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {step.title}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                  {step.body}
+                </p>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>

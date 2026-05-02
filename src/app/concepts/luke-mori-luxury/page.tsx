@@ -9,10 +9,12 @@ import { PressStrip } from "@/components/sections/PressStrip";
 import { SignatureAreas } from "@/components/sections/SignatureAreas";
 import { FeaturedEstates } from "@/components/sections/FeaturedEstates";
 import { MoriStandard } from "@/components/sections/MoriStandard";
+import { TrustLedger } from "@/components/sections/TrustLedger";
 import { SellerSection } from "@/components/sections/SellerSection";
 import { LifestyleSection } from "@/components/sections/LifestyleSection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { PrivateAccess } from "@/components/sections/PrivateAccess";
+import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
 import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
@@ -42,12 +44,20 @@ export default function LukeMoriLuxuryConcept() {
         <PressStrip />
         <AuthorityStrip />
         <MoriStandard />
+        <TrustLedger />
         <SignatureAreas />
         <FeaturedEstates />
         <SellerSection />
         <LifestyleSection />
         <Testimonials />
         <PrivateAccess />
+        <PrivateInquiryPaths
+          id="private-inquiry"
+          eyebrow="Conversion Architecture"
+          title="The next step depends"
+          emphasis="on the mandate."
+          body="The same page now serves four serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation and second-home clients, and agents or brokerages evaluating Kootenay Made Digital."
+        />
         <RecentlyConcluded />
         <LeadMagnet />
       </main>

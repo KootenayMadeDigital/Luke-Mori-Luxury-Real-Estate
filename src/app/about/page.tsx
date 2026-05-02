@@ -8,8 +8,8 @@ import { PressStrip } from "@/components/sections/PressStrip";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { lukeBio, brandImages, contact } from "@/lib/data";
+import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
+import { lukeBio, brandImages, contact, trustProofs } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About Luke Mori · Nelson Real Estate",
@@ -36,6 +36,42 @@ export default function AboutPage() {
       />
 
       <CredentialsStrip />
+
+      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
+            <div>
+              <Eyebrow>Proof, Properly Handled</Eyebrow>
+              <SectionHeading className="mt-7">
+                Authority without
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  the brag deck.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              The record matters because it tells clients what kind of decisions Luke has already made: pricing judgement, local risk, discretion, presentation, and negotiation discipline.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-4">
+            {trustProofs.map((item, i) => (
+              <Reveal key={item.eyebrow} delay={(i % 4) * 70} className="bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
+                  {item.eyebrow}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[25px] font-light leading-[1.14] tracking-[-0.005em] text-[var(--color-text)]">
+                  {item.title}
+                </h3>
+                <p className="m-0 text-[13px] font-medium uppercase leading-[1.65] tracking-[0.16em] text-[var(--color-text-dim)]">
+                  {item.proof}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* Portrait + bio */}
       <section className="bg-[var(--color-bg)] py-24 md:py-32">

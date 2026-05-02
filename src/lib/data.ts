@@ -127,6 +127,129 @@ export const credentials: Credential[] = [
   { value: "Private", label: "Representation Model" },
 ];
 
+/* ---------- Trust architecture ---------- */
+
+export type TrustProof = {
+  eyebrow: string;
+  title: string;
+  proof: string;
+  meaning: string;
+};
+
+export const trustProofs: TrustProof[] = [
+  {
+    eyebrow: "Track Record",
+    title: "Volume that proves judgement, not noise.",
+    proof: "$169M+ career sales volume across Nelson and the Kootenays.",
+    meaning:
+      "For sellers, the useful proof is not a loud number. It is pricing discipline, offer judgement, and pattern recognition from real negotiations.",
+  },
+  {
+    eyebrow: "Recognition",
+    title: "Awarded, then kept local.",
+    proof: "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
+    meaning:
+      "Prestige matters only if it sharpens the work. The role is still local counsel: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
+  },
+  {
+    eyebrow: "Local Fluency",
+    title: "Born here means the map has memory.",
+    proof: "Born and raised in Nelson, BC, with 10+ years of Nelson market intelligence.",
+    meaning:
+      "The value is knowing which lots hold light, which roads change in winter, which owners move quietly, and which addresses deserve patience.",
+  },
+  {
+    eyebrow: "Presentation",
+    title: "Editorial marketing instead of listing noise.",
+    proof: "Cinematic film, architectural photography, dedicated property pages, and a public library of property films.",
+    meaning:
+      "High-value homes need a controlled first impression. The right buyer should understand the property before they ever book the showing.",
+  },
+];
+
+export type TrustPrinciple = { title: string; body: string };
+
+export const trustPrinciples: TrustPrinciple[] = [
+  {
+    title: "Receipts before adjectives",
+    body: "Sales volume, awards, press visibility, local tenure, and client voice are framed as context, not confetti.",
+  },
+  {
+    title: "Discretion before distribution",
+    body: "The seller's privacy, timeline, showing appetite, and exposure strategy are settled before the market is invited in.",
+  },
+  {
+    title: "Process before pressure",
+    body: "Buyers and sellers get a clear next step, a private brief, and a personal reply instead of a generic contact queue.",
+  },
+];
+
+/* ---------- Conversion architecture ---------- */
+
+export type InquiryPath = {
+  audience: string;
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
+  proof: string;
+};
+
+export const inquiryPaths: InquiryPath[] = [
+  {
+    audience: "Luxury Sellers",
+    title: "Open a private seller file.",
+    body: "Share the address, timeline, privacy needs, and the result you are trying to protect. The first reply is strategic, not canned.",
+    href: "/contact",
+    cta: "Start seller strategy",
+    proof: "$169M+ career volume, private launch framework, controlled showing protocol.",
+  },
+  {
+    audience: "Private Buyers",
+    title: "Request access beyond the feed.",
+    body: "Name the life you want, lakefront, walkable Nelson, acreage, ski rhythm, second home, or quiet relocation, then the search can narrow properly.",
+    href: "/buyers",
+    cta: "Build buyer brief",
+    proof: "Open market, private introductions, area fit, and local advisor routing.",
+  },
+  {
+    audience: "Relocation & Second Homes",
+    title: "Plan the first scouting route.",
+    body: "Schools, winter, healthcare, road rhythm, caretaker coverage, and ownership systems get mapped before a tour day becomes expensive theatre.",
+    href: "/buyers/relocation",
+    cta: "Plan relocation path",
+    proof: "Nelson, North Shore, Balfour, Blewett, Slocan Valley, and absentee ownership context.",
+  },
+  {
+    audience: "Agents & Brokerages",
+    title: "Review the concept as a sales asset.",
+    body: "For real estate teams evaluating Kootenay Made Digital, this site shows how a local operator can look sharper than national luxury templates.",
+    href: "https://kootenaymade.ca/contact",
+    cta: "Discuss a concept build",
+    proof: "Custom positioning, route-specific funnels, proof architecture, and premium property storytelling.",
+  },
+];
+
+export type PrivateOfficeStep = { num: string; title: string; body: string };
+
+export const privateOfficeSteps: PrivateOfficeStep[] = [
+  {
+    num: "01",
+    title: "Name the mandate",
+    body: "Seller strategy, private buyer access, relocation, second-home ownership, or a concept review for a real estate brand.",
+  },
+  {
+    num: "02",
+    title: "Send the useful context",
+    body: "Address, timeline, budget range, privacy needs, ideal lifestyle, or the business goal behind the inquiry.",
+  },
+  {
+    num: "03",
+    title: "Receive a personal reply",
+    body: "The next step is routed by intent, with a clear recommendation and no generic sales sequence.",
+  },
+];
+
 /* ---------- Press logos (his real coverage, with image URLs) ---------- */
 
 export type PressLogo = { name: string; src: string; alt: string };

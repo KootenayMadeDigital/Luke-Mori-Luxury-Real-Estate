@@ -11,6 +11,25 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { sellerSteps, brandImages } from "@/lib/data";
 
+const sellerProofStack = [
+  {
+    title: "Public receipts",
+    body: "$169M+ in career sales volume and 2021 plus 2024 Best Luxury Broker BC recognition give the seller a record to weigh before the first meeting.",
+  },
+  {
+    title: "Controlled exposure",
+    body: "The process starts with valuation, buyer depth, privacy requirements, and the price line that should not be crossed publicly.",
+  },
+  {
+    title: "Marketing with consequence",
+    body: "Cinematic film, architectural photography, editorial copy, room measurements, and a dedicated property page make the first impression feel intentional.",
+  },
+  {
+    title: "Negotiation discipline",
+    body: "Offers are read for price, terms, timing, conditions, and leverage. The loudest number is not always the cleanest result.",
+  },
+];
+
 export const metadata: Metadata = {
   title: "Selling with Luke · Seller Representation",
   description:
@@ -45,6 +64,42 @@ export default function SellersPage() {
 
       {/* Promises section reused from the home page */}
       <SellerSection />
+
+      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
+            <div>
+              <Eyebrow>Seller Proof</Eyebrow>
+              <SectionHeading className="mt-7">
+                Trust is built
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  before the sign goes up.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              The seller decision is not whether Luke can list the home. It is whether the launch will protect price, privacy, timing, and leverage from the first conversation through closing.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-4">
+            {sellerProofStack.map((item, i) => (
+              <Reveal key={item.title} delay={(i % 4) * 70} className="bg-[var(--color-bg-2)] p-8 sm:p-9">
+                <span className="mb-5 block font-serif text-[20px] italic text-[var(--color-bronze)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {item.title}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                  {item.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-[var(--color-bg)] py-24 md:py-28">
         <Container>
@@ -88,9 +143,9 @@ export default function SellersPage() {
 
       <InquiryCTA
         eyebrow="Seller Strategy Call"
-        title="Worth a 30-minute"
-        emphasis="conversation."
-        body="No commitment, no pressure. Walk through what you have, what you're hoping for, and what the market will actually do for it. The strategy follows from there."
+        title="Bring the address."
+        emphasis="Leave the pitch deck outside."
+        body="No commitment, no pressure. Walk through the property, privacy requirements, timeline, and the outcome you are trying to protect. The strategy follows from there."
       />
     </PageLayout>
   );

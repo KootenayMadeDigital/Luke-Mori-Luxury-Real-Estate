@@ -49,6 +49,25 @@ const buyerActions = [
   { href: "/buyers/international", label: "Ask about second-home ownership" },
 ];
 
+const buyerProofStack = [
+  {
+    title: "A human map",
+    body: "Nelson-born local intelligence helps separate pretty listings from the roads, seasons, shoreline questions, and daily routines that actually fit.",
+  },
+  {
+    title: "Private access",
+    body: "The search includes public listings, quiet introductions, and owner conversations where discretion matters more than portal volume.",
+  },
+  {
+    title: "Advisor routing",
+    body: "Lenders, lawyers, inspectors, tax counsel, property managers, and local specialists are introduced when the buyer path needs them.",
+  },
+  {
+    title: "Offer discipline",
+    body: "Every offer is framed around price, terms, conditions, timing, inspection risk, and the buyer's ability to close cleanly.",
+  },
+];
+
 export default function BuyersPage() {
   return (
     <PageLayout>
@@ -137,6 +156,42 @@ export default function BuyersPage() {
         steps={buyerSteps}
       />
 
+      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
+            <div>
+              <Eyebrow>Buyer Trust Desk</Eyebrow>
+              <SectionHeading className="mt-7">
+                The search gets safer
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  when the brief is sharper.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Private buyers need more than listings. They need a local operating map, the right advisors, clear ownership questions, and a buying process that protects time and confidentiality.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-4">
+            {buyerProofStack.map((item, i) => (
+              <Reveal key={item.title} delay={(i % 4) * 70} className="bg-[var(--color-bg-2)] p-8 sm:p-9">
+                <span className="mb-5 block font-serif text-[20px] italic text-[var(--color-bronze)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {item.title}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                  {item.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Buyer-type sub-routes */}
       <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
         <Container>
@@ -188,9 +243,9 @@ export default function BuyersPage() {
 
       <InquiryCTA
         eyebrow="Buyer Inquiry"
-        title="Tell us the life."
-        emphasis="We'll build the search."
-        body="The first conversation is always the most important one. Whether you're three years out or three weeks, start by naming the life you want here, lakefront, town, acreage, ski, second home, or a clean relocation path."
+        title="Name the life."
+        emphasis="Then the addresses."
+        body="The first conversation is always the most important one. Whether you're three years out or three weeks, start by naming the life you want here: lakefront, town, acreage, ski, second home, or a clean relocation path."
       />
     </PageLayout>
   );
