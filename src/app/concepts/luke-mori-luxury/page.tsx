@@ -40,7 +40,7 @@ export default function LukeMoriLuxuryConcept() {
       <LoadingReveal />
       <a
         href="#main"
-        className="sr-only z-[300] focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:rounded-[1px] focus:bg-[var(--color-bronze)] focus:px-5 focus:py-3 focus:text-[12px] focus:font-medium focus:uppercase focus:tracking-[0.2em] focus:text-[var(--color-bg)]"
+        className="sr-only z-[300] focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:rounded-[1px] focus:bg-[var(--color-bronze)] focus:px-5 focus:py-3 focus:text-[12px] focus:font-medium focus:uppercase focus:tracking-[0.2em] focus:text-[var(--color-button-text)]"
       >
         Skip to content
       </a>

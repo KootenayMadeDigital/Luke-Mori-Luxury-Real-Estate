@@ -21,7 +21,7 @@ export function ListingTile({ listing: l, variant = "default", showAgent = false
       href={`/listings/${l.slug}`}
       className="group flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
     >
-      <div className={`relative overflow-hidden ${compact ? "aspect-[5/4]" : "aspect-[4/3]"}`}>
+      <div className={`tone-dark relative overflow-hidden ${compact ? "aspect-[5/4]" : "aspect-[4/3]"}`}>
         {l.heroPhoto ? (
           <Image
             src={l.heroPhoto}
@@ -44,7 +44,7 @@ export function ListingTile({ listing: l, variant = "default", showAgent = false
         )}
 
         {lukes && (
-          <div className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bg)]">
+          <div className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)]">
             <svg viewBox="0 0 12 12" className="size-2.5" aria-hidden>
               <circle cx="6" cy="6" r="5" fill="currentColor" />
             </svg>

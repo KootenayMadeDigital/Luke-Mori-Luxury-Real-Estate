@@ -7,7 +7,7 @@ import { contact, trustPrinciples, trustProofs } from "@/lib/data";
 
 export function TrustLedger() {
   return (
-    <section className="relative overflow-hidden border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-32 md:py-36">
+    <section className="tone-walnut tonal-section border-y border-[var(--color-line)] py-32 md:py-36">
       <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden>
         <div className="absolute left-[-12%] top-[-18%] h-[460px] w-[460px] rounded-full bg-[rgba(212,184,150,0.08)] blur-[130px]" />
         <div className="absolute bottom-[-20%] right-[-14%] h-[560px] w-[560px] rounded-full bg-[rgba(255,255,255,0.035)] blur-[150px]" />

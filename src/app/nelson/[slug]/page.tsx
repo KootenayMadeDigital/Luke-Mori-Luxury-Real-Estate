@@ -106,7 +106,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         ]}
       />
 
-      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg)] py-8 md:py-10">
+      <section className="tone-office tonal-section border-b border-[var(--color-line)] py-8 md:py-10">
         <Container>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {area.scenes.map((scene, index) => (
@@ -131,7 +131,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
       </section>
 
       {/* Highlights */}
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>The Local Lay of the Land</Eyebrow>
@@ -159,7 +159,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         </Container>
       </section>
 
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
             <div>
@@ -195,7 +195,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
           </div>
 
           <Reveal delay={220} className="mt-10 flex flex-wrap justify-center gap-3">
-            <Link href={fitBrief.listingHref} className="rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bg)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]">
+            <Link href={fitBrief.listingHref} className="rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]">
               {fitBrief.listingCta}
             </Link>
             <Link href="/nelson" className="rounded-full border border-[var(--color-line-strong)] px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
@@ -210,7 +210,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
 
       {/* Neighbourhoods (only on Nelson page) */}
       {area.neighbourhoods && area.neighbourhoods.length > 0 && (
-        <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+        <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
           <Container>
             <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[1fr_1fr] md:items-end">
               <div>
@@ -253,7 +253,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
       )}
 
       {/* Other areas */}
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-12">
             <Eyebrow>Also Worth Considering</Eyebrow>

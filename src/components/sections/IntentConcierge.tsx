@@ -4,7 +4,7 @@ import { visitorIntents } from "@/lib/data";
 
 function ConciergeArrow() {
   return (
-    <span className="ml-auto inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-[rgba(212,184,150,0.1)] text-[var(--color-bronze-light)] transition-[transform,background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 group-hover:-translate-y-[1px] group-hover:bg-[var(--color-bronze)] group-hover:text-[var(--color-bg)]">
+    <span className="ml-auto inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-[rgba(212,184,150,0.1)] text-[var(--color-bronze-light)] transition-[transform,background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 group-hover:-translate-y-[1px] group-hover:bg-[var(--color-bronze)] group-hover:text-[var(--color-button-text)]">
       <svg viewBox="0 0 16 16" aria-hidden className="size-3.5">
         <path
           d="M3 8h10M9 4l4 4-4 4"
@@ -24,12 +24,12 @@ export function IntentConcierge() {
     <section
       id="concierge"
       aria-labelledby="concierge-title"
-      className="relative z-20 bg-[var(--color-bg)] pb-20 md:pb-28"
+      className="tone-office tonal-section relative z-20 pb-20 md:pb-28"
     >
       <Container>
         <Reveal className="-mt-12 md:-mt-16">
-          <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.055)] p-1.5 shadow-[0_32px_90px_-52px_rgba(176,138,91,0.75)]">
-            <div className="relative overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[linear-gradient(135deg,rgba(19,21,23,0.98),rgba(10,11,13,0.96)_55%,rgba(27,24,19,0.94))] p-5 sm:p-7 lg:p-8">
+          <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.07)] p-1.5 shadow-[0_32px_90px_-52px_rgba(176,138,91,0.75)]">
+            <div className="relative overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[linear-gradient(135deg,var(--color-surface),var(--color-bg)_58%,var(--color-bg-2))] p-5 sm:p-7 lg:p-8">
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 opacity-[0.16]"
@@ -40,7 +40,7 @@ export function IntentConcierge() {
               />
 
               <div className="relative grid grid-cols-1 gap-7 lg:grid-cols-[0.72fr_1.28fr] lg:gap-8">
-                <div className="flex flex-col justify-between rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(10,11,13,0.48)] p-6 sm:p-8">
+                <div className="flex flex-col justify-between rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(10,11,13,0.30)] p-6 sm:p-8">
                   <div>
                     <div className="mb-5 inline-flex rounded-full border border-[var(--color-line-strong)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
                       Private Concierge

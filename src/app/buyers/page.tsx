@@ -88,7 +88,7 @@ export default function BuyersPage() {
         ]}
       />
 
-      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-lake tonal-section border-b border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
             <div>
@@ -158,7 +158,7 @@ export default function BuyersPage() {
         steps={buyerSteps}
       />
 
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
@@ -195,7 +195,7 @@ export default function BuyersPage() {
       </section>
 
       {/* Buyer-type sub-routes */}
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 max-w-[760px]">
             <Eyebrow>Buyer Resources</Eyebrow>

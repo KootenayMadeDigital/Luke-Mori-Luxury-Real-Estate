@@ -7,7 +7,7 @@ import { signatureAreas } from "@/lib/data";
 
 export function SignatureAreas() {
   return (
-    <section id="areas" className="bg-[var(--color-bg)] py-32 md:py-36">
+    <section id="areas" className="tone-lake tonal-section py-32 md:py-36">
       <Container>
         <Reveal className="mb-20 max-w-[760px]">
           <Eyebrow>Signature Areas</Eyebrow>

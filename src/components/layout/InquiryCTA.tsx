@@ -20,7 +20,7 @@ export function InquiryCTA({
   body = "A private consultation is the start of every relationship, buyers, sellers, relocators. Replies are personal, within one business day, by Luke or his private team.",
 }: Props) {
   return (
-    <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-28 md:py-32">
+    <section className="tone-dark tonal-section border-y border-[var(--color-line)] py-28 md:py-32">
       <Container>
         <Reveal className="mx-auto max-w-[760px] text-center">
           <div className="mb-7 inline-flex items-center justify-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">

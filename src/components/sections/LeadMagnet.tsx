@@ -15,7 +15,7 @@ export function LeadMagnet() {
   return (
     <section
       id="consult"
-      className="border-t border-[var(--color-line)] bg-[var(--color-bg)] py-32 md:py-36"
+      className="tone-dark tonal-section border-t border-[var(--color-line)] py-32 md:py-36"
     >
       <Container>
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">

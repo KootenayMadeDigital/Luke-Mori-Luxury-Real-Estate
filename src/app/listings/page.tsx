@@ -37,7 +37,7 @@ export default function ListingsIndexPage() {
         ]}
       />
 
-      <section className="bg-[var(--color-bg)] pb-24 pt-10 md:pt-12">
+      <section className="tone-ivory tonal-section pb-24 pt-10 md:pt-12">
         <Container>
           <ListingsBrowser listings={sortByPriceDesc(allListings)} />
         </Container>

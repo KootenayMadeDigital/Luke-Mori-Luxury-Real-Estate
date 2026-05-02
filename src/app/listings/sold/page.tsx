@@ -42,7 +42,7 @@ export default function SoldPage() {
         ]}
       />
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <Reveal as="ul" className="border-t border-[var(--color-line)]">
             {recentlyConcluded.map((c, i) => (

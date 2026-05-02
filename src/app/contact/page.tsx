@@ -37,7 +37,7 @@ export default function ContactPage() {
         body="The fastest path is the honest one. Tell us whether this is a seller file, buyer search, relocation or second-home question, or a concept review for an agent or brokerage. The next step changes accordingly."
       />
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
             <div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="border-t border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-lake tonal-section border-t border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 max-w-[760px]">
             <Eyebrow>What Happens Next</Eyebrow>

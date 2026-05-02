@@ -7,7 +7,7 @@ import { lifestyleTiles } from "@/lib/data";
 
 export function LifestyleSection() {
   return (
-    <section id="lifestyle" className="bg-[var(--color-bg)] py-32 md:py-36">
+    <section id="lifestyle" className="tone-lake tonal-section py-32 md:py-36">
       <Container>
         <div className="mb-20 grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_0.65fr] lg:items-end">
           <Reveal className="max-w-[760px]">

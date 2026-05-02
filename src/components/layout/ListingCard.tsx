@@ -18,7 +18,7 @@ export function ListingCard({ estate, index, variant = "default" }: Props) {
       href={`/listings/${estate.slug}`}
       className="group flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
     >
-      <div className={`relative overflow-hidden ${compact ? "aspect-[5/4]" : "aspect-[4/3]"}`}>
+      <div className={`tone-dark relative overflow-hidden ${compact ? "aspect-[5/4]" : "aspect-[4/3]"}`}>
         <Image
           src={estate.hero}
           alt={estate.title}

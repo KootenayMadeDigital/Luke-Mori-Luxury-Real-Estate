@@ -9,7 +9,7 @@ import { recentlyConcluded } from "@/lib/data";
 
 export function RecentlyConcluded() {
   return (
-    <section className="bg-[var(--color-bg)] py-32 md:py-36">
+    <section className="tone-ivory tonal-section py-32 md:py-36">
       <Container>
         <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_1fr] md:items-end">
           <div>

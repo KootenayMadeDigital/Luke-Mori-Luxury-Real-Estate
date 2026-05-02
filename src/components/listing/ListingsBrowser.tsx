@@ -105,7 +105,7 @@ export function ListingsBrowser({
   return (
     <div>
       {/* CONTROLS */}
-      <div className="sticky top-[52px] z-[80] -mx-5 mb-12 border-y border-[var(--color-line)] bg-[rgba(10,11,13,0.92)] px-5 py-5 backdrop-blur-[14px] sm:-mx-8 sm:px-8 md:top-[64px] md:-mx-10 md:px-10 lg:-mx-12 lg:px-12 xl:-mx-14 xl:px-14">
+      <div className="tone-dark sticky top-[52px] z-[80] -mx-5 mb-12 border-y border-[var(--color-line)] bg-[rgba(10,11,13,0.92)] px-5 py-5 backdrop-blur-[14px] sm:-mx-8 sm:px-8 md:top-[64px] md:-mx-10 md:px-10 lg:-mx-12 lg:px-12 xl:-mx-14 xl:px-14">
         <div className="flex flex-wrap items-center gap-3 lg:flex-nowrap lg:gap-4">
           {/* Filters */}
           <div className="flex flex-wrap items-center gap-2">
@@ -119,7 +119,7 @@ export function ListingsBrowser({
                 }}
                 className={`rounded-[1px] border px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
                   filter === f.key
-                    ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-bg)]"
+                    ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]"
                     : "border-[var(--color-line-strong)] text-[var(--color-text-muted)] hover:border-[var(--color-bronze)] hover:text-[var(--color-text)]"
                 }`}
               >
@@ -276,7 +276,7 @@ function PageNumbers({
             onClick={() => onSelect(n)}
             className={`size-10 rounded-[1px] border text-[12px] font-medium transition-colors ${
               n === page
-                ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-bg)]"
+                ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]"
                 : "border-transparent text-[var(--color-text-muted)] hover:border-[var(--color-line-strong)] hover:text-[var(--color-text)]"
             }`}
           >

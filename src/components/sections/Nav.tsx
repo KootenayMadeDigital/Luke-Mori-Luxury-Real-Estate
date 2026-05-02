@@ -205,7 +205,7 @@ export function Nav() {
 
             <Link
               href="/#consult"
-              className="group ml-auto hidden shrink-0 items-center gap-3 rounded-full border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.025)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-[background,color,border-color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[1px] hover:border-[var(--color-bronze)] hover:bg-[var(--color-bronze)] hover:text-[var(--color-bg)] sm:inline-flex lg:ml-4"
+              className="group ml-auto hidden shrink-0 items-center gap-3 rounded-full border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.025)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-[background,color,border-color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[1px] hover:border-[var(--color-bronze)] hover:bg-[var(--color-bronze)] hover:text-[var(--color-button-text)] sm:inline-flex lg:ml-4"
             >
               <span>Private Consultation</span>
               <span className="inline-flex size-7 items-center justify-center rounded-full bg-[rgba(212,184,150,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">

@@ -8,7 +8,7 @@ export function PrivateAccess() {
   return (
     <section
       id="private"
-      className="relative overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg)] py-36 md:py-44"
+      className="tone-dark tonal-section border-b border-[var(--color-line)] py-36 md:py-44"
     >
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <div

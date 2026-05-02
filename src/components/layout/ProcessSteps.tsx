@@ -10,13 +10,21 @@ type Props = {
   emphasis?: string;
   lede?: string;
   steps: ProcessStep[];
+  tone?: "ivory" | "lake" | "office" | "dark";
 };
 
 /* Reusable five-step process module, used by both /buyers and /sellers. */
 
-export function ProcessSteps({ eyebrow, title, emphasis, lede, steps }: Props) {
+const toneClass = {
+  ivory: "tone-ivory",
+  lake: "tone-lake",
+  office: "tone-office",
+  dark: "tone-dark",
+};
+
+export function ProcessSteps({ eyebrow, title, emphasis, lede, steps, tone = "ivory" }: Props) {
   return (
-    <section className="bg-[var(--color-bg)] py-28 md:py-32">
+    <section className={`${toneClass[tone]} tonal-section py-28 md:py-32`}>
       <Container>
         <Reveal className="mb-16 max-w-[760px]">
           <Eyebrow>{eyebrow}</Eyebrow>

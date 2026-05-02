@@ -39,7 +39,7 @@ export default function WaterfrontPage() {
         ]}
       />
 
-      <section className="bg-[var(--color-bg)] pb-24 pt-10 md:pt-12">
+      <section className="tone-lake tonal-section pb-24 pt-10 md:pt-12">
         <Container>
           <ListingsBrowser listings={wf} initialFilter="all" initialSort="price-desc" />
         </Container>

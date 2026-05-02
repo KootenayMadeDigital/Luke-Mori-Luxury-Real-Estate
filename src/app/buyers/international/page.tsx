@@ -93,7 +93,7 @@ export default function InternationalBuyersPage() {
         ]}
       />
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>The Five Considerations</Eyebrow>
@@ -131,7 +131,7 @@ export default function InternationalBuyersPage() {
         </Container>
       </section>
 
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-lake tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
             <div>
@@ -180,7 +180,7 @@ export default function InternationalBuyersPage() {
         </Container>
       </section>
 
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mx-auto max-w-[760px] text-center">
             <Eyebrow centered>Where Buyers Come From</Eyebrow>

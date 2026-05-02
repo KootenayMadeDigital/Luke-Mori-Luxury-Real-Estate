@@ -28,7 +28,7 @@ export default function FaqPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>The Eight</Eyebrow>

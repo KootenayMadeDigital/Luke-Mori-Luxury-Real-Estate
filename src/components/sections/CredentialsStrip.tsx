@@ -4,11 +4,11 @@ import { credentials } from "@/lib/data";
 
 export function CredentialsStrip() {
   return (
-    <section className="bg-[var(--color-bg)] py-12 md:py-14">
+    <section className="tone-office tonal-section py-12 md:py-14">
       <Container>
         <Reveal>
           <div className="rounded-[2rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.045)] p-1.5">
-            <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[#090a0c] md:grid-cols-[0.72fr_1.28fr]">
+            <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-bg)] md:grid-cols-[0.72fr_1.28fr]">
               <div className="flex flex-col justify-between border-b border-[var(--color-line)] p-6 md:border-b-0 md:border-r md:p-8">
                 <div>
                   <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--color-bronze)]">

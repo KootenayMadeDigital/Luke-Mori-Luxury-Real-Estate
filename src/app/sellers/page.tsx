@@ -67,7 +67,7 @@ export default function SellersPage() {
       {/* Promises section reused from the home page */}
       <SellerSection />
 
-      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-office tonal-section border-b border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
@@ -103,7 +103,7 @@ export default function SellersPage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mx-auto max-w-[760px] text-center">
             <Eyebrow centered>The Marketing Standard</Eyebrow>

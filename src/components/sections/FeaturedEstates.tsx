@@ -13,7 +13,7 @@ export function FeaturedEstates() {
   return (
     <section
       id="estates"
-      className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-32 md:py-36"
+      className="tone-dark tonal-section border-y border-[var(--color-line)] py-32 md:py-36"
     >
       <Container>
         <Reveal className="mb-20 grid grid-cols-1 gap-10 md:grid-cols-[1.2fr_1fr] md:items-end md:gap-16">
@@ -60,7 +60,7 @@ export function FeaturedEstates() {
                   )}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,11,13,0.5)]" />
                   {lukes && (
-                    <div className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bg)]">
+                    <div className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-button-text)]">
                       <svg viewBox="0 0 12 12" className="size-2.5" aria-hidden>
                         <circle cx="6" cy="6" r="5" fill="currentColor" />
                       </svg>

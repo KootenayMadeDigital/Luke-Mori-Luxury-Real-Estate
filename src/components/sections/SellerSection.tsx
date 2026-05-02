@@ -24,7 +24,7 @@ export function SellerSection() {
   return (
     <section
       id="sellers"
-      className="relative overflow-hidden border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-32 md:py-40"
+      className="tone-ivory tonal-section border-y border-[var(--color-line)] py-32 md:py-40"
     >
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="absolute left-[-12%] top-16 h-[420px] w-[420px] rounded-full bg-[rgba(212,184,150,0.08)] blur-[120px]" />
@@ -68,7 +68,7 @@ export function SellerSection() {
             </Reveal>
 
             <Reveal delay={430}>
-              <div className="mt-12 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-7 sm:p-8">
+              <div className="mt-12 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
                 <p className="m-0 mb-5 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
                   The seller brief
                 </p>
@@ -85,7 +85,7 @@ export function SellerSection() {
 
           <div>
             <Reveal>
-              <div className="border border-[var(--color-line)] bg-[var(--color-bg)] shadow-[0_40px_120px_-80px_rgba(0,0,0,0.9)]">
+            <div className="border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_40px_120px_-80px_rgba(0,0,0,0.45)]">
                 <div className="border-b border-[var(--color-line)] p-7 sm:p-9 lg:p-10">
                   <div className="flex flex-wrap items-center justify-between gap-5">
                     <div>
@@ -127,7 +127,7 @@ export function SellerSection() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 border border-[var(--color-line)] bg-[var(--color-surface)] md:grid-cols-3">
           {sellerSignals.map((signal, i) => (
             <Reveal
               key={signal.label}

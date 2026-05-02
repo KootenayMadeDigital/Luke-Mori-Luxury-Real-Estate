@@ -61,7 +61,7 @@ export function ConsultForm() {
                 <span
                   className={`inline-block rounded-[1px] border px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] transition-colors duration-200 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-[var(--color-bronze-light)] ${
                     active
-                      ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-bg)]"
+                      ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]"
                       : "border-[var(--color-line-strong)] text-[var(--color-text-muted)] hover:border-[var(--color-bronze)] hover:text-[var(--color-text)]"
                   }`}
                 >
@@ -91,7 +91,7 @@ export function ConsultForm() {
       <button
         type="submit"
         disabled={submitted}
-        className="group mt-3 inline-flex w-full items-center justify-center gap-3 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-8 py-[18px] text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-bg)] transition-[background,border-color,opacity] duration-300 hover:bg-[var(--color-bronze-light)] hover:border-[var(--color-bronze-light)] disabled:opacity-60"
+        className="group mt-3 inline-flex w-full items-center justify-center gap-3 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-8 py-[18px] text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-button-text)] transition-[background,border-color,opacity] duration-300 hover:bg-[var(--color-bronze-light)] hover:border-[var(--color-bronze-light)] disabled:opacity-60"
       >
         {submitted ? "File Opened" : "Open Private File"}
         {!submitted && (

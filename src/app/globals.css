@@ -19,12 +19,164 @@
   --color-text:         #efeae2;
   --color-text-muted:   #9a948a;
   --color-text-dim:     #5a564f;
+  --color-button-text:  #08090a;
 
   --font-serif: var(--font-cormorant), "Times New Roman", serif;
   --font-sans:  var(--font-jakarta), "Avenir Next", "Neue Haas Grotesk", system-ui, sans-serif;
 
   --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ----- Tonal rooms ----- */
+
+.tonal-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--color-text);
+}
+
+.tonal-section::before,
+.tonal-section::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.tonal-section::before {
+  background:
+    radial-gradient(circle at var(--tone-a-x, 16%) var(--tone-a-y, 12%), var(--tone-a, rgba(212,184,150,0.12)), transparent 34%),
+    radial-gradient(circle at var(--tone-b-x, 84%) var(--tone-b-y, 18%), var(--tone-b, rgba(255,255,255,0.04)), transparent 36%),
+    linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-2) 58%, var(--color-bg) 100%);
+}
+
+.tonal-section::after {
+  opacity: var(--tone-grain-opacity, 0.28);
+  background-image:
+    linear-gradient(90deg, var(--tone-line, rgba(212,184,150,0.08)) 1px, transparent 1px),
+    linear-gradient(180deg, var(--tone-line, rgba(212,184,150,0.08)) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 42%, black, transparent 74%);
+}
+
+.tone-dark {
+  --color-bg: #0a0b0d;
+  --color-bg-2: #0e1013;
+  --color-surface: #131517;
+  --color-surface-2: #1a1d21;
+  --color-surface-3: #20242a;
+  --color-line: rgba(212, 184, 150, 0.10);
+  --color-line-strong: rgba(212, 184, 150, 0.22);
+  --color-bronze: #b08a5b;
+  --color-bronze-light: #d4b896;
+  --color-bronze-dim: #7a6243;
+  --color-text: #efeae2;
+  --color-text-muted: #9a948a;
+  --color-text-dim: #5a564f;
+  --color-button-text: #08090a;
+  --tone-a: rgba(212,184,150,0.11);
+  --tone-b: rgba(132,162,166,0.05);
+  --tone-line: rgba(212,184,150,0.07);
+  --tone-grain-opacity: 0.22;
+}
+
+.tone-office {
+  --color-bg: #0f0d0a;
+  --color-bg-2: #17120e;
+  --color-surface: #201811;
+  --color-surface-2: #2a2018;
+  --color-surface-3: #34281f;
+  --color-line: rgba(216, 184, 142, 0.13);
+  --color-line-strong: rgba(216, 184, 142, 0.28);
+  --color-bronze: #b08a5b;
+  --color-bronze-light: #e0c09a;
+  --color-bronze-dim: #80613c;
+  --color-text: #f1e9dd;
+  --color-text-muted: #b0a18e;
+  --color-text-dim: #756a5d;
+  --color-button-text: #08090a;
+  --tone-a: rgba(176,138,91,0.16);
+  --tone-b: rgba(76,55,38,0.22);
+  --tone-line: rgba(216,184,142,0.08);
+  --tone-grain-opacity: 0.26;
+}
+
+.tone-walnut {
+  --color-bg: #120d09;
+  --color-bg-2: #1c130d;
+  --color-surface: #271b12;
+  --color-surface-2: #322218;
+  --color-surface-3: #3d2a1f;
+  --color-line: rgba(224, 192, 154, 0.14);
+  --color-line-strong: rgba(224, 192, 154, 0.30);
+  --color-bronze: #bd9361;
+  --color-bronze-light: #e5c8a2;
+  --color-bronze-dim: #876342;
+  --color-text: #f4eadc;
+  --color-text-muted: #b8a795;
+  --color-text-dim: #7c6c5d;
+  --color-button-text: #08090a;
+  --tone-a: rgba(189,147,97,0.18);
+  --tone-b: rgba(255,255,255,0.035);
+  --tone-line: rgba(224,192,154,0.08);
+  --tone-grain-opacity: 0.24;
+}
+
+.tone-ivory {
+  --color-bg: #f3eadc;
+  --color-bg-2: #eadcc8;
+  --color-surface: #fbf4e8;
+  --color-surface-2: #e2d1bb;
+  --color-surface-3: #d5bea3;
+  --color-line: rgba(86, 65, 43, 0.16);
+  --color-line-strong: rgba(86, 65, 43, 0.30);
+  --color-bronze: #7b562f;
+  --color-bronze-light: #5d4127;
+  --color-bronze-dim: #a5845b;
+  --color-text: #18130f;
+  --color-text-muted: #5f554b;
+  --color-text-dim: #89796a;
+  --color-button-text: #fff7eb;
+  --tone-a: rgba(176,138,91,0.18);
+  --tone-b: rgba(132,162,166,0.13);
+  --tone-line: rgba(86,65,43,0.075);
+  --tone-grain-opacity: 0.34;
+}
+
+.tone-lake {
+  --color-bg: #dbe5df;
+  --color-bg-2: #ccd9d3;
+  --color-surface: #f4efe6;
+  --color-surface-2: #bccbc5;
+  --color-surface-3: #a9bbb4;
+  --color-line: rgba(35, 55, 50, 0.22);
+  --color-line-strong: rgba(35, 55, 50, 0.38);
+  --color-bronze: #6d4c2c;
+  --color-bronze-light: #3f2e1f;
+  --color-bronze-dim: #796a50;
+  --color-text: #0c1211;
+  --color-text-muted: #2f403c;
+  --color-text-dim: #596b65;
+  --color-button-text: #f8f1e5;
+  --tone-a: rgba(132,162,166,0.22);
+  --tone-b: rgba(176,138,91,0.11);
+  --tone-line: rgba(35,55,50,0.10);
+  --tone-a-x: 18%;
+  --tone-a-y: 18%;
+  --tone-b-x: 78%;
+  --tone-b-y: 10%;
+  --tone-grain-opacity: 0.24;
+}
+
+.tone-dark:not(.tonal-section),
+.tone-office:not(.tonal-section),
+.tone-walnut:not(.tonal-section),
+.tone-ivory:not(.tonal-section),
+.tone-lake:not(.tonal-section) {
+  color: var(--color-text);
 }
 
 /* ----- Base ----- */

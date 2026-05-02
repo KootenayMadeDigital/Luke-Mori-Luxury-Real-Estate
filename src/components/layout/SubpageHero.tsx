@@ -20,7 +20,7 @@ type Props = {
 
 export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, meta }: Props) {
   return (
-    <section className="relative overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg)] pb-20 pt-32 md:pb-28 md:pt-40">
+    <section className="tone-dark tonal-section border-b border-[var(--color-line)] pb-20 pt-32 md:pb-28 md:pt-40">
       {image && (
         <div className="absolute inset-0 z-0" aria-hidden>
           <Image src={image} alt="" fill preload sizes="100vw" className="object-cover opacity-25" />

@@ -93,7 +93,7 @@ export default function RelocationPage() {
         ]}
       />
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>The Six Things That Matter</Eyebrow>
@@ -125,7 +125,7 @@ export default function RelocationPage() {
         </Container>
       </section>
 
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-end">
             <div>

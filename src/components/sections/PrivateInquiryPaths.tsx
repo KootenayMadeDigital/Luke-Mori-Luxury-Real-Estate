@@ -25,7 +25,7 @@ export function PrivateInquiryPaths({
   return (
     <section
       id={id}
-      className={`relative overflow-hidden border-y border-[var(--color-line)] bg-[var(--color-bg)] ${compact ? "py-20 md:py-24" : "py-28 md:py-32"}`}
+      className={`tone-office tonal-section border-y border-[var(--color-line)] ${compact ? "py-20 md:py-24" : "py-28 md:py-32"}`}
     >
       <div
         className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] opacity-[0.16] grayscale lg:block"

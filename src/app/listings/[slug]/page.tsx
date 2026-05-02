@@ -170,7 +170,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
     <PageLayout>
       <JsonLd data={buildListingJsonLd(l)} />
 
-      <section className="relative h-[88vh] min-h-[600px] overflow-hidden bg-[var(--color-bg)]">
+      <section className="tone-dark relative h-[88vh] min-h-[600px] overflow-hidden bg-[var(--color-bg)]">
         {l.heroPhoto && (
           <>
             <Image
@@ -207,7 +207,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
 
           {lukes && (
             <Reveal delay={80}>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bg)]">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-button-text)]">
                 <svg viewBox="0 0 12 12" className="size-2.5" aria-hidden>
                   <circle cx="6" cy="6" r="5" fill="currentColor" />
                 </svg>
@@ -263,7 +263,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         )}
       </section>
 
-      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg)] py-9 md:py-11">
+      <section className="tone-office tonal-section border-b border-[var(--color-line)] py-9 md:py-11">
         <Container>
           <ul className="grid grid-cols-2 gap-y-7 sm:grid-cols-4 sm:gap-x-10">
             {[
@@ -290,7 +290,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </Container>
       </section>
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.34fr_0.86fr] lg:gap-20">
             <div>
@@ -331,7 +331,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
 
               {editorialSummary.length > 0 && (
                 <Reveal delay={380}>
-                  <div className="mt-10 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-7 sm:p-8">
+                  <div className="mt-10 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
                     <p className="m-0 mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-bronze)]">
                       Editorial Summary
                     </p>
@@ -450,7 +450,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
       {l.photoCount > 0 && (
         <section
           id="gallery"
-          className="scroll-mt-24 border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28"
+          className="tone-office tonal-section scroll-mt-24 border-y border-[var(--color-line)] py-24 md:py-28"
         >
           <Container>
             <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-8">
@@ -474,7 +474,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
       )}
 
       {detailRows.length > 4 && (
-        <section className="border-y border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+        <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
           <Container>
             <Reveal className="mb-12 max-w-[760px]">
               <Eyebrow>Property Details</Eyebrow>
@@ -507,7 +507,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
       )}
 
       {l.rooms && l.rooms.length > 0 && (
-        <section className="bg-[var(--color-bg-2)] py-24 md:py-28">
+        <section className="tone-lake tonal-section py-24 md:py-28">
           <Container>
             <Reveal className="mb-14 max-w-[760px]">
               <Eyebrow>Room Dimensions</Eyebrow>
@@ -548,7 +548,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </section>
       )}
 
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end md:gap-16">
             <div>
@@ -596,7 +596,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
       />
 
       {related.length > 0 && (
-        <section className="bg-[var(--color-bg)] py-24 md:py-28">
+        <section className="tone-lake tonal-section py-24 md:py-28">
           <Container>
             <Reveal className="mb-12">
               <Eyebrow>{sameLocation.length >= 3 ? `Also in ${l.location}` : "Also Worth Considering"}</Eyebrow>

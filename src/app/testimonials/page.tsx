@@ -36,7 +36,7 @@ export default function TestimonialsPage() {
       />
 
       {/* Award block */}
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mx-auto max-w-[800px] text-center">
             <Eyebrow centered>Industry Recognition</Eyebrow>
@@ -65,7 +65,7 @@ export default function TestimonialsPage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
@@ -102,7 +102,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials grid */}
-      <section className="border-t border-[var(--color-line)] bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-office tonal-section border-t border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>Client Voice</Eyebrow>

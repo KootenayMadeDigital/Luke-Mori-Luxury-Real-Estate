@@ -9,7 +9,7 @@ import { testimonials } from "@/lib/data";
 
 export function Testimonials() {
   return (
-    <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-32 md:py-36">
+    <section className="tone-office tonal-section border-y border-[var(--color-line)] py-32 md:py-36">
       <Container>
         <Reveal className="mb-20 max-w-[760px]">
           <Eyebrow>Client Voice</Eyebrow>

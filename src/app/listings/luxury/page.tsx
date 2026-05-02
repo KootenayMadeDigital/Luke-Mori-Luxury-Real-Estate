@@ -44,7 +44,7 @@ export default function LuxuryListingsPage() {
         ]}
       />
 
-      <section className="bg-[var(--color-bg)] pb-24 pt-10 md:pt-12">
+      <section className="tone-ivory tonal-section pb-24 pt-10 md:pt-12">
         <Container>
           <ListingsBrowser listings={luxe} />
         </Container>

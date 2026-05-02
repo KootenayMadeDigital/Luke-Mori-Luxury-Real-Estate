@@ -39,7 +39,7 @@ export default function AboutPage() {
 
       <CredentialsStrip />
 
-      <section className="border-b border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-b border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
@@ -76,11 +76,11 @@ export default function AboutPage() {
       </section>
 
       {/* Portrait + bio */}
-      <section className="bg-[var(--color-bg)] py-24 md:py-32">
+      <section className="tone-lake tonal-section py-24 md:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
             <Reveal>
-              <div className="relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
+              <div className="tone-dark relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
                 <Image
                   src={brandImages.lukePortrait}
                   alt="Luke Mori, Principal"
@@ -179,7 +179,7 @@ export default function AboutPage() {
       <PressStrip />
 
       {/* Contact panel */}
-      <section className="border-t border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-office tonal-section border-t border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
             <div>

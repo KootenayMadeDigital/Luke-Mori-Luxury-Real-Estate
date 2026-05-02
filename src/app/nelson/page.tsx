@@ -74,7 +74,7 @@ export default function NelsonHubPage() {
         ]}
       />
 
-      <section className="bg-[var(--color-bg)] py-24 md:py-28">
+      <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>Coverage Areas</Eyebrow>
@@ -98,7 +98,7 @@ export default function NelsonHubPage() {
                   href={`/nelson/${a.slug}`}
                   className="group flex h-full flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color] duration-500 hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="tone-dark relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={a.hero}
                       alt={a.name}
@@ -142,7 +142,7 @@ export default function NelsonHubPage() {
         </Container>
       </section>
 
-      <section className="border-y border-[var(--color-line)] bg-[var(--color-bg-2)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
             <div>

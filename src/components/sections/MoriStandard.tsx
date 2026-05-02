@@ -8,7 +8,7 @@ export function MoriStandard() {
   return (
     <section
       id="standard"
-      className="relative overflow-hidden bg-[var(--color-bg)] py-32 md:py-36"
+      className="tone-ivory tonal-section py-32 md:py-36"
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden>
         <svg className="size-full" preserveAspectRatio="none" viewBox="0 0 1600 1000">
@@ -21,7 +21,7 @@ export function MoriStandard() {
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <Reveal>
             <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.05)] p-1.5">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-surface)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
+              <div className="tone-dark relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-surface)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
                 <Image
                   src={brandImages.lukePortrait}
                   alt="Luke Mori, Principal"
