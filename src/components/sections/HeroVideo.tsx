@@ -2,58 +2,111 @@
 
 import { useEffect, useRef, useState } from "react";
 
+function prepare(video: HTMLVideoElement, rate: number) {
+  video.muted = true;
+  video.playsInline = true;
+  video.defaultMuted = true;
+  video.playbackRate = rate;
+}
+
 export function HeroVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [ready, setReady] = useState(false);
+  const loopRef = useRef<HTMLVideoElement>(null);
+  const fullRef = useRef<HTMLVideoElement>(null);
+  const [loopReady, setLoopReady] = useState(false);
+  const [fullReady, setFullReady] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const loop = loopRef.current;
+    if (!loop) return;
 
-    video.muted = true;
-    video.playsInline = true;
-    video.defaultMuted = true;
-    video.playbackRate = 0.92;
+    prepare(loop, 0.92);
 
     const play = () => {
-      const attempt = video.play();
-      if (attempt) {
-        attempt.catch(() => {
-          setReady(false);
-        });
-      }
+      const attempt = loop.play();
+      if (attempt) attempt.catch(() => setLoopReady(false));
     };
 
+    const show = () => setLoopReady(true);
     play();
     const retry = window.setTimeout(play, 450);
-    const show = () => setReady(true);
 
-    video.addEventListener("playing", show);
-    video.addEventListener("canplay", show);
+    loop.addEventListener("playing", show);
+    loop.addEventListener("canplay", show);
     document.addEventListener("visibilitychange", play);
 
     return () => {
       window.clearTimeout(retry);
-      video.removeEventListener("playing", show);
-      video.removeEventListener("canplay", show);
+      loop.removeEventListener("playing", show);
+      loop.removeEventListener("canplay", show);
       document.removeEventListener("visibilitychange", play);
     };
   }, []);
 
+  useEffect(() => {
+    const full = fullRef.current;
+    const loop = loopRef.current;
+    if (!full || !loop) return;
+
+    prepare(full, 0.92);
+
+    const loadFull = () => {
+      full.load();
+      const start = () => {
+        try {
+          if (Number.isFinite(loop.currentTime)) {
+            full.currentTime = Math.min(loop.currentTime, Math.max(full.duration - 0.5, 0));
+          }
+        } catch {
+          // Browser may reject currentTime before metadata. Fine. Poster stays clean.
+        }
+
+        const attempt = full.play();
+        if (attempt) {
+          attempt
+            .then(() => setFullReady(true))
+            .catch(() => setFullReady(false));
+        }
+      };
+
+      if (full.readyState >= 3) start();
+      else full.addEventListener("canplay", start, { once: true });
+    };
+
+    const preloadTimer = window.setTimeout(loadFull, 1800);
+
+    return () => {
+      window.clearTimeout(preloadTimer);
+    };
+  }, []);
+
+  const videoClass =
+    "absolute inset-0 size-full object-cover saturate-[1.08] brightness-[1.42] contrast-[1.06] transition-opacity duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]";
+
   return (
-    <video
-      ref={videoRef}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-      poster="/video/luke-mori-header-poster.webp"
-      className={`absolute inset-0 size-full object-cover saturate-[1.08] brightness-[1.42] contrast-[1.06] transition-opacity duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-        ready ? "opacity-100" : "opacity-[0.88]"
-      }`}
-    >
-      <source src="/video/luke-mori-hero-loop.mp4" type="video/mp4" />
-    </video>
+    <>
+      <video
+        ref={loopRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/video/luke-mori-header-poster.webp"
+        className={`${videoClass} ${loopReady ? "opacity-100" : "opacity-[0.88]"}`}
+      >
+        <source src="/video/luke-mori-hero-loop.mp4" type="video/mp4" />
+      </video>
+
+      <video
+        ref={fullRef}
+        muted
+        loop
+        playsInline
+        preload="none"
+        className={`${videoClass} ${fullReady ? "opacity-100" : "opacity-0"}`}
+      >
+        <source src="/video/luke-mori-hero-full.mp4" type="video/mp4" />
+      </video>
+    </>
   );
 }

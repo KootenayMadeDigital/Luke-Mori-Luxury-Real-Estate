@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[92svh] items-start overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20 lg:pb-28 lg:pt-10"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-24 lg:pt-32"
     >
       <div className="absolute inset-0 z-0 bg-[var(--color-bg)]" aria-hidden>
         <HeroVideo />

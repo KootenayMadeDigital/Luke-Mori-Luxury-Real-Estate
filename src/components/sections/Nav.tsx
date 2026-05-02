@@ -76,7 +76,7 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.82);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -96,7 +96,7 @@ export function Nav() {
   return (
     <>
       <div
-        className={`relative z-[105] hidden overflow-hidden bg-[#07080a] transition-[max-height,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] md:block ${
+        className={`fixed inset-x-0 top-0 z-[105] hidden overflow-hidden bg-transparent transition-[max-height,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] md:block ${
           scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
         }`}
       >
@@ -123,7 +123,7 @@ export function Nav() {
       </div>
 
       <header
-        className="sticky top-3 z-[100] px-3 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5"
+        className="fixed inset-x-0 top-3 z-[100] px-3 transition-[top,transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5 md:top-9"
         onMouseLeave={() => setOpenGroup(null)}
         onKeyDown={(event) => {
           if (event.key === "Escape") {
@@ -135,11 +135,13 @@ export function Nav() {
         <div
           className={`relative mx-auto max-w-[1320px] rounded-full border p-1.5 shadow-[0_24px_70px_-46px_rgba(0,0,0,0.95)] backdrop-blur-xl backdrop-saturate-150 transition-[border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             scrolled
-              ? "border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.78)]"
-              : "border-[rgba(212,184,150,0.14)] bg-[rgba(10,11,13,0.42)]"
+              ? "border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.82)]"
+              : "border-[rgba(212,184,150,0.18)] bg-[rgba(10,11,13,0.16)]"
           }`}
         >
-          <div className="relative flex min-h-[64px] items-center gap-6 rounded-full bg-[rgba(10,11,13,0.74)] px-4 sm:px-5 lg:px-6">
+          <div className={`relative flex min-h-[64px] items-center gap-6 rounded-full px-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] transition-colors duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5 lg:px-6 ${
+            scrolled ? "bg-[rgba(10,11,13,0.78)]" : "bg-[rgba(10,11,13,0.08)]"
+          }`}>
             <Brand href="/" />
 
             <nav className="ml-auto hidden lg:flex" aria-label="Primary">
