@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { HeroVideo } from "@/components/sections/HeroVideo";
 import { contact, heroProofSignals } from "@/lib/data";
 
 export function Hero() {
@@ -9,20 +10,10 @@ export function Hero() {
       className="relative flex min-h-[92svh] items-start overflow-hidden pb-20 pt-14 sm:pb-28 sm:pt-20 lg:pb-28 lg:pt-10"
     >
       <div className="absolute inset-0 z-0 bg-[var(--color-bg)]" aria-hidden>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/video/luke-mori-header-poster.webp"
-          className="absolute inset-0 size-full object-cover opacity-[0.78] saturate-[0.92] brightness-[1.14] contrast-[1.04]"
-        >
-          <source src="/video/luke-mori-header.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-[rgba(10,11,13,0.24)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(212,184,150,0.15),transparent_27%),radial-gradient(circle_at_82%_36%,rgba(255,255,255,0.06),transparent_24%),linear-gradient(90deg,rgba(10,11,13,0.92)_0%,rgba(10,11,13,0.56)_44%,rgba(10,11,13,0.86)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.52)_0%,rgba(10,11,13,0.08)_42%,rgba(10,11,13,0.82)_100%)]" />
+        <HeroVideo />
+        <div className="absolute inset-0 bg-[rgba(10,11,13,0.05)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(212,184,150,0.11),transparent_27%),radial-gradient(circle_at_82%_36%,rgba(255,255,255,0.05),transparent_24%),linear-gradient(90deg,rgba(10,11,13,0.78)_0%,rgba(10,11,13,0.25)_44%,rgba(10,11,13,0.66)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.36)_0%,rgba(10,11,13,0)_42%,rgba(10,11,13,0.68)_100%)]" />
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1320px] grid-cols-1 items-start gap-10 px-5 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
