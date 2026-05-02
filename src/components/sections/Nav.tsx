@@ -95,35 +95,33 @@ export function Nav() {
 
   return (
     <>
-      <div
-        className={`fixed inset-x-0 top-0 z-[105] hidden overflow-hidden bg-transparent transition-[max-height,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] md:block ${
-          scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
-        }`}
-      >
-        <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between px-5 py-2.5 sm:px-8 md:px-10 lg:px-12 xl:px-14">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-text-dim)]">
-            Private office · {contact.office}
+      <div className="fixed inset-x-0 top-0 z-[110] border-b border-[rgba(212,184,150,0.18)] bg-[rgba(7,8,10,0.78)] shadow-[0_10px_34px_-24px_rgba(0,0,0,0.95)] backdrop-blur-xl backdrop-saturate-150">
+        <div className="mx-auto flex h-8 w-full max-w-[1320px] items-center justify-center gap-4 px-4 sm:justify-between sm:px-8 md:px-10 lg:px-12 xl:px-14">
+          <span className="hidden min-w-0 truncate text-[9px] font-semibold uppercase tracking-[0.3em] text-[rgba(245,239,229,0.78)] sm:block">
+            <span className="text-[var(--color-bronze-light)]">Private office</span>
+            <span className="mx-2 text-[rgba(212,184,150,0.38)]">/</span>
+            {contact.office}
           </span>
-          <div className="flex items-center gap-6 text-[11px] tracking-[0.16em] text-[var(--color-text-muted)]">
+          <div className="flex min-w-0 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-[rgba(245,239,229,0.82)] sm:gap-5 sm:text-[10px]">
             <a
               href={contact.emailHref}
-              className="uppercase transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]"
+              className="truncate transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]"
             >
-              <span className="text-[var(--color-bronze)]">E</span> {contact.email}
+              <span className="text-[var(--color-bronze-light)]">E</span> {contact.email}
             </a>
-            <span className="h-3 w-px bg-[var(--color-line-strong)]" />
+            <span className="h-3 w-px shrink-0 bg-[rgba(212,184,150,0.3)]" />
             <a
               href={contact.phoneHref}
-              className="uppercase transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]"
+              className="whitespace-nowrap transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]"
             >
-              <span className="text-[var(--color-bronze)]">P</span> {contact.phone}
+              <span className="text-[var(--color-bronze-light)]">P</span> {contact.phone}
             </a>
           </div>
         </div>
       </div>
 
       <header
-        className="fixed inset-x-0 top-3 z-[100] px-3 transition-[top,transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5 md:top-9"
+        className="fixed inset-x-0 top-10 z-[100] px-3 transition-[top,transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-5"
         onMouseLeave={() => setOpenGroup(null)}
         onKeyDown={(event) => {
           if (event.key === "Escape") {
