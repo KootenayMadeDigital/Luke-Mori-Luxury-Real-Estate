@@ -310,7 +310,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </Reveal>
               <Reveal delay={220}>
                 <SectionLede className="mt-7 max-w-[760px]">
-                  This page treats the listing like a property brief: what is known, what the public record says, and what a serious buyer should inspect in person. Share it with the people who help you decide, save it to your short list, then ask the right questions before touring.
+                  Review the known facts, compare the fit, share it with the people who help you decide, and ask the right questions before touring.
                 </SectionLede>
               </Reveal>
 

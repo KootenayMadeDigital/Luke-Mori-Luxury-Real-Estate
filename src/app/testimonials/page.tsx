@@ -75,7 +75,7 @@ export default function TestimonialsPage() {
                     2021 & 2024
                   </h2>
                   <p className="m-0 mt-5 max-w-[520px] text-[15px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
-                    A repeat provincial luxury broker award should feel impossible to miss. This is the trust signal sellers and private buyers need to register instantly.
+                    Recognized twice at the provincial level for luxury real estate representation, with local fluency anchored in Nelson and the Kootenays.
                   </p>
                 </div>
 
@@ -109,19 +109,16 @@ export default function TestimonialsPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Media proof belongs on this page because visitors here are already evaluating trust. The homepage gives the fast hit; this page keeps the receipts in one place.
+              Recognized across luxury, design, lifestyle, and regional publications, with proof gathered here for buyers and sellers who value a visible track record.
             </SectionLede>
           </Reveal>
 
           <Reveal>
             <div className="rounded-[2.5rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-2 shadow-[0_34px_110px_-70px_rgba(0,0,0,0.95)]">
               <div className="rounded-[calc(2.5rem-0.5rem)] bg-[linear-gradient(135deg,rgba(10,11,13,0.94),rgba(24,24,22,0.84))] px-4 py-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.065)] sm:px-7 md:px-10 md:py-12">
-                <div className="mb-8 grid grid-cols-1 gap-5 border-b border-[rgba(245,239,229,0.1)] pb-8 md:grid-cols-[0.78fr_1fr] md:items-end">
+                <div className="mb-8 border-b border-[rgba(245,239,229,0.1)] pb-8">
                   <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.34em] text-[var(--color-bronze)]">
                     Published Proof
-                  </p>
-                  <p className="m-0 text-[15px] leading-[1.75] text-[var(--color-text-muted)] md:text-right">
-                    Media marks should read like a trophy wall, not fine print. Every publication gets enough scale to register on a phone.
                   </p>
                 </div>
 

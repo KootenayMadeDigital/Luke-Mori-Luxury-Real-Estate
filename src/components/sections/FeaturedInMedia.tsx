@@ -29,14 +29,14 @@ export function FeaturedInMedia() {
             Featured In
           </div>
           <h2 className="m-0 font-serif text-[clamp(42px,5.8vw,86px)] font-light leading-[0.96] tracking-[-0.02em] text-[var(--color-text)]">
-            Media proof belongs
+            Featured across
             <br />
             <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-              on the wall.
+              luxury media.
             </em>
           </h2>
           <p className="mx-auto mt-7 max-w-[650px] text-[16px] leading-[1.75] text-[var(--color-text-muted)]">
-            Press visibility supports the private advisory frame: Luke already has the public recognition. The site should make that recognition impossible to miss.
+            Recognition across real estate, luxury, design, lifestyle, and regional publications adds another layer of trust before the first private conversation.
           </p>
         </Reveal>
 
