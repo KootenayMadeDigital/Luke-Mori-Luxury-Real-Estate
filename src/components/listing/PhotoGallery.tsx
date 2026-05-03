@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { useCallback, useEffect, useState } from "react";
 
 type Props = {
@@ -15,6 +16,7 @@ type Props = {
 
 export function PhotoGallery({ photos, alt }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
   const total = photos.length;
 
   const close = useCallback(() => setOpenIndex(null), []);
@@ -26,6 +28,11 @@ export function PhotoGallery({ photos, alt }: Props) {
     () => setOpenIndex((i) => (i === null ? null : (i - 1 + total) % total)),
     [total]
   );
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   useEffect(() => {
     if (openIndex === null) return;
@@ -43,6 +50,99 @@ export function PhotoGallery({ photos, alt }: Props) {
   }, [openIndex, close, next, prev]);
 
   if (total === 0) return null;
+
+  const lightbox = openIndex !== null ? (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Photo ${openIndex + 1} of ${total}`}
+      className="fixed inset-0 z-[2147483647] grid grid-rows-[auto_minmax(0,1fr)_auto] bg-[rgba(7,8,10,0.97)] pt-[env(safe-area-inset-top)] backdrop-blur-sm"
+      onClick={close}
+    >
+      {/* Top bar */}
+      <div className="relative z-[3] flex items-center justify-between border-b border-[var(--color-line)] bg-[rgba(7,8,10,0.92)] px-5 py-5 shadow-[0_18px_70px_-46px_rgba(0,0,0,0.95)] backdrop-blur-md sm:px-8 sm:py-6">
+        <span className="font-serif text-[14px] italic tracking-[0.05em] text-[var(--color-bronze-light)]">
+          {String(openIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </span>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            close();
+          }}
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.76)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text)] shadow-[0_18px_50px_-32px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+          aria-label="Close gallery"
+        >
+          Close
+          <svg viewBox="0 0 16 16" aria-hidden className="size-3">
+            <path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+        </button>
+      </div>
+
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          close();
+        }}
+        aria-label="Close gallery"
+        className="absolute right-4 top-[calc(env(safe-area-inset-top)+6.75rem)] z-[4] inline-flex size-12 items-center justify-center rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.82)] text-[var(--color-text)] shadow-[0_18px_54px_-30px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:right-6 sm:top-[calc(env(safe-area-inset-top)+7.5rem)]"
+      >
+        <svg viewBox="0 0 16 16" aria-hidden className="size-4">
+          <path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </button>
+
+      {/* Image */}
+      <div className="relative min-h-0 cursor-zoom-out px-5 py-10 sm:px-20 sm:py-12" aria-label="Close gallery background">
+        <div
+          className="relative mx-auto h-full w-full max-w-[1180px] cursor-default"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Image
+            src={photos[openIndex]}
+            alt={`${alt}, frame ${openIndex + 1}`}
+            fill
+            sizes="(min-width: 1280px) 1180px, 88vw"
+            className="object-contain"
+          />
+        </div>
+
+        {/* Prev / Next */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            prev();
+          }}
+          aria-label="Previous photo"
+          className="group absolute left-3 top-1/2 z-[4] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:left-6"
+        >
+          <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:-translate-x-0.5">
+            <path d="M13 8 H3 M7 4 L3 8 L7 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            next();
+          }}
+          aria-label="Next photo"
+          className="group absolute right-3 top-1/2 z-[4] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:right-6"
+        >
+          <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5">
+            <path d="M3 8 H13 M9 4 L13 8 L9 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div className="relative z-[3] border-t border-[var(--color-line)] bg-[rgba(7,8,10,0.92)] px-5 py-5 text-center text-[10px] uppercase tracking-[0.28em] text-[var(--color-text-dim)] backdrop-blur-md sm:px-8">
+        {alt}
+      </div>
+    </div>
+  ) : null;
 
   return (
     <>
@@ -91,99 +191,7 @@ export function PhotoGallery({ photos, alt }: Props) {
         })}
       </div>
 
-      {/* Lightbox */}
-      {openIndex !== null && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={`Photo ${openIndex + 1} of ${total}`}
-          className="fixed inset-0 z-[1000] grid grid-rows-[auto_minmax(0,1fr)_auto] bg-[rgba(7,8,10,0.97)] pt-[env(safe-area-inset-top)] backdrop-blur-sm"
-          onClick={close}
-        >
-          {/* Top bar */}
-          <div className="relative z-[1020] flex items-center justify-between border-b border-[var(--color-line)] bg-[rgba(7,8,10,0.86)] px-5 py-4 shadow-[0_18px_70px_-46px_rgba(0,0,0,0.95)] backdrop-blur-md sm:px-8">
-            <span className="font-serif text-[14px] italic tracking-[0.05em] text-[var(--color-bronze-light)]">
-              {String(openIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-            </span>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                close();
-              }}
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.72)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text)] shadow-[0_18px_50px_-32px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
-              aria-label="Close gallery"
-            >
-              Close
-              <svg viewBox="0 0 16 16" aria-hidden className="size-3">
-                <path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" strokeWidth="1.4" />
-              </svg>
-            </button>
-          </div>
-
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              close();
-            }}
-            aria-label="Close gallery"
-            className="absolute right-4 top-[calc(env(safe-area-inset-top)+5.25rem)] z-[1030] inline-flex size-12 items-center justify-center rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.82)] text-[var(--color-text)] shadow-[0_18px_54px_-30px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:right-6"
-          >
-            <svg viewBox="0 0 16 16" aria-hidden className="size-4">
-              <path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          </button>
-
-          {/* Image */}
-          <div className="relative min-h-0 cursor-zoom-out px-5 py-7 sm:px-16 sm:py-9" aria-label="Close gallery background">
-            <div
-              className="relative mx-auto h-full w-full max-w-[1220px] cursor-default"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={photos[openIndex]}
-                alt={`${alt}, frame ${openIndex + 1}`}
-                fill
-                sizes="(min-width: 1280px) 1220px, 92vw"
-                className="object-contain"
-              />
-            </div>
-
-            {/* Prev / Next */}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                prev();
-              }}
-              aria-label="Previous photo"
-              className="group absolute left-3 top-1/2 z-[1030] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:left-6"
-            >
-              <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:-translate-x-0.5">
-                <path d="M13 8 H3 M7 4 L3 8 L7 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                next();
-              }}
-              aria-label="Next photo"
-              className="group absolute right-3 top-1/2 z-[1030] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:right-6"
-            >
-              <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5">
-                <path d="M3 8 H13 M9 4 L13 8 L9 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </div>
-
-          <div className="relative z-[1020] border-t border-[var(--color-line)] bg-[rgba(7,8,10,0.86)] px-5 py-4 text-center text-[10px] uppercase tracking-[0.28em] text-[var(--color-text-dim)] backdrop-blur-md sm:px-8">
-            {alt}
-          </div>
-        </div>
-      )}
+      {mounted && lightbox ? createPortal(lightbox, document.body) : null}
     </>
   );
 }
