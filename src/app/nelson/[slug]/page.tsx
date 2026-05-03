@@ -10,7 +10,9 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
+import { AreaIntelligence } from "@/components/sections/AreaIntelligence";
 import { nelsonAreas } from "@/lib/data";
+import { areaIntelligence } from "@/lib/area-intelligence";
 
 type Params = { slug: string };
 
@@ -69,9 +71,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const a = nelsonAreas.find((x) => x.slug === slug);
   if (!a) return { title: "Area Not Found" };
+  const intelligence = areaIntelligence[a.slug];
   return buildPageMetadata({
-    title: `${a.name} · Nelson Area Guide`,
-    description: a.intro,
+    title: `${a.name} BC Luxury Real Estate & Relocation Guide`,
+    description: intelligence
+      ? `${a.name} BC luxury real estate guide for high-value buyers: ${intelligence.thesis}`
+      : a.intro,
     path: `/nelson/${a.slug}`,
     image: a.hero,
   });
@@ -84,6 +89,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
 
   const others = nelsonAreas.filter((a) => a.slug !== slug);
   const fitBrief = areaFitBriefs[area.slug];
+  const intelligence = areaIntelligence[area.slug];
 
   return (
     <PageLayout>
@@ -203,6 +209,10 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
           </Reveal>
         </Container>
       </section>
+
+      {intelligence && (
+        <AreaIntelligence areaName={area.name} intelligence={intelligence} />
+      )}
 
       {/* Neighbourhoods (only on Nelson page) */}
       {area.neighbourhoods && area.neighbourhoods.length > 0 && (
