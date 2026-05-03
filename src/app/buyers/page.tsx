@@ -157,17 +157,17 @@ export default function BuyersPage() {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Buyer Intelligence</Eyebrow>
+              <Eyebrow>Buyer Route Finder</Eyebrow>
               <SectionHeading className="mt-7">
-                Find the right fit
+                Choose the search
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  before the tour day.
+                  before choosing homes.
                 </em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Beautiful properties still have to fit the life. Start with the routine, then narrow around lake, town, privacy, acreage, ski access, relocation, or second-home ownership.
+              Luxury buyers do not need more random showings. They need the right route first: lakefront, walkable Nelson, North Shore privacy, acreage, ski lifestyle, relocation, second-home use, or international logistics.
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />
