@@ -83,7 +83,7 @@ export function LifestyleSection() {
         <Reveal delay={180} className="mt-12 grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
           {[
             { href: "/nelson", label: "Compare areas", body: "Use Nelson, North Shore, Balfour, Blewett, and Slocan Valley as lifestyle filters before touring." },
-            { href: "/buyers/relocation", label: "Plan relocation call", body: "Map schools, seasons, healthcare, commute, and first-scouting trips before choosing a corridor." },
+            { href: "/buyers/relocation", label: "Plan relocation call", body: "Map schools, seasons, healthcare, commute, and first-scouting trips before choosing an area." },
             { href: "/buyers/international", label: "Ask about second homes", body: "Review absentee ownership, local care, advisor introductions, and cross-border logistics early." },
           ].map((item) => (
             <a key={item.href} href={item.href} className="group bg-[var(--color-bg)] p-7 transition-colors hover:bg-[var(--color-surface)]">

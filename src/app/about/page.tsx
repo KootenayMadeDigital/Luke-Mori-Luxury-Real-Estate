@@ -48,7 +48,7 @@ export default function AboutPage() {
                 Authority without
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  the brag deck.
+                  empty bragging.
                 </em>
               </SectionHeading>
             </div>

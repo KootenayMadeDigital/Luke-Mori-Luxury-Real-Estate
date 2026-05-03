@@ -100,7 +100,7 @@ export function Nav() {
       <div className="fixed inset-x-0 top-0 z-[110] border-b border-[rgba(212,184,150,0.18)] bg-[rgba(7,8,10,0.78)] shadow-[0_10px_34px_-24px_rgba(0,0,0,0.95)] backdrop-blur-xl backdrop-saturate-150">
         <div className="mx-auto flex h-8 w-full max-w-[1320px] items-center justify-center gap-4 px-4 sm:justify-between sm:px-8 md:px-10 lg:px-12 xl:px-14">
           <span className="hidden min-w-0 truncate text-[9px] font-semibold uppercase tracking-[0.3em] text-[rgba(245,239,229,0.78)] sm:block">
-            <span className="text-[var(--color-bronze-light)]">Private office</span>
+            <span className="text-[var(--color-bronze-light)]">Luke Mori Luxury</span>
             <span className="mx-2 text-[rgba(212,184,150,0.38)]">/</span>
             {contact.office}
           </span>

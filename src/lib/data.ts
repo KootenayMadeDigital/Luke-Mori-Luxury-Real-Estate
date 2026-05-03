@@ -66,7 +66,7 @@ export const visitorIntents: VisitorIntent[] = [
     body: "Active luxury listings, quiet introductions, and a principled filter for buyers who value privacy as much as property.",
     href: "/listings/luxury",
     cta: "Private Access / Listings",
-    note: "For local, Vancouver, Calgary, U.S., and international principals.",
+    note: "For local, Vancouver, Calgary, U.S., and international buyers.",
   },
   {
     eyebrow: "Relocation & Second Homes",
@@ -79,7 +79,7 @@ export const visitorIntents: VisitorIntent[] = [
   {
     eyebrow: "Private Referrals",
     title: "Introduce a serious buyer or seller.",
-    body: "A discreet route for family offices, advisors, past clients, and trusted local relationships with a principal worth discussing.",
+    body: "A discreet route for family offices, advisors, past clients, and trusted local relationships with a buyer or seller worth discussing.",
     href: "/contact",
     cta: "Make Introduction",
     note: "For referrals, advisory introductions, and quiet market conversations.",
@@ -107,7 +107,7 @@ export const authorityPillars: AuthorityPillar[] = [
   {
     number: "04",
     title: "Private Buyer Network",
-    body: "A short list of relocating principals and second-home buyers from Vancouver, Calgary, and abroad, already vetted.",
+    body: "A short list of relocating buyers and second-home buyers from Vancouver, Calgary, and abroad, already vetted.",
   },
   {
     number: "05",
@@ -149,7 +149,7 @@ export const trustProofs: TrustProof[] = [
     title: "Awarded, then kept local.",
     proof: "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
     meaning:
-      "Prestige matters only if it sharpens the work. The role is still local counsel: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
+      "Prestige matters only if it sharpens the work. The role is still local guidance: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
   },
   {
     eyebrow: "Local Fluency",
@@ -222,11 +222,11 @@ export const inquiryPaths: InquiryPath[] = [
   },
   {
     audience: "Private Referrals",
-    title: "Introduce a serious principal.",
+    title: "Introduce a serious buyer or seller.",
     body: "For family offices, advisors, past clients, and trusted local relationships introducing a buyer or seller who needs discretion.",
     href: "/contact",
     cta: "Make introduction",
-    proof: "Private routing, principal-level context, and a direct path into the right conversation.",
+    proof: "Private context and a direct path into the right conversation.",
   },
 ];
 
@@ -235,13 +235,13 @@ export type PrivateOfficeStep = { num: string; title: string; body: string };
 export const privateOfficeSteps: PrivateOfficeStep[] = [
   {
     num: "01",
-    title: "Name the mandate",
-    body: "Seller strategy, private buyer access, relocation, second-home ownership, or a private referral.",
+    title: "Choose the path",
+    body: "Selling, buying, relocating, planning a second home, or making a private referral.",
   },
   {
     num: "02",
-    title: "Send the useful context",
-    body: "Address, timeline, budget range, privacy needs, ideal lifestyle, or the business goal behind the inquiry.",
+    title: "Share the useful details",
+    body: "Address, timeline, budget range, privacy needs, ideal lifestyle, or the reason for reaching out.",
   },
   {
     num: "03",
@@ -428,7 +428,7 @@ export const signatureAreas: Area[] = [
   {
     index: "04 / 06",
     name: "Johnstone Road & North Shore",
-    body: "Cross 'Bob', the Big Orange Bridge, and the lake opens. Highway 3A's waterfront corridor toward Balfour holds Nelson's most cinematic private residences.",
+    body: "Cross 'Bob', the Big Orange Bridge, and the lake opens. Highway 3A's waterfront area toward Balfour holds Nelson's most cinematic private residences.",
     tags: "Lakefront · Private Acreage · Boathouses",
     intent: "For privacy-led waterfront searches where the approach, the shoreline, and the distance from public attention all matter.",
     href: "/nelson/north-shore",
@@ -630,10 +630,10 @@ export type Promise = { num: string; title: string; body: string };
 
 export const sellerPromises: Promise[] = [
   { num: "01", title: "Confidential valuation", body: "A private read on value, comparable pressure, buyer depth, and the price line that should not be crossed." },
-  { num: "02", title: "Editorial positioning", body: "The property is framed before it is exposed: legacy, lifestyle, architecture, land, privacy, and scarcity." },
+  { num: "02", title: "Editorial positioning", body: "Before the launch, the property is positioned around what matters most: lifestyle, design, land, privacy, and scarcity." },
   { num: "03", title: "Film, photo, and copy", body: "Cinematic film, architectural photography, floor-plan clarity, and writing that makes the home feel considered." },
-  { num: "04", title: "Dedicated property page", body: "A private-office presentation built around the address, not a generic portal card surrounded by competitors." },
-  { num: "05", title: "Qualified buyer rollout", body: "Controlled release to serious principals, relocation buyers, second-home families, and trusted agent networks." },
+  { num: "04", title: "Dedicated property page", body: "A dedicated page for the address, with the photos, facts, and story presented clearly." },
+  { num: "05", title: "Qualified buyer rollout", body: "Controlled release to serious buyers, relocation buyers, second-home families, and trusted agent networks." },
   { num: "06", title: "Discreet showing protocol", body: "Showings are scheduled around privacy, readiness, and intent, with casual traffic filtered before it reaches the door." },
   { num: "07", title: "Negotiation discipline", body: "Offer strategy, leverage, timing, and terms are handled as one plan, not as a reaction to the loudest bidder." },
   { num: "08", title: "Closing discretion", body: "From accepted offer to possession, the process stays calm, documented, and deliberately quiet." },
@@ -835,7 +835,7 @@ export const nelsonAreas: NelsonArea[] = [
     name: "Balfour",
     tagline: "Where the West Arm meets the main lake.",
     intro:
-      "At the eastern end of Highway 3A's North Shore corridor, where the West Arm of Kootenay Lake opens into the main body of the lake. Deep water, generational acreage, and the longest-tenured waterfront properties in the region. The Kootenay Lake ferry departs from Balfour for Crawford Bay and the East Shore.",
+      "At the eastern end of Highway 3A's North Shore area, where the West Arm of Kootenay Lake opens into the main body of the lake. Deep water, generational acreage, and the longest-tenured waterfront properties in the region. The Kootenay Lake ferry departs from Balfour for Crawford Bay and the East Shore.",
     population: "~600",
     avgPrice: "$1,150,000",
     focus: "Deep Water · Marina · Generational Estates",
@@ -856,7 +856,7 @@ export const nelsonAreas: NelsonArea[] = [
     name: "Blewett",
     tagline: "Country acreage, ten minutes from town.",
     intro:
-      "A pastoral, semi-rural community west of Nelson, large lots, wooded privacy, and the kind of horse-and-orchard properties that suit families wanting space without the commute. The Blewett Road corridor remains one of the region's most considered acreage addresses.",
+      "A pastoral, semi-rural community west of Nelson, large lots, wooded privacy, and the kind of horse-and-orchard properties that suit families wanting space without the commute. The Blewett Road area remains one of the region's most considered acreage addresses.",
     population: "~1,500",
     avgPrice: "$1,050,000",
     focus: "Acreage · Privacy · Country Living",
@@ -971,7 +971,7 @@ export const sellerSteps: ProcessStep[] = [
   {
     num: "03",
     title: "Receiving offers",
-    body: "Every offer is reviewed in detail. Strategic counsel on price, terms, and what each offer actually means for your timeline and walk-away.",
+    body: "Every offer is reviewed in detail. Clear guidance on price, terms, and what each offer actually means for your timeline and walk-away.",
   },
   {
     num: "04",

@@ -16,12 +16,12 @@ export function TrustLedger() {
       <Container className="relative z-10">
         <Reveal className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1fr] lg:items-end">
           <div>
-            <Eyebrow>Trust Architecture</Eyebrow>
+            <Eyebrow>Trust & Proof</Eyebrow>
             <SectionHeading className="mt-7">
-              Proof that reads
+              Experience you can
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                like counsel.
+                trust early.
               </em>
             </SectionHeading>
           </div>
@@ -71,10 +71,10 @@ export function TrustLedger() {
             <aside className="flex h-full flex-col justify-between border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.72)] p-8 sm:p-9">
               <div>
                 <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
-                  Private Office Test
+                  Simple test
                 </p>
                 <p className="m-0 mt-5 font-serif text-[28px] font-light leading-[1.18] tracking-[-0.005em] text-[var(--color-text)]">
-                  If the proof does not help a client make a calmer decision, it stays off the wall.
+                  Proof should help a client make a calmer decision before they call.
                 </p>
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col">

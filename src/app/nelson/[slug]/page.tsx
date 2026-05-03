@@ -34,7 +34,7 @@ const areaFitBriefs: Record<
   "north-shore": {
     rightFor: "Waterfront and privacy buyers who want the lake to feel immediate, but still want Nelson close enough for dinner.",
     watchFor: "Highway 3A rhythm, shoreline orientation, dock potential, winter maintenance, and how public or private the approach feels.",
-    startWith: "Drive the corridor east from the Big Orange Bridge and mark where the lake starts feeling like the life you want.",
+    startWith: "Drive the route east from the Big Orange Bridge and mark where the lake starts feeling like the life you want.",
     listingHref: "/listings/waterfront",
     listingCta: "View waterfront",
   },
@@ -139,7 +139,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               What makes {area.name}
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                {area.name === "Nelson" ? "the Queen City" : "this corridor"}.
+                {area.name === "Nelson" ? "the Queen City" : "this area"}.
               </em>
             </SectionHeading>
           </Reveal>
@@ -173,7 +173,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The right corridor makes a property easier to own. The wrong one makes even a beautiful home feel like friction.
+              The right area makes a property easier to own. The wrong area can make even a beautiful home feel difficult.
             </SectionLede>
           </Reveal>
 
@@ -261,7 +261,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               Other Kootenay
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                corridors.
+                areas.
               </em>
             </SectionHeading>
           </Reveal>
@@ -296,7 +296,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         eyebrow={`${area.name} Inquiry`}
         title={`Looking in ${area.name}?`}
         emphasis="Start here."
-        body={`Tell us what you're looking for in ${area.name}, current listings, off-market introductions, or just a conversation about whether this corridor fits the life you have in mind.`}
+        body={`Tell us what you're looking for in ${area.name}, current listings, off-market introductions, or just a conversation about whether this area fits the life you have in mind.`}
       />
     </PageLayout>
   );

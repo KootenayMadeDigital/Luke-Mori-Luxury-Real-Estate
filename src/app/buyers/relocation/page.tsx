@@ -32,7 +32,7 @@ const facets = [
   },
   {
     title: "Commute & Connectivity",
-    body: "West Kootenay Regional Airport (Castlegar) for Vancouver and Calgary connections. Cranbrook Airport for further-afield travel. Cell coverage and fibre internet are strong in town and along the Highway 3A corridor; thinner in the deeper valleys.",
+    body: "West Kootenay Regional Airport (Castlegar) for Vancouver and Calgary connections. Cranbrook Airport for further-afield travel. Cell coverage and fibre internet are strong in town and along the Highway 3A area; thinner in the deeper valleys.",
   },
   {
     title: "Daily Life",
@@ -55,7 +55,7 @@ const scoutingRoutes = [
     href: "/nelson/north-shore",
     title: "North Shore Privacy",
     fit: "Best when lake access, quieter neighbours, and Highway 3A privacy matter more than being in the city grid.",
-    test: "Drive the corridor at school-run time, check shoreline exposure, and compare summer access with winter maintenance.",
+    test: "Drive the route at school-run time, check shoreline exposure, and compare summer access with winter maintenance.",
   },
   {
     href: "/nelson/blewett",

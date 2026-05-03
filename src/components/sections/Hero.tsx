@@ -30,7 +30,7 @@ export function Hero() {
 
           <Reveal delay={180}>
             <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
-              A private office for lakefront estates, architectural view homes, relocation buyers, and second-home mandates across Nelson, Kootenay Lake, and the quieter corridors money notices first.
+              Private guidance for lakefront estates, view homes, relocation buyers, and second-home owners across Nelson and Kootenay Lake.
             </p>
           </Reveal>
 

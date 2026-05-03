@@ -304,7 +304,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   The public facts,
                   <br />
                   <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    privately framed.
+                    clearly explained.
                   </em>
                 </SectionHeading>
               </Reveal>

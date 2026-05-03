@@ -51,11 +51,11 @@ export default function LukeMoriLuxuryExperience() {
       />
       <main id="main">
         <Hero />
-        <SectionTransition eyebrow="Chapter 01" title="Begin with the mandate." tone="bronze" />
+        <SectionTransition eyebrow="Chapter 01" title="Start with the goal." tone="bronze" />
         <IntentConcierge />
         <PublicReceipts />
         <FeaturedInMedia />
-        <SectionTransition eyebrow="Chapter 02" title="The principal, then the launch." align="right" tone="office" />
+        <SectionTransition eyebrow="Chapter 02" title="Luke, then the launch." align="right" tone="office" />
         <MoriStandard />
         <SellerSection />
         <FeaturedEstates />
@@ -71,8 +71,8 @@ export default function LukeMoriLuxuryExperience() {
           id="private-inquiry"
           eyebrow="Private Inquiry"
           title="The next step depends"
-          emphasis="on the mandate."
-          body="Choose the mandate: seller strategy, private buyer access, relocation planning, or second-home ownership. The right conversation starts with the right file."
+          emphasis="on your goal."
+          body="Choose the path that fits: selling, buying, relocating, or planning a second home. The first reply is clear, private, and useful."
         />
         <LeadMagnet />
       </main>

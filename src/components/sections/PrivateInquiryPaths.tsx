@@ -16,10 +16,10 @@ type Props = {
 
 export function PrivateInquiryPaths({
   id,
-  eyebrow = "Private Office Paths",
-  title = "Four ways into",
-  emphasis = "the right room.",
-  body = "Start with the mandate: seller strategy, private buyer brief, relocation planning, or second-home ownership. Each path gets a private next step.",
+  eyebrow = "Private Inquiry",
+  title = "Choose the",
+  emphasis = "right next step.",
+  body = "Start with what you need: selling, buying, relocating, or planning a second home. Each path gets a clear next step.",
   compact = false,
 }: Props) {
   return (
@@ -94,11 +94,11 @@ export function PrivateInquiryPaths({
 
         <Reveal delay={180} className="mt-10 flex flex-col gap-4 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
           <p className="m-0 max-w-[640px] text-[13px] leading-[1.7] text-[var(--color-text-muted)]">
-            Prefer direct? Call the private office or open a file through the contact page. The right next step depends on the mandate, not the form field.
+            Prefer direct? Call Luke or send a private note through the contact page. The right next step depends on what you need.
           </p>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href="/contact" variant="primary" size="md">
-              Open private file
+              Send private note
             </Button>
             <Button href={contact.phoneHref} variant="ghost" size="md" arrow>
               Call direct

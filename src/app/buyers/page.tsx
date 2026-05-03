@@ -25,7 +25,7 @@ const buyerResourceCards = [
   {
     href: "/buyers/international",
     eyebrow: "International",
-    title: "Non-Canadian Principals",
+    title: "Non-Canadian Buyers",
     body: "U.S., U.K., Australian, and Hong Kong buyers, regulatory landscape, foreign-buyer considerations, currency strategy, and local advisor introductions.",
     cta: "Read the playbook",
   },

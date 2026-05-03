@@ -63,7 +63,7 @@ export default function NelsonHubPage() {
         eyebrow="About Nelson"
         title="The Queen City"
         emphasis="and the Kootenays."
-        lede="Five corridors of considered real estate, from heritage downtown Nelson to the deep-water privacy of Balfour. Each with its own character, its own price points, its own seasonal logic, and its own kind of buyer."
+        lede="Five areas of Nelson and Kootenay Lake real estate, from heritage downtown Nelson to the deep-water privacy of Balfour. Each with its own character, its own price points, its own seasonal logic, and its own kind of buyer."
         image={brandImages.nelsonLandscape}
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
         meta={[
@@ -79,7 +79,7 @@ export default function NelsonHubPage() {
           <Reveal className="mb-16 max-w-[760px]">
             <Eyebrow>Coverage Areas</Eyebrow>
             <SectionHeading className="mt-7">
-              Five corridors,
+              Five areas,
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
                 each with its own logic.
@@ -151,7 +151,7 @@ export default function NelsonHubPage() {
                 Start with the reason,
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  then choose the corridor.
+                  then choose the area.
                 </em>
               </SectionHeading>
             </div>
@@ -202,7 +202,7 @@ export default function NelsonHubPage() {
 
       <InquiryCTA
         eyebrow="Local Intelligence"
-        title="Don't know which corridor"
+        title="Don't know which area"
         emphasis="suits the life?"
         body="A 30-minute conversation usually narrows it to two. From there, we tour the third, to confirm what the first two told us. Local intelligence is the practice."
       />

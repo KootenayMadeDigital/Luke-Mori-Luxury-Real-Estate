@@ -12,7 +12,7 @@ import { brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "International Buyers · Nelson Real Estate",
   description:
-    "A buyer playbook for international principals purchasing real estate in British Columbia. Foreign-buyer regulation, local advisors, currency strategy, and the realities of cross-border ownership.",
+    "A buyer playbook for international buyers purchasing real estate in British Columbia. Foreign-buyer regulation, local advisors, currency strategy, and the realities of cross-border ownership.",
   path: "/buyers/international",
   image: brandImages.procterLakeHouse,
 });
@@ -47,7 +47,7 @@ const considerations = [
 
 const origins = [
   { region: "United States", note: "Pacific Northwest in particular, Seattle, Portland, the Bay Area." },
-  { region: "United Kingdom", note: "London-based principals seeking a North American second home." },
+  { region: "United Kingdom", note: "London-based buyers seeking a North American second home." },
   { region: "Australia & Hong Kong", note: "Long-haul second-home and family relocation." },
   { region: "Eastern Europe", note: "Investment-grade waterfront and acreage." },
 ];
@@ -55,7 +55,7 @@ const origins = [
 const absenteeDesk = [
   {
     title: "Regulatory Pre-Flight",
-    body: "Confirm the current federal and provincial purchase landscape before a property is shortlisted, especially for non-Canadian principals.",
+    body: "Confirm the current federal and provincial purchase landscape before a property is shortlisted, especially for non-Canadian buyers.",
   },
   {
     title: "Advisor Bench",
@@ -78,7 +78,7 @@ export default function InternationalBuyersPage() {
         eyebrow="International Buyers"
         title="Buying from"
         emphasis="anywhere."
-        lede="A focused playbook for non-Canadian principals, second-home buyers, and absentee owners purchasing real estate in the Kootenay region. The federal and provincial landscape, the local network of advisors, and the practical realities of cross-border ownership."
+        lede="A focused playbook for non-Canadian buyers, second-home buyers, and absentee owners purchasing real estate in the Kootenay region. The federal and provincial landscape, the local network of advisors, and the practical realities of cross-border ownership."
         image={brandImages.procterLakeHouse}
         crumbs={[
           { label: "Home", href: "/" },
@@ -188,7 +188,7 @@ export default function InternationalBuyersPage() {
               A growing roster
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                of international principals.
+                of international buyers.
               </em>
             </SectionHeading>
           </Reveal>
