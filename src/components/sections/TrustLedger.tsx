@@ -26,7 +26,7 @@ export function TrustLedger() {
             </SectionHeading>
           </div>
           <SectionLede align="right">
-            For high-value sellers and private buyers, trust comes from record, recognition, local fluency, presentation, discretion, and process.
+            High-value sellers and private buyers need proof, local knowledge, strong marketing, and a clear process.
           </SectionLede>
         </Reveal>
 

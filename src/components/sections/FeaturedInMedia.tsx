@@ -36,7 +36,7 @@ export function FeaturedInMedia() {
             </em>
           </h2>
           <p className="mx-auto mt-7 max-w-[650px] text-[16px] leading-[1.75] text-[var(--color-text-muted)]">
-            Recognition across real estate, luxury, design, lifestyle, and regional publications adds another layer of trust before the first private conversation.
+            Luke has been featured across real estate, luxury, design, lifestyle, and regional publications.
           </p>
         </Reveal>
 

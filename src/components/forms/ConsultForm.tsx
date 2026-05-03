@@ -30,7 +30,7 @@ export function ConsultForm() {
       <div className="rounded-[calc(2rem-0.375rem)] border border-[rgba(255,255,255,0.42)] bg-[rgba(255,252,246,0.96)] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] sm:p-10 lg:p-12">
         <div className="mb-9 border-b border-[rgba(78,55,34,0.18)] pb-7">
           <h3 className="m-0 mb-3 font-serif text-[30px] font-normal leading-[1.12] tracking-[-0.01em] text-[#22170f] sm:text-[34px]">
-            Open a Private File
+            Send a Private Note
           </h3>
           <p className="m-0 text-[15px] font-medium leading-[1.65] text-[#5c4635]">
             Seller strategy, buyer access, relocation planning, or second-home ownership. Replies are personal, within one business day.
@@ -93,7 +93,7 @@ export function ConsultForm() {
           disabled={submitted}
           className="group mt-3 inline-flex w-full items-center justify-center gap-3 rounded-full border border-[#2f1a0c] bg-[#2f1a0c] px-8 py-[18px] text-[11px] font-bold uppercase tracking-[0.22em] text-[#fff8ed] shadow-[0_18px_42px_-24px_rgba(47,26,12,0.86)] transition-[background,border-color,opacity,transform] duration-300 hover:-translate-y-[1px] hover:border-[#6e421f] hover:bg-[#6e421f] disabled:opacity-60"
         >
-          {submitted ? "File Opened" : "Open Private File"}
+          {submitted ? "Note Sent" : "Send Private Note"}
           {!submitted && (
             <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-[3px]">
               <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
@@ -102,7 +102,7 @@ export function ConsultForm() {
         </button>
 
         <p className="mt-5 text-center text-[13px] font-medium leading-[1.6] text-[#6a5543]">
-          Your inquiry is held in confidence. This private file is ready to route into Luke&apos;s office workflow.
+          Your inquiry is held in confidence. Luke or his team can reply with the right next step.
         </p>
 
         {submitted && (
@@ -113,7 +113,7 @@ export function ConsultForm() {
             <strong className="mb-2 block font-serif text-[18px] font-normal text-[#6e421f]">
               Thank you.
             </strong>
-            Your private file has been noted. A member of the private division would be in touch within one business day.
+            Your note has been received. Luke or his team would reply within one business day.
           </div>
         )}
       </div>

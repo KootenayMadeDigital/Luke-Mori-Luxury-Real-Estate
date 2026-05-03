@@ -14,7 +14,7 @@ export function PressStrip() {
                 Luxury Media
               </span>
               <p className="m-0 mt-3 max-w-[310px] font-serif text-[26px] font-light leading-[1.08] text-[var(--color-text)]">
-                Press signals that support the private advisory frame.
+                Featured in real estate, luxury, design, and lifestyle media.
               </p>
             </div>
           </Reveal>

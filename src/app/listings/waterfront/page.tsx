@@ -49,7 +49,7 @@ export default function WaterfrontPage() {
         eyebrow="Waterfront Inquiry"
         title="Waterfront rarely lasts."
         emphasis="Move first."
-        body="Most of the region's best waterfront moves quietly. Tell us what you're after, water orientation, depth, dock, year-round access, and we'll surface it before it lists publicly."
+        body="Tell Luke what kind of waterfront you want: orientation, depth, dock potential, year-round access, and privacy."
       />
     </PageLayout>
   );

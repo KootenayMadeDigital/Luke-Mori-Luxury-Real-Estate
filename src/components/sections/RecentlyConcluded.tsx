@@ -64,16 +64,16 @@ export function RecentlyConcluded() {
           <div>
             <Eyebrow>Recently Sold</Eyebrow>
             <SectionHeading className="mt-7">
-              A proven track
+              Recent sales
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                record, made visible.
+                across the Kootenays.
               </em>
             </SectionHeading>
           </div>
           <div className="lg:ml-auto lg:max-w-[620px] lg:text-right">
             <SectionLede align="right">
-              A discreet selection of recent placements, now presented as visual market proof: private acreage, lakefront, view homes, and walk-to-water addresses that show Luke&apos;s reach in the upper Kootenay market.
+              Recent acreage, lakefront, view homes, and walk-to-water properties represented across Nelson and the upper Kootenay market.
             </SectionLede>
             <Link
               href="/listings/sold"

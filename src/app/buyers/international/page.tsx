@@ -145,7 +145,7 @@ export default function InternationalBuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Cross-border and second-home purchases succeed when the local operating system is built before closing. The right advisors, the right caretaker, the right property rhythm.
+              Cross-border and second-home purchases are easier when the right advisors, caretaker plan, and local details are handled before closing.
             </SectionLede>
           </Reveal>
 

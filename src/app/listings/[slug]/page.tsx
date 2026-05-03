@@ -395,7 +395,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   Inquire with intent.
                 </h3>
                 <p className="m-0 mb-6 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  Direct line to Luke or his private team. Ask for the showing, the source context, or preferred seller terms before you spend a day on the road.
+                  Ask Luke about the showing, the property details, or anything worth knowing before you spend a day on the road.
                 </p>
 
                 <ul className="mb-7 space-y-3 border-y border-[var(--color-line)] py-6 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
@@ -578,7 +578,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </SectionHeading>
             </div>
             <SectionLede>
-              Public listing data can tell you the area, scale, and source facts. A private advisory call should clarify the lived reality: arrival, privacy, light, access, timing, and fit.
+              The listing gives you the basics. Luke can help you understand the lived reality: arrival, privacy, light, access, timing, and fit.
             </SectionLede>
           </Reveal>
 
@@ -616,7 +616,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </em>
             </SectionHeading>
             <SectionLede>
-              Shared listings reveal who needs to be in the decision. Saved listings reveal what the buyer actually values. The next step is a disciplined private brief, not another scroll session.
+              Share it with the people who help you decide. Save it if it fits. Ask Luke what the listing cannot answer.
             </SectionLede>
           </Reveal>
 

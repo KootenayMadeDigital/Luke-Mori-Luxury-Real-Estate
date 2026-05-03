@@ -24,7 +24,7 @@ export default function ContactPage() {
         eyebrow="Private Contact"
         title="Choose the file."
         emphasis="Keep it discreet."
-        lede="Seller strategy, private buyer access, relocation, or second-home ownership. The first reply is personal, within one business day, by Luke or his private team."
+        lede="Selling, buying, relocating, or planning a second home. Send the details, and Luke or his team can reply with a clear next step."
         image={brandImages.lukeContact}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
@@ -55,8 +55,7 @@ export default function ContactPage() {
               </Reveal>
               <Reveal delay={240}>
                 <SectionLede className="mb-10">
-                  For anything urgent, call. For an address, private access request, relocation question,
-                  or private advisory request, the form creates the cleanest brief.
+                  For anything urgent, call. For an address, buying question, selling question, or relocation plan, send the details here.
                 </SectionLede>
               </Reveal>
 

@@ -47,7 +47,7 @@ export default function ListingsIndexPage() {
         eyebrow="Off-Market"
         title="Some properties never list."
         emphasis="Ask anyway."
-        body="Our private inventory of unlisted estates is held for owners who require complete discretion. Access is granted on an introductory basis, by request."
+        body="Some homes are not publicly listed. Tell Luke what you are looking for, and he can let you know if a private introduction makes sense."
       />
     </PageLayout>
   );

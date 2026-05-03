@@ -61,15 +61,15 @@ const buyerProofStack = [
   },
   {
     title: "Private access",
-    body: "The search includes public listings, quiet introductions, and owner conversations where discretion matters more than portal volume.",
+    body: "The search can include public listings, quiet introductions, and owner conversations that never reach the portals.",
   },
   {
     title: "Advisor routing",
     body: "Lenders, lawyers, inspectors, tax counsel, property managers, and local specialists are introduced when the buyer path needs them.",
   },
   {
-    title: "Offer discipline",
-    body: "Every offer is framed around price, terms, conditions, timing, inspection risk, and the buyer's ability to close cleanly.",
+    title: "Offer strategy",
+    body: "Every offer is reviewed for price, terms, conditions, timing, inspection risk, and closing strength.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function BuyersPage() {
         eyebrow="For Buyers"
         title="Buying by life,"
         emphasis="not by feed."
-        lede="In-depth local market intelligence, cutting-edge marketing technology, and a private advisory process for the Nelson and Kootenay Lake region. Whether you're relocating, buying a second home, or trading up locally, the search starts with the life you want, then the few addresses that can hold it."
+        lede="Whether you are relocating, buying a second home, or moving within the region, start with the life you want. Then narrow the search to the few addresses that truly fit."
         image={brandImages.procterLivingRoom}
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers" }]}
         meta={[
@@ -159,7 +159,7 @@ export default function BuyersPage() {
             <div>
               <Eyebrow>Buyer Intelligence</Eyebrow>
               <SectionHeading className="mt-7">
-                Find the right route
+                Find the right fit
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
                   before the tour day.
@@ -215,7 +215,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Private buyers need more than listings. They need a local operating map, the right advisors, clear ownership questions, and a buying process that protects time and confidentiality.
+              Private buyers need local knowledge, the right advisors, clear ownership questions, and a buying process that protects their time.
             </SectionLede>
           </Reveal>
 

@@ -14,11 +14,11 @@ import { sellerSteps, brandImages } from "@/lib/data";
 const sellerProofStack = [
   {
     title: "Public receipts",
-    body: "$169M+ in career sales volume and 2021 plus 2024 Best Luxury Broker BC recognition give the seller a record to weigh before the first meeting.",
+    body: "$169M+ in career sales volume and Best Luxury Broker BC recognition in 2021 and 2024.",
   },
   {
     title: "Controlled exposure",
-    body: "The process starts with valuation, buyer depth, privacy requirements, and the price line that should not be crossed publicly.",
+    body: "Start with value, likely buyers, privacy needs, and the price line you do not want to cross.",
   },
   {
     title: "Marketing with consequence",
@@ -45,7 +45,7 @@ export default function SellersPage() {
         eyebrow="For Sellers"
         title="Selling a home,"
         emphasis="the way it deserves."
-        lede="Exceptional service, innovative marketing, and years of local experience. Cinematic film, editorial photography, a dedicated property site, and a controlled rollout, built around your discretion, your timeline, and the price your home actually deserves."
+        lede="Sell with clear pricing advice, strong photography, property film, a dedicated listing page, and a launch plan built around your timeline."
         image={brandImages.sellerDining}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
         meta={[

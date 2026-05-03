@@ -43,17 +43,17 @@ export function IntentConcierge() {
                 <div className="flex flex-col justify-between rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(10,11,13,0.30)] p-6 sm:p-8">
                   <div>
                     <div className="mb-5 inline-flex rounded-full border border-[var(--color-line-strong)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-                      Private Concierge
+                      Start Here
                     </div>
                     <h2
                       id="concierge-title"
                       className="m-0 max-w-[11ch] font-serif text-[clamp(34px,5vw,58px)] font-light leading-[0.98] tracking-[-0.015em] text-[var(--color-text)]"
                     >
-                      Choose the door that matches your intent.
+                      What do you need help with?
                     </h2>
                   </div>
                   <p className="mt-8 max-w-[360px] text-[14px] leading-[1.75] text-[var(--color-text-muted)]">
-                    Luxury real estate is not one funnel. Sellers, private buyers, relocators, and brokerages need different rooms, different language, and different proof.
+                    Choose the path that fits. Selling, buying, relocating, and second-home planning each start with different questions.
                   </p>
                 </div>
 

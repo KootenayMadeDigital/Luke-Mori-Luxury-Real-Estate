@@ -29,11 +29,10 @@ export function PrivateAccess() {
             </em>
           </SectionHeading>
           <SectionLede align="center" className="mb-12">
-            A private inventory of unlisted estates, represented for owners who require complete discretion.
-            Access is granted on an introductory basis, by request.
+            Some sellers prefer a quieter path. Tell Luke what you are looking for, and he can let you know if a private introduction makes sense.
           </SectionLede>
           <Button href="#consult" variant="primary" size="lg">
-            Request Private Access
+            Ask About Private Homes
           </Button>
         </Reveal>
       </Container>

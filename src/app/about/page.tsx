@@ -45,7 +45,7 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Proof, Properly Handled</Eyebrow>
               <SectionHeading className="mt-7">
-                Authority without
+                Experience without
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
                   empty bragging.
@@ -53,7 +53,7 @@ export default function AboutPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Pricing judgement, local risk, discretion, presentation, and negotiation discipline, earned across real Nelson and Kootenay Lake transactions.
+              Pricing advice, local knowledge, privacy, marketing, and negotiation experience across real Nelson and Kootenay Lake transactions.
             </SectionLede>
           </Reveal>
 

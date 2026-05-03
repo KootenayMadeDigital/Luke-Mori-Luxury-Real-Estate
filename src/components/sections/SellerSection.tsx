@@ -35,7 +35,7 @@ export function SellerSection() {
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.92fr_1.18fr] lg:gap-20 xl:gap-28">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Reveal>
-              <Eyebrow>Seller Advisory</Eyebrow>
+              <Eyebrow>For Sellers</Eyebrow>
             </Reveal>
             <Reveal delay={120}>
               <SectionHeading className="mt-7">
@@ -50,19 +50,17 @@ export function SellerSection() {
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-10">
-                A million-dollar home is not a listing task. It is a private launch, with valuation,
-                positioning, film, buyer qualification, showing control, and negotiation discipline handled
-                before the market gets a vote.
+                A high-value home needs the right price, the right story, strong visuals, qualified buyers, and a showing plan before it goes public.
               </SectionLede>
             </Reveal>
 
             <Reveal delay={340}>
               <div className="flex flex-wrap gap-4">
                 <Button href="#consult" variant="primary" size="lg">
-                  Request Private Seller Strategy
+                  Talk Selling Strategy
                 </Button>
                 <Button href={contact.phoneHref} variant="ghost" size="lg" arrow>
-                  Confidential Valuation
+                  Ask About Value
                 </Button>
               </div>
             </Reveal>
@@ -70,14 +68,13 @@ export function SellerSection() {
             <Reveal delay={430}>
               <div className="mt-12 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
                 <p className="m-0 mb-5 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                  The seller brief
+                  Seller Plan
                 </p>
                 <p className="m-0 font-serif text-[24px] font-light leading-[1.35] tracking-[-0.005em] text-[var(--color-text)] sm:text-[28px]">
-                  Maximum attention from the right people, minimum exposure to everyone else.
+                  Reach the right buyers without turning your home into public noise.
                 </p>
                 <p className="m-0 mt-5 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                  Pricing discipline protects leverage. Property storytelling creates desire. Discretion keeps
-                  the process clean.
+                  Price carefully, present the home well, and keep the process calm from first conversation to closing.
                 </p>
               </div>
             </Reveal>
@@ -90,14 +87,14 @@ export function SellerSection() {
                   <div className="flex flex-wrap items-center justify-between gap-5">
                     <div>
                       <p className="m-0 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                        Private Launch Framework
+                        Seller Marketing Plan
                       </p>
                       <h3 className="m-0 mt-4 max-w-[620px] font-serif text-[30px] font-light leading-[1.12] tracking-[-0.01em] text-[var(--color-text)] sm:text-[38px]">
-                        The Mori Standard for bringing a serious property to market.
+                        How Luke brings a high-value property to market.
                       </h3>
                     </div>
                     <span className="rounded-full border border-[var(--color-line-strong)] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
-                      8 stage launch
+                      8 steps
                     </span>
                   </div>
                 </div>

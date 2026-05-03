@@ -172,7 +172,7 @@ export type TrustPrinciple = { title: string; body: string };
 export const trustPrinciples: TrustPrinciple[] = [
   {
     title: "Receipts before adjectives",
-    body: "Sales volume, awards, press visibility, local tenure, and client voice are framed as context, not confetti.",
+    body: "Sales volume, awards, press visibility, local experience, and client voice give buyers and sellers a clearer reason to trust Luke.",
   },
   {
     title: "Discretion before distribution",
@@ -901,7 +901,7 @@ export const lukeBio = {
   short:
     "Born and raised in Nelson, BC. Founder of the Luke Mori division at Fair Realty. Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
   philosophy:
-    "Local intelligence over generic luxury. Discretion as a default, not a request. Editorial marketing, not realtor marketing. The work is about representing properties, and the people behind them, at a calibre the rest of the local market still hasn't caught up to.",
+    "Local knowledge over generic luxury. Privacy as the default. Strong photography, clear copy, and careful representation for the property and the people behind it.",
   approach:
     "I leverage technology to serve clients better, but I never forget the importance of personal relationships. Every transaction is a long-term relationship. My goal is to stay at the forefront of the industry while always prioritising my clients' satisfaction and trust.",
   bornAndRaised: "Born and raised in Nelson, BC",

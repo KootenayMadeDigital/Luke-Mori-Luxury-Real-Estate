@@ -31,7 +31,7 @@ const navGroups: NavGroup[] = [
       { label: "All Active Listings", href: "/listings", description: "The current market, carefully organized." },
       { label: "Luxury Listings", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
       { label: "Waterfront Listings", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },
-      { label: "Recently Sold", href: "/listings/sold", description: "A discreet ledger of placements." },
+      { label: "Recently Sold", href: "/listings/sold", description: "Recent sold properties." },
     ],
   },
   {

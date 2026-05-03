@@ -9,7 +9,7 @@ import { recentlyConcluded, brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Recently Sold · Nelson Real Estate",
   description:
-    "Recently sold luxury real estate in Nelson and the Kootenays, a discreet ledger of placements. Lakefront estates, view homes, walk-to-water residences, and architectural acreage.",
+    "Recently sold luxury real estate in Nelson and the Kootenays, recent sold properties. Lakefront estates, view homes, walk-to-water residences, and architectural acreage.",
   path: "/listings/sold",
   image: brandImages.orangeBridge,
 });
@@ -25,7 +25,7 @@ export default function SoldPage() {
     <PageLayout>
       <SubpageHero
         eyebrow="Recently Placed"
-        title="Quietly placed,"
+        title="Recently sold,"
         emphasis="privately concluded."
         lede="A discreet selection of recent placements. Specifics are public; everything else withheld in the interest of every party who trusted us with them."
         image={brandImages.orangeBridge}
@@ -84,7 +84,7 @@ export default function SoldPage() {
       <InquiryCTA
         eyebrow="Considering Selling"
         title="Your property deserves"
-        emphasis="this calibre of representation."
+        emphasis="strong local representation."
         body="Cinematic film, editorial photography, a controlled launch, and a real buyer network. Every property gets the same standard, regardless of price point."
       />
     </PageLayout>
