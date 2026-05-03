@@ -106,9 +106,21 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         ]}
       />
 
-      <section className="tone-office tonal-section border-b border-[var(--color-line)] py-8 md:py-10">
+      {/* Highlights */}
+      <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <Reveal className="mb-12 max-w-[760px]">
+            <Eyebrow>The Local Lay of the Land</Eyebrow>
+            <SectionHeading className="mt-7">
+              What makes {area.name}
+              <br />
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                {area.name === "Nelson" ? "the Queen City" : "this area"}.
+              </em>
+            </SectionHeading>
+          </Reveal>
+
+          <div className="mb-10 grid grid-cols-1 gap-4 md:mb-12 md:grid-cols-3">
             {area.scenes.map((scene, index) => (
               <Reveal key={scene.title} delay={index * 70}>
                 <figure className="luxury-card group relative m-0 aspect-[16/10] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)]">
@@ -127,22 +139,6 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               </Reveal>
             ))}
           </div>
-        </Container>
-      </section>
-
-      {/* Highlights */}
-      <section className="tone-lake tonal-section py-24 md:py-28">
-        <Container>
-          <Reveal className="mb-16 max-w-[760px]">
-            <Eyebrow>The Local Lay of the Land</Eyebrow>
-            <SectionHeading className="mt-7">
-              What makes {area.name}
-              <br />
-              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                {area.name === "Nelson" ? "the Queen City" : "this area"}.
-              </em>
-            </SectionHeading>
-          </Reveal>
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] sm:grid-cols-3">
             {area.highlights.map((h) => (
