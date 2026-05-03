@@ -11,7 +11,7 @@ type SignatureAreasProps = {
 };
 
 export function SignatureAreas({ preview = false }: SignatureAreasProps) {
-  const areas = preview ? signatureAreas.slice(0, 3) : signatureAreas;
+  const areas = signatureAreas;
 
   return (
     <section id="areas" className="tone-lake tonal-section py-24 md:py-28">
