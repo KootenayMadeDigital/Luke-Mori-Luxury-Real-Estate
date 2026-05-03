@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -29,9 +30,16 @@ export function PrivateInquiryPaths({
     >
       <div
         className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] opacity-[0.12] grayscale lg:block"
-        style={{ backgroundImage: "url('/generated/private-office-texture.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
         aria-hidden
-      />
+      >
+        <Image
+          src="/generated/private-office-texture.webp"
+          alt=""
+          fill
+          sizes="46vw"
+          className="object-cover"
+        />
+      </div>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--color-bg)_0%,rgba(219,229,223,0.94)_56%,rgba(219,229,223,0.74)_100%)]" aria-hidden />
       <Container className="relative z-10">
         <Reveal className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[0.84fr_1fr] lg:items-end">

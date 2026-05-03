@@ -41,7 +41,7 @@ export function Hero() {
                   <span className="block font-serif text-[20px] font-light leading-none text-[var(--color-bronze-light)]">
                     {signal.value}
                   </span>
-                  <span className="mt-2 block text-[8px] font-semibold uppercase leading-[1.35] tracking-[0.14em] text-[var(--color-text-dim)]">
+                  <span className="mt-2 block text-[9px] font-semibold uppercase leading-[1.3] tracking-[0.08em] text-[rgba(245,239,229,0.72)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                     {signal.label}
                   </span>
                 </li>

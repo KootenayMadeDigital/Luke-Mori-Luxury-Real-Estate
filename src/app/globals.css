@@ -200,7 +200,8 @@ body {
   letter-spacing: 0.003em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 body::before {
@@ -472,7 +473,7 @@ small,
   transform: scaleY(1);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .luxury-button::before,
   .luxury-card::before,
   .luxury-card::after,
@@ -489,5 +490,12 @@ small,
   .group:focus-within .luxury-arrow {
     transform: none;
     filter: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .luxury-card:hover,
+  .luxury-card:focus-within {
+    box-shadow: none;
   }
 }

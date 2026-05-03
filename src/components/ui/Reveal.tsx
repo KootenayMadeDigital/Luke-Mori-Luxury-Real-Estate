@@ -16,25 +16,33 @@ export function Reveal({ children, className = "", delay = 0, as: Tag = "div" }:
     const el = ref.current;
     if (!el) return;
 
-    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+    if (
+      typeof window === "undefined" ||
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       el.classList.add("is-in");
       return;
     }
 
+    let timer: number | undefined;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            window.setTimeout(() => el.classList.add("is-in"), delay);
+            timer = window.setTimeout(() => el.classList.add("is-in"), delay);
             io.unobserve(el);
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
     );
 
     io.observe(el);
-    return () => io.disconnect();
+    return () => {
+      if (timer) window.clearTimeout(timer);
+      io.disconnect();
+    };
   }, [delay]);
 
   // The element ref typing is loose so we can use a polymorphic Tag.

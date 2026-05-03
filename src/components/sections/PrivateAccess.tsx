@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,9 +12,12 @@ export function PrivateAccess() {
       className="tone-dark tonal-section border-b border-[var(--color-line)] py-36 md:py-44"
     >
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
-        <div
-          className="absolute inset-0 opacity-75 saturate-[0.9] brightness-[1.08]"
-          style={{ backgroundImage: "url('/generated/dark-lake-atmosphere.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+        <Image
+          src="/generated/dark-lake-atmosphere.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-75 saturate-[0.9] brightness-[1.08]"
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_54%_46%_at_50%_48%,rgba(10,11,13,0.28)_0%,rgba(10,11,13,0.52)_58%,rgba(10,11,13,0.9)_100%)]" />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[rgba(10,11,13,0.86)] to-transparent" />

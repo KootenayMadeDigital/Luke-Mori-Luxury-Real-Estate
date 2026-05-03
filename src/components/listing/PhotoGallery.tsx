@@ -66,7 +66,8 @@ export function PhotoGallery({ photos, alt }: Props) {
                 src={src}
                 alt={`${alt}, frame ${i + 1}`}
                 fill
-                sizes={i === 0 ? "100vw" : "(min-width: 768px) 50vw, 100vw"}
+                preload={i === 0}
+                sizes={i === 0 ? "(min-width: 1280px) 1180px, 100vw" : "(min-width: 1280px) 290px, (min-width: 768px) 50vw, 100vw"}
                 className="luxury-media object-cover"
               />
               {i === 0 && (

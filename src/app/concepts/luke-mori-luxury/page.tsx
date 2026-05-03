@@ -1,4 +1,3 @@
-import { LoadingReveal } from "@/components/ui/LoadingReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
@@ -35,7 +34,6 @@ export const metadata = buildPageMetadata({
 export default function LukeMoriLuxuryExperience() {
   return (
     <>
-      <LoadingReveal />
       <Nav />
       <JsonLd
         data={buildPageGraphJsonLd({
