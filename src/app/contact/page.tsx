@@ -24,7 +24,7 @@ export default function ContactPage() {
         eyebrow="Private Contact"
         title="Choose the file."
         emphasis="Keep it clear."
-        lede="Selling, buying, relocating, or planning a second home. Send the useful details, and Luke or his team can reply with a clear next step."
+        lede="Selling, buying, relocating, or planning a second home. Send the useful details, and Luke or his team can reply with the right first step."
         image={brandImages.lukeContact}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
@@ -55,7 +55,7 @@ export default function ContactPage() {
               </Reveal>
               <Reveal delay={240}>
                 <SectionLede className="mb-10">
-                  For anything urgent, call. For an address, buying question, selling question, or relocation plan, send the details here so the first reply can be useful.
+                  For anything urgent, call. For an address, buying question, selling question, or relocation plan, send the details here so the first reply can start in the right place.
                 </SectionLede>
               </Reveal>
 
@@ -136,7 +136,7 @@ export default function ContactPage() {
               A private reply,
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                then a useful step.
+                then a clear step.
               </em>
             </SectionHeading>
           </Reveal>

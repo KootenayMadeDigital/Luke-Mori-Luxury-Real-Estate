@@ -30,7 +30,7 @@ export function Hero() {
 
           <Reveal delay={180}>
             <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
-              Buy or sell lakefront homes, view properties, acreage, and second homes across Nelson and Kootenay Lake with local advice before the decision gets expensive.
+              Buy or sell lakefront homes, view properties, acreage, and second homes across Nelson and Kootenay Lake with local guidance before the stakes get high.
             </p>
           </Reveal>
 
@@ -84,11 +84,11 @@ export function Hero() {
                     Why Clients Trust Luke
                   </p>
                   <h2 className="m-0 mt-3 max-w-[13ch] font-serif text-[34px] font-light leading-[1] tracking-[-0.01em] text-[var(--color-text)] sm:text-[40px]">
-                    A stronger decision starts here.
+                    Know the ground before you move.
                   </h2>
                 </div>
                 <div className="hidden rounded-full border border-[var(--color-line)] px-3 py-2 text-right text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:block">
-                  Careful
+                  Private
                   <br />
                   Representation
                 </div>

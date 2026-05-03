@@ -41,16 +41,16 @@ export function SellerSection() {
               <SectionHeading className="mt-7">
                 High-value homes
                 <br />
-                need more than
+                need a plan before
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  a public listing.
+                  they need a sign.
                 </em>
               </SectionHeading>
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-10">
-                Before a high-value home goes public, the price, buyer profile, visuals, showing plan, and privacy needs should already be clear.
+                Before a high-value home goes public, price, buyer profile, visuals, privacy, and showing plan should already be settled.
               </SectionLede>
             </Reveal>
 
@@ -71,10 +71,10 @@ export function SellerSection() {
                   Seller Plan
                 </p>
                 <p className="m-0 font-serif text-[24px] font-light leading-[1.35] tracking-[-0.005em] text-[var(--color-text)] sm:text-[28px]">
-                  Reach the right buyers without turning your home into public noise.
+                  Attract the right buyers without turning your home into public noise.
                 </p>
                 <p className="m-0 mt-5 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                  Price carefully, present the home well, qualify interest early, and keep the process calm through closing.
+                  Price with discipline, present the home well, qualify interest early, and keep the process calm through closing.
                 </p>
               </div>
             </Reveal>

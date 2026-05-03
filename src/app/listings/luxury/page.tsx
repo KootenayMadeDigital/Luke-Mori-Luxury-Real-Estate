@@ -28,7 +28,7 @@ export default function LuxuryListingsPage() {
       <SubpageHero
         eyebrow={`Luxury · ${luxe.length.toLocaleString()} Properties`}
         title="The upper market,"
-        emphasis="without the noise."
+        emphasis="made easier to read."
         lede="Every active property at $1M and above: lakefront homes, view homes, acreage, and heritage residences across the region, gathered into one clearer view."
         image={brandImages.procterLakeHouse}
         crumbs={[

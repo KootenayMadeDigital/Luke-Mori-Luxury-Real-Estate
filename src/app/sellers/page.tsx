@@ -13,7 +13,7 @@ import { sellerSteps, brandImages } from "@/lib/data";
 
 const sellerProofStack = [
   {
-    title: "Proof before promises",
+    title: "Record before promises",
     body: "$169M+ in career sales volume and Best Luxury Broker BC recognition in 2021 and 2024.",
   },
   {
@@ -71,7 +71,7 @@ export default function SellersPage() {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Seller Proof</Eyebrow>
+              <Eyebrow>Seller Record</Eyebrow>
               <SectionHeading className="mt-7">
                 Trust is built
                 <br />
@@ -81,7 +81,7 @@ export default function SellersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The question is not whether the home can be listed. It is whether the launch protects price, privacy, timing, and leverage from first conversation to closing.
+              The question is not whether the home can be listed. It is whether the launch protects price, privacy, timing, and leverage from the first conversation to closing.
             </SectionLede>
           </Reveal>
 
@@ -147,7 +147,7 @@ export default function SellersPage() {
         eyebrow="Seller Strategy Call"
         title="Bring the address."
         emphasis="Leave with the first move."
-        body="No commitment, no pressure. Walk through the property, privacy needs, timeline, and outcome you want. Luke can tell you what the first move should be."
+        body="No commitment, no pressure. Walk through the property, privacy needs, timeline, and outcome you want. Luke can tell you the right first move."
       />
     </PageLayout>
   );

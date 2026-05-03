@@ -24,9 +24,9 @@ export default function ListingsIndexPage() {
     <PageLayout>
       <SubpageHero
         eyebrow={`Active · ${total.toLocaleString()} Listings`}
-        title="Browse the market,"
+        title="See the market,"
         emphasis="end to end."
-        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Use the filters to turn a crowded market into a shorter list."
+        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Use the filters to turn a crowded market into a short list."
         image={brandImages.procterLakeHouse}
         crumbs={[{ label: "Home", href: "/" }, { label: "Listings" }]}
         meta={[

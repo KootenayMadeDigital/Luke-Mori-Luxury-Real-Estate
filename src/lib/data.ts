@@ -38,7 +38,7 @@ export const heroProofSignals: HeroProofSignal[] = [
   {
     value: "Nelson born",
     label: "Kootenay Lake knowledge",
-    detail: "Luke knows the streets, lakefront pockets, builders, slopes, and owner patterns that change value.",
+    detail: "Luke knows the streets, lakefront pockets, builders, slopes, and owner patterns that shape value.",
   },
 ];
 
@@ -54,7 +54,7 @@ export type VisitorIntent = {
 export const visitorIntents: VisitorIntent[] = [
   {
     eyebrow: "Sellers",
-    title: "Protect value before the market sees it.",
+    title: "Protect value before the market reacts.",
     body: "Set the price, visuals, showing plan, and exposure before the first buyer forms an opinion.",
     href: "#sellers",
     cta: "Talk Selling",
@@ -79,7 +79,7 @@ export const visitorIntents: VisitorIntent[] = [
   {
     eyebrow: "Referrals",
     title: "Make the introduction cleanly.",
-    body: "For advisors, past clients, and trusted local relationships introducing someone who may need a careful first conversation.",
+    body: "For advisors, past clients, and trusted local relationships introducing someone who needs the right first conversation.",
     href: "/contact",
     cta: "Make an Introduction",
     note: "For trusted introductions and private market conversations.",
@@ -97,7 +97,7 @@ export const authorityPillars: AuthorityPillar[] = [
   {
     number: "02",
     title: "Seller Representation",
-    body: "High-value homes need careful pricing, strong visuals, qualified showings, and exposure that does not cheapen the property.",
+    body: "High-value homes need disciplined pricing, strong visuals, qualified showings, and exposure that does not cheapen the property.",
   },
   {
     number: "03",
@@ -163,7 +163,7 @@ export const trustProofs: TrustProof[] = [
     title: "Marketing that makes the home clear.",
     proof: "Property film, strong photography, dedicated property pages, and clear listing copy.",
     meaning:
-      "When the right buyer understands the property before the showing, fewer visits are wasted and better offers are possible.",
+      "When the right buyer understands the property before the showing, fewer visits are wasted and better offers become possible.",
   },
 ];
 
@@ -171,7 +171,7 @@ export type TrustPrinciple = { title: string; body: string };
 
 export const trustPrinciples: TrustPrinciple[] = [
   {
-    title: "Proof before adjectives",
+    title: "Facts before adjectives",
     body: "Sales volume, awards, press visibility, local experience, and client voice make trust easier before the first conversation.",
   },
   {
@@ -199,10 +199,10 @@ export const inquiryPaths: InquiryPath[] = [
   {
     audience: "Sellers",
     title: "Start with the address and outcome.",
-    body: "Share the address, timeline, privacy needs, and the result you want. Luke can reply with the first move.",
+    body: "Share the address, timeline, privacy needs, and the result you want. Luke can reply with the right first move.",
     href: "/contact",
     cta: "Start seller strategy",
-    proof: "$169M+ career volume, careful launch planning, qualified showings.",
+    proof: "$169M+ career volume, disciplined launch planning, qualified showings.",
   },
   {
     audience: "Buyers",
@@ -695,7 +695,7 @@ export const lifestyleTiles: LifestyleTile[] = [
     num: "06",
     title: "Second Home",
     kicker: "Lock-and-leave, managed, ready",
-    body: "Weekend arrival, caretaker coverage, winterization, security, and the systems that make absentee ownership feel easy.",
+    body: "Weekend arrival, caretaker coverage, winterization, security, and the systems that make absentee ownership feel easier.",
     href: "/buyers/international",
     cta: "Ask ownership questions",
   },
@@ -901,7 +901,7 @@ export const lukeBio = {
   short:
     "Born and raised in Nelson, BC. Founder of the Luke Mori division at Fair Realty. Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
   philosophy:
-    "Local knowledge, privacy, strong photography, clear copy, and careful representation for the property and the people behind it.",
+    "Local knowledge, privacy, strong photography, clear copy, and steady representation for the property and the people behind it.",
   approach:
     "Good technology helps, but real estate is still personal. The goal is better advice, better communication, and fewer surprises.",
   bornAndRaised: "Born and raised in Nelson, BC",

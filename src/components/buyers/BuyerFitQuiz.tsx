@@ -25,7 +25,7 @@ const options: Option[] = [
 const recommendations: Record<PathKey, { title: string; body: string; href: string; cta: string; notes: string[] }> = {
   lakefront: {
     title: "Start with the waterfront questions.",
-    body: "The right brief tests shoreline rights, exposure, road access, docks, privacy, and whether the property holds value beyond the photo angle.",
+    body: "The right brief tests shoreline rights, exposure, road access, docks, privacy, and whether the property still holds value after the photo wears off.",
     href: "/listings/waterfront",
     cta: "View waterfront properties",
     notes: ["Shoreline and dock questions", "Sun, wind, road, and winter access", "Comparable scarcity around Kootenay Lake"],
@@ -39,14 +39,14 @@ const recommendations: Record<PathKey, { title: string; body: string; href: stri
   },
   privacy: {
     title: "Start with the North Shore map.",
-    body: "North Shore and view properties need a clear brief: approach, sightlines, neighbours, road rhythm, lake orientation, and how visible the home really is.",
+    body: "North Shore and view properties need a sharper brief: approach, sightlines, neighbours, road rhythm, lake orientation, and how visible the home really is.",
     href: "/nelson/north-shore",
     cta: "Explore North Shore",
     notes: ["Arrival and sightlines", "Lake and mountain exposure", "Private introductions where public inventory is thin"],
   },
   acreage: {
     title: "Start with land-use reality.",
-    body: "Acreage buyers need the romance and the maintenance file: water, septic, snow, access, outbuildings, zoning, and daily labour.",
+    body: "Acreage buyers need the romance and the maintenance file: water, septic, snow, access, outbuildings, zoning, and daily work.",
     href: "/listings",
     cta: "Browse acreage candidates",
     notes: ["Water, septic, and road access", "Outbuildings and land-use fit", "Maintenance appetite before offer strategy"],

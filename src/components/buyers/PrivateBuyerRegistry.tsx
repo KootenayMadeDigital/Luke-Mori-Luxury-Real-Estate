@@ -3,7 +3,7 @@ import Link from "next/link";
 const registryCards = [
   {
     title: "Buyer brief",
-    body: "Tell Luke what you want before the right property appears publicly, or before an owner decides to test the market.",
+    body: "Tell Luke what you want before the right property appears publicly, or before an owner decides to test the market quietly.",
     cta: "Ask about private homes",
     href: "/contact",
   },

@@ -83,7 +83,7 @@ export default function SoldPage() {
 
       <InquiryCTA
         eyebrow="Considering Selling"
-        title="Protect the sale with"
+        title="Protect the result with"
         emphasis="a stronger plan."
         body="Strong photography, clear copy, a controlled launch, and a real buyer network help protect the result before the sign goes up."
       />

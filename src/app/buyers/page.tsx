@@ -80,7 +80,7 @@ export default function BuyersPage() {
         eyebrow="For Buyers"
         title="Buying by life,"
         emphasis="not by feed."
-        lede="Whether you are relocating, buying a second home, or moving within the region, start with the life you want and the risks you want to avoid. Then narrow the search to the few addresses that truly fit."
+        lede="Whether you are relocating, buying a second home, or moving within the region, start with the life you want and the tradeoffs you will not accept. Then narrow the search to the few addresses that truly fit."
         image={brandImages.procterLivingRoom}
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers" }]}
         meta={[
@@ -105,7 +105,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              MLS filters flatten the Kootenays. Lakefront, walkability, acreage, ski rhythm, relocation, and second-home ownership each create different risks and tradeoffs.
+              MLS filters flatten the Kootenays. Lakefront, walkability, acreage, ski rhythm, relocation, and second-home ownership each create different tradeoffs.
             </SectionLede>
           </Reveal>
 
@@ -290,7 +290,7 @@ export default function BuyersPage() {
         eyebrow="Buyer Inquiry"
         title="Name the life."
         emphasis="Then the addresses."
-        body="Whether you are three years out or three weeks, start by naming the life you want and the mistakes you want to avoid: lakefront, town, acreage, ski, second home, or a clean relocation path."
+        body="Whether you are three years out or three weeks, start by naming the life you want and the tradeoffs you will not accept: lakefront, town, acreage, ski, second home, or a clean relocation path."
       />
     </PageLayout>
   );

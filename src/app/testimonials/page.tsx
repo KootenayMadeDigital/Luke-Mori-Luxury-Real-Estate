@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Recognition across luxury, design, lifestyle, and regional publications, gathered for buyers and sellers doing quiet due diligence.
+              Recognition across luxury, design, lifestyle, and regional publications, gathered for buyers and sellers doing their homework.
             </SectionLede>
           </Reveal>
 

@@ -34,7 +34,7 @@ export function FeaturedEstates() {
           </div>
           <div className="md:ml-auto md:max-w-[620px] md:text-right">
             <SectionLede align="right">
-              A tight view of the active market: lakefront, acreage, timber frame, riverfront, and view properties. Enough to understand the standard without getting lost in the full listing feed.
+              A focused view of the active market: lakefront, acreage, timber frame, riverfront, and view properties. Enough to feel the range before opening the full feed.
             </SectionLede>
             <Link
               href="/listings/luxury"

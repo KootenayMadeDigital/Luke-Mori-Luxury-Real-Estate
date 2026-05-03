@@ -53,7 +53,7 @@ export function IntentConcierge() {
                     </h2>
                   </div>
                   <p className="mt-8 max-w-[360px] text-[14px] leading-[1.75] text-[var(--color-text-muted)]">
-                    Choose the path that matches the decision in front of you. Selling, buying, relocating, and second-home planning each come with different risks.
+                    Choose the path that matches the decision in front of you. Selling, buying, relocating, and second-home planning each require a different first move.
                   </p>
                 </div>
 

@@ -117,7 +117,7 @@ export function ListingActionPanel(props: Props) {
     }
   }
 
-  const partnerHref = `mailto:?subject=${encodeURIComponent(`Review this Nelson property: ${props.address}`)}&body=${encodeURIComponent(`${shareText}\n\n${url}\n\nWorth reviewing with Luke Mori if the property looks like a real fit.`)}`;
+  const partnerHref = `mailto:?subject=${encodeURIComponent(`Review this Nelson property: ${props.address}`)}&body=${encodeURIComponent(`${shareText}\n\n${url}\n\nReview this with Luke Mori if the property looks like a real fit.`)}`;
 
   return (
     <div className="rounded-[1.35rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-4 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.9)] sm:p-5">

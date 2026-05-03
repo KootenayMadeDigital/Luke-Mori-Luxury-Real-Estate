@@ -120,7 +120,7 @@ export default function FaqPage() {
       <InquiryCTA
         eyebrow="Ask Anything"
         title="Still unsure?"
-        emphasis="Ask before the mistake gets expensive."
+        emphasis="Ask before the wrong move costs you."
         body="If your question depends on a property, timeline, relocation plan, or sale decision, the useful answer depends on the details. Start there."
       />
     </PageLayout>

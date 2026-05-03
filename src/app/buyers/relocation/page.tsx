@@ -78,7 +78,7 @@ export default function RelocationPage() {
         eyebrow="Relocation"
         title="A soft landing,"
         emphasis="before you buy."
-        lede="Most people who move here have imagined it for years. The smart move is to test the practical parts early: schools, healthcare, winter roads, where to live, and how the first ninety days will feel."
+        lede="Most people who move here have imagined it for years. The smart move is to test the practical parts early: schools, healthcare, winter roads, where to live, and how the first ninety days will actually feel."
         image={brandImages.bakerStreet}
         crumbs={[
           { label: "Home", href: "/" },
@@ -190,8 +190,8 @@ export default function RelocationPage() {
       <InquiryCTA
         eyebrow="Relocation Inquiry"
         title="Two trips."
-        emphasis="One useful map."
-        body="Start with a 30-minute call from wherever you are now. Talk through your timeline, needs, and what is worth doing on your first scouting visit. Then plan the routes."
+        emphasis="One local map."
+        body="Start with a 30-minute call from wherever you are now. Talk through your timeline, needs, and what belongs on the first scouting visit. Then plan the routes."
       />
     </PageLayout>
   );

@@ -10,7 +10,7 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "International & Second-Home Buyers · Nelson Real Estate",
+  title: "International and Second-Home Buyers · Nelson Real Estate",
   description:
     "A buyer guide for international and second-home purchasers in British Columbia: purchase rules, advisors, currency timing, and ownership from afar.",
   path: "/buyers/international",
@@ -75,7 +75,7 @@ export default function InternationalBuyersPage() {
   return (
     <PageLayout>
       <SubpageHero
-        eyebrow="International & Second-Home Buyers"
+        eyebrow="International and Second-Home Buyers"
         title="Buying from"
         emphasis="anywhere."
         lede="A focused guide for non-Canadian buyers, second-home buyers, and absentee owners purchasing in the Kootenays: rules, advisors, currency, remote ownership, and local care."
@@ -106,7 +106,7 @@ export default function InternationalBuyersPage() {
             </SectionHeading>
             <SectionLede>
               Most international buying questions come down to four practical issues.
-              Here&apos;s what actually moves the needle on your transaction.
+              These are the issues that change the transaction.
             </SectionLede>
           </Reveal>
 
@@ -209,8 +209,8 @@ export default function InternationalBuyersPage() {
       <InquiryCTA
         eyebrow="International Inquiry"
         title="Buying from afar?"
-        emphasis="Build the local team first."
-        body="A 30-minute call can cover the rules, the local market, the right advisors, and what is realistic before you travel or wire funds."
+        emphasis="Build the local team before you travel."
+        body="A 30-minute call can cover the rules, the local market, the right advisors, and what is realistic before you book flights or wire funds."
       />
     </PageLayout>
   );

@@ -58,14 +58,14 @@ export function MoriStandard() {
                 Local knowledge,
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  used carefully.
+                  used where it counts.
                 </em>
               </h2>
             </Reveal>
 
             <Reveal delay={240}>
               <p className="m-0 mb-10 max-w-[620px] text-[18px] font-medium leading-[1.75] text-[var(--color-text-muted)]">
-                {lukeBio.short} Sellers and buyers get clear advice, careful marketing, and practical local guidance from the first conversation.
+                {lukeBio.short} Sellers and buyers get direct advice, strong marketing, and practical local guidance from the first conversation.
               </p>
             </Reveal>
 

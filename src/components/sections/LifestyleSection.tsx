@@ -21,13 +21,13 @@ export function LifestyleSection() {
               </em>
             </SectionHeading>
             <SectionLede>
-              The right home starts with the life it has to support. Lake, town, acreage, skiing, guests, work, and winter all change the search.
+              The right home starts with the life it has to support. Lake, town, acreage, skiing, guests, work, and winter all change what a property is worth to you.
             </SectionLede>
           </Reveal>
 
           <Reveal delay={140} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
             <p className="m-0 mb-6 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-              Waterfront, walkability, acreage, skiing, relocation, and second-home ownership each carry different costs, risks, and routines. Choose the lifestyle first. The map gets much smaller.
+              Waterfront, walkability, acreage, skiing, relocation, and second-home ownership each carry different costs, risks, and routines. Choose the life first. The map gets smaller fast.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button href="/listings/waterfront" variant="primary" size="md">

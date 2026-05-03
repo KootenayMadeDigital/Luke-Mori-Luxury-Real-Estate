@@ -395,7 +395,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   Inquire with intent.
                 </h3>
                 <p className="m-0 mb-6 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  Ask Luke about the showing, property details, fit, and anything worth knowing before you spend a day on the road.
+                  Ask Luke about the showing, property details, fit, and what to know before you spend a day on the road.
                 </p>
 
                 <ul className="mb-7 space-y-3 border-y border-[var(--color-line)] py-6 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
@@ -616,7 +616,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </em>
             </SectionHeading>
             <SectionLede>
-              Share it with the people who help you decide. Save it if it fits. Ask Luke what the listing cannot answer before the property becomes a full-day tour.
+              Share it with the people who help you decide. Save it if it fits. Ask Luke what the listing cannot answer before it becomes a full-day tour.
             </SectionLede>
           </Reveal>
 

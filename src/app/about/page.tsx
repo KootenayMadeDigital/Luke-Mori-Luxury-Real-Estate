@@ -43,7 +43,7 @@ export default function AboutPage() {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Proof Clients Can Use</Eyebrow>
+              <Eyebrow>Record Clients Can Use</Eyebrow>
               <SectionHeading className="mt-7">
                 Experience without
                 <br />

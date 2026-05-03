@@ -36,7 +36,7 @@ export function FeaturedInMedia() {
             </em>
           </h2>
           <p className="mx-auto mt-7 max-w-[650px] text-[16px] leading-[1.75] text-[var(--color-text-muted)]">
-            Media coverage adds one more trust signal for sellers and buyers doing quiet due diligence before they call.
+            Media coverage gives sellers and buyers one more reason to trust the name before they call.
           </p>
         </Reveal>
 
