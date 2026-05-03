@@ -201,7 +201,7 @@ export default function InternationalBuyersPage() {
             ))}
           </div>
           <p className="mx-auto mt-12 max-w-[640px] text-center text-[12px] italic text-[var(--color-text-dim)]">
-            Concept reference. Actual buyer geography varies year to year.
+            Buyer geography varies year to year.
           </p>
         </Container>
       </section>

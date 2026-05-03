@@ -8,31 +8,31 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://luke-mori-luxury-real-estate.vercel.app"),
   title: {
-    default: "Luke Mori Luxury Concept · Nelson & Kootenay Lake Real Estate",
-    template: "%s · Luke Mori Luxury Concept",
+    default: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
+    template: "%s · Luke Mori Luxury",
   },
   description:
-    "A premium concept homepage for Nelson and Kootenay Lake luxury real estate, designed by Kootenay Made Digital to show how private mountain properties can be marketed with world-class taste.",
-  applicationName: "Luke Mori Luxury (Concept)",
-  authors: [{ name: "Kootenay Made Digital" }],
-  creator: "Kootenay Made Digital",
-  publisher: "Kootenay Made Digital",
+    "Private Nelson and Kootenay Lake luxury real estate, lakefront estates, architectural view homes, and rare mountain properties represented with discretion and taste.",
+  applicationName: "Luke Mori Luxury",
+  authors: [{ name: "Luke Mori Luxury" }],
+  creator: "Luke Mori Luxury",
+  publisher: "Luke Mori Luxury",
   robots: { index: false, follow: true, nocache: true },
   openGraph: {
     type: "website",
-    title: "Luke Mori Luxury Concept · Nelson & Kootenay Lake Real Estate",
+    title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
     description:
-      "A premium concept homepage for Nelson and Kootenay Lake luxury real estate, designed by Kootenay Made Digital.",
-    siteName: "Luke Mori Luxury (Concept)",
-    url: "/concepts/luke-mori-luxury",
+      "Private Nelson and Kootenay Lake luxury real estate represented with discretion and taste.",
+    siteName: "Luke Mori Luxury",
+    url: "/",
     locale: "en_CA",
-    images: [{ url: "/luke-mori-luxury-logo-full.webp", alt: "Luke Mori Luxury concept mark" }],
+    images: [{ url: "/luke-mori-luxury-logo-full.webp", alt: "Luke Mori Luxury mark" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luke Mori Luxury Concept · Nelson & Kootenay Lake Real Estate",
+    title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
     description:
-      "A premium concept homepage for Nelson and Kootenay Lake luxury real estate, designed by Kootenay Made Digital.",
+      "Private Nelson and Kootenay Lake luxury real estate represented with discretion and taste.",
     images: ["/luke-mori-luxury-logo-full.webp"],
   },
   icons: {

@@ -24,7 +24,7 @@ export default function ContactPage() {
         eyebrow="Private Contact"
         title="Choose the file."
         emphasis="Keep it discreet."
-        lede="Seller strategy, private buyer access, relocation, second-home ownership, or a concept review for Kootenay Made Digital. The first reply is personal, within one business day, by Luke or his private team."
+        lede="Seller strategy, private buyer access, relocation, or second-home ownership. The first reply is personal, within one business day, by Luke or his private team."
         image={brandImages.lukeContact}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
@@ -34,7 +34,7 @@ export default function ContactPage() {
         eyebrow="Inquiry Routing"
         title="Start with intent,"
         emphasis="not a blank form."
-        body="The fastest path is the honest one. Tell us whether this is a seller file, buyer search, relocation or second-home question, or a concept review for an agent or brokerage. The next step changes accordingly."
+        body="The fastest path is the honest one. Tell us whether this is a seller file, buyer search, relocation question, or second-home plan. The next step changes accordingly."
       />
 
       <section className="tone-ivory tonal-section py-24 md:py-28">
@@ -56,7 +56,7 @@ export default function ContactPage() {
               <Reveal delay={240}>
                 <SectionLede className="mb-10">
                   For anything urgent, call. For an address, private access request, relocation question,
-                  or concept review, the form creates the cleanest brief.
+                  or private advisory request, the form creates the cleanest brief.
                 </SectionLede>
               </Reveal>
 

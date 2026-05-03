@@ -3,7 +3,7 @@ import { brandImages, contact } from "@/lib/data";
 import type { Listing } from "@/lib/listings";
 
 export const siteUrl = "https://luke-mori-luxury-real-estate.vercel.app";
-export const siteName = "Luke Mori Luxury (Concept)";
+export const siteName = "Luke Mori Luxury";
 export const defaultOgImage = brandImages.nelsonLandscape;
 
 type PageMetadataInput = {
@@ -75,10 +75,10 @@ export function buildPageMetadata({
 
 export function buildOrganizationJsonLd() {
   return {
-    "@type": "Organization",
-    "@id": "https://kootenaymade.ca/#organization",
-    name: "Kootenay Made Digital",
-    url: "https://kootenaymade.ca/",
+    "@type": "RealEstateAgent",
+    "@id": absoluteUrl("/#organization"),
+    name: "Luke Mori Luxury",
+    url: absoluteUrl("/"),
   };
 }
 

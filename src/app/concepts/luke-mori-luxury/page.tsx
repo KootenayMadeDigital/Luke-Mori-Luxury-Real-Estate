@@ -20,10 +20,10 @@ import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
 import { buildPageGraphJsonLd, buildPageMetadata } from "@/lib/seo";
 
-const title = "Nelson & Kootenay Lake Luxury Real Estate · Concept";
+const title = "Nelson & Kootenay Lake Luxury Real Estate";
 const description =
-  "Luke Mori Luxury, a concept by Kootenay Made Digital. Lakefront estates, architectural view homes, and rare Kootenay properties, represented with discretion and taste.";
-const path = "/concepts/luke-mori-luxury";
+  "Luke Mori Luxury. Lakefront estates, architectural view homes, and rare Kootenay properties, represented with discretion and taste.";
+const path = "/";
 
 export const metadata = buildPageMetadata({
   title,
@@ -32,7 +32,7 @@ export const metadata = buildPageMetadata({
   image: "/generated/kmd-real-estate-og-cover.webp",
 });
 
-export default function LukeMoriLuxuryConcept() {
+export default function LukeMoriLuxuryExperience() {
   return (
     <>
       <LoadingReveal />
@@ -45,7 +45,7 @@ export default function LukeMoriLuxuryConcept() {
           image: "/generated/kmd-real-estate-og-cover.webp",
           breadcrumbs: [
             { name: "Home", path: "/" },
-            { name: "Luke Mori Luxury Concept", path },
+            { name: "Luke Mori Luxury", path },
           ],
         })}
       />
@@ -72,7 +72,7 @@ export default function LukeMoriLuxuryConcept() {
           eyebrow="Conversion Architecture"
           title="The next step depends"
           emphasis="on the mandate."
-          body="The same page serves four serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation and second-home clients, and agents or brokerages evaluating Kootenay Made Digital."
+          body="The same page serves serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation clients, and second-home owners who need a clear route into the right conversation."
         />
         <LeadMagnet />
       </main>

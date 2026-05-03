@@ -1,10 +1,8 @@
-import LukeMoriLuxuryConcept, { metadata as conceptMetadata } from "./concepts/luke-mori-luxury/page";
+import LukeMoriLuxuryExperience, { metadata as pageMetadata } from "./concepts/luke-mori-luxury/page";
 
-export const metadata = conceptMetadata;
+export const metadata = pageMetadata;
 
-/* The root path renders the concept directly so opening the project at
-   localhost:3000 lands on the work. The canonical route remains
-   /concepts/luke-mori-luxury for sharing. */
+/* The root path renders the full homepage experience directly. */
 export default function RootPage() {
-  return <LukeMoriLuxuryConcept />;
+  return <LukeMoriLuxuryExperience />;
 }

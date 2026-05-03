@@ -65,7 +65,7 @@ export function MoriStandard() {
 
             <Reveal delay={240}>
               <p className="m-0 mb-10 max-w-[620px] text-[18px] font-medium leading-[1.75] text-[var(--color-text-muted)]">
-                {lukeBio.short} This concept frames that authority with a more deliberate luxury operating system: quieter intake, stronger proof, and presentation worthy of the properties.
+                {lukeBio.short} That authority is framed with a deliberate luxury operating system: quieter intake, stronger proof, and presentation worthy of the properties.
               </p>
             </Reveal>
 

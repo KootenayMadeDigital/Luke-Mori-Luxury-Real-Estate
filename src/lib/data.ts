@@ -1,7 +1,6 @@
 /* ============================================================
-   Real-content data layer for the Luke Mori Luxury concept.
-   Sourced from lukemori.com, used here in a speculative concept
-   pitched directly to Luke Mori by Kootenay Made Digital.
+   Real-content data layer for Luke Mori Luxury.
+   Sourced from lukemori.com and public listing material.
    ============================================================ */
 
 /* ---------- Brand contact (real) ---------- */
@@ -78,12 +77,12 @@ export const visitorIntents: VisitorIntent[] = [
     note: "For Nelson, North Shore, Balfour, Kaslo, and the Slocan Valley.",
   },
   {
-    eyebrow: "Agents & Brokerages",
-    title: "Review the concept as a private sales asset.",
-    body: "Built by Kootenay Made Digital to show how a premium local operator can look sharper than national luxury brands.",
-    href: "https://kootenaymade.ca/contact",
-    cta: "Private Consultation",
-    note: "For real estate teams evaluating a custom concept build.",
+    eyebrow: "Private Referrals",
+    title: "Introduce a serious buyer or seller.",
+    body: "A discreet route for family offices, advisors, past clients, and trusted local relationships with a principal worth discussing.",
+    href: "/contact",
+    cta: "Make Introduction",
+    note: "For referrals, advisory introductions, and quiet market conversations.",
   },
 ];
 
@@ -222,12 +221,12 @@ export const inquiryPaths: InquiryPath[] = [
     proof: "Nelson, North Shore, Balfour, Blewett, Slocan Valley, and absentee ownership context.",
   },
   {
-    audience: "Agents & Brokerages",
-    title: "Review the concept as a sales asset.",
-    body: "For real estate teams evaluating Kootenay Made Digital, this site shows how a local operator can look sharper than national luxury templates.",
-    href: "https://kootenaymade.ca/contact",
-    cta: "Discuss a concept build",
-    proof: "Custom positioning, route-specific funnels, proof architecture, and premium property storytelling.",
+    audience: "Private Referrals",
+    title: "Introduce a serious principal.",
+    body: "For family offices, advisors, past clients, and trusted local relationships introducing a buyer or seller who needs discretion.",
+    href: "/contact",
+    cta: "Make introduction",
+    proof: "Private routing, principal-level context, and a direct path into the right conversation.",
   },
 ];
 
@@ -237,7 +236,7 @@ export const privateOfficeSteps: PrivateOfficeStep[] = [
   {
     num: "01",
     title: "Name the mandate",
-    body: "Seller strategy, private buyer access, relocation, second-home ownership, or a concept review for a real estate brand.",
+    body: "Seller strategy, private buyer access, relocation, second-home ownership, or a private referral.",
   },
   {
     num: "02",
@@ -469,7 +468,6 @@ export const signatureAreas: Area[] = [
 
 export type Estate = {
   slug: string;
-  concept: string;
   area: string;
   title: string;
   shortTitle: string;
@@ -485,7 +483,6 @@ export type Estate = {
 export const featuredEstates: Estate[] = [
   {
     slug: "6890-harrop-procter-road",
-    concept: "Featured Estate",
     area: "Harrop · 51.8 Acres",
     title: "6890 Harrop-Procter Road",
     shortTitle: "Harrop Acreage Retreat",
@@ -513,7 +510,6 @@ export const featuredEstates: Estate[] = [
   },
   {
     slug: "26-birchgrove-bend",
-    concept: "Featured Estate",
     area: "Kaslo · Wing Creek",
     title: "26 Birchgrove Bend",
     shortTitle: "Hamill Creek Timber Frame",
@@ -542,7 +538,6 @@ export const featuredEstates: Estate[] = [
   },
   {
     slug: "906-james-road",
-    concept: "Featured Estate",
     area: "Shoreacres · Riverfront",
     title: "906 James Road",
     shortTitle: "Kootenay River Log Home",

@@ -19,7 +19,7 @@ export function PrivateInquiryPaths({
   eyebrow = "Private Office Paths",
   title = "Four ways into",
   emphasis = "the right room.",
-  body = "A luxury inquiry should not land in a generic inbox. The first decision is routing: seller strategy, private buyer brief, relocation or second-home planning, or a custom concept review for agents and brokerages.",
+  body = "A luxury inquiry should not land in a generic inbox. The first decision is routing: seller strategy, private buyer brief, relocation planning, or second-home ownership.",
   compact = false,
 }: Props) {
   return (

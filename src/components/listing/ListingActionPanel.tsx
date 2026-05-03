@@ -49,14 +49,26 @@ export function ListingActionPanel(props: Props) {
   });
   const url = useMemo(() => absoluteUrl(`/listings/${props.slug}`), [props.slug]);
   const shareText = useMemo(
-    () => buildShareText(props),
-    [props.address, props.price, props.location, props.propertyType]
+    () => buildShareText({
+      slug: props.slug,
+      address: props.address,
+      price: props.price,
+      location: props.location,
+      propertyType: props.propertyType,
+    }),
+    [props.slug, props.address, props.price, props.location, props.propertyType]
   );
 
   useEffect(() => {
     try {
       const recent = JSON.parse(window.localStorage.getItem("lml:recent-listings:v2") || "[]") as ListingPreview[];
-      const preview = buildPreview(props);
+      const preview = buildPreview({
+        slug: props.slug,
+        address: props.address,
+        price: props.price,
+        location: props.location,
+        heroPhoto: props.heroPhoto,
+      });
       const next = [preview, ...recent.filter((item) => item.slug !== props.slug)].slice(0, 8);
       window.localStorage.setItem("lml:recent-listings:v2", JSON.stringify(next));
     } catch {

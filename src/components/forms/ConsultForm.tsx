@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-/* Concept-only form. No external service is called, submitting reveals an
+/* Preview form. No external service is called, submitting reveals an
    inline confirmation. The structure is real so it can be wired up later. */
 
 const roles = [
@@ -10,8 +10,7 @@ const roles = [
   { value: "buyer", label: "Private Buyer" },
   { value: "relocation", label: "Relocation" },
   { value: "second-home", label: "Second Home" },
-  { value: "brokerage", label: "Agent / Brokerage" },
-];
+  ];
 
 export function ConsultForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -34,7 +33,7 @@ export function ConsultForm() {
             Open a Private File
           </h3>
           <p className="m-0 text-[15px] font-medium leading-[1.65] text-[#5c4635]">
-            Seller strategy, buyer access, relocation planning, second-home ownership, or concept review. Replies are personal, within one business day.
+            Seller strategy, buyer access, relocation planning, or second-home ownership. Replies are personal, within one business day.
           </p>
         </div>
 
@@ -84,7 +83,7 @@ export function ConsultForm() {
           <textarea
             name="notes"
             rows={3}
-            placeholder="Address, timeline, privacy needs, lakefront search, walk-to-Baker heritage, ski property near Whitewater, or concept review."
+            placeholder="Address, timeline, privacy needs, lakefront search, walk-to-Baker heritage, ski property near Whitewater, or second-home questions."
             className="w-full resize-y rounded-none border-0 border-b border-[rgba(78,55,34,0.28)] bg-transparent py-3 font-sans text-[17px] font-medium text-[#24170f] outline-none placeholder:text-[#8b7664] transition-colors duration-200 focus:border-[#7b4a24]"
           />
         </label>
@@ -103,7 +102,7 @@ export function ConsultForm() {
         </button>
 
         <p className="mt-5 text-center text-[13px] font-medium leading-[1.6] text-[#6a5543]">
-          Your inquiry is held in confidence. This concept form is ready to wire into a private CRM or email workflow.
+          Your inquiry is held in confidence. This private file is ready to route into Luke&apos;s office workflow.
         </p>
 
         {submitted && (
@@ -115,9 +114,6 @@ export function ConsultForm() {
               Thank you.
             </strong>
             Your private file has been noted. A member of the private division would be in touch within one business day.
-            <em className="mt-3 block font-serif text-[12px] italic text-[#6a5543]">
-              (Concept demo, no information was sent.)
-            </em>
           </div>
         )}
       </div>
