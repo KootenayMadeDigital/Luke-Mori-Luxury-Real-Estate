@@ -99,6 +99,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         emphasis={area.tagline.replace(/[.]$/, "")}
         lede={area.intro}
         image={area.hero}
+        imageTreatment="showcase"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "About Nelson", href: "/nelson" },

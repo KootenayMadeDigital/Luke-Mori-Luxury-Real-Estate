@@ -12,20 +12,32 @@ type Props = {
   image?: string;
   crumbs?: Crumb[];
   meta?: { label: string; value: string }[];
+  imageTreatment?: "standard" | "showcase";
 };
 
 /* The standard subpage hero, eyebrow, large serif title (with optional
    italic emphasis line), short lede, optional background image with
    readable contrast, optional breadcrumbs, optional meta hairline. */
 
-export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, meta }: Props) {
+export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, meta, imageTreatment = "standard" }: Props) {
+  const showcase = imageTreatment === "showcase";
   return (
     <section className="tone-dark tonal-section border-b border-[var(--color-line)] pb-20 pt-32 md:pb-28 md:pt-40">
       {image && (
         <div className="absolute inset-0 z-0" aria-hidden>
-          <Image src={image} alt="" fill preload sizes="100vw" className="object-cover opacity-[0.44] saturate-[1.04] contrast-[1.04]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.86)_0%,rgba(10,11,13,0.62)_48%,rgba(10,11,13,0.46)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.62)_0%,rgba(10,11,13,0.34)_36%,rgba(10,11,13,0.88)_100%)]" />
+          <Image
+            src={image}
+            alt=""
+            fill
+            preload
+            sizes="100vw"
+            className={`object-cover ${showcase ? "opacity-[0.82] saturate-[1.24] contrast-[1.1] brightness-[1.12]" : "opacity-[0.44] saturate-[1.04] contrast-[1.04]"}`}
+          />
+          <div className={showcase ? "absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.78)_0%,rgba(10,11,13,0.48)_42%,rgba(10,11,13,0.22)_100%)]" : "absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.86)_0%,rgba(10,11,13,0.62)_48%,rgba(10,11,13,0.46)_100%)]"} />
+          <div className={showcase ? "absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.48)_0%,rgba(10,11,13,0.18)_38%,rgba(10,11,13,0.7)_100%)]" : "absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.62)_0%,rgba(10,11,13,0.34)_36%,rgba(10,11,13,0.88)_100%)]"} />
+          {showcase && (
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_34%,rgba(255,255,255,0.16),transparent_26%),radial-gradient(circle_at_48%_72%,rgba(212,184,150,0.11),transparent_34%)]" />
+          )}
         </div>
       )}
 

@@ -65,6 +65,7 @@ export default function NelsonHubPage() {
         emphasis="and the Kootenays."
         lede="Five areas of Nelson and Kootenay Lake real estate, from downtown Nelson to Balfour. Each has its own character, price points, seasons, tradeoffs, and buyer fit."
         image={brandImages.nelsonLandscape}
+        imageTreatment="showcase"
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
         meta={[
           { value: "5", label: "Coverage Areas" },
