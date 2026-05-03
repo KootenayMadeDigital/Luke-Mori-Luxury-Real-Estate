@@ -577,6 +577,8 @@ export type ConcludedItem = {
   type: string;
   status: string;
   offered: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const recentlyConcluded: ConcludedItem[] = [
@@ -586,6 +588,8 @@ export const recentlyConcluded: ConcludedItem[] = [
     type: "Private Acreage Estate",
     status: "Sold",
     offered: "$3,950,000",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/6446ae992a38806865de5209_3954-MACGREGOR-WEST-RD.jpeg",
+    imageAlt: "3954 MacGregor West Road sold acreage estate",
   },
   {
     address: "812 Highway 3A",
@@ -593,6 +597,8 @@ export const recentlyConcluded: ConcludedItem[] = [
     type: "Lakefront Residence",
     status: "Sold",
     offered: "$2,695,000",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/6446b060e1101f75fa48d86c_812-HIGHWAY-3A.webp",
+    imageAlt: "812 Highway 3A sold lakefront residence",
   },
   {
     address: "74 Johnstone Road",
@@ -600,6 +606,8 @@ export const recentlyConcluded: ConcludedItem[] = [
     type: "Lakefront Estate",
     status: "Sold",
     offered: "$2,380,000",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/6446b0c8bfbace57cd20d181_74-JOHNSTONE-RD.webp",
+    imageAlt: "74 Johnstone Road sold lakefront estate",
   },
   {
     address: "1009 Observatory Street",
@@ -607,6 +615,8 @@ export const recentlyConcluded: ConcludedItem[] = [
     type: "Architectural View Home",
     status: "Sold",
     offered: "$2,240,000",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/6446b1293335fccd20f271d9_1009-OBSERVATORY-STREET.webp",
+    imageAlt: "1009 Observatory Street sold architectural view home",
   },
   {
     address: "1001 Sproat Drive",
@@ -614,6 +624,8 @@ export const recentlyConcluded: ConcludedItem[] = [
     type: "Walk-to-Water Residence",
     status: "Sold",
     offered: "$1,980,000",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/649f23e431e1f1e0169f28bc_1001-sproat-drive.jpeg",
+    imageAlt: "1001 Sproat Drive sold walk-to-water residence",
   },
 ];
 

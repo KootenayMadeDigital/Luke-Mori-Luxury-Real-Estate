@@ -14,22 +14,33 @@ type NavGroup = {
 
 const navGroups: NavGroup[] = [
   {
-    label: "Advisory",
+    label: "Start Here",
     href: "/#concierge",
     items: [
-      { label: "Seller Strategy", href: "/#sellers", description: "Pricing, launch sequence, qualified showings, and discretion." },
-      { label: "Private Access", href: "/#private", description: "Quiet inventory, luxury listings, and vetted introductions." },
-      { label: "Relocation Guide", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
+      { label: "Luxury Concept", href: "/", description: "The full private-office experience and landing page." },
+      { label: "Private Inquiry", href: "/#private-inquiry", description: "Choose the right file: seller, buyer, relocation, or concept build." },
+      { label: "Contact Luke", href: "/contact", description: "Phone, email, office, and private consultation form." },
       { label: "KMD Concept", href: "https://kootenaymade.ca/contact", description: "For agents and brokerages evaluating a private concept build." },
+    ],
+  },
+  {
+    label: "Clients",
+    href: "/buyers",
+    items: [
+      { label: "For Buyers", href: "/buyers", description: "Private access, lifestyle fit, and area-led search strategy." },
+      { label: "For Sellers", href: "/sellers", description: "Pricing, launch sequence, qualified showings, and discretion." },
+      { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
+      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer context, advisors, wires, and absentee ownership." },
     ],
   },
   {
     label: "Properties",
     href: "/listings",
     items: [
+      { label: "Featured Estates", href: "/#estates", description: "The active portfolio wall on the concept page." },
       { label: "All Active Listings", href: "/listings", description: "The current market, carefully organized." },
-      { label: "Luxury", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
-      { label: "Waterfront", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },
+      { label: "Luxury Listings", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
+      { label: "Waterfront Listings", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },
       { label: "Recently Sold", href: "/listings/sold", description: "A discreet ledger of placements." },
     ],
   },
@@ -50,6 +61,7 @@ const navGroups: NavGroup[] = [
     items: [
       { label: "About Luke", href: "/about", description: "Born and raised in Nelson. Founder, Luke Mori at Fair Realty." },
       { label: "Awards & Testimonials", href: "/testimonials", description: "Voted Best Luxury Broker BC, 2021 and 2024." },
+      { label: "YouTube Home Tours", href: "/#home-tours", description: "Property films, tours, and active listing media." },
       { label: "FAQ", href: "/faq", description: "The questions worth asking before you call." },
       { label: "Contact", href: "/contact", description: "Phone, email, office. Replies are personal." },
     ],
@@ -262,7 +274,7 @@ export function Nav() {
               Private Advisory
             </p>
             <p className="m-0 mt-3 max-w-[320px] font-serif text-[30px] font-light leading-[1.05] text-[var(--color-text)]">
-              Luxury sellers, private buyers, relocators, and concept viewers each get their own route.
+              Buyers, sellers, listings, places, media, and contact routes are all one move away.
             </p>
           </div>
 

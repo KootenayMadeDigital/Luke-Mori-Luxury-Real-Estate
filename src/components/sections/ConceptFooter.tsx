@@ -14,8 +14,18 @@ const socialLinks = [
 
 const navLists: { heading: string; links: { label: string; href: string }[] }[] = [
   {
+    heading: "Start Here",
+    links: [
+      { label: "Luxury Concept", href: "/" },
+      { label: "Private Inquiry", href: "/#private-inquiry" },
+      { label: "Contact Luke", href: "/contact" },
+      { label: "FAQ", href: "/faq" },
+    ],
+  },
+  {
     heading: "Listings",
     links: [
+      { label: "Featured Estates", href: "/#estates" },
       { label: "Active Listings", href: "/listings" },
       { label: "Luxury", href: "/listings/luxury" },
       { label: "Waterfront", href: "/listings/waterfront" },
@@ -25,10 +35,10 @@ const navLists: { heading: string; links: { label: string; href: string }[] }[] 
   {
     heading: "Buyers & Sellers",
     links: [
-      { label: "Buying with Luke", href: "/buyers" },
-      { label: "International Buyers", href: "/buyers/international" },
+      { label: "For Buyers", href: "/buyers" },
+      { label: "For Sellers", href: "/sellers" },
       { label: "Relocation", href: "/buyers/relocation" },
-      { label: "Selling with Luke", href: "/sellers" },
+      { label: "International Buyers", href: "/buyers/international" },
     ],
   },
   {
@@ -46,7 +56,7 @@ const navLists: { heading: string; links: { label: string; href: string }[] }[] 
     links: [
       { label: "About", href: "/about" },
       { label: "Awards & Testimonials", href: "/testimonials" },
-      { label: "FAQ", href: "/faq" },
+      { label: "YouTube Home Tours", href: "/#home-tours" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -146,7 +156,7 @@ export function ConceptFooter() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 xl:grid-cols-5">
             {navLists.map((list) => (
               <div key={list.heading}>
                 <span className="mb-4 block text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">

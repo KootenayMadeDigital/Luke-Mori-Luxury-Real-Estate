@@ -124,8 +124,8 @@ export function sortByPhotosDesc(list: Listing[]): Listing[] {
 /* ---------------- Featured selection ---------------- */
 
 /* Curated featured-estates pulled from Luke's own active listings,
-   sorted by price desc, the top three become the home-page features. */
-export const featuredListings: Listing[] = sortByPriceDesc(lukesOwnListings).slice(0, 3);
+   sorted by price desc, the top eight become the home-page proof wall. */
+export const featuredListings: Listing[] = sortByPriceDesc(lukesOwnListings).slice(0, 8);
 
 /* ---------------- Helpers for display ---------------- */
 

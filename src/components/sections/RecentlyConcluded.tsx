@@ -1,66 +1,130 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { recentlyConcluded } from "@/lib/data";
 
-/* Real recent placements with offered prices. Reads as a quiet ledger,
-   not a sold-sign brag. */
+/* Real recent placements with offered prices and imagery sourced from Luke's
+   public sold-property carousel. Reads as cinematic proof, not a sold-sign brag. */
 
 export function RecentlyConcluded() {
+  const [lead, ...supporting] = recentlyConcluded;
+
   return (
-    <section className="tone-ivory tonal-section py-32 md:py-36">
-      <Container>
-        <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_1fr] md:items-end">
+    <section id="recently-sold" className="tone-walnut tonal-section border-y border-[var(--color-line)] py-28 md:py-32">
+      <div className="pointer-events-none absolute inset-0 opacity-75" aria-hidden>
+        <div className="absolute left-[-12%] top-[-18%] h-[520px] w-[520px] rounded-full bg-[rgba(212,184,150,0.09)] blur-[150px]" />
+        <div className="absolute bottom-[-24%] right-[-16%] h-[620px] w-[620px] rounded-full bg-[rgba(132,162,166,0.07)] blur-[170px]" />
+      </div>
+
+      <Container className="relative z-10">
+        <Reveal className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[0.74fr_1fr] lg:items-end">
           <div>
-            <Eyebrow>Recently Placed</Eyebrow>
+            <Eyebrow>Recently Sold</Eyebrow>
             <SectionHeading className="mt-7">
-              A short ledger of
+              A proven track
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                concluded representation.
+                record, made visible.
               </em>
             </SectionHeading>
           </div>
-          <SectionLede align="right">
-            A discreet selection of recent placements. Specifics are public; everything else
-            withheld in the interest of every party who trusted us with them.
-          </SectionLede>
+          <div className="lg:ml-auto lg:max-w-[620px] lg:text-right">
+            <SectionLede align="right">
+              A discreet selection of recent placements, now presented as visual market proof: private acreage, lakefront, view homes, and walk-to-water addresses that show Luke&apos;s reach in the upper Kootenay market.
+            </SectionLede>
+            <Link
+              href="/listings/sold"
+              className="mt-6 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]"
+            >
+              View sold properties
+              <svg viewBox="0 0 16 16" aria-hidden className="size-[14px]">
+                <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
+              </svg>
+            </Link>
+          </div>
         </Reveal>
 
-        <Reveal as="ul" className="border-t border-[var(--color-line)]">
-          {recentlyConcluded.map((c, i) => (
-            <li
-              key={c.address}
-              className="group grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-[var(--color-line)] py-7 transition-colors duration-300 hover:bg-[var(--color-surface)] sm:grid-cols-[60px_1.4fr_1fr_auto_auto] sm:gap-8 sm:py-8"
-            >
-              <span className="hidden font-serif text-[14px] italic tracking-[0.1em] text-[var(--color-bronze)] sm:block">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="min-w-0">
-                <div className="font-serif text-[20px] font-normal leading-tight tracking-[-0.005em] text-[var(--color-text)] sm:text-[22px]">
-                  {c.address}
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6">
+          <Reveal>
+            <article className="group relative min-h-[560px] overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_34px_100px_-62px_rgba(0,0,0,0.95)]">
+              <div className="relative h-full min-h-[548px] overflow-hidden rounded-[calc(2rem-0.375rem)]">
+                <Image
+                  src={lead.image}
+                  alt={lead.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 54vw, 100vw"
+                  className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.12),rgba(10,11,13,0.2)_36%,rgba(10,11,13,0.88))]" />
+                <div className="absolute left-6 top-6 rounded-full border border-[rgba(245,239,229,0.34)] bg-[rgba(10,11,13,0.58)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text)] shadow-[0_18px_60px_-40px_rgba(0,0,0,0.95)]">
+                  {lead.status}
                 </div>
-                <div className="mt-1 text-[12px] text-[var(--color-text-dim)] sm:hidden">
-                  {c.area} · {c.type}
+                <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
+                  <div className="mb-5 font-serif text-[70px] font-light uppercase leading-none tracking-[0.08em] text-[rgba(245,239,229,0.88)] sm:text-[92px]">
+                    Sold
+                  </div>
+                  <div className="grid grid-cols-1 gap-5 border-t border-[rgba(245,239,229,0.2)] pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
+                    <div>
+                      <h3 className="m-0 font-serif text-[34px] font-light leading-[1.04] tracking-[-0.01em] text-[var(--color-text)] sm:text-[46px]">
+                        {lead.address}
+                      </h3>
+                      <p className="m-0 mt-3 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronze-light)]">
+                        {lead.area} · {lead.type}
+                      </p>
+                    </div>
+                    <div className="font-serif text-[30px] italic text-[var(--color-bronze-light)]">
+                      {lead.offered}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <span className="hidden text-[14px] text-[var(--color-text-muted)] sm:block">
-                {c.area}
-              </span>
-              <span className="hidden text-[12px] text-[var(--color-text-dim)] md:block">
-                {c.type}
-              </span>
-              <span className="text-right font-serif text-[18px] italic text-[var(--color-bronze-light)] sm:text-[20px]">
-                {c.offered}
-              </span>
-            </li>
-          ))}
-        </Reveal>
+            </article>
+          </Reveal>
 
-        <p className="mt-10 text-[12px] italic text-[var(--color-text-dim)]">
-          Offered prices reflect public list pricing at the time of representation.
-          Status: Sold.
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-1">
+            {supporting.map((c, i) => (
+              <Reveal key={c.address} delay={(i + 1) * 80}>
+                <article className="group grid h-full min-h-[260px] grid-cols-[0.96fr_1.04fr] overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.03)] p-1 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.055)] sm:grid-cols-1 lg:grid-cols-[0.92fr_1.08fr]">
+                  <div className="relative min-h-[250px] overflow-hidden rounded-[calc(1.5rem-0.25rem)] sm:min-h-[220px] lg:min-h-full">
+                    <Image
+                      src={c.image}
+                      alt={c.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 22vw, (min-width: 640px) 50vw, 46vw"
+                      className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.62))]" />
+                    <span className="absolute left-4 top-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)]">
+                      {String(i + 2).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="flex flex-col justify-between p-6 sm:p-7">
+                    <div>
+                      <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                        {c.status}
+                      </div>
+                      <h3 className="m-0 font-serif text-[25px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)]">
+                        {c.address}
+                      </h3>
+                      <p className="m-0 mt-3 text-[13px] leading-[1.6] text-[var(--color-text-muted)]">
+                        {c.area} · {c.type}
+                      </p>
+                    </div>
+                    <div className="mt-6 border-t border-[var(--color-line)] pt-5 font-serif text-[22px] italic text-[var(--color-bronze-light)]">
+                      {c.offered}
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        <p className="mt-9 text-[12px] italic text-[var(--color-text-dim)]">
+          Offered prices reflect public list pricing at the time of representation. Status: sold.
         </p>
       </Container>
     </section>
