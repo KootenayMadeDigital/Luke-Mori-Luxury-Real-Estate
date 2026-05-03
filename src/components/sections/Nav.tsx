@@ -259,15 +259,6 @@ export function Nav() {
         aria-hidden={!mobileOpen}
       >
         <div className="flex h-full flex-col overflow-y-auto">
-          <div className="mb-8 rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.04)] p-5">
-            <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-              Private Advisory
-            </p>
-            <p className="m-0 mt-3 max-w-[320px] font-serif text-[30px] font-light leading-[1.05] text-[var(--color-text)]">
-              Buyers, sellers, listings, places, media, and contact routes are all one move away.
-            </p>
-          </div>
-
           <div className="grid gap-4">
             {navGroups.map((g, groupIndex) => (
               <div
