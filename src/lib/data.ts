@@ -1026,39 +1026,67 @@ export const homeTourVideos: HomeTourVideo[] = [
 
 /* ---------- FAQ ---------- */
 
-export type FAQ = { q: string; a: string };
+export type FAQ = { category: string; q: string; a: string };
 
 export const faqs: FAQ[] = [
   {
-    q: "Do you represent properties below the luxury tier?",
-    a: "Yes. The luxury division is one part of the practice, we represent buyers and sellers across the full Nelson and Kootenay Lake market. The standards (photography, marketing, communication) are the same regardless of price point.",
+    category: "Selling",
+    q: "What happens before a property is publicly listed?",
+    a: "The seller process starts with the questions that affect strategy: why the owner is selling, what timing constraints exist, and what makes the home unique. The public launch should come after pricing, presentation, and the showing plan are clear.",
   },
   {
-    q: "What does 'off-market' actually mean?",
-    a: "A property quietly represented for an owner who requires discretion, not publicly listed, not on MLS, not advertised. Access is granted on an introductory basis to qualified buyers in our network.",
+    category: "Selling",
+    q: "What marketing assets are used for a serious listing?",
+    a: "The seller process described on this site includes professional photography, drone film, indoor video tours, full room measurements, and an editorial presentation built around the buyer profile for the home.",
   },
   {
-    q: "I'm relocating from outside Canada, can you help?",
-    a: "Yes. International buyers should consult our International Buyer's Guide for the regulatory and tax landscape. We've represented buyers from the U.S., U.K., Australia, and Hong Kong, and work with the local advisors required to make the transaction smooth.",
+    category: "Selling",
+    q: "How are offers handled?",
+    a: "Every offer should be reviewed in detail, including price, dates, conditions, financing, and the seller's timeline. The useful advice is not just the number, it is what the full offer means for the owner.",
   },
   {
-    q: "How much do you charge?",
-    a: "Standard B.C. real estate commission structures apply, paid by the seller at closing. Buyers do not pay our fees directly. For seller representation, the marketing investment we make in your property is included.",
+    category: "Selling",
+    q: "What does closing involve for a seller?",
+    a: "Closing normally includes legal documentation, title transfer, and the practical details around possession, such as movers, utilities, mail forwarding, cleaners, and key transfer.",
   },
   {
-    q: "Can I see a property before it's publicly listed?",
-    a: "Yes, that's the point of the private buyer network. Tell us what you're looking for; we'll tell you what's coming and what's quietly available right now.",
+    category: "Buying",
+    q: "How should a buyer begin in Nelson or Kootenay Lake?",
+    a: "Start with lifestyle fit before listings: waterfront, walkable Nelson, North Shore privacy, acreage, ski rhythm, second-home use, or relocation needs. The right area can narrow the search faster than price alone.",
   },
   {
-    q: "What's the average price range you work in?",
-    a: "Our average sale price across the practice is approximately $750,000. The luxury division focuses on properties above $1M, with regular placements in the $2M-$4M range.",
+    category: "Buying",
+    q: "What should buyers verify before writing an offer?",
+    a: "The buying process on this site calls out property viewings, disclosure review, title search, confirmation of property details, zoning, taxes, restrictions, and any applicable strata information before an offer is treated as serious.",
   },
   {
-    q: "Do you handle commercial real estate?",
-    a: "Limited commercial work for select clients. Our focus is residential, single-family estates, lakefront, and acreage. For commercial inquiries, we can refer you to the right local specialist.",
+    category: "Buying",
+    q: "What common costs should buyers ask about?",
+    a: "Buyers should ask about legal fees, title insurance, home inspection costs, appraisal fees, property transfer tax, GST where applicable, moving costs, and insurance. Exact amounts depend on the property and buyer situation.",
   },
   {
-    q: "How quickly can you list my property?",
-    a: "From our first conversation to a public launch is typically two to four weeks, the time required to do photography, video, and copy properly. For pocket-list / private representation, we can begin showing within days.",
+    category: "Buying",
+    q: "What happens after an accepted offer?",
+    a: "The buyer's team works through the agreed conditions, legal review, deposit handling, mortgage paperwork if financing is involved, and then possession details once the transaction is ready to complete.",
+  },
+  {
+    category: "Relocation",
+    q: "What should relocating buyers understand first?",
+    a: "Area fit matters. Nelson, the North Shore, Balfour, Blewett, and the Slocan Valley offer different road rhythms, services, winter realities, privacy levels, and daily routines.",
+  },
+  {
+    category: "Relocation",
+    q: "Are international buyers treated differently?",
+    a: "International buyers should get qualified legal and tax advice before purchasing. The site can organize the property and area questions, but tax residency, transfer rules, financing, and regulatory issues require professional advice.",
+  },
+  {
+    category: "Representation",
+    q: "What does off-market mean?",
+    a: "Off-market means a property is not being publicly promoted through the usual listing channels. Access depends on the owner's instructions, buyer fit, and whether an introduction is appropriate.",
+  },
+  {
+    category: "Representation",
+    q: "Does this concept replace LukeMori.com?",
+    a: "No. This is a speculative concept by Kootenay Made Digital using public Luke Mori material to demonstrate how a premium luxury real estate experience could be presented.",
   },
 ];
