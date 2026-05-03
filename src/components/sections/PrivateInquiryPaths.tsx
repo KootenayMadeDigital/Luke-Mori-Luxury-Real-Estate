@@ -19,7 +19,7 @@ export function PrivateInquiryPaths({
   eyebrow = "Private Inquiry",
   title = "Choose the",
   emphasis = "right next step.",
-  body = "Tell Luke what you need help with: selling, buying, relocating, or planning a second home.",
+  body = "Tell Luke what decision you are trying to make: sell, buy, relocate, or plan a second home.",
   compact = false,
 }: Props) {
   return (
@@ -94,7 +94,7 @@ export function PrivateInquiryPaths({
 
         <Reveal delay={180} className="mt-10 flex flex-col gap-4 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
           <p className="m-0 max-w-[640px] text-[13px] leading-[1.7] text-[var(--color-text-muted)]">
-            Prefer direct? Call Luke or send a note through the contact page.
+            Prefer direct? Call Luke or send a note. The goal is a useful next step, not a generic follow-up.
           </p>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href="/contact" variant="primary" size="md">

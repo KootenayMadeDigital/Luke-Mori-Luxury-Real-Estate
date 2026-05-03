@@ -43,12 +43,12 @@ export default function AboutPage() {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Proof, Properly Handled</Eyebrow>
+              <Eyebrow>Proof Clients Can Use</Eyebrow>
               <SectionHeading className="mt-7">
                 Experience without
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  empty bragging.
+                  empty noise.
                 </em>
               </SectionHeading>
             </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                   Local knowledge,
                   <br />
                   <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    supported by better tools.
+                    backed by better tools.
                   </em>
                 </SectionHeading>
               </Reveal>

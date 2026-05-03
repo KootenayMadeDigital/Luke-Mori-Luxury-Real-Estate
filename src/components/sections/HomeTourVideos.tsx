@@ -27,7 +27,7 @@ export function HomeTourVideos() {
           </div>
           <div className="lg:ml-auto lg:max-w-[620px] lg:text-right">
             <SectionLede align="right">
-              More than 100 property videos and over 200,000 views. For sellers, that means the home can be understood before the showing. For buyers, it means fewer wasted tours and better first decisions.
+              More than 100 property videos and over 200,000 views. Sellers get a stronger first impression. Buyers waste fewer tours. Everyone starts with better information.
             </SectionLede>
             <a
               href={contact.social.youtube}

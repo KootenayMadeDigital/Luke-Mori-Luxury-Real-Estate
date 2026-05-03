@@ -8,15 +8,15 @@ import { contact, sellerPromises } from "@/lib/data";
 const sellerSignals = [
   {
     label: "Before market",
-    value: "Value, presentation, and showing risk are handled before the first public impression.",
+    value: "Value, presentation, and showing risk are settled before the first public impression.",
   },
   {
     label: "During launch",
-    value: "Exposure is sequenced through qualified buyers, trusted agents, and controlled distribution.",
+    value: "Exposure starts with qualified buyers, trusted agents, and the channels most likely to reach the right person.",
   },
   {
     label: "After interest",
-    value: "Showings, offers, terms, and timing are managed carefully through closing.",
+    value: "Showings, offers, terms, and timing are handled as one plan through closing.",
   },
 ];
 
@@ -39,18 +39,18 @@ export function SellerSection() {
             </Reveal>
             <Reveal delay={120}>
               <SectionHeading className="mt-7">
-                Serious properties
+                High-value homes
                 <br />
-                deserve more than
+                need more than
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  an MLS upload.
+                  a public listing.
                 </em>
               </SectionHeading>
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-10">
-                A high-value home needs the right price, the right story, strong visuals, qualified buyers, and a showing plan before it goes public.
+                Before a high-value home goes public, the price, buyer profile, visuals, showing plan, and privacy needs should already be clear.
               </SectionLede>
             </Reveal>
 
@@ -74,7 +74,7 @@ export function SellerSection() {
                   Reach the right buyers without turning your home into public noise.
                 </p>
                 <p className="m-0 mt-5 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                  Price carefully, present the home well, and keep the process calm from first conversation to closing.
+                  Price carefully, present the home well, qualify interest early, and keep the process calm through closing.
                 </p>
               </div>
             </Reveal>

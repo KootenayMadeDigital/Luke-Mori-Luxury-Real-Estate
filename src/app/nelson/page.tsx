@@ -63,7 +63,7 @@ export default function NelsonHubPage() {
         eyebrow="About Nelson"
         title="The Queen City"
         emphasis="and the Kootenays."
-        lede="Five areas of Nelson and Kootenay Lake real estate, from downtown Nelson to Balfour. Each has its own character, price points, seasons, and buyer fit."
+        lede="Five areas of Nelson and Kootenay Lake real estate, from downtown Nelson to Balfour. Each has its own character, price points, seasons, tradeoffs, and buyer fit."
         image={brandImages.nelsonLandscape}
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
         meta={[
@@ -156,7 +156,7 @@ export default function NelsonHubPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Luke helps you understand which parts of the lake and valley are worth your time before you book a showing.
+              Luke helps you understand which parts of the lake and valley fit your life before you book a showing.
             </SectionLede>
           </Reveal>
 
@@ -202,9 +202,9 @@ export default function NelsonHubPage() {
 
       <InquiryCTA
         eyebrow="Local Knowledge"
-        title="Don't know which area"
-        emphasis="suits the life?"
-        body="A 30-minute conversation usually narrows the search to two or three areas. From there, the right showings get easier to choose."
+        title="Not sure which area"
+        emphasis="fits the plan?"
+        body="A 30-minute conversation can usually narrow the search to two or three areas. From there, the right showings get easier to choose."
       />
     </PageLayout>
   );

@@ -13,13 +13,13 @@ export function AuthorityStrip() {
                 Why Luke
               </span>
               <h2 className="m-0 mt-5 max-w-[12ch] font-serif text-[clamp(36px,5vw,62px)] font-light leading-[0.98] tracking-[-0.015em] text-[var(--color-text)]">
-                Five reasons clients call Luke.
+                Five reasons clients choose Luke.
               </h2>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <p className="m-0 max-w-[620px] text-[15px] leading-[1.75] text-[var(--color-text-muted)] lg:ml-auto">
-              Local knowledge, careful exposure, strong marketing, qualified buyers, and lake-specific experience all matter before the first showing.
+              Sellers want price protected. Buyers want fewer wrong turns. Both need local knowledge, clear marketing, qualified conversations, and lake-specific experience before the first showing.
             </p>
           </Reveal>
         </div>

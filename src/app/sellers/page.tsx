@@ -13,20 +13,20 @@ import { sellerSteps, brandImages } from "@/lib/data";
 
 const sellerProofStack = [
   {
-    title: "Verified record",
+    title: "Proof before promises",
     body: "$169M+ in career sales volume and Best Luxury Broker BC recognition in 2021 and 2024.",
   },
   {
-    title: "Controlled exposure",
-    body: "Start with value, likely buyers, privacy needs, and the price line you do not want to cross.",
+    title: "Exposure with control",
+    body: "Set value, likely buyers, privacy needs, and the price line you do not want to cross before the launch.",
   },
   {
-    title: "Marketing that earns attention",
-    body: "Film, photography, clear copy, room measurements, and a dedicated property page make the first impression count.",
+    title: "Marketing that earns the right attention",
+    body: "Film, photography, clear copy, room measurements, and a dedicated property page help qualified buyers understand the home before they visit.",
   },
   {
     title: "Negotiation",
-    body: "Offers are read for price, terms, timing, conditions, and leverage. The loudest number is not always the cleanest result.",
+    body: "Offers are reviewed for price, terms, timing, conditions, and leverage. The loudest number is not always the cleanest result.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function SellersPage() {
         eyebrow="For Sellers"
         title="Sell with clarity,"
         emphasis="not guesswork."
-        lede="Sell with clear pricing advice, strong photography, property film, a dedicated listing page, and a launch plan built around your timeline."
+        lede="Protect the sale with clear pricing advice, strong photography, property film, qualified showings, and a launch plan built around your timeline."
         image={brandImages.sellerDining}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
         meta={[
@@ -81,7 +81,7 @@ export default function SellersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The seller decision is not whether Luke can list the home. It is whether the launch protects price, privacy, timing, and leverage from first conversation to closing.
+              The question is not whether the home can be listed. It is whether the launch protects price, privacy, timing, and leverage from first conversation to closing.
             </SectionLede>
           </Reveal>
 
@@ -115,8 +115,8 @@ export default function SellersPage() {
               </em>
             </SectionHeading>
             <SectionLede align="center">
-              Architectural-grade photography. Drone film. A 60-second property film. Editorial copy.
-              Geo-targeted paid distribution into Vancouver, Calgary, and select international markets.
+              Professional photography. Drone film. A 60-second property film. Clear copy.
+              Targeted distribution into Vancouver, Calgary, and select international markets when the property calls for it.
               The standard is not the upgrade.
             </SectionLede>
           </Reveal>
@@ -146,8 +146,8 @@ export default function SellersPage() {
       <InquiryCTA
         eyebrow="Seller Strategy Call"
         title="Bring the address."
-        emphasis="Start with the property."
-        body="No commitment, no pressure. Walk through the property, privacy needs, timeline, and outcome you want. The plan follows from there."
+        emphasis="Leave with the first move."
+        body="No commitment, no pressure. Walk through the property, privacy needs, timeline, and outcome you want. Luke can tell you what the first move should be."
       />
     </PageLayout>
   );

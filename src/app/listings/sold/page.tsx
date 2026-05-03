@@ -26,8 +26,8 @@ export default function SoldPage() {
       <SubpageHero
         eyebrow="Recently Placed"
         title="Recently sold,"
-        emphasis="privately concluded."
-        lede="A selection of recent sales across Nelson and the Kootenays. Public details are shown. Private client details stay private."
+        emphasis="handled with care."
+        lede="A selection of recent sales across Nelson and the Kootenays. Public details are shown. Client details stay private."
         image={brandImages.orangeBridge}
         crumbs={[
           { label: "Home", href: "/" },
@@ -83,9 +83,9 @@ export default function SoldPage() {
 
       <InquiryCTA
         eyebrow="Considering Selling"
-        title="Your property deserves"
-        emphasis="strong local representation."
-        body="Strong photography, clear copy, a controlled launch, and a real buyer network. Every property gets the same care, regardless of price point."
+        title="Protect the sale with"
+        emphasis="a stronger plan."
+        body="Strong photography, clear copy, a controlled launch, and a real buyer network help protect the result before the sign goes up."
       />
     </PageLayout>
   );

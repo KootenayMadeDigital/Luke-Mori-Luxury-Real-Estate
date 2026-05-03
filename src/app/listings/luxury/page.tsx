@@ -27,9 +27,9 @@ export default function LuxuryListingsPage() {
     <PageLayout>
       <SubpageHero
         eyebrow={`Luxury · ${luxe.length.toLocaleString()} Properties`}
-        title="Nelson &amp; Kootenay Lake"
-        emphasis="luxury real estate."
-        lede="Every active property at $1M and above: lakefront homes, view homes, acreage, and heritage residences across the region."
+        title="The upper market,"
+        emphasis="without the noise."
+        lede="Every active property at $1M and above: lakefront homes, view homes, acreage, and heritage residences across the region, gathered into one clearer view."
         image={brandImages.procterLakeHouse}
         crumbs={[
           { label: "Home", href: "/" },
@@ -54,7 +54,7 @@ export default function LuxuryListingsPage() {
         eyebrow="Private Homes"
         title="The best homes"
         emphasis="don't list."
-        body="Some high-value homes are not publicly listed. Tell Luke what you are looking for, and he can let you know if a private introduction makes sense."
+        body="Some high-value homes are not publicly listed. Tell Luke what you are looking for, and he can let you know whether a private introduction is realistic."
       />
     </PageLayout>
   );

@@ -24,9 +24,9 @@ export default function ListingsIndexPage() {
     <PageLayout>
       <SubpageHero
         eyebrow={`Active · ${total.toLocaleString()} Listings`}
-        title="The Kootenay market,"
+        title="Browse the market,"
         emphasis="end to end."
-        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Luke's own listings carry a bronze badge."
+        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Use the filters to turn a crowded market into a shorter list."
         image={brandImages.procterLakeHouse}
         crumbs={[{ label: "Home", href: "/" }, { label: "Listings" }]}
         meta={[
@@ -45,9 +45,9 @@ export default function ListingsIndexPage() {
 
       <InquiryCTA
         eyebrow="Off-Market"
-        title="Some properties never list."
+        title="Some homes never hit the public feed."
         emphasis="Ask anyway."
-        body="Some homes are not publicly listed. Tell Luke what you are looking for, and he can let you know if a private introduction makes sense."
+        body="Some homes are not publicly listed. Tell Luke what you are looking for, and he can let you know whether a private introduction is realistic."
       />
     </PageLayout>
   );

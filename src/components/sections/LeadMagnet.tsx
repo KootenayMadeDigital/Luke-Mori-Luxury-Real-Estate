@@ -34,8 +34,8 @@ export function LeadMagnet() {
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-9">
-                A practical field guide for relocating buyers, second-home owners, and sellers:
-                neighbourhoods, market rhythm, architects, schools, and the questions worth asking before
+                A practical field guide for buyers, sellers, relocators, and second-home owners:
+                areas, market rhythm, schools, ownership details, and the questions worth asking before
                 you fly in to view.
               </SectionLede>
             </Reveal>

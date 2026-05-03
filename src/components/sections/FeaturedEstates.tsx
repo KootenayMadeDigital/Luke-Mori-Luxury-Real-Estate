@@ -34,7 +34,7 @@ export function FeaturedEstates() {
           </div>
           <div className="md:ml-auto md:max-w-[620px] md:text-right">
             <SectionLede align="right">
-              Eight active properties, tight enough to scan, dramatic enough to prove the standard. Lakefront, acreage, timber frame, riverfront, and view inventory all appear without dragging the page into a listing feed.
+              A tight view of the active market: lakefront, acreage, timber frame, riverfront, and view properties. Enough to understand the standard without getting lost in the full listing feed.
             </SectionLede>
             <Link
               href="/listings/luxury"

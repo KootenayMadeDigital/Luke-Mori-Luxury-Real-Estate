@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s · Luke Mori Luxury",
   },
   description:
-    "Nelson and Kootenay Lake real estate for lakefront homes, view properties, acreage, relocation buyers, and second-home owners.",
+    "Nelson and Kootenay Lake real estate for sellers, lakefront buyers, view properties, acreage, relocation, and second-home ownership.",
   applicationName: "Luke Mori Luxury",
   authors: [{ name: "Luke Mori Luxury" }],
   creator: "Luke Mori Luxury",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
     description:
-      "Nelson and Kootenay Lake real estate for lakefront homes, view properties, acreage, relocation buyers, and second-home owners.",
+      "Nelson and Kootenay Lake real estate for sellers, lakefront buyers, view properties, acreage, relocation, and second-home ownership.",
     siteName: "Luke Mori Luxury",
     url: "/",
     locale: "en_CA",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
     description:
-      "Nelson and Kootenay Lake real estate for lakefront homes, view properties, acreage, relocation buyers, and second-home owners.",
+      "Nelson and Kootenay Lake real estate for sellers, lakefront buyers, view properties, acreage, relocation, and second-home ownership.",
     images: ["/luke-mori-luxury-logo-full.webp"],
   },
   icons: {

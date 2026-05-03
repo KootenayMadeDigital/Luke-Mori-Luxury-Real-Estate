@@ -29,7 +29,7 @@ export function PrivateAccess() {
             </em>
           </SectionHeading>
           <SectionLede align="center" className="mb-12">
-            Some sellers prefer a quieter path. Tell Luke what you are looking for, and he can let you know if a private introduction makes sense.
+            Some sellers do not want a public launch. Tell Luke what you are looking for, and he can tell you whether a private introduction is realistic.
           </SectionLede>
           <Button href="#consult" variant="primary" size="lg">
             Ask About Private Homes

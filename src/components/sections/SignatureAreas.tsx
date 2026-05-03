@@ -91,12 +91,12 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
                 Area fit
               </div>
               <h3 className="m-0 font-serif text-[28px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)] md:text-[34px]">
-                The first question is not price. It is fit.
+                The first question is fit. Price comes after.
               </h3>
             </div>
             <div>
               <p className="m-0 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">
-                Waterfront buyers compare shoreline and sun. Nelson buyers compare walkability and grade. Acreage buyers compare access, water, outbuildings, and winter maintenance. A serious search begins by narrowing the lifestyle brief, then the listings.
+                Waterfront buyers compare shoreline and sun. Nelson buyers compare walkability and grade. Acreage buyers compare access, water, outbuildings, and winter maintenance. Start with the life, then shortlist the homes.
               </p>
               {preview ? (
                 <Link

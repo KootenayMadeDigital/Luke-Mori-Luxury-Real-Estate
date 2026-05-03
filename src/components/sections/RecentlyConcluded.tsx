@@ -73,7 +73,7 @@ export function RecentlyConcluded() {
           </div>
           <div className="lg:ml-auto lg:max-w-[620px] lg:text-right">
             <SectionLede align="right">
-              Recent acreage, lakefront, view homes, and walk-to-water properties across Nelson and the upper Kootenay market.
+              Recent sales show the range: acreage, lakefront, view homes, and walk-to-water properties across Nelson and the upper Kootenay market.
             </SectionLede>
             <Link
               href="/listings/sold"
@@ -136,7 +136,7 @@ export function RecentlyConcluded() {
         </div>
 
         <p className="mt-9 text-[12px] italic text-[var(--color-text-dim)]">
-          Offered prices reflect public list pricing at the time of representation. Status: sold.
+          Offered prices reflect public list pricing at the time of representation. Client details stay private.
         </p>
       </Container>
     </section>

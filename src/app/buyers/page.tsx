@@ -14,9 +14,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { buyerSteps, brandImages, lifestyleTiles } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Buying with Luke · Buyer Representation",
+  title: "Buying with Luke · Nelson Buyer Representation",
   description:
-    "Buyer representation in Nelson and Kootenay Lake real estate for relocating buyers, second-home owners, and regional buyers who want a clearer search.",
+    "Buyer representation in Nelson and Kootenay Lake real estate for relocating buyers, second-home owners, and regional buyers who want fewer wrong turns.",
   path: "/buyers",
   image: brandImages.procterLivingRoom,
 });
@@ -26,21 +26,21 @@ const buyerResourceCards = [
     href: "/buyers/international",
     eyebrow: "International",
     title: "Non-Canadian Buyers",
-    body: "U.S., U.K., Australian, and Hong Kong buyers, regulatory landscape, foreign-buyer considerations, currency strategy, and local advisor introductions.",
+    body: "U.S., U.K., Australian, and Hong Kong buyers: purchase rules, currency timing, advisor introductions, and ownership from afar.",
     cta: "Read the playbook",
   },
   {
     href: "/buyers/relocation",
     eyebrow: "Relocation",
     title: "Vancouver, Calgary, & Beyond",
-    body: "Schools, neighbourhoods, climate, healthcare access, and the details that make the move work.",
+    body: "Schools, neighbourhoods, climate, healthcare access, winter reality, and the details that make the move work.",
     cta: "Plan the move",
   },
   {
     href: "/buyers/international",
     eyebrow: "Second Home",
     title: "Lock-and-Leave Ownership",
-    body: "Caretaker relationships, winterization, security, and the local systems that make absentee ownership easier.",
+    body: "Caretaker relationships, winterization, security, and the local systems that make a second home easier to own.",
     cta: "Ask ownership questions",
   },
 ];
@@ -80,7 +80,7 @@ export default function BuyersPage() {
         eyebrow="For Buyers"
         title="Buying by life,"
         emphasis="not by feed."
-        lede="Whether you are relocating, buying a second home, or moving within the region, start with the life you want. Then narrow the search to the few addresses that truly fit."
+        lede="Whether you are relocating, buying a second home, or moving within the region, start with the life you want and the risks you want to avoid. Then narrow the search to the few addresses that truly fit."
         image={brandImages.procterLivingRoom}
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers" }]}
         meta={[
@@ -105,7 +105,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              MLS filters flatten the Kootenays. Lakefront, walkability, acreage, ski rhythm, relocation, and second-home ownership each need a different search.
+              MLS filters flatten the Kootenays. Lakefront, walkability, acreage, ski rhythm, relocation, and second-home ownership each create different risks and tradeoffs.
             </SectionLede>
           </Reveal>
 
@@ -167,7 +167,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Beautiful properties still have to fit the life. Start with the desired rhythm, then narrow the search around lake, town, privacy, acreage, ski access, relocation, or second-home ownership.
+              Beautiful properties still have to fit the life. Start with the routine, then narrow around lake, town, privacy, acreage, ski access, relocation, or second-home ownership.
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />
@@ -186,7 +186,7 @@ export default function BuyersPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              For lakefront, acreage, relocation, and second-home searches, the right fit may come from a public listing, a private introduction, or an owner conversation.
+              For lakefront, acreage, relocation, and second-home searches, the right fit may come from a public listing, a private introduction, or an owner conversation before it reaches the crowd.
             </SectionLede>
           </Reveal>
           <PrivateBuyerRegistry />
@@ -215,7 +215,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Buyers need local knowledge, the right advisors, clear ownership questions, and a process that protects their time.
+              Buyers need local knowledge, the right advisors, clear ownership questions, and a process that protects their time and confidence.
             </SectionLede>
           </Reveal>
 
@@ -250,7 +250,7 @@ export default function BuyersPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Different buyers need different things. Each path below leads to a focused playbook
+              Different buyers need different answers. Each path below leads to a focused playbook
               built around the realities of that particular journey.
             </SectionLede>
           </Reveal>
@@ -290,7 +290,7 @@ export default function BuyersPage() {
         eyebrow="Buyer Inquiry"
         title="Name the life."
         emphasis="Then the addresses."
-        body="Whether you are three years out or three weeks, start by naming the life you want here: lakefront, town, acreage, ski, second home, or a clean relocation path."
+        body="Whether you are three years out or three weeks, start by naming the life you want and the mistakes you want to avoid: lakefront, town, acreage, ski, second home, or a clean relocation path."
       />
     </PageLayout>
   );

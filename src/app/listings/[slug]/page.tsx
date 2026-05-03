@@ -310,7 +310,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </Reveal>
               <Reveal delay={220}>
                 <SectionLede className="mt-7 max-w-[760px]">
-                  Review the known facts, compare the fit, share it with the people who help you decide, and ask the right questions before touring.
+                  Review the known facts, compare the fit, share it with the people who help you decide, and ask the questions that matter before touring.
                 </SectionLede>
               </Reveal>
 
@@ -395,7 +395,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   Inquire with intent.
                 </h3>
                 <p className="m-0 mb-6 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  Ask Luke about the showing, the property details, or anything worth knowing before you spend a day on the road.
+                  Ask Luke about the showing, property details, fit, and anything worth knowing before you spend a day on the road.
                 </p>
 
                 <ul className="mb-7 space-y-3 border-y border-[var(--color-line)] py-6 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
@@ -578,7 +578,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </SectionHeading>
             </div>
             <SectionLede>
-              The listing gives you the basics. Luke can help you understand the lived reality: arrival, privacy, light, access, timing, and fit.
+              The listing gives you the basics. Luke can help you understand the lived reality: arrival, privacy, light, access, winter, timing, and fit.
             </SectionLede>
           </Reveal>
 
@@ -616,14 +616,14 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </em>
             </SectionHeading>
             <SectionLede>
-              Share it with the people who help you decide. Save it if it fits. Ask Luke what the listing cannot answer.
+              Share it with the people who help you decide. Save it if it fits. Ask Luke what the listing cannot answer before the property becomes a full-day tour.
             </SectionLede>
           </Reveal>
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
             {[
               { title: "Share with the circle", body: "Send the listing to a spouse, advisor, lender, inspector, or family member before booking a day on the road." },
-              { title: "Save the shortlist", body: "Keep the properties that survive first review close, then compare fit by lifestyle, privacy, access, and timing." },
+              { title: "Save the shortlist", body: "Keep the properties that survive first review close, then compare lifestyle, privacy, access, winter, and timing." },
               { title: "Ask better questions", body: "Ask Luke what the listing cannot answer: roads, light, neighbours, value, terms, and seller motivation." },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 80} className="bg-[var(--color-bg)] p-8 sm:p-9">

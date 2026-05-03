@@ -173,7 +173,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The right area makes a property easier to own. The wrong area can make even a beautiful home feel difficult.
+              The right area makes a property easier to own. The wrong area can make even a beautiful home feel like work.
             </SectionLede>
           </Reveal>
 
@@ -296,7 +296,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         eyebrow={`${area.name} Inquiry`}
         title={`Looking in ${area.name}?`}
         emphasis="Start here."
-        body={`Tell us what you're looking for in ${area.name}, current listings, off-market introductions, or just a conversation about whether this area fits the life you have in mind.`}
+        body={`Tell Luke what you are looking for in ${area.name}, current listings, private introductions, or a direct conversation about whether this area fits the life you have in mind.`}
       />
     </PageLayout>
   );

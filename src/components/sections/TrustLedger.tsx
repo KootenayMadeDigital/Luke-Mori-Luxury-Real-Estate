@@ -18,15 +18,15 @@ export function TrustLedger() {
           <div>
             <Eyebrow>Trust</Eyebrow>
             <SectionHeading className="mt-7">
-              Experience clients can
+              Confidence clients can
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                trust early.
+                build early.
               </em>
             </SectionHeading>
           </div>
           <SectionLede align="right">
-            High-value sellers and buyers need local knowledge, strong marketing, and a clear process.
+            High-value sellers and buyers need to know three things early: Luke has done the work, the process is clear, and the advice fits the property.
           </SectionLede>
         </Reveal>
 
@@ -74,7 +74,7 @@ export function TrustLedger() {
                   Simple test
                 </p>
                 <p className="m-0 mt-5 font-serif text-[28px] font-light leading-[1.18] tracking-[-0.005em] text-[var(--color-text)]">
-                  Good information helps a client make a calmer decision before they call.
+                  Good information lowers doubt before the first call.
                 </p>
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col">

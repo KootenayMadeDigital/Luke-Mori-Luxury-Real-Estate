@@ -17,7 +17,7 @@ export function InquiryCTA({
   eyebrow = "Private Inquiry",
   title = "Ready when you are.",
   emphasis,
-  body = "Start with a private conversation. Tell Luke whether you are buying, selling, relocating, or planning a second home.",
+  body = "Start with the decision in front of you. Tell Luke whether you are buying, selling, relocating, or planning a second home.",
 }: Props) {
   return (
     <section className="tone-dark tonal-section border-y border-[var(--color-line)] py-28 md:py-32">

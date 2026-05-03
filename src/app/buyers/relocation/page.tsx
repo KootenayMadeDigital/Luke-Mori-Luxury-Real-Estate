@@ -77,8 +77,8 @@ export default function RelocationPage() {
       <SubpageHero
         eyebrow="Relocation"
         title="A soft landing,"
-        emphasis="before a serious buy."
-        lede="Most people who move here had been thinking about it for years. Once you commit, the work becomes practical: schools, healthcare, where to live, how winter changes the decision, and how to spend the first ninety days."
+        emphasis="before you buy."
+        lede="Most people who move here have imagined it for years. The smart move is to test the practical parts early: schools, healthcare, winter roads, where to live, and how the first ninety days will feel."
         image={brandImages.bakerStreet}
         crumbs={[
           { label: "Home", href: "/" },
@@ -96,7 +96,7 @@ export default function RelocationPage() {
       <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
-            <Eyebrow>The Six Things That Matter</Eyebrow>
+            <Eyebrow>The Six Checks That Matter</Eyebrow>
             <SectionHeading className="mt-7">
               The questions
               <br />
@@ -139,7 +139,7 @@ export default function RelocationPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Test the daily pattern before the offer: school rhythm, winter roads, groceries, lake access, downtown time, healthcare, and the route home after dark.
+              Test the daily pattern before the offer: school rhythm, winter roads, groceries, lake access, downtown time, healthcare, and the drive home after dark.
             </SectionLede>
           </Reveal>
 
@@ -190,8 +190,8 @@ export default function RelocationPage() {
       <InquiryCTA
         eyebrow="Relocation Inquiry"
         title="Two trips."
-        emphasis="One careful map."
-        body="Start with a 30-minute call from wherever you are now. We'll talk through your timeline, your needs, and what's worth doing on your first scouting visit. Then we'll plan the routes."
+        emphasis="One useful map."
+        body="Start with a 30-minute call from wherever you are now. Talk through your timeline, needs, and what is worth doing on your first scouting visit. Then plan the routes."
       />
     </PageLayout>
   );

@@ -10,7 +10,7 @@ import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
 import { contact, brandImages, privateOfficeSteps } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Contact · Private Consultation",
+  title: "Contact Luke Mori",
   description:
     "Contact Luke Mori for Nelson and Kootenay Lake real estate. Phone, email, office address, and a private consultation form.",
   path: "/contact",
@@ -23,8 +23,8 @@ export default function ContactPage() {
       <SubpageHero
         eyebrow="Private Contact"
         title="Choose the file."
-        emphasis="Keep it discreet."
-        lede="Selling, buying, relocating, or planning a second home. Send the details, and Luke or his team can reply with a clear next step."
+        emphasis="Keep it clear."
+        lede="Selling, buying, relocating, or planning a second home. Send the useful details, and Luke or his team can reply with a clear next step."
         image={brandImages.lukeContact}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
@@ -32,9 +32,9 @@ export default function ContactPage() {
       <PrivateInquiryPaths
         compact
         eyebrow="Inquiry Routing"
-        title="Start with intent,"
+        title="Start with the decision,"
         emphasis="not a blank form."
-        body="Tell Luke whether this is about selling, buying, relocating, or planning a second home. The next step changes accordingly."
+        body="Tell Luke whether this is about selling, buying, relocating, or planning a second home. The better the first note, the sharper the reply."
       />
 
       <section className="tone-ivory tonal-section py-24 md:py-28">
@@ -55,7 +55,7 @@ export default function ContactPage() {
               </Reveal>
               <Reveal delay={240}>
                 <SectionLede className="mb-10">
-                  For anything urgent, call. For an address, buying question, selling question, or relocation plan, send the details here.
+                  For anything urgent, call. For an address, buying question, selling question, or relocation plan, send the details here so the first reply can be useful.
                 </SectionLede>
               </Reveal>
 

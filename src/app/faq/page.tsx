@@ -25,7 +25,7 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title="The questions"
         emphasis="worth asking first."
-        lede="Straight answers for sellers, buyers, relocating clients, and off-market questions."
+        lede="Straight answers for sellers, buyers, relocating clients, second-home owners, and off-market questions."
         image={brandImages.orangeBridge}
         crumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
@@ -42,7 +42,7 @@ export default function FaqPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Start with the category that matches the decision in front of you: selling, buying, relocation, or representation.
+              Start with the category that matches the decision in front of you: selling, buying, relocation, second-home ownership, or off-market access.
             </SectionLede>
           </Reveal>
 
@@ -119,9 +119,9 @@ export default function FaqPage() {
 
       <InquiryCTA
         eyebrow="Ask Anything"
-        title="Question not answered?"
-        emphasis="Ask before you guess."
-        body="If your question is specific to a property, timeline, relocation plan, or sale decision, the useful answer depends on the file. Start there."
+        title="Still unsure?"
+        emphasis="Ask before the mistake gets expensive."
+        body="If your question depends on a property, timeline, relocation plan, or sale decision, the useful answer depends on the details. Start there."
       />
     </PageLayout>
   );

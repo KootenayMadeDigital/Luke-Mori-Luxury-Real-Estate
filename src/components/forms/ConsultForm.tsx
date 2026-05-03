@@ -6,8 +6,8 @@ import { useState, type FormEvent } from "react";
    inline confirmation. The structure is real so it can be wired up later. */
 
 const roles = [
-  { value: "seller", label: "Luxury Seller" },
-  { value: "buyer", label: "Private Buyer" },
+  { value: "seller", label: "Seller" },
+  { value: "buyer", label: "Buyer" },
   { value: "relocation", label: "Relocation" },
   { value: "second-home", label: "Second Home" },
   ];
@@ -33,7 +33,7 @@ export function ConsultForm() {
             Send a Private Note
           </h3>
           <p className="m-0 text-[15px] font-medium leading-[1.65] text-[#5c4635]">
-            Seller strategy, buyer access, relocation planning, or second-home ownership. Replies are personal, within one business day.
+            Selling, buying, relocating, or planning a second home. Share the useful details and expect a personal reply within one business day.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export function ConsultForm() {
           <textarea
             name="notes"
             rows={3}
-            placeholder="Address, timeline, privacy needs, lakefront search, walk-to-Baker heritage, ski property near Whitewater, or second-home questions."
+            placeholder="Address, timeline, budget range, privacy needs, lakefront search, walk-to-town home, ski property near Whitewater, or second-home questions."
             className="w-full resize-y rounded-none border-0 border-b border-[rgba(78,55,34,0.28)] bg-transparent py-3 font-sans text-[17px] font-medium text-[#24170f] outline-none placeholder:text-[#8b7664] transition-colors duration-200 focus:border-[#7b4a24]"
           />
         </label>
@@ -102,7 +102,7 @@ export function ConsultForm() {
         </button>
 
         <p className="mt-5 text-center text-[13px] font-medium leading-[1.6] text-[#6a5543]">
-          Your inquiry is held in confidence. Luke or his team can reply with the right next step.
+          Your note is held in confidence. Luke or his team can reply with the right next step.
         </p>
 
         {submitted && (

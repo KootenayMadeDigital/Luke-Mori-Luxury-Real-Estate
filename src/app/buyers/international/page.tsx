@@ -10,9 +10,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "International Buyers · Nelson Real Estate",
+  title: "International & Second-Home Buyers · Nelson Real Estate",
   description:
-    "A buyer playbook for international buyers purchasing real estate in British Columbia. Foreign-buyer regulation, local advisors, currency strategy, and the realities of cross-border ownership.",
+    "A buyer guide for international and second-home purchasers in British Columbia: purchase rules, advisors, currency timing, and ownership from afar.",
   path: "/buyers/international",
   image: brandImages.procterLakeHouse,
 });
@@ -75,10 +75,10 @@ export default function InternationalBuyersPage() {
   return (
     <PageLayout>
       <SubpageHero
-        eyebrow="International Buyers"
+        eyebrow="International & Second-Home Buyers"
         title="Buying from"
         emphasis="anywhere."
-        lede="A focused playbook for non-Canadian buyers, second-home buyers, and absentee owners purchasing real estate in the Kootenay region. The federal and provincial landscape, the local network of advisors, and the practical realities of cross-border ownership."
+        lede="A focused guide for non-Canadian buyers, second-home buyers, and absentee owners purchasing in the Kootenays: rules, advisors, currency, remote ownership, and local care."
         image={brandImages.procterLakeHouse}
         crumbs={[
           { label: "Home", href: "/" },
@@ -96,7 +96,7 @@ export default function InternationalBuyersPage() {
       <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[760px]">
-            <Eyebrow>The Five Considerations</Eyebrow>
+            <Eyebrow>Five Questions to Solve Early</Eyebrow>
             <SectionHeading className="mt-7">
               What actually matters
               <br />
@@ -135,7 +135,7 @@ export default function InternationalBuyersPage() {
         <Container>
           <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
             <div>
-              <Eyebrow>Absentee Ownership Desk</Eyebrow>
+              <Eyebrow>Ownership From Afar</Eyebrow>
               <SectionHeading className="mt-7">
                 The house is only
                 <br />
@@ -145,7 +145,7 @@ export default function InternationalBuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Cross-border and second-home purchases are easier when the right advisors, caretaker plan, and local details are handled before closing.
+              Cross-border and second-home purchases feel easier when the advisor team, caretaker plan, financing, and local details are handled before closing.
             </SectionLede>
           </Reveal>
 
@@ -209,8 +209,8 @@ export default function InternationalBuyersPage() {
       <InquiryCTA
         eyebrow="International Inquiry"
         title="Buying from afar?"
-        emphasis="Build the local bench first."
-        body="A 30-minute call can cover the rules, the local market, the right advisors, and what is realistic from where you are now."
+        emphasis="Build the local team first."
+        body="A 30-minute call can cover the rules, the local market, the right advisors, and what is realistic before you travel or wire funds."
       />
     </PageLayout>
   );

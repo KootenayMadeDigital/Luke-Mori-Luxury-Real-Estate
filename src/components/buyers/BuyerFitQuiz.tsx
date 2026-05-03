@@ -24,8 +24,8 @@ const options: Option[] = [
 
 const recommendations: Record<PathKey, { title: string; body: string; href: string; cta: string; notes: string[] }> = {
   lakefront: {
-    title: "Start with waterfront due diligence.",
-    body: "The right brief should test shoreline rights, exposure, road access, docks, privacy, and how the property holds value beyond the photo angle.",
+    title: "Start with the waterfront questions.",
+    body: "The right brief tests shoreline rights, exposure, road access, docks, privacy, and whether the property holds value beyond the photo angle.",
     href: "/listings/waterfront",
     cta: "View waterfront properties",
     notes: ["Shoreline and dock questions", "Sun, wind, road, and winter access", "Comparable scarcity around Kootenay Lake"],
@@ -38,7 +38,7 @@ const recommendations: Record<PathKey, { title: string; body: string; href: stri
     notes: ["Baker Street lifestyle", "Heritage and renovation context", "Schools, parking, and daily routes"],
   },
   privacy: {
-    title: "Start with a private-area map.",
+    title: "Start with the North Shore map.",
     body: "North Shore and view properties need a clear brief: approach, sightlines, neighbours, road rhythm, lake orientation, and how visible the home really is.",
     href: "/nelson/north-shore",
     cta: "Explore North Shore",
@@ -74,7 +74,7 @@ const recommendations: Record<PathKey, { title: string; body: string; href: stri
   },
   international: {
     title: "Start with the advisor bench.",
-    body: "International buyers need the property brief plus tax, legal, financing, currency, and remote due diligence introductions before pressure enters the room.",
+    body: "International buyers need the property brief plus tax, legal, financing, currency, and remote due diligence introductions before time pressure starts.",
     href: "/buyers/international",
     cta: "Read international playbook",
     notes: ["Tax and legal counsel", "Currency and financing timing", "Remote diligence and local representation"],

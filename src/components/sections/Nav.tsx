@@ -17,21 +17,21 @@ const navGroups: NavGroup[] = [
     label: "Clients",
     href: "/buyers",
     items: [
-      { label: "For Buyers", href: "/buyers", description: "Listings, lifestyle fit, and area-led search." },
+      { label: "For Buyers", href: "/buyers", description: "Listings, lifestyle fit, and fewer wrong tours." },
       { label: "For Sellers", href: "/sellers", description: "Pricing, launch plan, qualified showings, and privacy." },
       { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
-      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and ownership from afar." },
+      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." },
     ],
   },
   {
     label: "Properties",
     href: "/listings",
     items: [
-      { label: "Featured Estates", href: "/#estates", description: "The active portfolio wall." },
-      { label: "All Active Listings", href: "/listings", description: "The current market, carefully organized." },
+      { label: "Featured Estates", href: "/#estates", description: "A focused view of active properties." },
+      { label: "All Active Listings", href: "/listings", description: "The current market, easier to compare." },
       { label: "Luxury Listings", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
       { label: "Waterfront Listings", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },
-      { label: "Recently Sold", href: "/listings/sold", description: "Recent sold properties." },
+      { label: "Recently Sold", href: "/listings/sold", description: "Recent sales across the region." },
     ],
   },
   {
@@ -51,9 +51,9 @@ const navGroups: NavGroup[] = [
     items: [
       { label: "About Luke", href: "/about", description: "Born and raised in Nelson. Founder, Luke Mori at Fair Realty." },
       { label: "Awards & Testimonials", href: "/testimonials", description: "Voted Best Luxury Broker BC, 2021 and 2024." },
-      { label: "YouTube Home Tours", href: "/#home-tours", description: "Property films, tours, and active listing media." },
-      { label: "FAQ", href: "/faq", description: "The questions worth asking before you call." },
-      { label: "Contact", href: "/contact", description: "Phone, email, office. Replies are personal." },
+      { label: "YouTube Home Tours", href: "/#home-tours", description: "Property films and home tours." },
+      { label: "FAQ", href: "/faq", description: "Answers before you call." },
+      { label: "Contact", href: "/contact", description: "Phone, email, office, and direct inquiry." },
     ],
   },
 ];

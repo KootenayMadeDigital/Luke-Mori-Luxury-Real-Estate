@@ -30,7 +30,7 @@ export function Hero() {
 
           <Reveal delay={180}>
             <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
-              Private guidance for lakefront estates, view homes, relocation buyers, and second-home owners across Nelson and Kootenay Lake.
+              Buy or sell lakefront homes, view properties, acreage, and second homes across Nelson and Kootenay Lake with local advice before the decision gets expensive.
             </p>
           </Reveal>
 
@@ -52,10 +52,10 @@ export function Hero() {
           <Reveal delay={340}>
             <div className="mt-5 hidden flex-col gap-3 sm:mt-8 sm:flex sm:flex-row sm:flex-wrap">
               <Button href="#sellers" variant="primary" size="lg" arrow>
-                Seller Strategy
+                Plan a Sale
               </Button>
               <Button href="/listings/luxury" variant="ghost" size="lg" arrow>
-                Listings and Private Homes
+                Find the Right Property
               </Button>
             </div>
           </Reveal>
@@ -81,10 +81,10 @@ export function Hero() {
               <div className="flex items-start justify-between gap-6 border-b border-[var(--color-line)] pb-6">
                 <div>
                   <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-                    Luke at a glance
+                    Why Clients Trust Luke
                   </p>
                   <h2 className="m-0 mt-3 max-w-[13ch] font-serif text-[34px] font-light leading-[1] tracking-[-0.01em] text-[var(--color-text)] sm:text-[40px]">
-                    The experience is already visible.
+                    A stronger decision starts here.
                   </h2>
                 </div>
                 <div className="hidden rounded-full border border-[var(--color-line)] px-3 py-2 text-right text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:block">
@@ -133,10 +133,10 @@ export function Hero() {
 
       <div className="absolute inset-x-5 bottom-8 z-20 flex flex-col gap-3 sm:hidden">
         <Button href="#sellers" variant="primary" size="lg" arrow full>
-          Seller Strategy
+          Plan a Sale
         </Button>
         <Button href="/listings/luxury" variant="ghost" size="lg" arrow full>
-          Listings and Private Homes
+          Find the Right Property
         </Button>
       </div>
 

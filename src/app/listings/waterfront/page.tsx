@@ -47,9 +47,9 @@ export default function WaterfrontPage() {
 
       <InquiryCTA
         eyebrow="Waterfront Inquiry"
-        title="Waterfront rarely lasts."
+        title="Waterfront decisions need care."
         emphasis="Move first."
-        body="Tell Luke what kind of waterfront you want: orientation, depth, dock potential, year-round access, and privacy."
+        body="Tell Luke what kind of waterfront you want: orientation, depth, dock potential, road access, sun, winter use, and privacy."
       />
     </PageLayout>
   );

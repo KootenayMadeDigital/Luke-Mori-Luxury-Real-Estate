@@ -55,17 +55,17 @@ export function MoriStandard() {
             </Reveal>
             <Reveal delay={120}>
               <h2 className="m-0 mb-8 mt-7 font-serif font-light leading-[1.02] tracking-[-0.015em] [font-size:clamp(38px,5vw,68px)]">
-                Local fluency,
+                Local knowledge,
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  built from experience.
+                  used carefully.
                 </em>
               </h2>
             </Reveal>
 
             <Reveal delay={240}>
               <p className="m-0 mb-10 max-w-[620px] text-[18px] font-medium leading-[1.75] text-[var(--color-text-muted)]">
-                {lukeBio.short} Sellers and buyers get clear advice, careful marketing, and local guidance from the first conversation.
+                {lukeBio.short} Sellers and buyers get clear advice, careful marketing, and practical local guidance from the first conversation.
               </p>
             </Reveal>
 

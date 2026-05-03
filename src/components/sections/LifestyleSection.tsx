@@ -21,13 +21,13 @@ export function LifestyleSection() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Specs are downstream. Start with the kind of life, then inspect the few addresses that can actually produce it.
+              The right home starts with the life it has to support. Lake, town, acreage, skiing, guests, work, and winter all change the search.
             </SectionLede>
           </Reveal>
 
           <Reveal delay={140} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
             <p className="m-0 mb-6 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-              Waterfront, walkability, privacy, acreage, ski rhythm, second-home ownership, and relocation all demand different due diligence. Choose the lifestyle first. The map gets much smaller.
+              Waterfront, walkability, acreage, skiing, relocation, and second-home ownership each carry different costs, risks, and routines. Choose the lifestyle first. The map gets much smaller.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button href="/listings/waterfront" variant="primary" size="md">

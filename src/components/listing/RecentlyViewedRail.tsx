@@ -65,7 +65,7 @@ export function RecentlyViewedRail({ currentSlug }: Props) {
             Saved / Recently Viewed
           </p>
           <p className="m-0 mt-1 text-[13px] text-[var(--color-text-muted)]">
-            Keep the serious short list close.
+            Keep the strongest short list close.
           </p>
         </div>
         <Link href="/listings" className="text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">

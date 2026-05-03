@@ -37,8 +37,8 @@ export const heroProofSignals: HeroProofSignal[] = [
   },
   {
     value: "Nelson born",
-    label: "Kootenay Lake intelligence",
-    detail: "Local knowledge of streets, lakefront pockets, builders, slopes, and owners.",
+    label: "Kootenay Lake knowledge",
+    detail: "Luke knows the streets, lakefront pockets, builders, slopes, and owner patterns that change value.",
   },
 ];
 
@@ -54,32 +54,32 @@ export type VisitorIntent = {
 export const visitorIntents: VisitorIntent[] = [
   {
     eyebrow: "Sellers",
-    title: "Bring the property to market carefully.",
-    body: "Clear pricing, strong presentation, qualified showings, and a launch plan that protects your time and privacy.",
+    title: "Protect value before the market sees it.",
+    body: "Set the price, visuals, showing plan, and exposure before the first buyer forms an opinion.",
     href: "#sellers",
     cta: "Talk Selling",
     note: "For lakefront, view, acreage, and legacy properties.",
   },
   {
     eyebrow: "Buyers",
-    title: "See more than the public feed.",
-    body: "Active listings, private introductions, and a tighter search based on how you actually want to live.",
+    title: "Find the homes worth your time.",
+    body: "Use public listings, private introductions, and lifestyle fit to avoid wasting tours on homes that only look good online.",
     href: "/listings/luxury",
     cta: "Browse Listings",
     note: "For local, Vancouver, Calgary, U.S., and international buyers.",
   },
   {
     eyebrow: "Relocation & Second Homes",
-    title: "Learn the area before you buy.",
-    body: "Neighbourhoods, schools, healthcare, winter conditions, and the first scouting route worth taking.",
+    title: "Know the area before you commit.",
+    body: "Neighbourhoods, schools, healthcare, winter conditions, and the first scouting route that makes the move feel real.",
     href: "/buyers/relocation",
     cta: "Relocation Guide",
     note: "For Nelson, North Shore, Balfour, Kaslo, and the Slocan Valley.",
   },
   {
     eyebrow: "Referrals",
-    title: "Introduce a buyer or seller.",
-    body: "A clear path for advisors, past clients, and trusted local relationships introducing someone who may need Luke.",
+    title: "Make the introduction cleanly.",
+    body: "For advisors, past clients, and trusted local relationships introducing someone who may need a careful first conversation.",
     href: "/contact",
     cta: "Make an Introduction",
     note: "For trusted introductions and private market conversations.",
@@ -92,27 +92,27 @@ export const authorityPillars: AuthorityPillar[] = [
   {
     number: "01",
     title: "Local Knowledge",
-    body: "From John's Walk to Johnstone Road, Luke knows the lots, views, roads, builders, and ownership patterns.",
+    body: "From John's Walk to Johnstone Road, Luke knows the lots, views, roads, builders, and ownership patterns that shape value.",
   },
   {
     number: "02",
     title: "Seller Representation",
-    body: "High-value homes need careful pricing, strong visuals, qualified showings, and controlled exposure.",
+    body: "High-value homes need careful pricing, strong visuals, qualified showings, and exposure that does not cheapen the property.",
   },
   {
     number: "03",
     title: "Property Marketing",
-    body: "Film, drone, sharp copy, and a dedicated property page when a basic listing is not enough.",
+    body: "Film, drone, sharp copy, and a dedicated property page help the right buyer understand the home before the showing.",
   },
   {
     number: "04",
     title: "Buyer Network",
-    body: "Relocating buyers, second-home buyers, and local buyers who are already clear on what they want.",
+    body: "Relocating buyers, second-home buyers, and local buyers who know what they want before they book a tour.",
   },
   {
     number: "05",
     title: "Kootenay Lake Expertise",
-    body: "Waterfront, North Shore, ski access, acreage, and the details that change value from one property to the next.",
+    body: "Waterfront, North Shore, ski access, acreage, and the practical details that change value from one property to the next.",
   },
 ];
 
@@ -124,7 +124,7 @@ export const credentials: Credential[] = [
   { value: "$169M+", label: "Career Sales Volume" },
   { value: "2021 & 2024", label: "Best Luxury Broker BC" },
   { value: "10+ Yrs", label: "Nelson Market Knowledge" },
-  { value: "Careful", label: "Representation" },
+  { value: "Private", label: "Representation" },
 ];
 
 /* ---------- Trust section ---------- */
@@ -142,28 +142,28 @@ export const trustProofs: TrustProof[] = [
     title: "Sales volume with real negotiation experience.",
     proof: "$169M+ career sales volume across Nelson and the Kootenays.",
     meaning:
-      "For sellers, the number matters because it comes from real pricing, offers, negotiations, and closings.",
+      "The number matters because it comes from real pricing, offers, negotiations, and closings, not claims on a brochure.",
   },
   {
     eyebrow: "Recognition",
     title: "Recognized in BC. Grounded in Nelson.",
     proof: "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
     meaning:
-      "Awards help, but the work is local: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
+      "Awards help, but the useful work is local: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
   },
   {
     eyebrow: "Local Fluency",
     title: "Born here. Knows the map.",
     proof: "Born and raised in Nelson, BC, with more than 10 years in the local market.",
     meaning:
-      "The value is knowing which lots get the light, which roads change in winter, and which addresses are worth patience.",
+      "That knowledge helps buyers avoid the wrong fit and helps sellers explain value clearly.",
   },
   {
     eyebrow: "Presentation",
     title: "Marketing that makes the home clear.",
     proof: "Property film, strong photography, dedicated property pages, and clear listing copy.",
     meaning:
-      "The right buyer should understand the property before they ever book the showing.",
+      "When the right buyer understands the property before the showing, fewer visits are wasted and better offers are possible.",
   },
 ];
 
@@ -171,16 +171,16 @@ export type TrustPrinciple = { title: string; body: string };
 
 export const trustPrinciples: TrustPrinciple[] = [
   {
-    title: "Facts before adjectives",
-    body: "Sales volume, awards, press visibility, local experience, and client voice give buyers and sellers a clearer reason to trust Luke.",
+    title: "Proof before adjectives",
+    body: "Sales volume, awards, press visibility, local experience, and client voice make trust easier before the first conversation.",
   },
   {
-    title: "Privacy before exposure",
-    body: "Your privacy, timeline, showing plan, and launch plan are settled before the market sees the home.",
+    title: "Privacy before attention",
+    body: "Your privacy, timeline, showing plan, and launch plan are settled before the market starts judging the home.",
   },
   {
-    title: "Process before pressure",
-    body: "Buyers and sellers get a clear next step and a personal reply instead of a generic contact queue.",
+    title: "Clarity before pressure",
+    body: "Buyers and sellers get a clear next step and a personal reply, not a generic contact queue.",
   },
 ];
 
@@ -198,16 +198,16 @@ export type InquiryPath = {
 export const inquiryPaths: InquiryPath[] = [
   {
     audience: "Sellers",
-    title: "Start the seller conversation.",
-    body: "Share the address, timeline, privacy needs, and the outcome you want. Luke can reply with a clear next step.",
+    title: "Start with the address and outcome.",
+    body: "Share the address, timeline, privacy needs, and the result you want. Luke can reply with the first move.",
     href: "/contact",
     cta: "Start seller strategy",
     proof: "$169M+ career volume, careful launch planning, qualified showings.",
   },
   {
     audience: "Buyers",
-    title: "Search beyond the feed.",
-    body: "Name the life you want: lakefront, walkable Nelson, acreage, ski rhythm, second home, or relocation. Then narrow the search properly.",
+    title: "Search for fit, not just inventory.",
+    body: "Name the life you want: lakefront, walkable Nelson, acreage, ski rhythm, second home, or relocation. Then cut the search down to what fits.",
     href: "/buyers",
     cta: "Build Buyer Brief",
     proof: "Open listings, private introductions, area fit, and local advisors.",
@@ -215,14 +215,14 @@ export const inquiryPaths: InquiryPath[] = [
   {
     audience: "Relocation & Second Homes",
     title: "Plan the first scouting route.",
-    body: "Schools, winter roads, healthcare, caretaker coverage, and daily routines get mapped before the tour day.",
+    body: "Schools, winter roads, healthcare, caretaker coverage, and daily routines are mapped before the tour day.",
     href: "/buyers/relocation",
     cta: "Plan relocation path",
     proof: "Nelson, North Shore, Balfour, Blewett, Slocan Valley, and second-home ownership.",
   },
   {
     audience: "Referrals",
-    title: "Introduce a buyer or seller.",
+    title: "Make the introduction cleanly.",
     body: "For advisors, past clients, and trusted local relationships introducing a buyer or seller.",
     href: "/contact",
     cta: "Make introduction",
@@ -235,17 +235,17 @@ export type PrivateOfficeStep = { num: string; title: string; body: string };
 export const privateOfficeSteps: PrivateOfficeStep[] = [
   {
     num: "01",
-    title: "Choose the path",
-    body: "Selling, buying, relocating, planning a second home, or making a private referral.",
+    title: "Choose the decision",
+    body: "Selling, buying, relocating, planning a second home, or making a referral.",
   },
   {
     num: "02",
-    title: "Share the useful details",
-    body: "Address, timeline, budget range, privacy needs, ideal lifestyle, or the reason for reaching out.",
+    title: "Share what matters",
+    body: "Address, timeline, budget range, privacy needs, desired lifestyle, and anything that would make the decision easier.",
   },
   {
     num: "03",
-    title: "Receive a personal reply",
+    title: "Get the right next step",
     body: "Luke can respond with a clear recommendation and no generic sales sequence.",
   },
 ];
@@ -629,13 +629,13 @@ export const recentlyConcluded: ConcludedItem[] = [
 export type Promise = { num: string; title: string; body: string };
 
 export const sellerPromises: Promise[] = [
-  { num: "01", title: "Clear valuation", body: "A clear read on value, comparable pressure, buyer depth, and the price line to protect." },
-  { num: "02", title: "Property story", body: "Before launch, the home is presented around what matters most: lifestyle, design, land, privacy, and value." },
-  { num: "03", title: "Film, photo, and copy", body: "Film, photography, floor-plan clarity, and writing that makes the home easy to understand." },
+  { num: "01", title: "Value before launch", body: "A clear read on value, comparable pressure, buyer depth, and the price line worth protecting." },
+  { num: "02", title: "Buyer-facing story", body: "Before launch, the home is presented around what matters most to the likely buyer: lifestyle, design, land, privacy, and value." },
+  { num: "03", title: "Film, photo, and copy", body: "Film, photography, floor-plan clarity, and writing that makes the home easy to understand and remember." },
   { num: "04", title: "Dedicated property page", body: "A dedicated page for the address, with the photos, facts, and story presented clearly." },
-  { num: "05", title: "Qualified buyer rollout", body: "Release to qualified buyers, relocation buyers, second-home families, and trusted agent networks." },
+  { num: "05", title: "Qualified buyer rollout", body: "Release to qualified buyers, relocation buyers, second-home families, and trusted agent networks, not casual traffic." },
   { num: "06", title: "Showing plan", body: "Showings are scheduled around privacy, readiness, and buyer fit, with casual traffic filtered before it reaches the door." },
-  { num: "07", title: "Negotiation", body: "Price, timing, terms, and leverage are handled together, not as a reaction to the loudest bidder." },
+  { num: "07", title: "Negotiation", body: "Price, timing, terms, conditions, and leverage are handled together, not as a reaction to the loudest bidder." },
   { num: "08", title: "Closing care", body: "From accepted offer to possession, the process stays calm, documented, and organized." },
 ];
 
@@ -695,7 +695,7 @@ export const lifestyleTiles: LifestyleTile[] = [
     num: "06",
     title: "Second Home",
     kicker: "Lock-and-leave, managed, ready",
-    body: "Weekend arrival, caretaker coverage, winterisation, security, and the systems that make absentee ownership calm.",
+    body: "Weekend arrival, caretaker coverage, winterization, security, and the systems that make absentee ownership feel easy.",
     href: "/buyers/international",
     cta: "Ask ownership questions",
   },
@@ -848,7 +848,7 @@ export const nelsonAreas: NelsonArea[] = [
     highlights: [
       { title: "Kootenay Lake Ferry", body: "The world's longest free ferry connects Balfour to the East Shore, Crawford Bay, Riondel, and the Purcell Range." },
       { title: "Balfour Golf Course", body: "Eighteen holes carved between the lake and the surrounding mountains, a Kootenay institution." },
-      { title: "Private Marinas", body: "Deep-water moorage and the kind of private dock arrangements rare elsewhere in the region." },
+      { title: "Private Moorage", body: "Deep-water moorage and private dock arrangements that are hard to find elsewhere in the region." },
     ],
   },
   {
@@ -903,7 +903,7 @@ export const lukeBio = {
   philosophy:
     "Local knowledge, privacy, strong photography, clear copy, and careful representation for the property and the people behind it.",
   approach:
-    "Good technology helps, but real estate is still personal. The goal is simple: better advice, better communication, and a smoother transaction.",
+    "Good technology helps, but real estate is still personal. The goal is better advice, better communication, and fewer surprises.",
   bornAndRaised: "Born and raised in Nelson, BC",
   brokerage: "Founder, Luke Mori at Fair Realty",
   pillars: [
@@ -915,7 +915,7 @@ export const lukeBio = {
     {
       k: "II.",
       title: "Privacy from the start.",
-      body: "Careful representation, controlled exposure, and qualified showings. Your home needs the right buyer, not an audience.",
+      body: "Private representation, controlled exposure, and qualified showings. Your home needs the right buyer, not an audience.",
     },
     {
       k: "III.",
@@ -938,12 +938,12 @@ export const buyerSteps: ProcessStep[] = [
   {
     num: "02",
     title: "Find your home",
-    body: "We work public listings, off-market introductions, and focused tours that respect your time.",
+    body: "We work public listings, off-market introductions, and focused tours so your time goes to real contenders.",
   },
   {
     num: "03",
     title: "Make an offer",
-    body: "Offer price, financing conditions, inspections, dates, included items, and any first-time buyer savings opportunities you may qualify for.",
+    body: "Offer price, financing conditions, inspections, dates, included items, and any buyer savings opportunities you may qualify for.",
   },
   {
     num: "04",
@@ -961,7 +961,7 @@ export const sellerSteps: ProcessStep[] = [
   {
     num: "01",
     title: "Answer the questions worth asking",
-    body: "Why are you selling? What timeline matters? What makes the home valuable? Start there before setting price or launch plan.",
+    body: "Why are you selling? What timeline matters? What makes the home valuable? Answer that before setting price or launch plan.",
   },
   {
     num: "02",
@@ -971,7 +971,7 @@ export const sellerSteps: ProcessStep[] = [
   {
     num: "03",
     title: "Receiving offers",
-    body: "Every offer is reviewed in detail. Clear guidance on price, terms, and what each offer actually means for your timeline and walk-away.",
+    body: "Every offer is reviewed for price, terms, conditions, timing, and what it actually means for your walk-away result.",
   },
   {
     num: "04",
@@ -1032,7 +1032,7 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "What marketing assets are used for a strong listing?",
-    a: "A strong listing can include professional photography, drone film, indoor video tours, room measurements, and copy written around the likely buyer for the home.",
+    a: "A strong listing can include professional photography, drone film, indoor video, room measurements, and copy written around the likely buyer.",
   },
   {
     category: "Selling",
@@ -1052,7 +1052,7 @@ export const faqs: FAQ[] = [
   {
     category: "Buying",
     q: "What should buyers verify before writing an offer?",
-    a: "Buyers should review property viewings, disclosure documents, title search, property details, zoning, taxes, restrictions, and any applicable strata information before an offer is treated as serious.",
+    a: "Buyers should review property viewings, disclosure documents, title search, property details, zoning, taxes, restrictions, and any applicable strata information before an offer moves forward.",
   },
   {
     category: "Buying",
@@ -1082,7 +1082,7 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "Why does presentation matter so much for a higher-value property?",
-    a: "High-value homes ask buyers to understand the house, land, privacy, lifestyle, and location at once. Photography, video, measurements, and clear copy help the right buyer decide whether a showing is worth their time.",
+    a: "High-value homes ask buyers to understand the house, land, privacy, lifestyle, and location at once. Photography, video, measurements, and clear copy help the right buyer decide whether to tour.",
   },
   {
     category: "Selling",
@@ -1112,6 +1112,6 @@ export const faqs: FAQ[] = [
   {
     category: "Representation",
     q: "What makes a first conversation useful?",
-    a: "A useful first conversation defines the property, timeline, privacy needs, budget or pricing range, area preferences, and the decision the client is trying to make.",
+    a: "A useful first conversation defines the property, timeline, privacy needs, budget or pricing range, area preferences, and the decision you are trying to make.",
   },
 ];

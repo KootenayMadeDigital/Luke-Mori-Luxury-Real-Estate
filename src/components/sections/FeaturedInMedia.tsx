@@ -36,7 +36,7 @@ export function FeaturedInMedia() {
             </em>
           </h2>
           <p className="mx-auto mt-7 max-w-[650px] text-[16px] leading-[1.75] text-[var(--color-text-muted)]">
-            Luke has been featured across real estate, luxury, design, lifestyle, and regional publications.
+            Media coverage adds one more trust signal for sellers and buyers doing quiet due diligence before they call.
           </p>
         </Reveal>
 
