@@ -48,7 +48,7 @@ export default function SoldPage() {
             {recentlyConcluded.map((c, i) => (
               <li
                 key={c.address}
-                className="group grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-[var(--color-line)] py-8 transition-colors duration-300 hover:bg-[var(--color-surface)] sm:grid-cols-[60px_1.5fr_1fr_1.2fr_auto] sm:gap-8 sm:py-9"
+                className="luxury-card group grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-[var(--color-line)] py-8 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:grid-cols-[60px_1.5fr_1fr_1.2fr_auto] sm:gap-8 sm:py-9"
               >
                 <span className="hidden font-serif text-[14px] italic tracking-[0.1em] text-[var(--color-bronze)] sm:block">
                   {String(i + 1).padStart(2, "0")}

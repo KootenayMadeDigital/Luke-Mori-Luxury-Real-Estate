@@ -91,7 +91,7 @@ export default function FaqPage() {
                           key={f.q}
                           as="li"
                           delay={(i % 4) * 60}
-                          className="rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-[border-color,background,transform] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,255,255,0.62)] md:p-8"
+                          className="luxury-card rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-[border-color,background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,255,255,0.62)] md:p-8"
                         >
                           <div className="grid grid-cols-1 gap-4 md:grid-cols-[58px_1fr] md:gap-8">
                             <span className="font-serif text-[16px] italic tracking-[0.1em] text-[var(--color-bronze)]">

@@ -96,7 +96,7 @@ export default function NelsonHubPage() {
               <Reveal key={a.slug} delay={i * 60}>
                 <Link
                   href={`/nelson/${a.slug}`}
-                  className="group flex h-full flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color] duration-500 hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
+                  className="luxury-card group flex h-full flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
                 >
                   <div className="tone-dark relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -104,7 +104,7 @@ export default function NelsonHubPage() {
                       alt={a.name}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+                      className="luxury-media object-cover"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,11,13,0.7)]" />
                     <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between">
@@ -130,7 +130,7 @@ export default function NelsonHubPage() {
                     </p>
                     <span className="mt-auto inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                       Explore the area
-                      <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                      <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                         <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
@@ -164,7 +164,7 @@ export default function NelsonHubPage() {
             {areaFitIndex.map((item, i) => (
               <Reveal
                 key={item.desire}
-                className="grid grid-cols-1 gap-5 border-b border-[var(--color-line)] bg-[var(--color-bg)] p-7 last:border-b-0 transition-colors hover:bg-[var(--color-surface)] md:grid-cols-[0.6fr_0.7fr_1.2fr_auto] md:items-center md:p-8"
+                className="luxury-card grid grid-cols-1 gap-5 border-b border-[var(--color-line)] bg-[var(--color-bg)] p-7 last:border-b-0 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] md:grid-cols-[0.6fr_0.7fr_1.2fr_auto] md:items-center md:p-8"
                 delay={i * 55}
               >
                 <div className="text-[10px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">

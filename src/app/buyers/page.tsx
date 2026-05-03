@@ -114,7 +114,7 @@ export default function BuyersPage() {
               <Reveal key={tile.num} delay={(i % 4) * 60}>
                 <Link
                   href={tile.href}
-                  className="group flex h-full min-h-[250px] flex-col bg-[var(--color-bg)] p-8 transition-colors hover:bg-[var(--color-surface)]"
+                  className="luxury-card group flex h-full min-h-[250px] flex-col bg-[var(--color-bg)] p-8 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)]"
                 >
                   <span className="mb-5 font-serif text-[14px] italic tracking-[0.1em] text-[var(--color-bronze)]">
                     {tile.num}
@@ -130,7 +130,7 @@ export default function BuyersPage() {
                   </p>
                   <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-bronze)]">
                     {tile.cta}
-                    <svg viewBox="0 0 16 16" aria-hidden className="size-[13px] transition-transform duration-300 group-hover:translate-x-1">
+                    <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[13px]">
                       <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
@@ -260,7 +260,7 @@ export default function BuyersPage() {
               <Reveal key={card.title}>
                 <Link
                   href={card.href}
-                  className="group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-10 transition-[transform,border-color] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
+                  className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-10 transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
                 >
                   <span className="mb-5 text-[10px] font-medium uppercase tracking-[0.28em] text-[var(--color-bronze)]">
                     {card.eyebrow}
@@ -273,7 +273,7 @@ export default function BuyersPage() {
                   </p>
                   <span className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     {card.cta}
-                    <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                    <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                       <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>

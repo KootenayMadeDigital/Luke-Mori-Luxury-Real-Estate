@@ -105,7 +105,7 @@ export function SellerSection() {
                       key={p.title}
                       as="li"
                       delay={(i % 4) * 70}
-                      className="group min-h-[230px] border-b border-[var(--color-line)] p-7 transition-colors duration-300 hover:bg-[var(--color-surface)] sm:border-r sm:p-8 sm:even:border-r-0 lg:p-9"
+                      className="luxury-card group min-h-[230px] border-b border-[var(--color-line)] p-7 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:border-r sm:p-8 sm:even:border-r-0 lg:p-9"
                     >
                       <span className="mb-8 inline-flex size-11 items-center justify-center rounded-full border border-[var(--color-line-strong)] font-serif text-[15px] italic tracking-[0.05em] text-[var(--color-bronze-light)] transition-colors duration-300 group-hover:border-[var(--color-bronze)]">
                         {p.num}

@@ -111,13 +111,13 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {area.scenes.map((scene, index) => (
               <Reveal key={scene.title} delay={index * 70}>
-                <figure className="group relative m-0 aspect-[16/10] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)]">
+                <figure className="luxury-card group relative m-0 aspect-[16/10] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)]">
                   <Image
                     src={scene.image}
                     alt={scene.alt}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                    className="luxury-media object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.72))]" aria-hidden />
                   <figcaption className="absolute bottom-4 left-4 right-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text)]">
@@ -234,7 +234,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
                   key={n.name}
                   as="li"
                   delay={i * 60}
-                  className="grid grid-cols-1 gap-2 border-b border-[var(--color-line)] py-9 transition-colors hover:bg-[var(--color-surface)] sm:grid-cols-[60px_220px_1fr] sm:items-baseline sm:gap-10 md:py-10"
+                  className="luxury-card grid grid-cols-1 gap-2 border-b border-[var(--color-line)] py-9 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:grid-cols-[60px_220px_1fr] sm:items-baseline sm:gap-10 md:py-10"
                 >
                   <span className="hidden font-serif text-[14px] italic tracking-[0.1em] text-[var(--color-bronze)] sm:block">
                     {String(i + 1).padStart(2, "0")}
@@ -270,7 +270,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               <Reveal key={o.slug}>
                 <Link
                   href={`/nelson/${o.slug}`}
-                  className="group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
+                  className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
                 >
                   <span className="mb-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     {o.population} · Avg {o.avgPrice}
@@ -281,7 +281,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
                   </p>
                   <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     Explore
-                    <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                    <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                       <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>

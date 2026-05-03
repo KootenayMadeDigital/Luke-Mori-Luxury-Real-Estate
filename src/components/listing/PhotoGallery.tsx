@@ -59,7 +59,7 @@ export function PhotoGallery({ photos, alt }: Props) {
               key={src + i}
               type="button"
               onClick={() => setOpenIndex(i)}
-              className={`group relative aspect-[4/3] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] ${span}`}
+              className={`luxury-card group relative aspect-[4/3] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] ${span}`}
               aria-label={`View photo ${i + 1} of ${total}`}
             >
               <Image
@@ -67,7 +67,7 @@ export function PhotoGallery({ photos, alt }: Props) {
                 alt={`${alt}, frame ${i + 1}`}
                 fill
                 sizes={i === 0 ? "100vw" : "(min-width: 768px) 50vw, 100vw"}
-                className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                className="luxury-media object-cover"
               />
               {i === 0 && (
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,11,13,0.5)]" />

@@ -28,7 +28,7 @@ export function PrivateBuyerRegistry() {
         <Link
           key={card.title}
           href={card.href}
-          className="group flex min-h-[280px] flex-col bg-[var(--color-bg)] p-8 transition-colors hover:bg-[var(--color-surface)] sm:p-9"
+          className="luxury-card group flex min-h-[280px] flex-col bg-[var(--color-bg)] p-8 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-9"
         >
           <span className="mb-8 inline-flex size-12 items-center justify-center rounded-full border border-[var(--color-line-strong)] text-[var(--color-bronze)] transition-colors group-hover:border-[var(--color-bronze)]">
             <svg viewBox="0 0 18 18" aria-hidden className="size-4">

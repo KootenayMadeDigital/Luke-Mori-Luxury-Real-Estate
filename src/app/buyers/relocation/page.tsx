@@ -148,7 +148,7 @@ export default function RelocationPage() {
               <Reveal key={route.title} delay={(i % 2) * 70}>
                 <Link
                   href={route.href}
-                  className="group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 transition-[transform,border-color] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)] sm:p-9"
+                  className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)] sm:p-9"
                 >
                   <span className="mb-4 text-[10px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                     Area fit {String(i + 1).padStart(2, "0")}
@@ -164,7 +164,7 @@ export default function RelocationPage() {
                   </p>
                   <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     Study the area
-                    <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                    <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                       <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
@@ -179,7 +179,7 @@ export default function RelocationPage() {
               { href: "/listings/waterfront", label: "View waterfront" },
               { href: "/contact", label: "Plan relocation call" },
             ].map((item) => (
-              <Link key={item.href + item.label} href={item.href} className="bg-[var(--color-bg)] p-6 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-bronze-light)]">
+              <Link key={item.href + item.label} href={item.href} className="luxury-card bg-[var(--color-bg)] p-6 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-[background,color,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] hover:text-[var(--color-bronze-light)]">
                 {item.label}
               </Link>
             ))}

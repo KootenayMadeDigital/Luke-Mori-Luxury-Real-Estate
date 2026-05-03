@@ -78,11 +78,11 @@ export function RecentlyViewedRail({ currentSlug }: Props) {
           <Link
             key={listing.slug}
             href={`/listings/${listing.slug}`}
-            className="group grid grid-cols-[86px_1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-bg)] transition-colors hover:border-[var(--color-bronze)]"
+            className="luxury-card group grid grid-cols-[86px_1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-bg)] transition-[border-color,transform,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
           >
             <div className="relative min-h-[88px] bg-[var(--color-bg-2)]">
               {listing.heroPhoto && (
-                <Image src={listing.heroPhoto} alt="" fill sizes="90px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src={listing.heroPhoto} alt="" fill sizes="90px" className="luxury-media object-cover" />
               )}
             </div>
             <div className="p-3">

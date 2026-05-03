@@ -12,14 +12,14 @@ import { recentlyConcluded } from "@/lib/data";
 function SoldCard({ item, index, compact = false }: { item: (typeof recentlyConcluded)[number]; index: number; compact?: boolean }) {
   return (
     <Reveal delay={index * 80}>
-      <article className="group grid h-full min-h-[240px] grid-cols-[0.96fr_1.04fr] overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.03)] p-1 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.055)] sm:grid-cols-1 lg:grid-cols-[0.92fr_1.08fr]">
+      <article className="luxury-card group grid h-full min-h-[240px] grid-cols-[0.96fr_1.04fr] overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.03)] p-1 transition-[transform,border-color,background,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.055)] sm:grid-cols-1 lg:grid-cols-[0.92fr_1.08fr]">
         <div className={`relative overflow-hidden rounded-[calc(1.5rem-0.25rem)] ${compact ? "min-h-[210px]" : "min-h-[250px] sm:min-h-[220px] lg:min-h-full"}`}>
           <Image
             src={item.image}
             alt={item.imageAlt}
             fill
             sizes="(min-width: 1024px) 24vw, (min-width: 640px) 50vw, 46vw"
-            className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+            className="luxury-media object-cover"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.62))]" />
           <span className="absolute left-4 top-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)]">
@@ -90,14 +90,14 @@ export function RecentlyConcluded() {
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6">
           <div className="grid grid-cols-1 gap-5">
             <Reveal>
-              <article className="group relative min-h-[560px] overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_34px_100px_-62px_rgba(0,0,0,0.95)]">
+              <article className="luxury-card group relative min-h-[560px] overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_34px_100px_-62px_rgba(0,0,0,0.95)]">
                 <div className="relative h-full min-h-[548px] overflow-hidden rounded-[calc(2rem-0.375rem)]">
                   <Image
                     src={lead.image}
                     alt={lead.imageAlt}
                     fill
                     sizes="(min-width: 1024px) 54vw, 100vw"
-                    className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]"
+                    className="luxury-media object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.12),rgba(10,11,13,0.2)_36%,rgba(10,11,13,0.88))]" />
                   <div className="absolute left-6 top-6 rounded-full border border-[rgba(245,239,229,0.34)] bg-[rgba(10,11,13,0.58)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text)] shadow-[0_18px_60px_-40px_rgba(0,0,0,0.95)]">

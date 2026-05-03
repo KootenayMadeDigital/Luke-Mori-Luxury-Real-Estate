@@ -27,7 +27,7 @@ export function AuthorityStrip() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {authorityPillars.map((p, i) => (
             <Reveal key={p.number} delay={i * 80}>
-              <article className="group h-full rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.04)] p-1 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.065)]">
+              <article className="luxury-card group h-full rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.04)] p-1 transition-[transform,border-color,background,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.065)]">
                 <div className="flex h-full flex-col rounded-[calc(1.5rem-0.25rem)] bg-[var(--color-bg)] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.055)]">
                   <div className="mb-8 flex items-center justify-between">
                     <span className="font-serif text-[20px] italic tracking-[0.1em] text-[var(--color-bronze)]">
