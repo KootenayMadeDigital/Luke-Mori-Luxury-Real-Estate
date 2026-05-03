@@ -3,6 +3,18 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { pressLogos } from "@/lib/data";
 
+const logoScale: Record<string, string> = {
+  "Ryan Serhant": "scale-[0.96] lg:scale-[1.02]",
+  "BC Luxury Homes": "scale-[1.08] lg:scale-[1.08]",
+  "NYC Journal": "scale-[1.12] lg:scale-[1.08]",
+  "Truly Classy Luxury": "scale-[1.34] lg:scale-[1.12]",
+  "Metropolitan Design": "scale-[1.52] lg:scale-[1.18]",
+  "Lifestyle News": "scale-[1.02] lg:scale-[1.02]",
+  Deluxshionist: "scale-[1.2] lg:scale-[1.08]",
+  "Design Tellers": "scale-[1.12] lg:scale-[1.06]",
+  Narcity: "scale-[1.04] lg:scale-[1.02]",
+};
+
 export function FeaturedInMedia() {
   return (
     <section id="featured-in" className="tone-dark tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
@@ -36,10 +48,10 @@ export function FeaturedInMedia() {
                   <Reveal
                     key={logo.name}
                     delay={i * 45}
-                    className="w-[calc(50%-0.625rem)] sm:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.2rem)]"
+                    className="w-full sm:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.2rem)]"
                   >
-                    <div className="group flex h-28 items-center justify-center rounded-[1.4rem] border border-[rgba(245,239,229,0.12)] bg-[rgba(255,255,255,0.04)] px-6 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[rgba(212,184,150,0.36)] hover:bg-[rgba(212,184,150,0.07)]" title={logo.name}>
-                      <div className="relative h-14 w-full opacity-100 transition-[opacity,filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [filter:brightness(0)_invert(1)] group-hover:scale-[1.035] group-hover:[filter:none]">
+                    <div className="group flex h-28 items-center justify-center overflow-hidden rounded-[1.4rem] border border-[rgba(245,239,229,0.12)] bg-[rgba(255,255,255,0.04)] px-8 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[rgba(212,184,150,0.36)] hover:bg-[rgba(212,184,150,0.07)] sm:h-30 sm:px-6" title={logo.name}>
+                      <div className={`relative h-20 w-full opacity-100 transition-[opacity,filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [filter:brightness(0)_invert(1)] group-hover:[filter:none] lg:h-16 ${logoScale[logo.name] ?? "scale-[1.22] lg:scale-[1.06]"}`}>
                         <Image
                           src={logo.src}
                           alt={logo.alt}
