@@ -792,8 +792,8 @@ export const nelsonAreas: NelsonArea[] = [
     focus: "Heritage · Walkable · Lake & Mountain Lifestyle",
     hero: brandImages.orangeBridge,
     scenes: [
-      { title: "Whitewater", alt: "Skiing powder at Whitewater Ski Resort near Nelson", image: brandImages.whitewater },
       { title: "Baker Street", alt: "Baker Street in downtown Nelson BC", image: brandImages.bakerStreet },
+      { title: "Whitewater Resort", alt: "Skiing powder at Whitewater Ski Resort near Nelson", image: brandImages.whitewater },
       { title: "Kootenay Lake", alt: "Kayaking on Kootenay Lake near Nelson BC", image: brandImages.kayaking },
     ],
     highlights: [
@@ -820,9 +820,9 @@ export const nelsonAreas: NelsonArea[] = [
     focus: "Waterfront · Boating · Beach",
     hero: brandImages.westArmKootenayLake,
     scenes: [
-      { title: "West Arm", alt: "Kayaking Kootenay Lake on the North Shore", image: brandImages.kayaking },
-      { title: "Kokanee Creek", alt: "Kokanee Creek Park beach", image: brandImages.kokaneeBeach },
-      { title: "Sailing Water", alt: "Sailboats on Kootenay Lake near Nelson", image: brandImages.sailboats },
+      { title: "Kokanee Creek Provincial Park", alt: "Kokanee Creek Park beach", image: brandImages.kokaneeBeach },
+      { title: "West Arm Sailing", alt: "Sailboats on Kootenay Lake near Nelson", image: brandImages.sailboats },
+      { title: "Waterfront Living", alt: "Kayaking Kootenay Lake on the North Shore", image: brandImages.kayaking },
     ],
     highlights: [
       { title: "Kokanee Creek Provincial Park", body: "Camping, RV sites, hiking trails, sandy beach, and seasonal salmon spawning viewing." },
@@ -841,9 +841,9 @@ export const nelsonAreas: NelsonArea[] = [
     focus: "Deep Water · Marina · Generational Estates",
     hero: brandImages.balfourKootenayLake,
     scenes: [
-      { title: "Ainsworth", alt: "Ainsworth Hot Springs near Kootenay Lake", image: brandImages.ainsworth },
-      { title: "Ferry Rhythm", alt: "Balfour ferry on Kootenay Lake", image: brandImages.balfourFerry },
-      { title: "Balfour Golf", alt: "Balfour Golf Course", image: brandImages.balfourGolf },
+      { title: "Kootenay Lake Ferry", alt: "Balfour ferry on Kootenay Lake", image: brandImages.balfourFerry },
+      { title: "Balfour Golf Course", alt: "Balfour Golf Course", image: brandImages.balfourGolf },
+      { title: "Private Moorage", alt: "Balfour waterfront on Kootenay Lake", image: brandImages.balfourKootenayLake },
     ],
     highlights: [
       { title: "Kootenay Lake Ferry", body: "The world's longest free ferry connects Balfour to the East Shore, Crawford Bay, Riondel, and the Purcell Range." },
@@ -862,9 +862,9 @@ export const nelsonAreas: NelsonArea[] = [
     focus: "Acreage · Privacy · Country Living",
     hero: brandImages.taghumBeach,
     scenes: [
-      { title: "Taghum", alt: "Taghum Beach near Nelson BC", image: brandImages.taghumBeach },
-      { title: "Morning Mountain", alt: "Morning Mountain biking near Blewett BC", image: brandImages.morningMountain },
-      { title: "Blewett School", alt: "Blewett Elementary School", image: brandImages.blewettSchool },
+      { title: "Wooded Acreage", alt: "Morning Mountain biking near Blewett BC", image: brandImages.morningMountain },
+      { title: "Family Estates", alt: "Blewett Elementary School", image: brandImages.blewettSchool },
+      { title: "Ten Minutes to Baker", alt: "Taghum Beach near Nelson BC", image: brandImages.taghumBeach },
     ],
     highlights: [
       { title: "Wooded Acreage", body: "Five-to-twenty-acre parcels with mature timber, pasture, and creek frontage, most never appear on the open market." },
@@ -883,9 +883,9 @@ export const nelsonAreas: NelsonArea[] = [
     focus: "Riverfront · Heritage · Retreat Properties",
     hero: brandImages.slocanLake,
     scenes: [
-      { title: "Slocan Lake", alt: "Slocan Lake in British Columbia", image: brandImages.slocanLake },
-      { title: "Frog Peak", alt: "Frog Peak Cafe in Slocan Valley", image: brandImages.frogPeakCafe },
-      { title: "Valhalla", alt: "Valhalla Mountain Range in British Columbia", image: brandImages.valhallaMountains },
+      { title: "Slocan River", alt: "Slocan Lake in British Columbia", image: brandImages.slocanLake },
+      { title: "Heritage Timber Estates", alt: "Frog Peak Cafe in Slocan Valley", image: brandImages.frogPeakCafe },
+      { title: "Slocan Lake & New Denver", alt: "Valhalla Mountain Range in British Columbia", image: brandImages.valhallaMountains },
     ],
     highlights: [
       { title: "Slocan River", body: "Some of British Columbia's finest fly-fishing, and the kind of river-frontage acreage that anchors generational holdings." },
