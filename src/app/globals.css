@@ -18,7 +18,7 @@
   --color-bronze-dim:   #7a6243;
   --color-text:         #efeae2;
   --color-text-muted:   #b9b0a4;
-  --color-text-dim:     #8f8578;
+  --color-text-dim:     #ada192;
   --color-button-text:  #08090a;
 
   --font-serif: "Gambetta", "Cormorant Garamond", "Times New Roman", serif;
@@ -75,7 +75,7 @@
   --color-bronze-dim: #7a6243;
   --color-text: #efeae2;
   --color-text-muted: #c2b8aa;
-  --color-text-dim: #968b7f;
+  --color-text-dim: #b6ab9e;
   --color-button-text: #08090a;
   --tone-a: rgba(212,184,150,0.11);
   --tone-b: rgba(132,162,166,0.05);
@@ -96,7 +96,7 @@
   --color-bronze-dim: #80613c;
   --color-text: #f1e9dd;
   --color-text-muted: #c7b7a2;
-  --color-text-dim: #a49482;
+  --color-text-dim: #c3b09d;
   --color-button-text: #08090a;
   --tone-a: rgba(176,138,91,0.16);
   --tone-b: rgba(76,55,38,0.22);
@@ -117,7 +117,7 @@
   --color-bronze-dim: #876342;
   --color-text: #f4eadc;
   --color-text-muted: #ccb9a6;
-  --color-text-dim: #a28f7e;
+  --color-text-dim: #c8b5a2;
   --color-button-text: #08090a;
   --tone-a: rgba(189,147,97,0.18);
   --tone-b: rgba(255,255,255,0.035);
@@ -138,7 +138,7 @@
   --color-bronze-dim: #a5845b;
   --color-text: #18130f;
   --color-text-muted: #40362e;
-  --color-text-dim: #625143;
+  --color-text-dim: #4f3d31;
   --color-button-text: #fff7eb;
   --tone-a: rgba(176,138,91,0.18);
   --tone-b: rgba(132,162,166,0.13);
@@ -159,7 +159,7 @@
   --color-bronze-dim: #796a50;
   --color-text: #0c1211;
   --color-text-muted: #263733;
-  --color-text-dim: #42544e;
+  --color-text-dim: #2f433d;
   --color-button-text: #f8f1e5;
   --tone-a: rgba(132,162,166,0.22);
   --tone-b: rgba(176,138,91,0.11);
@@ -218,8 +218,48 @@ body::before {
 }
 
 a { color: inherit; text-decoration: none; }
-button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; padding: 0; }
+button { font: inherit; cursor: pointer; }
+button:not([class]) { color: inherit; background: none; border: 0; padding: 0; }
 ul { list-style: none; padding: 0; margin: 0; }
+
+.consult-submit {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  border: 1px solid #241207;
+  border-radius: 9999px;
+  background: #241207;
+  color: #fffaf1;
+  padding: 18px 2rem;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.55;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.35);
+  box-shadow: 0 18px 42px -24px rgba(47,26,12,0.86);
+  transition: background 300ms var(--ease-luxe), border-color 300ms var(--ease-luxe), transform 300ms var(--ease-luxe);
+}
+
+.consult-submit:hover,
+.consult-submit:focus-visible {
+  border-color: #6e421f;
+  background: #6e421f;
+}
+
+.consult-submit:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .consult-submit:hover {
+    transform: translateY(-1px);
+  }
+}
 
 p, li, figcaption, small {
   text-wrap: pretty;

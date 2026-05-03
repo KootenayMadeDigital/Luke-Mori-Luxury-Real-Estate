@@ -91,7 +91,7 @@ export function ConsultForm() {
         <button
           type="submit"
           disabled={submitted}
-          className="group mt-3 inline-flex w-full items-center justify-center gap-3 rounded-full border border-[#2f1a0c] bg-[#2f1a0c] px-8 py-[18px] text-[11px] font-bold uppercase tracking-[0.22em] text-[#fff8ed] shadow-[0_18px_42px_-24px_rgba(47,26,12,0.86)] transition-[background,border-color,opacity,transform] duration-300 hover:-translate-y-[1px] hover:border-[#6e421f] hover:bg-[#6e421f] disabled:opacity-60"
+          className="consult-submit group"
         >
           {submitted ? "Note Sent" : "Send Private Note"}
           {!submitted && (
@@ -101,7 +101,7 @@ export function ConsultForm() {
           )}
         </button>
 
-        <p className="mt-5 text-center text-[13px] font-medium leading-[1.6] text-[#6a5543]">
+        <p className="mt-5 text-center text-[13px] font-semibold leading-[1.6] text-[#4f3929]">
           Your note is held in confidence. Luke or his team can reply with the right first step.
         </p>
 
