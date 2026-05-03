@@ -34,7 +34,7 @@ export function Testimonials({ compact = false }: TestimonialsProps) {
               key={i}
               as="article"
               delay={i * 120}
-              className={`relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] transition-colors duration-500 hover:border-[var(--color-line-strong)] ${compact ? "p-7 sm:p-8" : "p-9 sm:p-10"}`}
+              className={`luxury-card relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] transition-[border-color,transform,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] ${compact ? "p-7 sm:p-8" : "p-9 sm:p-10"}`}
             >
               <svg
                 aria-hidden

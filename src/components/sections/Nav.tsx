@@ -155,7 +155,8 @@ export function Nav() {
                     <Link
                       href={group.href ?? "#"}
                       onFocus={() => setOpenGroup(group.label)}
-                      className={`group relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] transition-[background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      data-open={openGroup === group.label}
+                      className={`nav-pill group relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[1px] ${
                         openGroup === group.label
                           ? "bg-[rgba(212,184,150,0.09)] text-[var(--color-text)]"
                           : "text-[var(--color-text-muted)] hover:bg-[rgba(212,184,150,0.06)] hover:text-[var(--color-text)]"
@@ -182,7 +183,7 @@ export function Nav() {
                                 href={item.href}
                                 target={external ? "_blank" : undefined}
                                 rel={external ? "noreferrer" : undefined}
-                                className="block rounded-[1.1rem] px-4 py-3.5 transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:bg-[rgba(212,184,150,0.07)]"
+                                className="nav-menu-item block rounded-[1.1rem] px-4 py-3.5 transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:bg-[rgba(212,184,150,0.07)]"
                                 onFocus={() => setOpenGroup(group.label)}
                                 onClick={() => setOpenGroup(null)}
                               >

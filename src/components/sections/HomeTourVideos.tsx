@@ -50,7 +50,7 @@ export function HomeTourVideos() {
                 href={video.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group block overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.035)] p-1 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.06)]"
+                className="luxury-card group block overflow-hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.035)] p-1 transition-[transform,border-color,background,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.06)]"
               >
                 <div className="relative aspect-[16/9] overflow-hidden rounded-[calc(1.5rem-0.25rem)]">
                   <Image
@@ -58,7 +58,7 @@ export function HomeTourVideos() {
                     alt={video.imageAlt}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover opacity-82 transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]"
+                    className="luxury-media object-cover opacity-82"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.18),rgba(10,11,13,0.34)_46%,rgba(10,11,13,0.82))]" />
                   <div className="absolute inset-0 flex items-center justify-center">

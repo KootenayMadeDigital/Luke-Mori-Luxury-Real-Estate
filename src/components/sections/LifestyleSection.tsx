@@ -45,15 +45,15 @@ export function LifestyleSection() {
             <Reveal
               key={t.num}
               delay={(i % 4) * 60}
-              className="border-b border-r border-[var(--color-line)]"
+              className="luxury-card border-b border-r border-[var(--color-line)]"
             >
               <a
                 href={t.href}
-                className="group relative flex h-full flex-col gap-3 p-8 transition-colors duration-400 hover:bg-[var(--color-surface)] sm:p-9 sm:pb-10 lg:min-h-[300px]"
+                className="group relative z-10 flex h-full flex-col gap-3 p-8 transition-colors duration-400 hover:bg-[var(--color-surface)] sm:p-9 sm:pb-10 lg:min-h-[300px]"
               >
                 <span
                   aria-hidden
-                  className="absolute right-8 top-8 text-[18px] text-[var(--color-text-dim)] transition-[color,transform] duration-400 group-hover:translate-x-1 group-hover:text-[var(--color-bronze)]"
+                  className="luxury-arrow absolute right-8 top-8 text-[18px] text-[var(--color-text-dim)] transition-[color] duration-400 group-hover:text-[var(--color-bronze)]"
                 >
                   →
                 </span>
@@ -71,7 +71,7 @@ export function LifestyleSection() {
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-bronze)]">
                   {t.cta}
-                  <svg viewBox="0 0 16 16" aria-hidden className="size-[13px] transition-transform duration-300 group-hover:translate-x-1">
+                  <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[13px]">
                     <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
@@ -86,7 +86,7 @@ export function LifestyleSection() {
             { href: "/buyers/relocation", label: "Plan relocation call", body: "Map schools, seasons, healthcare, commute, and first-scouting trips before choosing an area." },
             { href: "/buyers/international", label: "Ask about second homes", body: "Review absentee ownership, local care, advisor introductions, and cross-border logistics early." },
           ].map((item) => (
-            <a key={item.href} href={item.href} className="group bg-[var(--color-bg)] p-7 transition-colors hover:bg-[var(--color-surface)]">
+            <a key={item.href} href={item.href} className="luxury-card group bg-[var(--color-bg)] p-7 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)]">
               <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                 {item.label}
               </span>

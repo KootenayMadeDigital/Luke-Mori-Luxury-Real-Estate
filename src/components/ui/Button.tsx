@@ -15,7 +15,7 @@ type Props = {
 };
 
 const base =
-  "group inline-flex items-center justify-center rounded-full font-semibold uppercase transition-[background,color,border-color,transform,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.985]";
+  "luxury-button group inline-flex items-center justify-center rounded-full font-semibold uppercase transition-[background,color,border-color,transform,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[2px] active:scale-[0.985]";
 
 const sizes: Record<Size, string> = {
   md: "gap-3 px-6 py-3 text-[10px] tracking-[0.2em] sm:px-7 sm:py-3.5",

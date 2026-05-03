@@ -66,7 +66,7 @@ export function IntentConcierge() {
                         href={intent.href}
                         target={external ? "_blank" : undefined}
                         rel={external ? "noreferrer" : undefined}
-                        className="group rounded-[1.45rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.035)] p-1 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,255,255,0.055)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze-light)]"
+                        className="luxury-card group rounded-[1.45rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.035)] p-1 transition-[transform,border-color,background,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,255,255,0.055)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze-light)]"
                       >
                         <div className="flex h-full flex-col rounded-[calc(1.45rem-0.25rem)] bg-[rgba(10,11,13,0.54)] p-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.055)] sm:p-6">
                           <div className="mb-6 flex items-center justify-between gap-4">

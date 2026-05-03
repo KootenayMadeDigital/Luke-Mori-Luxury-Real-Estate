@@ -16,7 +16,7 @@ export function ListingCard({ estate, index, variant = "default" }: Props) {
   return (
     <Link
       href={`/listings/${estate.slug}`}
-      className="group flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
+      className="luxury-card group flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
     >
       <div className={`tone-dark relative overflow-hidden ${compact ? "aspect-[5/4]" : "aspect-[4/3]"}`}>
         <Image
@@ -24,7 +24,7 @@ export function ListingCard({ estate, index, variant = "default" }: Props) {
           alt={estate.title}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+          className="luxury-media object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,11,13,0.7)]" />
         <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.6)] px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] backdrop-blur-sm">
@@ -55,7 +55,7 @@ export function ListingCard({ estate, index, variant = "default" }: Props) {
         </ul>
         <span className="mt-auto inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
           View this estate
-          <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+          <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
             <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>

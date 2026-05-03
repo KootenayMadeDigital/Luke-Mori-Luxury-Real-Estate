@@ -37,7 +37,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
               key={a.name}
               delay={i * 60}
               as="article"
-              className={`group relative flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)] ${
+              className={`luxury-card group relative flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)] ${
                 !preview && a.feature ? "lg:col-span-2" : ""
               }`}
             >
@@ -47,7 +47,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
                   alt={a.imageAlt}
                   fill
                   sizes={a.feature ? "(min-width: 1024px) 66vw, (min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
-                  className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                  className="luxury-media object-cover"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.24)_42%,rgba(10,11,13,0.72))]" />
               </div>
@@ -74,7 +74,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
                     className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]"
                   >
                     {a.cta}
-                    <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                    <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                       <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </a>

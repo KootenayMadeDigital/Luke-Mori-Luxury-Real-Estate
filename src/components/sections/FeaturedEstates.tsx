@@ -57,7 +57,7 @@ export function FeaturedEstates() {
                 key={e.slug}
                 delay={i * 55}
                 as="article"
-                className="group overflow-hidden rounded-[1.7rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.03)] p-1 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.055)]"
+                className="luxury-card group overflow-hidden rounded-[1.7rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.03)] p-1 transition-[transform,border-color,background,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.055)]"
               >
                 <Link href={`/listings/${e.slug}`} className="block">
                   <div className="relative aspect-[16/10] overflow-hidden rounded-[calc(1.7rem-0.25rem)]">
@@ -67,7 +67,7 @@ export function FeaturedEstates() {
                         alt={e.address}
                         fill
                         sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.045]"
+                        className="luxury-media object-cover"
                       />
                     ) : null}
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.06),rgba(10,11,13,0.22)_48%,rgba(10,11,13,0.86))]" />

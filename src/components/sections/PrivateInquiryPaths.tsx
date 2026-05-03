@@ -61,7 +61,7 @@ export function PrivateInquiryPaths({
                   href={path.href}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noreferrer" : undefined}
-                  className="group flex h-full min-h-[320px] flex-col bg-[var(--color-bg-2)] p-7 transition-colors duration-500 hover:bg-[var(--color-surface)] sm:p-8"
+                  className="luxury-card group flex h-full min-h-[320px] flex-col bg-[var(--color-bg-2)] p-7 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-8"
                 >
                   <div className="mb-7 flex items-center justify-between gap-5">
                     <span className="text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
@@ -82,7 +82,7 @@ export function PrivateInquiryPaths({
                   </p>
                   <span className="mt-7 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     {path.cta}
-                    <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-1">
+                    <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                       <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
