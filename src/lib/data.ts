@@ -1085,8 +1085,38 @@ export const faqs: FAQ[] = [
     a: "Off-market means a property is not being publicly promoted through the usual listing channels. Access depends on the owner's instructions, buyer fit, and whether an introduction is appropriate.",
   },
   {
+    category: "Selling",
+    q: "Why does presentation matter so much for a higher-value property?",
+    a: "High-value homes ask buyers to understand architecture, land, privacy, lifestyle, and location at once. Photography, video, measurements, and clear copy help a serious buyer decide whether a showing is worth their time.",
+  },
+  {
+    category: "Selling",
+    q: "Should every listing be marketed the same way?",
+    a: "No. A lakefront home, acreage estate, city view home, and walkable Nelson property each need different positioning. The buyer profile should shape the launch plan.",
+  },
+  {
+    category: "Buying",
+    q: "Why do area details matter before the first tour?",
+    a: "In the Kootenays, a short distance can change sun exposure, road rhythm, winter access, lake access, privacy, and daily convenience. The map matters before the showing schedule does.",
+  },
+  {
+    category: "Buying",
+    q: "What should waterfront buyers ask about?",
+    a: "Waterfront buyers should ask about shoreline, access, dock or beach use, sun exposure, road access, maintenance, insurance, and any property-specific restrictions or approvals that may apply.",
+  },
+  {
+    category: "Relocation",
+    q: "Why plan a scouting route before booking showings?",
+    a: "A scouting route helps buyers compare daily life, not just houses. It can include neighbourhoods, schools, services, commute patterns, lake access, winter roads, and the areas that match the buyer's actual routine.",
+  },
+  {
     category: "Representation",
-    q: "Does this concept replace LukeMori.com?",
-    a: "No. This is a speculative concept by Kootenay Made Digital using public Luke Mori material to demonstrate how a premium luxury real estate experience could be presented.",
+    q: "Why does local knowledge matter in Nelson real estate?",
+    a: "Local knowledge helps interpret more than the listing sheet: road conditions, light, slope, privacy, neighbourhood fit, lake access, seasonal use, and the practical details buyers often notice too late.",
+  },
+  {
+    category: "Representation",
+    q: "What makes a first conversation useful?",
+    a: "A useful first conversation defines the property, timeline, privacy needs, budget or pricing context, area preferences, and the decision the client is actually trying to make.",
   },
 ];

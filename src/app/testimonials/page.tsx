@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { testimonials, brandImages, trustPrinciples } from "@/lib/data";
+import { testimonials, brandImages, trustPrinciples, pressLogos } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Awards & Testimonials · Luke Mori",
@@ -60,6 +60,48 @@ export default function TestimonialsPage() {
                 className="object-contain"
                 style={{ filter: "invert(1) brightness(0.95)" }}
               />
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="tone-walnut tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.84fr_1fr] md:items-end">
+            <div>
+              <Eyebrow>Media Mentions</Eyebrow>
+              <SectionHeading className="mt-7">
+                The press layer,
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  archived quietly.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Media proof belongs on this page because visitors here are already evaluating trust. The homepage gives the fast hit; this page keeps the receipts in one place.
+            </SectionLede>
+          </Reveal>
+
+          <Reveal>
+            <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-2 shadow-[0_30px_100px_-70px_rgba(0,0,0,0.95)]">
+              <div className="grid grid-cols-2 items-center gap-4 rounded-[calc(2rem-0.5rem)] bg-[rgba(10,11,13,0.52)] p-5 sm:grid-cols-3 md:p-7 lg:grid-cols-5">
+                {pressLogos.map((logo, i) => (
+                  <Reveal key={logo.name} delay={i * 40}>
+                    <div className="group flex h-24 items-center justify-center rounded-[1.25rem] border border-[rgba(245,239,229,0.08)] bg-[rgba(255,255,255,0.025)] px-5 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[rgba(212,184,150,0.32)] hover:bg-[rgba(212,184,150,0.055)]" title={logo.name}>
+                      <div className="relative h-12 w-full opacity-[0.9] grayscale transition-[opacity,filter,transform] duration-700 group-hover:scale-[1.035] group-hover:opacity-100 group-hover:grayscale-0">
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 50vw"
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </Reveal>
         </Container>

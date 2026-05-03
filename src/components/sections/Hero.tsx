@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] items-center overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36"
+      className="relative flex min-h-[100svh] items-start overflow-hidden pb-5 pt-[clamp(152px,19svh,178px)] sm:items-center sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36"
     >
       <div className="absolute inset-0 z-0 bg-[var(--color-bg)]" aria-hidden>
         <HeroVideo />
@@ -16,7 +16,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.36)_0%,rgba(10,11,13,0)_42%,rgba(10,11,13,0.68)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1320px] grid-cols-1 items-start gap-10 px-5 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1320px] translate-y-[clamp(132px,18svh,168px)] grid-cols-1 items-start gap-10 px-5 sm:translate-y-0 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
         <div>
           <Reveal>
             <h1 className="m-0 max-w-[12.5ch] font-serif font-light leading-[0.93] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(50px,8.6vw,132px)]">
@@ -50,7 +50,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={340}>
-            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+            <div className="mt-5 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
               <Button href="#sellers" variant="primary" size="lg" arrow>
                 Seller Strategy
               </Button>
@@ -61,7 +61,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={460}>
-            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:mt-7 sm:gap-x-6 sm:text-[11px] sm:tracking-[0.2em]">
+            <div className="mt-4 hidden flex-wrap items-center gap-x-5 gap-y-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:mt-7 sm:flex sm:gap-x-6 sm:text-[11px] sm:tracking-[0.2em]">
               <a href="/buyers/relocation" className="transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]">
                 Relocation Guide
               </a>
