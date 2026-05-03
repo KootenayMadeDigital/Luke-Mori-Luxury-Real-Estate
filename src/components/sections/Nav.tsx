@@ -254,17 +254,17 @@ export function Nav() {
         id="mobile-navigation"
         role="navigation"
         aria-label="Mobile navigation"
-        className={`fixed inset-0 z-[95] bg-[rgba(10,11,13,0.96)] px-5 pb-8 pt-28 backdrop-blur-2xl transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-8 lg:hidden ${
+        className={`fixed inset-0 z-[95] bg-[rgba(10,11,13,0.96)] px-5 pb-8 pt-40 backdrop-blur-2xl transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-8 sm:pt-44 lg:hidden ${
           mobileOpen ? "pointer-events-auto visible translate-y-0 opacity-100" : "pointer-events-none invisible -translate-y-3 opacity-0"
         }`}
         aria-hidden={!mobileOpen}
       >
         <div className="flex h-full flex-col overflow-y-auto">
-          <div className="grid gap-4">
+          <div className="grid gap-4 pb-4">
             {navGroups.map((g, groupIndex) => (
               <div
                 key={g.label}
-                className={`rounded-[1.4rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-5 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                className={`rounded-[1.4rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-6 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] first:mt-2 ${
                   mobileOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
                 style={{ transitionDelay: mobileOpen ? `${120 + groupIndex * 70}ms` : "0ms" }}
