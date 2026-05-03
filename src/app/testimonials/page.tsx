@@ -36,9 +36,9 @@ export default function TestimonialsPage() {
       />
 
       {/* Award block */}
-      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-32">
         <Container>
-          <Reveal className="mx-auto max-w-[800px] text-center">
+          <Reveal className="mx-auto max-w-[1040px] text-center">
             <Eyebrow centered>Industry Recognition</Eyebrow>
             <SectionHeading centered className="mt-7">
               Best Luxury Real Estate Broker
@@ -47,19 +47,36 @@ export default function TestimonialsPage() {
                 in British Columbia.
               </em>
             </SectionHeading>
-            <SectionLede align="center" className="mb-10">
+            <SectionLede align="center" className="mx-auto mb-12 max-w-[820px] text-[20px] md:text-[22px]">
               Awarded by the Luxury Lifestyle Awards in both 2021 and again in 2024, the only
               two-time recipient in the Nelson and Kootenay region.
             </SectionLede>
-            <div className="relative mx-auto h-20 w-72 opacity-90">
-              <Image
-                src={brandImages.awardBadge}
-                alt="Best Luxury Real Estate Broker, Luxury Lifestyle Awards"
-                fill
-                sizes="288px"
-                className="object-contain"
-                style={{ filter: "invert(1) brightness(0.95)" }}
-              />
+
+            <div className="mx-auto max-w-[900px] rounded-[2rem] border border-[var(--color-line-strong)] bg-[linear-gradient(135deg,rgba(255,248,237,0.72),rgba(212,184,150,0.2))] p-4 shadow-[0_34px_110px_-70px_rgba(63,46,31,0.42)] sm:p-6 md:p-8">
+              <div className="grid grid-cols-1 items-center gap-8 rounded-[calc(2rem-0.75rem)] border border-[rgba(83,59,36,0.12)] bg-[rgba(255,252,246,0.74)] p-6 sm:p-8 md:grid-cols-[1.15fr_0.85fr] md:text-left">
+                <div>
+                  <p className="m-0 text-[11px] font-bold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
+                    Luxury Lifestyle Awards
+                  </p>
+                  <h2 className="m-0 mt-4 font-serif text-[42px] font-light leading-[0.98] tracking-[-0.02em] text-[var(--color-text)] sm:text-[56px] md:text-[68px]">
+                    2021 & 2024
+                  </h2>
+                  <p className="m-0 mt-5 max-w-[520px] text-[15px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
+                    A repeat provincial luxury broker award should feel impossible to miss. This is the trust signal sellers and private buyers need to register instantly.
+                  </p>
+                </div>
+
+                <div className="relative mx-auto h-40 w-full max-w-[520px] sm:h-48 md:h-56">
+                  <Image
+                    src={brandImages.awardBadge}
+                    alt="Best Luxury Real Estate Broker, Luxury Lifestyle Awards"
+                    fill
+                    sizes="(min-width: 768px) 420px, 88vw"
+                    className="object-contain drop-shadow-[0_18px_34px_rgba(63,46,31,0.28)]"
+                    style={{ filter: "invert(1) brightness(0.95)" }}
+                  />
+                </div>
+              </div>
             </div>
           </Reveal>
         </Container>
