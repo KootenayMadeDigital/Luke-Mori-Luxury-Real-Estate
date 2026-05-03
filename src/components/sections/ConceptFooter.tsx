@@ -5,6 +5,13 @@ import { Brand } from "@/components/ui/BrandMark";
 import { Button } from "@/components/ui/Button";
 import { contact, brandImages } from "@/lib/data";
 
+const socialLinks = [
+  { label: "YouTube", href: contact.social.youtube },
+  { label: "Instagram", href: contact.social.instagram },
+  { label: "Facebook", href: contact.social.facebook },
+  { label: "X", href: contact.social.twitter },
+];
+
 const navLists: { heading: string; links: { label: string; href: string }[] }[] = [
   {
     heading: "Listings",
@@ -116,6 +123,25 @@ export function ConceptFooter() {
                   sizes="120px"
                   className="object-contain object-left"
                 />
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <span className="mb-3 block text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                Social
+              </span>
+              <div className="flex flex-wrap gap-2.5">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-full border border-[var(--color-line)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background] duration-500 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
+                  >
+                    {link.label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>

@@ -101,13 +101,16 @@ export default function ContactPage() {
                     </span>
                     <div className="mt-3 flex flex-wrap gap-3">
                       {[
-                        { label: "Instagram", href: contact.social.instagram },
                         { label: "YouTube", href: contact.social.youtube },
+                        { label: "Instagram", href: contact.social.instagram },
                         { label: "Facebook", href: contact.social.facebook },
+                        { label: "X", href: contact.social.twitter },
                       ].map((s) => (
                         <a
                           key={s.label}
                           href={s.href}
+                          target="_blank"
+                          rel="noreferrer"
                           className="rounded-[1px] border border-[var(--color-line-strong)] px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
                         >
                           {s.label}

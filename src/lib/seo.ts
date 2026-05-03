@@ -103,7 +103,7 @@ export function buildAgentJsonLd() {
       "@type": "RealEstateAgent",
       name: contact.brokerage,
     },
-    sameAs: [contact.social.instagram, contact.social.youtube, contact.social.facebook],
+    sameAs: [contact.social.youtube, contact.social.instagram, contact.social.facebook, contact.social.twitter],
     areaServed: [
       "Nelson, British Columbia",
       "Kootenay Lake",

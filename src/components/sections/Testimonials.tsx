@@ -7,11 +7,17 @@ import { testimonials } from "@/lib/data";
 /* Quiet client voice, three editorial pull-quotes, attributed without
    names so it reads as discreet rather than testimonial-chasing. */
 
-export function Testimonials() {
+type TestimonialsProps = {
+  compact?: boolean;
+};
+
+export function Testimonials({ compact = false }: TestimonialsProps) {
+  const visibleTestimonials = compact ? testimonials.slice(0, 2) : testimonials;
+
   return (
-    <section className="tone-office tonal-section border-y border-[var(--color-line)] py-32 md:py-36">
+    <section className={`tone-office tonal-section border-y border-[var(--color-line)] ${compact ? "py-20 md:py-24" : "py-32 md:py-36"}`}>
       <Container>
-        <Reveal className="mb-20 max-w-[760px]">
+        <Reveal className={compact ? "mb-12 max-w-[820px]" : "mb-20 max-w-[760px]"}>
           <Eyebrow>Client Voice</Eyebrow>
           <SectionHeading className="mt-7">
             Sellers and buyers
@@ -22,13 +28,13 @@ export function Testimonials() {
           </SectionHeading>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
-          {testimonials.map((t, i) => (
+        <div className={`grid grid-cols-1 gap-6 ${compact ? "md:grid-cols-2 md:gap-7" : "md:grid-cols-3 md:gap-10"}`}>
+          {visibleTestimonials.map((t, i) => (
             <Reveal
               key={i}
               as="article"
               delay={i * 120}
-              className="relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-9 transition-colors duration-500 hover:border-[var(--color-line-strong)] sm:p-10"
+              className={`relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] transition-colors duration-500 hover:border-[var(--color-line-strong)] ${compact ? "p-7 sm:p-8" : "p-9 sm:p-10"}`}
             >
               <svg
                 aria-hidden
@@ -40,7 +46,7 @@ export function Testimonials() {
                   fill="currentColor"
                 />
               </svg>
-              <blockquote className="m-0 mb-8 font-serif text-[22px] font-light leading-[1.4] tracking-[-0.005em] text-[var(--color-text)] sm:text-[24px]">
+              <blockquote className={`m-0 mb-8 font-serif font-light leading-[1.4] tracking-[-0.005em] text-[var(--color-text)] ${compact ? "text-[20px] sm:text-[22px]" : "text-[22px] sm:text-[24px]"}`}>
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <div className="mt-auto border-t border-[var(--color-line)] pt-6">

@@ -3,13 +3,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { IntentConcierge } from "@/components/sections/IntentConcierge";
-import { CredentialsStrip } from "@/components/sections/CredentialsStrip";
-import { AuthorityStrip } from "@/components/sections/AuthorityStrip";
-import { PressStrip } from "@/components/sections/PressStrip";
+import { KmdConceptCue } from "@/components/sections/KmdConceptCue";
+import { PublicReceipts } from "@/components/sections/PublicReceipts";
 import { SignatureAreas } from "@/components/sections/SignatureAreas";
 import { FeaturedEstates } from "@/components/sections/FeaturedEstates";
+import { HomeTourVideos } from "@/components/sections/HomeTourVideos";
 import { MoriStandard } from "@/components/sections/MoriStandard";
-import { TrustLedger } from "@/components/sections/TrustLedger";
 import { SellerSection } from "@/components/sections/SellerSection";
 import { LifestyleSection } from "@/components/sections/LifestyleSection";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -61,33 +60,29 @@ export default function LukeMoriLuxuryConcept() {
         <Hero />
         <SectionTransition eyebrow="Chapter 01" title="Begin with the mandate." tone="bronze" />
         <IntentConcierge />
-        <CredentialsStrip />
-        <PressStrip />
-        <SectionTransition eyebrow="Chapter 02" title="Proof before persuasion." align="right" tone="office" />
-        <AuthorityStrip />
+        <KmdConceptCue />
+        <PublicReceipts />
+        <SectionTransition eyebrow="Chapter 02" title="The principal, then the launch." align="right" tone="office" />
         <MoriStandard />
-        <TrustLedger />
-        <SectionTransition eyebrow="Chapter 03" title="The map becomes the market." align="left" tone="lake" />
-        <SignatureAreas />
-        <FeaturedEstates />
-        <SectionTransition eyebrow="Chapter 04" title="A serious property gets launched." align="right" tone="bronze" />
         <SellerSection />
-        <SectionTransition eyebrow="Chapter 05" title="Buy by life, not by filter." align="left" tone="lake" />
+        <FeaturedEstates />
+        <HomeTourVideos />
+        <RecentlyConcluded />
+        <SectionTransition eyebrow="Chapter 03" title="The map becomes the market." align="left" tone="lake" />
+        <SignatureAreas preview />
         <LifestyleSection />
-        <Testimonials />
-        <SectionTransition eyebrow="Chapter 06" title="Private access, private routing." tone="office" />
+        <Testimonials compact />
+        <SectionTransition eyebrow="Chapter 04" title="Private access, private routing." tone="office" />
         <PrivateAccess />
         <PrivateInquiryPaths
           id="private-inquiry"
           eyebrow="Conversion Architecture"
           title="The next step depends"
           emphasis="on the mandate."
-          body="The same page now serves four serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation and second-home clients, and agents or brokerages evaluating Kootenay Made Digital."
+          body="The same page serves four serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation and second-home clients, and agents or brokerages evaluating Kootenay Made Digital."
         />
-        <SectionTransition eyebrow="Chapter 07" title="The concept becomes a system." align="right" tone="bronze" />
+        <SectionTransition eyebrow="Final room" title="The concept becomes a system." align="right" tone="bronze" />
         <TemplateRouteLedger />
-        <RecentlyConcluded />
-        <SectionTransition eyebrow="Final room" title="Leave with the private brief." tone="office" />
         <LeadMagnet />
       </main>
       <ConceptFooter />

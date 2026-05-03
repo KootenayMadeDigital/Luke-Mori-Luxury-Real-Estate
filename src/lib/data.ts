@@ -14,9 +14,10 @@ export const contact = {
   office: "191 Baker Street, Nelson, BC V1L 4H1",
   brokerage: "Fair Realty",
   social: {
+    youtube: "https://www.youtube.com/@Lukemori",
     instagram: "https://www.instagram.com/lukemorirealestate/",
-    youtube: "https://www.youtube.com/@LukeMoriRealEstate",
-    facebook: "https://www.facebook.com/lukemorirealestate",
+    facebook: "https://www.facebook.com/lukemorirealty/",
+    twitter: "https://twitter.com/LukeMoriRealty",
   },
 };
 
@@ -974,6 +975,40 @@ export const sellerSteps: ProcessStep[] = [
     num: "05",
     title: "Possession day",
     body: "Final meeting with your lawyer, signed documents, transferred keys. The moment the property becomes someone else's home.",
+  },
+];
+
+/* ---------- Home tour video proof ---------- */
+
+export type HomeTourVideo = {
+  title: string;
+  meta: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+};
+
+export const homeTourVideos: HomeTourVideo[] = [
+  {
+    title: "664 Ainslie Road",
+    meta: "Waterfront living at its finest",
+    href: "https://www.youtube.com/watch?v=ItcMSmhyMxw",
+    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69f05d3851101693059b1a50_10384831_1.jpeg",
+    imageAlt: "Waterfront home at 664 Ainslie Road",
+  },
+  {
+    title: "3179 Heddle Road",
+    meta: "Timber-frame home with in-law suite",
+    href: "https://www.youtube.com/watch?v=Xd0u7gQ0Qm0",
+    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69dfb9ee6a414f4f0dd7670c_10380904_1.jpeg",
+    imageAlt: "Timber-frame home at 3179 Heddle Road",
+  },
+  {
+    title: "6890 Harrop Procter Road",
+    meta: "Modern Kootenay home presentation",
+    href: "https://www.youtube.com/watch?v=xJhNYaokEzA",
+    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69dfb91c9d095c231a5988bd_10372962_1.jpeg",
+    imageAlt: "Modern Kootenay home at 6890 Harrop Procter Road",
   },
 ];
 

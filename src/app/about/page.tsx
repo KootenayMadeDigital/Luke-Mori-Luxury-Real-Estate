@@ -211,14 +211,17 @@ export default function AboutPage() {
                 Social
               </span>
               <p className="mt-3 space-y-1.5 text-[15px]">
-                <a href={contact.social.instagram} className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  Instagram · @lukemorirealestate
-                </a>
-                <a href={contact.social.youtube} className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
+                <a href={contact.social.youtube} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
                   YouTube · 100+ property films
                 </a>
-                <a href={contact.social.facebook} className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
+                <a href={contact.social.instagram} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
+                  Instagram · @lukemorirealestate
+                </a>
+                <a href={contact.social.facebook} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
                   Facebook
+                </a>
+                <a href={contact.social.twitter} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
+                  X · @LukeMoriRealty
                 </a>
               </p>
             </div>
