@@ -167,7 +167,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The fastest way to waste a luxury buyer&apos;s time is to show beautiful properties that do not fit the life. This quiz turns desire into a sharper first brief.
+              Beautiful properties still have to fit the life. Start with the desired rhythm, then narrow the search around lake, town, privacy, acreage, ski access, relocation, or second-home ownership.
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />
@@ -186,7 +186,7 @@ export default function BuyersPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Serious buyers do not always need more inventory. They need the right alert, the right introduction, and a private advisor who knows what should never become a casual listing search.
+              For lakefront, privacy, acreage, relocation, and second-home searches, the best fit may come from the public market, a quiet introduction, or a private owner conversation.
             </SectionLede>
           </Reveal>
           <PrivateBuyerRegistry />
@@ -197,7 +197,7 @@ export default function BuyersPage() {
         eyebrow="The Buyer Process"
         title="A clear five-step path,"
         emphasis="end to end."
-        lede="Once the lifestyle brief is clear, the transaction can move with discipline. Every step explained, every decision considered."
+        lede="From first brief to offer strategy, every step is handled with local context, private access, and disciplined timing."
         steps={buyerSteps}
       />
 

@@ -53,7 +53,7 @@ export default function AboutPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The record matters because it tells clients what kind of decisions Luke has already made: pricing judgement, local risk, discretion, presentation, and negotiation discipline.
+              Pricing judgement, local risk, discretion, presentation, and negotiation discipline, earned across real Nelson and Kootenay Lake transactions.
             </SectionLede>
           </Reveal>
 

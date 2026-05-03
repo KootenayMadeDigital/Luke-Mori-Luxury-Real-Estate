@@ -163,12 +163,12 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
             <div>
-              <Eyebrow>Buyer Fit Brief</Eyebrow>
+              <Eyebrow>Buyer Fit</Eyebrow>
               <SectionHeading className="mt-7">
-                How to read
+                Choose
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  {area.name} properly.
+                  {area.name} with intent.
                 </em>
               </SectionHeading>
             </div>

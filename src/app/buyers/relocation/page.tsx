@@ -139,7 +139,7 @@ export default function RelocationPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              A relocation search should test the daily pattern before the offer. These routes help narrow the map before the market starts making noise.
+              Test the daily pattern before the offer: school rhythm, winter roads, groceries, lake access, downtown time, healthcare, and the route home after dark.
             </SectionLede>
           </Reveal>
 

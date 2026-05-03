@@ -26,7 +26,7 @@ export function TrustLedger() {
             </SectionHeading>
           </div>
           <SectionLede align="right">
-            Prestige is useful only when it lowers risk. The proof layer below is built around what a high-value seller or private buyer actually needs to know: record, recognition, local fluency, presentation, discretion, and process.
+            For high-value sellers and private buyers, trust comes from record, recognition, local fluency, presentation, discretion, and process.
           </SectionLede>
         </Reveal>
 

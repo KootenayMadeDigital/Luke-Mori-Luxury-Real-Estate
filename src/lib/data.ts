@@ -184,7 +184,7 @@ export const trustPrinciples: TrustPrinciple[] = [
   },
 ];
 
-/* ---------- Conversion architecture ---------- */
+/* ---------- Inquiry paths ---------- */
 
 export type InquiryPath = {
   audience: string;
@@ -938,7 +938,7 @@ export const buyerSteps: ProcessStep[] = [
   {
     num: "02",
     title: "Find your home",
-    body: "We work the open market and the private one. Listings on the site, off-market introductions through our network, and curated tours that respect your time and your discretion.",
+    body: "We work the open market and the private one: public listings, off-market introductions through our network, and curated tours that respect your time and your discretion.",
   },
   {
     num: "03",
@@ -1032,7 +1032,7 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "What marketing assets are used for a serious listing?",
-    a: "The seller process described on this site includes professional photography, drone film, indoor video tours, full room measurements, and an editorial presentation built around the buyer profile for the home.",
+    a: "A serious listing can include professional photography, drone film, indoor video tours, full room measurements, and editorial presentation built around the buyer profile for the home.",
   },
   {
     category: "Selling",
@@ -1052,7 +1052,7 @@ export const faqs: FAQ[] = [
   {
     category: "Buying",
     q: "What should buyers verify before writing an offer?",
-    a: "The buying process on this site calls out property viewings, disclosure review, title search, confirmation of property details, zoning, taxes, restrictions, and any applicable strata information before an offer is treated as serious.",
+    a: "Buyers should review property viewings, disclosure documents, title search, property details, zoning, taxes, restrictions, and any applicable strata information before an offer is treated as serious.",
   },
   {
     category: "Buying",
@@ -1072,7 +1072,7 @@ export const faqs: FAQ[] = [
   {
     category: "Relocation",
     q: "Are international buyers treated differently?",
-    a: "International buyers should get qualified legal and tax advice before purchasing. The site can organize the property and area questions, but tax residency, transfer rules, financing, and regulatory issues require professional advice.",
+    a: "International buyers should get qualified legal and tax advice before purchasing. Luke can help organize property and area questions, but tax residency, transfer rules, financing, and regulatory issues require professional advice.",
   },
   {
     category: "Representation",

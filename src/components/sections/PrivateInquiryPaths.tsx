@@ -19,7 +19,7 @@ export function PrivateInquiryPaths({
   eyebrow = "Private Office Paths",
   title = "Four ways into",
   emphasis = "the right room.",
-  body = "A luxury inquiry should not land in a generic inbox. The first decision is routing: seller strategy, private buyer brief, relocation planning, or second-home ownership.",
+  body = "Start with the mandate: seller strategy, private buyer brief, relocation planning, or second-home ownership. Each path gets a private next step.",
   compact = false,
 }: Props) {
   return (

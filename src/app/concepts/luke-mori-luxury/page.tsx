@@ -69,10 +69,10 @@ export default function LukeMoriLuxuryExperience() {
         <PrivateAccess />
         <PrivateInquiryPaths
           id="private-inquiry"
-          eyebrow="Conversion Architecture"
+          eyebrow="Private Inquiry"
           title="The next step depends"
           emphasis="on the mandate."
-          body="The same page serves serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation clients, and second-home owners who need a clear route into the right conversation."
+          body="Choose the mandate: seller strategy, private buyer access, relocation planning, or second-home ownership. The right conversation starts with the right file."
         />
         <LeadMagnet />
       </main>
