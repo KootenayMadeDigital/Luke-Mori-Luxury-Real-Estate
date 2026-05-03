@@ -16,15 +16,16 @@ type Props = {
 
 /* The standard subpage hero, eyebrow, large serif title (with optional
    italic emphasis line), short lede, optional background image with
-   heavy darken, optional breadcrumbs, optional meta hairline. */
+   readable contrast, optional breadcrumbs, optional meta hairline. */
 
 export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, meta }: Props) {
   return (
     <section className="tone-dark tonal-section border-b border-[var(--color-line)] pb-20 pt-32 md:pb-28 md:pt-40">
       {image && (
         <div className="absolute inset-0 z-0" aria-hidden>
-          <Image src={image} alt="" fill preload sizes="100vw" className="object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg)]/40 via-[var(--color-bg)]/70 to-[var(--color-bg)]" />
+          <Image src={image} alt="" fill preload sizes="100vw" className="object-cover opacity-[0.44] saturate-[1.04] contrast-[1.04]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.86)_0%,rgba(10,11,13,0.62)_48%,rgba(10,11,13,0.46)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.62)_0%,rgba(10,11,13,0.34)_36%,rgba(10,11,13,0.88)_100%)]" />
         </div>
       )}
 
@@ -38,7 +39,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
       <Container className="relative z-10">
         {crumbs && crumbs.length > 0 && (
           <Reveal>
-            <nav className="mb-8 flex flex-wrap items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-dim)]" aria-label="Breadcrumb">
+            <nav className="mb-8 flex flex-wrap items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[rgba(239,234,226,0.76)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)]" aria-label="Breadcrumb">
               {crumbs.map((c, i) => (
                 <span key={i} className="flex items-center gap-2.5">
                   {c.href ? (
@@ -58,14 +59,14 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
         )}
 
         <Reveal delay={80}>
-          <div className="mb-8 flex items-center gap-[18px] text-[11px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
+          <div className="mb-8 flex items-center gap-[18px] text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)]">
             <span className="inline-block h-px w-12 bg-[var(--color-bronze)]" />
             {eyebrow}
           </div>
         </Reveal>
 
         <Reveal delay={180}>
-          <h1 className="m-0 max-w-[20ch] font-serif font-light leading-[1.05] tracking-[-0.015em] [font-size:clamp(40px,7vw,96px)]">
+          <h1 className="m-0 max-w-[20ch] font-serif font-light leading-[1.05] tracking-[-0.015em] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] [font-size:clamp(40px,7vw,96px)]">
             {title}
             {emphasis && (
               <>
@@ -80,7 +81,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
 
         {lede && (
           <Reveal delay={320}>
-            <p className="m-0 mt-9 max-w-[640px] font-light leading-[1.65] text-[var(--color-text-muted)] [font-size:clamp(16px,1.3vw,18px)]">
+            <p className="m-0 mt-9 max-w-[640px] font-medium leading-[1.65] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_20px_rgba(0,0,0,0.92)] [font-size:clamp(16px,1.3vw,18px)]">
               {lede}
             </p>
           </Reveal>
@@ -91,10 +92,10 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
             <ul className="mt-12 grid grid-cols-2 gap-y-6 border-t border-[var(--color-line)] pt-8 sm:grid-cols-4 sm:gap-x-10">
               {meta.map((m) => (
                 <li key={m.label} className="flex flex-col gap-1.5">
-                  <span className="font-serif text-[24px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] md:text-[28px]">
+                  <span className="font-serif text-[24px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-[28px]">
                     {m.value}
                   </span>
-                  <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[rgba(245,239,229,0.78)] drop-shadow-[0_3px_14px_rgba(0,0,0,0.9)]">
                     {m.label}
                   </span>
                 </li>
