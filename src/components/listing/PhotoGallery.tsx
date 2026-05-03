@@ -111,7 +111,7 @@ export function PhotoGallery({ photos, alt }: Props) {
                 e.stopPropagation();
                 close();
               }}
-              className="inline-flex items-center gap-2 rounded-[1px] border border-[var(--color-line-strong)] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.72)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text)] shadow-[0_18px_50px_-32px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
               aria-label="Close gallery"
             >
               Close
@@ -121,25 +121,44 @@ export function PhotoGallery({ photos, alt }: Props) {
             </button>
           </div>
 
-          {/* Image */}
-          <div
-            className="relative flex-1"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              close();
+            }}
+            aria-label="Close gallery"
+            className="absolute right-4 top-20 z-[320] inline-flex size-12 items-center justify-center rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.78)] text-[var(--color-text)] shadow-[0_18px_54px_-30px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:right-6 sm:top-24"
           >
-            <Image
-              src={photos[openIndex]}
-              alt={`${alt}, frame ${openIndex + 1}`}
-              fill
-              sizes="100vw"
-              className="object-contain p-4 sm:p-8"
-            />
+            <svg viewBox="0 0 16 16" aria-hidden className="size-4">
+              <path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </button>
+
+          {/* Image */}
+          <div className="relative flex-1 cursor-zoom-out" aria-label="Close gallery background">
+            <div
+              className="absolute left-1/2 top-1/2 h-[calc(100%-1.5rem)] w-[min(92vw,1220px)] -translate-x-1/2 -translate-y-1/2 cursor-default sm:h-[calc(100%-3rem)]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={photos[openIndex]}
+                alt={`${alt}, frame ${openIndex + 1}`}
+                fill
+                sizes="(min-width: 1280px) 1220px, 92vw"
+                className="object-contain"
+              />
+            </div>
 
             {/* Prev / Next */}
             <button
               type="button"
-              onClick={prev}
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
               aria-label="Previous photo"
-              className="group absolute left-4 top-1/2 -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.4)] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+              className="group absolute left-4 top-1/2 z-[310] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.58)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
             >
               <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:-translate-x-0.5">
                 <path d="M13 8 H3 M7 4 L3 8 L7 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -147,9 +166,12 @@ export function PhotoGallery({ photos, alt }: Props) {
             </button>
             <button
               type="button"
-              onClick={next}
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
               aria-label="Next photo"
-              className="group absolute right-4 top-1/2 -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.4)] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+              className="group absolute right-4 top-1/2 z-[310] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.58)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
             >
               <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5">
                 <path d="M3 8 H13 M9 4 L13 8 L9 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
