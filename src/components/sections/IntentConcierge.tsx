@@ -24,10 +24,10 @@ export function IntentConcierge() {
     <section
       id="concierge"
       aria-labelledby="concierge-title"
-      className="tone-office tonal-section relative z-20 pb-20 md:pb-28"
+      className="tone-office tonal-section relative z-20 py-20 md:py-28"
     >
       <Container>
-        <Reveal className="-mt-12 md:-mt-16">
+        <Reveal>
           <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.07)] p-1.5 shadow-[0_32px_90px_-52px_rgba(176,138,91,0.75)]">
             <div className="relative overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[linear-gradient(135deg,var(--color-surface),var(--color-bg)_58%,var(--color-bg-2))] p-5 sm:p-7 lg:p-8">
               <div
