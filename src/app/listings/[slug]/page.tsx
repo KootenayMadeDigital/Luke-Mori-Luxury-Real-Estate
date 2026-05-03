@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PhotoGallery } from "@/components/listing/PhotoGallery";
 import { ListingTile } from "@/components/listing/ListingTile";
+import { ListingActionPanel } from "@/components/listing/ListingActionPanel";
+import { RecentlyViewedRail } from "@/components/listing/RecentlyViewedRail";
 import {
   allListings,
   getListingBySlug,
@@ -39,10 +41,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const l = getListingBySlug(slug);
   if (!l) return { title: "Listing Not Found" };
   const priceTitle = l.price ? `${l.price} · ` : "";
-  const desc =
-    l.description.length > 200
-      ? l.description.slice(0, 197).trimEnd() + "…"
-      : l.description;
+  const shareDetails = [l.price, l.location, l.propertyType].filter(Boolean).join(" | ");
+  const sourceDesc = l.description.length > 180 ? l.description.slice(0, 177).trimEnd() + "..." : l.description;
+  const desc = [shareDetails, sourceDesc].filter(Boolean).join(". ").slice(0, 300);
   return buildPageMetadata({
     title: `${l.address} · ${priceTitle}${l.location || "Nelson Real Estate"}`,
     description: desc,
@@ -165,6 +166,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
     .slice(0, 3);
   const fallback = allListings.filter((x) => x.slug !== l.slug).slice(0, 3);
   const related = (sameLocation.length >= 3 ? sameLocation : fallback).slice(0, 3);
+  const inquiryHref = `/contact?listing=${encodeURIComponent(l.address)}&intent=showing`;
 
   return (
     <PageLayout>
@@ -308,7 +310,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </Reveal>
               <Reveal delay={220}>
                 <SectionLede className="mt-7 max-w-[760px]">
-                  This page treats the listing like a property brief: what is known, what the public record says, and what a serious buyer should inspect in person.
+                  This page treats the listing like a property brief: what is known, what the public record says, and what a serious buyer should inspect in person. Share it with the people who help you decide, save it to your short list, then ask the right questions before touring.
                 </SectionLede>
               </Reveal>
 
@@ -427,9 +429,21 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                     {contact.email}
                   </a>
                 </div>
-                <Button href="/contact" variant="primary" full>
+                <Button href={inquiryHref} variant="primary" full>
                   Request Private Showing
                 </Button>
+
+                <div className="mt-4">
+                  <ListingActionPanel
+                    slug={l.slug}
+                    address={l.address}
+                    price={l.price}
+                    location={l.location}
+                    propertyType={l.propertyType}
+                    heroPhoto={l.heroPhoto}
+                    inquiryHref={inquiryHref}
+                  />
+                </div>
 
                 {l.url && (
                   <a
@@ -444,6 +458,8 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
               </aside>
             </Reveal>
           </div>
+
+          <RecentlyViewedRail currentSlug={l.slug} />
         </Container>
       </section>
 
@@ -587,6 +603,55 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           </div>
         </Container>
       </section>
+
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
+        <Container>
+          <Reveal className="mb-10 max-w-[780px]">
+            <Eyebrow>Buyer Intelligence</Eyebrow>
+            <SectionHeading className="mt-7">
+              Turn interest
+              <br />
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                into a private brief.
+              </em>
+            </SectionHeading>
+            <SectionLede>
+              Shared listings reveal who needs to be in the decision. Saved listings reveal what the buyer actually values. The next step is a disciplined private brief, not another scroll session.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
+            {[
+              { title: "Share with the circle", body: "Send the listing to a spouse, advisor, lender, inspector, or family member before booking a day on the road." },
+              { title: "Save the shortlist", body: "Keep the properties that survive first review close, then compare fit by lifestyle, privacy, access, and timing." },
+              { title: "Ask better questions", body: "Use Luke for the local context the listing cannot answer: roads, light, neighbours, value, terms, and seller motivation." },
+            ].map((item, i) => (
+              <Reveal key={item.title} delay={i * 80} className="bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 block font-serif text-[20px] italic text-[var(--color-bronze)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                  {item.title}
+                </h3>
+                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                  {item.body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <div className="fixed inset-x-3 bottom-3 z-[120] md:hidden">
+        <div className="grid grid-cols-2 gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.88)] p-1.5 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.95)] backdrop-blur-xl">
+          <a href={inquiryHref} className="rounded-full bg-[var(--color-bronze)] px-4 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-button-text)]">
+            Showing
+          </a>
+          <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`} className="rounded-full border border-[var(--color-line-strong)] px-4 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text)]">
+            Call Luke
+          </a>
+        </div>
+      </div>
 
       <InquiryCTA
         eyebrow="Private Showing"

@@ -5,6 +5,8 @@ import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ProcessSteps } from "@/components/layout/ProcessSteps";
 import { LifestyleSection } from "@/components/sections/LifestyleSection";
+import { BuyerFitQuiz } from "@/components/buyers/BuyerFitQuiz";
+import { PrivateBuyerRegistry } from "@/components/buyers/PrivateBuyerRegistry";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -47,6 +49,7 @@ const buyerActions = [
   { href: "/listings/waterfront", label: "View waterfront" },
   { href: "/nelson/nelson", label: "Explore Nelson" },
   { href: "/contact", label: "Request private access" },
+  { href: "#buyer-fit", label: "Find buyer fit" },
   { href: "/buyers/relocation", label: "Plan relocation call" },
   { href: "/buyers/international", label: "Ask about second-home ownership" },
 ];
@@ -147,6 +150,46 @@ export default function BuyersPage() {
               </Link>
             ))}
           </Reveal>
+        </Container>
+      </section>
+
+      <section id="buyer-fit" className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
+            <div>
+              <Eyebrow>Buyer Intelligence</Eyebrow>
+              <SectionHeading className="mt-7">
+                Find the right route
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  before the tour day.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              The fastest way to waste a luxury buyer&apos;s time is to show beautiful properties that do not fit the life. This quiz turns desire into a sharper first brief.
+            </SectionLede>
+          </Reveal>
+          <BuyerFitQuiz />
+        </Container>
+      </section>
+
+      <section className="tone-lake tonal-section border-b border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 max-w-[780px]">
+            <Eyebrow>Private Buyer Registry</Eyebrow>
+            <SectionHeading className="mt-7">
+              Capture the buyer
+              <br />
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                before the property exists.
+              </em>
+            </SectionHeading>
+            <SectionLede>
+              Serious buyers do not always need more inventory. They need the right alert, the right introduction, and a private advisor who knows what should never become a casual listing search.
+            </SectionLede>
+          </Reveal>
+          <PrivateBuyerRegistry />
         </Container>
       </section>
 
