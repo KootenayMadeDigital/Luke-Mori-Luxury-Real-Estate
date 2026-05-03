@@ -11,7 +11,7 @@ import { faqs, brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Frequently Asked Questions",
   description:
-    "Frequently asked questions about Nelson and Kootenay Lake real estate representation, selling, buying, relocation, international buyers, and off-market access.",
+    "Frequently asked questions about Nelson and Kootenay Lake real estate, selling, buying, relocation, international buyers, and off-market access.",
   path: "/faq",
   image: brandImages.orangeBridge,
 });
@@ -25,7 +25,7 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title="The questions"
         emphasis="worth asking first."
-        lede="A structured guide for sellers, buyers, relocating clients, and private representation questions. Conservative answers only, no salesman gloss."
+        lede="Straight answers for sellers, buyers, relocating clients, and off-market questions."
         image={brandImages.orangeBridge}
         crumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
@@ -42,7 +42,7 @@ export default function FaqPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Selling questions are different from relocation questions. Buyer due diligence is different from off-market access. Start with the category that matches the decision in front of you.
+              Start with the category that matches the decision in front of you: selling, buying, relocation, or representation.
             </SectionLede>
           </Reveal>
 

@@ -12,14 +12,14 @@ export function CredentialsStrip() {
               <div className="flex flex-col justify-between border-b border-[var(--color-line)] p-6 md:border-b-0 md:border-r md:p-8">
                 <div>
                   <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--color-bronze)]">
-                    First-Viewport Proof
+                    At a Glance
                   </span>
                   <h2 className="m-0 mt-4 max-w-[14ch] font-serif text-[31px] font-light leading-[1.02] tracking-[-0.01em] text-[var(--color-text)] md:text-[38px]">
-                    A private practice with public receipts.
+                    Experience buyers and sellers can verify.
                   </h2>
                 </div>
                 <p className="m-0 mt-7 max-w-[380px] text-[13px] leading-[1.75] text-[var(--color-text-muted)]">
-                  Sales volume, award history, press visibility, and local fluency appear before the visitor has to hunt for trust.
+                  Sales volume, awards, press visibility, and local experience are easy to find before the first call.
                 </p>
               </div>
 

@@ -2,21 +2,21 @@ import Link from "next/link";
 
 const registryCards = [
   {
-    title: "Private access registry",
-    body: "For buyers who want to hear about the right property before the public feed has flattened it into noise.",
-    cta: "Request private access",
+    title: "Private buyer notes",
+    body: "Tell Luke what you want before the right property appears publicly.",
+    cta: "Ask about private homes",
     href: "/contact",
   },
   {
     title: "Property match alerts",
-    body: "A calm, high-signal search brief for lakefront, walkable Nelson, acreage, ski access, privacy, relocation, and second homes.",
+    body: "A clear search brief for lakefront, walkable Nelson, acreage, ski access, privacy, relocation, and second homes.",
     cta: "Open buyer brief",
     href: "/contact",
   },
   {
     title: "Advisor routing",
     body: "When the search needs financing, inspection, tax, legal, caretaker, or remote-ownership support, the right introductions happen early.",
-    cta: "Ask the office",
+    cta: "Ask Luke",
     href: "/buyers/international",
   },
 ];

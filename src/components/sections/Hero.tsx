@@ -55,7 +55,7 @@ export function Hero() {
                 Seller Strategy
               </Button>
               <Button href="/listings/luxury" variant="ghost" size="lg" arrow>
-                Private Access / Listings
+                Listings and Private Homes
               </Button>
             </div>
           </Reveal>
@@ -81,14 +81,14 @@ export function Hero() {
               <div className="flex items-start justify-between gap-6 border-b border-[var(--color-line)] pb-6">
                 <div>
                   <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-                    Proof Ledger
+                    Luke at a glance
                   </p>
                   <h2 className="m-0 mt-3 max-w-[13ch] font-serif text-[34px] font-light leading-[1] tracking-[-0.01em] text-[var(--color-text)] sm:text-[40px]">
-                    The standard is already visible.
+                    The experience is already visible.
                   </h2>
                 </div>
                 <div className="hidden rounded-full border border-[var(--color-line)] px-3 py-2 text-right text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:block">
-                  Private
+                  Careful
                   <br />
                   Representation
                 </div>
@@ -136,7 +136,7 @@ export function Hero() {
           Seller Strategy
         </Button>
         <Button href="/listings/luxury" variant="ghost" size="lg" arrow full>
-          Private Access / Listings
+          Listings and Private Homes
         </Button>
       </div>
 

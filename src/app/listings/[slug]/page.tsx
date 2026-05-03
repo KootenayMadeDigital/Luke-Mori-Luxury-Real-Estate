@@ -132,8 +132,8 @@ function buildContextPanels(l: Listing): ContextPanel[] {
       label: "01",
       title: "Area and arrival",
       body: l.location
-        ? `The source listing identifies the area as ${l.location}. A private showing should test approach, privacy, light, sound, and everyday fit.`
-        : "The public record does not name a precise area. A private showing should test approach, privacy, light, sound, and everyday fit.",
+        ? `The listing places this property in ${l.location}. Use the showing to test approach, privacy, light, sound, and everyday fit.`
+        : "The public record does not name a precise area. Use the showing to test approach, privacy, light, sound, and everyday fit.",
     },
     {
       label: "02",
@@ -144,8 +144,8 @@ function buildContextPanels(l: Listing): ContextPanel[] {
     },
     {
       label: "03",
-      title: "Private due diligence",
-      body: "Serious buyers should review the public facts first, then use Luke's local context for comparables, timing, access, and offer discipline.",
+      title: "Due diligence",
+      body: "Review the public facts first, then ask Luke about comparables, timing, access, and offer strategy.",
     },
   ];
 }
@@ -568,7 +568,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         <Container>
           <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end md:gap-16">
             <div>
-              <Eyebrow>Location / Lifestyle Context</Eyebrow>
+              <Eyebrow>Location and lifestyle</Eyebrow>
               <SectionHeading className="mt-7">
                 The address is only
                 <br />
@@ -624,7 +624,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
             {[
               { title: "Share with the circle", body: "Send the listing to a spouse, advisor, lender, inspector, or family member before booking a day on the road." },
               { title: "Save the shortlist", body: "Keep the properties that survive first review close, then compare fit by lifestyle, privacy, access, and timing." },
-              { title: "Ask better questions", body: "Use Luke for the local context the listing cannot answer: roads, light, neighbours, value, terms, and seller motivation." },
+              { title: "Ask better questions", body: "Ask Luke what the listing cannot answer: roads, light, neighbours, value, terms, and seller motivation." },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 80} className="bg-[var(--color-bg)] p-8 sm:p-9">
                 <span className="mb-5 block font-serif text-[20px] italic text-[var(--color-bronze)]">
@@ -657,7 +657,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         eyebrow="Private Showing"
         title="Some properties are best"
         emphasis="experienced in person."
-        body="Showings are scheduled directly with Luke or his private team. Tell us when you are in town, and we will arrange the visit, the context, and the conversation."
+        body="Showings are scheduled directly with Luke or his team. Tell us when you are in town, and we will arrange the visit and the conversation."
       />
 
       {related.length > 0 && (

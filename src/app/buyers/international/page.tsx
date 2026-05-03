@@ -31,7 +31,7 @@ const considerations = [
   {
     k: "III.",
     title: "Local Advisor Network",
-    body: "Cross-border tax counsel, immigration lawyers (where relevant), private banking, and the local notary or solicitor who handles your transaction. We make the introductions before you fly in.",
+    body: "Cross-border tax counsel, immigration lawyers (where relevant), banking, and the local notary or solicitor who handles your transaction. We make the introductions before you fly in.",
   },
   {
     k: "IV.",
@@ -59,7 +59,7 @@ const absenteeDesk = [
   },
   {
     title: "Advisor Bench",
-    body: "Coordinate tax, legal, immigration, private banking, notary, and insurance introductions before travel dates harden.",
+    body: "Coordinate tax, legal, immigration, banking, notary, and insurance introductions before travel dates harden.",
   },
   {
     title: "Ownership Systems",
@@ -67,7 +67,7 @@ const absenteeDesk = [
   },
   {
     title: "Private Touring",
-    body: "Curated days around waterfront, Balfour, North Shore, Nelson, acreage, or retreat properties, with only serious contenders on the route.",
+    body: "Focused tour days around waterfront, Balfour, North Shore, Nelson, acreage, or retreat properties, with only strong contenders on the route.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function InternationalBuyersPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Most of the noise around international real estate is about the wrong things.
+              Most international buying questions come down to four practical issues.
               Here&apos;s what actually moves the needle on your transaction.
             </SectionLede>
           </Reveal>
@@ -169,7 +169,7 @@ export default function InternationalBuyersPage() {
             {[
               { href: "/listings/waterfront", label: "View waterfront" },
               { href: "/nelson/balfour", label: "Study Balfour" },
-              { href: "/contact", label: "Request private access" },
+              { href: "/contact", label: "Ask About Private Homes" },
               { href: "/buyers/relocation", label: "Plan scouting trip" },
             ].map((item) => (
               <Link key={item.href + item.label} href={item.href} className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
@@ -210,7 +210,7 @@ export default function InternationalBuyersPage() {
         eyebrow="International Inquiry"
         title="Buying from afar?"
         emphasis="Build the local bench first."
-        body="A 30-minute call walks through the regulatory landscape, the local market, the advisor bench, and what's actually possible from where you're sitting. No commitment, no pressure, just clarity."
+        body="A 30-minute call can cover the rules, the local market, the right advisors, and what is realistic from where you are now."
       />
     </PageLayout>
   );

@@ -24,7 +24,7 @@ export function MoriStandard() {
               <div className="tone-dark relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-surface)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
                 <Image
                   src={brandImages.lukePortrait}
-                  alt="Luke Mori, Principal"
+                  alt="Luke Mori"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"
@@ -35,7 +35,7 @@ export function MoriStandard() {
                 <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
                   <div>
                     <div className="text-[11px] font-bold uppercase tracking-[0.26em] text-[var(--color-bronze-light)] drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
-                      Principal
+                      Realtor
                     </div>
                     <div className="mt-2 font-serif text-[26px] font-light text-[var(--color-text)]">
                       Luke Mori
@@ -58,7 +58,7 @@ export function MoriStandard() {
                 Local fluency,
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  practiced privately.
+                  built from experience.
                 </em>
               </h2>
             </Reveal>
@@ -107,7 +107,7 @@ export function MoriStandard() {
                   />
                 </div>
                 <span className="text-microcopy font-sans uppercase text-[var(--color-text-muted)]">
-                  Luke Mori, Principal, Luxury Division
+                  Luke Mori, Luxury Division
                 </span>
               </div>
             </Reveal>

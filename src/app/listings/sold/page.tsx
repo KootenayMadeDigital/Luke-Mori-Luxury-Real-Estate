@@ -9,7 +9,7 @@ import { recentlyConcluded, brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Recently Sold · Nelson Real Estate",
   description:
-    "Recently sold luxury real estate in Nelson and the Kootenays, recent sold properties. Lakefront estates, view homes, walk-to-water residences, and architectural acreage.",
+    "Recently sold real estate in Nelson and the Kootenays: lakefront homes, view homes, walk-to-water residences, and acreage.",
   path: "/listings/sold",
   image: brandImages.orangeBridge,
 });
@@ -27,7 +27,7 @@ export default function SoldPage() {
         eyebrow="Recently Placed"
         title="Recently sold,"
         emphasis="privately concluded."
-        lede="A discreet selection of recent placements. Specifics are public; everything else withheld in the interest of every party who trusted us with them."
+        lede="A selection of recent sales across Nelson and the Kootenays. Public details are shown. Private client details stay private."
         image={brandImages.orangeBridge}
         crumbs={[
           { label: "Home", href: "/" },
@@ -35,7 +35,7 @@ export default function SoldPage() {
           { label: "Recently Sold" },
         ]}
         meta={[
-          { value: `${recentlyConcluded.length}`, label: "Recent Placements" },
+          { value: `${recentlyConcluded.length}`, label: "Recent Sales" },
           { value: totalFmt, label: "Combined Volume" },
           { value: "Sold", label: "Status" },
           { value: "Private", label: "Discretion" },
@@ -85,7 +85,7 @@ export default function SoldPage() {
         eyebrow="Considering Selling"
         title="Your property deserves"
         emphasis="strong local representation."
-        body="Cinematic film, editorial photography, a controlled launch, and a real buyer network. Every property gets the same standard, regardless of price point."
+        body="Strong photography, clear copy, a controlled launch, and a real buyer network. Every property gets the same care, regardless of price point."
       />
     </PageLayout>
   );

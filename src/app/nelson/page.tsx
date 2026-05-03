@@ -13,7 +13,7 @@ import { nelsonAreas, brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "About Nelson · The Kootenay Region",
   description:
-    "About Nelson, B.C. and the Kootenay Lake region, neighbourhoods, lifestyle, and the local intelligence behind every property we represent.",
+    "About Nelson, B.C. and the Kootenay Lake region: neighbourhoods, lifestyle, and the local details that shape value.",
   path: "/nelson",
   image: brandImages.nelsonLandscape,
 });
@@ -51,7 +51,7 @@ const areaFitIndex = [
     desire: "Retreat property",
     area: "Slocan Valley",
     href: "/nelson/slocan-valley",
-    route: "River frontage, heritage timber, smaller communities, and a quieter pace north of Nelson.",
+    route: "River frontage, timber homes, smaller communities, and a quieter pace north of Nelson.",
     next: "Study retreats",
   },
 ];
@@ -63,7 +63,7 @@ export default function NelsonHubPage() {
         eyebrow="About Nelson"
         title="The Queen City"
         emphasis="and the Kootenays."
-        lede="Five areas of Nelson and Kootenay Lake real estate, from heritage downtown Nelson to the deep-water privacy of Balfour. Each with its own character, its own price points, its own seasonal logic, and its own kind of buyer."
+        lede="Five areas of Nelson and Kootenay Lake real estate, from downtown Nelson to Balfour. Each has its own character, price points, seasons, and buyer fit."
         image={brandImages.nelsonLandscape}
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
         meta={[
@@ -87,7 +87,7 @@ export default function NelsonHubPage() {
             </SectionHeading>
             <SectionLede>
               Pick a region, each page covers the local market dynamics, the lifestyle, and
-              the kind of property worth looking for there. This is the map before the MLS map.
+              the kind of property worth looking for there. Start with the area before the listing search.
             </SectionLede>
           </Reveal>
 
@@ -156,7 +156,7 @@ export default function NelsonHubPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Luke&apos;s value is not only knowing which homes are listed. It is knowing which parts of the lake and valley are worth your time before you ever book a showing.
+              Luke helps you understand which parts of the lake and valley are worth your time before you book a showing.
             </SectionLede>
           </Reveal>
 
@@ -190,7 +190,7 @@ export default function NelsonHubPage() {
             {[
               { href: "/listings/waterfront", label: "View waterfront" },
               { href: "/buyers", label: "Buyer lifestyle selector" },
-              { href: "/contact", label: "Request private access" },
+              { href: "/contact", label: "Ask about private homes" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
                 {item.label}
@@ -201,10 +201,10 @@ export default function NelsonHubPage() {
       </section>
 
       <InquiryCTA
-        eyebrow="Local Intelligence"
+        eyebrow="Local Knowledge"
         title="Don't know which area"
         emphasis="suits the life?"
-        body="A 30-minute conversation usually narrows it to two. From there, we tour the third, to confirm what the first two told us. Local intelligence is the practice."
+        body="A 30-minute conversation usually narrows the search to two or three areas. From there, the right showings get easier to choose."
       />
     </PageLayout>
   );

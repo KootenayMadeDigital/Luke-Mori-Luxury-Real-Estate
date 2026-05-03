@@ -16,9 +16,9 @@ export function TrustLedger() {
       <Container className="relative z-10">
         <Reveal className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-[0.82fr_1fr] lg:items-end">
           <div>
-            <Eyebrow>Trust & Proof</Eyebrow>
+            <Eyebrow>Trust</Eyebrow>
             <SectionHeading className="mt-7">
-              Experience you can
+              Experience clients can
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
                 trust early.
@@ -26,7 +26,7 @@ export function TrustLedger() {
             </SectionHeading>
           </div>
           <SectionLede align="right">
-            High-value sellers and private buyers need proof, local knowledge, strong marketing, and a clear process.
+            High-value sellers and buyers need local knowledge, strong marketing, and a clear process.
           </SectionLede>
         </Reveal>
 
@@ -74,7 +74,7 @@ export function TrustLedger() {
                   Simple test
                 </p>
                 <p className="m-0 mt-5 font-serif text-[28px] font-light leading-[1.18] tracking-[-0.005em] text-[var(--color-text)]">
-                  Proof should help a client make a calmer decision before they call.
+                  Good information helps a client make a calmer decision before they call.
                 </p>
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col">

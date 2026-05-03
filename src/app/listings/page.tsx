@@ -10,7 +10,7 @@ import { brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Active Listings · Nelson & Kootenay Real Estate",
   description:
-    "Browse every active real estate listing across Nelson, Kootenay Lake, and the broader Kootenay region, featured estates listed by Luke Mori plus the full MLS catalog represented through his portal.",
+    "Browse active real estate listings across Nelson, Kootenay Lake, and the broader Kootenay region, including Luke Mori listings and MLS listings from his portal.",
   path: "/listings",
   image: brandImages.procterLakeHouse,
 });
@@ -26,7 +26,7 @@ export default function ListingsIndexPage() {
         eyebrow={`Active · ${total.toLocaleString()} Listings`}
         title="The Kootenay market,"
         emphasis="end to end."
-        lede="Every active property across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo and beyond. Luke's own listings carry a bronze badge, the rest of the catalog is represented through his portal."
+        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Luke's own listings carry a bronze badge."
         image={brandImages.procterLakeHouse}
         crumbs={[{ label: "Home", href: "/" }, { label: "Listings" }]}
         meta={[

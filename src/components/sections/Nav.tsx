@@ -17,10 +17,10 @@ const navGroups: NavGroup[] = [
     label: "Clients",
     href: "/buyers",
     items: [
-      { label: "For Buyers", href: "/buyers", description: "Private access, lifestyle fit, and area-led search strategy." },
-      { label: "For Sellers", href: "/sellers", description: "Pricing, launch sequence, qualified showings, and discretion." },
+      { label: "For Buyers", href: "/buyers", description: "Listings, lifestyle fit, and area-led search." },
+      { label: "For Sellers", href: "/sellers", description: "Pricing, launch plan, qualified showings, and privacy." },
       { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
-      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer context, advisors, wires, and absentee ownership." },
+      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and ownership from afar." },
     ],
   },
   {
@@ -42,11 +42,11 @@ const navGroups: NavGroup[] = [
       { label: "North Shore", href: "/nelson/north-shore", description: "Highway 3A, where the lake opens." },
       { label: "Balfour", href: "/nelson/balfour", description: "Where the West Arm meets the main lake." },
       { label: "Blewett", href: "/nelson/blewett", description: "Country acreage, ten minutes from town." },
-      { label: "Slocan Valley", href: "/nelson/slocan-valley", description: "Riverfront, heritage timber, quiet wealth." },
+      { label: "Slocan Valley", href: "/nelson/slocan-valley", description: "Riverfront, timber, space, and quiet towns." },
     ],
   },
   {
-    label: "Principal",
+    label: "About Luke",
     href: "/about",
     items: [
       { label: "About Luke", href: "/about", description: "Born and raised in Nelson. Founder, Luke Mori at Fair Realty." },

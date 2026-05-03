@@ -28,17 +28,17 @@ export const heroProofSignals: HeroProofSignal[] = [
   {
     value: "$169M+",
     label: "Career sales volume",
-    detail: "A public ledger of high-value representation across Nelson and the Kootenays.",
+    detail: "High-value sales across Nelson, Kootenay Lake, and the surrounding region.",
   },
   {
     value: "2021 & 2024",
     label: "Best Luxury Broker BC",
-    detail: "Luxury Lifestyle Awards recognition, anchored by local market fluency.",
+    detail: "Provincial luxury recognition backed by deep local experience.",
   },
   {
     value: "Nelson born",
     label: "Kootenay Lake intelligence",
-    detail: "The streets, lakefront pockets, builders, slopes, and quiet owner networks.",
+    detail: "Local knowledge of streets, lakefront pockets, builders, slopes, and owners.",
   },
 ];
 
@@ -53,36 +53,36 @@ export type VisitorIntent = {
 
 export const visitorIntents: VisitorIntent[] = [
   {
-    eyebrow: "Luxury Sellers",
-    title: "Launch the estate without overexposing it.",
-    body: "Pricing strategy, cinematic presentation, qualified showings, and controlled release for homes that need discretion before reach.",
+    eyebrow: "Sellers",
+    title: "Bring the property to market carefully.",
+    body: "Clear pricing, strong presentation, qualified showings, and a launch plan that protects your time and privacy.",
     href: "#sellers",
-    cta: "Seller Strategy",
+    cta: "Talk Selling",
     note: "For lakefront, view, acreage, and legacy properties.",
   },
   {
-    eyebrow: "Private Buyers",
-    title: "See the market beyond the public feed.",
-    body: "Active luxury listings, quiet introductions, and a principled filter for buyers who value privacy as much as property.",
+    eyebrow: "Buyers",
+    title: "See more than the public feed.",
+    body: "Active listings, private introductions, and a tighter search based on how you actually want to live.",
     href: "/listings/luxury",
-    cta: "Private Access / Listings",
+    cta: "Browse Listings",
     note: "For local, Vancouver, Calgary, U.S., and international buyers.",
   },
   {
     eyebrow: "Relocation & Second Homes",
-    title: "Land softly before you buy seriously.",
-    body: "Neighbourhood fit, school and healthcare context, seasonal realities, and the first scouting route worth taking.",
+    title: "Learn the area before you buy.",
+    body: "Neighbourhoods, schools, healthcare, winter conditions, and the first scouting route worth taking.",
     href: "/buyers/relocation",
     cta: "Relocation Guide",
     note: "For Nelson, North Shore, Balfour, Kaslo, and the Slocan Valley.",
   },
   {
-    eyebrow: "Private Referrals",
-    title: "Introduce a serious buyer or seller.",
-    body: "A discreet route for family offices, advisors, past clients, and trusted local relationships with a buyer or seller worth discussing.",
+    eyebrow: "Referrals",
+    title: "Introduce a buyer or seller.",
+    body: "A clear path for advisors, past clients, and trusted local relationships introducing someone who may need Luke.",
     href: "/contact",
-    cta: "Make Introduction",
-    note: "For referrals, advisory introductions, and quiet market conversations.",
+    cta: "Make an Introduction",
+    note: "For trusted introductions and private market conversations.",
   },
 ];
 
@@ -91,28 +91,28 @@ export type AuthorityPillar = { number: string; title: string; body: string };
 export const authorityPillars: AuthorityPillar[] = [
   {
     number: "01",
-    title: "Local Luxury Intelligence",
-    body: "From John's Walk to Johnstone Road, the lots, the views, the architects, and the owners who have not listed yet.",
+    title: "Local Knowledge",
+    body: "From John's Walk to Johnstone Road, Luke knows the lots, views, roads, builders, and ownership patterns.",
   },
   {
     number: "02",
-    title: "Discreet Seller Representation",
-    body: "Trophy properties are launched, not uploaded. Quiet lists, qualified showings, controlled exposure.",
+    title: "Seller Representation",
+    body: "High-value homes need careful pricing, strong visuals, qualified showings, and controlled exposure.",
   },
   {
     number: "03",
-    title: "Bespoke Property Marketing",
-    body: "Cinematic film, drone, editorial copy, and a dedicated property site for every estate worth its own narrative.",
+    title: "Property Marketing",
+    body: "Film, drone, sharp copy, and a dedicated property page when a basic listing is not enough.",
   },
   {
     number: "04",
-    title: "Private Buyer Network",
-    body: "A short list of relocating buyers and second-home buyers from Vancouver, Calgary, and abroad, already vetted.",
+    title: "Buyer Network",
+    body: "Relocating buyers, second-home buyers, and local buyers who are already clear on what they want.",
   },
   {
     number: "05",
     title: "Kootenay Lake Expertise",
-    body: "Waterfront, North Shore, ski access, and acreage. The inventory the rest of the market does not know how to position.",
+    body: "Waterfront, North Shore, ski access, acreage, and the details that change value from one property to the next.",
   },
 ];
 
@@ -123,11 +123,11 @@ export type Credential = { value: string; label: string };
 export const credentials: Credential[] = [
   { value: "$169M+", label: "Career Sales Volume" },
   { value: "2021 & 2024", label: "Best Luxury Broker BC" },
-  { value: "10+ Yrs", label: "Nelson Market Intelligence" },
-  { value: "Private", label: "Representation Model" },
+  { value: "10+ Yrs", label: "Nelson Market Knowledge" },
+  { value: "Careful", label: "Representation" },
 ];
 
-/* ---------- Trust architecture ---------- */
+/* ---------- Trust section ---------- */
 
 export type TrustProof = {
   eyebrow: string;
@@ -139,31 +139,31 @@ export type TrustProof = {
 export const trustProofs: TrustProof[] = [
   {
     eyebrow: "Track Record",
-    title: "Volume that proves judgement, not noise.",
+    title: "Sales volume with real negotiation experience.",
     proof: "$169M+ career sales volume across Nelson and the Kootenays.",
     meaning:
-      "For sellers, the useful proof is not a loud number. It is pricing discipline, offer judgement, and pattern recognition from real negotiations.",
+      "For sellers, the number matters because it comes from real pricing, offers, negotiations, and closings.",
   },
   {
     eyebrow: "Recognition",
-    title: "Awarded, then kept local.",
+    title: "Recognized in BC. Grounded in Nelson.",
     proof: "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
     meaning:
-      "Prestige matters only if it sharpens the work. The role is still local guidance: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
+      "Awards help, but the work is local: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
   },
   {
     eyebrow: "Local Fluency",
-    title: "Born here means the map has memory.",
-    proof: "Born and raised in Nelson, BC, with 10+ years of Nelson market intelligence.",
+    title: "Born here. Knows the map.",
+    proof: "Born and raised in Nelson, BC, with more than 10 years in the local market.",
     meaning:
-      "The value is knowing which lots hold light, which roads change in winter, which owners move quietly, and which addresses deserve patience.",
+      "The value is knowing which lots get the light, which roads change in winter, and which addresses are worth patience.",
   },
   {
     eyebrow: "Presentation",
-    title: "Editorial marketing instead of listing noise.",
-    proof: "Cinematic film, architectural photography, dedicated property pages, and a public library of property films.",
+    title: "Marketing that makes the home clear.",
+    proof: "Property film, strong photography, dedicated property pages, and clear listing copy.",
     meaning:
-      "High-value homes need a controlled first impression. The right buyer should understand the property before they ever book the showing.",
+      "The right buyer should understand the property before they ever book the showing.",
   },
 ];
 
@@ -171,16 +171,16 @@ export type TrustPrinciple = { title: string; body: string };
 
 export const trustPrinciples: TrustPrinciple[] = [
   {
-    title: "Receipts before adjectives",
+    title: "Facts before adjectives",
     body: "Sales volume, awards, press visibility, local experience, and client voice give buyers and sellers a clearer reason to trust Luke.",
   },
   {
-    title: "Discretion before distribution",
-    body: "The seller's privacy, timeline, showing appetite, and exposure strategy are settled before the market is invited in.",
+    title: "Privacy before exposure",
+    body: "Your privacy, timeline, showing plan, and launch plan are settled before the market sees the home.",
   },
   {
     title: "Process before pressure",
-    body: "Buyers and sellers get a clear next step, a private brief, and a personal reply instead of a generic contact queue.",
+    body: "Buyers and sellers get a clear next step and a personal reply instead of a generic contact queue.",
   },
 ];
 
@@ -197,36 +197,36 @@ export type InquiryPath = {
 
 export const inquiryPaths: InquiryPath[] = [
   {
-    audience: "Luxury Sellers",
-    title: "Open a private seller file.",
-    body: "Share the address, timeline, privacy needs, and the result you are trying to protect. The first reply is strategic, not canned.",
+    audience: "Sellers",
+    title: "Start the seller conversation.",
+    body: "Share the address, timeline, privacy needs, and the outcome you want. Luke can reply with a clear next step.",
     href: "/contact",
     cta: "Start seller strategy",
-    proof: "$169M+ career volume, private launch framework, controlled showing protocol.",
+    proof: "$169M+ career volume, careful launch planning, qualified showings.",
   },
   {
-    audience: "Private Buyers",
-    title: "Request access beyond the feed.",
-    body: "Name the life you want, lakefront, walkable Nelson, acreage, ski rhythm, second home, or quiet relocation, then the search can narrow properly.",
+    audience: "Buyers",
+    title: "Search beyond the feed.",
+    body: "Name the life you want: lakefront, walkable Nelson, acreage, ski rhythm, second home, or relocation. Then narrow the search properly.",
     href: "/buyers",
-    cta: "Build buyer brief",
-    proof: "Open market, private introductions, area fit, and local advisor routing.",
+    cta: "Build Buyer Brief",
+    proof: "Open listings, private introductions, area fit, and local advisors.",
   },
   {
     audience: "Relocation & Second Homes",
     title: "Plan the first scouting route.",
-    body: "Schools, winter, healthcare, road rhythm, caretaker coverage, and ownership systems get mapped before a tour day becomes expensive theatre.",
+    body: "Schools, winter roads, healthcare, caretaker coverage, and daily routines get mapped before the tour day.",
     href: "/buyers/relocation",
     cta: "Plan relocation path",
-    proof: "Nelson, North Shore, Balfour, Blewett, Slocan Valley, and absentee ownership context.",
+    proof: "Nelson, North Shore, Balfour, Blewett, Slocan Valley, and second-home ownership.",
   },
   {
-    audience: "Private Referrals",
-    title: "Introduce a serious buyer or seller.",
-    body: "For family offices, advisors, past clients, and trusted local relationships introducing a buyer or seller who needs discretion.",
+    audience: "Referrals",
+    title: "Introduce a buyer or seller.",
+    body: "For advisors, past clients, and trusted local relationships introducing a buyer or seller.",
     href: "/contact",
     cta: "Make introduction",
-    proof: "Private context and a direct path into the right conversation.",
+    proof: "A direct path into the right conversation.",
   },
 ];
 
@@ -246,7 +246,7 @@ export const privateOfficeSteps: PrivateOfficeStep[] = [
   {
     num: "03",
     title: "Receive a personal reply",
-    body: "The next step is routed by intent, with a clear recommendation and no generic sales sequence.",
+    body: "Luke can respond with a clear recommendation and no generic sales sequence.",
   },
 ];
 
@@ -391,9 +391,9 @@ export const signatureAreas: Area[] = [
   {
     index: "01 / 06",
     name: "John's Walk & Sproat Drive",
-    body: "Walk-to-water sanctuary on the city's most quietly coveted lakefront stretch, the kind of address that rarely lists, and almost never twice in a generation.",
+    body: "Walk-to-water home on one of Nelson's strongest lakefront stretches, close to town and difficult to replace.",
     tags: "Waterfront · Walk-to-Beach · Heritage Lots",
-    intent: "For buyers who want lake proximity, old Nelson character, and the rare confidence of an address that already has a reputation.",
+    intent: "For buyers who want lake proximity, old Nelson character, and an address with a known reputation.",
     href: "/listings/waterfront",
     cta: "View Waterfront",
     feature: true,
@@ -416,7 +416,7 @@ export const signatureAreas: Area[] = [
   {
     index: "03 / 06",
     name: "Rosemont",
-    body: "Established families, wide lots, and proximity to Granite Pointe Golf Club. Quiet, settled, and increasingly rare in this size class.",
+    body: "Established families, wide lots, and proximity to Granite Pointe Golf Club. Settled, spacious, and increasingly hard to find in this size class.",
     tags: "Acreage Adjacent · Golf · Established",
     intent: "For buyers who want quieter streets, family scale, golf proximity, and room to breathe without leaving the city.",
     href: "/nelson/nelson",
@@ -428,9 +428,9 @@ export const signatureAreas: Area[] = [
   {
     index: "04 / 06",
     name: "Johnstone Road & North Shore",
-    body: "Cross 'Bob', the Big Orange Bridge, and the lake opens. Highway 3A's waterfront area toward Balfour holds Nelson's most cinematic private residences.",
-    tags: "Lakefront · Private Acreage · Boathouses",
-    intent: "For privacy-led waterfront searches where the approach, the shoreline, and the distance from public attention all matter.",
+    body: "Cross 'Bob', the Big Orange Bridge, and the lake opens. Highway 3A toward Balfour holds many of Nelson's strongest waterfront homes.",
+    tags: "Lakefront · Acreage · Boathouses",
+    intent: "For waterfront searches where the approach, the shoreline, and the distance from public attention all matter.",
     href: "/nelson/north-shore",
     cta: "Study North Shore",
     feature: true,
@@ -441,9 +441,9 @@ export const signatureAreas: Area[] = [
   {
     index: "05 / 06",
     name: "Balfour & Kootenay Lake",
-    body: "Where the West Arm meets the main lake. Deep water, deep privacy, and the kind of generational waterfront acreage that rarely transacts in public.",
+    body: "Where the West Arm meets the main lake. Deep water, larger parcels, and waterfront holdings that do not come up often.",
     tags: "Deep Water · Generational · Private Marina",
-    intent: "For deep-water second homes, legacy lake holdings, and buyers who value quiet access over downtown proximity.",
+    intent: "For deep-water second homes, legacy lake holdings, and buyers who value easy access over downtown proximity.",
     href: "/nelson/balfour",
     cta: "Study Balfour",
     image: brandImages.balfourKootenayLake,
@@ -453,7 +453,7 @@ export const signatureAreas: Area[] = [
   {
     index: "06 / 06",
     name: "Kaslo & Slocan Valley",
-    body: "Beyond the city, heritage timber estates, river-frontage acreage, and serious second-home buyers seeking distance without isolation.",
+    body: "Beyond the city, heritage timber estates, river-frontage acreage, and second-home buyers seeking distance without isolation.",
     tags: "Heritage · Acreage · Retreat Properties",
     intent: "For retreat buyers who want timber, river frontage, mountain quiet, and a wider radius than Nelson proper.",
     href: "/nelson/slocan-valley",
@@ -629,14 +629,14 @@ export const recentlyConcluded: ConcludedItem[] = [
 export type Promise = { num: string; title: string; body: string };
 
 export const sellerPromises: Promise[] = [
-  { num: "01", title: "Confidential valuation", body: "A private read on value, comparable pressure, buyer depth, and the price line that should not be crossed." },
-  { num: "02", title: "Editorial positioning", body: "Before the launch, the property is positioned around what matters most: lifestyle, design, land, privacy, and scarcity." },
-  { num: "03", title: "Film, photo, and copy", body: "Cinematic film, architectural photography, floor-plan clarity, and writing that makes the home feel considered." },
+  { num: "01", title: "Clear valuation", body: "A clear read on value, comparable pressure, buyer depth, and the price line to protect." },
+  { num: "02", title: "Property story", body: "Before launch, the home is presented around what matters most: lifestyle, design, land, privacy, and value." },
+  { num: "03", title: "Film, photo, and copy", body: "Film, photography, floor-plan clarity, and writing that makes the home easy to understand." },
   { num: "04", title: "Dedicated property page", body: "A dedicated page for the address, with the photos, facts, and story presented clearly." },
-  { num: "05", title: "Qualified buyer rollout", body: "Controlled release to serious buyers, relocation buyers, second-home families, and trusted agent networks." },
-  { num: "06", title: "Discreet showing protocol", body: "Showings are scheduled around privacy, readiness, and intent, with casual traffic filtered before it reaches the door." },
-  { num: "07", title: "Negotiation discipline", body: "Offer strategy, leverage, timing, and terms are handled as one plan, not as a reaction to the loudest bidder." },
-  { num: "08", title: "Closing discretion", body: "From accepted offer to possession, the process stays calm, documented, and deliberately quiet." },
+  { num: "05", title: "Qualified buyer rollout", body: "Release to qualified buyers, relocation buyers, second-home families, and trusted agent networks." },
+  { num: "06", title: "Showing plan", body: "Showings are scheduled around privacy, readiness, and buyer fit, with casual traffic filtered before it reaches the door." },
+  { num: "07", title: "Negotiation", body: "Price, timing, terms, and leverage are handled together, not as a reaction to the loudest bidder." },
+  { num: "08", title: "Closing care", body: "From accepted offer to possession, the process stays calm, documented, and organized." },
 ];
 
 /* ---------- Lifestyle tiles ---------- */
@@ -663,14 +663,14 @@ export const lifestyleTiles: LifestyleTile[] = [
     num: "02",
     title: "Walkable Nelson",
     kicker: "Baker Street, galleries, lake",
-    body: "Heritage streets, coffee, culture, Lakeside Park, and the rare homes that make daily Nelson life feel effortless.",
+    body: "Heritage streets, coffee, culture, Lakeside Park, and homes that make daily Nelson life feel easy.",
     href: "/nelson/nelson",
     cta: "Explore Nelson",
   },
   {
     num: "03",
-    title: "North Shore Privacy",
-    kicker: "Highway 3A, water, discretion",
+    title: "North Shore",
+    kicker: "Highway 3A, water, space",
     body: "A quieter lakefront corridor where the driveway, exposure, beach, and neighbour distance matter as much as the house.",
     href: "/nelson/north-shore",
     cta: "Study North Shore",
@@ -679,7 +679,7 @@ export const lifestyleTiles: LifestyleTile[] = [
     num: "04",
     title: "Acreage",
     kicker: "Space, timber, outbuildings",
-    body: "Forested privacy, workshop potential, family compounds, and enough land to make the approach feel intentional.",
+    body: "Forested privacy, workshop potential, family compounds, and enough land to spread out.",
     href: "/nelson/blewett",
     cta: "Find acreage fit",
   },
@@ -710,8 +710,8 @@ export const lifestyleTiles: LifestyleTile[] = [
   {
     num: "08",
     title: "International / Absentee",
-    kicker: "Advisors, wires, local care",
-    body: "Foreign-buyer review, tax counsel, FX timing, property management, and the local team needed before closing.",
+    kicker: "Advisors, financing, local care",
+    body: "Foreign-buyer review, tax advice, financing, property management, and the local team needed before closing.",
     href: "/buyers/international",
     cta: "Buy from afar",
   },
@@ -875,9 +875,9 @@ export const nelsonAreas: NelsonArea[] = [
   {
     slug: "slocan-valley",
     name: "Slocan Valley",
-    tagline: "Heritage timber, river frontage, and quiet wealth.",
+    tagline: "Heritage timber, river frontage, and space.",
     intro:
-      "North of Nelson along Highway 6, a string of small communities (South Slocan, Crescent Valley, Winlaw, Slocan, New Denver) following the Slocan River and lake. Heritage timber estates, riverfront acreage, and serious second-home buyers seeking distance without isolation.",
+      "North of Nelson along Highway 6, a string of small communities (South Slocan, Crescent Valley, Winlaw, Slocan, New Denver) following the Slocan River and lake. Heritage timber estates, riverfront acreage, and second-home buyers seeking distance without isolation.",
     population: "~5,000 (valley-wide)",
     avgPrice: "$850,000",
     focus: "Riverfront · Heritage · Retreat Properties",
@@ -901,26 +901,26 @@ export const lukeBio = {
   short:
     "Born and raised in Nelson, BC. Founder of the Luke Mori division at Fair Realty. Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
   philosophy:
-    "Local knowledge over generic luxury. Privacy as the default. Strong photography, clear copy, and careful representation for the property and the people behind it.",
+    "Local knowledge, privacy, strong photography, clear copy, and careful representation for the property and the people behind it.",
   approach:
-    "I leverage technology to serve clients better, but I never forget the importance of personal relationships. Every transaction is a long-term relationship. My goal is to stay at the forefront of the industry while always prioritising my clients' satisfaction and trust.",
+    "Good technology helps, but real estate is still personal. The goal is simple: better advice, better communication, and a smoother transaction.",
   bornAndRaised: "Born and raised in Nelson, BC",
   brokerage: "Founder, Luke Mori at Fair Realty",
   pillars: [
     {
       k: "I.",
-      title: "Local intelligence over generic luxury.",
-      body: "Knowing every architect, every lot, every owner who hasn't listed yet, and what each property is actually worth to the right buyer.",
+      title: "Local knowledge over generic luxury.",
+      body: "Knowing the lots, roads, views, owners, and what each property may be worth to the right buyer.",
     },
     {
       k: "II.",
-      title: "Discretion as a default, not a request.",
-      body: "Quiet representation, controlled exposure, and qualified showings. Your home doesn't need an audience, it needs the right buyer.",
+      title: "Privacy from the start.",
+      body: "Careful representation, controlled exposure, and qualified showings. Your home needs the right buyer, not an audience.",
     },
     {
       k: "III.",
-      title: "Editorial marketing, not realtor marketing.",
-      body: "Cinematic film, considered photography, and writing that respects what your property actually is. Launched, not uploaded.",
+      title: "Marketing that respects the home.",
+      body: "Film, photography, and writing that make the property clear, attractive, and easy to trust.",
     },
   ],
 };
@@ -938,12 +938,12 @@ export const buyerSteps: ProcessStep[] = [
   {
     num: "02",
     title: "Find your home",
-    body: "We work the open market and the private one: public listings, off-market introductions through our network, and curated tours that respect your time and your discretion.",
+    body: "We work public listings, off-market introductions, and focused tours that respect your time.",
   },
   {
     num: "03",
     title: "Make an offer",
-    body: "Strategic offer construction, financing conditions, home inspections, purchase specifics, and any first-time buyer savings opportunities you're entitled to.",
+    body: "Offer price, financing conditions, inspections, dates, included items, and any first-time buyer savings opportunities you may qualify for.",
   },
   {
     num: "04",
@@ -961,12 +961,12 @@ export const sellerSteps: ProcessStep[] = [
   {
     num: "01",
     title: "Answer the questions worth asking",
-    body: "Why are you selling? What time constraints exist? What makes your home unique? The first conversation defines the strategy that follows.",
+    body: "Why are you selling? What timeline matters? What makes the home valuable? Start there before setting price or launch plan.",
   },
   {
     num: "02",
     title: "Marketing the property",
-    body: "Professional photography, drone film, indoor video tours, full room measurements, and an editorial presentation built for the buyer profile your home is meant to attract.",
+    body: "Professional photography, drone film, indoor video, room measurements, and presentation built for the buyer your home is most likely to attract.",
   },
   {
     num: "03",
@@ -998,7 +998,7 @@ export type HomeTourVideo = {
 export const homeTourVideos: HomeTourVideo[] = [
   {
     title: "664 Ainslie Road",
-    meta: "Waterfront living at its finest",
+    meta: "Waterfront home presentation",
     href: "https://www.youtube.com/watch?v=ItcMSmhyMxw",
     image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69f05d3851101693059b1a50_10384831_1.jpeg",
     imageAlt: "Waterfront home at 664 Ainslie Road",
@@ -1031,8 +1031,8 @@ export const faqs: FAQ[] = [
   },
   {
     category: "Selling",
-    q: "What marketing assets are used for a serious listing?",
-    a: "A serious listing can include professional photography, drone film, indoor video tours, full room measurements, and editorial presentation built around the buyer profile for the home.",
+    q: "What marketing assets are used for a strong listing?",
+    a: "A strong listing can include professional photography, drone film, indoor video tours, room measurements, and copy written around the likely buyer for the home.",
   },
   {
     category: "Selling",
@@ -1082,12 +1082,12 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "Why does presentation matter so much for a higher-value property?",
-    a: "High-value homes ask buyers to understand architecture, land, privacy, lifestyle, and location at once. Photography, video, measurements, and clear copy help a serious buyer decide whether a showing is worth their time.",
+    a: "High-value homes ask buyers to understand the house, land, privacy, lifestyle, and location at once. Photography, video, measurements, and clear copy help the right buyer decide whether a showing is worth their time.",
   },
   {
     category: "Selling",
     q: "Should every listing be marketed the same way?",
-    a: "No. A lakefront home, acreage estate, city view home, and walkable Nelson property each need different positioning. The buyer profile should shape the launch plan.",
+    a: "No. A lakefront home, acreage estate, city view home, and walkable Nelson property each need a different launch plan. The buyer profile should shape the marketing.",
   },
   {
     category: "Buying",
@@ -1112,6 +1112,6 @@ export const faqs: FAQ[] = [
   {
     category: "Representation",
     q: "What makes a first conversation useful?",
-    a: "A useful first conversation defines the property, timeline, privacy needs, budget or pricing context, area preferences, and the decision the client is actually trying to make.",
+    a: "A useful first conversation defines the property, timeline, privacy needs, budget or pricing range, area preferences, and the decision the client is trying to make.",
   },
 ];

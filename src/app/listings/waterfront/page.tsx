@@ -24,7 +24,7 @@ export default function WaterfrontPage() {
         eyebrow={`Waterfront · ${wf.length.toLocaleString()} Properties`}
         title="Lake. River."
         emphasis="Direct access."
-        lede="Every active waterfront property in the catalog, Kootenay Lake's West Arm, the Highway 3A North Shore corridor, the Slocan and Kootenay rivers. Direct frontage, dock potential, and the kind of view people spend a lifetime chasing."
+        lede="Every active waterfront property in the catalog: Kootenay Lake's West Arm, Highway 3A, the North Shore, and the Slocan and Kootenay rivers."
         image={brandImages.kayaking}
         crumbs={[
           { label: "Home", href: "/" },

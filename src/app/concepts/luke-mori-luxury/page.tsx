@@ -22,7 +22,7 @@ import { buildPageGraphJsonLd, buildPageMetadata } from "@/lib/seo";
 
 const title = "Nelson & Kootenay Lake Luxury Real Estate";
 const description =
-  "Luke Mori Luxury. Lakefront estates, architectural view homes, and rare Kootenay properties, represented with discretion and taste.";
+  "Luke Mori Luxury. Nelson and Kootenay Lake real estate for lakefront homes, view properties, acreage, and second-home buyers.";
 const path = "/";
 
 export const metadata = buildPageMetadata({
@@ -65,7 +65,7 @@ export default function LukeMoriLuxuryExperience() {
         <SignatureAreas preview />
         <LifestyleSection />
         <Testimonials compact />
-        <SectionTransition eyebrow="Chapter 04" title="Private access, private routing." tone="office" />
+        <SectionTransition eyebrow="Chapter 04" title="Private introductions, clear routing." tone="office" />
         <PrivateAccess />
         <PrivateInquiryPaths
           id="private-inquiry"

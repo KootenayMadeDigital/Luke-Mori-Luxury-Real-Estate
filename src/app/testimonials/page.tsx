@@ -101,15 +101,15 @@ export default function TestimonialsPage() {
             <div>
               <Eyebrow>Media Mentions</Eyebrow>
               <SectionHeading className="mt-7">
-                The press layer,
+                Press and awards,
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  archived quietly.
+                  kept in one place.
                 </em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Recognized across luxury, design, lifestyle, and regional publications, with proof gathered here for buyers and sellers who value a visible track record.
+              Recognition across luxury, design, lifestyle, and regional publications, gathered in one place for buyers and sellers doing their homework.
             </SectionLede>
           </Reveal>
 
@@ -118,7 +118,7 @@ export default function TestimonialsPage() {
               <div className="rounded-[calc(2.5rem-0.5rem)] bg-[linear-gradient(135deg,rgba(10,11,13,0.94),rgba(24,24,22,0.84))] px-4 py-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.065)] sm:px-7 md:px-10 md:py-12">
                 <div className="mb-8 border-b border-[rgba(245,239,229,0.1)] pb-8">
                   <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.34em] text-[var(--color-bronze)]">
-                    Published Proof
+                    Published Recognition
                   </p>
                 </div>
 
@@ -199,10 +199,10 @@ export default function TestimonialsPage() {
       </section>
 
       <InquiryCTA
-        eyebrow="Add Your Voice"
-        title="When the work is done well,"
-        emphasis="people remember."
-        body="If you've worked with us and would like to add your voice, get in touch. Otherwise, start with a private consultation."
+        eyebrow="Work With Luke"
+        title="The next move starts"
+        emphasis="with a real conversation."
+        body="If you have worked with Luke and want to share your experience, get in touch. If you are buying or selling, start with a direct conversation."
       />
     </PageLayout>
   );

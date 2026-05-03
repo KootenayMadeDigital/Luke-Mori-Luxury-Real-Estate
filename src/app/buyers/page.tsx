@@ -16,7 +16,7 @@ import { buyerSteps, brandImages, lifestyleTiles } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Buying with Luke · Buyer Representation",
   description:
-    "Buyer representation in Nelson and Kootenay Lake luxury real estate, local intelligence, off-market access, and a five-step process built for relocating, second-home, and discerning regional buyers.",
+    "Buyer representation in Nelson and Kootenay Lake real estate for relocating buyers, second-home owners, and regional buyers who want a clearer search.",
   path: "/buyers",
   image: brandImages.procterLivingRoom,
 });
@@ -33,14 +33,14 @@ const buyerResourceCards = [
     href: "/buyers/relocation",
     eyebrow: "Relocation",
     title: "Vancouver, Calgary, & Beyond",
-    body: "Landing soft. Schools, neighbourhoods, climate rhythms, healthcare access, and the local context that makes the move actually work.",
+    body: "Schools, neighbourhoods, climate, healthcare access, and the details that make the move work.",
     cta: "Plan the move",
   },
   {
     href: "/buyers/international",
     eyebrow: "Second Home",
     title: "Lock-and-Leave Ownership",
-    body: "Caretaker relationships, winterisation, security, private access, and the local systems that make absentee ownership feel calm.",
+    body: "Caretaker relationships, winterization, security, and the local systems that make absentee ownership easier.",
     cta: "Ask ownership questions",
   },
 ];
@@ -48,7 +48,7 @@ const buyerResourceCards = [
 const buyerActions = [
   { href: "/listings/waterfront", label: "View waterfront" },
   { href: "/nelson/nelson", label: "Explore Nelson" },
-  { href: "/contact", label: "Request private access" },
+  { href: "/contact", label: "Ask About Private Homes" },
   { href: "#buyer-fit", label: "Find buyer fit" },
   { href: "/buyers/relocation", label: "Plan relocation call" },
   { href: "/buyers/international", label: "Ask about second-home ownership" },
@@ -57,11 +57,11 @@ const buyerActions = [
 const buyerProofStack = [
   {
     title: "A human map",
-    body: "Nelson-born local intelligence helps separate pretty listings from the roads, seasons, shoreline questions, and daily routines that actually fit.",
+    body: "Nelson-born local knowledge helps separate pretty listings from the roads, seasons, shoreline questions, and daily routines that actually fit.",
   },
   {
-    title: "Private access",
-    body: "The search can include public listings, quiet introductions, and owner conversations that never reach the portals.",
+    title: "Private introductions",
+    body: "The search can include public listings, private introductions, and owner conversations that never reach the portals.",
   },
   {
     title: "Advisor routing",
@@ -105,7 +105,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              MLS filters flatten the Kootenays. Lakefront, walkability, privacy, acreage, ski rhythm, relocation, and absentee ownership each need a different search brief.
+              MLS filters flatten the Kootenays. Lakefront, walkability, acreage, ski rhythm, relocation, and second-home ownership each need a different search.
             </SectionLede>
           </Reveal>
 
@@ -177,16 +177,16 @@ export default function BuyersPage() {
       <section className="tone-lake tonal-section border-b border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 max-w-[780px]">
-            <Eyebrow>Private Buyer Registry</Eyebrow>
+            <Eyebrow>Buyer Registry</Eyebrow>
             <SectionHeading className="mt-7">
-              Capture the buyer
+              Get clear on the buyer
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                before the property exists.
+                before the right property appears.
               </em>
             </SectionHeading>
             <SectionLede>
-              For lakefront, privacy, acreage, relocation, and second-home searches, the best fit may come from the public market, a quiet introduction, or a private owner conversation.
+              For lakefront, acreage, relocation, and second-home searches, the right fit may come from a public listing, a private introduction, or an owner conversation.
             </SectionLede>
           </Reveal>
           <PrivateBuyerRegistry />
@@ -197,7 +197,7 @@ export default function BuyersPage() {
         eyebrow="The Buyer Process"
         title="A clear five-step path,"
         emphasis="end to end."
-        lede="From first brief to offer strategy, every step is handled with local context, private access, and disciplined timing."
+        lede="From first brief to offer, each step is handled with local knowledge, timing, and clear advice."
         steps={buyerSteps}
       />
 
@@ -205,7 +205,7 @@ export default function BuyersPage() {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Buyer Trust Desk</Eyebrow>
+              <Eyebrow>Buyer Confidence</Eyebrow>
               <SectionHeading className="mt-7">
                 The search gets safer
                 <br />
@@ -215,7 +215,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Private buyers need local knowledge, the right advisors, clear ownership questions, and a buying process that protects their time.
+              Buyers need local knowledge, the right advisors, clear ownership questions, and a process that protects their time.
             </SectionLede>
           </Reveal>
 
@@ -290,7 +290,7 @@ export default function BuyersPage() {
         eyebrow="Buyer Inquiry"
         title="Name the life."
         emphasis="Then the addresses."
-        body="The first conversation is always the most important one. Whether you're three years out or three weeks, start by naming the life you want here: lakefront, town, acreage, ski, second home, or a clean relocation path."
+        body="Whether you are three years out or three weeks, start by naming the life you want here: lakefront, town, acreage, ski, second home, or a clean relocation path."
       />
     </PageLayout>
   );

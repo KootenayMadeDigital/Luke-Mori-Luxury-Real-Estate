@@ -202,7 +202,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               Compare all areas
             </Link>
             <Link href="/contact" className="rounded-full border border-[var(--color-line-strong)] px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
-              Request private access
+              Ask about private homes
             </Link>
           </Reveal>
         </Container>

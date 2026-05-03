@@ -14,7 +14,7 @@ type Option = {
 const options: Option[] = [
   { key: "lakefront", label: "Lakefront", body: "Water access, dock questions, exposure, shoreline due diligence, and legacy value." },
   { key: "walkable", label: "Walkable Nelson", body: "Baker Street rhythm, heritage homes, schools, culture, and daily convenience." },
-  { key: "privacy", label: "North Shore Privacy", body: "View corridors, quiet roads, arrival, light, and owner discretion." },
+  { key: "privacy", label: "North Shore", body: "Views, quiet roads, arrival, light, and neighbour distance." },
   { key: "acreage", label: "Acreage", body: "Land, workshops, gardens, animals, privacy, and road maintenance realities." },
   { key: "ski", label: "Ski Access", body: "Whitewater access, winter roads, storage, guests, and four-season use." },
   { key: "relocation", label: "Relocation", body: "Schools, healthcare, commute rhythm, community fit, and landing softly." },
@@ -39,10 +39,10 @@ const recommendations: Record<PathKey, { title: string; body: string; href: stri
   },
   privacy: {
     title: "Start with a private-area map.",
-    body: "North Shore and view properties need a quieter brief: approach, sightlines, neighbours, road rhythm, lake orientation, and how visible the home really is.",
+    body: "North Shore and view properties need a clear brief: approach, sightlines, neighbours, road rhythm, lake orientation, and how visible the home really is.",
     href: "/nelson/north-shore",
     cta: "Explore North Shore",
-    notes: ["Arrival and sightlines", "Lake and mountain exposure", "Quiet introductions where public inventory is thin"],
+    notes: ["Arrival and sightlines", "Lake and mountain exposure", "Private introductions where public inventory is thin"],
   },
   acreage: {
     title: "Start with land-use reality.",

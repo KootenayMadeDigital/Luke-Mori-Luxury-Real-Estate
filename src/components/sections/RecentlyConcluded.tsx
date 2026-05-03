@@ -73,7 +73,7 @@ export function RecentlyConcluded() {
           </div>
           <div className="lg:ml-auto lg:max-w-[620px] lg:text-right">
             <SectionLede align="right">
-              Recent acreage, lakefront, view homes, and walk-to-water properties represented across Nelson and the upper Kootenay market.
+              Recent acreage, lakefront, view homes, and walk-to-water properties across Nelson and the upper Kootenay market.
             </SectionLede>
             <Link
               href="/listings/sold"

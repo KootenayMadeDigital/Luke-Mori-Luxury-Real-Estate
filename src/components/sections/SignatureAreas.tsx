@@ -88,7 +88,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
             <div>
               <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-                Area fit advisory
+                Area fit
               </div>
               <h3 className="m-0 font-serif text-[28px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)] md:text-[34px]">
                 The first question is not price. It is fit.

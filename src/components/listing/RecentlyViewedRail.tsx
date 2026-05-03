@@ -90,7 +90,7 @@ export function RecentlyViewedRail({ currentSlug }: Props) {
                 {listing.address}
               </p>
               <p className="m-0 mt-2 text-[10px] uppercase tracking-[0.16em] text-[var(--color-text-dim)]">
-                {listing.price || listing.location || "Private brief"}
+                {listing.price || listing.location || "Saved listing"}
               </p>
             </div>
           </Link>

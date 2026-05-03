@@ -12,7 +12,7 @@ import { contact, brandImages, privateOfficeSteps } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Contact · Private Consultation",
   description:
-    "Direct contact for Luke Mori, Nelson and Kootenay Lake luxury real estate. Phone, email, office address, and a private consultation form. Replies are personal, within one business day.",
+    "Contact Luke Mori for Nelson and Kootenay Lake real estate. Phone, email, office address, and a private consultation form.",
   path: "/contact",
   image: brandImages.lukeContact,
 });
@@ -34,7 +34,7 @@ export default function ContactPage() {
         eyebrow="Inquiry Routing"
         title="Start with intent,"
         emphasis="not a blank form."
-        body="The fastest path is the honest one. Tell us whether this is a seller file, buyer search, relocation question, or second-home plan. The next step changes accordingly."
+        body="Tell Luke whether this is about selling, buying, relocating, or planning a second home. The next step changes accordingly."
       />
 
       <section className="tone-ivory tonal-section py-24 md:py-28">

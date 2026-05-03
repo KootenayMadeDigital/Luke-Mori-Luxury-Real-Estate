@@ -83,7 +83,7 @@ export default function AboutPage() {
               <div className="tone-dark relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
                 <Image
                   src={brandImages.lukePortrait}
-                  alt="Luke Mori, Principal"
+                  alt="Luke Mori"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <div className="pointer-events-none absolute inset-3 border border-[rgba(212,184,150,0.2)]" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="text-[11px] font-bold uppercase tracking-[0.26em] text-[var(--color-bronze-light)] drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
-                    Principal
+                    Realtor
                   </div>
                   <div className="mt-2 font-serif text-[26px] font-light text-[var(--color-text)]">
                     Luke Mori
@@ -110,10 +110,10 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={120}>
                 <SectionHeading className="mt-7">
-                  Local intelligence,
+                  Local knowledge,
                   <br />
                   <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    leveraged by technology.
+                    supported by better tools.
                   </em>
                 </SectionHeading>
               </Reveal>

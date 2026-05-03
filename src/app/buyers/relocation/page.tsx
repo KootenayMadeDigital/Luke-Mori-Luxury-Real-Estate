@@ -12,7 +12,7 @@ import { brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Relocation · Moving to Nelson & the Kootenays",
   description:
-    "A relocation playbook for moving to Nelson, B.C. and the Kootenay Lake region. Schools, neighbourhoods, climate, healthcare, and the local context that makes the move actually work.",
+    "A relocation guide for moving to Nelson, B.C. and the Kootenay Lake region: schools, neighbourhoods, climate, healthcare, and day-to-day fit.",
   path: "/buyers/relocation",
   image: brandImages.bakerStreet,
 });
@@ -66,7 +66,7 @@ const scoutingRoutes = [
   {
     href: "/nelson/slocan-valley",
     title: "Retreat Country",
-    fit: "Best when quiet wealth, river frontage, heritage timber, and distance from town are the point, not a compromise.",
+    fit: "Best when river frontage, timber, space, and distance from town are the point, not a compromise.",
     test: "Spend a full day there, not a drive-through. The valley rewards buyers who understand its pace.",
   },
 ];
@@ -78,7 +78,7 @@ export default function RelocationPage() {
         eyebrow="Relocation"
         title="A soft landing,"
         emphasis="before a serious buy."
-        lede="Most people who move here had been thinking about it for years. Once you commit, the work shifts to the practical: schools, healthcare, where to actually live, how winter changes the decision, and how to spend the first ninety days. Here's the local intelligence."
+        lede="Most people who move here had been thinking about it for years. Once you commit, the work becomes practical: schools, healthcare, where to live, how winter changes the decision, and how to spend the first ninety days."
         image={brandImages.bakerStreet}
         crumbs={[
           { label: "Home", href: "/" },
@@ -106,7 +106,7 @@ export default function RelocationPage() {
             </SectionHeading>
             <SectionLede>
               These are the six considerations that come up in nearly every relocation
-              conversation. Honest answers, no salesman gloss.
+              conversation. Honest answers. No gloss.
             </SectionLede>
           </Reveal>
 

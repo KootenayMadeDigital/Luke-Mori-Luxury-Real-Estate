@@ -8,7 +8,7 @@ import { contact, sellerPromises } from "@/lib/data";
 const sellerSignals = [
   {
     label: "Before market",
-    value: "Value, story, and risk are settled privately before the first public impression.",
+    value: "Value, presentation, and showing risk are handled before the first public impression.",
   },
   {
     label: "During launch",
@@ -16,7 +16,7 @@ const sellerSignals = [
   },
   {
     label: "After interest",
-    value: "Showings, offers, terms, and timing are managed with discipline until closing.",
+    value: "Showings, offers, terms, and timing are managed carefully through closing.",
   },
 ];
 

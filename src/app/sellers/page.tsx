@@ -13,7 +13,7 @@ import { sellerSteps, brandImages } from "@/lib/data";
 
 const sellerProofStack = [
   {
-    title: "Public receipts",
+    title: "Verified record",
     body: "$169M+ in career sales volume and Best Luxury Broker BC recognition in 2021 and 2024.",
   },
   {
@@ -21,11 +21,11 @@ const sellerProofStack = [
     body: "Start with value, likely buyers, privacy needs, and the price line you do not want to cross.",
   },
   {
-    title: "Marketing with consequence",
-    body: "Cinematic film, architectural photography, editorial copy, room measurements, and a dedicated property page make the first impression feel intentional.",
+    title: "Marketing that earns attention",
+    body: "Film, photography, clear copy, room measurements, and a dedicated property page make the first impression count.",
   },
   {
-    title: "Negotiation discipline",
+    title: "Negotiation",
     body: "Offers are read for price, terms, timing, conditions, and leverage. The loudest number is not always the cleanest result.",
   },
 ];
@@ -33,7 +33,7 @@ const sellerProofStack = [
 export const metadata = buildPageMetadata({
   title: "Selling with Luke · Seller Representation",
   description:
-    "Seller representation for Nelson and Kootenay Lake real estate, cinematic film, editorial photography, controlled exposure, and a five-step process built for the price your home actually deserves.",
+    "Seller representation for Nelson and Kootenay Lake real estate with clear pricing, strong marketing, qualified showings, and careful negotiation.",
   path: "/sellers",
   image: brandImages.sellerDining,
 });
@@ -43,8 +43,8 @@ export default function SellersPage() {
     <PageLayout>
       <SubpageHero
         eyebrow="For Sellers"
-        title="Selling a home,"
-        emphasis="the way it deserves."
+        title="Sell with clarity,"
+        emphasis="not guesswork."
         lede="Sell with clear pricing advice, strong photography, property film, a dedicated listing page, and a launch plan built around your timeline."
         image={brandImages.sellerDining}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
@@ -52,15 +52,15 @@ export default function SellersPage() {
           { value: "Launched", label: "Not Uploaded" },
           { value: "$169M+", label: "Career Volume" },
           { value: "2-4 wks", label: "Launch Window" },
-          { value: "Discreet", label: "Default Approach" },
+          { value: "Private", label: "By Default" },
         ]}
       />
 
       <ProcessSteps
         eyebrow="The Seller Process"
         title="Five steps,"
-        emphasis="executed properly."
-        lede="From the first conversation to possession day. The work is the same regardless of price, only the marketing investment scales."
+        emphasis="handled clearly."
+        lede="From the first conversation to possession day, the work stays clear, organized, and practical."
         steps={sellerSteps}
       />
 
@@ -81,7 +81,7 @@ export default function SellersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The seller decision is not whether Luke can list the home. It is whether the launch will protect price, privacy, timing, and leverage from the first conversation through closing.
+              The seller decision is not whether Luke can list the home. It is whether the launch protects price, privacy, timing, and leverage from first conversation to closing.
             </SectionLede>
           </Reveal>
 
@@ -146,8 +146,8 @@ export default function SellersPage() {
       <InquiryCTA
         eyebrow="Seller Strategy Call"
         title="Bring the address."
-        emphasis="Leave the pitch deck outside."
-        body="No commitment, no pressure. Walk through the property, privacy requirements, timeline, and the outcome you are trying to protect. The strategy follows from there."
+        emphasis="Start with the property."
+        body="No commitment, no pressure. Walk through the property, privacy needs, timeline, and outcome you want. The plan follows from there."
       />
     </PageLayout>
   );

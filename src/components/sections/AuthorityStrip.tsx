@@ -10,16 +10,16 @@ export function AuthorityStrip() {
           <Reveal>
             <div>
               <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                Operating Standard
+                Why Luke
               </span>
               <h2 className="m-0 mt-5 max-w-[12ch] font-serif text-[clamp(36px,5vw,62px)] font-light leading-[0.98] tracking-[-0.015em] text-[var(--color-text)]">
-                Five reasons the practice feels private.
+                Five reasons clients call Luke.
               </h2>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <p className="m-0 max-w-[620px] text-[15px] leading-[1.75] text-[var(--color-text-muted)] lg:ml-auto">
-              The first screen earns trust. The next section proves the method: local intelligence, controlled exposure, editorial marketing, vetted buyers, and lake-specific expertise.
+              Local knowledge, careful exposure, strong marketing, qualified buyers, and lake-specific experience all matter before the first showing.
             </p>
           </Reveal>
         </div>
