@@ -53,8 +53,8 @@ export default function LukeMoriLuxuryExperience() {
         <Hero />
         <SectionTransition eyebrow="Chapter 01" title="Start with the goal." tone="bronze" />
         <IntentConcierge />
-        <PublicReceipts />
         <FeaturedInMedia />
+        <PublicReceipts />
         <SectionTransition eyebrow="Chapter 02" title="Luke, then the launch." align="right" tone="office" />
         <MoriStandard />
         <SellerSection />

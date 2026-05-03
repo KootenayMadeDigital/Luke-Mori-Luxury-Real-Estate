@@ -24,7 +24,7 @@ export function SellerSection() {
   return (
     <section
       id="sellers"
-      className="tone-ivory tonal-section border-y border-[var(--color-line)] py-32 md:py-40"
+      className="tone-lake tonal-section border-y border-[var(--color-line)] py-32 md:py-40"
     >
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="absolute left-[-12%] top-16 h-[420px] w-[420px] rounded-full bg-[rgba(212,184,150,0.08)] blur-[120px]" />

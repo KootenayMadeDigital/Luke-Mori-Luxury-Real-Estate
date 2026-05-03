@@ -17,7 +17,7 @@ const logoScale: Record<string, string> = {
 
 export function FeaturedInMedia() {
   return (
-    <section id="featured-in" className="tone-dark tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+    <section id="featured-in" className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
       <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden>
         <div className="absolute left-[-14%] top-[-24%] h-[520px] w-[520px] rounded-full bg-[rgba(212,184,150,0.08)] blur-[150px]" />
         <div className="absolute bottom-[-28%] right-[-16%] h-[560px] w-[560px] rounded-full bg-[rgba(255,255,255,0.04)] blur-[160px]" />
