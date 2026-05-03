@@ -14,7 +14,6 @@ import { LifestyleSection } from "@/components/sections/LifestyleSection";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { PrivateAccess } from "@/components/sections/PrivateAccess";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
-import { TemplateRouteLedger } from "@/components/sections/TemplateRouteLedger";
 import { SectionTransition } from "@/components/sections/SectionTransition";
 import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
@@ -75,8 +74,6 @@ export default function LukeMoriLuxuryConcept() {
           emphasis="on the mandate."
           body="The same page serves four serious audiences without flattening them into contact sludge: luxury sellers, private buyers, relocation and second-home clients, and agents or brokerages evaluating Kootenay Made Digital."
         />
-        <SectionTransition eyebrow="Final room" title="The concept becomes a system." align="right" tone="bronze" />
-        <TemplateRouteLedger />
         <LeadMagnet />
       </main>
       <ConceptFooter />
