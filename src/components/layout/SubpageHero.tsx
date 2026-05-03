@@ -31,10 +31,10 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
             fill
             preload
             sizes="100vw"
-            className={`object-cover ${showcase ? "opacity-[0.82] saturate-[1.24] contrast-[1.1] brightness-[1.12]" : "opacity-[0.44] saturate-[1.04] contrast-[1.04]"}`}
+            className={`object-cover ${showcase ? "opacity-[0.82] saturate-[1.24] contrast-[1.1] brightness-[1.12]" : "opacity-[0.74] saturate-[1.18] contrast-[1.08] brightness-[1.08]"}`}
           />
-          <div className={showcase ? "absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.78)_0%,rgba(10,11,13,0.48)_42%,rgba(10,11,13,0.22)_100%)]" : "absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.86)_0%,rgba(10,11,13,0.62)_48%,rgba(10,11,13,0.46)_100%)]"} />
-          <div className={showcase ? "absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.48)_0%,rgba(10,11,13,0.18)_38%,rgba(10,11,13,0.7)_100%)]" : "absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.62)_0%,rgba(10,11,13,0.34)_36%,rgba(10,11,13,0.88)_100%)]"} />
+          <div className={showcase ? "absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.78)_0%,rgba(10,11,13,0.48)_42%,rgba(10,11,13,0.22)_100%)]" : "absolute inset-0 bg-[linear-gradient(90deg,rgba(10,11,13,0.78)_0%,rgba(10,11,13,0.5)_44%,rgba(10,11,13,0.28)_100%)]"} />
+          <div className={showcase ? "absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.48)_0%,rgba(10,11,13,0.18)_38%,rgba(10,11,13,0.7)_100%)]" : "absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.48)_0%,rgba(10,11,13,0.22)_36%,rgba(10,11,13,0.72)_100%)]"} />
           {showcase && (
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_34%,rgba(255,255,255,0.16),transparent_26%),radial-gradient(circle_at_48%_72%,rgba(212,184,150,0.11),transparent_34%)]" />
           )}
