@@ -9,6 +9,19 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { testimonials, brandImages, trustPrinciples, pressLogos } from "@/lib/data";
 
+
+const mediaLogoScale: Record<string, string> = {
+  "Ryan Serhant": "scale-[0.98] lg:scale-[1.04]",
+  "BC Luxury Homes": "scale-[1.12] lg:scale-[1.12]",
+  "NYC Journal": "scale-[1.16] lg:scale-[1.1]",
+  "Truly Classy Luxury": "scale-[1.38] lg:scale-[1.16]",
+  "Metropolitan Design": "scale-[1.62] lg:scale-[1.24]",
+  "Lifestyle News": "scale-[1.08] lg:scale-[1.06]",
+  Deluxshionist: "scale-[1.26] lg:scale-[1.12]",
+  "Design Tellers": "scale-[1.18] lg:scale-[1.08]",
+  Narcity: "scale-[1.1] lg:scale-[1.06]",
+};
+
 export const metadata = buildPageMetadata({
   title: "Awards & Testimonials · Luke Mori",
   description:
@@ -101,23 +114,38 @@ export default function TestimonialsPage() {
           </Reveal>
 
           <Reveal>
-            <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-2 shadow-[0_30px_100px_-70px_rgba(0,0,0,0.95)]">
-              <div className="grid grid-cols-2 items-center gap-4 rounded-[calc(2rem-0.5rem)] bg-[rgba(10,11,13,0.52)] p-5 sm:grid-cols-3 md:p-7 lg:grid-cols-5">
-                {pressLogos.map((logo, i) => (
-                  <Reveal key={logo.name} delay={i * 40}>
-                    <div className="group flex h-24 items-center justify-center rounded-[1.25rem] border border-[rgba(245,239,229,0.08)] bg-[rgba(255,255,255,0.025)] px-5 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[rgba(212,184,150,0.32)] hover:bg-[rgba(212,184,150,0.055)]" title={logo.name}>
-                      <div className="relative h-12 w-full opacity-[0.9] grayscale transition-[opacity,filter,transform] duration-700 group-hover:scale-[1.035] group-hover:opacity-100 group-hover:grayscale-0">
-                        <Image
-                          src={logo.src}
-                          alt={logo.alt}
-                          fill
-                          sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 50vw"
-                          className="object-contain"
-                        />
+            <div className="rounded-[2.5rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-2 shadow-[0_34px_110px_-70px_rgba(0,0,0,0.95)]">
+              <div className="rounded-[calc(2.5rem-0.5rem)] bg-[linear-gradient(135deg,rgba(10,11,13,0.94),rgba(24,24,22,0.84))] px-4 py-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.065)] sm:px-7 md:px-10 md:py-12">
+                <div className="mb-8 grid grid-cols-1 gap-5 border-b border-[rgba(245,239,229,0.1)] pb-8 md:grid-cols-[0.78fr_1fr] md:items-end">
+                  <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.34em] text-[var(--color-bronze)]">
+                    Published Proof
+                  </p>
+                  <p className="m-0 text-[15px] leading-[1.75] text-[var(--color-text-muted)] md:text-right">
+                    Media marks should read like a trophy wall, not fine print. Every publication gets enough scale to register on a phone.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center gap-5 md:gap-6">
+                  {pressLogos.map((logo, i) => (
+                    <Reveal
+                      key={logo.name}
+                      delay={i * 45}
+                      className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)]"
+                    >
+                      <div className="group flex h-36 items-center justify-center overflow-hidden rounded-[1.55rem] border border-[rgba(245,239,229,0.13)] bg-[rgba(255,255,255,0.04)] px-8 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[rgba(212,184,150,0.38)] hover:bg-[rgba(212,184,150,0.075)] sm:h-40 md:h-44" title={logo.name}>
+                        <div className={`relative h-24 w-full opacity-100 transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] [filter:brightness(0)_invert(1)] group-hover:scale-[1.035] group-hover:[filter:none] sm:h-28 md:h-32 ${mediaLogoScale[logo.name] ?? "scale-[1.22] lg:scale-[1.08]"}`}>
+                          <Image
+                            src={logo.src}
+                            alt={logo.alt}
+                            fill
+                            sizes="(min-width: 1280px) 23vw, (min-width: 1024px) 30vw, (min-width: 640px) 46vw, 86vw"
+                            className="object-contain"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </Reveal>
-                ))}
+                    </Reveal>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>
