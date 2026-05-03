@@ -131,8 +131,11 @@ export function Hero() {
         </Reveal>
       </div>
 
-      <div className="absolute inset-x-5 bottom-10 z-20 sm:hidden">
-        <Button href="/listings/luxury" variant="primary" size="lg" arrow full>
+      <div className="absolute inset-x-5 bottom-8 z-20 flex flex-col gap-3 sm:hidden">
+        <Button href="#sellers" variant="primary" size="lg" arrow full>
+          Seller Strategy
+        </Button>
+        <Button href="/listings/luxury" variant="ghost" size="lg" arrow full>
           Private Access / Listings
         </Button>
       </div>
