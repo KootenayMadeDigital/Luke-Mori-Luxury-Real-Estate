@@ -80,19 +80,6 @@ export function PhotoGallery({ photos, alt }: Props) {
         </button>
       </div>
 
-      <button
-        type="button"
-        onClick={(e) => {
-          e.stopPropagation();
-          close();
-        }}
-        aria-label="Close gallery"
-        className="absolute right-4 top-[calc(env(safe-area-inset-top)+6.75rem)] z-[4] inline-flex size-12 items-center justify-center rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.82)] text-[var(--color-text)] shadow-[0_18px_54px_-30px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:right-6 sm:top-[calc(env(safe-area-inset-top)+7.5rem)]"
-      >
-        <svg viewBox="0 0 16 16" aria-hidden className="size-4">
-          <path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      </button>
 
       {/* Image */}
       <div className="relative min-h-0 cursor-zoom-out px-5 py-10 sm:px-20 sm:py-12" aria-label="Close gallery background">
