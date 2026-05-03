@@ -3,8 +3,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { IntentConcierge } from "@/components/sections/IntentConcierge";
-import { KmdConceptCue } from "@/components/sections/KmdConceptCue";
 import { PublicReceipts } from "@/components/sections/PublicReceipts";
+import { FeaturedInMedia } from "@/components/sections/FeaturedInMedia";
 import { SignatureAreas } from "@/components/sections/SignatureAreas";
 import { FeaturedEstates } from "@/components/sections/FeaturedEstates";
 import { HomeTourVideos } from "@/components/sections/HomeTourVideos";
@@ -37,12 +37,6 @@ export default function LukeMoriLuxuryConcept() {
   return (
     <>
       <LoadingReveal />
-      <a
-        href="#main"
-        className="sr-only z-[300] focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:rounded-[1px] focus:bg-[var(--color-bronze)] focus:px-5 focus:py-3 focus:text-[12px] focus:font-medium focus:uppercase focus:tracking-[0.2em] focus:text-[var(--color-button-text)]"
-      >
-        Skip to content
-      </a>
       <Nav />
       <JsonLd
         data={buildPageGraphJsonLd({
@@ -60,8 +54,8 @@ export default function LukeMoriLuxuryConcept() {
         <Hero />
         <SectionTransition eyebrow="Chapter 01" title="Begin with the mandate." tone="bronze" />
         <IntentConcierge />
-        <KmdConceptCue />
         <PublicReceipts />
+        <FeaturedInMedia />
         <SectionTransition eyebrow="Chapter 02" title="The principal, then the launch." align="right" tone="office" />
         <MoriStandard />
         <SellerSection />

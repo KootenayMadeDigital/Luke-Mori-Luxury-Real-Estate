@@ -14,15 +14,6 @@ const socialLinks = [
 
 const navLists: { heading: string; links: { label: string; href: string }[] }[] = [
   {
-    heading: "Start Here",
-    links: [
-      { label: "Luxury Concept", href: "/" },
-      { label: "Private Inquiry", href: "/#private-inquiry" },
-      { label: "Contact Luke", href: "/contact" },
-      { label: "FAQ", href: "/faq" },
-    ],
-  },
-  {
     heading: "Listings",
     links: [
       { label: "Featured Estates", href: "/#estates" },
@@ -57,6 +48,7 @@ const navLists: { heading: string; links: { label: string; href: string }[] }[] 
       { label: "About", href: "/about" },
       { label: "Awards & Testimonials", href: "/testimonials" },
       { label: "YouTube Home Tours", href: "/#home-tours" },
+      { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -156,7 +148,7 @@ export function ConceptFooter() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 xl:grid-cols-5">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {navLists.map((list) => (
               <div key={list.heading}>
                 <span className="mb-4 block text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">

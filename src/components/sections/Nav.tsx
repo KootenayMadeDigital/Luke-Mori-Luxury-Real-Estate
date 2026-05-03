@@ -14,16 +14,6 @@ type NavGroup = {
 
 const navGroups: NavGroup[] = [
   {
-    label: "Start Here",
-    href: "/#concierge",
-    items: [
-      { label: "Luxury Concept", href: "/", description: "The full private-office experience and landing page." },
-      { label: "Private Inquiry", href: "/#private-inquiry", description: "Choose the right file: seller, buyer, relocation, or concept build." },
-      { label: "Contact Luke", href: "/contact", description: "Phone, email, office, and private consultation form." },
-      { label: "KMD Concept", href: "https://kootenaymade.ca/contact", description: "For agents and brokerages evaluating a private concept build." },
-    ],
-  },
-  {
     label: "Clients",
     href: "/buyers",
     items: [

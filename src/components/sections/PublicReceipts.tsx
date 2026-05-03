@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { authorityPillars, credentials, pressLogos } from "@/lib/data";
+import { authorityPillars, credentials } from "@/lib/data";
 
 export function PublicReceipts() {
   return (
@@ -44,55 +43,25 @@ export function PublicReceipts() {
           </div>
         </Reveal>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 xl:grid-cols-[1fr_0.72fr] xl:items-stretch">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {authorityPillars.slice(0, 3).map((p, i) => (
-              <Reveal key={p.number} delay={i * 80}>
-                <article className="group flex h-full min-h-[260px] flex-col rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.03)] p-7 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.055)] sm:p-8">
-                  <div className="mb-8 flex items-center justify-between">
-                    <span className="font-serif text-[19px] italic tracking-[0.1em] text-[var(--color-bronze)]">
-                      {p.number}
-                    </span>
-                    <span className="h-px w-10 bg-[var(--color-line-strong)] transition-transform duration-700 group-hover:scale-x-125" />
-                  </div>
-                  <h3 className="m-0 mb-4 font-serif text-[25px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)]">
-                    {p.title}
-                  </h3>
-                  <p className="m-0 mt-auto text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                    {p.body}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={180}>
-            <aside className="flex h-full flex-col justify-between rounded-[1.5rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.09)] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.055)] sm:p-8">
-              <div>
-                <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
-                  Luxury Media
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {authorityPillars.slice(0, 3).map((p, i) => (
+            <Reveal key={p.number} delay={i * 80}>
+              <article className="group flex h-full min-h-[260px] flex-col rounded-[1.5rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.03)] p-7 transition-[transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.055)] sm:p-8">
+                <div className="mb-8 flex items-center justify-between">
+                  <span className="font-serif text-[19px] italic tracking-[0.1em] text-[var(--color-bronze)]">
+                    {p.number}
+                  </span>
+                  <span className="h-px w-10 bg-[var(--color-line-strong)] transition-transform duration-700 group-hover:scale-x-125" />
+                </div>
+                <h3 className="m-0 mb-4 font-serif text-[25px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)]">
+                  {p.title}
+                </h3>
+                <p className="m-0 mt-auto text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                  {p.body}
                 </p>
-                <p className="m-0 mt-4 font-serif text-[28px] font-light leading-[1.12] text-[rgba(245,239,229,0.92)]">
-                  Press and recognition appear as evidence, not wallpaper.
-                </p>
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {pressLogos.slice(0, 6).map((logo) => (
-                  <div key={logo.name} className="rounded-[1rem] border border-[var(--color-line)] bg-[rgba(10,11,13,0.42)] p-1" title={logo.name}>
-                    <div className="relative h-14 rounded-[calc(1rem-0.25rem)] opacity-[0.88] grayscale transition-[opacity,filter] duration-700 hover:opacity-100 hover:grayscale-0">
-                      <Image
-                        src={logo.src}
-                        alt={logo.alt}
-                        fill
-                        sizes="(min-width: 1280px) 130px, (min-width: 640px) 20vw, 50vw"
-                        className="object-contain p-3"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </aside>
-          </Reveal>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>

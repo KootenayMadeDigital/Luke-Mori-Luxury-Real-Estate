@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { buildBaseJsonLd } from "@/lib/seo";
 import "./globals.css";
 
@@ -61,6 +63,9 @@ export default function RootLayout({
       </head>
       <body>
         <JsonLd data={buildBaseJsonLd()} />
+        <Suspense fallback={null}>
+          <ScrollToTop />
+        </Suspense>
         {children}
       </body>
     </html>
