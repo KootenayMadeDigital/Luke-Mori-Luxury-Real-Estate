@@ -12,10 +12,12 @@ export function PrivateAccess() {
     >
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <div
-          className="absolute inset-0 opacity-45 saturate-[0.72]"
+          className="absolute inset-0 opacity-75 saturate-[0.9] brightness-[1.08]"
           style={{ backgroundImage: "url('/generated/dark-lake-atmosphere.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(10,11,13,0.18)_0%,rgba(10,11,13,0.9)_72%,rgba(10,11,13,1)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_54%_46%_at_50%_48%,rgba(10,11,13,0.28)_0%,rgba(10,11,13,0.52)_58%,rgba(10,11,13,0.9)_100%)]" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[rgba(10,11,13,0.86)] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[rgba(10,11,13,0.92)] to-transparent" />
       </div>
 
       <Container className="relative z-10">
