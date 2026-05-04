@@ -35,6 +35,13 @@ export default function SoldPage() {
   const support = recentlyConcluded.slice(1);
   const rightSupport = support.slice(0, 3);
   const leftSupport = support[3];
+  const archiveFeatured = soldArchive.slice(0, 3);
+  const archiveRest = soldArchive.slice(3);
+  const archiveVolume = soldArchive.reduce((acc, item) => {
+    const num = parseInt(item.offered.replace(/[^0-9]/g, ""), 10);
+    return acc + (Number.isFinite(num) ? num : 0);
+  }, 0);
+  const archiveVolumeFmt = `$${(archiveVolume / 1_000_000).toFixed(1)}M+`;
 
   return (
     <PageLayout>
@@ -210,20 +217,79 @@ export default function SoldPage() {
             <div>
               <Eyebrow>Sold Archive</Eyebrow>
               <SectionHeading className="mt-7">
-                More homes
+                Thirty more sales
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  Luke has helped move.
+                  behind the headline.
                 </em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              A broader look at Luke&apos;s public sold record, kept compact so the page shows depth without burying the strongest proof.
+              A broader look at Luke&apos;s public sold record, shown with enough depth to prove range without burying the strongest proof.
             </SectionLede>
           </Reveal>
 
+          <div className="mb-10 grid grid-cols-2 gap-px bg-[var(--color-line)] md:grid-cols-4">
+            {[
+              { value: soldArchive.length.toString(), label: "Archive Sales" },
+              { value: archiveVolumeFmt, label: "Archive Volume" },
+              { value: "3", label: "Main Areas" },
+              { value: "$2.24M", label: "Highest Shown" },
+            ].map((stat) => (
+              <Reveal key={stat.label} className="bg-[var(--color-bg)] p-6 text-center md:p-7">
+                <div className="font-serif text-[30px] font-light leading-none tracking-[-0.01em] text-[var(--color-text)] md:text-[38px]">
+                  {stat.value}
+                </div>
+                <div className="mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
+                  {stat.label}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mb-7 grid grid-cols-1 gap-5 lg:grid-cols-3">
+            {archiveFeatured.map((item, index) => (
+              <Reveal key={`${item.address}-featured`} delay={index * 70}>
+                <article className="luxury-card group overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[var(--color-bg)]">
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 30vw, 100vw"
+                      className="luxury-media object-cover"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.06),rgba(10,11,13,0.18)_44%,rgba(10,11,13,0.76))]" />
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <span className="mb-4 inline-flex rounded-[1px] bg-[rgba(10,11,13,0.78)] px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
+                        Archive Sold {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="m-0 font-serif text-[28px] font-light leading-[1.05] tracking-[-0.01em] text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.9)]">
+                        {item.address}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)]">
+                      {item.area}
+                    </p>
+                    <div className="mt-5 flex items-end justify-between gap-5 border-t border-[var(--color-line)] pt-5">
+                      <div className="flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-text-dim)]">
+                        {item.beds && <span>{item.beds} Bed</span>}
+                        {item.baths && <span>{item.baths} Bath</span>}
+                      </div>
+                      <div className="font-serif text-[22px] italic text-[var(--color-bronze-light)]">
+                        {item.offered}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {soldArchive.map((item, index) => (
+            {archiveRest.map((item, index) => (
               <Reveal key={`${item.address}-${index}`} delay={(index % 6) * 35}>
                 <article className="luxury-card group flex h-full overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)]">
                   <div className="relative w-[42%] min-w-[130px] overflow-hidden bg-[var(--color-bg)]">
