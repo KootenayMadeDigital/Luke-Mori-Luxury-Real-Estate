@@ -105,7 +105,7 @@ export function PrivateInquiryPaths({
             Prefer direct? Call Luke or send a note. The goal is one useful next step, not a generic follow-up.
           </p>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Button href="/contact" variant="primary" size="md">
+            <Button href="/contact#contact-form" variant="primary" size="md">
               Send private note
             </Button>
             <Button href={contact.phoneHref} variant="ghost" size="md" arrow>

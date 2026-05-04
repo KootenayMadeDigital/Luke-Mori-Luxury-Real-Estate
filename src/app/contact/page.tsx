@@ -37,7 +37,7 @@ export default function ContactPage() {
         body="Tell Luke whether this is about selling, buying, relocating, or planning a second home. The better the first note, the sharper the reply."
       />
 
-      <section className="tone-ivory tonal-section py-24 md:py-28">
+      <section id="contact-form" className="tone-ivory tonal-section scroll-mt-28 py-24 md:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
             <div>
