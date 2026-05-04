@@ -108,7 +108,7 @@ export default function RelocationPage() {
         question="Is Nelson BC a good place to live and buy real estate?"
         answer="Nelson works best for buyers who want a real mountain town with restaurants, schools, lake access, arts, trails, and Whitewater skiing. The practical decision is whether the neighbourhood, winter routine, healthcare access, commute, and first ninety days match the life you are planning."
         terms={["moving to nelson bc", "is nelson bc a good place to live", "nelson bc relocation"]}
-        tone="lake"
+        tone="ivory"
       />
 
       <section className="tone-lake tonal-section py-24 md:py-28">
