@@ -14,7 +14,7 @@ export const metadata = buildPageMetadata({
   description:
     "Contact Luke Mori for Nelson and Kootenay Lake real estate. Phone, email, office address, and a private consultation form.",
   path: "/contact",
-  image: brandImages.lukeContact,
+  image: "/og/contact.png",
 });
 
 export default function ContactPage() {

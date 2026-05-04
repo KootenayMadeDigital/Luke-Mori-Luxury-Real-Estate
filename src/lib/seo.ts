@@ -4,7 +4,7 @@ import type { Listing } from "@/lib/listings";
 
 export const siteUrl = "https://luke-mori-luxury-real-estate.vercel.app";
 export const siteName = "Luke Mori Luxury";
-export const defaultOgImage = brandImages.nelsonLandscape;
+export const defaultOgImage = "/og/home.png";
 
 type PageMetadataInput = {
   title: string;
@@ -45,6 +45,7 @@ export function buildPageMetadata({
   type = "website",
 }: PageMetadataInput): Metadata {
   const imageUrl = absoluteUrl(image);
+  const isStandardOgImage = image.startsWith("/og/");
 
   return {
     title,
@@ -58,10 +59,12 @@ export function buildPageMetadata({
       siteName,
       locale: "en_CA",
       images: [
-        {
+        cleanUndefined({
           url: imageUrl,
           alt: title,
-        },
+          width: isStandardOgImage ? 1200 : undefined,
+          height: isStandardOgImage ? 630 : undefined,
+        }),
       ],
     },
     twitter: {

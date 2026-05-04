@@ -15,7 +15,7 @@ export const metadata = buildPageMetadata({
   description:
     "About Nelson, B.C. and the Kootenay Lake region: neighbourhoods, lifestyle, and the local details that shape value.",
   path: "/nelson",
-  image: brandImages.nelsonLandscape,
+  image: "/og/nelson.png",
 });
 
 export default function NelsonHubPage() {

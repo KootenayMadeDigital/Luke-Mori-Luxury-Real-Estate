@@ -26,7 +26,7 @@ export const metadata = buildPageMetadata({
   title,
   description,
   path,
-  image: "/generated/kmd-real-estate-og-cover.webp",
+  image: "/og/home.png",
 });
 
 export default function LukeMoriLuxuryExperience() {
@@ -38,7 +38,7 @@ export default function LukeMoriLuxuryExperience() {
           title,
           description,
           path,
-          image: "/generated/kmd-real-estate-og-cover.webp",
+          image: "/og/home.png",
           breadcrumbs: [
             { name: "Home", path: "/" },
             { name: "Luke Mori Luxury", path },

@@ -11,7 +11,7 @@ export const metadata = buildPageMetadata({
   description:
     "Recently sold real estate in Nelson and the Kootenays: lakefront homes, view homes, walk-to-water residences, and acreage.",
   path: "/listings/sold",
-  image: brandImages.orangeBridge,
+  image: "/og/listings-sold.png",
 });
 
 export default function SoldPage() {

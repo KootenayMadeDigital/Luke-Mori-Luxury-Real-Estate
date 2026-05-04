@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       ? `${a.name} BC luxury real estate guide for high-value buyers: ${intelligence.thesis}`
       : a.intro,
     path: `/nelson/${a.slug}`,
-    image: a.hero,
+    image: `/og/nelson-${a.slug}.png`,
   });
 }
 

@@ -15,7 +15,7 @@ export const metadata = buildPageMetadata({
   description:
     "A buyer guide for international and second-home purchasers in British Columbia: purchase rules, advisors, currency timing, and ownership from afar.",
   path: "/buyers/international",
-  image: brandImages.procterLakeHouse,
+  image: "/og/international.png",
 });
 
 const considerations = [

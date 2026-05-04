@@ -16,7 +16,7 @@ export const metadata = buildPageMetadata({
   description:
     "Buyer representation in Nelson and Kootenay Lake real estate for relocating buyers, second-home owners, and regional buyers who want fewer wrong turns.",
   path: "/buyers",
-  image: brandImages.procterLivingRoom,
+  image: "/og/buyers.png",
 });
 
 const buyerResourceCards = [

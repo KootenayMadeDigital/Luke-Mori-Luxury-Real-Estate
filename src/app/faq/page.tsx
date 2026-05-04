@@ -13,7 +13,7 @@ export const metadata = buildPageMetadata({
   description:
     "Frequently asked questions about Nelson and Kootenay Lake real estate, selling, buying, relocation, international buyers, and off-market access.",
   path: "/faq",
-  image: brandImages.orangeBridge,
+  image: "/og/faq.png",
 });
 
 const categories = Array.from(new Set(faqs.map((faq) => faq.category)));

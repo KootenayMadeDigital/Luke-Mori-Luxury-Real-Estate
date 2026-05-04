@@ -15,7 +15,7 @@ export const metadata = buildPageMetadata({
   description:
     "Seller representation for Nelson and Kootenay Lake real estate with clear pricing, strong marketing, qualified showings, and careful negotiation.",
   path: "/sellers",
-  image: brandImages.sellerDining,
+  image: "/og/sellers.png",
 });
 
 export default function SellersPage() {

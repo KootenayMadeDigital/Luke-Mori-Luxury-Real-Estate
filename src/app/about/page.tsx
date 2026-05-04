@@ -16,7 +16,7 @@ export const metadata = buildPageMetadata({
   description:
     "Born and raised in Nelson, B.C. Founder of the Luke Mori division at Fair Realty. Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards (2021 and 2024).",
   path: "/about",
-  image: brandImages.lukePortrait,
+  image: "/og/about.png",
 });
 
 export default function AboutPage() {

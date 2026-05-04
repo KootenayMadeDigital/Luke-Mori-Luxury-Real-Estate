@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
   description:
     "Luxury real estate in Nelson, Kootenay Lake, and the broader Kootenay region, with active properties listed at $1M and above.",
   path: "/listings/luxury",
-  image: brandImages.procterLakeHouse,
+  image: "/og/listings-luxury.png",
 });
 
 export default function LuxuryListingsPage() {

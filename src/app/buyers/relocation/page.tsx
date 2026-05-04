@@ -15,7 +15,7 @@ export const metadata = buildPageMetadata({
   description:
     "A relocation guide for moving to Nelson, B.C. and the Kootenay Lake region: schools, neighbourhoods, climate, healthcare, and day-to-day fit.",
   path: "/buyers/relocation",
-  image: brandImages.bakerStreet,
+  image: "/og/relocation.png",
 });
 
 const facets = [

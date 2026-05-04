@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
   description:
     "Lakefront, riverfront, and beach-front real estate in the Nelson region, Kootenay Lake's West Arm, the Highway 3A North Shore corridor, and the Slocan and Kootenay rivers.",
   path: "/listings/waterfront",
-  image: brandImages.kayaking,
+  image: "/og/listings-waterfront.png",
 });
 
 export default function WaterfrontPage() {

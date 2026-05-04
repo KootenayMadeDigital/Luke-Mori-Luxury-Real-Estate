@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
   description:
     "Browse active real estate listings across Nelson, Kootenay Lake, and the broader Kootenay region, including Luke Mori listings and MLS listings from his portal.",
   path: "/listings",
-  image: brandImages.procterLakeHouse,
+  image: "/og/listings.png",
 });
 
 export default function ListingsIndexPage() {
