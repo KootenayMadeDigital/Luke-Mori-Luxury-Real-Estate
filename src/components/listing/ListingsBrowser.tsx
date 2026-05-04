@@ -4,10 +4,13 @@ import { useEffect, useMemo, useState } from "react";
 import { ListingTile } from "./ListingTile";
 import type { Listing } from "@/lib/listings";
 
+type FilterMode = "market" | "luxury" | "waterfront";
+
 type Props = {
   listings: Listing[];
   initialFilter?: FilterKey;
   initialSort?: SortKey;
+  filterMode?: FilterMode;
 };
 
 type FilterKey = "all" | "luxe" | "lukes" | "waterfront" | "view" | "acreage" | "vacant";
@@ -15,15 +18,31 @@ type SortKey = "price-desc" | "price-asc" | "photos" | "beds-desc";
 
 const PAGE_SIZE = 24;
 
-const filters: { key: FilterKey; label: string }[] = [
-  { key: "all", label: "All" },
-  { key: "lukes", label: "Listed by Luke" },
-  { key: "luxe", label: "$1M+" },
-  { key: "waterfront", label: "Waterfront" },
-  { key: "view", label: "View Homes" },
-  { key: "acreage", label: "Acreage" },
-  { key: "vacant", label: "Land" },
-];
+const filtersByMode: Record<FilterMode, { key: FilterKey; label: string }[]> = {
+  market: [
+    { key: "all", label: "All" },
+    { key: "lukes", label: "Listed by Luke" },
+    { key: "luxe", label: "$1M+" },
+    { key: "waterfront", label: "Waterfront" },
+    { key: "view", label: "View Homes" },
+    { key: "acreage", label: "Acreage" },
+    { key: "vacant", label: "Land" },
+  ],
+  luxury: [
+    { key: "all", label: "All Luxury" },
+    { key: "lukes", label: "Listed by Luke" },
+    { key: "waterfront", label: "Waterfront" },
+    { key: "view", label: "View Homes" },
+    { key: "acreage", label: "Acreage" },
+  ],
+  waterfront: [
+    { key: "all", label: "All Waterfront" },
+    { key: "lukes", label: "Listed by Luke" },
+    { key: "luxe", label: "$1M+" },
+    { key: "view", label: "View Homes" },
+    { key: "acreage", label: "Acreage" },
+  ],
+};
 
 const sorts: { key: SortKey; label: string }[] = [
   { key: "price-desc", label: "Price · High to Low" },
@@ -41,12 +60,14 @@ export function ListingsBrowser({
   listings,
   initialFilter = "all",
   initialSort = "price-desc",
+  filterMode = "market",
 }: Props) {
   const [filter, setFilter] = useState<FilterKey>(initialFilter);
   const [sort, setSort] = useState<SortKey>(initialSort);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [debounced, setDebounced] = useState("");
+  const activeFilters = filtersByMode[filterMode];
 
   // Debounce search and reset to page 1 when the debounced query lands.
   useEffect(() => {
@@ -127,7 +148,7 @@ export function ListingsBrowser({
         <div className="flex flex-wrap items-center gap-3 lg:flex-nowrap lg:gap-4">
           {/* Filters */}
           <div className="flex flex-wrap items-center gap-2">
-            {filters.map((f) => (
+            {activeFilters.map((f) => (
               <button
                 key={f.key}
                 type="button"

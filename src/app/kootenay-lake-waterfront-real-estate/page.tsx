@@ -189,7 +189,7 @@ export default function KootenayLakeWaterfrontPage() {
               View waterfront search
             </Link>
           </Reveal>
-          <ListingsBrowser listings={listings} initialFilter="all" initialSort="price-desc" />
+          <ListingsBrowser listings={listings} initialFilter="all" initialSort="price-desc" filterMode="waterfront" />
         </Container>
       </section>
 

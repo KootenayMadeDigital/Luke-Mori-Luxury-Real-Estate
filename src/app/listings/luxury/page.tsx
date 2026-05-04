@@ -63,7 +63,7 @@ export default function LuxuryListingsPage() {
 
       <section className="tone-ivory tonal-section pb-24 pt-10 md:pt-12">
         <Container>
-          <ListingsBrowser listings={luxe} />
+          <ListingsBrowser listings={luxe} filterMode="luxury" />
         </Container>
       </section>
 

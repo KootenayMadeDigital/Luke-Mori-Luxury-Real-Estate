@@ -58,7 +58,7 @@ export default function WaterfrontPage() {
 
       <section className="tone-lake tonal-section pb-24 pt-10 md:pt-12">
         <Container>
-          <ListingsBrowser listings={wf} initialFilter="all" initialSort="price-desc" />
+          <ListingsBrowser listings={wf} initialFilter="all" initialSort="price-desc" filterMode="waterfront" />
         </Container>
       </section>
 
