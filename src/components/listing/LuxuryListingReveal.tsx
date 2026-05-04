@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, type CSSProperties, type PointerEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { buildSpecs, type Listing } from "@/lib/listings";
 
 type Props = {
@@ -11,10 +11,201 @@ type Props = {
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
+function WebGLCurtain({
+  open,
+  pointer,
+  isDragging,
+  onReady,
+}: {
+  open: number;
+  pointer: { x: number; y: number };
+  isDragging: boolean;
+  onReady: (ready: boolean) => void;
+}) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const openRef = useRef(open);
+  const pointerRef = useRef(pointer);
+  const draggingRef = useRef(isDragging);
+
+  useEffect(() => {
+    openRef.current = open;
+    pointerRef.current = pointer;
+    draggingRef.current = isDragging;
+  }, [open, pointer, isDragging]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const gl = canvas.getContext("webgl", { alpha: true, antialias: true, premultipliedAlpha: false });
+    if (!gl) {
+      onReady(false);
+      return;
+    }
+
+    const vertexSource = `
+      attribute vec2 a_local;
+      attribute float a_side;
+      uniform float u_open;
+      uniform float u_time;
+      uniform vec2 u_pointer;
+      varying vec2 v_local;
+      varying float v_side;
+      varying float v_fold;
+      void main() {
+        float width = mix(1.08, 0.20, u_open);
+        float x = a_side < 0.0 ? -1.0 + a_local.x * width : 1.0 - a_local.x * width;
+        float y = a_local.y * 2.0 - 1.0;
+        float hand = 1.0 - smoothstep(0.0, 0.78, abs((u_pointer.x * 2.0 - 1.0) - x));
+        float ridge = sin(a_local.x * 42.0 + a_local.y * 5.0 + u_time * 0.85);
+        float slow = sin(a_local.x * 14.0 - u_time * 0.42 + a_side * 0.7);
+        float edgeLift = pow(a_local.x, 2.3) * u_open;
+        float billow = (ridge * 0.020 + slow * 0.014 + hand * 0.020) * (1.0 - u_open * 0.18);
+        x += billow * a_side;
+        y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.008 * (0.35 + edgeLift);
+        float depth = edgeLift * 0.12 + abs(ridge) * 0.025;
+        gl_Position = vec4(x, y, depth, 1.0);
+        v_local = a_local;
+        v_side = a_side;
+        v_fold = ridge;
+      }
+    `;
+
+    const fragmentSource = `
+      precision highp float;
+      uniform float u_open;
+      uniform float u_time;
+      uniform vec2 u_pointer;
+      varying vec2 v_local;
+      varying float v_side;
+      varying float v_fold;
+      float grain(vec2 p) {
+        return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+      }
+      void main() {
+        float pleat = 0.5 + 0.5 * v_fold;
+        float micro = grain(v_local * vec2(180.0, 70.0) + u_time * 0.018);
+        float vertical = sin(v_local.x * 86.0) * 0.5 + 0.5;
+        float sideRim = smoothstep(0.72, 1.0, v_local.x) * (0.22 + u_open * 0.44);
+        float outerDark = 1.0 - smoothstep(0.0, 0.18, v_local.x) * 0.26;
+        float hand = 1.0 - smoothstep(0.0, 0.68, abs(u_pointer.y - v_local.y));
+        vec3 base = vec3(0.105, 0.071, 0.048);
+        vec3 bronze = vec3(0.55, 0.38, 0.24);
+        vec3 warm = vec3(0.92, 0.76, 0.55);
+        float light = 0.28 + pleat * 0.34 + vertical * 0.10 + sideRim * 0.62 + hand * 0.04;
+        light *= outerDark;
+        vec3 color = mix(base, bronze, light);
+        color += warm * sideRim * 0.22;
+        color += vec3(micro) * 0.035;
+        float vignette = smoothstep(0.0, 0.14, v_local.y) * smoothstep(1.0, 0.86, v_local.y);
+        float alpha = (0.975 - sideRim * 0.08) * vignette;
+        gl_FragColor = vec4(color, alpha);
+      }
+    `;
+
+    const compile = (type: number, source: string) => {
+      const shader = gl.createShader(type);
+      if (!shader) return null;
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        gl.deleteShader(shader);
+        return null;
+      }
+      return shader;
+    };
+
+    const vertex = compile(gl.VERTEX_SHADER, vertexSource);
+    const fragment = compile(gl.FRAGMENT_SHADER, fragmentSource);
+    if (!vertex || !fragment) {
+      onReady(false);
+      return;
+    }
+
+    const program = gl.createProgram();
+    if (!program) return;
+    gl.attachShader(program, vertex);
+    gl.attachShader(program, fragment);
+    gl.linkProgram(program);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      onReady(false);
+      return;
+    }
+
+    const segmentsX = 64;
+    const segmentsY = 18;
+    const data: number[] = [];
+    const push = (side: number, x: number, y: number) => data.push(x, y, side);
+    for (const side of [-1, 1]) {
+      for (let y = 0; y < segmentsY; y++) {
+        for (let x = 0; x < segmentsX; x++) {
+          const x0 = x / segmentsX;
+          const x1 = (x + 1) / segmentsX;
+          const y0 = y / segmentsY;
+          const y1 = (y + 1) / segmentsY;
+          push(side, x0, y0); push(side, x1, y0); push(side, x0, y1);
+          push(side, x1, y0); push(side, x1, y1); push(side, x0, y1);
+        }
+      }
+    }
+
+    const buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(data), gl.STATIC_DRAW);
+    const stride = 3 * 4;
+    const localLoc = gl.getAttribLocation(program, "a_local");
+    const sideLoc = gl.getAttribLocation(program, "a_side");
+    const openLoc = gl.getUniformLocation(program, "u_open");
+    const timeLoc = gl.getUniformLocation(program, "u_time");
+    const pointerLoc = gl.getUniformLocation(program, "u_pointer");
+    let frame = 0;
+    const start = performance.now();
+
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    };
+
+    const render = () => {
+      resize();
+      gl.clearColor(0, 0, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+      gl.useProgram(program);
+      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+      gl.enableVertexAttribArray(localLoc);
+      gl.vertexAttribPointer(localLoc, 2, gl.FLOAT, false, stride, 0);
+      gl.enableVertexAttribArray(sideLoc);
+      gl.vertexAttribPointer(sideLoc, 1, gl.FLOAT, false, stride, 8);
+      gl.uniform1f(openLoc, openRef.current);
+      gl.uniform1f(timeLoc, (performance.now() - start) / 1000);
+      gl.uniform2f(pointerLoc, pointerRef.current.x / 100, pointerRef.current.y / 100);
+      gl.drawArrays(gl.TRIANGLES, 0, data.length / 3);
+      frame = requestAnimationFrame(render);
+    };
+
+    onReady(true);
+    frame = requestAnimationFrame(render);
+    return () => {
+      cancelAnimationFrame(frame);
+      gl.deleteBuffer(buffer);
+      gl.deleteProgram(program);
+      gl.deleteShader(vertex);
+      gl.deleteShader(fragment);
+    };
+  }, [onReady]);
+
+  return <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-30 h-full w-full motion-reduce:hidden" aria-hidden />;
+}
+
 export function LuxuryListingReveal({ listing }: Props) {
   const [progress, setProgress] = useState(0.16);
   const [isDragging, setIsDragging] = useState(false);
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
+  const [webglReady, setWebglReady] = useState(false);
   const specs = buildSpecs(listing);
   const openPercent = clamp(progress, 0.04, 1);
   const revealLabel = openPercent > 0.68 ? "Draw shut" : "Draw open";
@@ -110,33 +301,39 @@ export function LuxuryListingReveal({ listing }: Props) {
               aria-hidden
             />
 
-            <div
-              className="absolute inset-y-0 left-0 z-30 w-[54%] origin-right overflow-hidden border-r border-[rgba(224,192,154,0.38)] bg-[radial-gradient(circle_at_26%_28%,rgba(224,192,154,0.19),transparent_24%),linear-gradient(94deg,rgba(8,7,7,0.99),rgba(27,17,12,0.97)_34%,rgba(66,43,28,0.87)_50%,rgba(18,12,9,0.98)_68%,rgba(5,5,5,0.99))] shadow-[28px_0_74px_-34px_rgba(0,0,0,0.98)] will-change-transform motion-reduce:hidden"
-              style={{
-                transform: `translateX(-${leftShift}%) rotateY(${leftRotate}deg) translateZ(${fabricDepth}px)`,
-                transition: isDragging ? "none" : "transform 560ms var(--ease-luxe)",
-              }}
-              aria-hidden
-            >
-              <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(90deg,rgba(255,255,255,0.075)_0_1px,transparent_1px_14px),linear-gradient(90deg,rgba(0,0,0,0.42)_0_9px,transparent_9px_28px),radial-gradient(circle_at_36%_45%,rgba(255,255,255,0.12),transparent_20%)]" />
-              <div className="absolute inset-0 animate-[curtain-breathe_5.8s_ease-in-out_infinite] opacity-45 [background-image:linear-gradient(112deg,transparent_0%,rgba(255,255,255,0.13)_32%,transparent_46%,rgba(224,192,154,0.11)_62%,transparent_78%)] motion-reduce:animate-none" />
-              <div className="absolute inset-y-0 right-0 w-16 bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.55),rgba(255,255,255,0.2),rgba(224,192,154,0.22),rgba(0,0,0,0.8))]" />
-              <div className="absolute inset-y-0 right-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(255,255,255,0.24),rgba(39,25,17,0.9),rgba(0,0,0,0.98))] blur-[1px]" />
-            </div>
+            <WebGLCurtain open={openPercent} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
 
-            <div
-              className="absolute inset-y-0 right-0 z-30 w-[54%] origin-left overflow-hidden border-l border-[rgba(224,192,154,0.38)] bg-[radial-gradient(circle_at_76%_32%,rgba(224,192,154,0.17),transparent_25%),linear-gradient(86deg,rgba(5,5,5,0.99),rgba(18,12,9,0.98)_30%,rgba(66,43,28,0.87)_50%,rgba(27,17,12,0.97)_66%,rgba(8,7,7,0.99))] shadow-[-28px_0_74px_-34px_rgba(0,0,0,0.98)] will-change-transform motion-reduce:hidden"
-              style={{
-                transform: `translateX(${rightShift}%) rotateY(${rightRotate}deg) translateZ(${fabricDepth}px)`,
-                transition: isDragging ? "none" : "transform 560ms var(--ease-luxe)",
-              }}
-              aria-hidden
-            >
-              <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(90deg,rgba(255,255,255,0.06)_0_1px,transparent_1px_14px),linear-gradient(90deg,rgba(0,0,0,0.42)_0_10px,transparent_10px_30px),radial-gradient(circle_at_70%_44%,rgba(255,255,255,0.11),transparent_20%)]" />
-              <div className="absolute inset-0 animate-[curtain-breathe_6.4s_ease-in-out_infinite_reverse] opacity-45 [background-image:linear-gradient(68deg,transparent_0%,rgba(224,192,154,0.11)_28%,transparent_43%,rgba(255,255,255,0.12)_63%,transparent_80%)] motion-reduce:animate-none" />
-              <div className="absolute inset-y-0 left-0 w-16 bg-[linear-gradient(90deg,rgba(0,0,0,0.8),rgba(224,192,154,0.22),rgba(255,255,255,0.2),rgba(0,0,0,0.55),transparent)]" />
-              <div className="absolute inset-y-0 left-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(0,0,0,0.98),rgba(39,25,17,0.9),rgba(255,255,255,0.24))] blur-[1px]" />
-            </div>
+            {!webglReady && (
+              <>
+                <div
+                  className="absolute inset-y-0 left-0 z-30 w-[54%] origin-right overflow-hidden border-r border-[rgba(224,192,154,0.38)] bg-[radial-gradient(circle_at_26%_28%,rgba(224,192,154,0.19),transparent_24%),linear-gradient(94deg,rgba(8,7,7,0.99),rgba(27,17,12,0.97)_34%,rgba(66,43,28,0.87)_50%,rgba(18,12,9,0.98)_68%,rgba(5,5,5,0.99))] shadow-[28px_0_74px_-34px_rgba(0,0,0,0.98)] will-change-transform motion-reduce:hidden"
+                  style={{
+                    transform: `translateX(-${leftShift}%) rotateY(${leftRotate}deg) translateZ(${fabricDepth}px)`,
+                    transition: isDragging ? "none" : "transform 560ms var(--ease-luxe)",
+                  }}
+                  aria-hidden
+                >
+                  <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(90deg,rgba(255,255,255,0.075)_0_1px,transparent_1px_14px),linear-gradient(90deg,rgba(0,0,0,0.42)_0_9px,transparent_9px_28px),radial-gradient(circle_at_36%_45%,rgba(255,255,255,0.12),transparent_20%)]" />
+                  <div className="absolute inset-0 animate-[curtain-breathe_5.8s_ease-in-out_infinite] opacity-45 [background-image:linear-gradient(112deg,transparent_0%,rgba(255,255,255,0.13)_32%,transparent_46%,rgba(224,192,154,0.11)_62%,transparent_78%)] motion-reduce:animate-none" />
+                  <div className="absolute inset-y-0 right-0 w-16 bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.55),rgba(255,255,255,0.2),rgba(224,192,154,0.22),rgba(0,0,0,0.8))]" />
+                  <div className="absolute inset-y-0 right-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(255,255,255,0.24),rgba(39,25,17,0.9),rgba(0,0,0,0.98))] blur-[1px]" />
+                </div>
+
+                <div
+                  className="absolute inset-y-0 right-0 z-30 w-[54%] origin-left overflow-hidden border-l border-[rgba(224,192,154,0.38)] bg-[radial-gradient(circle_at_76%_32%,rgba(224,192,154,0.17),transparent_25%),linear-gradient(86deg,rgba(5,5,5,0.99),rgba(18,12,9,0.98)_30%,rgba(66,43,28,0.87)_50%,rgba(27,17,12,0.97)_66%,rgba(8,7,7,0.99))] shadow-[-28px_0_74px_-34px_rgba(0,0,0,0.98)] will-change-transform motion-reduce:hidden"
+                  style={{
+                    transform: `translateX(${rightShift}%) rotateY(${rightRotate}deg) translateZ(${fabricDepth}px)`,
+                    transition: isDragging ? "none" : "transform 560ms var(--ease-luxe)",
+                  }}
+                  aria-hidden
+                >
+                  <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(90deg,rgba(255,255,255,0.06)_0_1px,transparent_1px_14px),linear-gradient(90deg,rgba(0,0,0,0.42)_0_10px,transparent_10px_30px),radial-gradient(circle_at_70%_44%,rgba(255,255,255,0.11),transparent_20%)]" />
+                  <div className="absolute inset-0 animate-[curtain-breathe_6.4s_ease-in-out_infinite_reverse] opacity-45 [background-image:linear-gradient(68deg,transparent_0%,rgba(224,192,154,0.11)_28%,transparent_43%,rgba(255,255,255,0.12)_63%,transparent_80%)] motion-reduce:animate-none" />
+                  <div className="absolute inset-y-0 left-0 w-16 bg-[linear-gradient(90deg,rgba(0,0,0,0.8),rgba(224,192,154,0.22),rgba(255,255,255,0.2),rgba(0,0,0,0.55),transparent)]" />
+                  <div className="absolute inset-y-0 left-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(0,0,0,0.98),rgba(39,25,17,0.9),rgba(255,255,255,0.24))] blur-[1px]" />
+                </div>
+              </>
+            )}
 
             <button
               type="button"
