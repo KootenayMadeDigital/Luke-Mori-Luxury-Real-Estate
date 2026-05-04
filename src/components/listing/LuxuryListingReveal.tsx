@@ -54,7 +54,7 @@ function WebGLCurtain({
       varying float v_side;
       varying float v_fold;
       void main() {
-        float width = mix(1.12, 0.075, smoothstep(0.0, 1.0, u_open));
+        float width = mix(1.12, 0.052, smoothstep(0.0, 1.0, u_open));
         float hinge = a_side < 0.0 ? -1.0 : 1.0;
         float inner = a_side < 0.0 ? -1.0 + width : 1.0 - width;
         float x = mix(hinge, inner, a_local.x);
@@ -114,7 +114,7 @@ function WebGLCurtain({
         color += vec3(weave) * 0.012;
         float topBottomShade = smoothstep(0.0, 0.04, v_local.y) * smoothstep(1.0, 0.96, v_local.y);
         color *= 0.72 + topBottomShade * 0.28;
-        float openFade = 1.0 - smoothstep(0.82, 1.0, u_open) * 0.28;
+        float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.44;
         float alpha = (0.995 - sideRim * 0.035) * openFade;
         gl_FragColor = vec4(color, alpha);
       }
@@ -233,7 +233,7 @@ export function LuxuryListingReveal({ listing }: Props) {
   const specs = buildSpecs(listing);
   const openPercent = clamp(progress, 0.04, 1);
   const revealLabel = openPercent > 0.68 ? "Draw shut" : "Draw open";
-  const imageFocus = openPercent > 0.76;
+  const imageFocus = openPercent > 0.78;
   const leftShift = openPercent * 104;
   const rightShift = openPercent * 104;
   const leftRotate = openPercent * -22;
@@ -264,7 +264,7 @@ export function LuxuryListingReveal({ listing }: Props) {
   };
 
   const toggleReveal = () => {
-    setProgress((current) => (current > 0.62 ? 0.12 : 0.86));
+    setProgress((current) => (current > 0.62 ? 0.08 : 0.98));
   };
 
   return (
@@ -282,7 +282,7 @@ export function LuxuryListingReveal({ listing }: Props) {
             </h2>
           </div>
           <p className="m-0 max-w-[540px] text-[15px] leading-[1.85] text-[var(--color-text-muted)] md:ml-auto md:text-right">
-A quieter way to study a significant property: press the pull, move left or right to open, then slide back to centre to close.
+Some properties deserve a little ceremony. Hold the pull, slide either way, and let the view take over before you decide whether it belongs on your shortlist.
           </p>
         </div>
 
@@ -375,18 +375,18 @@ A quieter way to study a significant property: press the pull, move left or righ
                 toggleReveal();
               }}
               className="absolute left-1/2 top-1/2 z-40 flex w-[202px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(224,192,154,0.62)] bg-[linear-gradient(180deg,rgba(11,10,9,0.92),rgba(5,5,5,0.84))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
-              style={{ opacity: imageFocus ? 0.13 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.94)" : undefined }}
+              style={{ opacity: imageFocus ? 0.07 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined, pointerEvents: imageFocus ? "none" : undefined }}
               aria-label={`${revealLabel} the listing reveal`}
             >
               <span className="mb-3 h-px w-16 bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)]" />
               <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze-light)]">
-                Hold and slide
+                Private first look
               </span>
               <span className="mt-2 block font-serif text-[27px] font-light italic leading-none text-[var(--color-text)]">
                 {listing.price || "Private preview"}
               </span>
               <span className="mt-3 block text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
-                {revealLabel}
+                Hold and slide
               </span>
             </button>
 
@@ -427,10 +427,10 @@ A quieter way to study a significant property: press the pull, move left or righ
                 {listing.price || "Price on request"}
               </p>
               <h3 className="m-0 mt-6 font-serif text-[clamp(28px,3vw,44px)] font-light leading-[1.05] tracking-[-0.02em] text-[var(--color-text)]">
-                A slower first look for homes buyers remember.
+                A private first look buyers remember.
               </h3>
               <p className="m-0 mt-5 text-[15px] leading-[1.85] text-[var(--color-text-muted)]">
-                For select upper-market homes, the first impression should feel calm, deliberate, and worth the pause. The full property remains one click away.
+                Pull the drape back, study the setting, then decide whether the privacy, scale, and view deserve a closer conversation.
               </p>
 
               {specs.length > 0 && (
