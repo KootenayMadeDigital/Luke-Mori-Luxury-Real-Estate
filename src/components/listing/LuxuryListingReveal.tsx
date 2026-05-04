@@ -257,6 +257,7 @@ export function LuxuryListingReveal({ listing }: Props) {
   const [isDragging, setIsDragging] = useState(false);
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
   const [webglReady, setWebglReady] = useState(false);
+  const stageRef = useRef<HTMLDivElement | null>(null);
   const dragStartRef = useRef({ x: 50, y: 50, progress: 0.16, side: 1 });
   const specs = buildSpecs(listing);
   const openPercent = clamp(progress, 0.04, 1);
@@ -268,9 +269,11 @@ export function LuxuryListingReveal({ listing }: Props) {
   const rightRotate = openPercent * 22;
   const fabricDepth = 18 + openPercent * 34;
   const seamGlow = 0.18 + openPercent * 0.52;
+  const clothHitWidth = `${clamp(58 - openPercent * 52, 6, 58)}%`;
 
   const updateFromPointer = (event: PointerEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
+    const rect = stageRef.current?.getBoundingClientRect();
+    if (!rect) return;
     const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
     const y = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
     setPointer({ x, y });
@@ -285,13 +288,13 @@ export function LuxuryListingReveal({ listing }: Props) {
     }
   };
 
-  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>, side: -1 | 1) => {
     event.currentTarget.setPointerCapture(event.pointerId);
-    const rect = event.currentTarget.getBoundingClientRect();
+    const rect = stageRef.current?.getBoundingClientRect();
+    if (!rect) return;
     const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
     const y = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
     setPointer({ x, y });
-    const side = x < 50 ? -1 : 1;
     dragStartRef.current = { x, y, progress, side };
     setLift(0);
     setIsDragging(true);
@@ -327,11 +330,8 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
 
         <div className="grid overflow-hidden border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.42)] shadow-[0_34px_110px_-70px_rgba(0,0,0,0.95)] lg:grid-cols-[1.16fr_0.84fr]">
           <div
+            ref={stageRef}
             className="group/reveal relative isolate min-h-[430px] cursor-grab touch-pan-y overflow-hidden bg-[var(--color-bg)] [perspective:1200px] active:cursor-grabbing md:min-h-[580px]"
-            onPointerDown={handlePointerDown}
-            onPointerMove={updateFromPointer}
-            onPointerUp={finishDrag}
-            onPointerCancel={finishDrag}
             style={
               {
                 "--reveal-x": `${pointer.x}%`,
@@ -394,6 +394,25 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
             <div className="pointer-events-none absolute inset-y-0 left-0 z-[39] w-8 bg-[linear-gradient(90deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
             <div className="pointer-events-none absolute inset-y-0 right-0 z-[39] w-8 bg-[linear-gradient(270deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[38] h-12 bg-[linear-gradient(0deg,rgba(7,6,5,0.95),rgba(7,6,5,0.18)_78%,transparent)]" aria-hidden />
+
+            <div
+              className="absolute inset-y-0 left-0 z-[46] cursor-grab touch-none active:cursor-grabbing"
+              style={{ width: clothHitWidth }}
+              onPointerDown={(event) => handlePointerDown(event, -1)}
+              onPointerMove={updateFromPointer}
+              onPointerUp={finishDrag}
+              onPointerCancel={finishDrag}
+              aria-hidden
+            />
+            <div
+              className="absolute inset-y-0 right-0 z-[46] cursor-grab touch-none active:cursor-grabbing"
+              style={{ width: clothHitWidth }}
+              onPointerDown={(event) => handlePointerDown(event, 1)}
+              onPointerMove={updateFromPointer}
+              onPointerUp={finishDrag}
+              onPointerCancel={finishDrag}
+              aria-hidden
+            />
 
             {!webglReady && (
               <>
