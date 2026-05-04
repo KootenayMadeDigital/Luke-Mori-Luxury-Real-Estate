@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { recentlyConcluded, brandImages } from "@/lib/data";
+import { recentlyConcluded, soldArchive, brandImages } from "@/lib/data";
 
 const soldProofNotes = [
   "Acreage privacy, upper-market pricing, and a buyer who needed to understand the land as much as the house.",
@@ -48,7 +48,7 @@ export default function SoldPage() {
           { label: "Recently Sold" },
         ]}
         meta={[
-          { value: `${recentlyConcluded.length}`, label: "Recent Sales" },
+          { value: `${recentlyConcluded.length + soldArchive.length}`, label: "Sales Shown" },
           { value: totalFmt, label: "Combined Volume" },
           { value: "Sold", label: "Status" },
           { value: "Private", label: "Discretion" },
@@ -157,6 +157,69 @@ export default function SoldPage() {
           <p className="mt-12 text-[12px] italic text-[var(--color-text-dim)]">
             Offered prices reflect public list pricing at the time of representation.
             Final transaction prices and terms are held in confidence.
+          </p>
+        </Container>
+      </section>
+
+      <section className="tone-lake tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.82fr_1.18fr] md:items-end">
+            <div>
+              <Eyebrow>Sold Archive</Eyebrow>
+              <SectionHeading className="mt-7">
+                More homes
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  Luke has helped move.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              A broader look at Luke&apos;s public sold record, kept compact so the page shows depth without burying the strongest proof.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {soldArchive.map((item, index) => (
+              <Reveal key={`${item.address}-${index}`} delay={(index % 6) * 35}>
+                <article className="luxury-card group flex h-full overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)]">
+                  <div className="relative w-[42%] min-w-[130px] overflow-hidden bg-[var(--color-bg)]">
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 14vw, (min-width: 640px) 22vw, 42vw"
+                      className="luxury-media object-cover"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.04),rgba(10,11,13,0.54))]" />
+                    <span className="absolute left-3 top-3 rounded-[1px] bg-[rgba(10,11,13,0.76)] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+                      Sold
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="m-0 font-serif text-[21px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)]">
+                      {item.address}
+                    </h3>
+                    <p className="m-0 mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-dim)]">
+                      {item.area}
+                    </p>
+                    <div className="mt-auto pt-5">
+                      <div className="mb-3 flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-text-dim)]">
+                        {item.beds && <span>{item.beds} Bed</span>}
+                        {item.baths && <span>{item.baths} Bath</span>}
+                      </div>
+                      <div className="border-t border-[var(--color-line)] pt-4 font-serif text-[20px] italic text-[var(--color-bronze-light)]">
+                        {item.offered}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <p className="mt-10 text-[12px] italic text-[var(--color-text-dim)]">
+            Archive reflects public sold-property information from Luke&apos;s existing website. Final terms remain private.
           </p>
         </Container>
       </section>

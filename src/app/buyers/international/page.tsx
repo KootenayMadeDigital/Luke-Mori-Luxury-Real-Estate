@@ -38,7 +38,7 @@ const considerations = [
   {
     k: "IV.",
     title: "Currency & Wire Strategy",
-    body: "Currency moves can change the real cost of a purchase. It is worth planning conversion timing before you are under pressure to close."
+    body: "Currency moves can change the real cost of a purchase. Some non-resident buyers may also need larger down payments, so financing and conversion timing should be checked early."
   },
   {
     k: "V.",

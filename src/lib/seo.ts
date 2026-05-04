@@ -100,10 +100,10 @@ export function buildAgentJsonLd() {
     priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "191 Baker Street",
+      streetAddress: "602 Baker St",
       addressLocality: "Nelson",
       addressRegion: "BC",
-      postalCode: "V1L 4H1",
+      postalCode: "V1L 4J3",
       addressCountry: "CA",
     },
     parentOrganization: {

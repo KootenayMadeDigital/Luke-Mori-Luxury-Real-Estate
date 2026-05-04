@@ -10,7 +10,7 @@ export const contact = {
   phoneHref: "tel:+12505514917",
   email: "luke@lukemori.com",
   emailHref: "mailto:luke@lukemori.com",
-  office: "191 Baker Street, Nelson, BC V1L 4H1",
+  office: "602 Baker St, Nelson, BC V1L 4J3",
   brokerage: "Fair Realty",
   social: {
     youtube: "https://www.youtube.com/@Lukemori",
@@ -602,6 +602,281 @@ export const recentlyConcluded: ConcludedItem[] = [
     image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/649f23e431e1f1e0169f28bc_1001-sproat-drive.jpeg",
     imageAlt: "1001 Sproat Drive sold walk-to-water residence",
   },
+];
+
+export type SoldArchiveItem = { address: string; area: string; beds: string | null; baths: string | null; offered: string; image: string; imageAlt: string };
+
+export const soldArchive: SoldArchiveItem[] = [
+  {
+    "address": "6680 Highway 3A",
+    "area": "Nelson Rural",
+    "beds": "3",
+    "baths": "3",
+    "offered": "$1,095,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441b6a91285d98c660eecd0_6680-HIGHWAY-3A.jpeg",
+    "imageAlt": "6680 Highway 3A sold property"
+  },
+  {
+    "address": "6450 Sunshine Drive",
+    "area": "Nelson Rural",
+    "beds": "3",
+    "baths": "3",
+    "offered": "$1,375,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441bc0ca9a044078f882575_6450-SUNSHINE-DRIVE.jpeg",
+    "imageAlt": "6450 Sunshine Drive sold property"
+  },
+  {
+    "address": "923 Sproat Drive",
+    "area": "Nelson",
+    "beds": "5",
+    "baths": "3",
+    "offered": "$1,425,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441bc8e4b0cce503c516fd8_923-SPROAT-DRIVE.jpeg",
+    "imageAlt": "923 Sproat Drive sold property"
+  },
+  {
+    "address": "3805 Highway 6",
+    "area": "Nelson Rural",
+    "beds": "5",
+    "baths": "3",
+    "offered": "$815,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441bdcb08bbcbfc5a7a4478_3805-HIGHWAY-6.jpeg",
+    "imageAlt": "3805 Highway 6 sold property"
+  },
+  {
+    "address": "305 Jam Factory Lane",
+    "area": "Nelson",
+    "beds": "3",
+    "baths": "4",
+    "offered": "$789,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441bdd6192890dde251b79e_305-JAM-FACTORY-LANE.jpeg",
+    "imageAlt": "305 Jam Factory Lane sold property"
+  },
+  {
+    "address": "4265 Slocan River Road",
+    "area": "Nelson Rural",
+    "beds": "3",
+    "baths": "2",
+    "offered": "$699,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441bde09b63564a17411dd4_4265-SLOCAN-RIVER-ROAD.jpeg",
+    "imageAlt": "4265 Slocan River Road sold property"
+  },
+  {
+    "address": "7597-7593 Highway 3A",
+    "area": "Nelson Rural",
+    "beds": "5",
+    "baths": "3",
+    "offered": "$699,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441bdfb63d18c3ce303dd66_7597-7593-HIGHWAY-3A.jpeg",
+    "imageAlt": "7597-7593 Highway 3A sold property"
+  },
+  {
+    "address": "4171 Corra Linn Road",
+    "area": "Nelson Rural",
+    "beds": "4",
+    "baths": "3",
+    "offered": "$534,999",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441bef4e71df4023c66e4a8_4171-CORRA-LINN-ROAD.jpeg",
+    "imageAlt": "4171 Corra Linn Road sold property"
+  },
+  {
+    "address": "1012 Fell Street",
+    "area": "Nelson",
+    "beds": "4",
+    "baths": "4",
+    "offered": "$759,900",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c04b192890601e51e909_1012-FELL-STREET.jpeg",
+    "imageAlt": "1012 Fell Street sold property"
+  },
+  {
+    "address": "410 Lexington Avenue",
+    "area": "Nelson Rural",
+    "beds": null,
+    "baths": null,
+    "offered": "$139,900",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c05282cf24152374ae93_410-LEXINGTON-AVENUE.jpeg",
+    "imageAlt": "410 Lexington Avenue sold property"
+  },
+  {
+    "address": "1511 Vancouver Street",
+    "area": "Nelson",
+    "beds": "4",
+    "baths": "3",
+    "offered": "$479,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c0574d6c5e1e83d3c0e6_1511-VANCOUVER-STREET.jpeg",
+    "imageAlt": "1511 Vancouver Street sold property"
+  },
+  {
+    "address": "514 First Street",
+    "area": "Nelson",
+    "beds": "2",
+    "baths": "2",
+    "offered": "$365,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c05d79c7a465b2bc530f_514-FIRST-STREET.jpeg",
+    "imageAlt": "514 First Street sold property"
+  },
+  {
+    "address": "3946 MacGregor Road",
+    "area": "Nelson Rural",
+    "beds": "5",
+    "baths": "3",
+    "offered": "$1,220,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c06408843b634aa181c4_3946-MACGREGOR-ROAD.jpeg",
+    "imageAlt": "3946 MacGregor Road sold property"
+  },
+  {
+    "address": "1308 Trevor Street",
+    "area": "Nelson",
+    "beds": "2",
+    "baths": "2",
+    "offered": "$1,149,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c06a08843b33bfa18258_1308-TREVOR-STREET.jpeg",
+    "imageAlt": "1308 Trevor Street sold property"
+  },
+  {
+    "address": "7620 Highway 3A",
+    "area": "Nelson Rural",
+    "beds": "3",
+    "baths": "3",
+    "offered": "$955,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c06f4b0cce121651bba3_7620-HIGHWAY-3A.jpeg",
+    "imageAlt": "7620 Highway 3A sold property"
+  },
+  {
+    "address": "1017 Richards Street W",
+    "area": "Nelson",
+    "beds": "4",
+    "baths": "2",
+    "offered": "$599,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c0329ffae5a884623476_1017-RICHARDS-STREET-W.jpeg",
+    "imageAlt": "1017 Richards Street W sold property"
+  },
+  {
+    "address": "C-912 Stanley Street",
+    "area": "Nelson",
+    "beds": "2",
+    "baths": "3",
+    "offered": "$429,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1b4ebb39e1769ef80e4_C-912-STANLEY-STREET.jpeg",
+    "imageAlt": "C-912 Stanley Street sold property"
+  },
+  {
+    "address": "5745 Longbeach Road",
+    "area": "Nelson Rural",
+    "beds": "1",
+    "baths": null,
+    "offered": "$319,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1bb79c7a42364bc6e29_5745-LONGBEACH-ROAD.jpeg",
+    "imageAlt": "5745 Longbeach Road sold property"
+  },
+  {
+    "address": "905 Eighth Street",
+    "area": "Salmo",
+    "beds": "4",
+    "baths": "2",
+    "offered": "$419,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1c224650017c8846b15_905-EIGHTH-STREET.jpeg",
+    "imageAlt": "905 Eighth Street sold property"
+  },
+  {
+    "address": "Lot 7 Alpine Road",
+    "area": "Nelson Rural",
+    "beds": null,
+    "baths": null,
+    "offered": "$295,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1c74b0cce980451dda3_Lot-7-ALPINE-ROAD.jpeg",
+    "imageAlt": "Lot 7 Alpine Road sold property"
+  },
+  {
+    "address": "6106 Pippers Lane",
+    "area": "Nelson Rural",
+    "beds": "3",
+    "baths": "3",
+    "offered": "$665,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1cf99d919651e0dc085_6106-PIPPERS-LANE.jpeg",
+    "imageAlt": "6106 Pippers Lane sold property"
+  },
+  {
+    "address": "516 Mill Street",
+    "area": "Nelson",
+    "beds": "3",
+    "baths": "2",
+    "offered": "$420,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1d582cf24711774c3c1_516-MILL-STREET.jpeg",
+    "imageAlt": "516 Mill Street sold property"
+  },
+  {
+    "address": "7738 Holt Road",
+    "area": "Nelson Rural",
+    "beds": "3",
+    "baths": "2",
+    "offered": "$898,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1db79c7a45e87bc6fa9_7738-HOLT-ROAD.jpeg",
+    "imageAlt": "7738 Holt Road sold property"
+  },
+  {
+    "address": "1101 Forin Road",
+    "area": "Nelson",
+    "beds": "5",
+    "baths": "5",
+    "offered": "$999,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1e0ebb39eb60fef8226_1101-FORIN-ROAD.jpeg",
+    "imageAlt": "1101 Forin Road sold property"
+  },
+  {
+    "address": "4634 Crescent Road",
+    "area": "Nelson Rural",
+    "beds": "4",
+    "baths": "3",
+    "offered": "$1,089,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1e6e174f521e7557fd1_4634-CRESCENT-ROAD.jpeg",
+    "imageAlt": "4634 Crescent Road sold property"
+  },
+  {
+    "address": "2422 Perrier Lane",
+    "area": "Nelson",
+    "beds": "4",
+    "baths": "4",
+    "offered": "$799,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1ed08bbcbb9b67ab5a4_2422-PERRIER-LANE.jpeg",
+    "imageAlt": "2422 Perrier Lane sold property"
+  },
+  {
+    "address": "1009 Observatory Street",
+    "area": "Nelson",
+    "beds": "5",
+    "baths": "4",
+    "offered": "$2,240,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6447137b82b1e1745b372c77_6441c1f299d919076b0dc59a_1009-OBSERVATORY-STREET.jpeg",
+    "imageAlt": "1009 Observatory Street sold property"
+  },
+  {
+    "address": "2517 Perrier Lane",
+    "area": "Nelson",
+    "beds": "6",
+    "baths": "4",
+    "offered": "$979,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c1fc79c7a4ebb9bc70e2_2517-PERRIER-LANE.jpeg",
+    "imageAlt": "2517 Perrier Lane sold property"
+  },
+  {
+    "address": "6796 Highway 3A",
+    "area": "Nelson Rural",
+    "beds": "3",
+    "baths": "3",
+    "offered": "$720,000",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c36979c7a4e4dcbc9941_6796-HIGHWAY-3A.jpeg",
+    "imageAlt": "6796 Highway 3A sold property"
+  },
+  {
+    "address": "8903 Highway 6",
+    "area": "Salmo",
+    "beds": "2",
+    "baths": "1",
+    "offered": "$279,800",
+    "image": "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/6441c3704d6c5e6dd2d3fff9_8903-HIGHWAY-6.jpeg",
+    "imageAlt": "8903 Highway 6 sold property"
+  }
 ];
 
 /* ---------- Seller promises ---------- */
