@@ -99,19 +99,21 @@ function WebGLCurtain({
         float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
         float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
         float hand = 1.0 - smoothstep(0.0, 0.68, abs(u_pointer.y - v_local.y));
-        vec3 base = vec3(0.040, 0.027, 0.021);
-        vec3 merlot = vec3(0.18, 0.095, 0.060);
-        vec3 bronze = vec3(0.46, 0.30, 0.18);
-        vec3 warm = vec3(0.95, 0.75, 0.50);
+        vec3 base = vec3(0.024, 0.018, 0.016);
+        vec3 merlot = vec3(0.105, 0.040, 0.036);
+        vec3 espresso = vec3(0.150, 0.082, 0.052);
+        vec3 bronze = vec3(0.50, 0.33, 0.18);
+        vec3 warm = vec3(0.98, 0.76, 0.48);
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
-        float light = 0.13 + pleat * 0.34 + vertical * 0.10 + sideRim * 0.84 + hand * 0.045;
+        float light = 0.10 + pleat * 0.30 + vertical * 0.08 + sideRim * 0.74 + hand * 0.038;
         light -= creaseShadow * 0.24;
         light *= outerDark;
-        vec3 color = mix(base, merlot, 0.44 + velvetNap * 0.18);
-        color = mix(color, bronze, light * 0.70);
-        color += warm * sideRim * 0.28;
-        color += vec3(micro) * 0.030;
-        color += vec3(weave) * 0.012;
+        vec3 color = mix(base, merlot, 0.50 + velvetNap * 0.12);
+        color = mix(color, espresso, light * 0.42);
+        color = mix(color, bronze, sideRim * 0.22);
+        color += warm * sideRim * 0.18;
+        color += vec3(micro) * 0.020;
+        color += vec3(weave) * 0.010;
         float topBottomShade = smoothstep(0.0, 0.04, v_local.y) * smoothstep(1.0, 0.96, v_local.y);
         color *= 0.72 + topBottomShade * 0.28;
         float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.44;
@@ -328,9 +330,22 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
 
             <WebGLCurtain open={openPercent} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
 
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(26,17,11,0.88)_48%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.64 : 1 }} aria-hidden>
+            <div
+              className="pointer-events-none absolute left-1/2 top-[44%] z-[35] flex size-[168px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(224,192,154,0.10)] font-serif text-[58px] font-light tracking-[-0.08em] text-[rgba(224,192,154,0.06)] transition-opacity duration-700 motion-reduce:hidden md:size-[210px] md:text-[72px]"
+              style={{ opacity: imageFocus ? 0 : 1 - openPercent * 0.92 }}
+              aria-hidden
+            >
+              LM
+            </div>
+            <div
+              className="pointer-events-none absolute left-1/2 top-[44%] z-[35] size-[96px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(224,192,154,0.08)] transition-opacity duration-700 motion-reduce:hidden md:size-[122px]"
+              style={{ opacity: imageFocus ? 0 : 0.56 - openPercent * 0.5 }}
+              aria-hidden
+            />
+
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(31,20,13,0.9)_42%,rgba(142,92,49,0.30)_51%,rgba(10,8,7,0.76)_62%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.64 : 1 }} aria-hidden>
               <div className="absolute inset-x-5 top-4 h-px bg-[linear-gradient(90deg,transparent,rgba(224,192,154,0.58),transparent)]" />
-              <div className="absolute inset-x-8 top-7 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(70,44,25,0.35),rgba(224,192,154,0.64),rgba(70,44,25,0.35))] shadow-[0_0_18px_rgba(224,192,154,0.16)]" />
+              <div className="absolute inset-x-8 top-7 h-[4px] rounded-full bg-[linear-gradient(90deg,rgba(43,28,18,0.42),rgba(160,104,55,0.64)_28%,rgba(236,199,140,0.72)_50%,rgba(160,104,55,0.64)_72%,rgba(43,28,18,0.42))] shadow-[0_0_18px_rgba(224,192,154,0.16)]" />
             </div>
             <div className="pointer-events-none absolute inset-y-0 left-0 z-[39] w-8 bg-[linear-gradient(90deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
             <div className="pointer-events-none absolute inset-y-0 right-0 z-[39] w-8 bg-[linear-gradient(270deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
@@ -374,7 +389,7 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
                 event.stopPropagation();
                 toggleReveal();
               }}
-              className="absolute left-1/2 top-1/2 z-40 flex w-[202px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(224,192,154,0.62)] bg-[linear-gradient(180deg,rgba(11,10,9,0.92),rgba(5,5,5,0.84))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
+              className="absolute left-1/2 top-1/2 z-40 flex w-[196px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(224,192,154,0.54)] bg-[linear-gradient(180deg,rgba(18,13,10,0.94),rgba(5,5,5,0.88))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
               style={{ opacity: imageFocus ? 0.07 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined, pointerEvents: imageFocus ? "none" : undefined }}
               aria-label={`${revealLabel} the listing reveal`}
             >
