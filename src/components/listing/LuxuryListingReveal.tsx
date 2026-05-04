@@ -243,6 +243,11 @@ export function LuxuryListingReveal({ listing }: Props) {
   const fabricDepth = 18 + openPercent * 34;
   const seamGlow = 0.18 + openPercent * 0.52;
 
+  const setRevealFromX = (x: number) => {
+    const distanceFromCenter = Math.abs(x - 50) / 50;
+    setProgress(clamp(distanceFromCenter, 0.04, 1));
+  };
+
   const updateFromPointer = (event: PointerEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
@@ -250,15 +255,18 @@ export function LuxuryListingReveal({ listing }: Props) {
     setPointer({ x, y });
 
     if (isDragging) {
-      const distanceFromCenter = Math.abs(x - 50) / 50;
-      setProgress(clamp(distanceFromCenter, 0.04, 1));
+      setRevealFromX(x);
     }
   };
 
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     event.currentTarget.setPointerCapture(event.pointerId);
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
+    const y = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
+    setPointer({ x, y });
+    setRevealFromX(x);
     setIsDragging(true);
-    updateFromPointer(event);
   };
 
   const finishDrag = () => {
@@ -331,14 +339,21 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
             <WebGLCurtain open={openPercent} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
 
             <div
-              className="pointer-events-none absolute left-1/2 top-[44%] z-[35] flex size-[168px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(224,192,154,0.10)] font-serif text-[58px] font-light tracking-[-0.08em] text-[rgba(224,192,154,0.06)] transition-opacity duration-700 motion-reduce:hidden md:size-[210px] md:text-[72px]"
+              className="pointer-events-none absolute left-1/2 top-[15%] z-[39] flex size-[92px] -translate-x-1/2 items-center justify-center rounded-full border border-[rgba(255,224,170,0.26)] bg-[rgba(9,7,5,0.20)] p-4 shadow-[0_12px_42px_-30px_rgba(0,0,0,0.95)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[112px]"
               style={{ opacity: imageFocus ? 0 : 0.88 - openPercent * 0.8 }}
               aria-hidden
             >
-              LM
+              <Image
+                src="/luke-mori-luxury-mark.svg"
+                alt=""
+                width={72}
+                height={72}
+                className="h-full w-full object-contain opacity-90"
+                unoptimized
+              />
             </div>
             <div
-              className="pointer-events-none absolute left-1/2 top-[18%] z-[39] size-[48px] -translate-x-1/2 rounded-full border border-[rgba(255,224,170,0.16)] transition-opacity duration-700 motion-reduce:hidden md:top-[16%] md:size-[58px]"
+              className="pointer-events-none absolute left-1/2 top-[15%] z-[39] size-[56px] -translate-x-1/2 rounded-full border border-[rgba(255,224,170,0.18)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[68px]"
               style={{ opacity: imageFocus ? 0 : 0.58 - openPercent * 0.5 }}
               aria-hidden
             />
@@ -383,15 +398,10 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
               </>
             )}
 
-            <button
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                toggleReveal();
-              }}
-              className="absolute left-1/2 top-1/2 z-40 flex w-[196px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(255,224,170,0.66)] bg-[linear-gradient(180deg,rgba(35,23,13,0.94),rgba(8,7,6,0.90))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
-              style={{ opacity: imageFocus ? 0.07 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined, pointerEvents: imageFocus ? "none" : undefined }}
-              aria-label={`${revealLabel} the listing reveal`}
+            <div
+              className="pointer-events-none absolute left-1/2 top-1/2 z-40 flex w-[196px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(255,224,170,0.66)] bg-[linear-gradient(180deg,rgba(35,23,13,0.94),rgba(8,7,6,0.90))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)]"
+              style={{ opacity: imageFocus ? 0.07 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined }}
+              aria-hidden
             >
               <span className="mb-3 h-px w-16 bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)]" />
               <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze-light)]">
@@ -403,7 +413,7 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
               <span className="mt-3 block text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
                 Hold and slide
               </span>
-            </button>
+            </div>
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,11,13,0.76))]" />
             <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[260px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] md:flex" aria-hidden>
