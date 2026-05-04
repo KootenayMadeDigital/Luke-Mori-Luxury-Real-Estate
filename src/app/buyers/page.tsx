@@ -159,15 +159,15 @@ export default function BuyersPage() {
             <div>
               <Eyebrow>Buyer Route Finder</Eyebrow>
               <SectionHeading className="mt-7">
-                Choose the search
+                Choose the buying path
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  before choosing homes.
+                  before the tour list.
                 </em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Luxury buyers do not need more random showings. They need the right route first: lakefront, walkable Nelson, North Shore privacy, acreage, ski lifestyle, relocation, second-home use, or international logistics.
+              Luxury buyers are not choosing between similar homes. They are choosing a way to live: lakefront, walkable Nelson, North Shore privacy, acreage, ski rhythm, relocation, second-home ownership, or a clean remote purchase.
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />
