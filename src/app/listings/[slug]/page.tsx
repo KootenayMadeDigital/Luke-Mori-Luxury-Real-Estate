@@ -191,19 +191,19 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           <Reveal>
             <nav
               aria-label="Breadcrumb"
-              className="mb-6 flex flex-wrap items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-muted)]"
+              className="mb-6 flex flex-wrap items-center gap-2.5 text-[10px] font-bold uppercase tracking-[0.22em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
             >
-              <Link href="/" className="transition-colors hover:text-[var(--color-bronze-light)]">Home</Link>
-              <span className="text-[var(--color-line-strong)]">/</span>
-              <Link href="/listings" className="transition-colors hover:text-[var(--color-bronze-light)]">Listings</Link>
+              <Link href="/" className="bg-[rgba(10,11,13,0.28)] px-2 py-1 transition-colors hover:text-[var(--color-bronze-light)]">Home</Link>
+              <span className="text-white/72">/</span>
+              <Link href="/listings" className="bg-[rgba(10,11,13,0.28)] px-2 py-1 transition-colors hover:text-[var(--color-bronze-light)]">Listings</Link>
               {l.location && (
                 <>
-                  <span className="text-[var(--color-line-strong)]">/</span>
-                  <span className="text-[var(--color-text-muted)]">{l.location}</span>
+                  <span className="text-white/72">/</span>
+                  <span className="bg-[rgba(10,11,13,0.28)] px-2 py-1 text-white">{l.location}</span>
                 </>
               )}
-              <span className="text-[var(--color-line-strong)]">/</span>
-              <span aria-current="page" className="truncate text-[var(--color-text-dim)]">{l.address}</span>
+              <span className="text-white/72">/</span>
+              <span aria-current="page" className="truncate bg-[rgba(10,11,13,0.28)] px-2 py-1 text-white/92">{l.address}</span>
             </nav>
           </Reveal>
 
@@ -219,8 +219,8 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           )}
 
           <Reveal delay={120}>
-            <div className="mb-5 flex items-center gap-3.5 text-[11px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-              <span className="inline-block h-px w-12 bg-[var(--color-bronze)]" />
+            <div className="mb-5 inline-flex items-center gap-3.5 bg-[rgba(10,11,13,0.32)] px-3 py-2 text-[11px] font-bold uppercase tracking-[0.32em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              <span className="inline-block h-px w-12 bg-white/88" />
               {l.location || l.propertyType || "Active Listing"}
             </div>
           </Reveal>
@@ -232,19 +232,19 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           </Reveal>
 
           <Reveal delay={360}>
-            <div className="mt-6 flex flex-wrap items-baseline gap-x-8 gap-y-3 text-[var(--color-text-muted)]">
+            <div className="mt-6 flex flex-wrap items-baseline gap-x-8 gap-y-3 text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.92)]">
               {l.price && (
-                <span className="font-serif italic text-[var(--color-bronze-light)] [font-size:clamp(24px,3vw,38px)]">
+                <span className="font-serif italic text-white [font-size:clamp(24px,3vw,38px)]">
                   {l.price}
                 </span>
               )}
               {l.propertyType && (
-                <span className="text-[12px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+                <span className="text-[12px] font-bold uppercase tracking-[0.22em] text-white">
                   {l.propertyType}
                 </span>
               )}
               {l.yearBuilt && l.yearBuilt > 1700 && (
-                <span className="text-[12px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+                <span className="text-[12px] font-bold uppercase tracking-[0.22em] text-white">
                   Built {l.yearBuilt}
                 </span>
               )}
