@@ -99,23 +99,23 @@ function WebGLCurtain({
         float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
         float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
         float hand = 1.0 - smoothstep(0.0, 0.68, abs(u_pointer.y - v_local.y));
-        vec3 base = vec3(0.024, 0.018, 0.016);
-        vec3 merlot = vec3(0.105, 0.040, 0.036);
-        vec3 espresso = vec3(0.150, 0.082, 0.052);
-        vec3 bronze = vec3(0.50, 0.33, 0.18);
-        vec3 warm = vec3(0.98, 0.76, 0.48);
+        vec3 base = vec3(0.36, 0.255, 0.155);
+        vec3 champagne = vec3(0.72, 0.555, 0.335);
+        vec3 espresso = vec3(0.110, 0.070, 0.046);
+        vec3 bronze = vec3(0.62, 0.40, 0.20);
+        vec3 warm = vec3(1.00, 0.82, 0.54);
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
-        float light = 0.10 + pleat * 0.30 + vertical * 0.08 + sideRim * 0.74 + hand * 0.038;
-        light -= creaseShadow * 0.24;
+        float light = 0.20 + pleat * 0.42 + vertical * 0.15 + sideRim * 0.88 + hand * 0.045;
+        light -= creaseShadow * 0.34;
         light *= outerDark;
-        vec3 color = mix(base, merlot, 0.50 + velvetNap * 0.12);
-        color = mix(color, espresso, light * 0.42);
-        color = mix(color, bronze, sideRim * 0.22);
-        color += warm * sideRim * 0.18;
+        vec3 color = mix(base, champagne, 0.34 + velvetNap * 0.26);
+        color = mix(color, espresso, creaseShadow * 0.42);
+        color = mix(color, bronze, sideRim * 0.30);
+        color += warm * sideRim * 0.24;
         color += vec3(micro) * 0.020;
         color += vec3(weave) * 0.010;
         float topBottomShade = smoothstep(0.0, 0.04, v_local.y) * smoothstep(1.0, 0.96, v_local.y);
-        color *= 0.72 + topBottomShade * 0.28;
+        color *= 0.82 + topBottomShade * 0.18;
         float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.44;
         float alpha = (0.995 - sideRim * 0.035) * openFade;
         gl_FragColor = vec4(color, alpha);
@@ -332,18 +332,18 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
 
             <div
               className="pointer-events-none absolute left-1/2 top-[44%] z-[35] flex size-[168px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(224,192,154,0.10)] font-serif text-[58px] font-light tracking-[-0.08em] text-[rgba(224,192,154,0.06)] transition-opacity duration-700 motion-reduce:hidden md:size-[210px] md:text-[72px]"
-              style={{ opacity: imageFocus ? 0 : 1 - openPercent * 0.92 }}
+              style={{ opacity: imageFocus ? 0 : 0.88 - openPercent * 0.8 }}
               aria-hidden
             >
               LM
             </div>
             <div
-              className="pointer-events-none absolute left-1/2 top-[44%] z-[35] size-[96px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(224,192,154,0.08)] transition-opacity duration-700 motion-reduce:hidden md:size-[122px]"
-              style={{ opacity: imageFocus ? 0 : 0.56 - openPercent * 0.5 }}
+              className="pointer-events-none absolute left-1/2 top-[18%] z-[39] size-[48px] -translate-x-1/2 rounded-full border border-[rgba(255,224,170,0.16)] transition-opacity duration-700 motion-reduce:hidden md:top-[16%] md:size-[58px]"
+              style={{ opacity: imageFocus ? 0 : 0.58 - openPercent * 0.5 }}
               aria-hidden
             />
 
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(31,20,13,0.9)_42%,rgba(142,92,49,0.30)_51%,rgba(10,8,7,0.76)_62%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.64 : 1 }} aria-hidden>
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(31,20,13,0.92)_40%,rgba(190,133,70,0.42)_51%,rgba(10,8,7,0.78)_64%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.64 : 1 }} aria-hidden>
               <div className="absolute inset-x-5 top-4 h-px bg-[linear-gradient(90deg,transparent,rgba(224,192,154,0.58),transparent)]" />
               <div className="absolute inset-x-8 top-7 h-[4px] rounded-full bg-[linear-gradient(90deg,rgba(43,28,18,0.42),rgba(160,104,55,0.64)_28%,rgba(236,199,140,0.72)_50%,rgba(160,104,55,0.64)_72%,rgba(43,28,18,0.42))] shadow-[0_0_18px_rgba(224,192,154,0.16)]" />
             </div>
@@ -389,7 +389,7 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
                 event.stopPropagation();
                 toggleReveal();
               }}
-              className="absolute left-1/2 top-1/2 z-40 flex w-[196px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(224,192,154,0.54)] bg-[linear-gradient(180deg,rgba(18,13,10,0.94),rgba(5,5,5,0.88))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
+              className="absolute left-1/2 top-1/2 z-40 flex w-[196px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(255,224,170,0.66)] bg-[linear-gradient(180deg,rgba(35,23,13,0.94),rgba(8,7,6,0.90))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
               style={{ opacity: imageFocus ? 0.07 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined, pointerEvents: imageFocus ? "none" : undefined }}
               aria-label={`${revealLabel} the listing reveal`}
             >
