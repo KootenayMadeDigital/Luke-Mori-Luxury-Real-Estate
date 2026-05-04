@@ -104,8 +104,8 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="luxury-media object-cover"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.72))]" aria-hidden />
-                  <figcaption className="absolute bottom-4 left-4 right-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text)]">
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.04)_25%,rgba(10,11,13,0.34)_62%,rgba(10,11,13,0.88)_100%)]" aria-hidden />
+                  <figcaption className="absolute bottom-4 left-4 right-4 text-[10px] font-bold uppercase tracking-[0.24em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
                     {scene.title}
                   </figcaption>
                 </figure>
