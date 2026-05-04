@@ -13,29 +13,34 @@ const clamp = (value: number, min: number, max: number) => Math.min(max, Math.ma
 
 function WebGLCurtain({
   open,
+  lift,
   pointer,
   isDragging,
   onReady,
 }: {
   open: number;
+  lift: number;
   pointer: { x: number; y: number };
   isDragging: boolean;
   onReady: (ready: boolean) => void;
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const openRef = useRef(open);
+  const liftRef = useRef(lift);
   const pointerRef = useRef(pointer);
   const draggingRef = useRef(isDragging);
   const settledRef = useRef(open);
   const velocityRef = useRef(0);
   const lastSettledRef = useRef(open);
   const smoothPointerRef = useRef(pointer);
+  const smoothLiftRef = useRef(lift);
 
   useEffect(() => {
     openRef.current = open;
+    liftRef.current = lift;
     pointerRef.current = pointer;
     draggingRef.current = isDragging;
-  }, [open, pointer, isDragging]);
+  }, [open, lift, pointer, isDragging]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,6 +56,7 @@ function WebGLCurtain({
       attribute float a_side;
       uniform float u_open;
       uniform float u_velocity;
+      uniform float u_lift;
       uniform float u_time;
       uniform vec2 u_pointer;
       varying vec2 v_local;
@@ -75,9 +81,10 @@ function WebGLCurtain({
         x += (billow + pullLag * 0.20) * a_side;
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
         y += abs(u_velocity) * 0.030 * verticalLag * (0.6 + hand * 0.4);
+        y += u_lift * hand * weight * 0.28;
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.024 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.030 + abs(u_velocity) * 0.10 * verticalLag;
+        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.030 + abs(u_velocity) * 0.10 * verticalLag + u_lift * hand * 0.16;
         float w = 1.0 + depth * 0.48;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
@@ -183,6 +190,7 @@ function WebGLCurtain({
     const sideLoc = gl.getAttribLocation(program, "a_side");
     const openLoc = gl.getUniformLocation(program, "u_open");
     const velocityLoc = gl.getUniformLocation(program, "u_velocity");
+    const liftLoc = gl.getUniformLocation(program, "u_lift");
     const timeLoc = gl.getUniformLocation(program, "u_time");
     const pointerLoc = gl.getUniformLocation(program, "u_pointer");
     let frame = 0;
@@ -208,6 +216,7 @@ function WebGLCurtain({
         x: smoothPointerRef.current.x + (pointerRef.current.x - smoothPointerRef.current.x) * 0.18,
         y: smoothPointerRef.current.y + (pointerRef.current.y - smoothPointerRef.current.y) * 0.18,
       };
+      smoothLiftRef.current += (liftRef.current - smoothLiftRef.current) * (draggingRef.current ? 0.22 : 0.09);
       resize();
       gl.clearColor(0, 0, 0, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
@@ -221,6 +230,7 @@ function WebGLCurtain({
       gl.vertexAttribPointer(sideLoc, 1, gl.FLOAT, false, stride, 8);
       gl.uniform1f(openLoc, settledRef.current);
       gl.uniform1f(velocityLoc, clothVelocity);
+      gl.uniform1f(liftLoc, smoothLiftRef.current);
       gl.uniform1f(timeLoc, (performance.now() - start) / 1000);
       gl.uniform2f(pointerLoc, smoothPointerRef.current.x / 100, smoothPointerRef.current.y / 100);
       gl.drawArrays(gl.TRIANGLES, 0, data.length / 3);
@@ -243,9 +253,11 @@ function WebGLCurtain({
 
 export function LuxuryListingReveal({ listing }: Props) {
   const [progress, setProgress] = useState(0.16);
+  const [lift, setLift] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
   const [webglReady, setWebglReady] = useState(false);
+  const dragStartRef = useRef({ x: 50, y: 50, progress: 0.16, side: 1 });
   const specs = buildSpecs(listing);
   const openPercent = clamp(progress, 0.04, 1);
   const revealLabel = openPercent > 0.68 ? "Draw shut" : "Draw open";
@@ -257,11 +269,6 @@ export function LuxuryListingReveal({ listing }: Props) {
   const fabricDepth = 18 + openPercent * 34;
   const seamGlow = 0.18 + openPercent * 0.52;
 
-  const setRevealFromX = (x: number) => {
-    const distanceFromCenter = Math.abs(x - 50) / 50;
-    setProgress(clamp(distanceFromCenter, 0.04, 1));
-  };
-
   const updateFromPointer = (event: PointerEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
@@ -269,7 +276,12 @@ export function LuxuryListingReveal({ listing }: Props) {
     setPointer({ x, y });
 
     if (isDragging) {
-      setRevealFromX(x);
+      const start = dragStartRef.current;
+      const directionalPull = ((x - start.x) / 100) * start.side * 1.65;
+      const liftPull = Math.max(0, (start.y - y) / 100);
+      const downwardClose = Math.max(0, (y - start.y) / 100) * 0.38;
+      setProgress(clamp(start.progress + directionalPull + liftPull * 0.85 - downwardClose, 0.04, 1));
+      setLift(clamp(liftPull * 1.55, 0, 1));
     }
   };
 
@@ -279,12 +291,15 @@ export function LuxuryListingReveal({ listing }: Props) {
     const x = clamp(((event.clientX - rect.left) / rect.width) * 100, 0, 100);
     const y = clamp(((event.clientY - rect.top) / rect.height) * 100, 0, 100);
     setPointer({ x, y });
-    setRevealFromX(x);
+    const side = x < 50 ? -1 : 1;
+    dragStartRef.current = { x, y, progress, side };
+    setLift(0);
     setIsDragging(true);
   };
 
   const finishDrag = () => {
     setIsDragging(false);
+    setLift(0);
   };
 
   const toggleReveal = () => {
@@ -306,7 +321,7 @@ export function LuxuryListingReveal({ listing }: Props) {
             </h2>
           </div>
           <p className="m-0 max-w-[540px] text-[15px] leading-[1.85] text-[var(--color-text-muted)] md:ml-auto md:text-right">
-Some properties deserve a little ceremony. Hold the pull, slide either way, and let the view take over before you decide whether it belongs on your shortlist.
+Some properties deserve a little ceremony. Press anywhere on the cloth, pull sideways or lift upward, and let the view take over before it reaches your shortlist.
           </p>
         </div>
 
@@ -350,7 +365,7 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
               aria-hidden
             />
 
-            <WebGLCurtain open={openPercent} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
+            <WebGLCurtain open={openPercent} lift={lift} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
 
             <div
               className="pointer-events-none absolute left-1/2 top-[15%] z-[39] flex size-[92px] -translate-x-1/2 items-center justify-center rounded-full border border-[rgba(255,224,170,0.26)] bg-[rgba(9,7,5,0.20)] p-4 shadow-[0_12px_42px_-30px_rgba(0,0,0,0.95)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[112px]"
@@ -414,7 +429,7 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
 
             <div
               className="pointer-events-none absolute left-1/2 top-1/2 z-40 flex w-[196px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(255,224,170,0.66)] bg-[linear-gradient(180deg,rgba(35,23,13,0.94),rgba(8,7,6,0.90))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)]"
-              style={{ opacity: imageFocus ? 0.07 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined }}
+              style={{ opacity: imageFocus ? 0 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined }}
               aria-hidden
             >
               <span className="mb-3 h-px w-16 bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)]" />
@@ -425,17 +440,17 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
                 Unveil the view
               </span>
               <span className="mt-3 block text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
-                Hold and slide
+                Drag the cloth
               </span>
             </div>
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,11,13,0.76))]" />
-            <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[260px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] md:flex" aria-hidden>
-              <span>Open</span>
+            <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[300px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] md:flex" aria-hidden>
+              <span>Pull left</span>
               <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
-              <span>Centre closes</span>
+              <span>Lift or slide</span>
               <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
-              <span>Open</span>
+              <span>Pull right</span>
             </div>
             <div className="absolute bottom-5 left-5 z-40 max-w-[78%] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
               <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)]">
