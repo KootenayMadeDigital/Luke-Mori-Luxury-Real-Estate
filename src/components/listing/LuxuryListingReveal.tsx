@@ -26,6 +26,8 @@ function WebGLCurtain({
   const openRef = useRef(open);
   const pointerRef = useRef(pointer);
   const draggingRef = useRef(isDragging);
+  const settledRef = useRef(open);
+  const smoothPointerRef = useRef(pointer);
 
   useEffect(() => {
     openRef.current = open;
@@ -52,18 +54,25 @@ function WebGLCurtain({
       varying float v_side;
       varying float v_fold;
       void main() {
-        float width = mix(1.08, 0.20, u_open);
-        float x = a_side < 0.0 ? -1.0 + a_local.x * width : 1.0 - a_local.x * width;
+        float width = mix(1.10, 0.18, u_open);
+        float hinge = a_side < 0.0 ? -1.0 : 1.0;
+        float inner = a_side < 0.0 ? -1.0 + width : 1.0 - width;
+        float x = mix(hinge, inner, a_local.x);
         float y = a_local.y * 2.0 - 1.0;
         float hand = 1.0 - smoothstep(0.0, 0.78, abs((u_pointer.x * 2.0 - 1.0) - x));
-        float ridge = sin(a_local.x * 42.0 + a_local.y * 5.0 + u_time * 0.85);
-        float slow = sin(a_local.x * 14.0 - u_time * 0.42 + a_side * 0.7);
-        float edgeLift = pow(a_local.x, 2.3) * u_open;
-        float billow = (ridge * 0.020 + slow * 0.014 + hand * 0.020) * (1.0 - u_open * 0.18);
+        float ridge = sin(a_local.x * 48.0 + a_local.y * 5.0 + u_time * 0.85);
+        float ridge2 = sin(a_local.x * 19.0 - a_local.y * 2.0 - u_time * 0.34);
+        float slow = sin(a_local.x * 12.0 - u_time * 0.42 + a_side * 0.7);
+        float edgeLift = pow(a_local.x, 2.1) * u_open;
+        float weight = sin(a_local.y * 3.14159);
+        float billow = (ridge * 0.034 + ridge2 * 0.018 + slow * 0.018 + hand * 0.026) * (1.0 - u_open * 0.10) * weight;
         x += billow * a_side;
-        y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.008 * (0.35 + edgeLift);
-        float depth = edgeLift * 0.12 + abs(ridge) * 0.025;
-        gl_Position = vec4(x, y, depth, 1.0);
+        y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
+        float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.018 * (1.0 - u_open * 0.35);
+        y += sag;
+        float depth = edgeLift * 0.35 + abs(ridge) * 0.07 + hand * 0.035;
+        float w = 1.0 + depth * 0.48;
+        gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
         v_side = a_side;
         v_fold = ridge;
@@ -85,17 +94,21 @@ function WebGLCurtain({
         float pleat = 0.5 + 0.5 * v_fold;
         float micro = grain(v_local * vec2(180.0, 70.0) + u_time * 0.018);
         float vertical = sin(v_local.x * 86.0) * 0.5 + 0.5;
-        float sideRim = smoothstep(0.72, 1.0, v_local.x) * (0.22 + u_open * 0.44);
+        float weave = sin(v_local.x * 260.0) * sin(v_local.y * 118.0) * 0.5 + 0.5;
+        float sideRim = smoothstep(0.70, 1.0, v_local.x) * (0.28 + u_open * 0.58);
+        float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
         float outerDark = 1.0 - smoothstep(0.0, 0.18, v_local.x) * 0.26;
         float hand = 1.0 - smoothstep(0.0, 0.68, abs(u_pointer.y - v_local.y));
-        vec3 base = vec3(0.105, 0.071, 0.048);
-        vec3 bronze = vec3(0.55, 0.38, 0.24);
-        vec3 warm = vec3(0.92, 0.76, 0.55);
-        float light = 0.28 + pleat * 0.34 + vertical * 0.10 + sideRim * 0.62 + hand * 0.04;
+        vec3 base = vec3(0.075, 0.048, 0.035);
+        vec3 bronze = vec3(0.50, 0.34, 0.22);
+        vec3 warm = vec3(0.96, 0.78, 0.56);
+        float light = 0.20 + pleat * 0.44 + vertical * 0.13 + sideRim * 0.74 + hand * 0.05;
+        light -= creaseShadow * 0.18;
         light *= outerDark;
         vec3 color = mix(base, bronze, light);
         color += warm * sideRim * 0.22;
-        color += vec3(micro) * 0.035;
+        color += vec3(micro) * 0.030;
+        color += vec3(weave) * 0.018;
         float vignette = smoothstep(0.0, 0.14, v_local.y) * smoothstep(1.0, 0.86, v_local.y);
         float alpha = (0.975 - sideRim * 0.08) * vignette;
         gl_FragColor = vec4(color, alpha);
@@ -169,6 +182,12 @@ function WebGLCurtain({
     };
 
     const render = () => {
+      const ease = draggingRef.current ? 0.34 : 0.12;
+      settledRef.current += (openRef.current - settledRef.current) * ease;
+      smoothPointerRef.current = {
+        x: smoothPointerRef.current.x + (pointerRef.current.x - smoothPointerRef.current.x) * 0.18,
+        y: smoothPointerRef.current.y + (pointerRef.current.y - smoothPointerRef.current.y) * 0.18,
+      };
       resize();
       gl.clearColor(0, 0, 0, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
@@ -180,9 +199,9 @@ function WebGLCurtain({
       gl.vertexAttribPointer(localLoc, 2, gl.FLOAT, false, stride, 0);
       gl.enableVertexAttribArray(sideLoc);
       gl.vertexAttribPointer(sideLoc, 1, gl.FLOAT, false, stride, 8);
-      gl.uniform1f(openLoc, openRef.current);
+      gl.uniform1f(openLoc, settledRef.current);
       gl.uniform1f(timeLoc, (performance.now() - start) / 1000);
-      gl.uniform2f(pointerLoc, pointerRef.current.x / 100, pointerRef.current.y / 100);
+      gl.uniform2f(pointerLoc, smoothPointerRef.current.x / 100, smoothPointerRef.current.y / 100);
       gl.drawArrays(gl.TRIANGLES, 0, data.length / 3);
       frame = requestAnimationFrame(render);
     };
@@ -257,7 +276,7 @@ export function LuxuryListingReveal({ listing }: Props) {
             </h2>
           </div>
           <p className="m-0 max-w-[540px] text-[15px] leading-[1.85] text-[var(--color-text-muted)] md:ml-auto md:text-right">
-            A quieter way to study a significant property: drag the brass pull toward either edge to open the room, then bring it back to close the veil.
+A quieter way to study a significant property: press the pull, move left or right to open, then slide back to centre to close.
           </p>
         </div>
 
@@ -353,11 +372,18 @@ export function LuxuryListingReveal({ listing }: Props) {
                 {listing.price || "Private preview"}
               </span>
               <span className="mt-3 block text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
-                Drag live from center
+                Hold and slide
               </span>
             </button>
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,11,13,0.76))]" />
+            <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[260px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] md:flex" aria-hidden>
+              <span>Open</span>
+              <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
+              <span>Centre closes</span>
+              <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
+              <span>Open</span>
+            </div>
             <div className="absolute bottom-5 left-5 z-40 max-w-[78%] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
               <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)]">
                 Featured Luxury Listing
