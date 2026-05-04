@@ -123,7 +123,7 @@ export function ListingsBrowser({
   return (
     <div>
       {/* CONTROLS */}
-      <div className="tone-dark sticky top-[52px] z-[80] -mx-5 mb-12 border-y border-[var(--color-line)] bg-[rgba(10,11,13,0.92)] px-5 py-5 backdrop-blur-[14px] sm:-mx-8 sm:px-8 md:top-[64px] md:-mx-10 md:px-10 lg:-mx-12 lg:px-12 xl:-mx-14 xl:px-14">
+      <div className="tone-dark sticky top-[52px] z-[80] -mx-5 mb-16 border-y border-[var(--color-line)] bg-[rgba(10,11,13,0.94)] px-5 py-5 shadow-[0_28px_80px_-58px_rgba(0,0,0,0.95)] backdrop-blur-[14px] sm:-mx-8 sm:px-8 md:top-[64px] md:-mx-10 md:mb-20 md:px-10 lg:-mx-12 lg:px-12 xl:-mx-14 xl:px-14">
         <div className="flex flex-wrap items-center gap-3 lg:flex-nowrap lg:gap-4">
           {/* Filters */}
           <div className="flex flex-wrap items-center gap-2">
@@ -208,6 +208,7 @@ export function ListingsBrowser({
       </div>
 
       {/* GRID */}
+      <div className="pt-2 md:pt-4">
       {paged.length === 0 ? (
         <div className="border border-[var(--color-line)] bg-[var(--color-surface)] p-16 text-center">
           <p className="m-0 mb-3 font-serif text-[24px] font-light text-[var(--color-text)]">
@@ -224,6 +225,8 @@ export function ListingsBrowser({
           ))}
         </div>
       )}
+
+      </div>
 
       {/* PAGINATION */}
       {totalPages > 1 && (
