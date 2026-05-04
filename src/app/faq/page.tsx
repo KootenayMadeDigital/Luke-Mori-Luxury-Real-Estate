@@ -1,7 +1,8 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -9,9 +10,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { faqs, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Frequently Asked Questions",
+  title: "Nelson BC Real Estate FAQ · Buyers, Sellers & Relocation",
   description:
-    "Frequently asked questions about Nelson and Kootenay Lake real estate, selling, buying, relocation, international buyers, and off-market access.",
+    "Answers to Nelson BC real estate questions about buying, selling, waterfront homes, Kootenay Lake, relocation, second homes, and off-market access.",
   path: "/faq",
   image: "/og/faq.png",
 });
@@ -21,6 +22,7 @@ const categories = Array.from(new Set(faqs.map((faq) => faq.category)));
 export default function FaqPage() {
   return (
     <PageLayout>
+      <JsonLd data={buildFaqJsonLd(faqs.map((faq) => ({ question: faq.q, answer: faq.a })), "/faq")} />
       <SubpageHero
         eyebrow="FAQ"
         title="The questions"

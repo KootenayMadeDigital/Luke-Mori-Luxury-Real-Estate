@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Luke Mori Luxury" }],
   creator: "Luke Mori Luxury",
   publisher: "Luke Mori Luxury",
-  robots: { index: false, follow: true, nocache: true },
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     siteName: "Luke Mori Luxury",
     url: "/",
     locale: "en_CA",
-    images: [{ url: "/luke-mori-luxury-logo-full.webp", alt: "Luke Mori Luxury mark" }],
+    images: [{ url: "/og/home.png", alt: "Luke Mori Luxury Nelson and Kootenay Lake real estate", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
     description:
       "Nelson and Kootenay Lake real estate for sellers, lakefront buyers, view properties, acreage, relocation, and second-home ownership.",
-    images: ["/luke-mori-luxury-logo-full.webp"],
+    images: ["/og/home.png"],
   },
   icons: {
     icon: [{ url: "/luke-mori-luxury-mark.webp", type: "image/webp" }],

@@ -3,6 +3,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
+import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { CredentialsStrip } from "@/components/sections/CredentialsStrip";
 import { PressStrip } from "@/components/sections/PressStrip";
 import { Container } from "@/components/ui/Container";
@@ -12,9 +13,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { lukeBio, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "About Luke Mori · Nelson Real Estate",
+  title: "Luke Mori · Nelson BC Realtor & Luxury Real Estate Agent",
   description:
-    "Born and raised in Nelson, B.C. Founder of the Luke Mori division at Fair Realty. Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards (2021 and 2024).",
+    "Luke Mori is a Nelson BC realtor and luxury real estate agent for Kootenay Lake homes, waterfront property, relocation buyers, sellers, and second homes.",
   path: "/about",
   image: "/og/about.png",
 });
@@ -35,6 +36,14 @@ export default function AboutPage() {
           { value: "2021/24", label: "Best Luxury Broker" },
           { value: "100%", label: "Local Knowledge" },
         ]}
+      />
+
+      <SeoAnswerBlock
+        eyebrow="Nelson Realtor"
+        question="Who is Luke Mori?"
+        answer="Luke Mori is a Nelson BC realtor focused on luxury real estate, waterfront property, Kootenay Lake homes, relocation buyers, second-home owners, and sellers who need local knowledge before a major decision. He was voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and 2024."
+        terms={["nelson bc realtor", "nelson bc real estate agent", "best realtor in nelson bc"]}
+        tone="ivory"
       />
 
       <CredentialsStrip />

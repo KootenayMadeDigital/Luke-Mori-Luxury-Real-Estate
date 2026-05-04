@@ -4,6 +4,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
+import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,9 +12,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "International and Second-Home Buyers · Nelson Real Estate",
+  title: "Buying Property in Nelson BC from Abroad or as a Second Home",
   description:
-    "A buyer guide for international and second-home purchasers in British Columbia: purchase rules, advisors, currency timing, and ownership from afar.",
+    "Guide for Americans, international buyers, out-of-province buyers, and second-home purchasers buying property in Nelson BC or Kootenay Lake.",
   path: "/buyers/international",
   image: "/og/international.png",
 });
@@ -93,6 +94,14 @@ export default function InternationalBuyersPage() {
           { value: "Vetted", label: "Local Advisors" },
           { value: "End-to-End", label: "Coordination" },
         ]}
+      />
+
+      <SeoAnswerBlock
+        eyebrow="Buyer Answer"
+        question="Can Americans or international buyers buy property in Nelson BC?"
+        answer="International and out-of-province buyers can explore Nelson BC and Kootenay Lake property, but the purchase should start with current legal, tax, financing, currency, and ownership advice. Luke helps remote and second-home buyers set the local team before the right property appears."
+        terms={["buying property in nelson bc", "can americans buy property in nelson bc", "second home nelson bc"]}
+        tone="ivory"
       />
 
       <section className="tone-ivory tonal-section py-24 md:py-28">

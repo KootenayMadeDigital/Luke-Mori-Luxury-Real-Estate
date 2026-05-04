@@ -23,7 +23,7 @@ const mediaLogoScale: Record<string, string> = {
 };
 
 export const metadata = buildPageMetadata({
-  title: "Awards & Testimonials · Luke Mori",
+  title: "Luke Mori Reviews, Awards & Nelson BC Real Estate Proof",
   description:
     "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards (2021 & 2024). Verbatim client testimonials from buyers and sellers across Nelson and the Kootenay region.",
   path: "/testimonials",

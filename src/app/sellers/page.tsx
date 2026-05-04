@@ -3,6 +3,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ProcessSteps } from "@/components/layout/ProcessSteps";
+import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { SellerSection } from "@/components/sections/SellerSection";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -11,9 +12,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { sellerSteps, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Selling with Luke · Seller Representation",
+  title: "Sell a Home in Nelson BC · Luxury Seller Representation",
   description:
-    "Seller representation for Nelson and Kootenay Lake real estate with clear pricing, strong marketing, qualified showings, and careful negotiation.",
+    "Sell a Nelson BC luxury home, waterfront property, acreage, or Kootenay Lake residence with pricing strategy, private marketing, qualified showings, and negotiation support.",
   path: "/sellers",
   image: "/og/sellers.png",
 });
@@ -34,6 +35,14 @@ export default function SellersPage() {
           { value: "2-4 wks", label: "Launch Window" },
           { value: "Private", label: "By Default" },
         ]}
+      />
+
+      <SeoAnswerBlock
+        eyebrow="Seller Strategy"
+        question="How should a high-value Nelson BC home be sold?"
+        answer="A serious Nelson or Kootenay Lake property should not be treated like a quick MLS upload. Before launch, sellers need pricing discipline, visual presentation, privacy planning, qualified buyer exposure, showing control, and negotiation strategy that protects leverage from the first conversation."
+        terms={["selling house nelson bc", "sell luxury home nelson bc", "kootenay lake waterfront seller"]}
+        tone="office"
       />
 
       <ProcessSteps

@@ -12,7 +12,7 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { buyerSteps, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Buying with Luke · Nelson Buyer Representation",
+  title: "Nelson BC Buyer Representation · Homes, Lakefront & Relocation",
   description:
     "Buyer representation in Nelson and Kootenay Lake real estate for relocating buyers, second-home owners, and regional buyers who want fewer wrong turns.",
   path: "/buyers",

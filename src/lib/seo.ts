@@ -90,10 +90,14 @@ export function buildAgentJsonLd() {
     "@type": "RealEstateAgent",
     "@id": absoluteUrl("/#agent"),
     name: "Luke Mori",
+    alternateName: ["Luke Mori Real Estate", "Luke Mori Luxury"],
+    description:
+      "Nelson BC and Kootenay Lake real estate representation for luxury homes, waterfront property, acreage, relocation buyers, second-home buyers, and sellers.",
     url: "https://www.lukemori.com/",
     telephone: contact.phone,
     email: contact.email,
     image: absoluteUrl(brandImages.lukePortrait),
+    priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: "191 Baker Street",
@@ -112,11 +116,22 @@ export function buildAgentJsonLd() {
       "Kootenay Lake",
       "North Shore",
       "Balfour",
+      "Blewett",
       "Slocan Valley",
+      "West Kootenay",
     ],
     knowsAbout: [
+      "Nelson BC real estate",
+      "Nelson BC homes for sale",
       "Nelson luxury real estate",
+      "Nelson BC luxury homes",
+      "Nelson BC waterfront real estate",
       "Kootenay Lake waterfront property",
+      "Kootenay Lake real estate",
+      "Balfour BC real estate",
+      "North Shore Nelson BC real estate",
+      "Blewett BC acreage",
+      "Slocan Valley real estate",
       "Relocation buyers",
       "Second-home ownership",
       "Private seller representation",
@@ -125,6 +140,45 @@ export function buildAgentJsonLd() {
       "Best Luxury Real Estate Broker in British Columbia, Luxury Lifestyle Awards, 2021",
       "Best Luxury Real Estate Broker in British Columbia, Luxury Lifestyle Awards, 2024",
     ],
+  };
+}
+
+export function buildFaqJsonLd(items: { question: string; answer: string }[], path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${absoluteUrl(path)}#faq`,
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function buildItemListJsonLd({
+  path,
+  name,
+  items,
+}: {
+  path: string;
+  name: string;
+  items: { name: string; url: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${absoluteUrl(path)}#item-list`,
+    name,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: absoluteUrl(item.url),
+    })),
   };
 }
 

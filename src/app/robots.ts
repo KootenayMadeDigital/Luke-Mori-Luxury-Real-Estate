@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 
-/* This private preview stays noindex through metadata, but crawlers may read it and follow its internal route map. */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
+    sitemap: "https://luke-mori-luxury-real-estate.vercel.app/sitemap.xml",
   };
 }

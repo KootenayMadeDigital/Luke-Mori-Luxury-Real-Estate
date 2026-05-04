@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
+import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,9 +12,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { nelsonAreas, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "About Nelson · The Kootenay Region",
+  title: "Nelson BC Real Estate Areas & Kootenay Lake Guide",
   description:
-    "About Nelson, B.C. and the Kootenay Lake region: neighbourhoods, lifestyle, and the local details that shape value.",
+    "Explore Nelson BC real estate areas, North Shore, Balfour, Blewett, Slocan Valley, Kootenay Lake lifestyle, waterfront homes, acreage, and relocation fit.",
   path: "/nelson",
   image: "/og/nelson.png",
 });
@@ -36,6 +37,39 @@ export default function NelsonHubPage() {
           { value: "$1.15M", label: "Balfour Average" },
         ]}
       />
+
+      <SeoAnswerBlock
+        eyebrow="Area Guide"
+        question="What are the best areas for Nelson BC real estate buyers?"
+        answer="Most Nelson BC real estate searches begin with five lifestyle areas: walkable Nelson for culture and schools, North Shore for lakefront privacy, Balfour for main-lake second homes, Blewett for acreage near town, and Slocan Valley for retreat property. The right area usually matters before the right listing."
+        terms={["nelson bc real estate", "north shore nelson bc real estate", "balfour bc real estate", "slocan valley real estate"]}
+        tone="lake"
+      />
+
+      <section className="tone-ivory tonal-section py-16 md:py-20">
+        <Container>
+          <Reveal className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {[
+              {
+                title: "Kootenay Lake waterfront real estate",
+                body: "A focused guide for buyers comparing shoreline, docks, sun, access, privacy, and current waterfront listings around Nelson and Kootenay Lake.",
+                href: "/kootenay-lake-waterfront-real-estate",
+              },
+              {
+                title: "Nelson BC realtor guide",
+                body: "How to choose local representation for luxury homes, waterfront property, acreage, relocation, second homes, and seller strategy.",
+                href: "/nelson-bc-realtor",
+              },
+            ].map((card) => (
+              <Link key={card.href} href={card.href} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] p-8 transition-[transform,border-color] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)]">
+                <h2 className="m-0 font-serif text-[28px] font-light leading-[1.15] text-[var(--color-text)]">{card.title}</h2>
+                <p className="m-0 mt-4 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">{card.body}</p>
+                <span className="mt-7 inline-flex text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Read the guide</span>
+              </Link>
+            ))}
+          </Reveal>
+        </Container>
+      </section>
 
       <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>

@@ -4,6 +4,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
+import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,9 +12,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Relocation · Moving to Nelson & the Kootenays",
+  title: "Moving to Nelson BC · Relocation Real Estate Guide",
   description:
-    "A relocation guide for moving to Nelson, B.C. and the Kootenay Lake region: schools, neighbourhoods, climate, healthcare, and day-to-day fit.",
+    "Moving to Nelson BC? Compare neighbourhoods, schools, healthcare, winter roads, Kootenay Lake lifestyle, relocation real estate, and first scouting routes.",
   path: "/buyers/relocation",
   image: "/og/relocation.png",
 });
@@ -100,6 +101,14 @@ export default function RelocationPage() {
           { value: "Both Seasons", label: "Recommended Visits" },
           { value: "Personal", label: "Introductions" },
         ]}
+      />
+
+      <SeoAnswerBlock
+        eyebrow="Relocation Answer"
+        question="Is Nelson BC a good place to live and buy real estate?"
+        answer="Nelson works best for buyers who want a real mountain town with restaurants, schools, lake access, arts, trails, and Whitewater skiing. The practical decision is whether the neighbourhood, winter routine, healthcare access, commute, and first ninety days match the life you are planning."
+        terms={["moving to nelson bc", "is nelson bc a good place to live", "nelson bc relocation"]}
+        tone="lake"
       />
 
       <section className="tone-lake tonal-section py-24 md:py-28">

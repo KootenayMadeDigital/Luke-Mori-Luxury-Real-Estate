@@ -1,16 +1,18 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildItemListJsonLd, buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { Container } from "@/components/ui/Container";
 import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { allListings, lukesOwnListings, luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Active Listings · Nelson & Kootenay Real Estate",
+  title: "Nelson BC Real Estate Listings & Homes for Sale",
   description:
-    "Browse active real estate listings across Nelson, Kootenay Lake, and the broader Kootenay region, including Luke Mori listings and MLS listings from his portal.",
+    "Browse Nelson BC real estate listings, homes for sale, waterfront property, luxury homes, acreage, and Kootenay Lake listings with Luke Mori.",
   path: "/listings",
   image: "/og/listings.png",
 });
@@ -22,6 +24,13 @@ export default function ListingsIndexPage() {
 
   return (
     <PageLayout>
+      <JsonLd
+        data={buildItemListJsonLd({
+          path: "/listings",
+          name: "Nelson BC real estate listings",
+          items: sortByPriceDesc(allListings).slice(0, 40).map((listing) => ({ name: listing.title, url: `/listings/${listing.slug}` })),
+        })}
+      />
       <SubpageHero
         eyebrow={`Active · ${total.toLocaleString()} Listings`}
         title="See the market,"
@@ -35,6 +44,14 @@ export default function ListingsIndexPage() {
           { value: luxe.toLocaleString(), label: "Luxury · $1M+" },
           { value: "Live", label: "MLS Catalog" },
         ]}
+      />
+
+      <SeoAnswerBlock
+        eyebrow="Nelson Listings"
+        question="How do you find the right Nelson BC home for sale?"
+        answer="Start with the full market, then narrow by lifestyle and ownership reality: waterfront, walkable Nelson, North Shore privacy, Balfour, acreage near Blewett, Slocan Valley retreats, or luxury homes over $1M. Luke helps buyers separate attractive listings from the addresses that actually fit."
+        terms={["nelson bc real estate", "nelson bc homes for sale", "nelson bc mls listings"]}
+        tone="ivory"
       />
 
       <section className="tone-ivory tonal-section pb-24 pt-10 md:pt-12">

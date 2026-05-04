@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -42,9 +44,11 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
 
   const others = nelsonAreas.filter((a) => a.slug !== slug);
   const intelligence = areaIntelligence[area.slug];
+  const primaryKeyword = `${area.name} BC real estate`;
 
   return (
     <PageLayout>
+      {intelligence && <JsonLd data={buildFaqJsonLd(intelligence.faqs, `/nelson/${area.slug}`)} />}
       <SubpageHero
         eyebrow={area.name}
         title={area.name}
@@ -64,6 +68,16 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
           { value: "Active", label: "Representation" },
         ]}
       />
+
+      {intelligence && (
+        <SeoAnswerBlock
+          eyebrow="Area Answer"
+          question={`Is ${area.name} a good fit for Nelson BC real estate buyers?`}
+          answer={intelligence.thesis}
+          terms={[primaryKeyword, area.focus, "Kootenay Lake real estate"]}
+          tone="ivory"
+        />
+      )}
 
       {/* Highlights */}
       <section className="tone-lake tonal-section py-24 md:py-28">
