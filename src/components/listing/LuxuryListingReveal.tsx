@@ -54,23 +54,23 @@ function WebGLCurtain({
       varying float v_side;
       varying float v_fold;
       void main() {
-        float width = mix(1.10, 0.18, u_open);
+        float width = mix(1.12, 0.16, u_open);
         float hinge = a_side < 0.0 ? -1.0 : 1.0;
         float inner = a_side < 0.0 ? -1.0 + width : 1.0 - width;
         float x = mix(hinge, inner, a_local.x);
         float y = a_local.y * 2.0 - 1.0;
         float hand = 1.0 - smoothstep(0.0, 0.78, abs((u_pointer.x * 2.0 - 1.0) - x));
-        float ridge = sin(a_local.x * 48.0 + a_local.y * 5.0 + u_time * 0.85);
-        float ridge2 = sin(a_local.x * 19.0 - a_local.y * 2.0 - u_time * 0.34);
-        float slow = sin(a_local.x * 12.0 - u_time * 0.42 + a_side * 0.7);
+        float ridge = sin(a_local.x * 52.0 + a_local.y * 5.0 + u_time * 0.68);
+        float ridge2 = sin(a_local.x * 23.0 - a_local.y * 2.0 - u_time * 0.28);
+        float slow = sin(a_local.x * 10.0 - u_time * 0.28 + a_side * 0.7);
         float edgeLift = pow(a_local.x, 2.1) * u_open;
         float weight = sin(a_local.y * 3.14159);
-        float billow = (ridge * 0.034 + ridge2 * 0.018 + slow * 0.018 + hand * 0.026) * (1.0 - u_open * 0.10) * weight;
+        float billow = (ridge * 0.040 + ridge2 * 0.020 + slow * 0.014 + hand * 0.024) * (1.0 - u_open * 0.10) * weight;
         x += billow * a_side;
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.018 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.35 + abs(ridge) * 0.07 + hand * 0.035;
+        float depth = edgeLift * 0.42 + abs(ridge) * 0.09 + hand * 0.035;
         float w = 1.0 + depth * 0.48;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
@@ -93,24 +93,28 @@ function WebGLCurtain({
       void main() {
         float pleat = 0.5 + 0.5 * v_fold;
         float micro = grain(v_local * vec2(180.0, 70.0) + u_time * 0.018);
-        float vertical = sin(v_local.x * 86.0) * 0.5 + 0.5;
-        float weave = sin(v_local.x * 260.0) * sin(v_local.y * 118.0) * 0.5 + 0.5;
-        float sideRim = smoothstep(0.70, 1.0, v_local.x) * (0.28 + u_open * 0.58);
+        float vertical = sin(v_local.x * 92.0) * 0.5 + 0.5;
+        float weave = sin(v_local.x * 320.0) * sin(v_local.y * 148.0) * 0.5 + 0.5;
+        float sideRim = smoothstep(0.68, 1.0, v_local.x) * (0.32 + u_open * 0.68);
         float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
-        float outerDark = 1.0 - smoothstep(0.0, 0.18, v_local.x) * 0.26;
+        float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
         float hand = 1.0 - smoothstep(0.0, 0.68, abs(u_pointer.y - v_local.y));
-        vec3 base = vec3(0.075, 0.048, 0.035);
-        vec3 bronze = vec3(0.50, 0.34, 0.22);
-        vec3 warm = vec3(0.96, 0.78, 0.56);
-        float light = 0.20 + pleat * 0.44 + vertical * 0.13 + sideRim * 0.74 + hand * 0.05;
-        light -= creaseShadow * 0.18;
+        vec3 base = vec3(0.040, 0.027, 0.021);
+        vec3 merlot = vec3(0.18, 0.095, 0.060);
+        vec3 bronze = vec3(0.46, 0.30, 0.18);
+        vec3 warm = vec3(0.95, 0.75, 0.50);
+        float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
+        float light = 0.13 + pleat * 0.34 + vertical * 0.10 + sideRim * 0.84 + hand * 0.045;
+        light -= creaseShadow * 0.24;
         light *= outerDark;
-        vec3 color = mix(base, bronze, light);
-        color += warm * sideRim * 0.22;
+        vec3 color = mix(base, merlot, 0.44 + velvetNap * 0.18);
+        color = mix(color, bronze, light * 0.70);
+        color += warm * sideRim * 0.28;
         color += vec3(micro) * 0.030;
-        color += vec3(weave) * 0.018;
-        float vignette = smoothstep(0.0, 0.14, v_local.y) * smoothstep(1.0, 0.86, v_local.y);
-        float alpha = (0.975 - sideRim * 0.08) * vignette;
+        color += vec3(weave) * 0.012;
+        float topBottomShade = smoothstep(0.0, 0.04, v_local.y) * smoothstep(1.0, 0.96, v_local.y);
+        color *= 0.72 + topBottomShade * 0.28;
+        float alpha = 0.995 - sideRim * 0.035;
         gl_FragColor = vec4(color, alpha);
       }
     `;
@@ -322,6 +326,14 @@ A quieter way to study a significant property: press the pull, move left or righ
 
             <WebGLCurtain open={openPercent} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
 
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(26,17,11,0.88)_48%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)]" aria-hidden>
+              <div className="absolute inset-x-5 top-4 h-px bg-[linear-gradient(90deg,transparent,rgba(224,192,154,0.58),transparent)]" />
+              <div className="absolute inset-x-8 top-7 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(70,44,25,0.35),rgba(224,192,154,0.64),rgba(70,44,25,0.35))] shadow-[0_0_18px_rgba(224,192,154,0.16)]" />
+            </div>
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-[39] w-8 bg-[linear-gradient(90deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)]" aria-hidden />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-[39] w-8 bg-[linear-gradient(270deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)]" aria-hidden />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[38] h-12 bg-[linear-gradient(0deg,rgba(7,6,5,0.95),rgba(7,6,5,0.18)_78%,transparent)]" aria-hidden />
+
             {!webglReady && (
               <>
                 <div
@@ -360,19 +372,19 @@ A quieter way to study a significant property: press the pull, move left or righ
                 event.stopPropagation();
                 toggleReveal();
               }}
-              className="absolute left-1/2 top-1/2 z-40 flex w-[220px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(224,192,154,0.52)] bg-[rgba(10,11,13,0.76)] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98)] backdrop-blur-md transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] hover:bg-[rgba(10,11,13,0.9)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
+              className="absolute left-1/2 top-1/2 z-40 flex w-[202px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(224,192,154,0.62)] bg-[linear-gradient(180deg,rgba(11,10,9,0.92),rgba(5,5,5,0.84))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
               style={{ opacity: openPercent > 0.76 ? 0.28 : 1 }}
               aria-label={`${revealLabel} the listing reveal`}
             >
               <span className="mb-3 h-px w-16 bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)]" />
               <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze-light)]">
-                {revealLabel}
+                Hold and slide
               </span>
               <span className="mt-2 block font-serif text-[27px] font-light italic leading-none text-[var(--color-text)]">
                 {listing.price || "Private preview"}
               </span>
               <span className="mt-3 block text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
-                Hold and slide
+                {revealLabel}
               </span>
             </button>
 
