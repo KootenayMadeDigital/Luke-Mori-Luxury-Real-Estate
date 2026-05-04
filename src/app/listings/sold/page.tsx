@@ -33,6 +33,8 @@ export default function SoldPage() {
   const totalFmt = `$${(total / 1_000_000).toFixed(1)}M+`;
   const lead = recentlyConcluded[0];
   const support = recentlyConcluded.slice(1);
+  const rightSupport = support.slice(0, 3);
+  const leftSupport = support[3];
 
   return (
     <PageLayout>
@@ -74,46 +76,87 @@ export default function SoldPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.08fr_0.92fr]">
-            <Reveal>
-              <article className="luxury-card group relative min-h-[540px] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-[0_34px_100px_-64px_rgba(0,0,0,0.82)]">
-                <Image
-                  src={lead.image}
-                  alt={lead.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 54vw, 100vw"
-                  className="luxury-media object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.16),rgba(10,11,13,0.1)_28%,rgba(10,11,13,0.72)_62%,rgba(10,11,13,0.96))]" />
-                <div className="absolute left-6 top-6 rounded-[1px] border border-[rgba(255,255,255,0.34)] bg-[rgba(10,11,13,0.9)] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-[0_12px_34px_-18px_rgba(0,0,0,0.95)] backdrop-blur-sm">
-                  {lead.status}
-                </div>
-                <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
-                  <div className="mb-6 font-serif text-[62px] font-light uppercase leading-none tracking-[0.08em] text-[rgba(245,239,229,0.96)] drop-shadow-[0_4px_28px_rgba(0,0,0,0.92)] sm:text-[88px]">
-                    Sold
+            <div className="grid grid-cols-1 gap-6">
+              <Reveal>
+                <article className="luxury-card group relative min-h-[540px] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-[0_34px_100px_-64px_rgba(0,0,0,0.82)]">
+                  <Image
+                    src={lead.image}
+                    alt={lead.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 54vw, 100vw"
+                    className="luxury-media object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.16),rgba(10,11,13,0.1)_28%,rgba(10,11,13,0.72)_62%,rgba(10,11,13,0.96))]" />
+                  <div className="absolute left-6 top-6 rounded-[1px] border border-[rgba(255,255,255,0.34)] bg-[rgba(10,11,13,0.9)] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-[0_12px_34px_-18px_rgba(0,0,0,0.95)] backdrop-blur-sm">
+                    {lead.status}
                   </div>
-                  <div className="grid grid-cols-1 gap-5 border-t border-[rgba(245,239,229,0.22)] pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
-                    <div>
-                      <h2 className="m-0 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 font-serif text-[32px] font-light leading-[1.04] tracking-[-0.01em] text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:text-[44px]">
-                        {lead.address}
-                      </h2>
-                      <p className="m-0 mt-3 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] backdrop-blur-sm">
-                        {lead.area} · {lead.type}
-                      </p>
-                      <p className="m-0 mt-3 max-w-[620px] bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[14px] leading-[1.65] text-white/90 backdrop-blur-sm">
-                        {soldProofNotes[0]}
-                      </p>
+                  <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
+                    <div className="mb-6 font-serif text-[62px] font-light uppercase leading-none tracking-[0.08em] text-[rgba(245,239,229,0.96)] drop-shadow-[0_4px_28px_rgba(0,0,0,0.92)] sm:text-[88px]">
+                      Sold
                     </div>
-                    <div className="justify-self-start bg-[rgba(10,11,13,0.64)] px-4 py-2 font-serif text-[30px] italic text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:justify-self-end">
-                      {lead.offered}
+                    <div className="grid grid-cols-1 gap-5 border-t border-[rgba(245,239,229,0.22)] pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
+                      <div>
+                        <h2 className="m-0 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 font-serif text-[32px] font-light leading-[1.04] tracking-[-0.01em] text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:text-[44px]">
+                          {lead.address}
+                        </h2>
+                        <p className="m-0 mt-3 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] backdrop-blur-sm">
+                          {lead.area} · {lead.type}
+                        </p>
+                        <p className="m-0 mt-3 max-w-[620px] bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[14px] leading-[1.65] text-white/90 backdrop-blur-sm">
+                          {soldProofNotes[0]}
+                        </p>
+                      </div>
+                      <div className="justify-self-start bg-[rgba(10,11,13,0.64)] px-4 py-2 font-serif text-[30px] italic text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:justify-self-end">
+                        {lead.offered}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            </Reveal>
+                </article>
+              </Reveal>
+
+              {leftSupport && (
+                <Reveal delay={280}>
+                  <article className="luxury-card group grid overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] sm:grid-cols-[0.92fr_1.08fr]">
+                    <div className="relative min-h-[230px] overflow-hidden bg-[var(--color-bg)]">
+                      <Image
+                        src={leftSupport.image}
+                        alt={leftSupport.imageAlt}
+                        fill
+                        sizes="(min-width: 1024px) 24vw, (min-width: 640px) 50vw, 100vw"
+                        className="luxury-media object-cover"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.14),rgba(10,11,13,0.08)_38%,rgba(10,11,13,0.7))]" />
+                      <span className="absolute left-4 top-4 rounded-[1px] border border-[rgba(255,255,255,0.3)] bg-[rgba(10,11,13,0.9)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-white shadow-[0_10px_28px_-16px_rgba(0,0,0,0.95)] backdrop-blur-sm">
+                        05
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-between p-6 sm:p-7">
+                      <div>
+                        <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                          {leftSupport.status}
+                        </div>
+                        <h3 className="m-0 font-serif text-[26px] font-light leading-[1.1] tracking-[-0.01em] text-[var(--color-text)]">
+                          {leftSupport.address}
+                        </h3>
+                        <p className="m-0 mt-3 text-[12px] leading-[1.65] text-[var(--color-text-muted)]">
+                          {leftSupport.area} · {leftSupport.type}
+                        </p>
+                        <p className="m-0 mt-4 border-l border-[var(--color-bronze)] pl-4 text-[13px] leading-[1.65] text-[var(--color-text-dim)]">
+                          {soldProofNotes[4]}
+                        </p>
+                      </div>
+                      <div className="mt-6 border-t border-[var(--color-line)] pt-5 font-serif text-[22px] italic text-[var(--color-bronze-light)]">
+                        {leftSupport.offered}
+                      </div>
+                    </div>
+                  </article>
+                </Reveal>
+              )}
+            </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
-              {support.map((c, i) => (
+              {rightSupport.map((c, i) => (
                 <Reveal key={c.address} delay={i * 70}>
                   <article className="luxury-card group grid h-full grid-cols-[0.9fr_1.1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] sm:grid-cols-1 lg:grid-cols-[0.88fr_1.12fr]">
                     <div className="relative min-h-[210px] overflow-hidden bg-[var(--color-bg)]">
