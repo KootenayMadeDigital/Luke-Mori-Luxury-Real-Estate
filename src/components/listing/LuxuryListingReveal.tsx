@@ -421,8 +421,8 @@ Some properties deserve a little ceremony. Hold the pull, slide either way, and 
               <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze-light)]">
                 Private first look
               </span>
-              <span className="mt-2 block font-serif text-[27px] font-light italic leading-none text-[var(--color-text)]">
-                {listing.price || "Private preview"}
+              <span className="mt-3 block font-serif text-[24px] font-light italic leading-none text-[var(--color-text)]">
+                Unveil the view
               </span>
               <span className="mt-3 block text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
                 Hold and slide
