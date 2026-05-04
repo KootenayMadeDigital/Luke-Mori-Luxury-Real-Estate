@@ -25,7 +25,7 @@ const buyerResourceCards = [
     eyebrow: "International",
     title: "Non-Canadian Buyers",
     body: "U.S., U.K., Australian, and Hong Kong buyers: purchase rules, currency timing, advisor introductions, and ownership from afar.",
-    cta: "Read the playbook",
+    cta: "Read the guide",
   },
   {
     href: "/buyers/relocation",
@@ -46,7 +46,7 @@ const buyerResourceCards = [
 const advantageChecks = [
   {
     title: "Fit before feed",
-    body: "The search starts with lifestyle, ownership rhythm, and non-negotiables, then moves into listings. That keeps beautiful wrong homes from stealing the day.",
+    body: "The search starts with lifestyle, use, and non-negotiables, then moves into listings. That keeps beautiful wrong homes from stealing the day."
   },
   {
     title: "Local tradeoffs first",
@@ -182,8 +182,8 @@ export default function BuyersPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Different buyers need different answers. Each path below leads to a focused playbook
-              built around the realities of that particular journey.
+              Different buyers need different answers. Each path below gives practical guidance
+              for that situation.
             </SectionLede>
           </Reveal>
 

@@ -23,27 +23,27 @@ const considerations = [
   {
     k: "I.",
     title: "Foreign-Buyer Regulation",
-    body: "Canadian federal restrictions on residential property purchases by non-Canadians have evolved significantly since 2023. Nelson and the Kootenays sit largely outside the most restricted urban zones, but every transaction is reviewed against current rules before we proceed.",
+    body: "Rules for non-Canadian buyers can change. Before you fall for a home, confirm what applies to your situation with the right legal and tax advice."
   },
   {
     k: "II.",
     title: "Provincial & Local Tax",
-    body: "B.C. Property Transfer Tax, Speculation & Vacancy Tax, and Foreign-Buyer Tax thresholds. The Kootenay region falls outside the Foreign-Buyer Tax zone, a meaningful advantage relative to Vancouver, Victoria, and the Lower Mainland.",
+    body: "Taxes can vary by buyer, use, and location. Ask early about property transfer tax, vacancy rules, and any buyer-specific costs before you compare homes."
   },
   {
     k: "III.",
     title: "Local Advisor Network",
-    body: "Cross-border tax counsel, immigration lawyers (where relevant), banking, and the local notary or solicitor who handles your transaction. We make the introductions before you fly in.",
+    body: "Remote buyers often need legal, tax, banking, insurance, and notary help. Luke can help you line up the right local introductions before timing gets tight."
   },
   {
     k: "IV.",
     title: "Currency & Wire Strategy",
-    body: "USD/CAD movement of 3-5% can move the needle on a $2M property by $60-$100K. We coordinate with your treasury or FX advisor to time the conversion against your closing, not the listing date.",
+    body: "Currency moves can change the real cost of a purchase. It is worth planning conversion timing before you are under pressure to close."
   },
   {
     k: "V.",
     title: "Property Management",
-    body: "For second-home and lock-and-leave buyers, vetted local property managers, winterisation specialists, security, and the kind of caretaker relationships that make absentee ownership work.",
+    body: "Second homes need a care plan: winter checks, security, maintenance, and trusted local help when you are not in town."
   },
 ];
 
@@ -81,7 +81,7 @@ export default function InternationalBuyersPage() {
         eyebrow="International and Second-Home Buyers"
         title="Buying from"
         emphasis="anywhere."
-        lede="A focused guide for non-Canadian buyers, second-home buyers, and absentee owners purchasing in the Kootenays: rules, advisors, currency, remote ownership, and local care."
+        lede="A simple path for non-Canadian buyers, second-home buyers, and out-of-town owners purchasing in Nelson or around Kootenay Lake."
         image={brandImages.procterLakeHouse}
         crumbs={[
           { label: "Home", href: "/" },
@@ -116,8 +116,8 @@ export default function InternationalBuyersPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Most international buying questions come down to the same practical issues.
-              These are the ones that change the transaction.
+              Most out-of-town purchases become easier when the practical questions are handled early.
+              Start here before you plan flights or shortlist homes.
             </SectionLede>
           </Reveal>
 
@@ -148,15 +148,15 @@ export default function InternationalBuyersPage() {
             <div>
               <Eyebrow>Ownership From Afar</Eyebrow>
               <SectionHeading className="mt-7">
-                The house is only
+                Make ownership easier
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  half the work.
+                  before closing.
                 </em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Cross-border and second-home purchases feel easier when the advisor team, caretaker plan, financing, and local details are handled before closing.
+              A second home feels better when the legal, financial, caretaker, and maintenance details are planned before the keys change hands.
             </SectionLede>
           </Reveal>
 

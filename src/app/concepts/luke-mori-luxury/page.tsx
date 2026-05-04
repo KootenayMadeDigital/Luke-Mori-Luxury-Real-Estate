@@ -9,9 +9,7 @@ import { FeaturedEstates } from "@/components/sections/FeaturedEstates";
 import { HomeTourVideos } from "@/components/sections/HomeTourVideos";
 import { MoriStandard } from "@/components/sections/MoriStandard";
 import { SellerSection } from "@/components/sections/SellerSection";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { PrivateAccess } from "@/components/sections/PrivateAccess";
-import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
 import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
@@ -56,15 +54,7 @@ export default function LukeMoriLuxuryExperience() {
         <HomeTourVideos />
         <RecentlyConcluded />
         <SignatureAreas preview />
-        <Testimonials compact />
         <PrivateAccess />
-        <PrivateInquiryPaths
-          id="private-inquiry"
-          eyebrow="Private Inquiry"
-          title="The next step depends"
-          emphasis="on your goal."
-          body="Choose the path that fits: selling, buying, relocating, or planning a second home. The first reply is clear, private, and useful."
-        />
         <LeadMagnet />
       </main>
       <ConceptFooter />

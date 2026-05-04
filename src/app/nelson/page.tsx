@@ -116,8 +116,7 @@ export default function NelsonHubPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Pick a region, each page covers the local market dynamics, the lifestyle, and
-              the kind of property to look for there. Start with the area before the listing search.
+              Pick a region. Each page explains the lifestyle, the tradeoffs, and the kind of property to look for there. Start with the area before the listing search.
             </SectionLede>
           </Reveal>
 

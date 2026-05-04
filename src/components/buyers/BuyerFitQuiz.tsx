@@ -139,7 +139,7 @@ const recommendations: Record<PathKey, Recommendation> = {
     avoid: "Trying to solve tax, legal, financing, travel, and property diligence after the right home is already moving.",
     nextMove: "Send the buyer brief first so Luke can line up the right local steps before pressure starts.",
     href: "/buyers/international",
-    cta: "Read international playbook",
+    cta: "Read international guide",
     image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5047afaca9df841c013_procter-lake-house-living-room.webp",
     imageAlt: "Luxury lake house living room near Nelson",
   },

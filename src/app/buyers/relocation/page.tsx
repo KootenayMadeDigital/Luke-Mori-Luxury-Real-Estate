@@ -22,27 +22,27 @@ export const metadata = buildPageMetadata({
 const facets = [
   {
     title: "Schools",
-    body: "Public, independent, and Waldorf options across Nelson and the surrounding valley. Selkirk College for post-secondary. School District 8 covers most of the region, strong, community-rooted, with multiple French-immersion streams.",
+    body: "Nelson and the surrounding valley have public, independent, and Waldorf options, plus Selkirk College nearby. Luke can help you understand which areas fit your school routine before you focus on homes."
   },
   {
     title: "Healthcare",
-    body: "Kootenay Lake Hospital in Nelson is the regional referral centre. Cranbrook (1.5 hours) and Trail (1 hour) for tertiary care. Family physician access varies, we'll be honest about waitlists and walk you through the local clinics.",
+    body: "Kootenay Lake Hospital serves Nelson, with larger care options in Trail and Cranbrook. Family doctor access can vary, so it is worth asking practical questions early."
   },
   {
     title: "Climate",
-    body: "Continental mountain climate. Long, sunlit summers (40 °C extremes; lake-cooled). Cold, snowy winters with 12 m of powder at Whitewater. Spring and fall are short and beautiful. Dress for elevation, the lake is two hundred metres lower than Uphill.",
+    body: "Nelson has warm summers, snowy winters, and real seasonal contrast. Visit in more than one season if you can, especially if winter roads or ski life matter."
   },
   {
     title: "Commute & Connectivity",
-    body: "West Kootenay Regional Airport (Castlegar) for Vancouver and Calgary connections. Cranbrook Airport for further-afield travel. Cell coverage and fibre internet are strong in town and along the Highway 3A area; thinner in the deeper valleys.",
+    body: "Castlegar and Cranbrook handle regional travel. Internet and cell service are strong in town and along main corridors, but deeper valleys should be checked address by address."
   },
   {
     title: "Daily Life",
-    body: "Baker Street is the cultural and social spine, independent restaurants, the Capitol Theatre, the Civic, gallery openings, and farmers' markets. Most weekends the trail or the lake takes precedence.",
+    body: "Baker Street gives Nelson its social centre: restaurants, theatre, galleries, markets, and daily errands. Weekends usually pull people toward the lake, trails, or Whitewater."
   },
   {
     title: "What to Test First",
-    body: "Two trips, ideally, one in summer (lake, trail, garden energy), one in February (snow, ski, and the dark months). Nelson is loved best by people who've experienced both ends of the year.",
+    body: "If possible, visit once in summer and once in winter. Nelson is easier to choose confidently when you have felt both the lake season and the snow season."
   },
 ];
 

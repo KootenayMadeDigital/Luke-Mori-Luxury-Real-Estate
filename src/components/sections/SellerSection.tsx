@@ -51,7 +51,7 @@ export function SellerSection() {
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-10">
-                Before a high-value home goes public, price, buyer profile, visuals, privacy, and showing plan should already be settled.
+                Before a high-value home goes public, price, likely buyer, visuals, privacy, and showing plan should already be settled.
               </SectionLede>
             </Reveal>
 

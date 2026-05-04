@@ -5,10 +5,10 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ConsultForm } from "@/components/forms/ConsultForm";
 
 const guideContents = [
-  "Neighbourhood-by-neighbourhood market dossier",
-  "Architect & builder shortlist",
-  "Waterfront, ski, and acreage buyer playbooks",
-  "Off-market inventory introduction",
+  "Which Nelson and Kootenay Lake areas fit your plans",
+  "What to check before buying waterfront, acreage, or a view home",
+  "How to prepare a high-value home before listing",
+  "When a quiet introduction may be possible",
 ];
 
 export function LeadMagnet() {
@@ -21,22 +21,21 @@ export function LeadMagnet() {
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
             <Reveal>
-              <Eyebrow>The Private Guide</Eyebrow>
+              <Eyebrow>Start With Luke</Eyebrow>
             </Reveal>
             <Reveal delay={120}>
               <SectionHeading className="mt-7">
-                Nelson &amp; Kootenay Lake
+                Ask the right questions
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  Luxury Living.
+                  before you move.
                 </em>
               </SectionHeading>
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-9">
-                A practical field guide for buyers, sellers, relocators, and second-home owners:
-                areas, market rhythm, schools, ownership details, and the questions to ask before
-                you fly in to view.
+                Tell Luke what you are weighing: buying, selling, relocating, waterfront, acreage,
+                or a second home. He will help you find the clearest first step.
               </SectionLede>
             </Reveal>
             <Reveal delay={360} as="ul" className="flex flex-col gap-3.5">

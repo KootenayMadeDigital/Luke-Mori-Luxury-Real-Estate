@@ -989,7 +989,7 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "Should every listing be marketed the same way?",
-    a: "No. A lakefront home, acreage estate, city view home, and walkable Nelson property each need a different launch plan. The buyer profile should shape the marketing.",
+    a: "No. A lakefront home, acreage estate, city view home, and walkable Nelson property each need a different launch plan. The likely buyer should shape the marketing.",
   },
   {
     category: "Buying",

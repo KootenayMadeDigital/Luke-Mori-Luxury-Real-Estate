@@ -55,7 +55,7 @@ export default function SellersPage() {
       <SeoAnswerBlock
         eyebrow="Seller Strategy"
         question="How should a high-value Nelson BC home be sold?"
-        answer="A serious Nelson or Kootenay Lake property should not be treated like a quick MLS upload. Before launch, sellers need pricing discipline, visual presentation, privacy planning, qualified buyer exposure, showing control, and negotiation strategy that protects leverage from the first conversation."
+        answer="A serious Nelson or Kootenay Lake property should not be treated like a quick MLS upload. Before launch, sellers need clear pricing, strong visuals, privacy planning, buyer screening, showing control, and negotiation advice that protects the result from the first conversation."
         terms={["selling house nelson bc", "sell luxury home nelson bc", "kootenay lake waterfront seller"]}
         tone="office"
       />

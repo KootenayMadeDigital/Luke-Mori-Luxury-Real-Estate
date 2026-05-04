@@ -26,8 +26,8 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
             </em>
           </SectionHeading>
           <SectionLede>
-            The Kootenays don&apos;t have suburbs. They have areas with reputations,
-            microclimates, shorelines, builder histories, and buyer profiles. Start here before you tour.
+            The Kootenays don&apos;t have suburbs. They have areas with different roads,
+            sun, shorelines, homes, and daily rhythms. Start here before you tour.
           </SectionLede>
         </Reveal>
 
