@@ -8,8 +8,8 @@ import { PressStrip } from "@/components/sections/PressStrip";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { lukeBio, brandImages, contact, trustProofs } from "@/lib/data";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { lukeBio, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "About Luke Mori · Nelson Real Estate",
@@ -38,42 +38,6 @@ export default function AboutPage() {
       />
 
       <CredentialsStrip />
-
-      <section className="tone-ivory tonal-section border-b border-[var(--color-line)] py-24 md:py-28">
-        <Container>
-          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
-            <div>
-              <Eyebrow>Record Clients Can Use</Eyebrow>
-              <SectionHeading className="mt-7">
-                Experience without
-                <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  empty noise.
-                </em>
-              </SectionHeading>
-            </div>
-            <SectionLede align="right">
-              Pricing advice, local knowledge, privacy, marketing, and negotiation experience across real Nelson and Kootenay Lake transactions.
-            </SectionLede>
-          </Reveal>
-
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-4">
-            {trustProofs.map((item, i) => (
-              <Reveal key={item.eyebrow} delay={(i % 4) * 70} className="bg-[var(--color-bg)] p-8 sm:p-9">
-                <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-                  {item.eyebrow}
-                </span>
-                <h3 className="m-0 mb-4 font-serif text-[25px] font-light leading-[1.14] tracking-[-0.005em] text-[var(--color-text)]">
-                  {item.title}
-                </h3>
-                <p className="m-0 text-[13px] font-medium uppercase leading-[1.65] tracking-[0.16em] text-[var(--color-text-dim)]">
-                  {item.proof}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
 
       {/* Portrait + bio */}
       <section className="tone-lake tonal-section py-24 md:py-32">
@@ -177,57 +141,6 @@ export default function AboutPage() {
       </section>
 
       <PressStrip />
-
-      {/* Contact panel */}
-      <section className="tone-office tonal-section border-t border-[var(--color-line)] py-24 md:py-28">
-        <Container>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-            <div>
-              <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                Office
-              </span>
-              <p className="mt-3 font-serif text-[20px] font-light leading-[1.4] text-[var(--color-text)]">
-                {contact.office}
-              </p>
-              <p className="mt-1.5 text-[12px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
-                {contact.brokerage}
-              </p>
-            </div>
-            <div>
-              <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                Direct
-              </span>
-              <p className="mt-3 space-y-1.5 text-[15px]">
-                <a href={contact.phoneHref} className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  {contact.phone}
-                </a>
-                <a href={contact.emailHref} className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  {contact.email}
-                </a>
-              </p>
-            </div>
-            <div>
-              <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                Social
-              </span>
-              <p className="mt-3 space-y-1.5 text-[15px]">
-                <a href={contact.social.youtube} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  YouTube · 100+ property films
-                </a>
-                <a href={contact.social.instagram} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  Instagram · @lukemorirealestate
-                </a>
-                <a href={contact.social.facebook} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  Facebook
-                </a>
-                <a href={contact.social.twitter} target="_blank" rel="noreferrer" className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  X · @LukeMoriRealty
-                </a>
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
 
       <InquiryCTA />
     </PageLayout>

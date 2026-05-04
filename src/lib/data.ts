@@ -230,26 +230,6 @@ export const inquiryPaths: InquiryPath[] = [
   },
 ];
 
-export type PrivateOfficeStep = { num: string; title: string; body: string };
-
-export const privateOfficeSteps: PrivateOfficeStep[] = [
-  {
-    num: "01",
-    title: "Choose the decision",
-    body: "Selling, buying, relocating, planning a second home, or making a referral.",
-  },
-  {
-    num: "02",
-    title: "Share what matters",
-    body: "Address, timeline, budget range, privacy needs, desired lifestyle, and anything that would make the decision easier.",
-  },
-  {
-    num: "03",
-    title: "Get the right next step",
-    body: "Luke can respond with a clear recommendation and no generic sales sequence.",
-  },
-];
-
 /* ---------- Press logos (his real coverage, with image URLs) ---------- */
 
 export type PressLogo = { name: string; src: string; alt: string };
@@ -637,84 +617,6 @@ export const sellerPromises: Promise[] = [
   { num: "06", title: "Showing plan", body: "Showings are scheduled around privacy, readiness, and buyer fit, with casual traffic filtered before it reaches the door." },
   { num: "07", title: "Negotiation", body: "Price, timing, terms, conditions, and leverage are handled together, not as a reaction to the loudest bidder." },
   { num: "08", title: "Closing care", body: "From accepted offer to possession, the process stays calm, documented, and organized." },
-];
-
-/* ---------- Lifestyle tiles ---------- */
-
-export type LifestyleTile = {
-  num: string;
-  title: string;
-  kicker: string;
-  body: string;
-  href: string;
-  cta: string;
-};
-
-export const lifestyleTiles: LifestyleTile[] = [
-  {
-    num: "01",
-    title: "Lakefront",
-    kicker: "Dock, beach, morning water",
-    body: "Direct lake access, protected shoreline, and the ownership questions that need answering before a waterfront tour matters.",
-    href: "/listings/waterfront",
-    cta: "View waterfront",
-  },
-  {
-    num: "02",
-    title: "Walkable Nelson",
-    kicker: "Baker Street, galleries, lake",
-    body: "Heritage streets, coffee, culture, Lakeside Park, and homes that make daily Nelson life feel easy.",
-    href: "/nelson/nelson",
-    cta: "Explore Nelson",
-  },
-  {
-    num: "03",
-    title: "North Shore",
-    kicker: "Highway 3A, water, space",
-    body: "A quieter lakefront corridor where the driveway, exposure, beach, and neighbour distance matter as much as the house.",
-    href: "/nelson/north-shore",
-    cta: "Study North Shore",
-  },
-  {
-    num: "04",
-    title: "Acreage",
-    kicker: "Space, timber, outbuildings",
-    body: "Forested privacy, workshop potential, family compounds, and enough land to spread out.",
-    href: "/nelson/blewett",
-    cta: "Find acreage fit",
-  },
-  {
-    num: "05",
-    title: "Ski Access",
-    kicker: "Whitewater mornings, town evenings",
-    body: "A search built around winter rhythm, road comfort, gear storage, and the distance between first chair and dinner.",
-    href: "/buyers/relocation",
-    cta: "Plan ski lifestyle",
-  },
-  {
-    num: "06",
-    title: "Second Home",
-    kicker: "Lock-and-leave, managed, ready",
-    body: "Weekend arrival, caretaker coverage, winterization, security, and the systems that make absentee ownership feel easier.",
-    href: "/buyers/international",
-    cta: "Ask ownership questions",
-  },
-  {
-    num: "07",
-    title: "Relocation",
-    kicker: "Schools, seasons, soft landing",
-    body: "A search that starts with daily life: school runs, healthcare, winter reality, commute patterns, and first-year fit.",
-    href: "/buyers/relocation",
-    cta: "Plan relocation call",
-  },
-  {
-    num: "08",
-    title: "International / Absentee",
-    kicker: "Advisors, financing, local care",
-    body: "Foreign-buyer review, tax advice, financing, property management, and the local team needed before closing.",
-    href: "/buyers/international",
-    cta: "Buy from afar",
-  },
 ];
 
 /* ---------- Real testimonials (verbatim with names) ---------- */

@@ -45,13 +45,6 @@ const considerations = [
   },
 ];
 
-const origins = [
-  { region: "United States", note: "Pacific Northwest in particular, Seattle, Portland, the Bay Area." },
-  { region: "United Kingdom", note: "London-based buyers seeking a North American second home." },
-  { region: "Australia & Hong Kong", note: "Long-haul second-home and family relocation." },
-  { region: "Eastern Europe", note: "Investment-grade waterfront and acreage." },
-];
-
 const absenteeDesk = [
   {
     title: "Regulatory Pre-Flight",
@@ -105,8 +98,8 @@ export default function InternationalBuyersPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Most international buying questions come down to four practical issues.
-              These are the issues that change the transaction.
+              Most international buying questions come down to the same practical issues.
+              These are the ones that change the transaction.
             </SectionLede>
           </Reveal>
 
@@ -177,32 +170,6 @@ export default function InternationalBuyersPage() {
               </Link>
             ))}
           </Reveal>
-        </Container>
-      </section>
-
-      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
-        <Container>
-          <Reveal className="mx-auto max-w-[760px] text-center">
-            <Eyebrow centered>Where Buyers Come From</Eyebrow>
-            <SectionHeading centered className="mt-7">
-              A growing roster
-              <br />
-              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                of international buyers.
-              </em>
-            </SectionHeading>
-          </Reveal>
-          <div className="mx-auto mt-14 grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2">
-            {origins.map((o) => (
-              <Reveal key={o.region} className="border border-[var(--color-line)] bg-[var(--color-bg)] p-7">
-                <h4 className="m-0 mb-2 font-serif text-[22px] font-normal text-[var(--color-text)]">{o.region}</h4>
-                <p className="m-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">{o.note}</p>
-              </Reveal>
-            ))}
-          </div>
-          <p className="mx-auto mt-12 max-w-[640px] text-center text-[12px] italic text-[var(--color-text-dim)]">
-            Buyer geography varies year to year.
-          </p>
         </Container>
       </section>
 

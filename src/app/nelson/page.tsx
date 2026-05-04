@@ -18,44 +18,6 @@ export const metadata = buildPageMetadata({
   image: brandImages.nelsonLandscape,
 });
 
-const areaFitIndex = [
-  {
-    desire: "Walkable culture",
-    area: "Nelson",
-    href: "/nelson/nelson",
-    route: "Baker Street, Uphill, Fairview, Rosemont, Mountain Station.",
-    next: "Explore Nelson",
-  },
-  {
-    desire: "Lakefront privacy",
-    area: "North Shore",
-    href: "/nelson/north-shore",
-    route: "Highway 3A, waterfront, beach access, and quieter approaches.",
-    next: "Study North Shore",
-  },
-  {
-    desire: "Deep-water second home",
-    area: "Balfour",
-    href: "/nelson/balfour",
-    route: "Main-lake exposure, ferry rhythm, marina thinking, and generational waterfront.",
-    next: "Study Balfour",
-  },
-  {
-    desire: "Acreage near town",
-    area: "Blewett",
-    href: "/nelson/blewett",
-    route: "Pastoral privacy, wooded lots, water systems, outbuildings, and a short Nelson drive.",
-    next: "Compare acreage",
-  },
-  {
-    desire: "Retreat property",
-    area: "Slocan Valley",
-    href: "/nelson/slocan-valley",
-    route: "River frontage, timber homes, smaller communities, and a quieter pace north of Nelson.",
-    next: "Study retreats",
-  },
-];
-
 export default function NelsonHubPage() {
   return (
     <PageLayout>
@@ -140,64 +102,6 @@ export default function NelsonHubPage() {
               </Reveal>
             ))}
           </div>
-        </Container>
-      </section>
-
-      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
-        <Container>
-          <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[1fr_0.85fr] md:items-end">
-            <div>
-              <Eyebrow>Area Fit Index</Eyebrow>
-              <SectionHeading className="mt-7">
-                Start with the reason,
-                <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  then choose the area.
-                </em>
-              </SectionHeading>
-            </div>
-            <SectionLede align="right">
-              Luke helps you understand which parts of the lake and valley fit your life before you book a showing.
-            </SectionLede>
-          </Reveal>
-
-          <div className="overflow-hidden border border-[var(--color-line)]">
-            {areaFitIndex.map((item, i) => (
-              <Reveal
-                key={item.desire}
-                className="luxury-card grid grid-cols-1 gap-5 border-b border-[var(--color-line)] bg-[var(--color-bg)] p-7 last:border-b-0 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] md:grid-cols-[0.6fr_0.7fr_1.2fr_auto] md:items-center md:p-8"
-                delay={i * 55}
-              >
-                <div className="text-[10px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
-                  {item.desire}
-                </div>
-                <h3 className="m-0 font-serif text-[26px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
-                  {item.area}
-                </h3>
-                <p className="m-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  {item.route}
-                </p>
-                <Link href={item.href} className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]">
-                  {item.next}
-                  <svg viewBox="0 0 16 16" aria-hidden className="size-[14px]">
-                    <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={220} className="mt-10 flex flex-wrap justify-center gap-3">
-            {[
-              { href: "/listings/waterfront", label: "View waterfront" },
-              { href: "/buyers", label: "Buyer lifestyle selector" },
-              { href: "/contact", label: "Ask about private homes" },
-            ].map((item) => (
-              <Link key={item.href} href={item.href} className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
-                {item.label}
-              </Link>
-            ))}
-          </Reveal>
         </Container>
       </section>
 

@@ -4,31 +4,11 @@ import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ProcessSteps } from "@/components/layout/ProcessSteps";
 import { SellerSection } from "@/components/sections/SellerSection";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { sellerSteps, brandImages } from "@/lib/data";
-
-const sellerProofStack = [
-  {
-    title: "Record before promises",
-    body: "$169M+ in career sales volume and Best Luxury Broker BC recognition in 2021 and 2024.",
-  },
-  {
-    title: "Exposure with control",
-    body: "Set value, likely buyers, privacy needs, and the price line you do not want to cross before the launch.",
-  },
-  {
-    title: "Marketing that earns the right attention",
-    body: "Film, photography, clear copy, room measurements, and a dedicated property page help qualified buyers understand the home before they visit.",
-  },
-  {
-    title: "Negotiation",
-    body: "Offers are reviewed for price, terms, timing, conditions, and leverage. The loudest number is not always the cleanest result.",
-  },
-];
 
 export const metadata = buildPageMetadata({
   title: "Selling with Luke · Seller Representation",
@@ -67,42 +47,6 @@ export default function SellersPage() {
       {/* Promises section reused from the home page */}
       <SellerSection />
 
-      <section className="tone-office tonal-section border-b border-[var(--color-line)] py-24 md:py-28">
-        <Container>
-          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
-            <div>
-              <Eyebrow>Seller Record</Eyebrow>
-              <SectionHeading className="mt-7">
-                Trust is built
-                <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  before the sign goes up.
-                </em>
-              </SectionHeading>
-            </div>
-            <SectionLede align="right">
-              The question is not whether the home can be listed. It is whether the launch protects price, privacy, timing, and leverage from the first conversation to closing.
-            </SectionLede>
-          </Reveal>
-
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-4">
-            {sellerProofStack.map((item, i) => (
-              <Reveal key={item.title} delay={(i % 4) * 70} className="bg-[var(--color-bg-2)] p-8 sm:p-9">
-                <span className="mb-5 block font-serif text-[20px] italic text-[var(--color-bronze)]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
-                  {item.title}
-                </h3>
-                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                  {item.body}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mx-auto max-w-[760px] text-center">
@@ -140,8 +84,6 @@ export default function SellersPage() {
           </div>
         </Container>
       </section>
-
-      <Testimonials />
 
       <InquiryCTA
         eyebrow="Seller Strategy Call"

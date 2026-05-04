@@ -604,44 +604,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </Container>
       </section>
 
-      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
-        <Container>
-          <Reveal className="mb-10 max-w-[780px]">
-            <Eyebrow>Buyer Intelligence</Eyebrow>
-            <SectionHeading className="mt-7">
-              Turn interest
-              <br />
-              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                into a private brief.
-              </em>
-            </SectionHeading>
-            <SectionLede>
-              Share it with the people who help you decide. Save it if it fits. Ask Luke what the listing cannot answer before it becomes a full-day tour.
-            </SectionLede>
-          </Reveal>
-
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
-            {[
-              { title: "Share with the circle", body: "Send the listing to a spouse, advisor, lender, inspector, or family member before booking a day on the road." },
-              { title: "Save the shortlist", body: "Keep the properties that survive first review close, then compare lifestyle, privacy, access, winter, and timing." },
-              { title: "Ask better questions", body: "Ask Luke what the listing cannot answer: roads, light, neighbours, value, terms, and seller motivation." },
-            ].map((item, i) => (
-              <Reveal key={item.title} delay={i * 80} className="bg-[var(--color-bg)] p-8 sm:p-9">
-                <span className="mb-5 block font-serif text-[20px] italic text-[var(--color-bronze)]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
-                  {item.title}
-                </h3>
-                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                  {item.body}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <div className="fixed inset-x-3 bottom-3 z-[120] md:hidden">
         <div className="grid grid-cols-2 gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.88)] p-1.5 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.95)] backdrop-blur-xl">
           <a href={inquiryHref} className="rounded-full bg-[var(--color-bronze)] px-4 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-button-text)]">

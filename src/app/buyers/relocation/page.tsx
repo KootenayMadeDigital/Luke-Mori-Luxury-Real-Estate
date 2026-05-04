@@ -173,17 +173,6 @@ export default function RelocationPage() {
             ))}
           </div>
 
-          <Reveal delay={180} className="mt-10 grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
-            {[
-              { href: "/buyers", label: "Buyer lifestyle selector" },
-              { href: "/listings/waterfront", label: "View waterfront" },
-              { href: "/contact", label: "Plan relocation call" },
-            ].map((item) => (
-              <Link key={item.href + item.label} href={item.href} className="luxury-card bg-[var(--color-bg)] p-6 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-[background,color,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] hover:text-[var(--color-bronze-light)]">
-                {item.label}
-              </Link>
-            ))}
-          </Reveal>
         </Container>
       </section>
 

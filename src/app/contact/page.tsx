@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ConsultForm } from "@/components/forms/ConsultForm";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
-import { contact, brandImages, privateOfficeSteps } from "@/lib/data";
+import { contact, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Contact Luke Mori",
@@ -128,36 +128,6 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="tone-lake tonal-section border-t border-[var(--color-line)] py-24 md:py-28">
-        <Container>
-          <Reveal className="mb-14 max-w-[760px]">
-            <Eyebrow>What Happens Next</Eyebrow>
-            <SectionHeading className="mt-7">
-              A private reply,
-              <br />
-              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                then a clear step.
-              </em>
-            </SectionHeading>
-          </Reveal>
-
-          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
-            {privateOfficeSteps.map((step, i) => (
-              <Reveal key={step.num} delay={i * 80} className="bg-[var(--color-bg)] p-8 sm:p-9">
-                <span className="mb-6 block font-serif text-[22px] italic tracking-[0.08em] text-[var(--color-bronze)]">
-                  {step.num}
-                </span>
-                <h3 className="m-0 mb-4 font-serif text-[26px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
-                  {step.title}
-                </h3>
-                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                  {step.body}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
     </PageLayout>
   );
 }
