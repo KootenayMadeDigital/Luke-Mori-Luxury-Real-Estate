@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type PathKey = "lakefront" | "walkable" | "privacy" | "acreage" | "ski" | "relocation" | "second" | "international";
 
@@ -22,6 +23,8 @@ type Recommendation = {
   nextMove: string;
   href: string;
   cta: string;
+  image: string;
+  imageAlt: string;
 };
 
 const options: Option[] = [
@@ -46,6 +49,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Start with a waterfront brief, then shortlist only the homes where the land and shoreline match the lifestyle.",
     href: "/listings/waterfront",
     cta: "View waterfront homes",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc3e63cf060ba15246859_procter-lake-house-nelson-bc.webp",
+    imageAlt: "Kootenay Lake waterfront home near Nelson",
   },
   walkable: {
     eyebrow: "Nelson Buyer Path",
@@ -57,6 +62,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Compare Nelson pockets first, then tour homes that match the daily rhythm you actually want.",
     href: "/nelson/nelson",
     cta: "Explore Nelson pockets",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbe517afaca9df83bb128_baker-street-nelson-bc.jpg",
+    imageAlt: "Baker Street in Nelson BC",
   },
   privacy: {
     eyebrow: "North Shore Buyer Path",
@@ -68,6 +75,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Map the drive and privacy conditions before spending tour time on homes that only look secluded in photos.",
     href: "/nelson/north-shore",
     cta: "Explore North Shore",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbd01452436a306385f19_west-arm-kootenay-lake.webp",
+    imageAlt: "West Arm of Kootenay Lake on the North Shore",
   },
   acreage: {
     eyebrow: "Acreage Buyer Path",
@@ -79,6 +88,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Set the land-use brief first, then screen only the acreages whose systems support that plan.",
     href: "/nelson/blewett",
     cta: "Study acreage near Nelson",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c49ba6e6e26c70b04aa56_morning-mountain-biking-blewett.jpeg",
+    imageAlt: "Wooded mountain trail near Blewett BC",
   },
   ski: {
     eyebrow: "Ski Lifestyle Path",
@@ -90,6 +101,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Define the winter routine first, then shortlist homes that work when roads, guests, and gear complicate the day.",
     href: "/nelson",
     cta: "Review area guide",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/644c985ba7eb5cd68b85251e_skiiing-whitewater-powder.webp",
+    imageAlt: "Powder skiing at Whitewater near Nelson",
   },
   relocation: {
     eyebrow: "Relocation Buyer Path",
@@ -101,6 +114,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Build a one-day or two-day scouting route that tests daily life before narrowing to homes.",
     href: "/buyers/relocation",
     cta: "Plan relocation path",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5bb50e2b484db46c921_nelson-bc-looking-north.webp",
+    imageAlt: "Nelson BC and Kootenay Lake",
   },
   second: {
     eyebrow: "Second-Home Buyer Path",
@@ -112,6 +127,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Define the ownership system first, then choose homes that can be confidently managed from afar.",
     href: "/buyers/relocation",
     cta: "Ask second-home questions",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbf4350d03715e52475f0_balfour-kootenay-lake.webp",
+    imageAlt: "Balfour and Kootenay Lake",
   },
   international: {
     eyebrow: "International Buyer Path",
@@ -123,6 +140,8 @@ const recommendations: Record<PathKey, Recommendation> = {
     nextMove: "Send the buyer brief first so Luke can line up the right local steps before pressure starts.",
     href: "/buyers/international",
     cta: "Read international playbook",
+    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5047afaca9df841c013_procter-lake-house-living-room.webp",
+    imageAlt: "Luxury lake house living room near Nelson",
   },
 };
 
@@ -183,6 +202,26 @@ export function BuyerFitQuiz() {
         </div>
 
         <div className="bg-[var(--color-bg-2)] p-6 sm:p-8 lg:p-10 xl:p-12">
+          <div className="relative mb-9 aspect-[16/9] overflow-hidden border border-[var(--color-line)] bg-[var(--color-bg)] shadow-[0_28px_90px_-60px_rgba(0,0,0,0.9)]">
+            <Image
+              key={selected}
+              src={result.image}
+              alt={result.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="object-cover opacity-90 saturate-[1.08] transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.02),rgba(10,11,13,0.52))]" aria-hidden />
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-5">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]">
+                {result.eyebrow}
+              </span>
+              <span className="hidden text-right text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)] sm:block">
+                Visual fit first
+              </span>
+            </div>
+          </div>
+
           <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
             Step 2: Use the right route
           </p>

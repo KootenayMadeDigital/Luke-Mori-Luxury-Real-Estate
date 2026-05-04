@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
@@ -48,18 +49,26 @@ const considerations = [
 const absenteeDesk = [
   {
     title: "Regulatory Pre-Flight",
+    image: brandImages.procterLakeHouse,
+    imageAlt: "Kootenay Lake home for second-home buyers",
     body: "Confirm the current federal and provincial purchase landscape before a property is shortlisted, especially for non-Canadian buyers.",
   },
   {
     title: "Advisor Bench",
+    image: brandImages.lukeContact,
+    imageAlt: "Luke Mori contact portrait",
     body: "Coordinate tax, legal, immigration, banking, notary, and insurance introductions before travel dates harden.",
   },
   {
     title: "Ownership Systems",
+    image: brandImages.procterLivingRoom,
+    imageAlt: "Luxury lake house interior near Nelson",
     body: "Property management, winterisation, caretaker access, security, inspections, and the local routines that protect a lock-and-leave home.",
   },
   {
     title: "Private Touring",
+    image: brandImages.balfourKootenayLake,
+    imageAlt: "Balfour and Kootenay Lake waterfront",
     body: "Focused tour days around waterfront, Balfour, North Shore, Nelson, acreage, or retreat properties, with only strong contenders on the route.",
   },
 ];
@@ -144,16 +153,28 @@ export default function InternationalBuyersPage() {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-4">
             {absenteeDesk.map((item, i) => (
-              <Reveal key={item.title} delay={i * 60} className="bg-[var(--color-bg)] p-8 sm:p-9">
-                <span className="mb-5 block font-serif text-[22px] italic text-[var(--color-bronze)]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="m-0 mb-4 font-serif text-[25px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
-                  {item.title}
-                </h3>
-                <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-                  {item.body}
-                </p>
+              <Reveal key={item.title} delay={i * 60} className="overflow-hidden bg-[var(--color-bg)]">
+                <div className="relative aspect-[4/3] bg-[var(--color-surface)]">
+                  <Image
+                    src={item.image}
+                    alt={item.imageAlt}
+                    fill
+                    sizes="(min-width: 768px) 25vw, 100vw"
+                    className="luxury-media object-cover opacity-88 saturate-[1.06]"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.06),rgba(10,11,13,0.58))]" aria-hidden />
+                  <span className="absolute bottom-4 left-5 font-serif text-[22px] italic text-[var(--color-bronze-light)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="p-8 sm:p-9">
+                  <h3 className="m-0 mb-4 font-serif text-[25px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                    {item.title}
+                  </h3>
+                  <p className="m-0 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
+                    {item.body}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>

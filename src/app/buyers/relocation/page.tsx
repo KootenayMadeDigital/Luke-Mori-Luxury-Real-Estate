@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
@@ -48,24 +49,32 @@ const scoutingRoutes = [
   {
     href: "/nelson/nelson",
     title: "Walkable Nelson",
+    image: brandImages.bakerStreet,
+    imageAlt: "Baker Street in Nelson BC",
     fit: "Best when daily life should orbit Baker Street, Lakeside Park, schools, restaurants, and a short town rhythm.",
     test: "Walk it in the rain, park twice, climb the grade, then decide if the charm still feels easy.",
   },
   {
     href: "/nelson/north-shore",
     title: "North Shore Privacy",
+    image: brandImages.westArmKootenayLake,
+    imageAlt: "West Arm of Kootenay Lake on the North Shore",
     fit: "Best when lake access, quieter neighbours, and Highway 3A privacy matter more than being in the city grid.",
     test: "Drive the route at school-run time, check shoreline exposure, and compare summer access with winter maintenance.",
   },
   {
     href: "/nelson/blewett",
     title: "Acreage Near Town",
+    image: brandImages.taghumBeach,
+    imageAlt: "Taghum Beach near Nelson BC",
     fit: "Best when you want timber, space, workshops, gardens, or family compound potential without losing Nelson completely.",
     test: "Measure the driveway, water system, outbuildings, road condition, and actual door-to-Baker time.",
   },
   {
     href: "/nelson/slocan-valley",
     title: "Retreat Country",
+    image: brandImages.slocanLake,
+    imageAlt: "Slocan Lake in British Columbia",
     fit: "Best when river frontage, timber, space, and distance from town are the point, not a compromise.",
     test: "Spend a full day there, not a drive-through. The valley rewards buyers who understand its pace.",
   },
@@ -148,26 +157,38 @@ export default function RelocationPage() {
               <Reveal key={route.title} delay={(i % 2) * 70}>
                 <Link
                   href={route.href}
-                  className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)] sm:p-9"
+                  className="luxury-card group flex h-full flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-bg)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
                 >
-                  <span className="mb-4 text-[10px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
-                    Area fit {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="m-0 mb-4 font-serif text-[28px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
-                    {route.title}
-                  </h3>
-                  <p className="m-0 mb-5 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
-                    {route.fit}
-                  </p>
-                  <p className="m-0 mb-7 flex-1 border-l border-[var(--color-bronze)] pl-5 text-[13px] leading-[1.65] text-[var(--color-text-dim)]">
-                    Test: {route.test}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                    Study the area
-                    <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
-                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
+                  <div className="relative aspect-[16/9] overflow-hidden bg-[var(--color-surface)]">
+                    <Image
+                      src={route.image}
+                      alt={route.imageAlt}
+                      fill
+                      sizes="(min-width: 768px) 46vw, 100vw"
+                      className="luxury-media object-cover opacity-92 saturate-[1.08]"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.04),rgba(10,11,13,0.58))]" aria-hidden />
+                    <span className="absolute bottom-5 left-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                      Area fit {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-8 sm:p-9">
+                    <h3 className="m-0 mb-4 font-serif text-[28px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                      {route.title}
+                    </h3>
+                    <p className="m-0 mb-5 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
+                      {route.fit}
+                    </p>
+                    <p className="m-0 mb-7 flex-1 border-l border-[var(--color-bronze)] pl-5 text-[13px] leading-[1.65] text-[var(--color-text-dim)]">
+                      Test: {route.test}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                      Study the area
+                      <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </div>
                 </Link>
               </Reveal>
             ))}

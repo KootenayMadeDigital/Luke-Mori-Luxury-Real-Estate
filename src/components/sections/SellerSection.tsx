@@ -1,9 +1,10 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { contact, sellerPromises } from "@/lib/data";
+import { brandImages, contact, sellerPromises } from "@/lib/data";
 
 const sellerSignals = [
   {
@@ -66,7 +67,37 @@ export function SellerSection() {
             </Reveal>
 
             <Reveal delay={430}>
-              <div className="mt-12 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
+              <div className="mt-12 overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_30px_90px_-70px_rgba(0,0,0,0.9)]">
+                <div className="grid grid-cols-[1.15fr_0.85fr] gap-px bg-[var(--color-line)]">
+                  <div className="relative min-h-[230px] bg-[var(--color-bg)]">
+                    <Image
+                      src={brandImages.sellerDining}
+                      alt="Staged dining room ready for a premium property launch"
+                      fill
+                      sizes="(min-width: 1024px) 34vw, 100vw"
+                      className="object-cover opacity-90 saturate-[1.04]"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.02),rgba(10,11,13,0.56))]" aria-hidden />
+                    <span className="absolute bottom-5 left-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.78)]">
+                      Presentation
+                    </span>
+                  </div>
+                  <div className="grid grid-rows-2 gap-px bg-[var(--color-line)]">
+                    {[brandImages.lukeSellerSign, brandImages.sellerStudy].map((src, i) => (
+                      <div key={src} className="relative min-h-[114px] bg-[var(--color-bg)]">
+                        <Image
+                          src={src}
+                          alt={i === 0 ? "Luke Mori seller sign" : "Prepared study room for real estate presentation"}
+                          fill
+                          sizes="(min-width: 1024px) 16vw, 50vw"
+                          className="object-cover opacity-86 saturate-[1.05]"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.05),rgba(10,11,13,0.46))]" aria-hidden />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="p-7 sm:p-8">
                 <p className="m-0 mb-5 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
                   Seller Plan
                 </p>
@@ -76,6 +107,7 @@ export function SellerSection() {
                 <p className="m-0 mt-5 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
                   Price with discipline, present the home well, qualify interest early, and keep the process calm through closing.
                 </p>
+                </div>
               </div>
             </Reveal>
           </div>
