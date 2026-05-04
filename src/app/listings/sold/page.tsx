@@ -77,7 +77,7 @@ export default function SoldPage() {
                   priority
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.16),rgba(10,11,13,0.1)_28%,rgba(10,11,13,0.72)_62%,rgba(10,11,13,0.96))]" />
-                <div className="absolute left-6 top-6 rounded-[1px] border border-[rgba(245,239,229,0.42)] bg-[rgba(10,11,13,0.82)] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--color-text)] shadow-[0_12px_34px_-18px_rgba(0,0,0,0.95)] backdrop-blur-sm">
+                <div className="absolute left-6 top-6 rounded-[1px] border border-[rgba(255,255,255,0.34)] bg-[rgba(10,11,13,0.9)] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-[0_12px_34px_-18px_rgba(0,0,0,0.95)] backdrop-blur-sm">
                   {lead.status}
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
@@ -89,11 +89,11 @@ export default function SoldPage() {
                       <h2 className="m-0 font-serif text-[32px] font-light leading-[1.04] tracking-[-0.01em] text-[var(--color-text)] drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] sm:text-[44px]">
                         {lead.address}
                       </h2>
-                      <p className="m-0 mt-3 text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
+                      <p className="m-0 mt-3 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] backdrop-blur-sm">
                         {lead.area} · {lead.type}
                       </p>
                     </div>
-                    <div className="font-serif text-[30px] italic text-[var(--color-bronze-light)] drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)]">
+                    <div className="justify-self-start bg-[rgba(10,11,13,0.64)] px-4 py-2 font-serif text-[30px] italic text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:justify-self-end">
                       {lead.offered}
                     </div>
                   </div>
@@ -114,7 +114,7 @@ export default function SoldPage() {
                         className="luxury-media object-cover"
                       />
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.14),rgba(10,11,13,0.08)_38%,rgba(10,11,13,0.7))]" />
-                      <span className="absolute left-4 top-4 rounded-[1px] border border-[rgba(245,239,229,0.28)] bg-[rgba(10,11,13,0.84)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--color-bronze-light)] shadow-[0_10px_28px_-16px_rgba(0,0,0,0.95)] backdrop-blur-sm">
+                      <span className="absolute left-4 top-4 rounded-[1px] border border-[rgba(255,255,255,0.3)] bg-[rgba(10,11,13,0.9)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-white shadow-[0_10px_28px_-16px_rgba(0,0,0,0.95)] backdrop-blur-sm">
                         {String(i + 2).padStart(2, "0")}
                       </span>
                     </div>
