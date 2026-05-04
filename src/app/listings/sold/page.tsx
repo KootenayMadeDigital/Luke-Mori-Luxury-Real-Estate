@@ -9,6 +9,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { recentlyConcluded, brandImages } from "@/lib/data";
 
+const soldProofNotes = [
+  "Acreage privacy, upper-market pricing, and a buyer who needed to understand the land as much as the house.",
+  "North Shore lakefront, where shoreline, access, and privacy are the story behind the price.",
+  "A rare lakefront estate that needed scarcity to read clearly before the showing.",
+  "An architectural Nelson view home where presentation had to make the setting easy to trust.",
+  "Walk-to-water living, sold on lifestyle clarity as much as the address itself.",
+];
+
 export const metadata = buildPageMetadata({
   title: "Recently Sold · Nelson Real Estate",
   description:
@@ -92,6 +100,9 @@ export default function SoldPage() {
                       <p className="m-0 mt-3 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] backdrop-blur-sm">
                         {lead.area} · {lead.type}
                       </p>
+                      <p className="m-0 mt-3 max-w-[620px] bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[14px] leading-[1.65] text-white/90 backdrop-blur-sm">
+                        {soldProofNotes[0]}
+                      </p>
                     </div>
                     <div className="justify-self-start bg-[rgba(10,11,13,0.64)] px-4 py-2 font-serif text-[30px] italic text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:justify-self-end">
                       {lead.offered}
@@ -128,6 +139,9 @@ export default function SoldPage() {
                         </h3>
                         <p className="m-0 mt-3 text-[12px] leading-[1.65] text-[var(--color-text-muted)]">
                           {c.area} · {c.type}
+                        </p>
+                        <p className="m-0 mt-4 border-l border-[var(--color-bronze)] pl-4 text-[13px] leading-[1.65] text-[var(--color-text-dim)]">
+                          {soldProofNotes[i + 1]}
                         </p>
                       </div>
                       <div className="mt-6 border-t border-[var(--color-line)] pt-5 font-serif text-[22px] italic text-[var(--color-bronze-light)]">

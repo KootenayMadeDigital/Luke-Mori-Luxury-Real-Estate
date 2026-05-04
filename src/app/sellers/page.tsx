@@ -11,6 +11,21 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { sellerSteps, brandImages } from "@/lib/data";
 
+const sellerLeverage = [
+  {
+    title: "The first launch sets the price ceiling.",
+    body: "A weak first impression teaches the market to wait. Strong pricing, visuals, and buyer targeting protect leverage before the listing is public.",
+  },
+  {
+    title: "Privacy is part of the value.",
+    body: "A high-value home should not become entertainment for casual traffic. Qualified interest, controlled showings, and careful exposure protect both the seller and the result.",
+  },
+  {
+    title: "The buyer has to understand the home fast.",
+    body: "Lakefront, acreage, view, and legacy homes need clear storytelling. Buyers should understand the life, the land, and the scarcity before they arrive.",
+  },
+];
+
 export const metadata = buildPageMetadata({
   title: "Sell a Home in Nelson BC · Luxury Seller Representation",
   description:
@@ -44,6 +59,40 @@ export default function SellersPage() {
         terms={["selling house nelson bc", "sell luxury home nelson bc", "kootenay lake waterfront seller"]}
         tone="office"
       />
+
+      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+            <div>
+              <Eyebrow>Seller Leverage</Eyebrow>
+              <SectionHeading className="mt-7">
+                Do not let the market
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  misread the home.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Higher-value sellers are not paying for upload speed. They are paying for judgment before exposure, so the first public impression supports the price instead of weakening it.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {sellerLeverage.map((item, index) => (
+              <Reveal key={item.title} delay={index * 80} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-8">
+                <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  Leverage {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 font-serif text-[30px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)]">
+                  {item.title}
+                </h3>
+                <p className="m-0 mt-5 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">{item.body}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <ProcessSteps
         eyebrow="The Seller Process"

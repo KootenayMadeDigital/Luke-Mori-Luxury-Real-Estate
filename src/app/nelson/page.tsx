@@ -11,6 +11,39 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { nelsonAreas, brandImages } from "@/lib/data";
 
+const areaComparison = [
+  {
+    area: "Nelson",
+    bestFor: "Walkability, schools, restaurants, culture, and daily convenience.",
+    watch: "Parking, slope, heritage condition, noise, and winter street rhythm.",
+    href: "/nelson/nelson",
+  },
+  {
+    area: "North Shore",
+    bestFor: "Lake views, privacy, quieter homes, and fast access back to town.",
+    watch: "Highway sound, driveway grade, shoreline access, and winter maintenance.",
+    href: "/nelson/north-shore",
+  },
+  {
+    area: "Balfour",
+    bestFor: "Main-lake energy, second homes, golf, marina access, and retreat living.",
+    watch: "Distance from Nelson, wind exposure, service access, and lock-and-leave systems.",
+    href: "/nelson/balfour",
+  },
+  {
+    area: "Blewett",
+    bestFor: "Acreage, privacy, gardens, workshops, dogs, and land close to town.",
+    watch: "Water, septic, internet, outbuildings, road conditions, and maintenance appetite.",
+    href: "/nelson/blewett",
+  },
+  {
+    area: "Slocan Valley",
+    bestFor: "Retreat property, riverfront, timber, quiet towns, and more space.",
+    watch: "Distance, winter roads, services, trades, and whether the slower rhythm fits.",
+    href: "/nelson/slocan-valley",
+  },
+];
+
 export const metadata = buildPageMetadata({
   title: "Nelson BC Real Estate Areas & Kootenay Lake Guide",
   description:
@@ -132,6 +165,53 @@ export default function NelsonHubPage() {
                       </svg>
                     </span>
                   </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.86fr_1.14fr] md:items-end">
+            <div>
+              <Eyebrow>Area Comparison</Eyebrow>
+              <SectionHeading className="mt-7">
+                The right area
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  changes the whole search.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Million-dollar buyers usually do not need more listings first. They need to know which parts of Nelson and Kootenay Lake match the way they want to live.
+            </SectionLede>
+          </Reveal>
+
+          <div className="overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)]">
+            {areaComparison.map((item, index) => (
+              <Reveal key={item.area}>
+                <Link
+                  href={item.href}
+                  className="group grid grid-cols-1 gap-5 border-b border-[var(--color-line)] p-7 transition-colors duration-500 last:border-b-0 hover:bg-[rgba(212,184,150,0.055)] md:grid-cols-[0.62fr_1fr_1fr_auto] md:items-center md:p-8"
+                >
+                  <div>
+                    <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="m-0 font-serif text-[30px] font-light leading-none text-[var(--color-text)]">{item.area}</h3>
+                  </div>
+                  <p className="m-0 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
+                    <span className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-bronze)]">Best for</span>
+                    {item.bestFor}
+                  </p>
+                  <p className="m-0 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
+                    <span className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-bronze)]">Watch for</span>
+                    {item.watch}
+                  </p>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Study area</span>
                 </Link>
               </Reveal>
             ))}
