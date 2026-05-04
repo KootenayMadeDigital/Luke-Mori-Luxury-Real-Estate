@@ -46,6 +46,33 @@ const dueDiligence = [
   "Insurance, services, title details, and maintenance load",
 ];
 
+const waterfrontCorridors = [
+  {
+    title: "West Arm near Nelson",
+    buyer: "Buyers who want lake life without leaving Nelson's restaurants, schools, services, and social rhythm behind.",
+    watch: "Road exposure, slope, parking, dock practicality, and how usable the shoreline feels outside summer.",
+    href: "/nelson/nelson",
+  },
+  {
+    title: "North Shore",
+    buyer: "Buyers who want privacy, water, and views while keeping town close enough for ordinary life.",
+    watch: "Driveway rhythm, neighbour sightlines, highway sound, winter maintenance, and whether privacy holds up in person.",
+    href: "/nelson/north-shore",
+  },
+  {
+    title: "Procter and Harrop",
+    buyer: "Buyers who want a quieter lake base, more retreat energy, and a slower rhythm east of Nelson.",
+    watch: "Ferry timing, services, winter use, guest logistics, and whether the setting works as full-time life or retreat life.",
+    href: "/listings/waterfront",
+  },
+  {
+    title: "Balfour and main lake",
+    buyer: "Second-home and lifestyle buyers who want bigger lake energy, golf, marina access, and a stronger retreat feel.",
+    watch: "Wind, exposure, distance from Nelson, ownership systems, family use, and how often the home will sit empty.",
+    href: "/nelson/balfour",
+  },
+];
+
 export default function KootenayLakeWaterfrontPage() {
   const listings = sortByPriceDesc(waterfrontListings);
 
@@ -107,6 +134,44 @@ export default function KootenayLakeWaterfrontPage() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+            <div>
+              <Eyebrow>Waterfront Corridors</Eyebrow>
+              <SectionHeading className="mt-7">
+                Same lake.
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">Different life.</em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              A Kootenay Lake search gets sharper when the shoreline is compared by daily use, not just view quality. The best buyer fit changes from one corridor to the next.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] lg:grid-cols-4">
+            {waterfrontCorridors.map((corridor, index) => (
+              <Reveal key={corridor.title} delay={index * 70}>
+                <Link href={corridor.href} className="group flex h-full flex-col bg-[var(--color-bg)] p-7 transition-colors duration-300 hover:bg-[var(--color-surface)]">
+                  <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                    Corridor {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="m-0 font-serif text-[27px] font-light leading-[1.12] text-[var(--color-text)]">{corridor.title}</h3>
+                  <p className="m-0 mt-5 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{corridor.buyer}</p>
+                  <p className="m-0 mt-6 border-l border-[var(--color-bronze)] pl-4 text-[12px] font-semibold uppercase leading-[1.58] tracking-[0.12em] text-[var(--color-text-dim)]">
+                    Check: {corridor.watch}
+                  </p>
+                  <span className="mt-7 inline-flex text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                    Study this path
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>

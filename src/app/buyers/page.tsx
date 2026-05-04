@@ -43,6 +43,32 @@ const buyerResourceCards = [
   },
 ];
 
+const advantageChecks = [
+  {
+    title: "Fit before feed",
+    body: "The search starts with lifestyle, ownership rhythm, and non-negotiables, then moves into listings. That keeps beautiful wrong homes from stealing the day.",
+  },
+  {
+    title: "Local tradeoffs first",
+    body: "Sun, road rhythm, slope, shoreline, winter access, school routes, privacy, and service distance are screened before a showing becomes emotional.",
+  },
+  {
+    title: "Scarcity checked early",
+    body: "Lakefront, view homes, acreage, and walkable Nelson each carry different scarcity. Luke helps separate real scarcity from expensive presentation.",
+  },
+  {
+    title: "Next move made clear",
+    body: "Every serious buyer should know the next step: scout the area, study the shoreline, line up advisors, watch off-market homes, or tour with intent.",
+  },
+];
+
+const buyerBriefPrompts = [
+  "What life are you buying: lake, town, acreage, ski, retreat, or relocation?",
+  "What tradeoff is unacceptable: road noise, winter access, privacy loss, maintenance, distance, or poor resale?",
+  "How will the home be used: full-time, second home, family base, remote work, or future move?",
+  "What has to be true before you would tour, offer, or wait?",
+];
+
 export default function BuyersPage() {
   return (
     <PageLayout>
@@ -79,6 +105,59 @@ export default function BuyersPage() {
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />
+        </Container>
+      </section>
+
+      <section className="tone-lake tonal-section py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+            <div>
+              <Eyebrow>The Buyer Advantage</Eyebrow>
+              <SectionHeading className="mt-7">
+                Fewer tours.
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  Better decisions.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              The advantage is not seeing more homes. It is knowing which homes deserve attention before the feed, photography, or urgency starts doing the thinking.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {advantageChecks.map((item, index) => (
+              <Reveal key={item.title} delay={index * 70} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7">
+                <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  Advantage {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 font-serif text-[27px] font-light leading-[1.15] text-[var(--color-text)]">{item.title}</h3>
+                <p className="m-0 mt-4 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">{item.body}</p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mt-10 border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.46)] p-8 md:p-10">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+              <div>
+                <Eyebrow>Buyer Brief</Eyebrow>
+                <h3 className="m-0 mt-6 font-serif text-[32px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)] md:text-[44px]">
+                  The four questions that sharpen the search.
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] sm:grid-cols-2">
+                {buyerBriefPrompts.map((prompt, index) => (
+                  <div key={prompt} className="bg-[var(--color-bg)] p-6">
+                    <span className="mb-4 block text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                      Question {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p className="m-0 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">{prompt}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
