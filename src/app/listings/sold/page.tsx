@@ -1,9 +1,12 @@
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { buildPageMetadata } from "@/lib/seo";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { recentlyConcluded, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
@@ -20,6 +23,8 @@ export default function SoldPage() {
     return acc + (Number.isFinite(num) ? num : 0);
   }, 0);
   const totalFmt = `$${(total / 1_000_000).toFixed(1)}M+`;
+  const lead = recentlyConcluded[0];
+  const support = recentlyConcluded.slice(1);
 
   return (
     <PageLayout>
@@ -44,35 +49,96 @@ export default function SoldPage() {
 
       <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
-          <Reveal as="ul" className="border-t border-[var(--color-line)]">
-            {recentlyConcluded.map((c, i) => (
-              <li
-                key={c.address}
-                className="luxury-card group grid grid-cols-[1fr_auto] items-baseline gap-4 border-b border-[var(--color-line)] py-8 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:grid-cols-[60px_1.5fr_1fr_1.2fr_auto] sm:gap-8 sm:py-9"
-              >
-                <span className="hidden font-serif text-[14px] italic tracking-[0.1em] text-[var(--color-bronze)] sm:block">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="min-w-0">
-                  <div className="font-serif font-normal leading-tight tracking-[-0.005em] text-[var(--color-text)] [font-size:clamp(20px,2vw,26px)]">
-                    {c.address}
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.82fr_1.18fr] md:items-end">
+            <div>
+              <Eyebrow>Sold Proof</Eyebrow>
+              <SectionHeading className="mt-7">
+                Recent properties,
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  shown properly.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              These are not just rows in a record. They are the kind of homes, land, lakefront, and view properties Luke has already handled across the Nelson market.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+            <Reveal>
+              <article className="luxury-card group relative min-h-[540px] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-[0_34px_100px_-64px_rgba(0,0,0,0.82)]">
+                <Image
+                  src={lead.image}
+                  alt={lead.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 54vw, 100vw"
+                  className="luxury-media object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.22)_38%,rgba(10,11,13,0.88))]" />
+                <div className="absolute left-6 top-6 rounded-[1px] border border-[rgba(245,239,229,0.34)] bg-[rgba(10,11,13,0.62)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text)] backdrop-blur-sm">
+                  {lead.status}
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
+                  <div className="mb-6 font-serif text-[62px] font-light uppercase leading-none tracking-[0.08em] text-[rgba(245,239,229,0.86)] sm:text-[88px]">
+                    Sold
                   </div>
-                  <div className="mt-1.5 text-[12px] text-[var(--color-text-dim)] sm:hidden">
-                    {c.area} · {c.type} · {c.offered}
+                  <div className="grid grid-cols-1 gap-5 border-t border-[rgba(245,239,229,0.22)] pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
+                    <div>
+                      <h2 className="m-0 font-serif text-[32px] font-light leading-[1.04] tracking-[-0.01em] text-[var(--color-text)] sm:text-[44px]">
+                        {lead.address}
+                      </h2>
+                      <p className="m-0 mt-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronze-light)]">
+                        {lead.area} · {lead.type}
+                      </p>
+                    </div>
+                    <div className="font-serif text-[30px] italic text-[var(--color-bronze-light)]">
+                      {lead.offered}
+                    </div>
                   </div>
                 </div>
-                <span className="hidden text-[14px] text-[var(--color-text-muted)] sm:block">
-                  {c.area}
-                </span>
-                <span className="hidden text-[13px] text-[var(--color-text-dim)] md:block">
-                  {c.type}
-                </span>
-                <span className="text-right font-serif italic text-[var(--color-bronze-light)] [font-size:clamp(18px,1.8vw,22px)]">
-                  {c.offered}
-                </span>
-              </li>
-            ))}
-          </Reveal>
+              </article>
+            </Reveal>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+              {support.map((c, i) => (
+                <Reveal key={c.address} delay={i * 70}>
+                  <article className="luxury-card group grid h-full grid-cols-[0.9fr_1.1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] sm:grid-cols-1 lg:grid-cols-[0.88fr_1.12fr]">
+                    <div className="relative min-h-[210px] overflow-hidden bg-[var(--color-bg)]">
+                      <Image
+                        src={c.image}
+                        alt={c.imageAlt}
+                        fill
+                        sizes="(min-width: 1024px) 24vw, (min-width: 640px) 50vw, 44vw"
+                        className="luxury-media object-cover"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.04),rgba(10,11,13,0.62))]" />
+                      <span className="absolute left-4 top-4 rounded-[1px] bg-[rgba(10,11,13,0.62)] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze-light)] backdrop-blur-sm">
+                        {String(i + 2).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-between p-6">
+                      <div>
+                        <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                          {c.status}
+                        </div>
+                        <h3 className="m-0 font-serif text-[24px] font-light leading-[1.1] tracking-[-0.01em] text-[var(--color-text)]">
+                          {c.address}
+                        </h3>
+                        <p className="m-0 mt-3 text-[12px] leading-[1.65] text-[var(--color-text-muted)]">
+                          {c.area} · {c.type}
+                        </p>
+                      </div>
+                      <div className="mt-6 border-t border-[var(--color-line)] pt-5 font-serif text-[22px] italic text-[var(--color-bronze-light)]">
+                        {c.offered}
+                      </div>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
 
           <p className="mt-12 text-[12px] italic text-[var(--color-text-dim)]">
             Offered prices reflect public list pricing at the time of representation.
