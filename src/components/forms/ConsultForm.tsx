@@ -40,6 +40,12 @@ export function ConsultForm() {
         <Field label="Name" name="name" autoComplete="name" required />
         <Field label="Email" name="email" type="email" autoComplete="email" required />
         <Field label="Phone" name="phone" type="tel" autoComplete="tel" optional />
+        <Field
+          label="Property or address of interest"
+          name="propertyInterest"
+          autoComplete="street-address"
+          optional
+        />
 
         <fieldset className="mb-6 border-0 p-0">
           <legend className="mb-3 block text-[11px] font-bold uppercase tracking-[0.22em] text-[#5a351d]">
