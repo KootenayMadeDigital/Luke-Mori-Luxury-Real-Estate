@@ -104,17 +104,17 @@ export default function SoldPage() {
                     </div>
                     <div className="grid grid-cols-1 gap-5 border-t border-[rgba(245,239,229,0.22)] pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
                       <div>
-                        <h2 className="m-0 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 font-serif text-[32px] font-light leading-[1.04] tracking-[-0.01em] text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:text-[44px]">
+                        <h2 className="m-0 inline-flex bg-[rgba(10,11,13,0.38)] px-3 py-2 font-serif text-[32px] font-light leading-[1.04] tracking-[-0.01em] text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-[2px] sm:text-[44px]">
                           {lead.address}
                         </h2>
-                        <p className="m-0 mt-3 inline-flex bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] backdrop-blur-sm">
+                        <p className="m-0 mt-3 inline-flex bg-[rgba(10,11,13,0.34)] px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] backdrop-blur-[2px]">
                           {lead.area} · {lead.type}
                         </p>
-                        <p className="m-0 mt-3 max-w-[620px] bg-[rgba(10,11,13,0.64)] px-3 py-2 text-[14px] leading-[1.65] text-white/90 backdrop-blur-sm">
+                        <p className="m-0 mt-3 max-w-[620px] bg-[rgba(10,11,13,0.34)] px-3 py-2 text-[14px] leading-[1.65] text-white/90 backdrop-blur-[2px]">
                           {soldProofNotes[0]}
                         </p>
                       </div>
-                      <div className="justify-self-start bg-[rgba(10,11,13,0.64)] px-4 py-2 font-serif text-[30px] italic text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-sm sm:justify-self-end">
+                      <div className="justify-self-start bg-[rgba(10,11,13,0.34)] px-4 py-2 font-serif text-[30px] italic text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-[2px] sm:justify-self-end">
                         {lead.offered}
                       </div>
                     </div>
