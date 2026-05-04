@@ -9,6 +9,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
+import { LuxuryListingReveal } from "@/components/listing/LuxuryListingReveal";
 import { luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
@@ -82,6 +83,8 @@ export default function LuxuryListingsPage() {
         terms={["nelson bc luxury real estate", "nelson bc luxury homes", "kootenay luxury real estate"]}
         tone="ivory"
       />
+
+      {luxe[0] && <LuxuryListingReveal listing={luxe[0]} />}
 
       <section className="tone-lake tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
         <Container>
