@@ -27,6 +27,8 @@ function WebGLCurtain({
   const pointerRef = useRef(pointer);
   const draggingRef = useRef(isDragging);
   const settledRef = useRef(open);
+  const velocityRef = useRef(0);
+  const lastSettledRef = useRef(open);
   const smoothPointerRef = useRef(pointer);
 
   useEffect(() => {
@@ -48,29 +50,34 @@ function WebGLCurtain({
       attribute vec2 a_local;
       attribute float a_side;
       uniform float u_open;
+      uniform float u_velocity;
       uniform float u_time;
       uniform vec2 u_pointer;
       varying vec2 v_local;
       varying float v_side;
       varying float v_fold;
       void main() {
-        float width = mix(1.12, 0.052, smoothstep(0.0, 1.0, u_open));
+        float springOpen = smoothstep(0.0, 1.0, u_open);
+        float width = mix(1.12, 0.052, springOpen);
         float hinge = a_side < 0.0 ? -1.0 : 1.0;
         float inner = a_side < 0.0 ? -1.0 + width : 1.0 - width;
         float x = mix(hinge, inner, a_local.x);
         float y = a_local.y * 2.0 - 1.0;
+        float verticalLag = pow(a_local.y, 1.65);
+        float pullLag = u_velocity * verticalLag * (1.0 - a_local.x * 0.22);
         float hand = 1.0 - smoothstep(0.0, 0.78, abs((u_pointer.x * 2.0 - 1.0) - x));
         float ridge = sin(a_local.x * 52.0 + a_local.y * 5.0 + u_time * 0.68);
         float ridge2 = sin(a_local.x * 23.0 - a_local.y * 2.0 - u_time * 0.28);
         float slow = sin(a_local.x * 10.0 - u_time * 0.28 + a_side * 0.7);
         float edgeLift = pow(a_local.x, 2.1) * u_open;
         float weight = sin(a_local.y * 3.14159);
-        float billow = (ridge * 0.040 + ridge2 * 0.020 + slow * 0.014 + hand * 0.024) * (1.0 - u_open * 0.10) * weight;
-        x += billow * a_side;
+        float billow = (ridge * 0.040 + ridge2 * 0.020 + slow * 0.014 + hand * 0.024 + pullLag * 0.18) * (1.0 - u_open * 0.10) * weight;
+        x += (billow + pullLag * 0.20) * a_side;
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
-        float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.018 * (1.0 - u_open * 0.35);
+        y += abs(u_velocity) * 0.030 * verticalLag * (0.6 + hand * 0.4);
+        float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.024 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.030;
+        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.030 + abs(u_velocity) * 0.10 * verticalLag;
         float w = 1.0 + depth * 0.48;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
@@ -175,6 +182,7 @@ function WebGLCurtain({
     const localLoc = gl.getAttribLocation(program, "a_local");
     const sideLoc = gl.getAttribLocation(program, "a_side");
     const openLoc = gl.getUniformLocation(program, "u_open");
+    const velocityLoc = gl.getUniformLocation(program, "u_velocity");
     const timeLoc = gl.getUniformLocation(program, "u_time");
     const pointerLoc = gl.getUniformLocation(program, "u_pointer");
     let frame = 0;
@@ -189,8 +197,13 @@ function WebGLCurtain({
     };
 
     const render = () => {
-      const ease = draggingRef.current ? 0.34 : 0.12;
-      settledRef.current += (openRef.current - settledRef.current) * ease;
+      const stiffness = draggingRef.current ? 0.18 : 0.105;
+      const damping = draggingRef.current ? 0.74 : 0.82;
+      velocityRef.current += (openRef.current - settledRef.current) * stiffness;
+      velocityRef.current *= damping;
+      settledRef.current = clamp(settledRef.current + velocityRef.current, 0.035, 1);
+      const clothVelocity = clamp(settledRef.current - lastSettledRef.current, -0.08, 0.08);
+      lastSettledRef.current = settledRef.current;
       smoothPointerRef.current = {
         x: smoothPointerRef.current.x + (pointerRef.current.x - smoothPointerRef.current.x) * 0.18,
         y: smoothPointerRef.current.y + (pointerRef.current.y - smoothPointerRef.current.y) * 0.18,
@@ -207,6 +220,7 @@ function WebGLCurtain({
       gl.enableVertexAttribArray(sideLoc);
       gl.vertexAttribPointer(sideLoc, 1, gl.FLOAT, false, stride, 8);
       gl.uniform1f(openLoc, settledRef.current);
+      gl.uniform1f(velocityLoc, clothVelocity);
       gl.uniform1f(timeLoc, (performance.now() - start) / 1000);
       gl.uniform2f(pointerLoc, smoothPointerRef.current.x / 100, smoothPointerRef.current.y / 100);
       gl.drawArrays(gl.TRIANGLES, 0, data.length / 3);
