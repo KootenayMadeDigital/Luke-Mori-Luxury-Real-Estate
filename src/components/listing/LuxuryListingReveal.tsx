@@ -54,7 +54,7 @@ function WebGLCurtain({
       varying float v_side;
       varying float v_fold;
       void main() {
-        float width = mix(1.12, 0.16, u_open);
+        float width = mix(1.12, 0.075, smoothstep(0.0, 1.0, u_open));
         float hinge = a_side < 0.0 ? -1.0 : 1.0;
         float inner = a_side < 0.0 ? -1.0 + width : 1.0 - width;
         float x = mix(hinge, inner, a_local.x);
@@ -70,7 +70,7 @@ function WebGLCurtain({
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.018 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.42 + abs(ridge) * 0.09 + hand * 0.035;
+        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.030;
         float w = 1.0 + depth * 0.48;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
@@ -114,7 +114,8 @@ function WebGLCurtain({
         color += vec3(weave) * 0.012;
         float topBottomShade = smoothstep(0.0, 0.04, v_local.y) * smoothstep(1.0, 0.96, v_local.y);
         color *= 0.72 + topBottomShade * 0.28;
-        float alpha = 0.995 - sideRim * 0.035;
+        float openFade = 1.0 - smoothstep(0.82, 1.0, u_open) * 0.28;
+        float alpha = (0.995 - sideRim * 0.035) * openFade;
         gl_FragColor = vec4(color, alpha);
       }
     `;
@@ -232,6 +233,7 @@ export function LuxuryListingReveal({ listing }: Props) {
   const specs = buildSpecs(listing);
   const openPercent = clamp(progress, 0.04, 1);
   const revealLabel = openPercent > 0.68 ? "Draw shut" : "Draw open";
+  const imageFocus = openPercent > 0.76;
   const leftShift = openPercent * 104;
   const rightShift = openPercent * 104;
   const leftRotate = openPercent * -22;
@@ -316,22 +318,22 @@ A quieter way to study a significant property: press the pull, move left or righ
 
             <div
               className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_var(--reveal-x)_var(--reveal-y),rgba(255,255,255,0.25),transparent_18%),linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.58))] transition-opacity duration-300"
-              style={{ opacity: 0.34 + seamGlow * 0.28 }}
+              style={{ opacity: imageFocus ? 0.22 : 0.34 + seamGlow * 0.28 }}
             />
             <div
               className="pointer-events-none absolute inset-y-0 left-1/2 z-20 w-[28%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(224,192,154,0.2),rgba(255,255,255,0.08)_18%,transparent_62%)] blur-xl transition-opacity duration-300 motion-reduce:hidden"
-              style={{ opacity: seamGlow }}
+              style={{ opacity: imageFocus ? 0.22 : seamGlow }}
               aria-hidden
             />
 
             <WebGLCurtain open={openPercent} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
 
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(26,17,11,0.88)_48%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)]" aria-hidden>
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(26,17,11,0.88)_48%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.64 : 1 }} aria-hidden>
               <div className="absolute inset-x-5 top-4 h-px bg-[linear-gradient(90deg,transparent,rgba(224,192,154,0.58),transparent)]" />
               <div className="absolute inset-x-8 top-7 h-[3px] rounded-full bg-[linear-gradient(90deg,rgba(70,44,25,0.35),rgba(224,192,154,0.64),rgba(70,44,25,0.35))] shadow-[0_0_18px_rgba(224,192,154,0.16)]" />
             </div>
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-[39] w-8 bg-[linear-gradient(90deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)]" aria-hidden />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-[39] w-8 bg-[linear-gradient(270deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)]" aria-hidden />
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-[39] w-8 bg-[linear-gradient(90deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-[39] w-8 bg-[linear-gradient(270deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[38] h-12 bg-[linear-gradient(0deg,rgba(7,6,5,0.95),rgba(7,6,5,0.18)_78%,transparent)]" aria-hidden />
 
             {!webglReady && (
@@ -373,7 +375,7 @@ A quieter way to study a significant property: press the pull, move left or righ
                 toggleReveal();
               }}
               className="absolute left-1/2 top-1/2 z-40 flex w-[202px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(224,192,154,0.62)] bg-[linear-gradient(180deg,rgba(11,10,9,0.92),rgba(5,5,5,0.84))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-1/2 hover:-translate-y-[54%] hover:border-[var(--color-bronze-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-bronze)]"
-              style={{ opacity: openPercent > 0.76 ? 0.28 : 1 }}
+              style={{ opacity: imageFocus ? 0.13 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.94)" : undefined }}
               aria-label={`${revealLabel} the listing reveal`}
             >
               <span className="mb-3 h-px w-16 bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)]" />
