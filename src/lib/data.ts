@@ -329,6 +329,9 @@ export const brandImages = {
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c49ba6e6e26c70b04aa56_morning-mountain-biking-blewett.jpeg",
   blewettSchool:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c482b99fdbc39f99f1ad2_blewett-elementary-school.jpeg",
+  blewettWoodedAcreage: "/generated/blewett-wooded-acreage.webp",
+  blewettFamilyEstate: "/generated/blewett-family-estate.webp",
+  blewettBakerCommute: "/generated/blewett-baker-commute.webp",
   frogPeakCafe:
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c46630832a07999c1b3d4_frog-peak-cafe-slocan-valley.jpeg",
   valhallaMountains:
@@ -1039,9 +1042,9 @@ export const nelsonAreas: NelsonArea[] = [
     focus: "Acreage · Privacy · Country Living",
     hero: brandImages.taghumBeach,
     scenes: [
-      { title: "Wooded Acreage", alt: "Morning Mountain biking near Blewett BC", image: brandImages.morningMountain },
-      { title: "Family Estates", alt: "Blewett Elementary School", image: brandImages.blewettSchool },
-      { title: "Ten Minutes to Baker", alt: "Taghum Beach near Nelson BC", image: brandImages.taghumBeach },
+      { title: "Wooded Acreage", alt: "Wooded acreage driveway through mature Kootenay forest", image: brandImages.blewettWoodedAcreage },
+      { title: "Family Estates", alt: "Rural family estate acreage with pasture and mountain views", image: brandImages.blewettFamilyEstate },
+      { title: "Ten Minutes to Baker", alt: "Country road commute toward Nelson and Baker Street", image: brandImages.blewettBakerCommute },
     ],
     highlights: [
       { title: "Wooded Acreage", body: "Five-to-twenty-acre parcels with mature timber, pasture, and creek frontage, most never appear on the open market." },
