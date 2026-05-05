@@ -20,7 +20,7 @@ export const contact = {
   },
 };
 
-/* ---------- Hero, intent, and authority pillars ---------- */
+/* ---------- Hero, visitor paths, and authority pillars ---------- */
 
 export type HeroProofSignal = { value: string; label: string; detail: string };
 
@@ -54,35 +54,35 @@ export type VisitorIntent = {
 export const visitorIntents: VisitorIntent[] = [
   {
     eyebrow: "Sellers",
-    title: "Protect value before the market reacts.",
-    body: "Set the price, visuals, showing plan, and exposure before the first buyer forms an opinion.",
+    title: "Sell with a clear plan.",
+    body: "Understand pricing, presentation, showings, and timing before your home reaches buyers.",
     href: "#sellers",
-    cta: "Talk Selling",
-    note: "For lakefront, view, acreage, and legacy properties.",
+    cta: "Plan a Sale",
+    note: "For lakefront, view, acreage, and special properties.",
   },
   {
     eyebrow: "Buyers",
-    title: "Find the homes worth your time.",
-    body: "Use public listings, private introductions, and lifestyle fit to avoid wasting tours on homes that only look good online.",
+    title: "Find the right home, not just more listings.",
+    body: "Compare public listings, local options, and daily-life fit so you spend time on homes that truly make sense.",
     href: "/listings/luxury",
-    cta: "Browse Listings",
+    cta: "Start Your Search",
     note: "For local, Vancouver, Calgary, U.S., and international buyers.",
   },
   {
     eyebrow: "Relocation & Second Homes",
-    title: "Know the area before you commit.",
-    body: "Neighbourhoods, schools, healthcare, winter conditions, and the first scouting route that makes the move feel real.",
+    title: "Feel prepared before you move.",
+    body: "Understand neighbourhoods, schools, healthcare, winter conditions, and the first areas worth seeing in person.",
     href: "/buyers/relocation",
-    cta: "Relocation Guide",
+    cta: "Plan Your Move",
     note: "For Nelson, North Shore, Balfour, Kaslo, and the Slocan Valley.",
   },
   {
     eyebrow: "Referrals",
-    title: "Make the introduction cleanly.",
-    body: "For advisors, past clients, and trusted local relationships introducing someone who needs the right first conversation.",
+    title: "Introduce someone with confidence.",
+    body: "For past clients, advisors, and trusted local relationships helping a buyer or seller find the right guidance.",
     href: "/contact",
     cta: "Make an Introduction",
-    note: "For trusted introductions and private market conversations.",
+    note: "For trusted introductions and personal conversations.",
   },
 ];
 
@@ -152,8 +152,8 @@ export const trustProofs: TrustProof[] = [
       "Awards help, but the useful work is local: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
   },
   {
-    eyebrow: "Local Fluency",
-    title: "Born here. Knows the map.",
+    eyebrow: "Local Knowledge",
+    title: "Born here. Knows the area.",
     proof: "Born and raised in Nelson, BC, with more than 10 years in the local market.",
     meaning:
       "That knowledge helps buyers avoid the wrong fit and helps sellers explain value clearly.",
@@ -198,34 +198,34 @@ export type InquiryPath = {
 export const inquiryPaths: InquiryPath[] = [
   {
     audience: "Sellers",
-    title: "Start with the address and outcome.",
-    body: "Share the address, timeline, privacy needs, and the result you want. Luke can reply with the right first move.",
+    title: "Start with the address and your goal.",
+    body: "Share the address, timeline, privacy needs, and what you are hoping for. Luke can help you understand the right next step.",
     href: "/contact",
-    cta: "Start seller strategy",
+    cta: "Plan your sale",
     proof: "$169M+ career volume, disciplined launch planning, qualified showings.",
   },
   {
     audience: "Buyers",
-    title: "Search for fit, not just inventory.",
-    body: "Name the life you want: lakefront, walkable Nelson, acreage, ski rhythm, second home, or relocation. Then cut the search down to what fits.",
+    title: "Search for the right fit.",
+    body: "Share what matters most: lakefront, walkable Nelson, acreage, ski access, a second home, or a relocation plan. Then narrow the search to homes that fit.",
     href: "/buyers",
-    cta: "Build Buyer Brief",
+    cta: "Start your search",
     proof: "Open listings, private introductions, area fit, and local advisors.",
   },
   {
     audience: "Relocation & Second Homes",
-    title: "Plan the first scouting route.",
-    body: "Schools, winter roads, healthcare, caretaker coverage, and daily routines are mapped before the tour day.",
+    title: "Plan your first visit with care.",
+    body: "Schools, winter roads, healthcare, caretaker coverage, and daily routines should be considered before tour day.",
     href: "/buyers/relocation",
-    cta: "Plan relocation path",
+    cta: "Plan your move",
     proof: "Nelson, North Shore, Balfour, Blewett, Slocan Valley, and second-home ownership.",
   },
   {
     audience: "Referrals",
-    title: "Make the introduction cleanly.",
-    body: "For advisors, past clients, and trusted local relationships introducing a buyer or seller.",
+    title: "Make a thoughtful introduction.",
+    body: "For advisors, past clients, and trusted local relationships introducing a buyer or seller who needs local guidance.",
     href: "/contact",
-    cta: "Make introduction",
+    cta: "Make an introduction",
     proof: "A direct path into the right conversation.",
   },
 ];

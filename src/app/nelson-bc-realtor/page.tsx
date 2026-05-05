@@ -152,7 +152,7 @@ export default function NelsonRealtorPage() {
         eyebrow="Talk To Luke"
         title="Ask the sharp question."
         emphasis="Get the useful answer."
-        body={`Call ${contact.phone} or send Luke the property, area, or sale decision you are weighing. He will help you sort the next move clearly.`}
+        body={`Call ${contact.phone} or send Luke the property, area, or sale decision you are considering. He will help you understand the next step clearly.`}
       />
     </PageLayout>
   );

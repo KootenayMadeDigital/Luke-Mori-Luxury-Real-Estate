@@ -14,7 +14,7 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
     thesis:
       "Nelson is for buyers who want a real mountain town around the property: restaurants, heritage streets, lake access, schools, arts, and Whitewater ski days without giving up daily convenience.",
     luxuryBuyer:
-      "The strongest Nelson searches usually start with one of three priorities: walkability near Baker Street, elevated city-and-lake views, or a quieter address close enough to town that ownership still feels easy.",
+      "The strongest Nelson searches usually start with one of three priorities: walkability near Baker Street, city-and-lake views from higher streets, or a quieter address close enough to town that ownership still feels easy.",
     dailyLife: [
       "Baker Street gives the city its daily rhythm, with restaurants, coffee, shops, and heritage buildings close together.",
       "Lakeside Park and the West Arm of Kootenay Lake make summer ownership feel active, not decorative.",
@@ -22,7 +22,7 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
     ],
     propertyTypes: [
       "Restored heritage homes near downtown, Uphill, and Fairview",
-      "Larger view homes in elevated pockets like upper Fairview and Rosemont",
+      "Larger view homes in upper Fairview and Rosemont",
       "Walk-to-town homes with parking, outdoor space, and renovation upside",
       "Lake-adjacent homes around John's Walk, Sproat Drive, and Fairview approaches",
     ],

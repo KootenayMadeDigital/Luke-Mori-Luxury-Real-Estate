@@ -14,10 +14,10 @@ type Props = {
    subpages, pass props to customise per page. */
 
 export function InquiryCTA({
-  eyebrow = "Private Inquiry",
+  eyebrow = "Contact Luke",
   title = "Ready when you are.",
   emphasis,
-  body = "Start with the decision in front of you. Tell Luke what you are weighing, and he can help you choose the right first move.",
+  body = "Tell Luke what you are considering, what matters most, and what questions are still unanswered. He can help you understand the right next step.",
 }: Props) {
   return (
     <section className="tone-dark tonal-section border-y border-[var(--color-line)] py-28 md:py-32">
@@ -43,7 +43,7 @@ export function InquiryCTA({
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button href="/contact" variant="primary" size="lg">
-              Request Private Consultation
+              Talk to Luke
             </Button>
             <Button href={contact.phoneHref} variant="ghost" size="lg" arrow>
               Call {contact.phone}

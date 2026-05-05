@@ -80,7 +80,7 @@ export default function BuyerGuidesPage() {
         </Container>
       </section>
 
-      <InquiryCTA eyebrow="Private Advisory" title="Have a property or sale in mind?" emphasis="Ask before the tour." body="Send the address, area, or property type you are weighing. Luke can help identify the questions worth answering before a showing, offer, or launch plan." />
+      <InquiryCTA eyebrow="Ask Luke" title="Have a property or sale in mind?" emphasis="Ask before the tour." body="Send the address, area, or property type you are considering. Luke can help you understand the questions worth answering before a showing, offer, or sale plan." />
     </PageLayout>
   );
 }

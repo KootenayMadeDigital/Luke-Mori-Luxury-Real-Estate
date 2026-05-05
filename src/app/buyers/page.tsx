@@ -57,8 +57,8 @@ const advantageChecks = [
     body: "Lakefront, view homes, acreage, and walkable Nelson each carry different scarcity. Luke helps separate real scarcity from expensive presentation.",
   },
   {
-    title: "Next move made clear",
-    body: "Every serious buyer should know the next step: scout the area, study the shoreline, line up advisors, watch off-market homes, or tour with intent.",
+    title: "Clear next step",
+    body: "Every serious buyer should know what comes next: scout the area, study the shoreline, line up advisors, watch quiet opportunities, or book the right tour.",
   },
 ];
 

@@ -20,17 +20,17 @@ export function Hero() {
         <div>
           <Reveal>
             <h1 className="m-0 max-w-[12.5ch] font-serif font-light leading-[0.93] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(50px,8.6vw,132px)]">
-              Luxury property,
+              Move with clarity,
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                privately handled.
+                in the Kootenays.
               </em>
             </h1>
           </Reveal>
 
           <Reveal delay={180}>
             <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
-              Buy or sell lakefront homes, view properties, acreage, and second homes across Nelson and Kootenay Lake with local guidance before the stakes get high.
+              Buy or sell lakefront homes, view properties, acreage, and second homes across Nelson and Kootenay Lake with clear local guidance from the start.
             </p>
           </Reveal>
 
@@ -67,7 +67,7 @@ export function Hero() {
               </a>
               <span className="h-px w-8 bg-[var(--color-line-strong)]" aria-hidden />
               <a href="#consult" className="transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:text-[var(--color-bronze-light)]">
-                Private Consultation
+                Talk to Luke
               </a>
               <span className="h-px w-8 bg-[var(--color-line-strong)]" aria-hidden />
               <span>Nelson · North Shore · Balfour · Kaslo</span>
@@ -84,13 +84,13 @@ export function Hero() {
                     Why Clients Trust Luke
                   </p>
                   <h2 className="m-0 mt-3 max-w-[13ch] font-serif text-[34px] font-light leading-[1] tracking-[-0.01em] text-[var(--color-text)] sm:text-[40px]">
-                    Know the ground before you move.
+                    Know the area before you move.
                   </h2>
                 </div>
                 <div className="hidden rounded-full border border-[var(--color-line)] px-3 py-2 text-right text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:block">
-                  Private
+                  Local
                   <br />
-                  Representation
+                  Guidance
                 </div>
               </div>
 

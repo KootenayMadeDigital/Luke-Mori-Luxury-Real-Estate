@@ -21,7 +21,7 @@ const navGroups: NavGroup[] = [
       { label: "For Sellers", href: "/sellers", description: "Pricing, launch plan, qualified showings, and privacy." },
       { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
       { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." },
-      { label: "Guides", href: "/guides", description: "Buyer, due diligence, and seller guides for Kootenay luxury real estate." },
+      { label: "Guides", href: "/guides", description: "Clear buyer, seller, and due diligence guides for Kootenay real estate." }
     ],
   },
   {
@@ -212,7 +212,7 @@ export function Nav() {
               href="/#consult"
               className="group ml-auto hidden shrink-0 items-center gap-3 rounded-full border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.025)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-[background,color,border-color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[1px] hover:border-[var(--color-bronze)] hover:bg-[var(--color-bronze)] hover:text-[var(--color-button-text)] sm:inline-flex lg:ml-4"
             >
-              <span>Private Consultation</span>
+              <span>Talk to Luke</span>
               <span className="inline-flex size-7 items-center justify-center rounded-full bg-[rgba(212,184,150,0.1)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
                 <svg viewBox="0 0 16 16" aria-hidden className="size-[13px]">
                   <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />

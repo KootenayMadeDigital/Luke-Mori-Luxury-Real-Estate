@@ -267,7 +267,7 @@ export function BuyerFitQuiz() {
               </div>
               <div className="bg-[var(--color-bg)] p-5 sm:p-6">
                 <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                  Best next move
+                  Best next step
                 </span>
                 <p className="m-0 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
                   {result.nextMove}

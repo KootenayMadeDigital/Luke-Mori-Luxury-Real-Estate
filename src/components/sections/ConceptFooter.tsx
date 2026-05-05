@@ -25,7 +25,7 @@ const navLists: { heading: string; links: { label: string; href: string }[] }[] 
     ],
   },
   {
-    heading: "Advisory",
+    heading: "Guidance",
     links: [
       { label: "For Buyers", href: "/buyers" },
       { label: "For Sellers", href: "/sellers" },
@@ -56,7 +56,7 @@ const navLists: { heading: string; links: { label: string; href: string }[] }[] 
 const footerSignals = [
   { value: "$169M+", label: "Career sales volume" },
   { value: "2021 & 2024", label: "Best Luxury Broker BC" },
-  { value: "Nelson born", label: "Local market fluency" },
+  { value: "Nelson born", label: "Local market knowledge" },
 ];
 
 export function ConceptFooter() {
@@ -78,12 +78,12 @@ export function ConceptFooter() {
                   Nelson and Kootenay Lake real estate
                 </div>
                 <h2 className="m-0 max-w-[680px] font-serif font-light leading-[1.02] tracking-[-0.018em] text-[var(--color-text)] [font-size:clamp(32px,4.8vw,62px)]">
-                  Luxury real estate,
+                  Move with clarity
                   <br />
-                  handled with discretion.
+                  in Nelson and Kootenay Lake.
                 </h2>
                 <p className="m-0 mt-5 max-w-[560px] text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
-                  Local guidance for lakefront, acreage, view homes, relocation, and private seller strategy in the Kootenays.
+                  Clear local guidance for lakefront, acreage, view homes, relocation, and important selling decisions in the Kootenays.
                 </p>
               </div>
 
@@ -120,7 +120,7 @@ export function ConceptFooter() {
           <Reveal>
             <Brand href="/" />
             <p className="mt-6 max-w-[360px] text-[15px] leading-[1.78] text-[var(--color-text-muted)]">
-              Nelson and Kootenay Lake luxury real estate, represented with discretion, taste, and local intelligence. {contact.brokerage}.
+              Nelson and Kootenay Lake real estate guidance for people who want clear advice, local knowledge, and a thoughtful plan. {contact.brokerage}.
             </p>
 
             <div className="mt-8 flex items-center gap-5">

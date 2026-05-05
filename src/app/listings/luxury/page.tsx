@@ -28,7 +28,7 @@ const luxuryPockets = [
   },
   {
     name: "Fairview, Uphill, and Rosemont",
-    body: "Elevated city pockets with views, schools, heritage homes, newer builds, later sun, and daily access to Nelson life.",
+    body: "Higher city streets with views, schools, heritage homes, newer builds, later sun, and daily access to Nelson life.",
   },
   {
     name: "Hampton Gray, Foster, and Fort Sheppard",
