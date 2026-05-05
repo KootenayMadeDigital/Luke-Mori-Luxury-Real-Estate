@@ -307,9 +307,14 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
   const stageRef = useRef<HTMLDivElement | null>(null);
   const dragStartRef = useRef({ x: 50, y: 50, progress: 0.16, side: 1 });
   const specs = buildSpecs(listing);
+  const galleryImages = Array.from(new Set([listing.heroPhoto, ...listing.photos].filter(Boolean)));
+  const [activeImage, setActiveImage] = useState(0);
+  const imageCount = galleryImages.length;
+  const currentImage = galleryImages[activeImage] ?? listing.heroPhoto;
   const openPercent = clamp(progress, 0.04, 1);
   const revealLabel = openPercent > 0.68 ? "Draw shut" : "Draw open";
   const imageFocus = openPercent > 0.78;
+  const galleryReady = imageCount > 1 && imageFocus;
   const ceremonyOpacity = clamp(1 - (openPercent - 0.18) / 0.14, 0, 1);
   const leftShift = openPercent * 104;
   const rightShift = openPercent * 104;
@@ -382,6 +387,12 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
     setProgress((current) => (current > 0.62 ? 0.08 : 0.98));
   };
 
+  const showGalleryImage = (direction: -1 | 1) => {
+    if (imageCount < 2) return;
+    setProgress((current) => Math.max(current, 0.94));
+    setActiveImage((current) => (current + direction + imageCount) % imageCount);
+  };
+
   return (
     <section className="tone-office tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14">
@@ -415,14 +426,15 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
             }
             aria-label="Interactive listing reveal. Drag from the center toward either side to open or close the curtain."
           >
-            {listing.heroPhoto ? (
+            {currentImage ? (
               <Image
-                src={listing.heroPhoto}
-                alt={listing.address}
+                key={currentImage}
+                src={currentImage}
+                alt={`${listing.address} gallery image ${activeImage + 1}`}
                 fill
                 priority={false}
                 sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-cover scale-[1.02] transition-transform duration-700 ease-[var(--ease-luxe)] group-hover/reveal:scale-[1.05] motion-reduce:scale-100 motion-reduce:transition-none"
+                className="object-cover scale-[1.02] transition-[opacity,transform,filter] duration-700 ease-[var(--ease-luxe)] group-hover/reveal:scale-[1.05] motion-reduce:scale-100 motion-reduce:transition-none"
               />
             ) : (
               <div className="flex h-full items-center justify-center bg-[var(--color-surface-2)] text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
@@ -554,6 +566,38 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
                 {revealLabel}
               </button>
             </div>
+            {imageCount > 1 && (
+              <div
+                className="absolute inset-x-5 top-1/2 z-[62] flex -translate-y-1/2 items-center justify-between transition-opacity duration-500 ease-[var(--ease-luxe)] motion-reduce:transition-none"
+                style={{ opacity: galleryReady ? 1 : 0, pointerEvents: galleryReady ? "auto" : "none" }}
+                aria-label="Listing photo controls"
+              >
+                <button
+                  type="button"
+                  onClick={() => showGalleryImage(-1)}
+                  className="grid size-11 place-items-center rounded-full border border-[rgba(255,224,170,0.42)] bg-[rgba(8,7,6,0.7)] font-serif text-[26px] leading-none text-white shadow-[0_18px_52px_-30px_rgba(0,0,0,0.95)] backdrop-blur-md transition-[transform,border-color,background,color] duration-300 ease-[var(--ease-luxe)] hover:-translate-x-0.5 hover:border-[var(--color-bronze-light)] hover:bg-[rgba(8,7,6,0.92)] hover:text-[var(--color-bronze-light)]"
+                  aria-label="Previous listing photo"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  onClick={() => showGalleryImage(1)}
+                  className="grid size-11 place-items-center rounded-full border border-[rgba(255,224,170,0.42)] bg-[rgba(8,7,6,0.7)] font-serif text-[26px] leading-none text-white shadow-[0_18px_52px_-30px_rgba(0,0,0,0.95)] backdrop-blur-md transition-[transform,border-color,background,color] duration-300 ease-[var(--ease-luxe)] hover:translate-x-0.5 hover:border-[var(--color-bronze-light)] hover:bg-[rgba(8,7,6,0.92)] hover:text-[var(--color-bronze-light)]"
+                  aria-label="Next listing photo"
+                >
+                  ›
+                </button>
+              </div>
+            )}
+            {imageCount > 1 && (
+              <div
+                className="pointer-events-none absolute bottom-5 right-5 z-[62] border border-[rgba(255,224,170,0.32)] bg-[rgba(8,7,6,0.72)] px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_14px_42px_-28px_rgba(0,0,0,0.95)] backdrop-blur-md transition-opacity duration-500 ease-[var(--ease-luxe)] motion-reduce:transition-none"
+                style={{ opacity: galleryReady ? 1 : 0 }}
+              >
+                {String(activeImage + 1).padStart(2, "0")} / {String(imageCount).padStart(2, "0")}
+              </div>
+            )}
             <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[300px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-opacity duration-300 md:flex" style={{ opacity: ceremonyOpacity }} aria-hidden>
               <span>Pull left</span>
               <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
