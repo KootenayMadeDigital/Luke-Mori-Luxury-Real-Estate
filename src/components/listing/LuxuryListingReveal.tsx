@@ -88,13 +88,17 @@ function WebGLCurtain({
       varying float v_motion;
       void main() {
         float springOpen = smoothstep(0.0, 1.0, u_open);
-        float width = mix(1.16, 0.056, springOpen);
-        float hinge = a_side < 0.0 ? -1.0 : 1.0;
-        float inner = a_side < 0.0 ? -1.0 + width : 1.0 - width;
-        float x = mix(hinge, inner, a_local.x);
+        float closedWidth = 1.16;
+        float gatheredWidth = 0.24;
+        float width = mix(closedWidth, gatheredWidth, springOpen);
+        float closedCenter = a_side * 0.42;
+        float openCenter = a_side * 1.02;
+        float center = mix(closedCenter, openCenter, springOpen);
+        float gatherSkew = sin(a_local.x * 3.14159) * springOpen * 0.035 * a_side;
+        float x = center + (a_local.x - 0.5) * width + gatherSkew;
         float y = a_local.y * 2.0 - 1.0;
         float verticalLag = pow(a_local.y, 1.65);
-        float pullLag = u_velocity * verticalLag * (1.0 - a_local.x * 0.22);
+        float pullLag = u_velocity * verticalLag * (0.55 + a_local.x * 0.42);
         vec2 handPoint = vec2(u_pointer.x * 2.0 - 1.0, 1.0 - u_pointer.y);
         vec2 clothPoint = vec2(x, a_local.y);
         vec2 handDelta = vec2((handPoint.x - clothPoint.x) * 0.78, (handPoint.y - clothPoint.y) * 1.24);
@@ -107,20 +111,21 @@ function WebGLCurtain({
         float diagonal = sin((a_local.x * 18.0 + a_local.y * 8.0) * a_side + u_time * 0.18);
         float slow = sin(a_local.x * 10.0 - u_time * 0.22 + a_side * 0.7);
         float edgeLift = pow(a_local.x, 2.1) * u_open;
+        float bunch = smoothstep(0.26, 1.0, u_open);
         float weight = sin(a_local.y * 3.14159);
         float handPressure = hand * (0.035 + pointerSpeed * 0.030);
         float wakePull = wake * pointerSpeed * 0.040;
         float napDrag = dot(normalize(u_pointer_velocity + vec2(0.0001)), vec2(a_side, 0.28));
-        float billow = (ridge * 0.048 + ridge2 * 0.025 + diagonal * 0.016 + slow * 0.018 + handWide * 0.024 + handPressure + wakePull + pullLag * 0.22) * (1.0 - u_open * 0.06) * weight;
-        x += (billow + pullLag * 0.20 + hand * napDrag * 0.018) * a_side;
+        float billow = (ridge * (0.048 + bunch * 0.030) + ridge2 * (0.025 + bunch * 0.018) + diagonal * 0.016 + slow * 0.018 + handWide * 0.024 + handPressure + wakePull + pullLag * 0.18) * (1.0 - u_open * 0.02) * weight;
+        x += (billow + pullLag * 0.11 + hand * napDrag * 0.012) * a_side;
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
         y += abs(u_velocity) * 0.030 * verticalLag * (0.6 + hand * 0.4);
         y += u_lift * hand * weight * 0.28;
         y += (hand * -0.018 + wakePull * 0.36) * weight;
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.024 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.46 + abs(ridge) * 0.075 + abs(diagonal) * 0.045 + hand * 0.12 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.13 * verticalLag + u_lift * hand * 0.20;
-        float w = 1.0 + depth * 0.56;
+        float depth = edgeLift * 0.28 + bunch * abs(ridge) * 0.13 + abs(ridge) * 0.06 + abs(diagonal) * 0.04 + hand * 0.10 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.10 * verticalLag + u_lift * hand * 0.16;
+        float w = 1.0 + depth * 0.32;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
         v_side = a_side;
@@ -335,11 +340,9 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
   const imageFocus = openPercent > 0.78;
   const galleryReady = imageCount > 1 && imageFocus;
   const ceremonyOpacity = clamp(1 - (openPercent - 0.18) / 0.14, 0, 1);
-  const leftShift = openPercent * 104;
-  const rightShift = openPercent * 104;
-  const leftRotate = openPercent * -22;
-  const rightRotate = openPercent * 22;
-  const fabricDepth = 18 + openPercent * 34;
+  const leftShift = openPercent * 82;
+  const rightShift = openPercent * 82;
+  const fabricDepth = 8 + openPercent * 10;
   const seamGlow = 0.18 + openPercent * 0.52;
   const clothHitWidth = `${clamp(58 - openPercent * 47, 11, 58)}%`;
   const isSellerLaunch = variant === "sellerLaunch";
@@ -548,7 +551,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
                 <div
                   className="absolute inset-y-0 left-0 z-30 w-[54%] origin-right overflow-hidden border-r border-[rgba(224,192,154,0.38)] bg-[radial-gradient(circle_at_26%_28%,rgba(224,192,154,0.19),transparent_24%),linear-gradient(94deg,rgba(8,7,7,0.99),rgba(27,17,12,0.97)_34%,rgba(66,43,28,0.87)_50%,rgba(18,12,9,0.98)_68%,rgba(5,5,5,0.99))] shadow-[28px_0_74px_-34px_rgba(0,0,0,0.98)] will-change-transform motion-reduce:hidden"
                   style={{
-                    transform: `translateX(-${leftShift}%) rotateY(${leftRotate}deg) translateZ(${fabricDepth}px)`,
+                    transform: `translateX(-${leftShift}%) scaleX(${1 - openPercent * 0.58}) translateZ(${fabricDepth}px)`,
                     transition: isDragging ? "none" : "transform 560ms var(--ease-luxe)",
                   }}
                   aria-hidden
@@ -562,7 +565,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
                 <div
                   className="absolute inset-y-0 right-0 z-30 w-[54%] origin-left overflow-hidden border-l border-[rgba(224,192,154,0.38)] bg-[radial-gradient(circle_at_76%_32%,rgba(224,192,154,0.17),transparent_25%),linear-gradient(86deg,rgba(5,5,5,0.99),rgba(18,12,9,0.98)_30%,rgba(66,43,28,0.87)_50%,rgba(27,17,12,0.97)_66%,rgba(8,7,7,0.99))] shadow-[-28px_0_74px_-34px_rgba(0,0,0,0.98)] will-change-transform motion-reduce:hidden"
                   style={{
-                    transform: `translateX(${rightShift}%) rotateY(${rightRotate}deg) translateZ(${fabricDepth}px)`,
+                    transform: `translateX(${rightShift}%) scaleX(${1 - openPercent * 0.58}) translateZ(${fabricDepth}px)`,
                     transition: isDragging ? "none" : "transform 560ms var(--ease-luxe)",
                   }}
                   aria-hidden
