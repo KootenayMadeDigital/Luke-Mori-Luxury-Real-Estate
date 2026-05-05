@@ -146,14 +146,6 @@ export function ListingActionPanel(props: Props) {
           Send to Partner
         </a>
       </div>
-
-      <a
-        href={props.inquiryHref || "/contact"}
-        className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]"
-      >
-        Ask Luke About This Property
-      </a>
-
       <style jsx>{`
         .action-button {
           display: inline-flex;
