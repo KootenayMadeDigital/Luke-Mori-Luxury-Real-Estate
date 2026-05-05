@@ -13,7 +13,19 @@ type Props = {
   filterMode?: FilterMode;
 };
 
-type FilterKey = "all" | "luxe" | "lukes" | "waterfront" | "view" | "acreage" | "vacant";
+type FilterKey =
+  | "all"
+  | "luxe"
+  | "lukes"
+  | "waterfront"
+  | "view"
+  | "acreage"
+  | "vacant"
+  | "acreageHomes"
+  | "largeParcels"
+  | "waterfrontAcreage"
+  | "farmRanch"
+  | "shops";
 type SortKey = "price-desc" | "price-asc" | "photos" | "beds-desc";
 
 const PAGE_SIZE = 24;
@@ -44,11 +56,12 @@ const filtersByMode: Record<FilterMode, { key: FilterKey; label: string }[]> = {
   ],
   acreage: [
     { key: "all", label: "All Acreage" },
-    { key: "lukes", label: "Listed by Luke" },
-    { key: "luxe", label: "$1M+" },
-    { key: "waterfront", label: "Waterfront" },
-    { key: "vacant", label: "Land" },
-    { key: "view", label: "View Homes" },
+    { key: "acreageHomes", label: "Homes with Land" },
+    { key: "largeParcels", label: "5+ Acres" },
+    { key: "waterfrontAcreage", label: "Water + Land" },
+    { key: "farmRanch", label: "Farm / Ranch" },
+    { key: "shops", label: "Shops + Barns" },
+    { key: "vacant", label: "Bare Land" },
   ],
 };
 
@@ -63,6 +76,8 @@ const waterfrontKeywords =
   /(waterfront|lakefront|lake\s*front|riverfront|beach\s*front|on\s+the\s+lake|kootenay\s+lake|lake\s+access|river\s+frontage|dock|moorage)/i;
 const viewKeywords = /(view|views|panoramic|lake\s+view|mountain\s+view|city\s+view|valley\s+view)/i;
 const acreageKeywords = /(acreage|hobby\s+farm|farm|pasture|workshop|outbuilding|barn|timber|forest|wooded|private\s+acreage|development\s+parcel)/i;
+const farmRanchKeywords = /(farm|ranch|hobby\s+farm|pasture|equestrian|hay\s+field|paddock|corral|stable|barn)/i;
+const shopBarnKeywords = /(workshop|shop|outbuilding|barn|garage\/workshop|equipment\s+storage|studio|machine\s+shed)/i;
 
 export function ListingsBrowser({
   listings,
@@ -76,6 +91,11 @@ export function ListingsBrowser({
   const [page, setPage] = useState(1);
   const [debounced, setDebounced] = useState("");
   const activeFilters = filtersByMode[filterMode];
+  const searchPlaceholder =
+    filterMode === "acreage"
+      ? "Search by road, area, acreage feature"
+      : "Search by address, area, or feature";
+  const resultLabel = filterMode === "acreage" ? "acreage listings" : "properties";
 
   // Debounce search and reset to page 1 when the debounced query lands.
   useEffect(() => {
@@ -120,6 +140,30 @@ export function ListingsBrowser({
       );
     else if (filter === "vacant")
       arr = arr.filter((l) => /vacant\s*land|raw\s*land|recreational/i.test(l.propertyType));
+    else if (filter === "acreageHomes")
+      arr = arr.filter((l) => (l.beds ?? 0) > 0 && !/vacant\s*land|raw\s*land/i.test(l.propertyType));
+    else if (filter === "largeParcels") arr = arr.filter((l) => (l.lotAcres ?? 0) >= 5);
+    else if (filter === "waterfrontAcreage")
+      arr = arr.filter(
+        (l) =>
+          waterfrontKeywords.test(l.description) ||
+          waterfrontKeywords.test(l.address) ||
+          waterfrontKeywords.test(l.location)
+      );
+    else if (filter === "farmRanch")
+      arr = arr.filter(
+        (l) =>
+          farmRanchKeywords.test(l.title) ||
+          farmRanchKeywords.test(l.description) ||
+          farmRanchKeywords.test(l.propertyType)
+      );
+    else if (filter === "shops")
+      arr = arr.filter(
+        (l) =>
+          shopBarnKeywords.test(l.title) ||
+          shopBarnKeywords.test(l.description) ||
+          shopBarnKeywords.test(l.propertyType)
+      );
 
     if (debounced) {
       arr = arr.filter((l) => {
@@ -185,7 +229,7 @@ export function ListingsBrowser({
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search by address, area, or feature"
+                placeholder={searchPlaceholder}
                 className="w-full rounded-[1px] border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pl-10 font-sans text-[14px] font-light text-[var(--color-text)] outline-none transition-colors duration-200 placeholder:text-[var(--color-text-dim)] focus:border-[var(--color-bronze)]"
               />
               <svg
@@ -229,7 +273,7 @@ export function ListingsBrowser({
         <div className="mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
           <span>
             <span className="text-[var(--color-bronze)]">{filtered.length.toLocaleString()}</span>{" "}
-            properties
+            {resultLabel}
             {debounced && <> matching “<span className="text-[var(--color-text)]">{debounced}</span>”</>}
           </span>
           <span>
