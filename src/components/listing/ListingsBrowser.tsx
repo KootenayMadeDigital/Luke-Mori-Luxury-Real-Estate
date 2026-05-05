@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ListingTile } from "./ListingTile";
 import type { Listing } from "@/lib/listings";
 
-type FilterMode = "market" | "luxury" | "waterfront";
+type FilterMode = "market" | "luxury" | "waterfront" | "acreage";
 
 type Props = {
   listings: Listing[];
@@ -42,6 +42,14 @@ const filtersByMode: Record<FilterMode, { key: FilterKey; label: string }[]> = {
     { key: "view", label: "View Homes" },
     { key: "acreage", label: "Acreage" },
   ],
+  acreage: [
+    { key: "all", label: "All Acreage" },
+    { key: "lukes", label: "Listed by Luke" },
+    { key: "luxe", label: "$1M+" },
+    { key: "waterfront", label: "Waterfront" },
+    { key: "vacant", label: "Land" },
+    { key: "view", label: "View Homes" },
+  ],
 };
 
 const sorts: { key: SortKey; label: string }[] = [
@@ -54,7 +62,7 @@ const sorts: { key: SortKey; label: string }[] = [
 const waterfrontKeywords =
   /(waterfront|lakefront|lake\s*front|riverfront|beach\s*front|on\s+the\s+lake|kootenay\s+lake|lake\s+access|river\s+frontage|dock|moorage)/i;
 const viewKeywords = /(view|views|panoramic|lake\s+view|mountain\s+view|city\s+view|valley\s+view)/i;
-const acreageKeywords = /(acreage|acres|rural|hobby\s+farm|farm|pasture|workshop|outbuilding|barn|timber|forest)/i;
+const acreageKeywords = /(acreage|hobby\s+farm|farm|pasture|workshop|outbuilding|barn|timber|forest|wooded|private\s+acreage|development\s+parcel)/i;
 
 export function ListingsBrowser({
   listings,
@@ -105,7 +113,9 @@ export function ListingsBrowser({
       arr = arr.filter(
         (l) =>
           (l.lotAcres ?? 0) >= 1 ||
+          acreageKeywords.test(l.title) ||
           acreageKeywords.test(l.description) ||
+          acreageKeywords.test(l.location) ||
           acreageKeywords.test(l.propertyType)
       );
     else if (filter === "vacant")

@@ -22,9 +22,9 @@ export default function ContactPage() {
     <PageLayout>
       <SubpageHero
         eyebrow="Private Contact"
-        title="Choose the file."
-        emphasis="Keep it clear."
-        lede="Selling, buying, relocating, or planning a second home. Send the useful details, and Luke or his team can reply with the right first step."
+        title="Start with where"
+        emphasis="you want to go."
+        lede="Whether you are buying, selling, relocating, or exploring a second home, share what matters most. Luke or his team will help you understand the best next step."
         image={headerImages.lukeContact}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
@@ -32,9 +32,9 @@ export default function ContactPage() {
       <PrivateInquiryPaths
         compact
         eyebrow="Inquiry Routing"
-        title="Start with the decision,"
-        emphasis="not a blank form."
-        body="Tell Luke whether this is about selling, buying, relocating, or planning a second home. The better the first note, the sharper the reply."
+        title="Tell Luke what"
+        emphasis="you are hoping for."
+        body="Share what you are considering, what feels important, and what questions are still unanswered. You will get a thoughtful reply that helps you move forward with more confidence."
       />
 
       <section id="contact-form" className="tone-ivory tonal-section scroll-mt-28 py-24 md:py-28">
@@ -49,13 +49,13 @@ export default function ContactPage() {
                   Direct access,
                   <br />
                   <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    no reception maze.
+                    with a clear next step.
                   </em>
                 </SectionHeading>
               </Reveal>
               <Reveal delay={240}>
                 <SectionLede className="mb-10">
-                  For anything urgent, call. For an address, buying question, selling question, or relocation plan, send the details here so the first reply can start in the right place.
+                  For anything urgent, call. For a property, buying question, selling question, or relocation plan, send a note here and Luke or his team will help you find the right next step.
                 </SectionLede>
               </Reveal>
 

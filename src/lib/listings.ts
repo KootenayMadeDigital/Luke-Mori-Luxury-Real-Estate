@@ -99,6 +99,26 @@ export const waterfrontListings: Listing[] = allListings.filter(
     waterfrontKeywords.test(l.location)
 );
 
+/* Acreage and meaningful land holdings, conservative enough to avoid normal city yards. */
+const acreageKeywords =
+  /(acreage|hobby\s+farm|pasture|barn|outbuilding|workshop|rural\s+property|timbered|forest|wooded|private\s+acreage|development\s+parcel)/i;
+const landTypeKeywords = /vacant\s*land|raw\s*land|recreational/i;
+
+export function isAcreageListing(l: Listing): boolean {
+  const acres = l.lotAcres ?? 0;
+  const isLandType = landTypeKeywords.test(l.propertyType);
+  const hasAcreageSignal =
+    acreageKeywords.test(l.title) ||
+    acreageKeywords.test(l.description) ||
+    acreageKeywords.test(l.location) ||
+    acreageKeywords.test(l.propertyType);
+
+  if (isLandType) return acres >= 0.5 || (l.priceNumber ?? 0) >= 500_000 || hasAcreageSignal;
+  return acres >= 1 || hasAcreageSignal;
+}
+
+export const acreageListings: Listing[] = allListings.filter(isAcreageListing);
+
 /* ---------------- Sorting ---------------- */
 
 export function sortByPriceDesc(list: Listing[]): Listing[] {

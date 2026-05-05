@@ -33,7 +33,7 @@ export function ConsultForm() {
             Send a Private Note
           </h3>
           <p className="m-0 text-[15px] font-medium leading-[1.65] text-[#5c4635]">
-            Selling, buying, relocating, or planning a second home. Share the useful details and expect a personal reply within one business day.
+            Whether you are buying, selling, relocating, or exploring a second home, share what matters most and expect a personal reply within one business day.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export function ConsultForm() {
 
         <fieldset className="mb-6 border-0 p-0">
           <legend className="mb-3 block text-[11px] font-bold uppercase tracking-[0.22em] text-[#5a351d]">
-            File type
+            I am looking to
           </legend>
           <div className="flex flex-wrap gap-2">
             {roles.map((r) => {
@@ -108,7 +108,7 @@ export function ConsultForm() {
         </button>
 
         <p className="mt-5 text-center text-[13px] font-semibold leading-[1.6] text-[#4f3929]">
-          Your note is held in confidence. Luke or his team can reply with the right first step.
+          Your note is held in confidence. Luke or his team will help you move forward with more clarity.
         </p>
 
         {submitted && (

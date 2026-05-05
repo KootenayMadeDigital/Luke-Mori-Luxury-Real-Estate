@@ -20,6 +20,7 @@ const navLists: { heading: string; links: { label: string; href: string }[] }[] 
       { label: "Active Listings", href: "/listings" },
       { label: "Luxury Listings", href: "/listings/luxury" },
       { label: "Waterfront", href: "/listings/waterfront" },
+      { label: "Acreage", href: "/listings/acreage" },
       { label: "Recently Sold", href: "/listings/sold" },
     ],
   },
