@@ -115,7 +115,9 @@ function WebGLCurtain({
         float secondaryFold = sin(foldX * 6.2 - a_local.y * 1.05 - u_time * 0.08 + a_side * 0.38);
         float tertiaryFold = sin(foldX * 3.15 + a_side * 0.55 + u_time * 0.045);
         float topPleat = sin(foldX * 19.0 + a_side * 0.4) * topWeight;
-        float ridge = primaryFold * 0.50 + secondaryFold * 0.31 + tertiaryFold * 0.13 + topPleat * 0.06;
+        float foldBand = sin(foldX * 9.4 + a_local.y * 0.20 + a_side * 0.25);
+        float foldBand2 = sin(foldX * 4.7 - a_local.y * 0.14 - a_side * 0.15);
+        float ridge = primaryFold * 0.42 + secondaryFold * 0.24 + tertiaryFold * 0.10 + foldBand * 0.18 + foldBand2 * 0.08 + topPleat * 0.06;
         float edgeLift = pow(a_local.x, 2.1) * u_open;
         float bunch = smoothstep(0.26, 1.0, u_open);
         float weight = sin(a_local.y * 3.14159);
@@ -123,7 +125,7 @@ function WebGLCurtain({
         float handPressure = hand * (0.032 + pointerSpeed * 0.026);
         float wakePull = wake * pointerSpeed * 0.035;
         float napDrag = dot(normalize(u_pointer_velocity + vec2(0.0001)), vec2(a_side, 0.28));
-        float billow = (primaryFold * (0.034 + bunch * 0.020) + secondaryFold * (0.022 + bunch * 0.014) + tertiaryFold * 0.018 + topPleat * 0.018 + handWide * 0.020 + handPressure + wakePull + pullLag * 0.14) * (1.0 - u_open * 0.02) * weight;
+        float billow = (primaryFold * (0.030 + bunch * 0.018) + secondaryFold * (0.018 + bunch * 0.012) + tertiaryFold * 0.014 + foldBand * (0.030 + bunch * 0.020) + foldBand2 * 0.018 + topPleat * 0.018 + handWide * 0.020 + handPressure + wakePull + pullLag * 0.14) * (1.0 - u_open * 0.02) * weight;
         x += (billow + pullLag * 0.11 + hand * napDrag * 0.012 + topPleat * topWeight * 0.012) * a_side;
         y += sin(foldX * 5.4 + u_time * 0.26) * 0.008 * (0.45 + edgeLift) * weight;
         y += abs(u_velocity) * 0.030 * verticalLag * (0.6 + hand * 0.4);
@@ -132,7 +134,7 @@ function WebGLCurtain({
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * (0.022 + lowerWeight * 0.026) * (1.0 - u_open * 0.35);
         y += sag;
         y -= topWeight * (0.010 + abs(topPleat) * 0.010);
-        float depth = edgeLift * 0.22 + bunch * abs(ridge) * 0.082 + abs(primaryFold) * 0.042 + abs(secondaryFold) * 0.028 + lowerWeight * abs(tertiaryFold) * 0.034 + topWeight * abs(topPleat) * 0.055 + hand * 0.085 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.085 * verticalLag + u_lift * hand * 0.13;
+        float depth = edgeLift * 0.22 + bunch * abs(ridge) * 0.090 + abs(foldBand) * 0.060 + abs(foldBand2) * 0.032 + abs(primaryFold) * 0.032 + abs(secondaryFold) * 0.022 + lowerWeight * abs(tertiaryFold) * 0.034 + topWeight * abs(topPleat) * 0.055 + hand * 0.085 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.085 * verticalLag + u_lift * hand * 0.13;
         float w = 1.0 + depth * 0.32;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
@@ -166,6 +168,8 @@ function WebGLCurtain({
         float vertical = sin(foldX * 13.0 + v_local.y * 0.42) * 0.5 + 0.5;
         float secondaryFold = sin(foldX * 6.2 + 0.8 - v_local.y * 0.24) * 0.5 + 0.5;
         float broadFold = sin(foldX * 3.15 - 0.35) * 0.5 + 0.5;
+        float visibleFold = sin(foldX * 9.4 + v_local.y * 0.18 + v_side * 0.25) * 0.5 + 0.5;
+        float visibleFold2 = sin(foldX * 4.7 - v_local.y * 0.12 - v_side * 0.15) * 0.5 + 0.5;
         float topCompression = 1.0 - smoothstep(0.0, 0.26, v_local.y);
         float bottomWeight = smoothstep(0.62, 1.0, v_local.y);
         float verticalNap = smoothstep(0.12, 0.86, v_local.y) * (1.0 - smoothstep(0.86, 1.0, v_local.y));
@@ -178,7 +182,9 @@ function WebGLCurtain({
         float diagonalSheen = 0.0;
         float hem = smoothstep(0.0, 0.045, v_local.y) + smoothstep(1.0, 0.955, v_local.y);
         float foldValley = smoothstep(0.14, 0.46, vertical) * (1.0 - smoothstep(0.62, 0.96, vertical));
-        float creaseShadow = foldValley * 0.32;
+        float visibleValley = smoothstep(0.10, 0.42, visibleFold) * (1.0 - smoothstep(0.58, 0.94, visibleFold));
+        float visibleHighlight = smoothstep(0.58, 0.94, visibleFold) * (1.0 - smoothstep(0.96, 1.0, visibleFold));
+        float creaseShadow = foldValley * 0.24 + visibleValley * 0.30;
         float railGather = topCompression * (sin(foldX * 18.0 + v_side * 0.4) * 0.5 + 0.5);
         float bottomPooling = bottomWeight * (sin(foldX * 4.4 - 0.8) * 0.5 + 0.5);
         float outerDark = 1.0 - smoothstep(0.0, 0.22, outerEdge) * 0.30;
@@ -196,14 +202,14 @@ function WebGLCurtain({
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
         float napSheen = smoothstep(-0.65, 0.95, v_motion) * hand;
         float brushShadow = smoothstep(0.18, 0.82, hand) * smoothstep(0.82, 0.18, abs(v_motion));
-        float light = 0.18 + pleat * 0.22 + vertical * 0.10 + secondaryFold * 0.13 + broadFold * 0.21 + verticalNap * softFiber * 0.018 + railGather * 0.035 + sideRim * 0.34 + edgeKnife * 0.08 + hand * 0.08 + napSheen * 0.10;
-        light -= creaseShadow * 0.15;
+        float light = 0.17 + pleat * 0.20 + vertical * 0.08 + secondaryFold * 0.10 + broadFold * 0.18 + visibleFold * 0.17 + visibleFold2 * 0.08 + visibleHighlight * 0.08 + verticalNap * softFiber * 0.014 + railGather * 0.035 + sideRim * 0.34 + edgeKnife * 0.08 + hand * 0.08 + napSheen * 0.10;
+        light -= creaseShadow * 0.18;
         light -= topCompression * (0.11 + railGather * 0.035);
         light -= bottomWeight * (0.065 + bottomPooling * 0.035);
         light -= brushShadow * 0.05;
         light *= outerDark;
         vec3 color = mix(base, champagne, 0.30 + velvetNap * 0.22 + light * 0.17);
-        color = mix(color, espresso, creaseShadow * 0.22);
+        color = mix(color, espresso, creaseShadow * 0.25);
         color = mix(color, espresso, brushShadow * 0.10);
         color = mix(color, bronze, sideRim * 0.12);
         color += warm * sideRim * 0.08;
