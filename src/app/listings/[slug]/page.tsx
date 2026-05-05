@@ -151,6 +151,19 @@ function buildContextPanels(l: Listing): ContextPanel[] {
 }
 
 
+function splitStorySentences(text: string): string[] {
+  return text
+    .split(/(?<=[.!?])\s+(?=[A-Z(])/g)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+}
+
+function buildStorySegments(l: Listing): string[] {
+  const source = l.descriptionParagraphs.length > 0 ? l.descriptionParagraphs : [l.description].filter(Boolean);
+  return source.flatMap(splitStorySentences);
+}
+
+
 const BIRCHGROVE_TESTER_SLUG = "26-birchgrove-bend";
 
 const birchgroveHighlights = [
@@ -396,11 +409,26 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   <h2 className="m-0 mt-6 max-w-[720px] font-serif font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)] [font-size:clamp(32px,4vw,54px)]">
                     Read the home before you tour it.
                   </h2>
-                  <div className="mt-8 space-y-5 text-[17px] leading-[1.8] text-[var(--color-text-muted)]">
-                    {l.descriptionParagraphs.length > 0
-                      ? l.descriptionParagraphs.map((p, i) => <p key={i}>{p}</p>)
-                      : l.description && <p>{l.description}</p>}
-                  </div>
+                  {buildStorySegments(l).length > 0 && (
+                    <div className="mt-9 rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.34)] p-2 shadow-[0_30px_90px_-75px_rgba(0,0,0,0.55)]">
+                      <div className="rounded-[calc(2rem-0.5rem)] bg-[var(--color-surface)] p-6 sm:p-8 lg:p-10">
+                        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
+                          {buildStorySegments(l).map((sentence, i) => (
+                            <p
+                              key={`${sentence}-${i}`}
+                              className={`m-0 border-b border-[var(--color-line)] pb-5 text-[15px] leading-[1.75] text-[var(--color-text-muted)] last:border-b-0 last:pb-0 lg:border-b lg:pb-6 ${
+                                i === 0
+                                  ? "lg:col-span-2 font-serif text-[24px] font-light leading-[1.45] tracking-[-0.005em] text-[var(--color-text)] sm:text-[28px]"
+                                  : ""
+                              }`}
+                            >
+                              {sentence}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <p className="mt-10 border-t border-[var(--color-line)] pt-6 text-[11px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
                     <span className="text-[var(--color-bronze)]">Listed by</span>{" "}
