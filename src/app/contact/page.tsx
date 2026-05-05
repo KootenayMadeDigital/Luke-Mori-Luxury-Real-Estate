@@ -26,6 +26,7 @@ export default function ContactPage() {
         emphasis="you want to go."
         lede="Whether you are buying, selling, relocating, or exploring a second home, share what matters most. Luke or his team will help you understand the best next step."
         image={headerImages.lukeContact}
+        imageClassName="scale-[1.06] translate-y-8 object-[72%_50%] md:translate-y-12"
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 

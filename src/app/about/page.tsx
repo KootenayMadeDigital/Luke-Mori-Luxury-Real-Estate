@@ -29,6 +29,7 @@ export default function AboutPage() {
         emphasis="who's on your side."
         lede={lukeBio.short}
         image={headerImages.lukeLeaningPortrait}
+        imageClassName="scale-[1.08] translate-y-10 object-[72%_50%] md:translate-y-14"
         crumbs={[{ label: "Home", href: "/" }, { label: "About Luke" }]}
         meta={[
           { value: "150+", label: "Lifetime Clients" },
