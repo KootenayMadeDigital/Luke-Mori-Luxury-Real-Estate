@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Brand } from "@/components/ui/BrandMark";
@@ -14,169 +15,186 @@ const socialLinks = [
 
 const navLists: { heading: string; links: { label: string; href: string }[] }[] = [
   {
-    heading: "Listings",
+    heading: "Properties",
     links: [
-      { label: "Featured Estates", href: "/#estates" },
       { label: "Active Listings", href: "/listings" },
-      { label: "Luxury", href: "/listings/luxury" },
+      { label: "Luxury Listings", href: "/listings/luxury" },
       { label: "Waterfront", href: "/listings/waterfront" },
       { label: "Recently Sold", href: "/listings/sold" },
     ],
   },
   {
-    heading: "Buyers & Sellers",
+    heading: "Advisory",
     links: [
       { label: "For Buyers", href: "/buyers" },
       { label: "For Sellers", href: "/sellers" },
       { label: "Relocation", href: "/buyers/relocation" },
-      { label: "International Buyers", href: "/buyers/international" },
+      { label: "Guides", href: "/guides" },
     ],
   },
   {
-    heading: "About Nelson",
+    heading: "Places",
     links: [
       { label: "Nelson", href: "/nelson/nelson" },
       { label: "North Shore", href: "/nelson/north-shore" },
       { label: "Balfour", href: "/nelson/balfour" },
-      { label: "Blewett", href: "/nelson/blewett" },
       { label: "Slocan Valley", href: "/nelson/slocan-valley" },
     ],
   },
   {
-    heading: "About Luke",
+    heading: "Luke Mori",
     links: [
       { label: "About", href: "/about" },
-      { label: "Awards & Testimonials", href: "/testimonials" },
-      { label: "YouTube Home Tours", href: "/#home-tours" },
+      { label: "Testimonials", href: "/testimonials" },
       { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },
     ],
   },
 ];
 
+const footerSignals = [
+  { value: "$169M+", label: "Career sales volume" },
+  { value: "2021 & 2024", label: "Best Luxury Broker BC" },
+  { value: "Nelson born", label: "Local market fluency" },
+];
+
+const guideLinks = [
+  { label: "Waterfront Buying", href: "/guides/buying-kootenay-lake-waterfront-property" },
+  { label: "Rural Due Diligence", href: "/guides/rural-luxury-property-due-diligence-bc" },
+  { label: "Seller Strategy", href: "/guides/luxury-home-marketing-kootenays" },
+];
+
 export function ConceptFooter() {
   return (
-    <footer className="relative border-t border-[var(--color-line)] bg-[#07080a] pt-24 md:pt-28">
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-px opacity-40"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, var(--color-bronze) 50%, transparent 100%)",
-        }}
-      />
+    <footer className="tone-dark tonal-section relative border-t border-[var(--color-line)] bg-[#050506] pt-24 md:pt-32">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)] opacity-55" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.12]" aria-hidden>
+        <div className="absolute left-[8%] top-16 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(176,138,91,0.28),transparent_66%)] blur-3xl" />
+        <div className="absolute bottom-24 right-[8%] h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(132,162,166,0.18),transparent_68%)] blur-3xl" />
+      </div>
 
-      <Container>
-        {/* KMD concept block */}
-        <Reveal className="mx-auto mb-20 max-w-[820px] text-center md:mb-24">
-          <div className="mb-7 inline-flex items-center gap-2.5 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-            <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
-            Kootenay Made Digital
+      <Container className="relative">
+        <Reveal className="rounded-[2.25rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.045)] p-1.5 shadow-[0_36px_110px_-76px_rgba(0,0,0,0.95)]">
+          <div className="overflow-hidden rounded-[calc(2.25rem-0.375rem)] border border-[rgba(255,247,235,0.06)] bg-[linear-gradient(135deg,rgba(19,21,23,0.94),rgba(10,11,13,0.98)_58%,rgba(31,24,18,0.92))] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.07)] sm:p-9 lg:p-12">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-16">
+              <div>
+                <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[var(--color-line)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze-light)]">
+                  <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
+                  Private Nelson real estate advisory
+                </div>
+                <h2 className="m-0 max-w-[860px] font-serif font-light leading-[0.96] tracking-[-0.025em] text-[var(--color-text)] [font-size:clamp(42px,7vw,98px)]">
+                  The next move
+                  <br />
+                  deserves a quieter room.
+                </h2>
+                <p className="m-0 mt-7 max-w-[620px] text-[17px] leading-[1.78] text-[var(--color-text-muted)]">
+                  Lakefront, acreage, view homes, and legacy properties need careful advice before the market starts making noise.
+                </p>
+              </div>
+
+              <div className="rounded-[1.75rem] border border-[var(--color-line)] bg-[rgba(255,247,235,0.035)] p-6 sm:p-7">
+                <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">Direct line</p>
+                <div className="mt-5 space-y-3 text-[18px] font-medium text-[var(--color-text)]">
+                  <a href={contact.phoneHref} className="block transition-colors hover:text-[var(--color-bronze-light)]">{contact.phone}</a>
+                  <a href={contact.emailHref} className="block transition-colors hover:text-[var(--color-bronze-light)]">{contact.email}</a>
+                </div>
+                <p className="m-0 mt-5 text-[13px] leading-[1.65] text-[var(--color-text-muted)]">{contact.office}</p>
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                  <Button href="/contact" variant="primary" full>
+                    Request Private Consultation
+                  </Button>
+                  <Button href="/guides" variant="ghost" full>
+                    Read Guides
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
-          <h2 className="m-0 mb-6 font-serif font-light leading-[1.15] tracking-[-0.01em] [font-size:clamp(26px,3.6vw,42px)]">
-            Built as a concept by{" "}
-            <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-              Kootenay Made Digital.
-            </em>
-          </h2>
-          <p className="m-0 mb-9 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
-            A speculative concept demonstrating a higher standard of luxury real estate web
-            experience for the Nelson and Kootenay Lake market. Not affiliated with, or endorsed
-            by, Luke Mori. Property descriptions, photography, and statistics shown are sourced
-            from publicly available material on lukemori.com to demonstrate concept fidelity.
-          </p>
-          <Button href="mailto:hello@kootenaymade.ca" variant="primary">
-            Build a private luxury experience for your brand
-          </Button>
         </Reveal>
 
-        {/* Brand + nav grid */}
-        <div className="grid grid-cols-1 gap-12 border-t border-[var(--color-line)] pt-16 md:grid-cols-[1.2fr_2fr]">
-          <div>
-            <Brand href="/" />
-            <p className="mt-6 max-w-[320px] text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
-              Nelson &amp; Kootenay Lake luxury real estate, represented with discretion, taste,
-              and local intelligence. {contact.brokerage}.
-            </p>
-            <div className="mt-7 space-y-2.5 text-[13px] tracking-[0.02em]">
-              <a
-                href={contact.emailHref}
-                className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]"
-              >
-                {contact.email}
-              </a>
-              <a
-                href={contact.phoneHref}
-                className="block text-[var(--color-text)] transition-colors hover:text-[var(--color-bronze-light)]"
-              >
-                {contact.phone}
-              </a>
-              <span className="block text-[var(--color-text-muted)]">{contact.office}</span>
+        <Reveal className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-[1.6rem] border border-[var(--color-line)] bg-[var(--color-line)] md:grid-cols-3">
+          {footerSignals.map((signal) => (
+            <div key={signal.label} className="bg-[rgba(10,11,13,0.82)] p-6 sm:p-7">
+              <p className="m-0 font-serif text-[34px] font-light italic leading-none text-[var(--color-text)]">{signal.value}</p>
+              <p className="m-0 mt-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{signal.label}</p>
             </div>
-            <div className="mt-7 flex items-center gap-5">
-              <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                Brokerage
-              </span>
-              <div className="relative h-7 w-28 opacity-70">
-                <Image
-                  src={brandImages.fairRealty}
-                  alt="Fair Realty"
-                  fill
-                  sizes="120px"
-                  className="object-contain object-left"
-                />
+          ))}
+        </Reveal>
+
+        <div className="mt-16 grid grid-cols-1 gap-12 border-t border-[var(--color-line)] pt-14 lg:grid-cols-[0.9fr_1.4fr] lg:gap-20">
+          <Reveal>
+            <Brand href="/" />
+            <p className="mt-6 max-w-[360px] text-[15px] leading-[1.78] text-[var(--color-text-muted)]">
+              Nelson and Kootenay Lake luxury real estate, represented with discretion, taste, and local intelligence. {contact.brokerage}.
+            </p>
+
+            <div className="mt-8 flex items-center gap-5">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">Brokerage</span>
+              <div className="relative h-8 w-32 opacity-80">
+                <Image src={brandImages.fairRealty} alt="Fair Realty" fill sizes="140px" className="object-contain object-left" />
               </div>
             </div>
 
-            <div className="mt-8">
-              <span className="mb-3 block text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                Social
-              </span>
+            <div className="mt-9">
+              <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">Social</span>
               <div className="flex flex-wrap gap-2.5">
                 {socialLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full border border-[var(--color-line)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background] duration-500 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
-                  >
+                  <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="rounded-full border border-[var(--color-line)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]">
                     {link.label}
                   </a>
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {navLists.map((list) => (
-              <div key={list.heading}>
-                <span className="mb-4 block text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                  {list.heading}
-                </span>
-                <ul className="space-y-2">
-                  {list.links.map((l) => (
-                    <li key={l.href}>
-                      <a
-                        href={l.href}
-                        className="text-[13px] text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]"
-                      >
-                        {l.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div>
+            <Reveal className="mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {guideLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="group rounded-[1.25rem] border border-[var(--color-line)] bg-[rgba(255,247,235,0.025)] p-5 transition-[border-color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)]">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Guide</span>
+                  <span className="mt-3 block font-serif text-[20px] font-light leading-[1.15] text-[var(--color-text)]">{link.label}</span>
+                </Link>
+              ))}
+            </Reveal>
+
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+              {navLists.map((list) => (
+                <Reveal key={list.heading}>
+                  <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{list.heading}</span>
+                  <ul className="space-y-3">
+                    {list.links.map((link) => (
+                      <li key={link.href}>
+                        <Link href={link.href} className="text-[14px] leading-none text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]">
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-16 border-t border-[var(--color-line)] pt-7 pb-8">
+        <Reveal className="mx-auto mt-20 max-w-[900px] border-t border-[var(--color-line)] pt-12 text-center">
+          <div className="mb-6 inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
+            <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
+            Kootenay Made Digital
+          </div>
+          <p className="m-0 text-[14px] leading-[1.75] text-[var(--color-text-muted)]">
+            This website is a speculative concept by Kootenay Made Digital, created to demonstrate a higher standard of luxury real estate web experience for the Nelson and Kootenay Lake market. It is not affiliated with, or endorsed by, Luke Mori. Property descriptions, photography, and statistics shown are sourced from publicly available material on lukemori.com to demonstrate concept fidelity.
+          </p>
+          <div className="mt-7">
+            <Button href="mailto:hello@kootenaymade.ca" variant="ghost">
+              Build a private luxury experience for your brand
+            </Button>
+          </div>
+        </Reveal>
+
+        <div className="mt-14 border-t border-[var(--color-line)] py-7">
           <div className="flex flex-col gap-2 text-[11px] tracking-[0.05em] text-[var(--color-text-dim)] md:flex-row md:items-center md:justify-between md:gap-6">
-            <span>© 2026 Concept · Kootenay Made Digital, Speculative work, not a live site</span>
-            <span>
-              Listings, testimonials, and photography sourced from lukemori.com under fair-comment concept use.
-            </span>
+            <span>© 2026 Concept · Kootenay Made Digital</span>
+            <span>Listings, testimonials, and photography sourced from lukemori.com under fair-comment concept use.</span>
           </div>
         </div>
       </Container>
