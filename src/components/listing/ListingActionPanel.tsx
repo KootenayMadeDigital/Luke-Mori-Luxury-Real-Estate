@@ -130,9 +130,6 @@ export function ListingActionPanel(props: Props) {
             Send the property to a partner, advisor, or family decision-maker.
           </p>
         </div>
-        <span className="hidden rounded-full border border-[var(--color-line-strong)] px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--color-text-dim)] sm:inline-flex">
-          Phase 11
-        </span>
       </div>
 
       <div className="grid grid-cols-2 gap-2.5">
