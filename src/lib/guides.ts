@@ -4,7 +4,7 @@ export type GuideSource = { label: string; href: string };
 export type GuideSection = { title: string; body: string[] };
 export type BuyerGuide = {
   slug: string;
-  category: "Waterfront" | "Relocation" | "Due Diligence" | "Seller Strategy";
+  category: "Buyer Guides" | "Due Diligence" | "Seller Guides";
   title: string;
   dek: string;
   intent: string;
@@ -41,7 +41,7 @@ const rdckSource = { label: "Regional District of Central Kootenay", href: "http
 export const buyerGuides: BuyerGuide[] = [
   {
     slug: "buying-kootenay-lake-waterfront-property",
-    category: "Waterfront",
+    category: "Buyer Guides",
     title: "Buying Waterfront Property on Kootenay Lake",
     dek: "A practical guide to shoreline access, water rights, docks, services, and the questions to settle before a private showing.",
     intent: "For buyers comparing lakefront, lake access, and view properties around Kootenay Lake.",
@@ -58,7 +58,7 @@ export const buyerGuides: BuyerGuide[] = [
   },
   {
     slug: "kootenay-lake-waterfront-vs-lake-access",
-    category: "Waterfront",
+    category: "Buyer Guides",
     title: "Kootenay Lake Waterfront vs. Lake Access",
     dek: "The difference between owning shoreline, sharing access, and enjoying a lake view can change price, use, privacy, and risk.",
     intent: "For buyers who want the lake lifestyle but need to understand what the listing language really means.",
@@ -75,7 +75,7 @@ export const buyerGuides: BuyerGuide[] = [
   },
   {
     slug: "moving-to-nelson-bc",
-    category: "Relocation",
+    category: "Buyer Guides",
     title: "Moving to Nelson, BC",
     dek: "A relocation guide for buyers weighing walkability, services, seasons, mountain access, and the reality behind the postcard.",
     intent: "For buyers coming from Vancouver, Calgary, Ontario, the United States, or elsewhere in BC.",
@@ -92,7 +92,7 @@ export const buyerGuides: BuyerGuide[] = [
   },
   {
     slug: "moving-to-kaslo-bc",
-    category: "Relocation",
+    category: "Buyer Guides",
     title: "Moving to Kaslo, BC",
     dek: "What luxury and lifestyle buyers should understand about Kaslo, Kootenay Lake, small-town services, access, and privacy.",
     intent: "For buyers considering Kaslo, North Kootenay Lake, or a quieter lake and mountain setting.",
@@ -109,7 +109,7 @@ export const buyerGuides: BuyerGuide[] = [
   },
   {
     slug: "nelson-vs-kaslo-vs-balfour",
-    category: "Relocation",
+    category: "Buyer Guides",
     title: "Nelson vs. Kaslo vs. Balfour",
     dek: "A practical comparison for buyers choosing between town energy, lake access, ferry rhythm, privacy, and small-community pace.",
     intent: "For buyers narrowing the Kootenay lifestyle before booking showings.",
@@ -211,7 +211,7 @@ export const buyerGuides: BuyerGuide[] = [
   },
   {
     slug: "luxury-home-marketing-kootenays",
-    category: "Seller Strategy",
+    category: "Seller Guides",
     title: "How Luxury Homes Should Be Marketed in the Kootenays",
     dek: "Why unique rural, lake, view, and legacy properties need more than MLS exposure and attractive photography.",
     intent: "For sellers deciding how a high-value Kootenay property should be positioned before launch.",
@@ -228,7 +228,7 @@ export const buyerGuides: BuyerGuide[] = [
   },
   {
     slug: "preparing-waterfront-home-for-market-kootenays",
-    category: "Seller Strategy",
+    category: "Seller Guides",
     title: "Preparing a Waterfront Home for Market in the Kootenays",
     dek: "A seller guide for presenting shoreline, views, docks, access, systems, and lifestyle without overpromising.",
     intent: "For owners of lakefront, lake access, creekside, or view properties preparing to sell.",
@@ -245,7 +245,7 @@ export const buyerGuides: BuyerGuide[] = [
   },
 ];
 
-export const guideCategories = ["Waterfront", "Relocation", "Due Diligence", "Seller Strategy"] as const;
+export const guideCategories = ["Buyer Guides", "Due Diligence", "Seller Guides"] as const;
 
 export function getGuideBySlug(slug: string): BuyerGuide | undefined {
   return buyerGuides.find((guide) => guide.slug === slug);

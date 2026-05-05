@@ -21,7 +21,7 @@ const navGroups: NavGroup[] = [
       { label: "For Sellers", href: "/sellers", description: "Pricing, launch plan, qualified showings, and privacy." },
       { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
       { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." },
-      { label: "Buyer Guides", href: "/buyer-guides", description: "Waterfront, relocation, rural systems, acreage, and seller strategy." },
+      { label: "Guides", href: "/guides", description: "Buyer, due diligence, and seller guides for Kootenay luxury real estate." },
     ],
   },
   {
