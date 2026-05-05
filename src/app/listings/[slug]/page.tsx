@@ -214,77 +214,44 @@ function getBirchgroveGalleryChapters(l: Listing) {
   ].filter((chapter) => chapter.image);
 }
 
-function BirchgroveLuxuryTester({ l, inquiryHref }: { l: Listing; inquiryHref: string }) {
+function BirchgroveLuxuryEnhancements({ l, inquiryHref }: { l: Listing; inquiryHref: string }) {
   const rooms = getLargestRooms(l);
   const chapters = getBirchgroveGalleryChapters(l);
-  const dossier = [
-    { label: "Architectural hook", value: "Custom Hamill Creek timber frame" },
-    { label: "Lifestyle asset", value: "Access to 20 acres of shared waterfront land" },
-    { label: "Entertaining", value: "38 x 13 ft wrap-around deck with hot tub" },
+  const highlights = [
+    { label: "Architecture", value: "Custom Hamill Creek timber frame" },
+    { label: "Waterfront", value: "Access to 20 acres of shared community waterfront land" },
+    { label: "Outdoor living", value: "38 x 13 ft wrap-around deck with hot tub" },
     { label: "Comfort", value: "In-floor heating and gas fireplace" },
-    { label: "Guest capacity", value: "4 bedrooms, including bunk-room configuration" },
-    { label: "Utility", value: "Double garage, integrated workshop, boat carport" },
+    { label: "Guest space", value: "4 bedrooms, including bunk-room configuration" },
+    { label: "Utility", value: "Double garage, workshop, and boat carport" },
   ];
   const questions = [
     "How does Wing Creek ownership and waterfront access work in practice?",
     "What should a buyer know about seasonal access, maintenance, and winter living here?",
     "Which recent Kaslo or Kootenay Lake sales are the cleanest comparables?",
-    "What would you verify before writing: strata, water, boundaries, insurance, or rental rules?",
+    "What should be verified before writing: strata, water, boundaries, insurance, or rental rules?",
   ];
 
   return (
     <>
-      <section className="tone-dark tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
+      <section className="tone-ivory tonal-section py-20 md:py-24">
         <Container>
-          <Reveal className="grid grid-cols-1 gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end lg:gap-16">
+          <Reveal className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end md:gap-16">
             <div>
-              <Eyebrow>Luxury Listing Tester</Eyebrow>
-              <h2 className="m-0 mt-7 max-w-[760px] font-serif font-light leading-[1.04] tracking-[-0.015em] text-[var(--color-text)] [font-size:clamp(34px,5vw,70px)]">
-                A private property dossier,
-                <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  not another MLS page.
-                </em>
-              </h2>
-            </div>
-            <p className="m-0 max-w-[620px] text-[16px] leading-[1.8] text-[var(--color-text-muted)] md:text-[18px]">
-              This tester turns {l.address} into a sales-grade presentation: verified facts, buyer guidance, lifestyle context, showing strategy, and seller-facing proof of how Luke markets a serious property.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
-            {[
-              { k: "Buyer clarity", v: "Know what matters before touring" },
-              { k: "Seller proof", v: "See premium marketing in action" },
-              { k: "Broker leverage", v: "Turn attention into qualified inquiry" },
-            ].map((item, i) => (
-              <Reveal key={item.k} delay={i * 80} className="bg-[var(--color-surface)] p-7 sm:p-8">
-                <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-[var(--color-bronze)]">{item.k}</span>
-                <p className="m-0 mt-4 font-serif text-[28px] font-light leading-[1.15] text-[var(--color-text)]">{item.v}</p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="tone-ivory tonal-section py-24 md:py-28">
-        <Container>
-          <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end md:gap-16">
-            <div>
-              <Eyebrow>At a glance</Eyebrow>
+              <Eyebrow>Property Highlights</Eyebrow>
               <SectionHeading className="mt-7">
-                The reasons buyers
+                Key features,
                 <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">slow down here.</em>
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">clearly surfaced.</em>
               </SectionHeading>
             </div>
             <SectionLede>
-              A buyer should not need to decode a long description to understand why a property deserves attention. Pull the strongest verified facts forward.
+              The strongest listing details, pulled forward for a faster first read before the showing conversation.
             </SectionLede>
           </Reveal>
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] sm:grid-cols-2 lg:grid-cols-3">
-            {dossier.map((item, i) => (
+            {highlights.map((item, i) => (
               <Reveal key={item.label} delay={(i % 3) * 70} className="group bg-[var(--color-bg)] p-7 transition-colors hover:bg-[var(--color-surface)] sm:p-8">
                 <span className="text-[9px] font-bold uppercase tracking-[0.26em] text-[var(--color-bronze)]">{item.label}</span>
                 <p className="m-0 mt-4 font-serif text-[25px] font-light leading-[1.18] text-[var(--color-text)]">{item.value}</p>
@@ -295,18 +262,15 @@ function BirchgroveLuxuryTester({ l, inquiryHref }: { l: Listing; inquiryHref: s
       </section>
 
       {chapters.length > 0 && (
-        <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <section className="tone-office tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
           <Container>
-            <Reveal className="mb-12 max-w-[780px]">
-              <Eyebrow>Guided Gallery Preview</Eyebrow>
+            <Reveal className="mb-10 max-w-[780px]">
+              <Eyebrow>Gallery Guide</Eyebrow>
               <SectionHeading className="mt-7">
-                Browse by intent,
+                Four ways to
                 <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">not by accident.</em>
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">read the property.</em>
               </SectionHeading>
-              <SectionLede className="mt-7">
-                The final format should let buyers jump between the emotional chapters of a property: arrival, architecture, gathering, outdoor life, utility, and due diligence.
-              </SectionLede>
             </Reveal>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -328,15 +292,15 @@ function BirchgroveLuxuryTester({ l, inquiryHref }: { l: Listing; inquiryHref: s
         </section>
       )}
 
-      <section className="tone-lake tonal-section py-24 md:py-28">
+      <section className="tone-lake tonal-section py-20 md:py-24">
         <Container>
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1fr_0.92fr] lg:gap-16">
             <Reveal>
-              <Eyebrow>Buyer intelligence</Eyebrow>
+              <Eyebrow>Buyer Questions</Eyebrow>
               <SectionHeading className="mt-7">
-                Questions that turn
+                Ask the right
                 <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">interest into intent.</em>
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">questions before touring.</em>
               </SectionHeading>
               <div className="mt-10 space-y-4">
                 {questions.map((question, i) => (
@@ -348,42 +312,41 @@ function BirchgroveLuxuryTester({ l, inquiryHref }: { l: Listing; inquiryHref: s
               </div>
             </Reveal>
 
-            <Reveal delay={160}>
-              <div className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
-                <Eyebrow>Room intelligence</Eyebrow>
-                <h3 className="m-0 mt-6 font-serif text-[34px] font-light leading-[1.08] text-[var(--color-text)]">Largest spaces, surfaced.</h3>
-                <p className="m-0 mt-5 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">
-                  Room data becomes useful when the page highlights scale instead of burying dimensions in a long MLS table.
-                </p>
-                <ul className="mt-8 space-y-4">
-                  {rooms.map((room) => (
-                    <li key={`${room.level}-${room.name}`} className="flex items-baseline justify-between gap-5 border-b border-[var(--color-line)] pb-4 last:border-b-0 last:pb-0">
-                      <span>
-                        <span className="block font-serif text-[19px] font-light text-[var(--color-text)]">{room.name}</span>
-                        <span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-dim)]">{room.level}</span>
-                      </span>
-                      <span className="font-serif italic text-[var(--color-bronze-light)]">{room.dim}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
+            {rooms.length > 0 && (
+              <Reveal delay={160}>
+                <div className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
+                  <Eyebrow>Largest Rooms</Eyebrow>
+                  <h3 className="m-0 mt-6 font-serif text-[34px] font-light leading-[1.08] text-[var(--color-text)]">Scale at a glance.</h3>
+                  <ul className="mt-8 space-y-4">
+                    {rooms.map((room) => (
+                      <li key={`${room.level}-${room.name}`} className="flex items-baseline justify-between gap-5 border-b border-[var(--color-line)] pb-4 last:border-b-0 last:pb-0">
+                        <span>
+                          <span className="block font-serif text-[19px] font-light text-[var(--color-text)]">{room.name}</span>
+                          <span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-dim)]">{room.level}</span>
+                        </span>
+                        <span className="font-serif italic text-[var(--color-bronze-light)]">{room.dim}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            )}
           </div>
         </Container>
       </section>
 
-      <section className="tone-dark tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+      <section className="tone-dark tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
             <Reveal>
-              <Eyebrow>Private Showing Planner</Eyebrow>
+              <Eyebrow>Private Showing</Eyebrow>
               <h2 className="m-0 mt-7 font-serif font-light leading-[1.04] tracking-[-0.015em] text-[var(--color-text)] [font-size:clamp(34px,5vw,68px)]">
-                Make the inquiry
+                See it with
                 <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">feel prepared.</em>
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">the right context.</em>
               </h2>
               <p className="m-0 mt-7 max-w-[620px] text-[16px] leading-[1.8] text-[var(--color-text-muted)]">
-                Instead of a cold lead form, this page should invite buyers to share timing, travel plans, decision makers, and the questions they want Luke to answer before the showing.
+                Share your timing, travel plans, and the questions you want answered before walking the property.
               </p>
             </Reveal>
 
@@ -399,40 +362,9 @@ function BirchgroveLuxuryTester({ l, inquiryHref }: { l: Listing; inquiryHref: s
                 <Button href={inquiryHref} variant="primary" full className="mt-5">
                   Plan a Private Showing
                 </Button>
-                <p className="m-0 mt-5 text-center text-[10px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
-                  Opens the inquiry path with this listing prefilled
-                </p>
               </div>
             </Reveal>
           </div>
-        </Container>
-      </section>
-
-      <section className="tone-ivory tonal-section py-24 md:py-28">
-        <Container>
-          <Reveal className="grid grid-cols-1 gap-10 border border-[var(--color-line)] bg-[var(--color-surface)] p-8 md:grid-cols-[1fr_0.9fr] md:items-center md:p-10 lg:p-12">
-            <div>
-              <Eyebrow>Seller proof layer</Eyebrow>
-              <h2 className="m-0 mt-6 max-w-[760px] font-serif font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)] [font-size:clamp(31px,4vw,56px)]">
-                Every listing page becomes a pitch for the next seller.
-              </h2>
-              <p className="m-0 mt-6 max-w-[720px] text-[16px] leading-[1.8] text-[var(--color-text-muted)]">
-                A homeowner should land here and think: if Luke presents this property with this much care, he can do the same for mine.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-px bg-[var(--color-line)]">
-              {[
-                "Premium visual presentation",
-                "Buyer-ready decision support",
-                "Private inquiry path",
-                "Local context and lifestyle positioning",
-              ].map((proof) => (
-                <div key={proof} className="bg-[var(--color-bg)] px-6 py-5 text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-text)]">
-                  {proof}
-                </div>
-              ))}
-            </div>
-          </Reveal>
         </Container>
       </section>
     </>
@@ -582,7 +514,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </Container>
       </section>
 
-      {showBirchgroveTester && <BirchgroveLuxuryTester l={l} inquiryHref={inquiryHref} />}
+      {showBirchgroveTester && <BirchgroveLuxuryEnhancements l={l} inquiryHref={inquiryHref} />}
 
       <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
