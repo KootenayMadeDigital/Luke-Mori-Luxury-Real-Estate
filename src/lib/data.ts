@@ -28,7 +28,7 @@ export const heroProofSignals: HeroProofSignal[] = [
   {
     value: "$169M+",
     label: "Career sales volume",
-    detail: "High-value sales across Nelson, Kootenay Lake, and the surrounding region.",
+    detail: "Important sales across Nelson, Kootenay Lake, and the surrounding region.",
   },
   {
     value: "2021 & 2024",
@@ -1138,13 +1138,13 @@ export const lukeBio = {
   pillars: [
     {
       k: "I.",
-      title: "Local knowledge over generic luxury.",
+      title: "Local knowledge over generic advice.",
       body: "Knowing the lots, roads, views, owners, and what each property may be worth to the right buyer.",
     },
     {
       k: "II.",
       title: "Privacy from the start.",
-      body: "Private representation, controlled exposure, and qualified showings. Your home needs the right buyer, not an audience.",
+      body: "Clear representation, careful exposure, and serious showings. Your home needs the right buyer, not an audience.",
     },
     {
       k: "III.",
@@ -1190,7 +1190,7 @@ export const sellerSteps: ProcessStep[] = [
   {
     num: "01",
     title: "Answer the questions worth asking",
-    body: "Why are you selling? What timeline matters? What makes the home valuable? Answer that before setting price or launch plan.",
+    body: "Why are you selling? What timeline matters? What makes the home valuable? Answer that before setting price or a sale plan.",
   },
   {
     num: "02",
@@ -1256,7 +1256,7 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "What happens before a property is publicly listed?",
-    a: "The seller process starts with the questions that affect strategy: why the owner is selling, what timing constraints exist, and what makes the home unique. The public launch should come after pricing, presentation, and the showing plan are clear.",
+    a: "The seller process starts with the questions that affect strategy: why the owner is selling, what timing constraints exist, and what makes the home unique. The public listing should come after pricing, presentation, and the showing plan are clear.",
   },
   {
     category: "Selling",
@@ -1301,7 +1301,7 @@ export const faqs: FAQ[] = [
   {
     category: "Relocation",
     q: "Are international buyers treated differently?",
-    a: "International buyers should get qualified legal and tax advice before purchasing. Luke can help organize property and area questions, but tax residency, transfer rules, financing, and regulatory issues require professional advice.",
+    a: "International buyers should get licensed legal and tax advice before purchasing. Luke can help organize property and area questions, but tax residency, transfer rules, financing, and regulatory issues require professional advice.",
   },
   {
     category: "Representation",
@@ -1311,12 +1311,12 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "Why does presentation matter so much for a higher-value property?",
-    a: "High-value homes ask buyers to understand the house, land, privacy, lifestyle, and location at once. Photography, video, measurements, and clear copy help the right buyer decide whether to tour.",
+    a: "Important homes ask buyers to understand the house, land, setting, daily life, and location at once. Photography, video, measurements, and clear copy help the right buyer decide whether to tour.",
   },
   {
     category: "Selling",
     q: "Should every listing be marketed the same way?",
-    a: "No. A lakefront home, acreage estate, city view home, and walkable Nelson property each need a different launch plan. The likely buyer should shape the marketing.",
+    a: "No. A lakefront home, acreage estate, city view home, and walkable Nelson property each need a different sale plan. The likely buyer should shape the marketing.",
   },
   {
     category: "Buying",

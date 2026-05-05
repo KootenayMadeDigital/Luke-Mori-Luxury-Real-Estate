@@ -30,10 +30,10 @@ export default function WaterfrontPage() {
         })}
       />
       <SubpageHero
-        eyebrow={`Waterfront · ${wf.length.toLocaleString()} Properties`}
+        eyebrow={`Waterfront · ${wf.length.toLocaleString()} Listings`}
         title="Waterfront needs"
         emphasis="a careful look."
-        lede="Active waterfront properties across Kootenay Lake's West Arm, Highway 3A, the North Shore, and the Slocan and Kootenay rivers."
+        lede="Active waterfront and water-adjacent properties across Kootenay Lake's West Arm, Highway 3A, the North Shore, and the Slocan and Kootenay rivers."
         image={brandImages.kayaking}
         crumbs={[
           { label: "Home", href: "/" },
@@ -64,9 +64,9 @@ export default function WaterfrontPage() {
 
       <InquiryCTA
         eyebrow="Waterfront Inquiry"
-        title="Waterfront decisions"
+        title="Waterfront questions"
         emphasis="deserve care."
-        body="Tell Luke what kind of waterfront you want: orientation, depth, dock potential, road access, sun, winter use, and privacy."
+        body="Tell Luke what kind of waterfront you want: orientation, depth, dock potential, road access, sun, winter use, and the day-to-day feel."
       />
     </PageLayout>
   );

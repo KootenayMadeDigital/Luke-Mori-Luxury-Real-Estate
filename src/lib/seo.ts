@@ -3,7 +3,7 @@ import { brandImages, contact } from "@/lib/data";
 import type { Listing } from "@/lib/listings";
 
 export const siteUrl = "https://luke-mori-luxury-real-estate.vercel.app";
-export const siteName = "Luke Mori Luxury";
+export const siteName = "Luke Mori Real Estate";
 export const defaultOgImage = "/og/home.png";
 
 type PageMetadataInput = {
@@ -80,7 +80,7 @@ export function buildOrganizationJsonLd() {
   return {
     "@type": "RealEstateAgent",
     "@id": absoluteUrl("/#organization"),
-    name: "Luke Mori Luxury",
+    name: "Luke Mori Real Estate",
     url: absoluteUrl("/"),
   };
 }
@@ -90,9 +90,9 @@ export function buildAgentJsonLd() {
     "@type": "RealEstateAgent",
     "@id": absoluteUrl("/#agent"),
     name: "Luke Mori",
-    alternateName: ["Luke Mori Real Estate", "Luke Mori Luxury"],
+    alternateName: ["Luke Mori Real Estate"],
     description:
-      "Nelson BC and Kootenay Lake real estate representation for luxury homes, waterfront property, acreage, relocation buyers, second-home buyers, and sellers.",
+      "Nelson BC and Kootenay Lake real estate guidance for important homes, waterfront property, acreage, relocation buyers, second-home buyers, and sellers.",
     url: "https://www.lukemori.com/",
     telephone: contact.phone,
     email: contact.email,
@@ -134,7 +134,7 @@ export function buildAgentJsonLd() {
       "Slocan Valley real estate",
       "Relocation buyers",
       "Second-home ownership",
-      "Private seller representation",
+      "Seller guidance",
     ],
     award: [
       "Best Luxury Real Estate Broker in British Columbia, Luxury Lifestyle Awards, 2021",

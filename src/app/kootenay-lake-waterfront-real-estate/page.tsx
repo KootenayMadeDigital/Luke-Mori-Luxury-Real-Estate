@@ -16,7 +16,7 @@ import { buildFaqJsonLd, buildItemListJsonLd, buildPageMetadata } from "@/lib/se
 export const metadata = buildPageMetadata({
   title: "Kootenay Lake Waterfront Real Estate · Nelson BC Homes",
   description:
-    "Kootenay Lake waterfront real estate guide for Nelson BC buyers comparing lakefront homes, North Shore privacy, Balfour, Procter, shoreline access, docks, sun, and resale confidence.",
+    "Kootenay Lake waterfront real estate guide for Nelson BC buyers comparing lakefront homes, North Shore settings, Balfour, Procter, shoreline access, docks, sun, and resale questions.",
   path: "/kootenay-lake-waterfront-real-estate",
   image: "/og/listings-waterfront.png",
 });

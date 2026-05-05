@@ -10,9 +10,9 @@ import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
 import { headerImages, contact } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Contact Luke Mori · Nelson BC Realtor",
+  title: "Contact · Nelson BC Realtor",
   description:
-    "Contact Luke Mori · Nelson BC Realtor for Nelson and Kootenay Lake real estate. Phone, email, office address, and a private consultation form.",
+    "Contact Luke Mori · Nelson BC Realtor for Nelson and Kootenay Lake real estate. Phone, email, office address, and a clear contact form.",
   path: "/contact",
   image: "/og/contact.png",
 });

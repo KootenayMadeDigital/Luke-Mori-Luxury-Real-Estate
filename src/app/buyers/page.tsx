@@ -12,9 +12,9 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { headerImages, buyerSteps } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Nelson BC Buyer Representation · Homes, Lakefront & Relocation",
+  title: "Nelson BC Buyer Guidance · Homes, Lakefront and Relocation",
   description:
-    "Buyer representation in Nelson and Kootenay Lake real estate for relocating buyers, second-home owners, and regional buyers who want fewer wrong turns.",
+    "Buyer guidance in Nelson and Kootenay Lake real estate for relocating buyers, second-home owners, and regional buyers who want fewer wrong turns.",
   path: "/buyers",
   image: "/og/buyers.png",
 });

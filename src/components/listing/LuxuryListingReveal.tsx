@@ -376,7 +376,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
         lede: "A serious home should not reach buyers like another upload. For select properties, Luke builds the sale plan around what matters most: the view, the privacy, the film, the copy, and the reason a buyer remembers it.",
         kicker: "Seller Preview",
         panelTitle: "Your listing should feel considered before anyone asks the price.",
-        panelBody: "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the private tour.",
+        panelBody: "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the next conversation.",
         primaryCta: "Plan Your Sale",
         primaryHref: "/sellers",
       }

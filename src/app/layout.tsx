@@ -8,29 +8,29 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://luke-mori-luxury-real-estate.vercel.app"),
   title: {
-    default: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
-    template: "%s · Luke Mori Luxury",
+    default: "Luke Mori Real Estate · Nelson & Kootenay Lake",
+    template: "%s · Luke Mori",
   },
   description:
     "Nelson and Kootenay Lake real estate for sellers, lakefront buyers, view properties, acreage, relocation, and second-home ownership.",
-  applicationName: "Luke Mori Luxury",
-  authors: [{ name: "Luke Mori Luxury" }],
-  creator: "Luke Mori Luxury",
-  publisher: "Luke Mori Luxury",
+  applicationName: "Luke Mori Real Estate",
+  authors: [{ name: "Luke Mori Real Estate" }],
+  creator: "Luke Mori Real Estate",
+  publisher: "Luke Mori Real Estate",
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
+    title: "Luke Mori Real Estate · Nelson & Kootenay Lake",
     description:
       "Nelson and Kootenay Lake real estate for sellers, lakefront buyers, view properties, acreage, relocation, and second-home ownership.",
-    siteName: "Luke Mori Luxury",
+    siteName: "Luke Mori Real Estate",
     url: "/",
     locale: "en_CA",
-    images: [{ url: "/og/home.png", alt: "Luke Mori Luxury Nelson and Kootenay Lake real estate", width: 1200, height: 630 }],
+    images: [{ url: "/og/home.png", alt: "Luke Mori Real Estate Nelson and Kootenay Lake real estate", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luke Mori Luxury · Nelson & Kootenay Lake Real Estate",
+    title: "Luke Mori Real Estate · Nelson & Kootenay Lake",
     description:
       "Nelson and Kootenay Lake real estate for sellers, lakefront buyers, view properties, acreage, relocation, and second-home ownership.",
     images: ["/og/home.png"],

@@ -12,7 +12,7 @@ import { brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Nelson BC Real Estate Listings & Homes for Sale",
   description:
-    "Browse Nelson BC real estate listings, homes for sale, waterfront property, luxury homes, acreage, and Kootenay Lake listings with Luke Mori.",
+    "Browse Nelson BC real estate listings, homes for sale, waterfront property, acreage, Kootenay Lake homes, and homes over $1M with Luke Mori.",
   path: "/listings",
   image: "/og/listings.png",
 });
@@ -32,10 +32,10 @@ export default function ListingsIndexPage() {
         })}
       />
       <SubpageHero
-        eyebrow={`Active · ${total.toLocaleString()} Listings`}
+        eyebrow={`For Sale · ${total.toLocaleString()} Listings`}
         title="See what is active,"
         emphasis="then narrow with care."
-        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Use the filters to turn a crowded market into a clearer short list."
+        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Use the filters to build a clearer short list."
         image={brandImages.procterLakeHouse}
         crumbs={[{ label: "Home", href: "/" }, { label: "Listings" }]}
         meta={[
@@ -64,7 +64,7 @@ export default function ListingsIndexPage() {
         eyebrow="Buyer Inquiry"
         title="Looking for something specific?"
         emphasis="Ask Luke."
-        body="Some homes are not publicly listed. Tell Luke what you are looking for, and he can let you know what options may be realistic."
+        body="Tell Luke what you are looking for, and he can help you compare what is active, what may be coming, and what is worth your time."
       />
     </PageLayout>
   );

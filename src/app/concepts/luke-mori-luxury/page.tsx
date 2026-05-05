@@ -16,9 +16,9 @@ import { LuxuryListingReveal } from "@/components/listing/LuxuryListingReveal";
 import { getListingBySlug, luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { buildPageGraphJsonLd, buildPageMetadata } from "@/lib/seo";
 
-const title = "Nelson & Kootenay Lake Luxury Real Estate";
+const title = "Nelson & Kootenay Lake Real Estate";
 const description =
-  "Luke Mori Luxury. Nelson and Kootenay Lake real estate for lakefront homes, view properties, acreage, and second-home buyers.";
+  "Luke Mori Real Estate. Nelson and Kootenay Lake guidance for lakefront homes, view properties, acreage, and second-home buyers.";
 const path = "/";
 
 export const metadata = buildPageMetadata({
@@ -45,7 +45,7 @@ export default function LukeMoriLuxuryExperience() {
           image: "/og/home.png",
           breadcrumbs: [
             { name: "Home", path: "/" },
-            { name: "Luke Mori Luxury", path },
+            { name: "Luke Mori Real Estate", path },
           ],
         })}
       />
@@ -62,9 +62,9 @@ export default function LukeMoriLuxuryExperience() {
             variant="sellerLaunch"
             copy={{
               lede:
-                "A serious home should not hit the market like another upload. For select properties, Luke builds the launch around the first pause: the lake, the privacy, the shoreline, the film, and the reason a buyer remembers it.",
+                "A serious home should not hit the market like another upload. For select properties, Luke builds the first impression around what matters: the lake, the setting, the shoreline, the film, and the reason a buyer remembers it.",
               panelBody:
-                "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the private tour.",
+                "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the next conversation.",
             }}
           />
         )}

@@ -11,7 +11,7 @@ import { buyerGuides, guideCategories } from "@/lib/guides";
 import { headerImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Kootenay Luxury Real Estate Guides",
+  title: "Kootenay Real Estate Guides",
   description: "Practical buyer and seller guides for Kootenay Lake, Nelson, Kaslo, rural acreage, waterfront review, and important property decisions in BC.",
   path: "/guides",
   image: headerImages.westArmKootenayLake,

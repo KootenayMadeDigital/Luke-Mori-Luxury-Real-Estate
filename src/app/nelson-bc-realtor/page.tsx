@@ -69,7 +69,7 @@ export default function NelsonRealtorPage() {
         meta={[
           { value: "150+", label: "Lifetime Clients" },
           { value: "$169M+", label: "Career Volume" },
-          { value: "2021/24", label: "Luxury Awards" },
+          { value: "2021/24", label: "BC Awards" },
           { value: "Nelson", label: "Local Focus" },
         ]}
       />

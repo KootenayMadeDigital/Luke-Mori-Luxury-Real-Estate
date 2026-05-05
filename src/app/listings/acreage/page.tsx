@@ -13,7 +13,7 @@ import { acreageListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Kootenay Acreage & Land for Sale | Nelson BC Rural Real Estate",
+  title: "Kootenay Acreage for Sale · Nelson BC Rural Real Estate",
   description:
     "Browse Kootenay acreage, rural homes, vacant land, recreational property, development parcels, and larger lots near Nelson BC and Kootenay Lake.",
   path: "/listings/acreage",
@@ -53,10 +53,10 @@ export default function AcreageListingsPage() {
         })}
       />
       <SubpageHero
-        eyebrow={`Acreage · ${acreage.length.toLocaleString()} Properties`}
+        eyebrow={`Acreage · ${acreage.length.toLocaleString()} Listings`}
         title="More space needs"
         emphasis="more local care."
-        lede="Rural homes, land holdings, recreational parcels, and meaningful lots across Nelson, Kootenay Lake, the Slocan Valley, and surrounding communities."
+        lede="Rural homes, land holdings, recreational parcels, and larger lots across Nelson, Kootenay Lake, the Slocan Valley, and surrounding communities."
         image={brandImages.blewettWoodedAcreage}
         crumbs={[
           { label: "Home", href: "/" },
@@ -67,14 +67,14 @@ export default function AcreageListingsPage() {
           { value: acreage.length.toLocaleString(), label: "Active" },
           { value: vacantCount.toLocaleString(), label: "Land parcels" },
           { value: `${Math.round(largest).toLocaleString()} ac`, label: "Largest" },
-          { value: "Rural", label: "Due diligence" },
+          { value: "Rural", label: "Review" },
         ]}
       />
 
       <SeoAnswerBlock
         eyebrow="Acreage Search"
         question="What should buyers verify before buying acreage near Nelson BC?"
-        answer="Acreage buyers should verify legal access, road maintenance, water source, septic records, zoning, ALR status where relevant, wildfire exposure, insurance, internet, snow clearing, boundaries, and any easements or shared-use agreements. The number of acres matters, but usability and due diligence usually matter more."
+        answer="Acreage buyers should verify legal access, road maintenance, water source, septic records, zoning, ALR status where relevant, wildfire exposure, insurance, internet, snow clearing, boundaries, and any easements or shared-use agreements. The number of acres matters, but usability and the review usually matter more."
         terms={["kootenay acreage for sale", "nelson bc acreage", "rural property nelson bc"]}
         tone="ivory"
       />
@@ -83,7 +83,7 @@ export default function AcreageListingsPage() {
         <Container>
           <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.86fr_1.14fr] md:items-end">
             <div>
-              <Eyebrow>Acreage Due Diligence</Eyebrow>
+              <Eyebrow>Acreage Review</Eyebrow>
               <SectionHeading className="mt-7">
                 Space is only part
                 <br />

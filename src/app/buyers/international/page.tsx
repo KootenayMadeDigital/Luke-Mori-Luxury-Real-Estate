@@ -63,11 +63,11 @@ const absenteeDesk = [
   {
     title: "Ownership Systems",
     image: siteImages.internationalOwnership,
-    imageAlt: "Luxury lake house interior near Nelson",
+    imageAlt: "Lake house interior near Nelson",
     body: "Property management, winterisation, caretaker access, security, inspections, and the local routines that protect a lock-and-leave home.",
   },
   {
-    title: "Private Touring",
+    title: "Focused Touring",
     image: siteImages.internationalBalfour,
     imageAlt: "Balfour and Kootenay Lake waterfront",
     body: "Focused tour days around waterfront, Balfour, North Shore, Nelson, acreage, or retreat properties, with only strong contenders on the route.",

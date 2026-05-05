@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) return { title: "Guide Not Found" };
-  return buildPageMetadata({ title: `${guide.title} · Luke Mori Luxury Guide`, description: guide.dek, path: `/guides/${guide.slug}`, image: guide.image });
+  return buildPageMetadata({ title: `${guide.title} · Luke Mori Guide`, description: guide.dek, path: `/guides/${guide.slug}`, image: guide.image });
 }
 
 export default async function BuyerGuidePage({ params }: { params: Promise<{ slug: string }> }) {

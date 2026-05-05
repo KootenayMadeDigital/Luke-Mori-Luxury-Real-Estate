@@ -14,9 +14,9 @@ import { getListingBySlug, luxuryListings, sortByPriceDesc } from "@/lib/listing
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Nelson BC Luxury Real Estate & Kootenay Lake Homes",
+  title: "Nelson BC Homes Over $1M and Kootenay Lake Properties",
   description:
-    "Luxury real estate in Nelson BC and Kootenay Lake, including homes over $1M, waterfront property, view homes, acreage, and private seller introductions.",
+    "Browse Nelson BC and Kootenay Lake homes over $1M, including waterfront property, view homes, acreage, and special homes that deserve local context.",
   path: "/listings/luxury",
   image: "/og/listings-luxury.png",
 });
@@ -62,7 +62,7 @@ export default function LuxuryListingsPage() {
         })}
       />
       <SubpageHero
-        eyebrow={`Luxury · ${luxe.length.toLocaleString()} Properties`}
+        eyebrow={`$1M+ · ${luxe.length.toLocaleString()} Properties`}
         title="The upper market,"
         emphasis="made easier to read."
         lede="Every active property at $1M and above: lakefront homes, view homes, acreage, and heritage residences across the region, gathered into one clearer view."
@@ -70,7 +70,7 @@ export default function LuxuryListingsPage() {
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Listings", href: "/listings" },
-          { label: "Luxury" },
+          { label: "$1M+" },
         ]}
         meta={[
           { value: "$1M+", label: "Entry" },
@@ -81,7 +81,7 @@ export default function LuxuryListingsPage() {
       />
 
       <SeoAnswerBlock
-        eyebrow="Luxury Market"
+        eyebrow="Upper Market"
         question="What makes a Nelson BC home worth a closer look?"
         answer="In Nelson and Kootenay Lake, the strongest homes usually combine a few practical strengths: lakefront, protected views, acreage close to town, architectural quality, privacy, strong sun exposure, and a setting that works for full-time living or second-home ownership. Price matters, but the best homes also need local context before a buyer tours."
         terms={["nelson bc luxury real estate", "nelson bc luxury homes", "kootenay luxury real estate"]}

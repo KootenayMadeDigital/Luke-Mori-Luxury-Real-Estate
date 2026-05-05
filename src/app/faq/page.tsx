@@ -12,7 +12,7 @@ import { headerImages, faqs } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Nelson BC Real Estate FAQ · Buyers, Sellers & Relocation",
   description:
-    "Answers to Nelson BC real estate questions about buying, selling, waterfront homes, Kootenay Lake, relocation, second homes, and off-market access.",
+    "Answers to Nelson BC real estate questions about buying, selling, waterfront homes, Kootenay Lake, relocation, second homes, and quieter opportunities.",
   path: "/faq",
   image: "/og/faq.png",
 });

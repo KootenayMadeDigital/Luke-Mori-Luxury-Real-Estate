@@ -47,7 +47,7 @@ export default function SoldPage() {
   return (
     <PageLayout>
       <SubpageHero
-        eyebrow="Recently Placed"
+        eyebrow="Recently Sold"
         title="Recently sold,"
         emphasis="handled with care."
         lede="A selection of recent sales across Nelson and the Kootenays. Public details are shown. Client details stay confidential."
@@ -79,7 +79,7 @@ export default function SoldPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              These are not just rows in a record. They are the kind of homes, land, lakefront, and view properties Luke has helped sell across the Nelson market.
+              These are homes, land, lakefront, and view properties Luke has helped sell across the Nelson market, shown without exposing private client details.
             </SectionLede>
           </Reveal>
 
@@ -192,7 +192,7 @@ export default function SoldPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              A broader look at Luke&apos;s public sold record, shown with enough depth to prove range without burying the strongest proof.
+              A broader look at Luke&apos;s public sold record, shown with enough context to understand range without crowding the page.
             </SectionLede>
           </Reveal>
 
@@ -302,9 +302,9 @@ export default function SoldPage() {
 
       <InquiryCTA
         eyebrow="Considering Selling"
-        title="Protect the result with"
+        title="Support the sale with"
         emphasis="a stronger plan."
-        body="Strong photography, clear copy, a thoughtful sale plan, and a real buyer network help protect the result before the sign goes up."
+        body="Strong photography, clear copy, a thoughtful sale plan, and a real buyer network help the right people understand the home before the sign goes up."
       />
     </PageLayout>
   );
