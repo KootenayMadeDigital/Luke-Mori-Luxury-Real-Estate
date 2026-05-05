@@ -30,7 +30,6 @@ import { buildListingJsonLd, buildPageMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
 type EditorialFact = { label: string; value: string };
-type ContextPanel = { label: string; title: string; body: string };
 
 export function generateStaticParams() {
   return allListings.map((l) => ({ slug: l.slug }));
@@ -50,12 +49,6 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     path: `/listings/${l.slug}`,
     image: l.heroPhoto || undefined,
   });
-}
-
-function joinHumanList(items: string[]): string {
-  if (items.length <= 1) return items[0] || "";
-  if (items.length === 2) return `${items[0]} and ${items[1]}`;
-  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
 }
 
 function hasDisplayValue(value: string): boolean {
@@ -82,74 +75,6 @@ function buildEditorialFacts(l: Listing): EditorialFact[] {
 
   return facts.slice(0, 8);
 }
-
-function buildEditorialSummary(l: Listing): string[] {
-  const summary: string[] = [];
-  const opening = [
-    l.propertyType || "Active listing",
-    l.location ? `in ${l.location}` : "",
-    l.price ? `offered at ${l.price}` : "",
-  ].filter(Boolean);
-
-  if (opening.length > 0) summary.push(`${opening.join(", ")}.`);
-
-  const physicalFacts = [
-    l.beds && l.beds > 0 ? `${l.beds} bedrooms` : "",
-    l.baths && l.baths > 0 ? `${formatBaths(l)} bathrooms` : "",
-    l.sqft && l.sqft > 0 ? `${l.sqft.toLocaleString("en-US")} sq ft of interior space` : "",
-    hasDisplayValue(formatLot(l)) ? `${formatLot(l)} lot` : "",
-    l.yearBuilt && l.yearBuilt > 1700 ? `built in ${l.yearBuilt}` : "",
-  ].filter(Boolean);
-
-  if (physicalFacts.length > 0) {
-    summary.push(`Published facts note ${joinHumanList(physicalFacts)}.`);
-  }
-
-  const sourceFacts = [
-    l.listingAgent ? `listed by ${l.listingAgent}` : "",
-    l.listingBrokerage ? `with ${l.listingBrokerage}` : "",
-    l.listingId ? `MLS® ${l.listingId}` : "",
-  ].filter(Boolean);
-
-  if (sourceFacts.length > 0) summary.push(`Source record: ${sourceFacts.join(", ")}.`);
-  if (l.photoCount > 0) {
-    summary.push(`The public gallery includes ${l.photoCount} real listing ${l.photoCount === 1 ? "photo" : "photos"}.`);
-  }
-
-  return summary.slice(0, 4);
-}
-
-function buildContextPanels(l: Listing): ContextPanel[] {
-  const lot = formatLot(l);
-  const scaleFacts = [
-    l.propertyType,
-    l.sqft && l.sqft > 0 ? `${l.sqft.toLocaleString("en-US")} sq ft` : "",
-    hasDisplayValue(lot) ? lot : "",
-  ].filter(Boolean);
-
-  return [
-    {
-      label: "01",
-      title: "Area and arrival",
-      body: l.location
-        ? `The listing places this property in ${l.location}. Use the showing to test approach, privacy, light, sound, and everyday fit.`
-        : "The public record does not name a precise area. Use the showing to test approach, privacy, light, sound, and everyday fit.",
-    },
-    {
-      label: "02",
-      title: "Lifestyle fit",
-      body: scaleFacts.length > 0
-        ? `The known property facts are ${joinHumanList(scaleFacts)}. Use the visit to decide how that scale actually lives, not just how it reads online.`
-        : "Use the visit to decide how the property actually lives, not just how it reads online.",
-    },
-    {
-      label: "03",
-      title: "Due diligence",
-      body: "Review the public facts first, then ask Luke about comparables, timing, access, and offer strategy.",
-    },
-  ];
-}
-
 
 function splitStorySentences(text: string): string[] {
   return text
@@ -189,8 +114,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
   const lukes = isLukesOwn(l);
   const detailRows = buildDetailRows(l);
   const editorialFacts = buildEditorialFacts(l);
-  const editorialSummary = buildEditorialSummary(l);
-  const contextPanels = buildContextPanels(l);
 
   const sameLocation = allListings
     .filter((x) => x.slug !== l.slug && x.location === l.location)
@@ -386,22 +309,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 </Reveal>
               )}
 
-              {editorialSummary.length > 0 && (
-                <Reveal delay={380}>
-                  <div className="mt-10 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
-                    <p className="m-0 mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-bronze)]">
-                      Editorial Summary
-                    </p>
-                    <div className="space-y-4 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">
-                      {editorialSummary.map((sentence) => (
-                        <p key={sentence} className="m-0">
-                          {sentence}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </Reveal>
-              )}
 
               <Reveal delay={460}>
                 <div className="mt-16 border-t border-[var(--color-line)] pt-14">
@@ -633,45 +540,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </section>
       )}
 
-      <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
-        <Container>
-          <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end md:gap-16">
-            <div>
-              <Eyebrow>Location and lifestyle</Eyebrow>
-              <SectionHeading className="mt-7">
-                The address is only
-                <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  the first filter.
-                </em>
-              </SectionHeading>
-            </div>
-            <SectionLede>
-              The listing gives you the basics. Luke can help you understand the lived reality: arrival, privacy, light, access, winter, timing, and fit.
-            </SectionLede>
-          </Reveal>
-
-          <div className="grid grid-cols-1 border border-[var(--color-line)] md:grid-cols-3">
-            {contextPanels.map((panel, i) => (
-              <Reveal
-                key={panel.title}
-                delay={i * 90}
-                className={`p-7 sm:p-8 ${i > 0 ? "border-t border-[var(--color-line)] md:border-l md:border-t-0" : ""}`}
-              >
-                <span className="mb-8 inline-flex size-10 items-center justify-center rounded-full border border-[var(--color-line-strong)] font-serif text-[14px] italic text-[var(--color-bronze-light)]">
-                  {panel.label}
-                </span>
-                <h3 className="m-0 mb-4 font-serif text-[24px] font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
-                  {panel.title}
-                </h3>
-                <p className="m-0 text-[14px] leading-[1.75] text-[var(--color-text-muted)]">
-                  {panel.body}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
 
       <div className="fixed inset-x-3 bottom-3 z-[120] md:hidden">
         <div className="grid grid-cols-2 gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.88)] p-1.5 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.95)] backdrop-blur-xl">
