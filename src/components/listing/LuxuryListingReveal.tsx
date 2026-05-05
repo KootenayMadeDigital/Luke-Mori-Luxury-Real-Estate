@@ -88,7 +88,7 @@ function WebGLCurtain({
       varying float v_motion;
       void main() {
         float springOpen = smoothstep(0.0, 1.0, u_open);
-        float width = mix(1.12, 0.052, springOpen);
+        float width = mix(1.16, 0.056, springOpen);
         float hinge = a_side < 0.0 ? -1.0 : 1.0;
         float inner = a_side < 0.0 ? -1.0 + width : 1.0 - width;
         float x = mix(hinge, inner, a_local.x);
@@ -102,15 +102,16 @@ function WebGLCurtain({
         float handWide = 1.0 - smoothstep(0.0, 0.46, length(handDelta));
         float pointerSpeed = clamp(length(u_pointer_velocity) * 3.0, 0.0, 1.0);
         float wake = 0.0;
-        float ridge = sin(a_local.x * 52.0 + a_local.y * 5.0 + u_time * 0.68);
-        float ridge2 = sin(a_local.x * 23.0 - a_local.y * 2.0 - u_time * 0.28);
-        float slow = sin(a_local.x * 10.0 - u_time * 0.28 + a_side * 0.7);
+        float ridge = sin(a_local.x * 64.0 + a_local.y * 5.0 + u_time * 0.58);
+        float ridge2 = sin(a_local.x * 29.0 - a_local.y * 2.4 - u_time * 0.22);
+        float diagonal = sin((a_local.x * 18.0 + a_local.y * 8.0) * a_side + u_time * 0.18);
+        float slow = sin(a_local.x * 10.0 - u_time * 0.22 + a_side * 0.7);
         float edgeLift = pow(a_local.x, 2.1) * u_open;
         float weight = sin(a_local.y * 3.14159);
         float handPressure = hand * (0.035 + pointerSpeed * 0.030);
         float wakePull = wake * pointerSpeed * 0.040;
         float napDrag = dot(normalize(u_pointer_velocity + vec2(0.0001)), vec2(a_side, 0.28));
-        float billow = (ridge * 0.040 + ridge2 * 0.020 + slow * 0.014 + handWide * 0.018 + handPressure + wakePull + pullLag * 0.18) * (1.0 - u_open * 0.10) * weight;
+        float billow = (ridge * 0.048 + ridge2 * 0.025 + diagonal * 0.016 + slow * 0.018 + handWide * 0.024 + handPressure + wakePull + pullLag * 0.22) * (1.0 - u_open * 0.06) * weight;
         x += (billow + pullLag * 0.20 + hand * napDrag * 0.018) * a_side;
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
         y += abs(u_velocity) * 0.030 * verticalLag * (0.6 + hand * 0.4);
@@ -118,8 +119,8 @@ function WebGLCurtain({
         y += (hand * -0.018 + wakePull * 0.36) * weight;
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.024 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.090 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.10 * verticalLag + u_lift * hand * 0.16;
-        float w = 1.0 + depth * 0.48;
+        float depth = edgeLift * 0.46 + abs(ridge) * 0.075 + abs(diagonal) * 0.045 + hand * 0.12 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.13 * verticalLag + u_lift * hand * 0.20;
+        float w = 1.0 + depth * 0.56;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
         v_side = a_side;
@@ -146,10 +147,13 @@ function WebGLCurtain({
       }
       void main() {
         float pleat = 0.5 + 0.5 * v_fold;
-        float micro = grain(v_local * vec2(180.0, 70.0) + u_time * 0.018);
-        float vertical = sin(v_local.x * 92.0) * 0.5 + 0.5;
-        float weave = sin(v_local.x * 320.0) * sin(v_local.y * 148.0) * 0.5 + 0.5;
-        float sideRim = smoothstep(0.68, 1.0, v_local.x) * (0.32 + u_open * 0.68);
+        float micro = grain(v_local * vec2(240.0, 96.0) + u_time * 0.014);
+        float vertical = sin(v_local.x * 112.0) * 0.5 + 0.5;
+        float weave = sin(v_local.x * 380.0) * sin(v_local.y * 172.0) * 0.5 + 0.5;
+        float sideRim = smoothstep(0.66, 1.0, v_local.x) * (0.38 + u_open * 0.74);
+        float edgeKnife = smoothstep(0.88, 1.0, v_local.x);
+        float diagonalSheen = smoothstep(0.965, 1.0, sin((v_local.x * 11.0 + v_local.y * 7.5) * v_side - u_time * 0.16) * 0.5 + 0.5);
+        float hem = smoothstep(0.0, 0.045, v_local.y) + smoothstep(1.0, 0.955, v_local.y);
         float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
         float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
         float hand = v_pressure;
@@ -166,7 +170,7 @@ function WebGLCurtain({
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
         float napSheen = smoothstep(-0.65, 0.95, v_motion) * hand;
         float brushShadow = smoothstep(0.18, 0.82, hand) * smoothstep(0.82, 0.18, abs(v_motion));
-        float light = 0.20 + pleat * 0.42 + vertical * 0.15 + sideRim * 0.88 + hand * 0.090 + napSheen * 0.18;
+        float light = 0.18 + pleat * 0.46 + vertical * 0.18 + sideRim * 0.98 + edgeKnife * 0.55 + diagonalSheen * 0.16 + hand * 0.11 + napSheen * 0.22;
         light -= creaseShadow * 0.34;
         light -= brushShadow * 0.05;
         light *= outerDark;
@@ -174,14 +178,15 @@ function WebGLCurtain({
         color = mix(color, espresso, creaseShadow * 0.42);
         color = mix(color, espresso, brushShadow * 0.10);
         color = mix(color, bronze, sideRim * 0.30);
-        color += warm * sideRim * 0.24;
-        color += warm * napSheen * 0.10;
-        color += vec3(micro) * 0.020;
-        color += vec3(weave) * 0.010;
-        float topBottomShade = smoothstep(0.0, 0.04, v_local.y) * smoothstep(1.0, 0.96, v_local.y);
-        color *= 0.82 + topBottomShade * 0.18;
-        float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.44;
-        float alpha = (0.995 - sideRim * 0.035) * openFade;
+        color += warm * sideRim * 0.30;
+        color += warm * edgeKnife * 0.28;
+        color += warm * diagonalSheen * (0.07 + espressoMode * 0.04);
+        color += warm * napSheen * 0.12;
+        color += vec3(micro) * 0.018;
+        color += vec3(weave) * 0.014;
+        color *= 0.76 + hem * 0.24;
+        float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.34;
+        float alpha = (0.992 - sideRim * 0.028) * openFade;
         gl_FragColor = vec4(color, alpha);
       }
     `;
@@ -215,8 +220,8 @@ function WebGLCurtain({
       return;
     }
 
-    const segmentsX = 64;
-    const segmentsY = 18;
+    const segmentsX = 88;
+    const segmentsY = 22;
     const data: number[] = [];
     const push = (side: number, x: number, y: number) => data.push(x, y, side);
     for (const side of [-1, 1]) {
@@ -250,7 +255,8 @@ function WebGLCurtain({
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.15 : 1.75);
       canvas.width = Math.max(1, Math.floor(rect.width * dpr));
       canvas.height = Math.max(1, Math.floor(rect.height * dpr));
       gl.viewport(0, 0, canvas.width, canvas.height);
@@ -338,6 +344,17 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
   const clothHitWidth = `${clamp(58 - openPercent * 47, 11, 58)}%`;
   const isSellerLaunch = variant === "sellerLaunch";
   const curtainMaterial = isSellerLaunch ? "espresso" : "champagne";
+  const stageAtmosphere = isSellerLaunch
+    ? {
+        "--curtain-glow": "rgba(255,124,52,0.32)",
+        "--curtain-rim": "rgba(255,168,82,0.58)",
+        "--curtain-haze": "rgba(60,18,6,0.36)",
+      }
+    : {
+        "--curtain-glow": "rgba(224,192,154,0.30)",
+        "--curtain-rim": "rgba(255,224,170,0.54)",
+        "--curtain-haze": "rgba(112,73,34,0.28)",
+      };
   const defaults: RevealCopy = isSellerLaunch
     ? {
         eyebrow: "The Luxury Launch Standard",
@@ -436,6 +453,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
               {
                 "--reveal-x": `${pointer.x}%`,
                 "--reveal-y": `${pointer.y}%`,
+                ...stageAtmosphere,
               } as CSSProperties
             }
             aria-label="Interactive listing reveal. Drag from the center toward either side to open or close the curtain."
@@ -459,6 +477,16 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
             <div
               className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.58))] transition-opacity duration-300"
               style={{ opacity: imageFocus ? 0.18 : isDragging ? 0.28 + seamGlow * 0.14 : 0.22 }}
+            />
+            <div
+              className="pointer-events-none absolute inset-0 z-[11] mix-blend-screen bg-[radial-gradient(circle_at_var(--reveal-x)_var(--reveal-y),var(--curtain-glow),transparent_28%),linear-gradient(103deg,transparent_16%,var(--curtain-rim)_34%,transparent_46%,transparent_62%,var(--curtain-rim)_78%,transparent_90%)] transition-opacity duration-700 ease-[var(--ease-luxe)] motion-reduce:hidden"
+              style={{ opacity: imageFocus ? 0.28 : 0.1 + seamGlow * 0.16 }}
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 z-[12] h-2/3 bg-[radial-gradient(ellipse_at_50%_0%,var(--curtain-haze),transparent_68%)] transition-opacity duration-700 ease-[var(--ease-luxe)] motion-reduce:hidden"
+              style={{ opacity: imageFocus ? 0.34 : 0.48 }}
+              aria-hidden
             />
             <div
               className="pointer-events-none absolute inset-y-0 left-1/2 z-20 w-[28%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(224,192,154,0.2),rgba(255,255,255,0.08)_18%,transparent_62%)] blur-xl transition-opacity duration-300 motion-reduce:hidden"
