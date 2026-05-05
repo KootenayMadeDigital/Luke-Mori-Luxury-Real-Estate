@@ -28,10 +28,10 @@ export default function BuyerGuidesPage() {
         image={headerImages.westArmKootenayLake}
         crumbs={[{ label: "Home", href: "/" }, { label: "Guides" }]}
         meta={[
-          { value: "12", label: "Guides" },
-          { value: "BC", label: "Due Diligence" },
+          { value: buyerGuides.length.toString(), label: "Guides" },
+          { value: "BC", label: "Property Review" },
           { value: "Local", label: "Kootenay Context" },
-          { value: "Private", label: "Advisor Path" },
+          { value: "Local", label: "Next Step" },
         ]}
       />
 
@@ -47,7 +47,7 @@ export default function BuyerGuidesPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Buyer, seller, and property review guides for important real estate decisions across Nelson, Kaslo, Kootenay Lake, and rural BC. Rules vary by property, so serious decisions should be verified with licensed professionals.
+              Buyer, seller, and property review guides for important real estate decisions across Nelson, Kaslo, Kootenay Lake, and rural BC. Use them to ask better questions, then confirm property-specific details with the right professional.
             </SectionLede>
           </Reveal>
 
@@ -68,7 +68,7 @@ export default function BuyerGuidesPage() {
                           <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{guide.readTime}</span>
                           <h3 className="m-0 font-serif text-[30px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)]">{guide.title}</h3>
                           <p className="m-0 mt-5 flex-1 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">{guide.dek}</p>
-                          <span className="mt-7 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Read guide</span>
+                          <span className="mt-7 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Read this guide</span>
                         </Link>
                       </Reveal>
                     ))}
