@@ -93,7 +93,7 @@ function WebGLCurtain({
         float closedWidth = 1.16;
         float gatheredWidth = 0.24;
         float width = mix(closedWidth, gatheredWidth, springOpen);
-        float closedCenter = a_side * 0.42;
+        float closedCenter = a_side * 0.50;
         float openCenter = a_side * 1.02;
         float center = mix(closedCenter, openCenter, springOpen);
         float gatherSkew = sin(a_local.x * 3.14159) * springOpen * 0.035 * a_side;
@@ -163,8 +163,8 @@ function WebGLCurtain({
         float weave = 0.0;
         float innerEdge = v_side < 0.0 ? v_local.x : 1.0 - v_local.x;
         float outerEdge = v_side < 0.0 ? 1.0 - v_local.x : v_local.x;
-        float sideRim = smoothstep(0.66, 1.0, innerEdge) * (0.34 + u_open * 0.58);
-        float edgeKnife = smoothstep(0.88, 1.0, innerEdge);
+        float sideRim = smoothstep(0.66, 1.0, outerEdge) * (0.20 + u_open * 0.32);
+        float edgeKnife = smoothstep(0.88, 1.0, outerEdge);
         float diagonalSheen = 0.0;
         float hem = smoothstep(0.0, 0.045, v_local.y) + smoothstep(1.0, 0.955, v_local.y);
         float creaseShadow = smoothstep(0.10, 0.40, vertical) * (1.0 - smoothstep(0.58, 0.96, vertical)) * 0.42;
@@ -183,7 +183,7 @@ function WebGLCurtain({
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
         float napSheen = smoothstep(-0.65, 0.95, v_motion) * hand;
         float brushShadow = smoothstep(0.18, 0.82, hand) * smoothstep(0.82, 0.18, abs(v_motion));
-        float light = 0.20 + pleat * 0.26 + vertical * 0.11 + secondaryFold * 0.10 + broadFold * 0.18 + sideRim * 0.82 + edgeKnife * 0.26 + hand * 0.10 + napSheen * 0.14;
+        float light = 0.20 + pleat * 0.26 + vertical * 0.11 + secondaryFold * 0.10 + broadFold * 0.18 + sideRim * 0.34 + edgeKnife * 0.08 + hand * 0.08 + napSheen * 0.10;
         light -= creaseShadow * 0.18;
         light -= topCompression * 0.10;
         light -= bottomWeight * 0.05;
@@ -192,9 +192,9 @@ function WebGLCurtain({
         vec3 color = mix(base, champagne, 0.34 + velvetNap * 0.26);
         color = mix(color, espresso, creaseShadow * 0.24);
         color = mix(color, espresso, brushShadow * 0.10);
-        color = mix(color, bronze, sideRim * 0.30);
-        color += warm * sideRim * 0.30;
-        color += warm * edgeKnife * 0.18;
+        color = mix(color, bronze, sideRim * 0.12);
+        color += warm * sideRim * 0.08;
+        color += warm * edgeKnife * 0.04;
         color += warm * napSheen * 0.10;
         color += vec3(micro) * 0.0;
         color += vec3(weave) * 0.0;
@@ -202,7 +202,7 @@ function WebGLCurtain({
         color = mix(color, espresso, bottomWeight * 0.075);
         color *= 0.76 + hem * 0.24;
         float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.34;
-        float alpha = (0.992 - sideRim * 0.028) * openFade;
+        float alpha = (0.992 - sideRim * 0.012) * openFade;
         gl_FragColor = vec4(color, alpha);
       }
     `;
@@ -557,8 +557,8 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
                 >
                   <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(90deg,rgba(255,255,255,0.075)_0_1px,transparent_1px_14px),linear-gradient(90deg,rgba(0,0,0,0.42)_0_9px,transparent_9px_28px),radial-gradient(circle_at_36%_45%,rgba(255,255,255,0.12),transparent_20%)]" />
                   <div className="absolute inset-0 animate-[curtain-breathe_5.8s_ease-in-out_infinite] opacity-45 [background-image:linear-gradient(112deg,transparent_0%,rgba(255,255,255,0.13)_32%,transparent_46%,rgba(224,192,154,0.11)_62%,transparent_78%)] motion-reduce:animate-none" />
-                  <div className="absolute inset-y-0 right-0 w-16 bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.55),rgba(255,255,255,0.2),rgba(224,192,154,0.22),rgba(0,0,0,0.8))]" />
-                  <div className="absolute inset-y-0 right-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(255,255,255,0.24),rgba(39,25,17,0.9),rgba(0,0,0,0.98))] blur-[1px]" />
+                  <div className="absolute inset-y-0 right-0 w-16 bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.46),rgba(47,30,20,0.78),rgba(0,0,0,0.72))]" />
+                  <div className="absolute inset-y-0 right-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(42,28,19,0.58),rgba(27,18,13,0.86),rgba(0,0,0,0.92))] blur-[1px]" />
                 </div>
 
                 <div
@@ -571,8 +571,8 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
                 >
                   <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(90deg,rgba(255,255,255,0.06)_0_1px,transparent_1px_14px),linear-gradient(90deg,rgba(0,0,0,0.42)_0_10px,transparent_10px_30px),radial-gradient(circle_at_70%_44%,rgba(255,255,255,0.11),transparent_20%)]" />
                   <div className="absolute inset-0 animate-[curtain-breathe_6.4s_ease-in-out_infinite_reverse] opacity-45 [background-image:linear-gradient(68deg,transparent_0%,rgba(224,192,154,0.11)_28%,transparent_43%,rgba(255,255,255,0.12)_63%,transparent_80%)] motion-reduce:animate-none" />
-                  <div className="absolute inset-y-0 left-0 w-16 bg-[linear-gradient(90deg,rgba(0,0,0,0.8),rgba(224,192,154,0.22),rgba(255,255,255,0.2),rgba(0,0,0,0.55),transparent)]" />
-                  <div className="absolute inset-y-0 left-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(0,0,0,0.98),rgba(39,25,17,0.9),rgba(255,255,255,0.24))] blur-[1px]" />
+                  <div className="absolute inset-y-0 left-0 w-16 bg-[linear-gradient(90deg,rgba(0,0,0,0.72),rgba(47,30,20,0.78),rgba(0,0,0,0.46),transparent)]" />
+                  <div className="absolute inset-y-0 left-4 w-3 rounded-full bg-[linear-gradient(90deg,rgba(0,0,0,0.92),rgba(27,18,13,0.86),rgba(42,28,19,0.58))] blur-[1px]" />
                 </div>
               </>
             )}
