@@ -20,15 +20,23 @@ const navGroups: NavGroup[] = [
       { label: "For Buyers", href: "/buyers", description: "Listings, daily-life fit, and fewer wrong tours." },
       { label: "For Sellers", href: "/sellers", description: "Pricing, sale plan, serious showings, and privacy." },
       { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
-      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." },
-      { label: "Guides", href: "/guides", description: "Clear buyer, seller, and property review guides for Kootenay real estate." }
+      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." }
+    ],
+  },
+  {
+    label: "Guides",
+    href: "/guides",
+    items: [
+      { label: "All Guides", href: "/guides", description: "Clear buyer, seller, and property review guides for Kootenay real estate." },
+      { label: "Buyer Guides", href: "/guides#buyer-guides", description: "Waterfront, relocation, second homes, and offer questions." },
+      { label: "Property Review", href: "/guides#due-diligence", description: "Acreage, strata, access, water, winter, and rural systems." },
+      { label: "Seller Guides", href: "/guides#seller-guides", description: "Preparation, pricing, marketing, and showing quality." },
     ],
   },
   {
     label: "Properties",
     href: "/listings",
     items: [
-      { label: "Featured Estates", href: "/#estates", description: "A focused view of active properties." },
       { label: "All Active Listings", href: "/listings", description: "The current market, easier to compare." },
       { label: "Luxury Listings", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
       { label: "Waterfront Listings", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },

@@ -55,7 +55,11 @@ export default function BuyerGuidesPage() {
             {guideCategories.map((category) => {
               const guides = buyerGuides.filter((guide) => guide.category === category);
               return (
-                <div key={category}>
+                <div
+                  key={category}
+                  id={category === "Buyer Guides" ? "buyer-guides" : category === "Due Diligence" ? "due-diligence" : "seller-guides"}
+                  className="scroll-mt-36"
+                >
                   <Reveal className="mb-6 flex items-center gap-4">
                     <span className="h-px flex-1 bg-[var(--color-line)]" />
                     <h2 className="m-0 text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">{category}</h2>
