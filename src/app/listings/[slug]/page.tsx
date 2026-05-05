@@ -220,7 +220,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         <div className="absolute inset-x-5 bottom-8 z-10 flex flex-wrap items-center justify-between gap-3 sm:inset-x-8">
           <a
             href={inquiryHref}
-            className="inline-flex items-center rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fff7eb] shadow-[0_18px_44px_-28px_rgba(212,184,150,0.9)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]"
+            className="hidden items-center rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fff7eb] shadow-[0_18px_44px_-28px_rgba(212,184,150,0.9)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)] sm:inline-flex"
           >
             Request Showing
           </a>
