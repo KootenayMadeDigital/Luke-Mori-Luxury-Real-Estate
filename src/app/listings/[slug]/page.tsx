@@ -337,7 +337,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
       <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.34fr_0.86fr] lg:gap-20">
-            <div>
+            <div className="min-w-0">
               <Reveal>
                 <Eyebrow>Arrival / Overview</Eyebrow>
               </Reveal>
@@ -410,15 +410,15 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                     Read the home before you tour it.
                   </h2>
                   {buildStorySegments(l).length > 0 && (
-                    <div className="mt-9 rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.34)] p-2 shadow-[0_30px_90px_-75px_rgba(0,0,0,0.55)]">
+                    <div className="mt-9 rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.34)] p-2 shadow-[0_30px_90px_-75px_rgba(0,0,0,0.55)] lg:w-[calc(100vw-4rem)] lg:max-w-[1180px] xl:w-[calc(100vw-7rem)]">
                       <div className="rounded-[calc(2rem-0.5rem)] bg-[var(--color-surface)] p-6 sm:p-8 lg:p-10">
-                        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
+                        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
                           {buildStorySegments(l).map((sentence, i) => (
                             <p
                               key={`${sentence}-${i}`}
                               className={`m-0 border-b border-[var(--color-line)] pb-5 text-[15px] leading-[1.75] text-[var(--color-text-muted)] last:border-b-0 last:pb-0 lg:border-b lg:pb-6 ${
                                 i === 0
-                                  ? "lg:col-span-2 font-serif text-[24px] font-light leading-[1.45] tracking-[-0.005em] text-[var(--color-text)] sm:text-[28px]"
+                                  ? "md:col-span-2 xl:col-span-3 font-serif text-[24px] font-light leading-[1.45] tracking-[-0.005em] text-[var(--color-text)] sm:text-[28px]"
                                   : ""
                               }`}
                             >
