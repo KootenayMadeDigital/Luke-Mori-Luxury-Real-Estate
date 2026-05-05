@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { headerImages, siteImages, contact, sellerPromises } from "@/lib/data";
+import { siteImages, contact, sellerPromises } from "@/lib/data";
 
 const sellerSignals = [
   {
@@ -71,7 +71,7 @@ export function SellerSection() {
                 <div className="grid grid-cols-[1.15fr_0.85fr] gap-px bg-[var(--color-line)]">
                   <div className="relative min-h-[230px] bg-[var(--color-bg)]">
                     <Image
-                      src={headerImages.sellerDining}
+                      src={siteImages.sellerDining}
                       alt="Staged dining room ready for a premium property launch"
                       fill
                       sizes="(min-width: 1024px) 34vw, 100vw"

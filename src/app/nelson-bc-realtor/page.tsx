@@ -10,7 +10,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { siteImages, headerImages, contact } from "@/lib/data";
+import { siteImages, contact } from "@/lib/data";
 import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -64,7 +64,7 @@ export default function NelsonRealtorPage() {
         title="Choose the local"
         emphasis="who knows the tradeoffs."
         lede="For luxury homes, waterfront property, acreage, relocation, and second-home decisions around Nelson and Kootenay Lake, the right advice starts before the showing schedule."
-        image={headerImages.lukeLeaningPortrait}
+        image={siteImages.realtorHeaderLuke}
         crumbs={[{ label: "Home", href: "/" }, { label: "Nelson BC Realtor" }]}
         meta={[
           { value: "150+", label: "Lifetime Clients" },
@@ -90,7 +90,7 @@ export default function NelsonRealtorPage() {
             <Reveal>
               <div className="tone-dark relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
                 <Image
-                  src={siteImages.lukePortrait}
+                  src={siteImages.lukeFrame}
                   alt="Luke Mori, Nelson BC realtor"
                   fill
                   sizes="(min-width: 1024px) 42vw, 100vw"

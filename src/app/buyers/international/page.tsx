@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { headerImages } from "@/lib/data";
+import { siteImages, headerImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Buying Property in Nelson BC from Abroad or as a Second Home",
@@ -50,25 +50,25 @@ const considerations = [
 const absenteeDesk = [
   {
     title: "Regulatory Pre-Flight",
-    image: headerImages.procterLakeHouse,
+    image: siteImages.internationalProcter,
     imageAlt: "Kootenay Lake home for second-home buyers",
     body: "Confirm the current federal and provincial purchase landscape before a property is shortlisted, especially for non-Canadian buyers.",
   },
   {
     title: "Advisor Bench",
-    image: headerImages.lukeContact,
+    image: siteImages.internationalAdvisor,
     imageAlt: "Luke Mori contact portrait",
     body: "Coordinate tax, legal, immigration, banking, notary, and insurance introductions before travel dates harden.",
   },
   {
     title: "Ownership Systems",
-    image: headerImages.procterLivingRoom,
+    image: siteImages.internationalOwnership,
     imageAlt: "Luxury lake house interior near Nelson",
     body: "Property management, winterisation, caretaker access, security, inspections, and the local routines that protect a lock-and-leave home.",
   },
   {
     title: "Private Touring",
-    image: headerImages.balfourKootenayLake,
+    image: siteImages.internationalBalfour,
     imageAlt: "Balfour and Kootenay Lake waterfront",
     body: "Focused tour days around waterfront, Balfour, North Shore, Nelson, acreage, or retreat properties, with only strong contenders on the route.",
   },
