@@ -23,7 +23,7 @@ export function MoriStandard() {
             <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.05)] p-1.5">
               <div className="tone-dark relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-surface)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
                 <Image
-                  src={siteImages.lukeAward}
+                  src={siteImages.lukePortrait}
                   alt="Luke Mori"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
