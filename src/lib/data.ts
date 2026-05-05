@@ -354,6 +354,21 @@ export const brandImages = {
     "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/63feb0192159be8269c8e9df_fair-realty-logo-new-horiz.webp",
 };
 
+export const headerImages = {
+  bakerStreet: "/generated/headers-4k/baker-street-4k.webp",
+  procterLivingRoom: "/generated/headers-4k/procter-living-room-4k.webp",
+  procterLakeHouse: "/generated/headers-4k/procter-lake-house-4k.webp",
+  orangeBridge: "/generated/headers-4k/orange-bridge-4k.webp",
+  nelsonLandscape: "/generated/headers-4k/nelson-landscape-4k.webp",
+  lukeLeaningPortrait: "/generated/headers-4k/luke-leaning-portrait-4k.webp",
+  westArmKootenayLake: "/generated/headers-4k/west-arm-kootenay-lake-4k.webp",
+  sellerDining: "/generated/headers-4k/seller-dining-4k.webp",
+  lukeContact: "/generated/headers-4k/luke-contact-4k.webp",
+  balfourKootenayLake: "/generated/headers-4k/balfour-kootenay-lake-4k.webp",
+  taghumBeach: "/generated/headers-4k/taghum-beach-4k.webp",
+  slocanLake: "/generated/headers-4k/slocan-lake-4k.webp",
+};
+
 /* ---------- Signature areas (refined) ---------- */
 
 export type Area = {
@@ -970,7 +985,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~10,000",
     avgPrice: "$800,000",
     focus: "Heritage · Walkable · Lake & Mountain Lifestyle",
-    hero: brandImages.orangeBridge,
+    hero: headerImages.orangeBridge,
     scenes: [
       { title: "Baker Street", alt: "Baker Street in downtown Nelson BC", image: brandImages.bakerStreet },
       { title: "Whitewater Resort", alt: "Skiing powder at Whitewater Ski Resort near Nelson", image: brandImages.whitewater },
@@ -998,7 +1013,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~4,000",
     avgPrice: "$900,000",
     focus: "Waterfront · Boating · Beach",
-    hero: brandImages.westArmKootenayLake,
+    hero: headerImages.westArmKootenayLake,
     scenes: [
       { title: "Kokanee Creek Provincial Park", alt: "Kokanee Creek Park beach", image: brandImages.kokaneeBeach },
       { title: "West Arm Sailing", alt: "Sailboats on Kootenay Lake near Nelson", image: brandImages.sailboats },
@@ -1019,7 +1034,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~600",
     avgPrice: "$1,150,000",
     focus: "Deep Water · Marina · Generational Estates",
-    hero: brandImages.balfourKootenayLake,
+    hero: headerImages.balfourKootenayLake,
     scenes: [
       { title: "Kootenay Lake Ferry", alt: "Balfour ferry on Kootenay Lake", image: brandImages.balfourFerry },
       { title: "Balfour Golf Course", alt: "Balfour Golf Course", image: brandImages.balfourGolf },
@@ -1040,7 +1055,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~1,500",
     avgPrice: "$1,050,000",
     focus: "Acreage · Privacy · Country Living",
-    hero: brandImages.taghumBeach,
+    hero: headerImages.taghumBeach,
     scenes: [
       { title: "Wooded Acreage", alt: "Wooded acreage driveway through mature Kootenay forest", image: brandImages.blewettWoodedAcreage },
       { title: "Family Estates", alt: "Rural family estate acreage with pasture and mountain views", image: brandImages.blewettFamilyEstate },
@@ -1061,7 +1076,7 @@ export const nelsonAreas: NelsonArea[] = [
     population: "~5,000 (valley-wide)",
     avgPrice: "$850,000",
     focus: "Riverfront · Heritage · Retreat Properties",
-    hero: brandImages.slocanLake,
+    hero: headerImages.slocanLake,
     scenes: [
       { title: "Slocan River", alt: "Slocan Lake in British Columbia", image: brandImages.slocanLake },
       { title: "Heritage Timber Estates", alt: "Frog Peak Cafe in Slocan Valley", image: brandImages.frogPeakCafe },

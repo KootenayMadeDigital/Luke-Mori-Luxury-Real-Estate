@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { brandImages } from "@/lib/data";
+import { headerImages } from "@/lib/data";
 import { sortByPriceDesc, waterfrontListings } from "@/lib/listings";
 import { buildFaqJsonLd, buildItemListJsonLd, buildPageMetadata } from "@/lib/seo";
 
@@ -92,7 +92,7 @@ export default function KootenayLakeWaterfrontPage() {
         title="Buy the lake"
         emphasis="with your eyes open."
         lede="Waterfront around Nelson is not one market. The right shoreline depends on access, sun, privacy, services, exposure, and how you actually plan to live there."
-        image={brandImages.westArmKootenayLake}
+        image={headerImages.westArmKootenayLake}
         imageTreatment="showcase"
         crumbs={[{ label: "Home", href: "/" }, { label: "Kootenay Lake Waterfront" }]}
         meta={[

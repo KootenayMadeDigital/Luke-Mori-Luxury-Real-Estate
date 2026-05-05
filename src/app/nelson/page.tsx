@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { nelsonAreas, brandImages } from "@/lib/data";
+import { headerImages, nelsonAreas } from "@/lib/data";
 
 const areaComparison = [
   {
@@ -60,7 +60,7 @@ export default function NelsonHubPage() {
         title="The Queen City"
         emphasis="and the Kootenays."
         lede="Five areas of Nelson and Kootenay Lake real estate, from downtown Nelson to Balfour. Each has its own character, price points, seasons, tradeoffs, and buyer fit."
-        image={brandImages.nelsonLandscape}
+        image={headerImages.nelsonLandscape}
         imageTreatment="showcase"
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
         meta={[

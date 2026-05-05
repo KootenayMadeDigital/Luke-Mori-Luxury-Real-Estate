@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { buyerSteps, brandImages } from "@/lib/data";
+import { headerImages, buyerSteps } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Nelson BC Buyer Representation · Homes, Lakefront & Relocation",
@@ -77,7 +77,7 @@ export default function BuyersPage() {
         title="Buying by life,"
         emphasis="not by feed."
         lede="Whether you are relocating, buying a second home, or moving within the region, start with the life you want and the tradeoffs you will not accept. Then narrow the search to the few addresses that truly fit."
-        image={brandImages.procterLivingRoom}
+        image={headerImages.procterLivingRoom}
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers" }]}
         meta={[
           { value: "5-Step", label: "Process" },

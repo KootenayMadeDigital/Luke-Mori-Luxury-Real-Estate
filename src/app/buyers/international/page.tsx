@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { brandImages } from "@/lib/data";
+import { headerImages, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Buying Property in Nelson BC from Abroad or as a Second Home",
@@ -82,7 +82,7 @@ export default function InternationalBuyersPage() {
         title="Buying from"
         emphasis="anywhere."
         lede="A simple path for non-Canadian buyers, second-home buyers, and out-of-town owners purchasing in Nelson or around Kootenay Lake."
-        image={brandImages.procterLakeHouse}
+        image={headerImages.procterLakeHouse}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Buyers", href: "/buyers" },

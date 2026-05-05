@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ConsultForm } from "@/components/forms/ConsultForm";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
-import { contact, brandImages } from "@/lib/data";
+import { headerImages, contact } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Contact Luke Mori · Nelson BC Realtor",
@@ -25,7 +25,7 @@ export default function ContactPage() {
         title="Choose the file."
         emphasis="Keep it clear."
         lede="Selling, buying, relocating, or planning a second home. Send the useful details, and Luke or his team can reply with the right first step."
-        image={brandImages.lukeContact}
+        image={headerImages.lukeContact}
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 

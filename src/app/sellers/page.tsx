@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { sellerSteps, brandImages } from "@/lib/data";
+import { headerImages, sellerSteps } from "@/lib/data";
 
 const sellerLeverage = [
   {
@@ -42,7 +42,7 @@ export default function SellersPage() {
         title="Sell with clarity,"
         emphasis="not guesswork."
         lede="Protect the sale with clear pricing advice, strong photography, property film, qualified showings, and a launch plan built around your timeline."
-        image={brandImages.sellerDining}
+        image={headerImages.sellerDining}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
         meta={[
           { value: "Launched", label: "Not Uploaded" },

@@ -10,7 +10,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { lukeBio, brandImages } from "@/lib/data";
+import { headerImages, lukeBio, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Luke Mori · Nelson BC Realtor & Luxury Real Estate Agent",
@@ -28,7 +28,7 @@ export default function AboutPage() {
         title="A local"
         emphasis="who's on your side."
         lede={lukeBio.short}
-        image={brandImages.lukeLeaningPortrait}
+        image={headerImages.lukeLeaningPortrait}
         crumbs={[{ label: "Home", href: "/" }, { label: "About Luke" }]}
         meta={[
           { value: "150+", label: "Lifetime Clients" },

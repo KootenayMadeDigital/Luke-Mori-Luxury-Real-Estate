@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { testimonials, brandImages, pressLogos } from "@/lib/data";
+import { headerImages, testimonials, brandImages, pressLogos } from "@/lib/data";
 
 
 const mediaLogoScale: Record<string, string> = {
@@ -38,7 +38,7 @@ export default function TestimonialsPage() {
         title="On the record."
         emphasis="Backed by their words."
         lede="Industry recognition plus real client words from buyers and sellers across Nelson and the Kootenay region."
-        image={brandImages.bakerStreet}
+        image={headerImages.bakerStreet}
         crumbs={[{ label: "Home", href: "/" }, { label: "Awards & Testimonials" }]}
         meta={[
           { value: "2021 / 2024", label: "Best Luxury Broker BC" },

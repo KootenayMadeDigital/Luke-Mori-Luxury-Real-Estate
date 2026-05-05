@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { brandImages } from "@/lib/data";
+import { headerImages, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Moving to Nelson BC · Relocation Real Estate Guide",
@@ -89,7 +89,7 @@ export default function RelocationPage() {
         title="A soft landing,"
         emphasis="before you buy."
         lede="Most people who move here have imagined it for years. The smart move is to test the practical parts early: schools, healthcare, winter roads, where to live, and how the first ninety days will actually feel."
-        image={brandImages.bakerStreet}
+        image={headerImages.bakerStreet}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Buyers", href: "/buyers" },

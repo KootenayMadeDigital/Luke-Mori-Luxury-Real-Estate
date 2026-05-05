@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { faqs, brandImages } from "@/lib/data";
+import { headerImages, faqs } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Nelson BC Real Estate FAQ · Buyers, Sellers & Relocation",
@@ -28,7 +28,7 @@ export default function FaqPage() {
         title="The questions"
         emphasis="worth asking first."
         lede="Straight answers for sellers, buyers, relocating clients, second-home owners, and off-market questions."
-        image={brandImages.orangeBridge}
+        image={headerImages.orangeBridge}
         crumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
 

@@ -10,7 +10,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { brandImages, contact } from "@/lib/data";
+import { headerImages, brandImages, contact } from "@/lib/data";
 import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -64,7 +64,7 @@ export default function NelsonRealtorPage() {
         title="Choose the local"
         emphasis="who knows the tradeoffs."
         lede="For luxury homes, waterfront property, acreage, relocation, and second-home decisions around Nelson and Kootenay Lake, the right advice starts before the showing schedule."
-        image={brandImages.lukeLeaningPortrait}
+        image={headerImages.lukeLeaningPortrait}
         crumbs={[{ label: "Home", href: "/" }, { label: "Nelson BC Realtor" }]}
         meta={[
           { value: "150+", label: "Lifetime Clients" },
