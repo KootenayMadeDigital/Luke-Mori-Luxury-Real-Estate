@@ -211,7 +211,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           {isBirchgrove && (
             <a
               href={inquiryHref}
-              className="inline-flex items-center rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-button-text)] shadow-[0_18px_44px_-28px_rgba(212,184,150,0.9)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]"
+              className="inline-flex items-center rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fff7eb] shadow-[0_18px_44px_-28px_rgba(212,184,150,0.9)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]"
             >
               Request Showing
             </a>
@@ -543,7 +543,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
 
       <div className="fixed inset-x-3 bottom-3 z-[120] md:hidden">
         <div className="grid grid-cols-2 gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.88)] p-1.5 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.95)] backdrop-blur-xl">
-          <a href={inquiryHref} className="rounded-full bg-[var(--color-bronze)] px-4 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-button-text)]">
+          <a href={inquiryHref} className="rounded-full bg-[var(--color-bronze)] px-4 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[#fff7eb]">
             Showing
           </a>
           <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`} className="rounded-full border border-[var(--color-line-strong)] px-4 py-3 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text)]">

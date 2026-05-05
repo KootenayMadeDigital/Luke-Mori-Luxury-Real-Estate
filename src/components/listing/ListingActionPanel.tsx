@@ -38,7 +38,6 @@ function buildShareText({ address, price, location, propertyType }: Props) {
 
 export function ListingActionPanel(props: Props) {
   const [copied, setCopied] = useState(false);
-  const [bookmarkHint, setBookmarkHint] = useState(false);
   const url = useMemo(() => absoluteUrl(`/listings/${props.slug}`), [props.slug]);
   const shareText = useMemo(
     () => buildShareText({
@@ -90,12 +89,6 @@ export function ListingActionPanel(props: Props) {
     await copyLink();
   }
 
-  async function bookmarkPage() {
-    await copyLink();
-    setBookmarkHint(true);
-    window.setTimeout(() => setBookmarkHint(false), 3200);
-  }
-
   return (
     <div className="rounded-[1.35rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-4 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.9)] sm:p-5">
       <div className="mb-4 flex items-center justify-between gap-4 border-b border-[var(--color-line)] pb-4">
@@ -109,15 +102,12 @@ export function ListingActionPanel(props: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+      <div className="grid grid-cols-2 gap-2.5">
         <button type="button" onClick={shareListing} className="action-button">
           Share
         </button>
         <button type="button" onClick={copyLink} className="action-button">
           {copied ? "Copied" : "Copy Link"}
-        </button>
-        <button type="button" onClick={bookmarkPage} className="action-button">
-          {bookmarkHint ? "Press ⌘D / Ctrl+D" : "Bookmark"}
         </button>
       </div>
       <style jsx>{`
