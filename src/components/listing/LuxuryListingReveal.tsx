@@ -354,7 +354,6 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
   const leftShift = openPercent * 82;
   const rightShift = openPercent * 82;
   const fabricDepth = 8 + openPercent * 10;
-  const seamGlow = 0.18 + openPercent * 0.52;
   const clothHitWidth = `${clamp(58 - openPercent * 47, 11, 58)}%`;
   const isSellerLaunch = variant === "sellerLaunch";
   const curtainMaterial = isSellerLaunch ? "espresso" : "champagne";
@@ -490,24 +489,13 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
 
             <div
               className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.58))] transition-opacity duration-300"
-              style={{ opacity: imageFocus ? 0.18 : isDragging ? 0.28 + seamGlow * 0.14 : 0.22 }}
-            />
-            <div
-              className="pointer-events-none absolute inset-0 z-[11] mix-blend-screen bg-[radial-gradient(circle_at_var(--reveal-x)_var(--reveal-y),var(--curtain-glow),transparent_28%)] transition-opacity duration-700 ease-[var(--ease-luxe)] motion-reduce:hidden"
-              style={{ opacity: imageFocus ? 0.28 : 0.1 + seamGlow * 0.16 }}
-              aria-hidden
+              style={{ opacity: imageFocus ? 0.18 : isDragging ? 0.28 : 0.22 }}
             />
             <div
               className="pointer-events-none absolute inset-x-0 top-0 z-[12] h-2/3 bg-[radial-gradient(ellipse_at_50%_0%,var(--curtain-haze),transparent_68%)] transition-opacity duration-700 ease-[var(--ease-luxe)] motion-reduce:hidden"
               style={{ opacity: imageFocus ? 0.34 : 0.48 }}
               aria-hidden
             />
-            <div
-              className="pointer-events-none absolute inset-y-0 left-1/2 z-20 w-[28%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(224,192,154,0.2),rgba(255,255,255,0.08)_18%,transparent_62%)] blur-xl transition-opacity duration-300 motion-reduce:hidden"
-              style={{ opacity: imageFocus ? 0.22 : seamGlow }}
-              aria-hidden
-            />
-
             <WebGLCurtain open={openPercent} lift={lift} pointer={pointer} isDragging={isDragging} material={curtainMaterial} onReady={setWebglReady} />
 
             <div
