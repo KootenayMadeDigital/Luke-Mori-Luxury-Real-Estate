@@ -30,12 +30,14 @@ function WebGLCurtain({
   lift,
   pointer,
   isDragging,
+  material,
   onReady,
 }: {
   open: number;
   lift: number;
   pointer: { x: number; y: number };
   isDragging: boolean;
+  material: "champagne" | "espresso";
   onReady: (ready: boolean) => void;
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -43,6 +45,7 @@ function WebGLCurtain({
   const liftRef = useRef(lift);
   const pointerRef = useRef(pointer);
   const draggingRef = useRef(isDragging);
+  const materialRef = useRef(material);
   const settledRef = useRef(open);
   const velocityRef = useRef(0);
   const lastSettledRef = useRef(open);
@@ -56,7 +59,8 @@ function WebGLCurtain({
     liftRef.current = lift;
     pointerRef.current = pointer;
     draggingRef.current = isDragging;
-  }, [open, lift, pointer, isDragging]);
+    materialRef.current = material;
+  }, [open, lift, pointer, isDragging, material]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -76,6 +80,7 @@ function WebGLCurtain({
       uniform float u_time;
       uniform vec2 u_pointer;
       uniform vec2 u_pointer_velocity;
+      uniform float u_material;
       varying vec2 v_local;
       varying float v_side;
       varying float v_fold;
@@ -130,6 +135,7 @@ function WebGLCurtain({
       uniform float u_time;
       uniform vec2 u_pointer;
       uniform vec2 u_pointer_velocity;
+      uniform float u_material;
       varying vec2 v_local;
       varying float v_side;
       varying float v_fold;
@@ -147,11 +153,16 @@ function WebGLCurtain({
         float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
         float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
         float hand = v_pressure;
-        vec3 base = vec3(0.36, 0.255, 0.155);
-        vec3 champagne = vec3(0.72, 0.555, 0.335);
-        vec3 espresso = vec3(0.110, 0.070, 0.046);
-        vec3 bronze = vec3(0.62, 0.40, 0.20);
-        vec3 warm = vec3(1.00, 0.82, 0.54);
+        float espressoMode = step(0.5, u_material);
+        vec3 baseChampagne = vec3(0.36, 0.255, 0.155);
+        vec3 highChampagne = vec3(0.72, 0.555, 0.335);
+        vec3 baseEspresso = vec3(0.055, 0.038, 0.030);
+        vec3 highEspresso = vec3(0.36, 0.255, 0.175);
+        vec3 base = mix(baseChampagne, baseEspresso, espressoMode);
+        vec3 champagne = mix(highChampagne, highEspresso, espressoMode);
+        vec3 espresso = mix(vec3(0.110, 0.070, 0.046), vec3(0.020, 0.016, 0.014), espressoMode);
+        vec3 bronze = mix(vec3(0.62, 0.40, 0.20), vec3(0.76, 0.48, 0.24), espressoMode);
+        vec3 warm = mix(vec3(1.00, 0.82, 0.54), vec3(1.00, 0.66, 0.34), espressoMode);
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
         float napSheen = smoothstep(-0.65, 0.95, v_motion) * hand;
         float brushShadow = smoothstep(0.18, 0.82, hand) * smoothstep(0.82, 0.18, abs(v_motion));
@@ -233,6 +244,7 @@ function WebGLCurtain({
     const timeLoc = gl.getUniformLocation(program, "u_time");
     const pointerLoc = gl.getUniformLocation(program, "u_pointer");
     const pointerVelocityLoc = gl.getUniformLocation(program, "u_pointer_velocity");
+    const materialLoc = gl.getUniformLocation(program, "u_material");
     let frame = 0;
     const start = performance.now();
 
@@ -280,6 +292,7 @@ function WebGLCurtain({
       gl.uniform1f(timeLoc, (performance.now() - start) / 1000);
       gl.uniform2f(pointerLoc, smoothPointerRef.current.x / 100, smoothPointerRef.current.y / 100);
       gl.uniform2f(pointerVelocityLoc, smoothPointerVelocityRef.current.x, smoothPointerVelocityRef.current.y);
+      gl.uniform1f(materialLoc, materialRef.current === "espresso" ? 1 : 0);
       gl.drawArrays(gl.TRIANGLES, 0, data.length / 3);
       frame = requestAnimationFrame(render);
     };
@@ -324,6 +337,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
   const seamGlow = 0.18 + openPercent * 0.52;
   const clothHitWidth = `${clamp(58 - openPercent * 47, 11, 58)}%`;
   const isSellerLaunch = variant === "sellerLaunch";
+  const curtainMaterial = isSellerLaunch ? "espresso" : "champagne";
   const defaults: RevealCopy = isSellerLaunch
     ? {
         eyebrow: "The Luxury Launch Standard",
@@ -452,7 +466,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
               aria-hidden
             />
 
-            <WebGLCurtain open={openPercent} lift={lift} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
+            <WebGLCurtain open={openPercent} lift={lift} pointer={pointer} isDragging={isDragging} material={curtainMaterial} onReady={setWebglReady} />
 
             <div
               className="pointer-events-none absolute left-1/2 top-[9%] z-[39] flex size-[70px] -translate-x-1/2 items-center justify-center rounded-full border border-[rgba(255,224,170,0.26)] bg-[rgba(9,7,5,0.20)] p-3 shadow-[0_12px_42px_-30px_rgba(0,0,0,0.95)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[112px] md:p-4"
