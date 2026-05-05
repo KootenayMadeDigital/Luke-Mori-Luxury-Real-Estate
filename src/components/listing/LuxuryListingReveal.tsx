@@ -48,6 +48,8 @@ function WebGLCurtain({
   const lastSettledRef = useRef(open);
   const smoothPointerRef = useRef(pointer);
   const smoothLiftRef = useRef(lift);
+  const lastPointerRef = useRef(pointer);
+  const smoothPointerVelocityRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     openRef.current = open;
@@ -73,9 +75,12 @@ function WebGLCurtain({
       uniform float u_lift;
       uniform float u_time;
       uniform vec2 u_pointer;
+      uniform vec2 u_pointer_velocity;
       varying vec2 v_local;
       varying float v_side;
       varying float v_fold;
+      varying float v_pressure;
+      varying float v_motion;
       void main() {
         float springOpen = smoothstep(0.0, 1.0, u_open);
         float width = mix(1.12, 0.052, springOpen);
@@ -85,25 +90,37 @@ function WebGLCurtain({
         float y = a_local.y * 2.0 - 1.0;
         float verticalLag = pow(a_local.y, 1.65);
         float pullLag = u_velocity * verticalLag * (1.0 - a_local.x * 0.22);
-        float hand = 1.0 - smoothstep(0.0, 0.78, abs((u_pointer.x * 2.0 - 1.0) - x));
+        vec2 handPoint = vec2(u_pointer.x * 2.0 - 1.0, 1.0 - u_pointer.y);
+        vec2 clothPoint = vec2(x, a_local.y);
+        vec2 handDelta = vec2((handPoint.x - clothPoint.x) * 0.78, (handPoint.y - clothPoint.y) * 1.24);
+        float hand = 1.0 - smoothstep(0.0, 0.24, length(handDelta));
+        float handWide = 1.0 - smoothstep(0.0, 0.46, length(handDelta));
+        float pointerSpeed = clamp(length(u_pointer_velocity) * 3.0, 0.0, 1.0);
+        float wake = 1.0 - smoothstep(0.0, 0.42, length(handDelta + u_pointer_velocity * vec2(1.1, -0.72)));
         float ridge = sin(a_local.x * 52.0 + a_local.y * 5.0 + u_time * 0.68);
         float ridge2 = sin(a_local.x * 23.0 - a_local.y * 2.0 - u_time * 0.28);
         float slow = sin(a_local.x * 10.0 - u_time * 0.28 + a_side * 0.7);
         float edgeLift = pow(a_local.x, 2.1) * u_open;
         float weight = sin(a_local.y * 3.14159);
-        float billow = (ridge * 0.040 + ridge2 * 0.020 + slow * 0.014 + hand * 0.024 + pullLag * 0.18) * (1.0 - u_open * 0.10) * weight;
-        x += (billow + pullLag * 0.20) * a_side;
+        float handPressure = hand * (0.035 + pointerSpeed * 0.030);
+        float wakePull = wake * pointerSpeed * 0.040;
+        float napDrag = dot(normalize(u_pointer_velocity + vec2(0.0001)), vec2(a_side, 0.28));
+        float billow = (ridge * 0.040 + ridge2 * 0.020 + slow * 0.014 + handWide * 0.018 + handPressure + wakePull + pullLag * 0.18) * (1.0 - u_open * 0.10) * weight;
+        x += (billow + pullLag * 0.20 + hand * napDrag * 0.018) * a_side;
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
         y += abs(u_velocity) * 0.030 * verticalLag * (0.6 + hand * 0.4);
         y += u_lift * hand * weight * 0.28;
+        y += (hand * -0.018 + wakePull * 0.36) * weight;
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.024 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.030 + abs(u_velocity) * 0.10 * verticalLag + u_lift * hand * 0.16;
+        float depth = edgeLift * 0.36 + abs(ridge) * 0.06 + hand * 0.090 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.10 * verticalLag + u_lift * hand * 0.16;
         float w = 1.0 + depth * 0.48;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
         v_side = a_side;
         v_fold = ridge;
+        v_pressure = max(hand, wake * pointerSpeed * 0.72);
+        v_motion = napDrag * pointerSpeed;
       }
     `;
 
@@ -112,9 +129,12 @@ function WebGLCurtain({
       uniform float u_open;
       uniform float u_time;
       uniform vec2 u_pointer;
+      uniform vec2 u_pointer_velocity;
       varying vec2 v_local;
       varying float v_side;
       varying float v_fold;
+      varying float v_pressure;
+      varying float v_motion;
       float grain(vec2 p) {
         return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
       }
@@ -126,20 +146,25 @@ function WebGLCurtain({
         float sideRim = smoothstep(0.68, 1.0, v_local.x) * (0.32 + u_open * 0.68);
         float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
         float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
-        float hand = 1.0 - smoothstep(0.0, 0.68, abs(u_pointer.y - v_local.y));
+        float hand = v_pressure;
         vec3 base = vec3(0.36, 0.255, 0.155);
         vec3 champagne = vec3(0.72, 0.555, 0.335);
         vec3 espresso = vec3(0.110, 0.070, 0.046);
         vec3 bronze = vec3(0.62, 0.40, 0.20);
         vec3 warm = vec3(1.00, 0.82, 0.54);
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
-        float light = 0.20 + pleat * 0.42 + vertical * 0.15 + sideRim * 0.88 + hand * 0.045;
+        float napSheen = smoothstep(-0.65, 0.95, v_motion) * hand;
+        float brushShadow = smoothstep(0.18, 0.82, hand) * smoothstep(0.82, 0.18, abs(v_motion));
+        float light = 0.20 + pleat * 0.42 + vertical * 0.15 + sideRim * 0.88 + hand * 0.090 + napSheen * 0.18;
         light -= creaseShadow * 0.34;
+        light -= brushShadow * 0.05;
         light *= outerDark;
         vec3 color = mix(base, champagne, 0.34 + velvetNap * 0.26);
         color = mix(color, espresso, creaseShadow * 0.42);
+        color = mix(color, espresso, brushShadow * 0.10);
         color = mix(color, bronze, sideRim * 0.30);
         color += warm * sideRim * 0.24;
+        color += warm * napSheen * 0.10;
         color += vec3(micro) * 0.020;
         color += vec3(weave) * 0.010;
         float topBottomShade = smoothstep(0.0, 0.04, v_local.y) * smoothstep(1.0, 0.96, v_local.y);
@@ -207,6 +232,7 @@ function WebGLCurtain({
     const liftLoc = gl.getUniformLocation(program, "u_lift");
     const timeLoc = gl.getUniformLocation(program, "u_time");
     const pointerLoc = gl.getUniformLocation(program, "u_pointer");
+    const pointerVelocityLoc = gl.getUniformLocation(program, "u_pointer_velocity");
     let frame = 0;
     const start = performance.now();
 
@@ -230,6 +256,15 @@ function WebGLCurtain({
         x: smoothPointerRef.current.x + (pointerRef.current.x - smoothPointerRef.current.x) * 0.18,
         y: smoothPointerRef.current.y + (pointerRef.current.y - smoothPointerRef.current.y) * 0.18,
       };
+      const pointerVelocity = {
+        x: clamp((pointerRef.current.x - lastPointerRef.current.x) / 100, -0.08, 0.08),
+        y: clamp((pointerRef.current.y - lastPointerRef.current.y) / 100, -0.08, 0.08),
+      };
+      lastPointerRef.current = pointerRef.current;
+      smoothPointerVelocityRef.current = {
+        x: smoothPointerVelocityRef.current.x * 0.72 + pointerVelocity.x * 0.28,
+        y: smoothPointerVelocityRef.current.y * 0.72 + pointerVelocity.y * 0.28,
+      };
       smoothLiftRef.current += (liftRef.current - smoothLiftRef.current) * (draggingRef.current ? 0.22 : 0.09);
       resize();
       gl.clearColor(0, 0, 0, 0);
@@ -247,6 +282,7 @@ function WebGLCurtain({
       gl.uniform1f(liftLoc, smoothLiftRef.current);
       gl.uniform1f(timeLoc, (performance.now() - start) / 1000);
       gl.uniform2f(pointerLoc, smoothPointerRef.current.x / 100, smoothPointerRef.current.y / 100);
+      gl.uniform2f(pointerVelocityLoc, smoothPointerVelocityRef.current.x, smoothPointerVelocityRef.current.y);
       gl.drawArrays(gl.TRIANGLES, 0, data.length / 3);
       frame = requestAnimationFrame(render);
     };
