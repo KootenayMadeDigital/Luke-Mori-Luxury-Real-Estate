@@ -28,7 +28,7 @@ export function FeaturedEstates() {
               The active portfolio
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                without the bloat.
+                without the noise.
               </em>
             </SectionHeading>
           </div>
