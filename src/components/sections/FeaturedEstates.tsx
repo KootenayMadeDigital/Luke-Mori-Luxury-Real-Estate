@@ -13,7 +13,7 @@ export function FeaturedEstates() {
   return (
     <section
       id="estates"
-      className="tone-dark tonal-section border-y border-[var(--color-line)] py-24 md:py-28"
+      className="tone-dark tonal-section scroll-mt-36 border-y border-[var(--color-line)] py-24 md:py-28"
     >
       <div className="pointer-events-none absolute inset-0 opacity-75" aria-hidden>
         <div className="absolute left-[-16%] top-[-14%] h-[560px] w-[560px] rounded-full bg-[rgba(212,184,150,0.075)] blur-[150px]" />
