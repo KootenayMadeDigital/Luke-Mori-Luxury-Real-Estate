@@ -198,10 +198,10 @@ export function ListingsBrowser({
   return (
     <div>
       {/* CONTROLS */}
-      <div className="tone-dark sticky top-[52px] z-[80] -mx-5 mb-16 border-y border-[var(--color-line)] bg-[rgba(10,11,13,0.94)] px-5 py-5 shadow-[0_28px_80px_-58px_rgba(0,0,0,0.95)] backdrop-blur-[14px] sm:-mx-8 sm:px-8 md:top-[64px] md:-mx-10 md:mb-20 md:px-10 lg:-mx-12 lg:px-12 xl:-mx-14 xl:px-14">
-        <div className="flex flex-wrap items-center gap-3 lg:flex-nowrap lg:gap-4">
+      <div className="tone-dark sticky top-[52px] z-[80] -mx-5 mb-12 border-y border-[var(--color-line)] bg-[rgba(10,11,13,0.94)] px-5 py-4 shadow-[0_28px_80px_-58px_rgba(0,0,0,0.95)] backdrop-blur-[14px] sm:-mx-8 sm:px-8 md:top-[64px] md:-mx-10 md:mb-20 md:px-10 md:py-5 lg:-mx-12 lg:px-12 xl:-mx-14 xl:px-14">
+        <div className="flex flex-col gap-3 lg:flex-row lg:flex-nowrap lg:items-center lg:gap-4">
           {/* Filters */}
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="scrollbar-hide -mx-1 flex gap-2 overflow-x-auto px-1 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0 md:pb-0">
             {activeFilters.map((f) => (
               <button
                 key={f.key}
@@ -210,7 +210,7 @@ export function ListingsBrowser({
                   setFilter(f.key);
                   setPage(1);
                 }}
-                className={`rounded-[1px] border px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
+                className={`shrink-0 rounded-[1px] border px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
                   filter === f.key
                     ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]"
                     : "border-[var(--color-line-strong)] text-[var(--color-text-muted)] hover:border-[var(--color-bronze)] hover:text-[var(--color-text)]"
@@ -221,7 +221,7 @@ export function ListingsBrowser({
             ))}
           </div>
 
-          <div className="ml-auto flex flex-1 items-center gap-3 lg:max-w-[520px]">
+          <div className="flex w-full flex-col gap-3 sm:flex-row lg:ml-auto lg:max-w-[520px] lg:flex-1">
             {/* Search */}
             <label className="relative flex-1">
               <span className="sr-only">Search listings</span>
@@ -251,7 +251,7 @@ export function ListingsBrowser({
                   setSort(e.target.value as SortKey);
                   setPage(1);
                 }}
-                className="appearance-none rounded-[1px] border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pr-10 font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--color-text)] outline-none transition-colors duration-200 focus:border-[var(--color-bronze)]"
+                className="w-full appearance-none rounded-[1px] border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pr-10 font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--color-text)] outline-none transition-colors duration-200 focus:border-[var(--color-bronze)]"
               >
                 {sorts.map((s) => (
                   <option key={s.key} value={s.key} className="bg-[var(--color-bg)]">
@@ -270,7 +270,7 @@ export function ListingsBrowser({
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
+        <div className="mt-4 flex flex-col gap-2 text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)] sm:flex-row sm:items-center sm:justify-between">
           <span>
             <span className="text-[var(--color-bronze)]">{filtered.length.toLocaleString()}</span>{" "}
             {resultLabel}
