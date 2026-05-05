@@ -125,10 +125,10 @@ export default function SellersPage() {
 
           <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
             {[
-              { value: "350+", label: "YouTube Subscribers" },
+              { value: "500+", label: "YouTube Subscribers" },
               { value: "9K+", label: "Instagram Followers" },
-              { value: "200K+", label: "Property Film Views" },
-              { value: "100+", label: "Property Films" },
+              { value: "250K+", label: "Property Film Views" },
+              { value: "250+", label: "Property Films" },
             ].map((s) => (
               <Reveal key={s.label} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 text-center">
                 <div className="mb-2 font-serif text-[28px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] md:text-[34px]">

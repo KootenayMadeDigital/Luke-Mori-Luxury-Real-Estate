@@ -27,7 +27,7 @@ export function HomeTourVideos() {
           </div>
           <div className="lg:ml-auto lg:max-w-[620px] lg:text-right">
             <SectionLede align="right">
-              More than 100 property videos and over 200,000 views. Sellers get a stronger first impression. Buyers waste fewer tours. Everyone starts closer to the truth of the home.
+              More than 250 property videos and over 250,000 YouTube views. Sellers get a stronger first impression. Buyers waste fewer tours. Everyone starts closer to the truth of the home.
             </SectionLede>
             <a
               href={contact.social.youtube}

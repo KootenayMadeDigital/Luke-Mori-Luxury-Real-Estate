@@ -295,7 +295,7 @@ export default function SoldPage() {
           </div>
 
           <p className="mt-10 text-[12px] italic text-[var(--color-text-dim)]">
-            Archive reflects public sold-property information from Luke&apos;s existing website. Final terms remain confidential.
+            Archive reflects public sold-property information. Final terms remain confidential.
           </p>
         </Container>
       </section>
