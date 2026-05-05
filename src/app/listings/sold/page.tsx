@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
+import { FrostedSoldProof } from "@/components/listing/FrostedSoldProof";
 import { recentlyConcluded, soldArchive, brandImages } from "@/lib/data";
 
 const soldProofNotes = [
@@ -85,41 +86,7 @@ export default function SoldPage() {
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.08fr_0.92fr]">
             <div className="grid grid-cols-1 gap-6">
               <Reveal>
-                <article className="luxury-card group relative min-h-[540px] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-[0_34px_100px_-64px_rgba(0,0,0,0.82)]">
-                  <Image
-                    src={lead.image}
-                    alt={lead.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 54vw, 100vw"
-                    className="luxury-media object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.16),rgba(10,11,13,0.1)_28%,rgba(10,11,13,0.72)_62%,rgba(10,11,13,0.96))]" />
-                  <div className="absolute left-6 top-6 rounded-[1px] border border-[rgba(255,255,255,0.34)] bg-[rgba(10,11,13,0.9)] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-[0_12px_34px_-18px_rgba(0,0,0,0.95)] backdrop-blur-sm">
-                    {lead.status}
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
-                    <div className="mb-6 font-serif text-[62px] font-light uppercase leading-none tracking-[0.08em] text-[rgba(245,239,229,0.96)] drop-shadow-[0_4px_28px_rgba(0,0,0,0.92)] sm:text-[88px]">
-                      Sold
-                    </div>
-                    <div className="grid grid-cols-1 gap-5 border-t border-[rgba(245,239,229,0.22)] pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
-                      <div>
-                        <h2 className="m-0 inline-flex bg-[rgba(10,11,13,0.38)] px-3 py-2 font-serif text-[32px] font-light leading-[1.04] tracking-[-0.01em] text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-[2px] sm:text-[44px]">
-                          {lead.address}
-                        </h2>
-                        <p className="m-0 mt-3 inline-flex bg-[rgba(10,11,13,0.34)] px-3 py-2 text-[12px] font-bold uppercase tracking-[0.2em] text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] backdrop-blur-[2px]">
-                          {lead.area} · {lead.type}
-                        </p>
-                        <p className="m-0 mt-3 max-w-[620px] bg-[rgba(10,11,13,0.34)] px-3 py-2 text-[14px] leading-[1.65] text-white/90 backdrop-blur-[2px]">
-                          {soldProofNotes[0]}
-                        </p>
-                      </div>
-                      <div className="justify-self-start bg-[rgba(10,11,13,0.34)] px-4 py-2 font-serif text-[30px] italic text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.92)] backdrop-blur-[2px] sm:justify-self-end">
-                        {lead.offered}
-                      </div>
-                    </div>
-                  </div>
-                </article>
+                <FrostedSoldProof lead={lead} note={soldProofNotes[0]} />
               </Reveal>
 
               {leftSupport && (
