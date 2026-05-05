@@ -25,7 +25,7 @@ import {
   formatLot,
   type Listing,
 } from "@/lib/listings";
-import { contact } from "@/lib/data";
+import { brandImages, contact } from "@/lib/data";
 import { buildListingJsonLd, buildPageMetadata } from "@/lib/seo";
 
 type Params = { slug: string };
@@ -533,6 +533,56 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </section>
       )}
 
+
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
+        <Container>
+          <Reveal>
+            <div className="grid overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-[0_34px_110px_-78px_rgba(0,0,0,0.95)] lg:grid-cols-[0.78fr_1.22fr]">
+              <div className="relative min-h-[420px] bg-[var(--color-bg)] sm:min-h-[520px] lg:min-h-[560px]">
+                <Image
+                  src={brandImages.lukeContact}
+                  alt="Luke Mori available by phone"
+                  fill
+                  sizes="(min-width: 1024px) 36vw, 100vw"
+                  className="object-cover object-[50%_12%]"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.03),rgba(10,11,13,0.12)_55%,rgba(10,11,13,0.68))]" />
+                <div className="absolute inset-x-0 bottom-0 bg-[rgba(10,11,13,0.88)] px-6 py-5 sm:px-8 sm:py-6">
+                  <p className="m-0 text-[18px] font-semibold uppercase tracking-[0.16em] text-white sm:text-[24px]">
+                    Always available to you
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+                <Eyebrow>Talk to Luke</Eyebrow>
+                <h2 className="m-0 mt-7 max-w-[620px] font-serif text-[clamp(34px,4.8vw,64px)] font-light leading-[1.05] tracking-[-0.02em] text-[var(--color-text)]">
+                  Ask the questions
+                  <br />
+                  <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                    before you book the tour.
+                  </em>
+                </h2>
+                <p className="m-0 mt-7 max-w-[620px] text-[15px] leading-[1.85] text-[var(--color-text-muted)] sm:text-[16px]">
+                  If this property is on your shortlist, send Luke the address and what you need to understand: timing, access, area fit, documents, showing windows, or offer strategy.
+                </p>
+
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <Button href={inquiryHref} variant="primary">
+                    Ask About This Property
+                  </Button>
+                  <a
+                    href={contact.phoneHref}
+                    className="inline-flex items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-[transform,border-color,color] duration-300 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+                  >
+                    Call Luke
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
 
       <div className="fixed inset-x-3 bottom-3 z-[120] md:hidden">
         <div className="grid grid-cols-2 gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.88)] p-1.5 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.95)] backdrop-blur-xl">
