@@ -265,6 +265,32 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </Container>
       </section>
 
+      {l.photoCount > 0 && (
+        <section
+          id="gallery"
+          className="tone-office tonal-section scroll-mt-24 border-y border-[var(--color-line)] py-24 md:py-28"
+        >
+          <Container>
+            <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-8">
+              <div>
+                <Eyebrow>Gallery</Eyebrow>
+                <SectionHeading className="mt-6">
+                  The listing,
+                  <br />
+                  <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                    frame by frame.
+                  </em>
+                </SectionHeading>
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
+                {l.photoCount} real listing photos · Click to expand
+              </span>
+            </Reveal>
+            <PhotoGallery photos={l.photos} alt={l.address} />
+          </Container>
+        </section>
+      )}
+
       <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.34fr_0.86fr] lg:gap-20">
@@ -428,35 +454,8 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
             </Reveal>
           </div>
 
-          <RecentlyViewedRail currentSlug={l.slug} />
         </Container>
       </section>
-
-      {l.photoCount > 0 && (
-        <section
-          id="gallery"
-          className="tone-office tonal-section scroll-mt-24 border-y border-[var(--color-line)] py-24 md:py-28"
-        >
-          <Container>
-            <Reveal className="mb-12 flex flex-wrap items-end justify-between gap-8">
-              <div>
-                <Eyebrow>Gallery</Eyebrow>
-                <SectionHeading className="mt-6">
-                  The listing,
-                  <br />
-                  <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    frame by frame.
-                  </em>
-                </SectionHeading>
-              </div>
-              <span className="text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
-                {l.photoCount} real listing photos · Click to expand
-              </span>
-            </Reveal>
-            <PhotoGallery photos={l.photos} alt={l.address} />
-          </Container>
-        </section>
-      )}
 
       {detailRows.length > 4 && (
         <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
@@ -625,6 +624,12 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
           </Container>
         </section>
       )}
+
+      <section className="tone-ivory tonal-section border-t border-[var(--color-line)] py-16 md:py-20">
+        <Container>
+          <RecentlyViewedRail currentSlug={l.slug} />
+        </Container>
+      </section>
     </PageLayout>
   );
 }
