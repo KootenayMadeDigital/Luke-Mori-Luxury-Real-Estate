@@ -24,7 +24,7 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "border border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[#fff7eb] shadow-[0_18px_46px_-28px_rgba(212,184,150,0.9)] hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]",
+    "border border-[var(--color-bronze)] bg-[var(--color-bronze)] !text-[#fff7eb] shadow-[0_18px_46px_-28px_rgba(212,184,150,0.9)] hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]",
   ghost:
     "border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.025)] text-[var(--color-text)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)]",
 };
@@ -58,17 +58,19 @@ export function Button({
 }: Props) {
   const ghostClass = variant === "ghost" ? "ghost-button" : "";
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${ghostClass} ${full ? "w-full" : ""} ${className}`;
+  const labelClass = variant === "primary" ? "!text-[#fff7eb]" : undefined;
+
   if (href) {
     return (
       <a href={href} className={cls}>
-        <span>{children}</span>
+        <span className={labelClass}>{children}</span>
         {arrow && <ArrowIcon />}
       </a>
     );
   }
   return (
     <button type={type} className={cls}>
-      <span>{children}</span>
+      <span className={labelClass}>{children}</span>
       {arrow && <ArrowIcon />}
     </button>
   );

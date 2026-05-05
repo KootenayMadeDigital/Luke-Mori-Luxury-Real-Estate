@@ -421,16 +421,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   />
                 </div>
 
-                {l.url && (
-                  <a
-                    href={l.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 block text-center text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-dim)] transition-colors hover:text-[var(--color-bronze)]"
-                  >
-                    View source listing
-                  </a>
-                )}
               </aside>
             </Reveal>
           </div>
