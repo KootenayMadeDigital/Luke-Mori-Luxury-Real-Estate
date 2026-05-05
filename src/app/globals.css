@@ -19,7 +19,7 @@
   --color-text:         #efeae2;
   --color-text-muted:   #b9b0a4;
   --color-text-dim:     #ada192;
-  --color-button-text:  #08090a;
+  --color-button-text:  #fff7eb;
 
   --font-serif: "Gambetta", "Cormorant Garamond", "Times New Roman", serif;
   --font-sans:  "Satoshi", "Avenir Next", "Neue Haas Grotesk", system-ui, sans-serif;
@@ -76,7 +76,7 @@
   --color-text: #efeae2;
   --color-text-muted: #c2b8aa;
   --color-text-dim: #b6ab9e;
-  --color-button-text: #08090a;
+  --color-button-text: #fff7eb;
   --tone-a: rgba(212,184,150,0.11);
   --tone-b: rgba(132,162,166,0.05);
   --tone-line: rgba(212,184,150,0.07);
@@ -97,7 +97,7 @@
   --color-text: #f1e9dd;
   --color-text-muted: #c7b7a2;
   --color-text-dim: #c3b09d;
-  --color-button-text: #08090a;
+  --color-button-text: #fff7eb;
   --tone-a: rgba(176,138,91,0.16);
   --tone-b: rgba(76,55,38,0.22);
   --tone-line: rgba(216,184,142,0.08);
@@ -118,7 +118,7 @@
   --color-text: #f4eadc;
   --color-text-muted: #ccb9a6;
   --color-text-dim: #c8b5a2;
-  --color-button-text: #08090a;
+  --color-button-text: #fff7eb;
   --tone-a: rgba(189,147,97,0.18);
   --tone-b: rgba(255,255,255,0.035);
   --tone-line: rgba(224,192,154,0.08);

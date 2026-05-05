@@ -38,15 +38,7 @@ function buildShareText({ address, price, location, propertyType }: Props) {
 
 export function ListingActionPanel(props: Props) {
   const [copied, setCopied] = useState(false);
-  const [saved, setSaved] = useState(() => {
-    if (typeof window === "undefined") return false;
-    try {
-      const savedSlugs = JSON.parse(window.localStorage.getItem("lml:saved-listings") || "[]") as string[];
-      return savedSlugs.includes(props.slug);
-    } catch {
-      return false;
-    }
-  });
+  const [bookmarkHint, setBookmarkHint] = useState(false);
   const url = useMemo(() => absoluteUrl(`/listings/${props.slug}`), [props.slug]);
   const shareText = useMemo(
     () => buildShareText({
@@ -98,26 +90,11 @@ export function ListingActionPanel(props: Props) {
     await copyLink();
   }
 
-  function toggleSaved() {
-    try {
-      const savedSlugs = JSON.parse(window.localStorage.getItem("lml:saved-listings") || "[]") as string[];
-      const savedPreviews = JSON.parse(window.localStorage.getItem("lml:saved-listings:v2") || "[]") as ListingPreview[];
-      const isAlreadySaved = savedSlugs.includes(props.slug);
-      const next = isAlreadySaved
-        ? savedSlugs.filter((slug) => slug !== props.slug)
-        : [props.slug, ...savedSlugs].slice(0, 20);
-      const nextPreviews = isAlreadySaved
-        ? savedPreviews.filter((item) => item.slug !== props.slug)
-        : [buildPreview(props), ...savedPreviews.filter((item) => item.slug !== props.slug)].slice(0, 20);
-      window.localStorage.setItem("lml:saved-listings", JSON.stringify(next));
-      window.localStorage.setItem("lml:saved-listings:v2", JSON.stringify(nextPreviews));
-      setSaved(next.includes(props.slug));
-    } catch {
-      setSaved((value) => !value);
-    }
+  async function bookmarkPage() {
+    await copyLink();
+    setBookmarkHint(true);
+    window.setTimeout(() => setBookmarkHint(false), 3200);
   }
-
-  const partnerHref = `mailto:?subject=${encodeURIComponent(`Review this Nelson property: ${props.address}`)}&body=${encodeURIComponent(`${shareText}\n\n${url}\n\nReview this with Luke Mori if the property looks like a real fit.`)}`;
 
   return (
     <div className="rounded-[1.35rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-4 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.9)] sm:p-5">
@@ -132,19 +109,16 @@ export function ListingActionPanel(props: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
         <button type="button" onClick={shareListing} className="action-button">
           Share
         </button>
         <button type="button" onClick={copyLink} className="action-button">
           {copied ? "Copied" : "Copy Link"}
         </button>
-        <button type="button" onClick={toggleSaved} className="action-button">
-          {saved ? "Saved" : "Save Listing"}
+        <button type="button" onClick={bookmarkPage} className="action-button">
+          {bookmarkHint ? "Press ⌘D / Ctrl+D" : "Bookmark"}
         </button>
-        <a href={partnerHref} className="action-button">
-          Send to Partner
-        </a>
       </div>
       <style jsx>{`
         .action-button {
