@@ -506,6 +506,21 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
             </div>
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,11,13,0.76))]" />
+            <div className="absolute right-4 top-20 z-[60] flex flex-col gap-2 sm:hidden">
+              <Link
+                href={`/listings/${listing.slug}`}
+                className="inline-flex items-center justify-center rounded-full border border-[rgba(255,224,170,0.46)] bg-[rgba(8,7,6,0.72)] px-4 py-2.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_42px_-28px_rgba(0,0,0,0.95)] backdrop-blur-md transition-[border-color,background,color] duration-300 hover:border-[var(--color-bronze-light)] hover:bg-[rgba(8,7,6,0.9)] hover:text-[var(--color-bronze-light)]"
+              >
+                View property
+              </Link>
+              <button
+                type="button"
+                onClick={toggleReveal}
+                className="inline-flex items-center justify-center rounded-full border border-[rgba(255,224,170,0.36)] bg-[rgba(212,184,150,0.86)] px-4 py-2.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-button-text)] shadow-[0_14px_42px_-28px_rgba(0,0,0,0.95)] backdrop-blur-md transition-[background,border-color] duration-300 hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)] motion-reduce:hidden"
+              >
+                {revealLabel}
+              </button>
+            </div>
             <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[300px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-opacity duration-300 md:flex" style={{ opacity: ceremonyOpacity }} aria-hidden>
               <span>Pull left</span>
               <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
@@ -571,6 +586,14 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
               >
                 {revealCopy.primaryCta}
               </Link>
+              {isSellerLaunch && (
+                <Link
+                  href={`/listings/${listing.slug}`}
+                  className="inline-flex items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-[transform,border-color,color] duration-300 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+                >
+                  View property
+                </Link>
+              )}
               <button
                 type="button"
                 onClick={toggleReveal}
