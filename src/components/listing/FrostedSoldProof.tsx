@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, type CSSProperties, type PointerEvent } from "react";
+import { LuxuryShaderSurface } from "@/components/effects/LuxuryShaderSurface";
 
 type SoldProof = {
   image: string;
@@ -87,6 +88,8 @@ export function FrostedSoldProof({ lead, note }: Props) {
         <span className="absolute left-1/2 top-1/2 h-px w-10 -translate-x-1/2 bg-[rgba(255,255,255,0.52)]" />
         <span className="absolute left-1/2 top-1/2 h-10 w-px -translate-y-1/2 bg-[rgba(255,255,255,0.52)]" />
       </div>
+
+      <LuxuryShaderSurface effect="proof" pointer={pointer} intensity={0.92} revealed={revealed} className="z-30" />
 
       <div className="absolute left-6 top-6 z-40 rounded-[1px] border border-[rgba(255,255,255,0.34)] bg-[rgba(10,11,13,0.9)] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-[0_12px_34px_-18px_rgba(0,0,0,0.95)] backdrop-blur-sm">
         {lead.status}
