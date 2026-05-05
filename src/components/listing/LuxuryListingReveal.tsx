@@ -369,7 +369,7 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
             <WebGLCurtain open={openPercent} lift={lift} pointer={pointer} isDragging={isDragging} onReady={setWebglReady} />
 
             <div
-              className="pointer-events-none absolute left-1/2 top-[15%] z-[39] flex size-[92px] -translate-x-1/2 items-center justify-center rounded-full border border-[rgba(255,224,170,0.26)] bg-[rgba(9,7,5,0.20)] p-4 shadow-[0_12px_42px_-30px_rgba(0,0,0,0.95)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[112px]"
+              className="pointer-events-none absolute left-1/2 top-[9%] z-[39] flex size-[70px] -translate-x-1/2 items-center justify-center rounded-full border border-[rgba(255,224,170,0.26)] bg-[rgba(9,7,5,0.20)] p-3 shadow-[0_12px_42px_-30px_rgba(0,0,0,0.95)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[112px] md:p-4"
               style={{ opacity: ceremonyOpacity * (0.88 - openPercent * 0.8) }}
               aria-hidden
             >
@@ -383,7 +383,7 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
               />
             </div>
             <div
-              className="pointer-events-none absolute left-1/2 top-[15%] z-[39] size-[56px] -translate-x-1/2 rounded-full border border-[rgba(255,224,170,0.18)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[68px]"
+              className="pointer-events-none absolute left-1/2 top-[9%] z-[39] size-[44px] -translate-x-1/2 rounded-full border border-[rgba(255,224,170,0.18)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[68px]"
               style={{ opacity: ceremonyOpacity * (0.58 - openPercent * 0.5) }}
               aria-hidden
             />
