@@ -161,12 +161,14 @@ function WebGLCurtain({
         float topCompression = 1.0 - smoothstep(0.0, 0.22, v_local.y);
         float bottomWeight = smoothstep(0.70, 1.0, v_local.y);
         float weave = 0.0;
-        float sideRim = smoothstep(0.66, 1.0, v_local.x) * (0.38 + u_open * 0.74);
-        float edgeKnife = smoothstep(0.88, 1.0, v_local.x);
+        float innerEdge = v_side < 0.0 ? v_local.x : 1.0 - v_local.x;
+        float outerEdge = v_side < 0.0 ? 1.0 - v_local.x : v_local.x;
+        float sideRim = smoothstep(0.66, 1.0, innerEdge) * (0.34 + u_open * 0.58);
+        float edgeKnife = smoothstep(0.88, 1.0, innerEdge);
         float diagonalSheen = 0.0;
         float hem = smoothstep(0.0, 0.045, v_local.y) + smoothstep(1.0, 0.955, v_local.y);
         float creaseShadow = smoothstep(0.10, 0.40, vertical) * (1.0 - smoothstep(0.58, 0.96, vertical)) * 0.42;
-        float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
+        float outerDark = 1.0 - smoothstep(0.0, 0.22, outerEdge) * 0.30;
         float hand = v_pressure;
         float espressoMode = step(0.5, u_material);
         vec3 baseChampagne = vec3(0.36, 0.255, 0.155);
