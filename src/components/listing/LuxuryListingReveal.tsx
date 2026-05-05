@@ -108,9 +108,9 @@ function WebGLCurtain({
         float handWide = 1.0 - smoothstep(0.0, 0.46, length(handDelta));
         float pointerSpeed = clamp(length(u_pointer_velocity) * 3.0, 0.0, 1.0);
         float wake = 0.0;
-        float ridge = sin(a_local.x * 64.0 + a_local.y * 5.0 + u_time * 0.58);
-        float ridge2 = sin(a_local.x * 29.0 - a_local.y * 2.4 - u_time * 0.22);
-        float diagonal = sin((a_local.x * 18.0 + a_local.y * 8.0) * a_side + u_time * 0.18);
+        float ridge = sin(a_local.x * 28.0 + a_local.y * 2.6 + u_time * 0.34);
+        float ridge2 = sin(a_local.x * 13.0 - a_local.y * 1.8 - u_time * 0.16);
+        float diagonal = sin((a_local.x * 7.0 + a_local.y * 3.2) * a_side + u_time * 0.10);
         float slow = sin(a_local.x * 10.0 - u_time * 0.22 + a_side * 0.7);
         float edgeLift = pow(a_local.x, 2.1) * u_open;
         float bunch = smoothstep(0.26, 1.0, u_open);
@@ -118,7 +118,7 @@ function WebGLCurtain({
         float handPressure = hand * (0.035 + pointerSpeed * 0.030);
         float wakePull = wake * pointerSpeed * 0.040;
         float napDrag = dot(normalize(u_pointer_velocity + vec2(0.0001)), vec2(a_side, 0.28));
-        float billow = (ridge * (0.048 + bunch * 0.030) + ridge2 * (0.025 + bunch * 0.018) + diagonal * 0.016 + slow * 0.018 + handWide * 0.024 + handPressure + wakePull + pullLag * 0.18) * (1.0 - u_open * 0.02) * weight;
+        float billow = (ridge * (0.034 + bunch * 0.018) + ridge2 * (0.016 + bunch * 0.010) + diagonal * 0.008 + slow * 0.014 + handWide * 0.020 + handPressure + wakePull + pullLag * 0.16) * (1.0 - u_open * 0.02) * weight;
         x += (billow + pullLag * 0.11 + hand * napDrag * 0.012) * a_side;
         y += sin(a_local.x * 9.0 + u_time * 0.55) * 0.010 * (0.45 + edgeLift) * weight;
         y += abs(u_velocity) * 0.030 * verticalLag * (0.6 + hand * 0.4);
@@ -126,7 +126,7 @@ function WebGLCurtain({
         y += (hand * -0.018 + wakePull * 0.36) * weight;
         float sag = -pow(abs(a_local.x - 0.5) * 2.0, 2.0) * 0.024 * (1.0 - u_open * 0.35);
         y += sag;
-        float depth = edgeLift * 0.28 + bunch * abs(ridge) * 0.13 + abs(ridge) * 0.06 + abs(diagonal) * 0.04 + hand * 0.10 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.10 * verticalLag + u_lift * hand * 0.16;
+        float depth = edgeLift * 0.24 + bunch * abs(ridge) * 0.08 + abs(ridge) * 0.04 + abs(diagonal) * 0.02 + hand * 0.09 + wake * pointerSpeed * 0.080 + abs(u_velocity) * 0.09 * verticalLag + u_lift * hand * 0.14;
         float w = 1.0 + depth * 0.32;
         gl_Position = vec4(x, y, depth, w);
         v_local = a_local;
@@ -154,14 +154,15 @@ function WebGLCurtain({
       }
       void main() {
         float pleat = 0.5 + 0.5 * v_fold;
-        float micro = grain(v_local * vec2(240.0, 96.0) + u_time * 0.014);
-        float vertical = sin(v_local.x * 112.0) * 0.5 + 0.5;
-        float weave = sin(v_local.x * 380.0) * sin(v_local.y * 172.0) * 0.5 + 0.5;
+        float micro = 0.0;
+        float vertical = sin(v_local.x * 30.0) * 0.5 + 0.5;
+        float secondaryFold = sin(v_local.x * 15.0 + 0.8) * 0.5 + 0.5;
+        float weave = 0.0;
         float sideRim = smoothstep(0.66, 1.0, v_local.x) * (0.38 + u_open * 0.74);
         float edgeKnife = smoothstep(0.88, 1.0, v_local.x);
         float diagonalSheen = 0.0;
         float hem = smoothstep(0.0, 0.045, v_local.y) + smoothstep(1.0, 0.955, v_local.y);
-        float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
+        float creaseShadow = smoothstep(0.08, 0.34, vertical) * (1.0 - smoothstep(0.50, 0.92, vertical)) * 0.52;
         float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
         float hand = v_pressure;
         float espressoMode = step(0.5, u_material);
@@ -177,19 +178,19 @@ function WebGLCurtain({
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
         float napSheen = smoothstep(-0.65, 0.95, v_motion) * hand;
         float brushShadow = smoothstep(0.18, 0.82, hand) * smoothstep(0.82, 0.18, abs(v_motion));
-        float light = 0.18 + pleat * 0.46 + vertical * 0.18 + sideRim * 0.98 + edgeKnife * 0.42 + hand * 0.11 + napSheen * 0.20;
-        light -= creaseShadow * 0.34;
+        float light = 0.22 + pleat * 0.30 + vertical * 0.12 + secondaryFold * 0.10 + sideRim * 0.88 + edgeKnife * 0.30 + hand * 0.10 + napSheen * 0.16;
+        light -= creaseShadow * 0.20;
         light -= brushShadow * 0.05;
         light *= outerDark;
         vec3 color = mix(base, champagne, 0.34 + velvetNap * 0.26);
-        color = mix(color, espresso, creaseShadow * 0.42);
+        color = mix(color, espresso, creaseShadow * 0.28);
         color = mix(color, espresso, brushShadow * 0.10);
         color = mix(color, bronze, sideRim * 0.30);
         color += warm * sideRim * 0.30;
         color += warm * edgeKnife * 0.18;
         color += warm * napSheen * 0.10;
-        color += vec3(micro) * 0.010;
-        color += vec3(weave) * 0.006;
+        color += vec3(micro) * 0.0;
+        color += vec3(weave) * 0.0;
         color *= 0.76 + hem * 0.24;
         float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.34;
         float alpha = (0.992 - sideRim * 0.028) * openFade;
