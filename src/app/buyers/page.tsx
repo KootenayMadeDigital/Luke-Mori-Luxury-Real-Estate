@@ -45,16 +45,16 @@ const buyerResourceCards = [
 
 const advantageChecks = [
   {
-    title: "Fit before feed",
-    body: "The search starts with lifestyle, use, and non-negotiables, then moves into listings. That keeps beautiful wrong homes from stealing the day."
+    title: "Fit before listings",
+    body: "The search starts with daily life, use, and non-negotiables, then moves into listings. That keeps beautiful wrong homes from stealing the day."
   },
   {
     title: "Local tradeoffs first",
     body: "Sun, road rhythm, slope, shoreline, winter access, school routes, privacy, and service distance are screened before a showing becomes emotional.",
   },
   {
-    title: "Scarcity checked early",
-    body: "Lakefront, view homes, acreage, and walkable Nelson each carry different scarcity. Luke helps separate real scarcity from expensive presentation.",
+    title: "Value checked early",
+    body: "Lakefront, view homes, acreage, and walkable Nelson each carry different value drivers. Luke helps separate real strength from expensive presentation.",
   },
   {
     title: "Clear next step",
@@ -74,15 +74,15 @@ export default function BuyersPage() {
     <PageLayout>
       <SubpageHero
         eyebrow="For Buyers"
-        title="Buying by life,"
-        emphasis="not by feed."
-        lede="Whether you are relocating, buying a second home, or moving within the region, start with the life you want and the tradeoffs you will not accept. Then narrow the search to the few addresses that truly fit."
+        title="Start with the life"
+        emphasis="you want here."
+        lede="Whether you are relocating, buying a second home, or moving within the region, begin with what matters most day to day. Then narrow the search to homes that truly fit."
         image={headerImages.procterLivingRoom}
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers" }]}
         meta={[
           { value: "5-Step", label: "Process" },
-          { value: "Off-Market", label: "Network Access" },
-          { value: "Vetted", label: "Lender Network" },
+          { value: "Local", label: "Area Guidance" },
+          { value: "Trusted", label: "Advisor Network" },
           { value: "1 Day", label: "Reply Standard" },
         ]}
       />
@@ -101,7 +101,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Luxury buyers are not choosing between similar homes. They are choosing a way to live: lakefront, walkable Nelson, North Shore privacy, acreage, ski rhythm, relocation, second-home ownership, or a clean remote purchase.
+              Buyers are not choosing between similar homes. They are choosing a way to live: lakefront, walkable Nelson, North Shore privacy, acreage, ski rhythm, relocation, second-home ownership, or a clean remote purchase.
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />
@@ -122,7 +122,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              The advantage is not seeing more homes. It is knowing which homes deserve attention before the feed, photography, or urgency starts doing the thinking.
+              The advantage is not seeing more homes. It is knowing which homes deserve attention before photography, urgency, or online browsing starts doing the thinking.
             </SectionLede>
           </Reveal>
 
@@ -218,9 +218,9 @@ export default function BuyersPage() {
 
       <InquiryCTA
         eyebrow="Buyer Inquiry"
-        title="Name the life."
-        emphasis="Then the addresses."
-        body="Whether you are three years out or three weeks, start by naming the life you want and the tradeoffs you will not accept: lakefront, town, acreage, ski, second home, or a clean relocation path."
+        title="Tell Luke what"
+        emphasis="matters most."
+        body="Whether you are three years out or three weeks, start with what you want life here to feel like: lakefront, town, acreage, ski access, second home, or a clean relocation path."
       />
     </PageLayout>
   );

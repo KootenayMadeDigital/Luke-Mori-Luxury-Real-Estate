@@ -14,18 +14,18 @@ import { siteImages, contact } from "@/lib/data";
 import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Nelson BC Realtor · Luke Mori Luxury Real Estate Agent",
+  title: "Nelson BC Realtor · Luke Mori Real Estate Agent",
   description:
-    "Luke Mori is a Nelson BC realtor for luxury homes, Kootenay Lake waterfront property, relocation buyers, sellers, second homes, and area-specific real estate decisions.",
+    "Luke Mori is a Nelson BC realtor for important homes, Kootenay Lake waterfront property, relocation buyers, sellers, second homes, and area-specific real estate decisions.",
   path: "/nelson-bc-realtor",
   image: "/og/about.png",
 });
 
 const questions = [
   {
-    question: "Who is a strong realtor for Nelson BC luxury real estate?",
+    question: "Who is a strong realtor for important Nelson BC real estate decisions?",
     answer:
-      "Luke Mori represents Nelson BC and Kootenay Lake buyers and sellers across luxury homes, waterfront property, acreage, relocation, and second-home searches. His work is strongest when local area fit, pricing, privacy, and negotiation all matter.",
+      "Luke Mori helps Nelson BC and Kootenay Lake buyers and sellers with important homes, waterfront property, acreage, relocation, and second-home searches. His work is strongest when local area fit, pricing, privacy, and negotiation all matter.",
   },
   {
     question: "What should I look for in a Nelson BC real estate agent?",
@@ -50,7 +50,7 @@ const criteria = [
   },
   {
     title: "Seller leverage",
-    body: "Higher-value sellers need pricing control, visual presentation, qualified showings, privacy planning, and negotiation strategy before the listing goes public.",
+    body: "Sellers of important homes need pricing control, visual presentation, serious showings, privacy planning, and negotiation strategy before the listing goes public.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function NelsonRealtorPage() {
         eyebrow="Nelson BC Realtor"
         title="Choose the local"
         emphasis="who knows the tradeoffs."
-        lede="For luxury homes, waterfront property, acreage, relocation, and second-home decisions around Nelson and Kootenay Lake, the right advice starts before the showing schedule."
+        lede="For important homes, waterfront property, acreage, relocation, and second-home decisions around Nelson and Kootenay Lake, the right advice starts before the showing schedule."
         image={siteImages.realtorHeaderLuke}
         crumbs={[{ label: "Home", href: "/" }, { label: "Nelson BC Realtor" }]}
         meta={[
@@ -104,12 +104,12 @@ export default function NelsonRealtorPage() {
               <Reveal>
                 <Eyebrow>Why Luke</Eyebrow>
                 <SectionHeading className="mt-7">
-                  Luxury real estate
+                  Important decisions
                   <br />
-                  <em className="font-light not-italic italic text-[var(--color-bronze-light)]">needs plain advice.</em>
+                  <em className="font-light not-italic italic text-[var(--color-bronze-light)]">need plain advice.</em>
                 </SectionHeading>
                 <SectionLede>
-                  The work is not to make every property sound perfect. The work is to identify what fits, what does not, where the premium is justified, and what should be negotiated before emotion starts spending money.
+                  The work is not to make every property sound perfect. The work is to identify what fits, what does not, where the price is justified, and what should be negotiated before emotion starts spending money.
                 </SectionLede>
               </Reveal>
 

@@ -1,6 +1,6 @@
 export type AreaIntelligence = {
   thesis: string;
-  luxuryBuyer: string;
+  buyerFocus: string;
   dailyLife: string[];
   propertyTypes: string[];
   microPockets: { name: string; body: string }[];
@@ -13,7 +13,7 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
   nelson: {
     thesis:
       "Nelson is for buyers who want a real mountain town around the property: restaurants, heritage streets, lake access, schools, arts, and Whitewater ski days without giving up daily convenience.",
-    luxuryBuyer:
+    buyerFocus:
       "The strongest Nelson searches usually start with one of three priorities: walkability near Baker Street, city-and-lake views from higher streets, or a quieter address close enough to town that ownership still feels easy.",
     dailyLife: [
       "Baker Street gives the city its daily rhythm, with restaurants, coffee, shops, and heritage buildings close together.",
@@ -35,20 +35,20 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
     dueDiligence: [
       { label: "Grade and parking", body: "Nelson streets can be steep. Confirm parking, winter access, and whether the daily walk still works in February." },
       { label: "Heritage condition", body: "Character can be valuable, but older homes need careful review of envelope, electrical, heating, drainage, and renovation history." },
-      { label: "Sun and view exposure", body: "Two similar homes can live differently depending on elevation, tree cover, and when the sun drops behind the mountain." },
+      { label: "Sun and views", body: "Two similar homes can live differently depending on elevation, tree cover, and when the sun drops behind the mountain." },
     ],
     faqs: [
-      { question: "Where are Nelson BC luxury homes usually found?", answer: "Luxury homes appear across Nelson, but Luke's own local writing highlights John's Walk and Sproat Drive, Fairview, Uphill, Rosemont, Johnstone Road, and the North Shore as important luxury search areas." },
+      { question: "Where are higher-end Nelson BC homes usually found?", answer: "Important homes appear across Nelson, but Luke's own local writing highlights John's Walk and Sproat Drive, Fairview, Uphill, Rosemont, Johnstone Road, and the North Shore as important search areas." },
       { question: "Is Nelson better for full-time living or a second home?", answer: "Nelson can support both. Buyers who want restaurants, culture, schools, lake access, and Whitewater skiing usually see it as more than a seasonal address." },
-      { question: "What should luxury buyers inspect first in Nelson?", answer: "Start with street grade, parking, renovation history, sun exposure, lake or mountain view protection, and whether the home fits the winter routine as well as the summer version." },
+      { question: "What should buyers inspect first in Nelson?", answer: "Start with street grade, parking, renovation history, sun, lake or mountain view protection, and whether the home fits the winter routine as well as the summer version." },
     ],
     cta: "Ask Luke which Nelson pocket fits your search",
   },
   "north-shore": {
     thesis:
       "The North Shore is for buyers who want the lake to feel immediate while keeping Nelson close. The decision is rarely just waterfront or not. It is privacy, shoreline, road rhythm, and daily convenience together.",
-    luxuryBuyer:
-      "Million-dollar North Shore buyers usually compare view, beach access, dock potential, highway exposure, and how quickly the address gets them back to Nelson for dinner, work, or services.",
+    buyerFocus:
+      "North Shore buyers usually compare view, beach access, dock potential, highway sound, and how quickly the address gets them back to Nelson for dinner, work, or services.",
     dailyLife: [
       "Highway 3A is the spine, running along the north side of the lake toward Balfour.",
       "Kokanee Creek Provincial Park adds beach, campground, hiking, and seasonal salmon-spawning appeal nearby.",
@@ -68,11 +68,11 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
     ],
     dueDiligence: [
       { label: "Shoreline orientation", body: "Confirm morning and evening sun, swimming usability, seasonal water levels, and how the shoreline actually feels at the property." },
-      { label: "Highway exposure", body: "Some addresses feel private from the lake but exposed from the road. Visit at different times before judging." },
+      { label: "Highway sound", body: "Some addresses feel private from the lake but affected by the road. Visit at different times before judging." },
       { label: "Dock and access questions", body: "Do not assume dock potential. Confirm shoreline rules, stairs, slope, access, and maintenance realities before paying for the view." },
     ],
     faqs: [
-      { question: "Is North Shore Nelson BC real estate mostly waterfront?", answer: "The North Shore is strongly associated with lakefront and view property, but buyers still need to compare shoreline access, road exposure, privacy, and how each address connects back to Nelson." },
+      { question: "Is North Shore Nelson BC real estate mostly waterfront?", answer: "The North Shore is strongly associated with lakefront and view property, but buyers still need to compare shoreline access, road noise, privacy, and how each address connects back to Nelson." },
       { question: "Who is the North Shore best for?", answer: "It fits buyers who want lakefront privacy, boating, views, and a quieter home base while keeping Nelson close enough for regular dinners, work, or services." },
       { question: "What can make a North Shore waterfront home harder to own?", answer: "Highway noise, steep water access, dock uncertainty, winter maintenance, and service distance can change the ownership experience even when the listing photos look exceptional." },
     ],
@@ -81,7 +81,7 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
   balfour: {
     thesis:
       "Balfour is for buyers who want the West Arm to open into a bigger lake life: deeper water, ferry rhythm, golf, marina thinking, and second-home privacy that feels more removed than Nelson proper.",
-    luxuryBuyer:
+    buyerFocus:
       "The Balfour buyer usually cares about main-lake feel, moorage questions, seasonal guests, and whether ferry access is part of the charm or part of the friction.",
     dailyLife: [
       "Balfour sits where the West Arm meets the main body of Kootenay Lake.",
@@ -92,17 +92,17 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
       "Deep-water waterfront homes and legacy lake properties",
       "Second homes built around guests, boats, and long summer stays",
       "Golf and marina-adjacent homes where recreation is part of the address",
-      "Private estates where service access and winter care need planning",
+      "Larger properties where service access and winter care need planning",
     ],
     microPockets: [
       { name: "Balfour village and ferry area", body: "Best for buyers who want services, ferry access, and a recognizable lake-community hub." },
       { name: "Queens Bay direction", body: "Often considered by buyers comparing privacy, views, and a quieter shoreline feel." },
-      { name: "Main-lake waterfront", body: "More open-water exposure, stronger lake identity, and more due diligence around weather, docks, and access." },
-      { name: "Golf and marina pockets", body: "For buyers who want recreation close by rather than a purely private retreat." },
+      { name: "Main-lake waterfront", body: "More open-water weather, stronger lake identity, and more due diligence around weather, docks, and access." },
+      { name: "Golf and marina pockets", body: "For buyers who want recreation close by rather than a purely secluded retreat." },
     ],
     dueDiligence: [
       { label: "Ferry rhythm", body: "The ferry can be a lifestyle feature, but buyers should understand timing, guest logistics, and how often they need the East Shore connection." },
-      { label: "Moorage and water depth", body: "Confirm practical boat access, dock condition, shoreline exposure, and seasonal water behavior before assigning value." },
+      { label: "Moorage and water depth", body: "Confirm practical boat access, dock condition, shoreline weather, and seasonal water behavior before assigning value." },
       { label: "Seasonal upkeep", body: "Second homes need a plan for winter checks, trades, snow, security, and guest turnover." },
     ],
     faqs: [
@@ -114,23 +114,23 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
   },
   blewett: {
     thesis:
-      "Blewett is for buyers who want land, privacy, workshops, gardens, and a rural feel without giving up Nelson completely. The luxury is space that still has a practical town connection.",
-    luxuryBuyer:
-      "Acreage buyers need to think beyond pretty land. Water, access, outbuildings, exposure, insurance, internet, and winter maintenance all decide whether the property feels freeing or heavy.",
+      "Blewett is for buyers who want land, privacy, workshops, gardens, and a rural feel without giving up Nelson completely. The value is space that still has a practical town connection.",
+    buyerFocus:
+      "Acreage buyers need to think beyond pretty land. Water, access, outbuildings, sun, insurance, internet, and winter maintenance all decide whether the property feels freeing or heavy.",
     dailyLife: [
       "Blewett sits west of Nelson, with wooded privacy and larger parcels compared with the city core.",
       "Taghum and Morning Mountain help define the nearby outdoor rhythm.",
-      "For families and estate buyers, the appeal is room to live, store, garden, build, and host without leaving Nelson too far behind.",
+      "For families and acreage buyers, the appeal is room to live, store, garden, build, and host without leaving Nelson too far behind.",
     ],
     propertyTypes: [
       "Acreage homes with mature timber, gardens, and outbuildings",
-      "Family estates with room for workshops, guests, animals, or storage",
+      "Family acreages with room for workshops, guests, animals, or storage",
       "Rural homes where privacy matters more than walkability",
       "Land-rich properties that need careful water, septic, and access review",
     ],
     microPockets: [
       { name: "Taghum side", body: "Closer to river and beach access, useful for buyers comparing water recreation with acreage." },
-      { name: "Blewett Road", body: "The classic acreage search corridor, where lot shape, exposure, and driveway practicality matter." },
+      { name: "Blewett Road", body: "The classic acreage search corridor, where lot shape, sun, and driveway practicality matter." },
       { name: "Morning Mountain side", body: "Outdoor access and forested privacy can be the draw, but winter access still deserves attention." },
       { name: "Nelson-edge acreage", body: "For buyers who want space but still need the town drive to feel simple." },
     ],
@@ -148,9 +148,9 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
   },
   "slocan-valley": {
     thesis:
-      "The Slocan Valley is for buyers who want the quiet version of Kootenay luxury: river frontage, timber, garden land, smaller communities, and retreat property that feels slower on purpose.",
-    luxuryBuyer:
-      "Retreat buyers need clarity on distance, services, internet, river exposure, winter driving, and whether the quiet that feels magical for a weekend still works for real life.",
+      "The Slocan Valley is for buyers who want the quiet version of Kootenay living: river frontage, timber, garden land, smaller communities, and retreat property that feels slower on purpose.",
+    buyerFocus:
+      "Retreat buyers need clarity on distance, services, internet, river conditions, winter driving, and whether the quiet that feels magical for a weekend still works for real life.",
     dailyLife: [
       "The valley follows Highway 6 north of Nelson through small communities toward Slocan Lake and New Denver.",
       "River, lake, timber, gardens, and slower community rhythm are the core attractions.",
@@ -170,13 +170,13 @@ export const areaIntelligence: Record<string, AreaIntelligence> = {
     ],
     dueDiligence: [
       { label: "Distance and services", body: "Confirm drive times, trades, medical access, groceries, and whether the distance works in winter as well as summer." },
-      { label: "River and land exposure", body: "Waterfront and rural land need review for flood history, drainage, wildfire interface, and usable acreage." },
+      { label: "River and land conditions", body: "Waterfront and rural land need review for flood history, drainage, wildfire interface, and usable acreage." },
       { label: "Connectivity", body: "Internet and cell service can shape whether the property works for remote work, guests, or full-time living." },
     ],
     faqs: [
-      { question: "Who should consider Slocan Valley real estate?", answer: "The valley fits buyers looking for retreat property, river or lake access, timber homes, rural privacy, and a quieter community rhythm north of Nelson." },
+      { question: "Who should consider Slocan Valley real estate?", answer: "The valley fits buyers looking for quieter property, river or lake access, timber homes, rural privacy, and a slower community rhythm north of Nelson." },
       { question: "Is the Slocan Valley too far for Nelson buyers?", answer: "It depends on the lifestyle. Buyers who need frequent Nelson access usually focus closer to South Slocan and Crescent Valley. Buyers who want more retreat value may look farther north." },
-      { question: "What should retreat buyers verify?", answer: "Confirm winter driving, service distance, internet, cell coverage, river or land exposure, water systems, and how the property will be cared for when owners are away." },
+      { question: "What should retreat buyers verify?", answer: "Confirm winter driving, service distance, internet, cell coverage, river or land conditions, water systems, and how the property will be cared for when owners are away." },
     ],
     cta: "Discuss Slocan Valley retreat property",
   },

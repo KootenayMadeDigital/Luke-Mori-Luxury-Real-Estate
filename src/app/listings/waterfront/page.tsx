@@ -31,9 +31,9 @@ export default function WaterfrontPage() {
       />
       <SubpageHero
         eyebrow={`Waterfront · ${wf.length.toLocaleString()} Properties`}
-        title="Lake. River."
-        emphasis="Direct access."
-        lede="Every active waterfront property in the catalog: Kootenay Lake's West Arm, Highway 3A, the North Shore, and the Slocan and Kootenay rivers."
+        title="Waterfront needs"
+        emphasis="a careful look."
+        lede="Active waterfront properties across Kootenay Lake's West Arm, Highway 3A, the North Shore, and the Slocan and Kootenay rivers."
         image={brandImages.kayaking}
         crumbs={[
           { label: "Home", href: "/" },
@@ -51,7 +51,7 @@ export default function WaterfrontPage() {
       <SeoAnswerBlock
         eyebrow="Waterfront Search"
         question="Where should buyers look for waterfront real estate near Nelson BC?"
-        answer="The strongest Nelson waterfront searches usually begin on Kootenay Lake's West Arm, the Highway 3A North Shore corridor, Balfour, Procter, Harrop, and select riverfront or Slocan Valley properties. Before paying a lakefront premium, buyers should compare shoreline access, dock questions, road exposure, sun, privacy, winter use, and resale confidence."
+        answer="The strongest Nelson waterfront searches usually begin on Kootenay Lake's West Arm, the Highway 3A North Shore corridor, Balfour, Procter, Harrop, and select riverfront or Slocan Valley properties. Before paying more for waterfront, buyers should compare shoreline access, dock questions, road noise, sun, privacy, winter use, and resale confidence."
         terms={["nelson bc waterfront real estate", "kootenay lake waterfront property", "lakefront homes for sale"]}
         tone="lake"
       />
@@ -64,8 +64,8 @@ export default function WaterfrontPage() {
 
       <InquiryCTA
         eyebrow="Waterfront Inquiry"
-        title="Waterfront decisions need care."
-        emphasis="Move first."
+        title="Waterfront decisions"
+        emphasis="deserve care."
         body="Tell Luke what kind of waterfront you want: orientation, depth, dock potential, road access, sun, winter use, and privacy."
       />
     </PageLayout>

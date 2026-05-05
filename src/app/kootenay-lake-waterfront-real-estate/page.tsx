@@ -25,12 +25,12 @@ const questions = [
   {
     question: "Where should buyers look for Kootenay Lake waterfront real estate?",
     answer:
-      "Most buyers compare the West Arm near Nelson, the North Shore corridor, Procter, Harrop, Balfour, and main-lake properties farther east. Each area has a different balance of privacy, road access, services, sun, water exposure, and daily convenience.",
+      "Most buyers compare the West Arm near Nelson, the North Shore corridor, Procter, Harrop, Balfour, and main-lake properties farther east. Each area has a different balance of privacy, road access, services, sun, water conditions, and daily convenience.",
   },
   {
     question: "What should I know before buying waterfront property on Kootenay Lake?",
     answer:
-      "Waterfront buyers should verify shoreline use, dock or beach access, road exposure, slope, sun, insurance, maintenance, utilities, title details, and any property-specific approvals before treating a lakefront listing as comparable to another.",
+      "Waterfront buyers should verify shoreline use, dock or beach access, road noise, slope, sun, insurance, maintenance, utilities, title details, and any property-specific approvals before treating a lakefront listing as comparable to another.",
   },
   {
     question: "Is Kootenay Lake waterfront good for second-home buyers?",
@@ -42,7 +42,7 @@ const questions = [
 const dueDiligence = [
   "Shoreline access, usability, and seasonal water conditions",
   "Dock, beach, road, and parking practicality",
-  "Sun exposure, privacy, slope, and winter access",
+  "Sun, privacy, slope, and winter access",
   "Insurance, services, title details, and maintenance load",
 ];
 
@@ -50,7 +50,7 @@ const waterfrontCorridors = [
   {
     title: "West Arm near Nelson",
     buyer: "Buyers who want lake life without leaving Nelson's restaurants, schools, services, and social rhythm behind.",
-    watch: "Road exposure, slope, parking, dock practicality, and how usable the shoreline feels outside summer.",
+    watch: "Road noise, slope, parking, dock practicality, and how usable the shoreline feels outside summer.",
     href: "/nelson/nelson",
   },
   {
@@ -67,8 +67,8 @@ const waterfrontCorridors = [
   },
   {
     title: "Balfour and main lake",
-    buyer: "Second-home and lifestyle buyers who want bigger lake energy, golf, marina access, and a stronger retreat feel.",
-    watch: "Wind, exposure, distance from Nelson, ownership systems, family use, and how often the home will sit empty.",
+    buyer: "Second-home buyers who want bigger lake energy, golf, marina access, and a quieter feel.",
+    watch: "Wind, distance from Nelson, ownership systems, family use, and how often the home will sit empty.",
     href: "/nelson/balfour",
   },
 ];
@@ -91,7 +91,7 @@ export default function KootenayLakeWaterfrontPage() {
         eyebrow="Kootenay Lake Waterfront"
         title="Buy the lake"
         emphasis="with your eyes open."
-        lede="Waterfront around Nelson is not one market. The right shoreline depends on access, sun, privacy, services, exposure, and how you actually plan to live there."
+        lede="Waterfront around Nelson is not one market. The right shoreline depends on access, sun, privacy, services, weather, and how you actually plan to live there."
         image={headerImages.westArmKootenayLake}
         imageTreatment="showcase"
         crumbs={[{ label: "Home", href: "/" }, { label: "Kootenay Lake Waterfront" }]}
@@ -106,7 +106,7 @@ export default function KootenayLakeWaterfrontPage() {
       <SeoAnswerBlock
         eyebrow="Waterfront Answer"
         question="What should buyers know before buying waterfront property on Kootenay Lake?"
-        answer="Kootenay Lake waterfront value depends on more than the view. Buyers should compare shoreline usability, dock or beach access, road noise, sun, slope, privacy, services, winter access, insurance, and resale confidence before deciding whether a lakefront premium is justified."
+        answer="Kootenay Lake waterfront value depends on more than the view. Buyers should compare shoreline usability, dock or beach access, road noise, sun, slope, privacy, services, winter access, insurance, and resale confidence before deciding whether the price is justified."
         terms={["kootenay lake waterfront real estate", "kootenay lake waterfront property for sale", "nelson bc waterfront homes for sale"]}
         tone="lake"
       />
@@ -122,7 +122,7 @@ export default function KootenayLakeWaterfrontPage() {
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">The details decide the value.</em>
               </SectionHeading>
               <SectionLede>
-                Two Kootenay Lake properties can look similar online and live completely differently. This is where local review matters before touring, offering, or paying for scarcity.
+                Two Kootenay Lake properties can look similar online and live completely differently. This is where local review matters before touring, offering, or paying more for the wrong fit.
               </SectionLede>
             </Reveal>
 
@@ -197,7 +197,7 @@ export default function KootenayLakeWaterfrontPage() {
         eyebrow="Waterfront Buyer Call"
         title="Before you chase the view,"
         emphasis="check the shoreline."
-        body="Send Luke the lakefront property you are considering, or describe the shoreline you want. He will help narrow the search before the wrong tour eats the day."
+        body="Send Luke the lakefront property you are considering, or describe the shoreline you want. He will help narrow the search before the wrong tour takes up your day."
       />
     </PageLayout>
   );

@@ -322,7 +322,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 <div className="mt-16 border-t border-[var(--color-line)] pt-14">
                   <Eyebrow>The Property Story</Eyebrow>
                   <h2 className="m-0 mt-6 max-w-[720px] font-serif font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)] [font-size:clamp(32px,4vw,54px)]">
-                    Read the home before you tour it.
+                    Understand the home before you tour it.
                   </h2>
                   {buildStorySegments(l).length > 0 && (
                     <div className="mt-9 rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.34)] p-2 shadow-[0_30px_90px_-75px_rgba(0,0,0,0.55)] lg:w-[calc(100vw-4rem)] lg:max-w-[1180px] xl:w-[calc(100vw-7rem)]">
@@ -377,10 +377,10 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 )}
 
                 <h3 className="m-0 mb-3 font-serif text-[25px] font-light leading-[1.15] tracking-[-0.005em]">
-                  Inquire with intent.
+                  Ask about this property.
                 </h3>
                 <p className="m-0 mb-6 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  Ask Luke about the showing, property details, fit, and what to know before you spend a day on the road.
+                  Ask Luke about the showing, property details, fit, and what to understand before you spend a day on the road.
                 </p>
 
                 <ul className="mb-7 space-y-3 border-y border-[var(--color-line)] py-6 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
@@ -409,7 +409,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   </a>
                 </div>
                 <Button href={inquiryHref} variant="primary" full>
-                  Request Private Showing
+                  Ask About a Showing
                 </Button>
 
                 <div className="mt-4">

@@ -33,23 +33,23 @@ export default function ListingsIndexPage() {
       />
       <SubpageHero
         eyebrow={`Active · ${total.toLocaleString()} Listings`}
-        title="See the market,"
-        emphasis="end to end."
-        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Use the filters to turn a crowded market into a short list."
+        title="See what is active,"
+        emphasis="then narrow with care."
+        lede="Browse active properties across Nelson, Kootenay Lake, the Slocan and Columbia valleys, Kaslo, and beyond. Use the filters to turn a crowded market into a clearer short list."
         image={brandImages.procterLakeHouse}
         crumbs={[{ label: "Home", href: "/" }, { label: "Listings" }]}
         meta={[
           { value: total.toLocaleString(), label: "Active Properties" },
           { value: lukes.toString(), label: "Listed by Luke" },
-          { value: luxe.toLocaleString(), label: "Luxury · $1M+" },
-          { value: "Live", label: "MLS Catalog" },
+          { value: luxe.toLocaleString(), label: "$1M+" },
+          { value: "Current", label: "Listing Data" },
         ]}
       />
 
       <SeoAnswerBlock
         eyebrow="Nelson Listings"
         question="How do you find the right Nelson BC home for sale?"
-        answer="Start with the full market, then narrow by lifestyle and ownership reality: waterfront, walkable Nelson, North Shore privacy, Balfour, acreage near Blewett, Slocan Valley retreats, or luxury homes over $1M. Luke helps buyers separate attractive listings from the addresses that actually fit."
+        answer="Start with the full market, then narrow by daily life and ownership needs: waterfront, walkable Nelson, North Shore privacy, Balfour, acreage near Blewett, Slocan Valley retreats, or homes over $1M. Luke helps buyers separate attractive listings from the addresses that actually fit."
         terms={["nelson bc real estate", "nelson bc homes for sale", "nelson bc mls listings"]}
         tone="ivory"
       />
@@ -61,10 +61,10 @@ export default function ListingsIndexPage() {
       </section>
 
       <InquiryCTA
-        eyebrow="Off-Market"
-        title="Some homes never hit the public feed."
-        emphasis="Ask anyway."
-        body="Some homes are not publicly listed. Tell Luke what you are looking for, and he can let you know whether a private introduction is realistic."
+        eyebrow="Buyer Inquiry"
+        title="Looking for something specific?"
+        emphasis="Ask Luke."
+        body="Some homes are not publicly listed. Tell Luke what you are looking for, and he can let you know what options may be realistic."
       />
     </PageLayout>
   );

@@ -13,23 +13,23 @@ import { headerImages, sellerSteps } from "@/lib/data";
 
 const sellerLeverage = [
   {
-    title: "The first launch sets the price ceiling.",
-    body: "A weak first impression teaches the market to wait. Strong pricing, visuals, and buyer targeting protect leverage before the listing is public.",
+    title: "The first impression matters.",
+    body: "A weak first impression teaches buyers to wait. Strong pricing, visuals, and buyer focus help protect value before the listing is public.",
   },
   {
-    title: "Privacy is part of the value.",
-    body: "A high-value home should not become entertainment for casual traffic. Qualified interest, controlled showings, and careful exposure protect both the seller and the result.",
+    title: "Privacy should be planned.",
+    body: "An important home should not become entertainment for casual traffic. Serious interest, thoughtful showings, and clear boundaries protect both the seller and the result.",
   },
   {
     title: "The buyer has to understand the home fast.",
-    body: "Lakefront, acreage, view, and legacy homes need clear storytelling. Buyers should understand the life, the land, and the scarcity before they arrive.",
+    body: "Lakefront, acreage, view, and special homes need clear storytelling. Buyers should understand the life, the land, and the value before they arrive.",
   },
 ];
 
 export const metadata = buildPageMetadata({
-  title: "Sell a Home in Nelson BC · Luxury Seller Representation",
+  title: "Sell a Home in Nelson BC · Luke Mori Seller Guidance",
   description:
-    "Sell a Nelson BC luxury home, waterfront property, acreage, or Kootenay Lake residence with pricing strategy, private marketing, qualified showings, and negotiation support.",
+    "Sell a Nelson BC home, waterfront property, acreage, or Kootenay Lake residence with clear pricing advice, strong marketing, serious showings, and negotiation support.",
   path: "/sellers",
   image: "/og/sellers.png",
 });
@@ -41,21 +41,21 @@ export default function SellersPage() {
         eyebrow="For Sellers"
         title="Sell with clarity,"
         emphasis="not guesswork."
-        lede="Protect the sale with clear pricing advice, strong photography, property film, qualified showings, and a launch plan built around your timeline."
+        lede="Protect the sale with clear pricing advice, strong photography, property film, serious showings, and a sale plan built around your timeline."
         image={headerImages.sellerDining}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
         meta={[
-          { value: "Launched", label: "Not Uploaded" },
+          { value: "Planned", label: "Not Rushed" },
           { value: "$169M+", label: "Career Volume" },
-          { value: "2-4 wks", label: "Launch Window" },
-          { value: "Private", label: "By Default" },
+          { value: "2-4 wks", label: "Prep Window" },
+          { value: "Clear", label: "Showing Plan" },
         ]}
       />
 
       <SeoAnswerBlock
         eyebrow="Seller Strategy"
-        question="How should a high-value Nelson BC home be sold?"
-        answer="A serious Nelson or Kootenay Lake property should not be treated like a quick MLS upload. Before launch, sellers need clear pricing, strong visuals, privacy planning, buyer screening, showing control, and negotiation advice that protects the result from the first conversation."
+        question="How should an important Nelson BC home be sold?"
+        answer="A serious Nelson or Kootenay Lake property should not be treated like a quick MLS upload. Before listing, sellers need clear pricing, strong visuals, privacy planning, buyer screening, showing control, and negotiation advice that protects the result from the first conversation."
         terms={["selling house nelson bc", "sell luxury home nelson bc", "kootenay lake waterfront seller"]}
         tone="office"
       />
@@ -74,7 +74,7 @@ export default function SellersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Higher-value sellers are not paying for upload speed. They are paying for judgment before exposure, so the first public impression supports the price instead of weakening it.
+              Sellers are not paying for upload speed. They are paying for judgment before the home reaches buyers, so the first public impression supports the price instead of weakening it.
             </SectionLede>
           </Reveal>
 
@@ -146,8 +146,8 @@ export default function SellersPage() {
       <InquiryCTA
         eyebrow="Seller Strategy Call"
         title="Bring the address."
-        emphasis="Leave with the first move."
-        body="No commitment, no pressure. Walk through the property, privacy needs, timeline, and outcome you want. Luke can tell you the right first move."
+        emphasis="Leave with a clearer plan."
+        body="No commitment, no pressure. Walk through the property, privacy needs, timeline, and outcome you want. Luke can help you understand the right next step."
       />
     </PageLayout>
   );

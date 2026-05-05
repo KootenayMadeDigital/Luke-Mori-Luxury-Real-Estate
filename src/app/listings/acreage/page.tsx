@@ -54,8 +54,8 @@ export default function AcreageListingsPage() {
       />
       <SubpageHero
         eyebrow={`Acreage · ${acreage.length.toLocaleString()} Properties`}
-        title="Room to breathe."
-        emphasis="Facts to verify."
+        title="More space needs"
+        emphasis="more local care."
         lede="Rural homes, land holdings, recreational parcels, and meaningful lots across Nelson, Kootenay Lake, the Slocan Valley, and surrounding communities."
         image={brandImages.blewettWoodedAcreage}
         crumbs={[
@@ -85,13 +85,13 @@ export default function AcreageListingsPage() {
             <div>
               <Eyebrow>Acreage Due Diligence</Eyebrow>
               <SectionHeading className="mt-7">
-                Space is the easy part.
+                Space is only part
                 <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">Certainty is the work.</em>
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">of the decision.</em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Larger properties need a more careful read: access, services, title, wildfire, slope, water, septic, and the practical cost of living with land through winter.
+              Larger properties need a careful look at access, services, title, wildfire, slope, water, septic, and the practical cost of living with land through winter.
             </SectionLede>
           </Reveal>
 

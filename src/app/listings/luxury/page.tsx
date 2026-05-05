@@ -82,8 +82,8 @@ export default function LuxuryListingsPage() {
 
       <SeoAnswerBlock
         eyebrow="Luxury Market"
-        question="What counts as luxury real estate in Nelson BC?"
-        answer="In Nelson and Kootenay Lake, luxury real estate is usually defined by scarcity: lakefront, protected views, acreage close to town, architectural quality, privacy, strong sun exposure, and a setting that supports full-time living or second-home ownership. Price matters, but the best homes also need local context before a buyer tours."
+        question="What makes a Nelson BC home worth a closer look?"
+        answer="In Nelson and Kootenay Lake, the strongest homes usually combine a few practical strengths: lakefront, protected views, acreage close to town, architectural quality, privacy, strong sun exposure, and a setting that works for full-time living or second-home ownership. Price matters, but the best homes also need local context before a buyer tours."
         terms={["nelson bc luxury real estate", "nelson bc luxury homes", "kootenay luxury real estate"]}
         tone="ivory"
       />
@@ -93,9 +93,9 @@ export default function LuxuryListingsPage() {
           listing={enhancedRevealListing}
           copy={{
             lede:
-              "Some properties need more than a thumbnail. Pull the cloth back and let the timber, light, and setting do what a listing grid never can.",
+              "Some properties need more than a thumbnail. Open the view and let the timber, light, and setting speak more clearly.",
             panelBody:
-              "Open the view, study the craft, then decide whether the privacy, scale, and setting deserve a closer conversation with Luke.",
+              "Open the view, study the craft, then decide whether the privacy, scale, and setting deserve a closer look with Luke.",
           }}
         />
       )}
@@ -104,15 +104,15 @@ export default function LuxuryListingsPage() {
         <Container>
           <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.86fr_1.14fr] md:items-end">
             <div>
-              <Eyebrow>Luxury Pockets</Eyebrow>
+              <Eyebrow>Key Search Areas</Eyebrow>
               <SectionHeading className="mt-7">
-                Where Nelson luxury
+                Where stronger searches
                 <br />
-                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">often begins.</em>
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">often begin.</em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Luxury in Nelson is not one neighbourhood. Buyers often compare water access, town access, views, sun, slope, and privacy street by street.
+              The upper market in Nelson is not one neighbourhood. Buyers often compare water access, town access, views, sun, slope, and privacy street by street.
             </SectionLede>
           </Reveal>
 
@@ -137,10 +137,10 @@ export default function LuxuryListingsPage() {
       </section>
 
       <InquiryCTA
-        eyebrow="Private Homes"
-        title="The best homes"
-        emphasis="don't list."
-        body="Some high-value homes are not publicly listed. Tell Luke what you are looking for, and he can let you know whether a private introduction is realistic."
+        eyebrow="Buyer Inquiry"
+        title="Looking for something specific?"
+        emphasis="Ask Luke."
+        body="Some homes are not publicly listed. Tell Luke what you are looking for, and he can let you know what options may be realistic."
       />
     </PageLayout>
   );

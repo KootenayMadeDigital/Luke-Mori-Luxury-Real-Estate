@@ -17,7 +17,7 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Relocation Intelligence</Eyebrow>
+              <Eyebrow>Relocation Guide</Eyebrow>
               <SectionHeading className="mt-7">
                 Could you see
                 <br />
@@ -32,10 +32,10 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] lg:grid-cols-[1fr_0.9fr]">
             <Reveal className="bg-[var(--color-bg)] p-8 sm:p-10 lg:p-12">
               <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
-                Million-dollar buyer lens
+                Buyer focus
               </span>
               <p className="m-0 max-w-[780px] font-serif text-[28px] font-light leading-[1.2] tracking-[-0.01em] text-[var(--color-text)] sm:text-[34px]">
-                {intelligence.luxuryBuyer}
+                {intelligence.buyerFocus}
               </p>
             </Reveal>
             <Reveal delay={80} className="bg-[var(--color-surface)] p-8 sm:p-10 lg:p-12">
@@ -68,7 +68,7 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Luxury buyers are not just buying square footage. They are buying the week, the season, the guest pattern, the maintenance load, and the exit story.
+              Buyers are not just buying square footage. They are buying the week, the season, the guest pattern, the maintenance load, and the future resale story.
             </SectionLede>
           </Reveal>
 
@@ -125,9 +125,9 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Before You Pay the Premium</Eyebrow>
+              <Eyebrow>Before You Pay More</Eyebrow>
               <SectionHeading className="mt-7">
-                The expensive part
+                The costly part
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
                   is what you miss.

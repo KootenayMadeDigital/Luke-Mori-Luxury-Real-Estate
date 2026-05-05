@@ -26,8 +26,8 @@ const areaComparison = [
   },
   {
     area: "Balfour",
-    bestFor: "Main-lake energy, second homes, golf, marina access, and retreat living.",
-    watch: "Distance from Nelson, wind exposure, service access, and lock-and-leave systems.",
+    bestFor: "Main-lake energy, second homes, golf, marina access, and quieter living.",
+    watch: "Distance from Nelson, wind, service access, and care when you are away.",
     href: "/nelson/balfour",
   },
   {
@@ -47,7 +47,7 @@ const areaComparison = [
 export const metadata = buildPageMetadata({
   title: "Nelson BC Real Estate Areas & Kootenay Lake Guide",
   description:
-    "Explore Nelson BC real estate areas, North Shore, Balfour, Blewett, Slocan Valley, Kootenay Lake lifestyle, waterfront homes, acreage, and relocation fit.",
+    "Explore Nelson BC real estate areas, North Shore, Balfour, Blewett, Slocan Valley, Kootenay Lake waterfront homes, acreage, and relocation fit.",
   path: "/nelson",
   image: "/og/nelson.png",
 });
@@ -59,7 +59,7 @@ export default function NelsonHubPage() {
         eyebrow="About Nelson"
         title="The Queen City"
         emphasis="and the Kootenays."
-        lede="Five areas of Nelson and Kootenay Lake real estate, from downtown Nelson to Balfour. Each has its own character, price points, seasons, tradeoffs, and buyer fit."
+        lede="Five areas around Nelson and Kootenay Lake, from downtown Nelson to Balfour. Each has its own character, price points, seasons, tradeoffs, and buyer fit."
         image={headerImages.nelsonLandscape}
         imageTreatment="showcase"
         crumbs={[{ label: "Home", href: "/" }, { label: "About Nelson" }]}
@@ -74,7 +74,7 @@ export default function NelsonHubPage() {
       <SeoAnswerBlock
         eyebrow="Area Guide"
         question="What are the best areas for Nelson BC real estate buyers?"
-        answer="Most Nelson BC real estate searches begin with five lifestyle areas: walkable Nelson for culture and schools, North Shore for lakefront privacy, Balfour for main-lake second homes, Blewett for acreage near town, and Slocan Valley for retreat property. The right area usually matters before the right listing."
+        answer="Most Nelson BC real estate searches begin with five areas: walkable Nelson for culture and schools, North Shore for lakefront privacy, Balfour for main-lake second homes, Blewett for acreage near town, and Slocan Valley for quieter rural property. The right area usually matters before the right listing."
         terms={["nelson bc real estate", "north shore nelson bc real estate", "balfour bc real estate", "slocan valley real estate"]}
         tone="lake"
       />
@@ -90,7 +90,7 @@ export default function NelsonHubPage() {
               },
               {
                 title: "Nelson BC realtor guide",
-                body: "How to choose local representation for luxury homes, waterfront property, acreage, relocation, second homes, and seller strategy.",
+                body: "How to choose local guidance for important homes, waterfront property, acreage, relocation, second homes, and selling decisions.",
                 href: "/nelson-bc-realtor",
               },
             ].map((card) => (
@@ -116,7 +116,7 @@ export default function NelsonHubPage() {
               </em>
             </SectionHeading>
             <SectionLede>
-              Pick a region. Each page explains the lifestyle, the tradeoffs, and the kind of property to look for there. Start with the area before the listing search.
+              Pick a region. Each page explains daily life, tradeoffs, and the kind of property to look for there. Start with the area before the listing search.
             </SectionLede>
           </Reveal>
 

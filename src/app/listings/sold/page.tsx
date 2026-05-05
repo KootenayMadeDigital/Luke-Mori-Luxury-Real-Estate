@@ -13,7 +13,7 @@ import { recentlyConcluded, soldArchive, brandImages } from "@/lib/data";
 const soldProofNotes = [
   "Acreage privacy, upper-market pricing, and a buyer who needed to understand the land as much as the house.",
   "North Shore lakefront, where shoreline, access, and privacy are the story behind the price.",
-  "A rare lakefront estate that needed scarcity to read clearly before the showing.",
+  "A rare lakefront property where the value needed to read clearly before the showing.",
   "An architectural Nelson view home where presentation had to make the setting easy to trust.",
   "Walk-to-water living, sold on lifestyle clarity as much as the address itself.",
 ];
@@ -50,7 +50,7 @@ export default function SoldPage() {
         eyebrow="Recently Placed"
         title="Recently sold,"
         emphasis="handled with care."
-        lede="A selection of recent sales across Nelson and the Kootenays. Public details are shown. Client details stay private."
+        lede="A selection of recent sales across Nelson and the Kootenays. Public details are shown. Client details stay confidential."
         image={brandImages.orangeBridge}
         crumbs={[
           { label: "Home", href: "/" },
@@ -61,7 +61,7 @@ export default function SoldPage() {
           { value: `${recentlyConcluded.length + soldArchive.length}`, label: "Sales Shown" },
           { value: totalFmt, label: "Combined Volume" },
           { value: "Sold", label: "Status" },
-          { value: "Private", label: "Discretion" },
+          { value: "Respect", label: "Client Privacy" },
         ]}
       />
 
@@ -69,7 +69,7 @@ export default function SoldPage() {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.82fr_1.18fr] md:items-end">
             <div>
-              <Eyebrow>Sold Proof</Eyebrow>
+              <Eyebrow>Recent Sales</Eyebrow>
               <SectionHeading className="mt-7">
                 Recent properties,
                 <br />
@@ -79,7 +79,7 @@ export default function SoldPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              These are not just rows in a record. They are the kind of homes, land, lakefront, and view properties Luke has already handled across the Nelson market.
+              These are not just rows in a record. They are the kind of homes, land, lakefront, and view properties Luke has helped sell across the Nelson market.
             </SectionLede>
           </Reveal>
 
@@ -295,7 +295,7 @@ export default function SoldPage() {
           </div>
 
           <p className="mt-10 text-[12px] italic text-[var(--color-text-dim)]">
-            Archive reflects public sold-property information from Luke&apos;s existing website. Final terms remain private.
+            Archive reflects public sold-property information from Luke&apos;s existing website. Final terms remain confidential.
           </p>
         </Container>
       </section>
@@ -304,7 +304,7 @@ export default function SoldPage() {
         eyebrow="Considering Selling"
         title="Protect the result with"
         emphasis="a stronger plan."
-        body="Strong photography, clear copy, a controlled launch, and a real buyer network help protect the result before the sign goes up."
+        body="Strong photography, clear copy, a thoughtful sale plan, and a real buyer network help protect the result before the sign goes up."
       />
     </PageLayout>
   );

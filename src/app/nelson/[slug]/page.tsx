@@ -28,9 +28,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!a) return { title: "Area Not Found" };
   const intelligence = areaIntelligence[a.slug];
   return buildPageMetadata({
-    title: `${a.name} BC Luxury Real Estate & Relocation Guide`,
+    title: `${a.name} BC Real Estate & Relocation Guide`,
     description: intelligence
-      ? `${a.name} BC luxury real estate guide for high-value buyers: ${intelligence.thesis}`
+      ? `${a.name} BC real estate guide for buyers making an important move: ${intelligence.thesis}`
       : a.intro,
     path: `/nelson/${a.slug}`,
     image: `/og/nelson-${a.slug}.png`,
@@ -65,7 +65,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
           { value: area.population, label: "Population" },
           { value: area.avgPrice, label: "Average Sale" },
           { value: area.focus.split(" · ")[0], label: "Primary Focus" },
-          { value: "Active", label: "Representation" },
+          { value: "Local", label: "Guidance" },
         ]}
       />
 
@@ -83,7 +83,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
       <section className="tone-lake tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-12 max-w-[760px]">
-            <Eyebrow>The Local Lay of the Land</Eyebrow>
+            <Eyebrow>Local Area Guide</Eyebrow>
             <SectionHeading className="mt-7">
               What makes {area.name}
               <br />
@@ -149,7 +149,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               </div>
               <SectionLede align="right">
                 The character changes street to street. These are the neighbourhoods that define
-                where considered buyers actually want to be.
+                where thoughtful buyers often want to be.
               </SectionLede>
             </Reveal>
             <ul className="border-t border-[var(--color-line)]">
@@ -220,7 +220,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
         eyebrow={`${area.name} Inquiry`}
         title={`Looking in ${area.name}?`}
         emphasis="Start here."
-        body={`Tell Luke what you are looking for in ${area.name}, current listings, private introductions, or a direct conversation about whether this area fits the life you have in mind.`}
+        body={`Tell Luke what you are looking for in ${area.name}, current listings, quieter opportunities, or a direct conversation about whether this area fits the life you have in mind.`}
       />
     </PageLayout>
   );
