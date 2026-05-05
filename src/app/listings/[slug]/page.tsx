@@ -89,22 +89,31 @@ function buildStorySegments(l: Listing): string[] {
 }
 
 
-const BIRCHGROVE_TESTER_SLUG = "26-birchgrove-bend";
+type ListingHighlight = { label: string; value: string };
 
-const birchgroveHighlights = [
-  { label: "Architecture", value: "Custom Hamill Creek timber frame" },
-  { label: "Waterfront", value: "Access to 20 acres of shared community waterfront land" },
-  { label: "Outdoor living", value: "38 x 13 ft wrap-around deck with hot tub" },
-  { label: "Comfort", value: "In-floor heating and gas fireplace" },
-  { label: "Guest space", value: "4 bedrooms, including bunk-room configuration" },
-  { label: "Utility", value: "Double garage, workshop, and boat carport" },
-];
+function buildListingHighlights(l: Listing): ListingHighlight[] {
+  const highlights: ListingHighlight[] = [];
+  const push = (label: string, value: string) => {
+    if (hasDisplayValue(value)) highlights.push({ label, value });
+  };
 
-const birchgroveShowingPrompts = [
-  "Wing Creek waterfront access and ownership structure",
-  "Seasonal access, maintenance, and winter living",
-  "Comparable Kaslo and Kootenay Lake sales",
-];
+  push("Property type", l.propertyType);
+  push("Area", l.location);
+  if (l.sqft && l.sqft > 0) push("Interior", `${l.sqft.toLocaleString("en-US")} sq ft`);
+  push("Lot", formatLot(l));
+  if (l.yearBuilt && l.yearBuilt > 1700) push("Built", String(l.yearBuilt));
+  if (l.photoCount > 0) push("Gallery", `${l.photoCount} real listing ${l.photoCount === 1 ? "photo" : "photos"}`);
+
+  return highlights.slice(0, 6);
+}
+
+function buildShowingPrompts(l: Listing): string[] {
+  return [
+    l.location ? `${l.location} fit, access, and local context` : "Area fit, access, and local context",
+    "Showing windows and timing",
+    "Comparable sales and offer strategy",
+  ];
+}
 
 export default async function ListingDetailPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
@@ -114,6 +123,8 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
   const lukes = isLukesOwn(l);
   const detailRows = buildDetailRows(l);
   const editorialFacts = buildEditorialFacts(l);
+  const listingHighlights = buildListingHighlights(l);
+  const showingPrompts = buildShowingPrompts(l);
 
   const sameLocation = allListings
     .filter((x) => x.slug !== l.slug && x.location === l.location)
@@ -121,7 +132,6 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
   const fallback = allListings.filter((x) => x.slug !== l.slug).slice(0, 3);
   const related = (sameLocation.length >= 3 ? sameLocation : fallback).slice(0, 3);
   const inquiryHref = `/contact?listing=${encodeURIComponent(l.address)}&intent=showing`;
-  const isBirchgrove = l.slug === BIRCHGROVE_TESTER_SLUG;
 
   return (
     <PageLayout>
@@ -208,14 +218,12 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
         </Container>
 
         <div className="absolute inset-x-5 bottom-8 z-10 flex flex-wrap items-center justify-between gap-3 sm:inset-x-8">
-          {isBirchgrove && (
-            <a
-              href={inquiryHref}
-              className="inline-flex items-center rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fff7eb] shadow-[0_18px_44px_-28px_rgba(212,184,150,0.9)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]"
-            >
-              Request Showing
-            </a>
-          )}
+          <a
+            href={inquiryHref}
+            className="inline-flex items-center rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#fff7eb] shadow-[0_18px_44px_-28px_rgba(212,184,150,0.9)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]"
+          >
+            Request Showing
+          </a>
           {l.photoCount > 0 && (
             <a
               href="#gallery"
@@ -279,10 +287,10 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 </SectionLede>
               </Reveal>
 
-              {isBirchgrove && (
+              {listingHighlights.length > 0 && (
                 <Reveal delay={280}>
                   <div className="mt-10 grid grid-cols-1 gap-px bg-[var(--color-line)] sm:grid-cols-2 xl:grid-cols-3">
-                    {birchgroveHighlights.map((item) => (
+                    {listingHighlights.map((item) => (
                       <div key={item.label} className="bg-[var(--color-bg)] p-5 sm:p-6">
                         <p className="m-0 text-[9px] font-bold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{item.label}</p>
                         <p className="m-0 mt-3 font-serif text-[21px] font-light leading-[1.2] text-[var(--color-text)]">{item.value}</p>
@@ -372,16 +380,11 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   Inquire with intent.
                 </h3>
                 <p className="m-0 mb-6 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
-                  {isBirchgrove
-                    ? "Ask Luke about the showing, waterfront access, seasonal fit, and the details worth confirming before you plan a trip."
-                    : "Ask Luke about the showing, property details, fit, and what to know before you spend a day on the road."}
+                  Ask Luke about the showing, property details, fit, and what to know before you spend a day on the road.
                 </p>
 
                 <ul className="mb-7 space-y-3 border-y border-[var(--color-line)] py-6 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-dim)]">
-                  {(isBirchgrove
-                    ? birchgroveShowingPrompts
-                    : ["Confirm fit and timing", "Request showing windows", "Review source facts first"]
-                  ).map((prompt) => (
+                  {showingPrompts.map((prompt) => (
                     <li key={prompt} className="flex items-center gap-3">
                       <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
                       {prompt}
