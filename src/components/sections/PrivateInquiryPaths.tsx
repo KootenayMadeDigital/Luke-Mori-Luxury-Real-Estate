@@ -26,7 +26,7 @@ export function PrivateInquiryPaths({
   return (
     <section
       id={id}
-      className={`tone-lake tonal-section border-y border-[var(--color-line)] ${compact ? "py-20 md:py-24" : "py-28 md:py-32"}`}
+      className={`tone-lake tonal-section scroll-mt-28 border-y border-[var(--color-line)] ${compact ? "py-20 md:py-24" : "py-28 md:py-32"}`}
     >
       <div
         className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] opacity-[0.12] grayscale lg:block"

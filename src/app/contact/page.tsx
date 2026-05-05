@@ -30,6 +30,7 @@ export default function ContactPage() {
       />
 
       <PrivateInquiryPaths
+        id="consultation"
         compact
         eyebrow="Inquiry Routing"
         title="Tell Luke what"
