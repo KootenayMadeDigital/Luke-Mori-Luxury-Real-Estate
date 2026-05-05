@@ -174,7 +174,7 @@ function WebGLCurtain({
         float visibleFold2 = sin(foldX * 4.7 - v_local.y * 0.12 - v_side * 0.15) * 0.5 + 0.5;
         float foldColumn = pow(abs(visibleWave), 1.22);
         float topCompression = 1.0 - smoothstep(0.0, 0.26, v_local.y);
-        float bottomWeight = smoothstep(0.62, 1.0, v_local.y);
+        float bottomWeight = smoothstep(0.66, 1.0, v_local.y);
         float verticalNap = smoothstep(0.12, 0.86, v_local.y) * (1.0 - smoothstep(0.86, 1.0, v_local.y));
         float softFiber = sin(v_local.y * 28.0 + foldX * 1.2) * 0.5 + 0.5;
         float weave = 0.0;
@@ -208,7 +208,7 @@ function WebGLCurtain({
         float light = 0.16 + pleat * 0.16 + vertical * 0.06 + secondaryFold * 0.08 + broadFold * 0.14 + visibleFold * 0.25 + visibleFold2 * 0.10 + foldColumn * 0.06 + visibleHighlight * 0.14 + verticalNap * softFiber * 0.010 + railGather * 0.040 + sideRim * 0.34 + edgeKnife * 0.08 + hand * 0.08 + napSheen * 0.10;
         light -= creaseShadow * 0.24;
         light -= topCompression * (0.11 + railGather * 0.035);
-        light -= bottomWeight * (0.065 + bottomPooling * 0.035);
+        light -= bottomWeight * (0.055 + bottomPooling * 0.026);
         light -= brushShadow * 0.05;
         light *= outerDark;
         vec3 color = mix(base, champagne, 0.30 + velvetNap * 0.22 + light * 0.17);
@@ -222,7 +222,7 @@ function WebGLCurtain({
         color += vec3(weave) * 0.0;
         color = mix(color, warm, topCompression * 0.035);
         color = mix(color, espresso, railGather * 0.055);
-        color = mix(color, espresso, bottomWeight * 0.080 + bottomPooling * 0.040);
+        color = mix(color, espresso, bottomWeight * 0.066 + bottomPooling * 0.030);
         color *= 0.76 + hem * 0.24;
         float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.34;
         float alpha = (0.992 - sideRim * 0.012) * openFade;
@@ -543,7 +543,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
 
             <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(31,20,13,0.92)_40%,rgba(190,133,70,0.42)_51%,rgba(10,8,7,0.78)_64%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.64 : 1 }} aria-hidden>
               <div className="absolute inset-x-5 top-4 h-px bg-[linear-gradient(90deg,transparent,rgba(224,192,154,0.58),transparent)]" />
-              <div className="absolute inset-x-8 top-7 h-[4px] rounded-full bg-[linear-gradient(90deg,rgba(43,28,18,0.42),rgba(160,104,55,0.64)_28%,rgba(236,199,140,0.72)_50%,rgba(160,104,55,0.64)_72%,rgba(43,28,18,0.42))] shadow-[0_0_18px_rgba(224,192,154,0.16)]" />
+              <div className="absolute inset-x-8 top-7 h-[4px] rounded-full bg-[linear-gradient(90deg,rgba(43,28,18,0.48),rgba(128,84,48,0.58)_22%,rgba(224,181,118,0.66)_50%,rgba(128,84,48,0.58)_78%,rgba(43,28,18,0.48))] shadow-[0_0_14px_rgba(224,192,154,0.12)]" />
             </div>
             <div className="pointer-events-none absolute inset-y-0 left-0 z-[39] w-8 bg-[linear-gradient(90deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
             <div className="pointer-events-none absolute inset-y-0 right-0 z-[39] w-8 bg-[linear-gradient(270deg,rgba(5,4,3,0.92),rgba(5,4,3,0.28),transparent)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.55 : 1 }} aria-hidden />
@@ -613,7 +613,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
                 Unveil the view
               </span>
               <span className="mt-3 block text-[10px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
-                Drag the cloth
+                Draw the curtain
               </span>
             </div>
 
@@ -653,7 +653,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
             <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[300px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-opacity duration-300 md:flex" style={{ opacity: ceremonyOpacity }} aria-hidden>
               <span>Pull left</span>
               <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
-              <span>Lift or slide</span>
+              <span>Draw open</span>
               <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
               <span>Pull right</span>
             </div>
