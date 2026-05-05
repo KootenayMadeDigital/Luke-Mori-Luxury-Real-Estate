@@ -42,9 +42,9 @@ const luxuryPockets = [
 
 export default function LuxuryListingsPage() {
   const luxe = sortByPriceDesc(luxuryListings);
-  const revealListing = getListingBySlug("6133-pippers-lane") ?? luxe.find((listing) => listing.beds && listing.beds > 0) ?? luxe[0];
+  const revealListing = getListingBySlug("26-birchgrove-bend") ?? luxe.find((listing) => listing.beds && listing.beds > 0) ?? luxe[0];
   const enhancedRevealListing = revealListing
-    ? { ...revealListing, heroPhoto: "/generated/luke-reveal-pippers-enhanced.webp" }
+    ? { ...revealListing, heroPhoto: "/generated/luke-reveal-birchgrove-enhanced.webp" }
     : null;
   const top = luxe[0]?.priceNumber ?? 0;
   const median = luxe[Math.floor(luxe.length / 2)]?.priceNumber ?? 0;
@@ -93,9 +93,9 @@ export default function LuxuryListingsPage() {
           listing={enhancedRevealListing}
           copy={{
             lede:
-              "Some properties need more than a thumbnail. Pull the cloth back and let the lake, privacy, and shoreline do what a listing grid never can.",
+              "Some properties need more than a thumbnail. Pull the cloth back and let the timber, light, and setting do what a listing grid never can.",
             panelBody:
-              "Open the view, study the water, then decide whether the privacy, scale, and setting deserve a closer conversation with Luke.",
+              "Open the view, study the craft, then decide whether the privacy, scale, and setting deserve a closer conversation with Luke.",
           }}
         />
       )}

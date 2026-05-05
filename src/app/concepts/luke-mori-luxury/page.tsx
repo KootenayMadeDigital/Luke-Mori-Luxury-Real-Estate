@@ -30,9 +30,9 @@ export const metadata = buildPageMetadata({
 });
 
 export default function LukeMoriLuxuryExperience() {
-  const launchPreview = getListingBySlug("26-birchgrove-bend") ?? sortByPriceDesc(luxuryListings)[0];
+  const launchPreview = getListingBySlug("6133-pippers-lane") ?? sortByPriceDesc(luxuryListings)[0];
   const launchReveal = launchPreview
-    ? { ...launchPreview, heroPhoto: "/generated/luke-reveal-birchgrove-enhanced.webp" }
+    ? { ...launchPreview, heroPhoto: "/generated/luke-reveal-pippers-enhanced.webp" }
     : null;
 
   return (
@@ -63,7 +63,7 @@ export default function LukeMoriLuxuryExperience() {
             variant="sellerLaunch"
             copy={{
               lede:
-                "A serious home should not hit the market like another upload. For select properties, Luke builds the launch around the first pause: the timber, the light, the setting, the film, and the reason a buyer remembers it.",
+                "A serious home should not hit the market like another upload. For select properties, Luke builds the launch around the first pause: the lake, the privacy, the shoreline, the film, and the reason a buyer remembers it.",
               panelBody:
                 "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the private tour.",
             }}
