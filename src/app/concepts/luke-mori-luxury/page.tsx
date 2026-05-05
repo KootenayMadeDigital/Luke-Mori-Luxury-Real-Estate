@@ -13,6 +13,8 @@ import { PrivateAccess } from "@/components/sections/PrivateAccess";
 import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
+import { LuxuryListingReveal } from "@/components/listing/LuxuryListingReveal";
+import { luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { buildPageGraphJsonLd, buildPageMetadata } from "@/lib/seo";
 
 const title = "Nelson & Kootenay Lake Luxury Real Estate";
@@ -28,6 +30,8 @@ export const metadata = buildPageMetadata({
 });
 
 export default function LukeMoriLuxuryExperience() {
+  const [launchPreview] = sortByPriceDesc(luxuryListings);
+
   return (
     <>
       <Nav />
@@ -50,6 +54,7 @@ export default function LukeMoriLuxuryExperience() {
         <PublicReceipts />
         <MoriStandard />
         <SellerSection />
+        {launchPreview && <LuxuryListingReveal listing={launchPreview} variant="sellerLaunch" />}
         <FeaturedEstates />
         <HomeTourVideos />
         <RecentlyConcluded />

@@ -7,6 +7,7 @@ import { buildSpecs, type Listing } from "@/lib/listings";
 
 type Props = {
   listing: Listing;
+  variant?: "buyerPreview" | "sellerLaunch";
 };
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
@@ -251,7 +252,7 @@ function WebGLCurtain({
   return <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-30 h-full w-full motion-reduce:hidden" aria-hidden />;
 }
 
-export function LuxuryListingReveal({ listing }: Props) {
+export function LuxuryListingReveal({ listing, variant = "buyerPreview" }: Props) {
   const [progress, setProgress] = useState(0.16);
   const [lift, setLift] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -271,6 +272,7 @@ export function LuxuryListingReveal({ listing }: Props) {
   const fabricDepth = 18 + openPercent * 34;
   const seamGlow = 0.18 + openPercent * 0.52;
   const clothHitWidth = `${clamp(58 - openPercent * 47, 11, 58)}%`;
+  const isSellerLaunch = variant === "sellerLaunch";
 
   const updateFromPointer = (event: PointerEvent<HTMLDivElement>) => {
     const rect = stageRef.current?.getBoundingClientRect();
@@ -316,16 +318,20 @@ export function LuxuryListingReveal({ listing }: Props) {
         <div className="mb-10 grid grid-cols-1 gap-7 md:grid-cols-[0.82fr_1.18fr] md:items-end">
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-              Featured Estate Preview
+              {isSellerLaunch ? "The Luxury Launch Standard" : "Featured Estate Preview"}
             </span>
             <h2 className="m-0 mt-6 max-w-[620px] font-serif text-[clamp(38px,5vw,76px)] font-light leading-[0.94] tracking-[-0.035em] text-[var(--color-text)]">
-              Preview the property
+              {isSellerLaunch ? "Make the first look" : "Preview the property"}
               <br />
-              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">before the crowd does.</em>
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                {isSellerLaunch ? "feel expensive." : "before the crowd does."}
+              </em>
             </h2>
           </div>
           <p className="m-0 max-w-[540px] text-[15px] leading-[1.85] text-[var(--color-text-muted)] md:ml-auto md:text-right">
-Some properties deserve a little ceremony. Press anywhere on the cloth, pull sideways or lift upward, and let the view take over before it reaches your shortlist.
+            {isSellerLaunch
+              ? "For the right property, the launch should slow buyers down before they scroll past. Privacy, photography, film, copy, and pacing all work together to protect the first impression."
+              : "Some properties deserve a little ceremony. Press anywhere on the cloth, pull sideways or lift upward, and let the view take over before it reaches your shortlist."}
           </p>
         </div>
 
@@ -474,7 +480,7 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
             </div>
             <div className="absolute bottom-5 left-5 z-40 max-w-[78%] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.9)]">
               <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)]">
-                Featured Luxury Listing
+                {isSellerLaunch ? "Seller Launch Preview" : "Featured Luxury Listing"}
               </p>
               <p className="m-0 mt-2 font-serif text-[clamp(24px,3.2vw,42px)] font-light leading-[1.02]">
                 {listing.address}
@@ -501,10 +507,12 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
                 {listing.price || "Price on request"}
               </p>
               <h3 className="m-0 mt-6 font-serif text-[clamp(28px,3vw,44px)] font-light leading-[1.05] tracking-[-0.02em] text-[var(--color-text)]">
-                A private first look buyers remember.
+                {isSellerLaunch ? "This is how a serious home should enter the market." : "A private first look buyers remember."}
               </h3>
               <p className="m-0 mt-5 text-[15px] leading-[1.85] text-[var(--color-text-muted)]">
-                Pull the drape back, study the setting, then decide whether the privacy, scale, and view deserve a closer conversation.
+                {isSellerLaunch
+                  ? "Not every property needs theatre. But a high-value home does need intention: the view revealed clearly, the setting understood quickly, and the buyer given a reason to care before the address becomes another tab."
+                  : "Pull the drape back, study the setting, then decide whether the privacy, scale, and view deserve a closer conversation."}
               </p>
 
               {specs.length > 0 && (
@@ -525,10 +533,10 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href={`/listings/${listing.slug}`}
+                href={isSellerLaunch ? "/sellers" : `/listings/${listing.slug}`}
                 className="inline-flex items-center justify-center rounded-[1px] border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)] transition-[transform,background,border-color] duration-300 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]"
               >
-                Open listing
+                {isSellerLaunch ? "Plan a Luxury Launch" : "Open listing"}
               </Link>
               <button
                 type="button"
