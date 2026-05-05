@@ -263,13 +263,14 @@ export function LuxuryListingReveal({ listing }: Props) {
   const openPercent = clamp(progress, 0.04, 1);
   const revealLabel = openPercent > 0.68 ? "Draw shut" : "Draw open";
   const imageFocus = openPercent > 0.78;
+  const ceremonyOpacity = clamp(1 - (openPercent - 0.18) / 0.14, 0, 1);
   const leftShift = openPercent * 104;
   const rightShift = openPercent * 104;
   const leftRotate = openPercent * -22;
   const rightRotate = openPercent * 22;
   const fabricDepth = 18 + openPercent * 34;
   const seamGlow = 0.18 + openPercent * 0.52;
-  const clothHitWidth = `${clamp(58 - openPercent * 52, 6, 58)}%`;
+  const clothHitWidth = `${clamp(58 - openPercent * 47, 11, 58)}%`;
 
   const updateFromPointer = (event: PointerEvent<HTMLDivElement>) => {
     const rect = stageRef.current?.getBoundingClientRect();
@@ -369,7 +370,7 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
 
             <div
               className="pointer-events-none absolute left-1/2 top-[15%] z-[39] flex size-[92px] -translate-x-1/2 items-center justify-center rounded-full border border-[rgba(255,224,170,0.26)] bg-[rgba(9,7,5,0.20)] p-4 shadow-[0_12px_42px_-30px_rgba(0,0,0,0.95)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[112px]"
-              style={{ opacity: imageFocus ? 0 : 0.88 - openPercent * 0.8 }}
+              style={{ opacity: ceremonyOpacity * (0.88 - openPercent * 0.8) }}
               aria-hidden
             >
               <Image
@@ -383,7 +384,7 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
             </div>
             <div
               className="pointer-events-none absolute left-1/2 top-[15%] z-[39] size-[56px] -translate-x-1/2 rounded-full border border-[rgba(255,224,170,0.18)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[68px]"
-              style={{ opacity: imageFocus ? 0 : 0.58 - openPercent * 0.5 }}
+              style={{ opacity: ceremonyOpacity * (0.58 - openPercent * 0.5) }}
               aria-hidden
             />
 
@@ -448,7 +449,7 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
 
             <div
               className="pointer-events-none absolute left-1/2 top-1/2 z-40 flex w-[196px] -translate-x-1/2 -translate-y-1/2 flex-col items-center border border-[rgba(255,224,170,0.66)] bg-[linear-gradient(180deg,rgba(35,23,13,0.94),rgba(8,7,6,0.90))] px-5 py-4 text-center shadow-[0_24px_80px_-38px_rgba(0,0,0,0.98),inset_0_1px_0_rgba(255,255,255,0.08)] transition-[transform,border-color,background,opacity] duration-300 ease-[var(--ease-luxe)]"
-              style={{ opacity: imageFocus ? 0 : 1, transform: imageFocus ? "translate(-50%, -50%) scale(0.9)" : undefined }}
+              style={{ opacity: ceremonyOpacity, transform: ceremonyOpacity < 0.18 ? "translate(-50%, -50%) scale(0.9)" : undefined }}
               aria-hidden
             >
               <span className="mb-3 h-px w-16 bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)]" />
@@ -464,7 +465,7 @@ Some properties deserve a little ceremony. Press anywhere on the cloth, pull sid
             </div>
 
             <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-1/2 bg-[linear-gradient(180deg,transparent,rgba(10,11,13,0.76))]" />
-            <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[300px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] md:flex" aria-hidden>
+            <div className="pointer-events-none absolute left-1/2 top-[calc(50%+120px)] z-40 hidden w-[300px] -translate-x-1/2 items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-opacity duration-300 md:flex" style={{ opacity: ceremonyOpacity }} aria-hidden>
               <span>Pull left</span>
               <span className="h-px flex-1 bg-[linear-gradient(90deg,var(--color-bronze-dim),var(--color-bronze-light),var(--color-bronze-dim))]" />
               <span>Lift or slide</span>
