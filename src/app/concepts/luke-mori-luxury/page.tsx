@@ -14,7 +14,7 @@ import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
 import { LuxuryListingReveal } from "@/components/listing/LuxuryListingReveal";
-import { luxuryListings, sortByPriceDesc } from "@/lib/listings";
+import { getListingBySlug, luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { buildPageGraphJsonLd, buildPageMetadata } from "@/lib/seo";
 
 const title = "Nelson & Kootenay Lake Luxury Real Estate";
@@ -30,7 +30,7 @@ export const metadata = buildPageMetadata({
 });
 
 export default function LukeMoriLuxuryExperience() {
-  const [launchPreview] = sortByPriceDesc(luxuryListings);
+  const launchPreview = getListingBySlug("1409-ash-street") ?? sortByPriceDesc(luxuryListings)[0];
 
   return (
     <>
@@ -54,7 +54,18 @@ export default function LukeMoriLuxuryExperience() {
         <PublicReceipts />
         <MoriStandard />
         <SellerSection />
-        {launchPreview && <LuxuryListingReveal listing={launchPreview} variant="sellerLaunch" />}
+        {launchPreview && (
+          <LuxuryListingReveal
+            listing={launchPreview}
+            variant="sellerLaunch"
+            copy={{
+              lede:
+                "A serious home should not hit the market like another upload. For select properties, Luke builds the launch around the first pause: the lines of the home, the light, the film, the copy, and the reason a buyer remembers it.",
+              panelBody:
+                "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the private tour.",
+            }}
+          />
+        )}
         <FeaturedEstates />
         <HomeTourVideos />
         <RecentlyConcluded />

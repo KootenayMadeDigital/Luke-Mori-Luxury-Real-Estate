@@ -10,7 +10,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { LuxuryListingReveal } from "@/components/listing/LuxuryListingReveal";
-import { luxuryListings, sortByPriceDesc } from "@/lib/listings";
+import { getListingBySlug, luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
@@ -42,6 +42,7 @@ const luxuryPockets = [
 
 export default function LuxuryListingsPage() {
   const luxe = sortByPriceDesc(luxuryListings);
+  const revealListing = getListingBySlug("6133-pippers-lane") ?? luxe.find((listing) => listing.beds && listing.beds > 0) ?? luxe[0];
   const top = luxe[0]?.priceNumber ?? 0;
   const median = luxe[Math.floor(luxe.length / 2)]?.priceNumber ?? 0;
 
@@ -84,7 +85,17 @@ export default function LuxuryListingsPage() {
         tone="ivory"
       />
 
-      {luxe[0] && <LuxuryListingReveal listing={luxe[0]} />}
+      {revealListing && (
+        <LuxuryListingReveal
+          listing={revealListing}
+          copy={{
+            lede:
+              "Some properties need more than a thumbnail. Pull the cloth back and let the lake, privacy, and shoreline do what a listing grid never can.",
+            panelBody:
+              "Open the view, study the water, then decide whether the privacy, scale, and setting deserve a closer conversation with Luke.",
+          }}
+        />
+      )}
 
       <section className="tone-lake tonal-section border-y border-[var(--color-line)] py-20 md:py-24">
         <Container>
