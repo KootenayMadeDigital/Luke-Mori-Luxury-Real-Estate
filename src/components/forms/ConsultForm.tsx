@@ -30,7 +30,7 @@ export function ConsultForm() {
       <div className="rounded-[calc(2rem-0.375rem)] border border-[rgba(255,255,255,0.42)] bg-[rgba(255,252,246,0.96)] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] sm:p-10 lg:p-12">
         <div className="mb-9 border-b border-[rgba(78,55,34,0.18)] pb-7">
           <h3 className="m-0 mb-3 font-serif text-[30px] font-normal leading-[1.12] tracking-[-0.01em] text-[#22170f] sm:text-[34px]">
-            Send a Private Note
+            Send Luke a Note
           </h3>
           <p className="m-0 text-[15px] font-medium leading-[1.65] text-[#5c4635]">
             Whether you are buying, selling, relocating, or exploring a second home, share what matters most and expect a personal reply within one business day.
@@ -99,7 +99,7 @@ export function ConsultForm() {
           disabled={submitted}
           className="consult-submit group"
         >
-          {submitted ? "Note Sent" : "Send Private Note"}
+          {submitted ? "Note Sent" : "Send Luke a Note"}
           {!submitted && (
             <svg viewBox="0 0 16 16" aria-hidden className="size-[14px] transition-transform duration-300 group-hover:translate-x-[3px]">
               <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />

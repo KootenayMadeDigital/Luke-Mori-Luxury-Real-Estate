@@ -72,7 +72,7 @@ export function SellerSection() {
                   <div className="relative min-h-[230px] bg-[var(--color-bg)]">
                     <Image
                       src={siteImages.sellerDining}
-                      alt="Staged dining room ready for a premium property launch"
+                      alt="Staged dining room ready for a thoughtful property listing"
                       fill
                       sizes="(min-width: 1024px) 34vw, 100vw"
                       className="object-cover opacity-90 saturate-[1.04]"

@@ -185,7 +185,7 @@ export function ListingsBrowser({
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search address, area, agent…"
+                placeholder="Search by address, area, or feature"
                 className="w-full rounded-[1px] border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pl-10 font-sans text-[14px] font-light text-[var(--color-text)] outline-none transition-colors duration-200 placeholder:text-[var(--color-text-dim)] focus:border-[var(--color-bronze)]"
               />
               <svg
@@ -243,10 +243,10 @@ export function ListingsBrowser({
       {paged.length === 0 ? (
         <div className="border border-[var(--color-line)] bg-[var(--color-surface)] p-16 text-center">
           <p className="m-0 mb-3 font-serif text-[24px] font-light text-[var(--color-text)]">
-            No properties match this filter.
+            No properties match this search yet.
           </p>
           <p className="m-0 text-[14px] text-[var(--color-text-muted)]">
-            Try clearing your search or selecting another filter.
+            Try a broader search, clear the filters, or ask Luke what may be available.
           </p>
         </div>
       ) : (

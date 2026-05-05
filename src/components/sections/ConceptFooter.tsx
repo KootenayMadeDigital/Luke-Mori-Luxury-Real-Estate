@@ -96,7 +96,7 @@ export function ConceptFooter() {
                 <p className="m-0 mt-5 text-[13px] leading-[1.65] text-[var(--color-text-muted)]">{contact.office}</p>
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                   <Button href="/contact#consultation" variant="primary" full>
-                    Request Private Consultation
+                    Talk to Luke
                   </Button>
                   <Button href="/guides" variant="ghost" full>
                     Read Guides

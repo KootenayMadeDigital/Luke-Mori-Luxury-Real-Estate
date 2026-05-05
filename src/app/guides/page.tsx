@@ -12,7 +12,7 @@ import { headerImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Kootenay Luxury Real Estate Guides",
-  description: "Practical buyer and seller guides for Kootenay Lake, Nelson, Kaslo, rural acreage, waterfront due diligence, and luxury property decisions in BC.",
+  description: "Practical buyer and seller guides for Kootenay Lake, Nelson, Kaslo, rural acreage, waterfront review, and important property decisions in BC.",
   path: "/guides",
   image: headerImages.westArmKootenayLake,
 });
@@ -24,7 +24,7 @@ export default function BuyerGuidesPage() {
         eyebrow="Guides"
         title="Know the market"
         emphasis="before the showing."
-        lede="Practical guidance for buyers comparing Kootenay Lake, Nelson, Kaslo, waterfront, acreage, rural systems, and high-value property decisions."
+        lede="Practical guidance for buyers comparing Kootenay Lake, Nelson, Kaslo, waterfront, acreage, rural systems, and important property decisions."
         image={headerImages.westArmKootenayLake}
         crumbs={[{ label: "Home", href: "/" }, { label: "Guides" }]}
         meta={[
@@ -47,7 +47,7 @@ export default function BuyerGuidesPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Buyer, seller, and due diligence guides for luxury real estate decisions across Nelson, Kaslo, Kootenay Lake, and rural BC. Rules vary by property, so serious decisions should be verified with qualified professionals.
+              Buyer, seller, and property review guides for important real estate decisions across Nelson, Kaslo, Kootenay Lake, and rural BC. Rules vary by property, so serious decisions should be verified with licensed professionals.
             </SectionLede>
           </Reveal>
 

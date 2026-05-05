@@ -106,7 +106,7 @@ export function PrivateInquiryPaths({
           </p>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href="/contact#contact-form" variant="primary" size="md">
-              Send private note
+              Send Luke a note
             </Button>
             <Button href={contact.phoneHref} variant="ghost" size="md" arrow>
               Call direct

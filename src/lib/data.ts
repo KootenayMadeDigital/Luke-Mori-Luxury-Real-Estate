@@ -372,7 +372,7 @@ export const headerImages = {
 export const siteImages = {
   lukePortrait: "/generated/site-images/luke-portrait-enhanced.webp",
   lukeSellerSign: "/generated/site-images/luke-seller-sign-enhanced.webp",
-  sellerDining: "/generated/site-images/seller-dining-enhanced.webp",
+  sellerDining: "/generated/headers-4k/seller-dining-4k.webp",
   sellerStudy: "/generated/site-images/seller-study-enhanced.webp",
   sproatDrive: "/generated/site-images/sproat-drive-enhanced.webp",
   observatoryStreet: "/generated/site-images/observatory-street-enhanced.webp",

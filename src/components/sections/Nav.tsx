@@ -17,11 +17,11 @@ const navGroups: NavGroup[] = [
     label: "Clients",
     href: "/buyers",
     items: [
-      { label: "For Buyers", href: "/buyers", description: "Listings, lifestyle fit, and fewer wrong tours." },
+      { label: "For Buyers", href: "/buyers", description: "Listings, daily-life fit, and fewer wrong tours." },
       { label: "For Sellers", href: "/sellers", description: "Pricing, sale plan, serious showings, and privacy." },
       { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
       { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." },
-      { label: "Guides", href: "/guides", description: "Clear buyer, seller, and due diligence guides for Kootenay real estate." }
+      { label: "Guides", href: "/guides", description: "Clear buyer, seller, and property review guides for Kootenay real estate." }
     ],
   },
   {

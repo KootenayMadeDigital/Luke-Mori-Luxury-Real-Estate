@@ -28,7 +28,7 @@ type Recommendation = {
 };
 
 const options: Option[] = [
-  { key: "lakefront", label: "Lakefront", intent: "I want the lake to shape daily life.", short: "Water access, dock questions, exposure" },
+  { key: "lakefront", label: "Lakefront", intent: "I want the lake to shape daily life.", short: "Water access, dock questions, sun" },
   { key: "walkable", label: "Walkable Nelson", intent: "I want culture, errands, and dinner close.", short: "Baker Street, schools, heritage homes" },
   { key: "privacy", label: "North Shore", intent: "I want views, quiet, and town nearby.", short: "Arrival, sightlines, neighbour distance" },
   { key: "acreage", label: "Acreage", intent: "I want land, workshops, gardens, or dogs.", short: "Systems, access, upkeep, privacy" },
@@ -41,12 +41,12 @@ const options: Option[] = [
 const recommendations: Record<PathKey, Recommendation> = {
   lakefront: {
     eyebrow: "Lakefront Buyer Path",
-    title: "Prove the shoreline before you pay the premium.",
+    title: "Understand the shoreline before you pay more.",
     summary: "Lakefront value is not only the view. The best fit depends on how you reach the water, how the property handles weather, and whether the shoreline supports the life you are buying.",
     route: "Waterfront homes on Kootenay Lake, the West Arm, Balfour, Procter, Harrop, and select private lake settings.",
     checks: ["Walkable water access and usable shoreline", "Dock, sun, road noise, and winter access", "Long-term demand and resale confidence"],
     avoid: "Paying for lakefront photography before the shoreline, privacy, grade, and seasonal use are understood.",
-    nextMove: "Start with a waterfront brief, then shortlist only the homes where the land and shoreline match the lifestyle.",
+    nextMove: "Start with a waterfront brief, then shortlist only the homes where the land and shoreline match the life you want.",
     href: "/listings/waterfront",
     cta: "View waterfront homes",
     image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc3e63cf060ba15246859_procter-lake-house-nelson-bc.webp",
@@ -92,7 +92,7 @@ const recommendations: Record<PathKey, Recommendation> = {
     imageAlt: "Wooded mountain trail near Blewett BC",
   },
   ski: {
-    eyebrow: "Ski Lifestyle Path",
+    eyebrow: "Ski Access Path",
     title: "Build the search around the winter routine.",
     summary: "A ski-oriented home should make winter easier, not just look good in January. The right fit handles guests, gear, roads, storage, and four-season value.",
     route: "Nelson, Mountain Station, rural pockets with better Whitewater access, and homes that still make sense outside ski season.",

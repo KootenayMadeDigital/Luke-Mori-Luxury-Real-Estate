@@ -370,14 +370,14 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
       };
   const defaults: RevealCopy = isSellerLaunch
     ? {
-        eyebrow: "The Luxury Launch Standard",
+        eyebrow: "The Strong Listing Standard",
         title: "Make the first look",
         emphasis: "feel expensive.",
-        lede: "A serious home should not hit the market like another upload. For select properties, Luke builds the launch around the first pause: the view, the privacy, the film, the copy, and the reason a buyer remembers it.",
-        kicker: "Seller Launch Preview",
+        lede: "A serious home should not reach buyers like another upload. For select properties, Luke builds the sale plan around what matters most: the view, the privacy, the film, the copy, and the reason a buyer remembers it.",
+        kicker: "Seller Preview",
         panelTitle: "Your listing should feel considered before anyone asks the price.",
         panelBody: "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the private tour.",
-        primaryCta: "Plan a Luxury Launch",
+        primaryCta: "Plan Your Sale",
         primaryHref: "/sellers",
       }
     : {
