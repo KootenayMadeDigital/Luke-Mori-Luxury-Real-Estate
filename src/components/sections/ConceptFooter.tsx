@@ -58,15 +58,9 @@ const footerSignals = [
   { value: "Nelson born", label: "Local market fluency" },
 ];
 
-const guideLinks = [
-  { label: "Waterfront Buying", href: "/guides/buying-kootenay-lake-waterfront-property" },
-  { label: "Rural Due Diligence", href: "/guides/rural-luxury-property-due-diligence-bc" },
-  { label: "Seller Strategy", href: "/guides/luxury-home-marketing-kootenays" },
-];
-
 export function ConceptFooter() {
   return (
-    <footer className="tone-dark tonal-section relative border-t border-[var(--color-line)] bg-[#050506] pt-24 md:pt-32">
+    <footer className="tone-dark tonal-section relative border-t border-[var(--color-line)] bg-[#050506] pt-16 md:pt-20">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-bronze-light),transparent)] opacity-55" aria-hidden />
       <div className="pointer-events-none absolute inset-0 opacity-[0.12]" aria-hidden>
         <div className="absolute left-[8%] top-16 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(176,138,91,0.28),transparent_66%)] blur-3xl" />
@@ -74,32 +68,32 @@ export function ConceptFooter() {
       </div>
 
       <Container className="relative">
-        <Reveal className="rounded-[2.25rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.045)] p-1.5 shadow-[0_36px_110px_-76px_rgba(0,0,0,0.95)]">
-          <div className="overflow-hidden rounded-[calc(2.25rem-0.375rem)] border border-[rgba(255,247,235,0.06)] bg-[linear-gradient(135deg,rgba(19,21,23,0.94),rgba(10,11,13,0.98)_58%,rgba(31,24,18,0.92))] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.07)] sm:p-9 lg:p-12">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-16">
+        <Reveal className="rounded-[1.75rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.045)] p-1.5 shadow-[0_36px_110px_-76px_rgba(0,0,0,0.95)]">
+          <div className="overflow-hidden rounded-[calc(1.75rem-0.375rem)] border border-[rgba(255,247,235,0.06)] bg-[linear-gradient(135deg,rgba(19,21,23,0.94),rgba(10,11,13,0.98)_58%,rgba(31,24,18,0.92))] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.07)] sm:p-7 lg:p-8">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
               <div>
-                <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[var(--color-line)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze-light)]">
+                <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[var(--color-line)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze-light)]">
                   <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
-                  Private Nelson real estate advisory
+                  Nelson and Kootenay Lake real estate
                 </div>
-                <h2 className="m-0 max-w-[860px] font-serif font-light leading-[0.96] tracking-[-0.025em] text-[var(--color-text)] [font-size:clamp(42px,7vw,98px)]">
-                  The next move
+                <h2 className="m-0 max-w-[680px] font-serif font-light leading-[1.02] tracking-[-0.018em] text-[var(--color-text)] [font-size:clamp(32px,4.8vw,62px)]">
+                  Luxury real estate,
                   <br />
-                  deserves a quieter room.
+                  handled with discretion.
                 </h2>
-                <p className="m-0 mt-7 max-w-[620px] text-[17px] leading-[1.78] text-[var(--color-text-muted)]">
-                  Lakefront, acreage, view homes, and legacy properties need careful advice before the market starts making noise.
+                <p className="m-0 mt-5 max-w-[560px] text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
+                  Local guidance for lakefront, acreage, view homes, relocation, and private seller strategy in the Kootenays.
                 </p>
               </div>
 
-              <div className="rounded-[1.75rem] border border-[var(--color-line)] bg-[rgba(255,247,235,0.035)] p-6 sm:p-7">
+              <div className="rounded-[1.35rem] border border-[var(--color-line)] bg-[rgba(255,247,235,0.035)] p-5 sm:p-6">
                 <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">Direct line</p>
                 <div className="mt-5 space-y-3 text-[18px] font-medium text-[var(--color-text)]">
                   <a href={contact.phoneHref} className="block transition-colors hover:text-[var(--color-bronze-light)]">{contact.phone}</a>
                   <a href={contact.emailHref} className="block transition-colors hover:text-[var(--color-bronze-light)]">{contact.email}</a>
                 </div>
                 <p className="m-0 mt-5 text-[13px] leading-[1.65] text-[var(--color-text-muted)]">{contact.office}</p>
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                   <Button href="/contact" variant="primary" full>
                     Request Private Consultation
                   </Button>
@@ -121,7 +115,7 @@ export function ConceptFooter() {
           ))}
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 border-t border-[var(--color-line)] pt-14 lg:grid-cols-[0.9fr_1.4fr] lg:gap-20">
+        <div className="mt-12 grid grid-cols-1 gap-10 border-t border-[var(--color-line)] pt-12 lg:grid-cols-[0.9fr_1.4fr] lg:gap-20">
           <Reveal>
             <Brand href="/" />
             <p className="mt-6 max-w-[360px] text-[15px] leading-[1.78] text-[var(--color-text-muted)]">
@@ -148,15 +142,6 @@ export function ConceptFooter() {
           </Reveal>
 
           <div>
-            <Reveal className="mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {guideLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="group rounded-[1.25rem] border border-[var(--color-line)] bg-[rgba(255,247,235,0.025)] p-5 transition-[border-color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)]">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Guide</span>
-                  <span className="mt-3 block font-serif text-[20px] font-light leading-[1.15] text-[var(--color-text)]">{link.label}</span>
-                </Link>
-              ))}
-            </Reveal>
-
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
               {navLists.map((list) => (
                 <Reveal key={list.heading}>
@@ -176,7 +161,7 @@ export function ConceptFooter() {
           </div>
         </div>
 
-        <Reveal className="mx-auto mt-20 max-w-[900px] border-t border-[var(--color-line)] pt-12 text-center">
+        <Reveal className="mx-auto mt-14 max-w-[900px] border-t border-[var(--color-line)] pt-12 text-center">
           <div className="mb-6 inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
             <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
             Kootenay Made Digital
@@ -191,7 +176,7 @@ export function ConceptFooter() {
           </div>
         </Reveal>
 
-        <div className="mt-14 border-t border-[var(--color-line)] py-7">
+        <div className="mt-10 border-t border-[var(--color-line)] py-7">
           <div className="flex flex-col gap-2 text-[11px] tracking-[0.05em] text-[var(--color-text-dim)] md:flex-row md:items-center md:justify-between md:gap-6">
             <span>© 2026 Concept · Kootenay Made Digital</span>
             <span>Listings, testimonials, and photography sourced from lukemori.com under fair-comment concept use.</span>
