@@ -10,7 +10,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { headerImages, lukeBio, brandImages } from "@/lib/data";
+import { siteImages, headerImages, lukeBio, brandImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Luke Mori · Nelson BC Realtor & Luxury Real Estate Agent",
@@ -55,7 +55,7 @@ export default function AboutPage() {
             <Reveal>
               <div className="tone-dark relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
                 <Image
-                  src={brandImages.lukePortrait}
+                  src={siteImages.lukePortrait}
                   alt="Luke Mori"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"

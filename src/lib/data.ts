@@ -369,6 +369,19 @@ export const headerImages = {
   slocanLake: "/generated/headers-4k/slocan-lake-4k.webp",
 };
 
+export const siteImages = {
+  lukePortrait: "/generated/site-images/luke-portrait-enhanced.webp",
+  lukeSellerSign: "/generated/site-images/luke-seller-sign-enhanced.webp",
+  sellerStudy: "/generated/site-images/seller-study-enhanced.webp",
+  sproatDrive: "/generated/site-images/sproat-drive-enhanced.webp",
+  observatoryStreet: "/generated/site-images/observatory-street-enhanced.webp",
+  rosemontRobertson: "/generated/site-images/rosemont-robertson-enhanced.webp",
+  homeTourAinslie: "/generated/site-images/home-tour-ainslie-enhanced.webp",
+  homeTourHeddle: "/generated/site-images/home-tour-heddle-enhanced.webp",
+  homeTourHarrop: "/generated/site-images/home-tour-harrop-enhanced.webp",
+  privateOfficeTexture: "/generated/site-images/private-office-texture-enhanced.webp",
+};
+
 /* ---------- Signature areas (refined) ---------- */
 
 export type Area = {
@@ -395,7 +408,7 @@ export const signatureAreas: Area[] = [
     href: "/listings/waterfront",
     cta: "View Waterfront",
     feature: true,
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/64586ce6a1f16d469d0f7850_922-SPROAT-DRIVE-nelson.webp",
+    image: siteImages.sproatDrive,
     imageAlt: "922 Sproat Drive in Nelson near the lakefront",
     artId: "johns",
   },
@@ -407,7 +420,7 @@ export const signatureAreas: Area[] = [
     intent: "For buyers who want the daily Nelson rhythm, more view exposure, and a home that still feels connected to town.",
     href: "/nelson/nelson",
     cta: "Explore Nelson",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/64586bfb34d3540cbe512e68_1009-OBSERVATORY-STREET-nelson.webp",
+    image: siteImages.observatoryStreet,
     imageAlt: "1009 Observatory Street in Nelson",
     artId: "fairview",
   },
@@ -419,7 +432,7 @@ export const signatureAreas: Area[] = [
     intent: "For buyers who want quieter streets, family scale, golf proximity, and room to breathe without leaving the city.",
     href: "/nelson/nelson",
     cta: "Compare City Areas",
-    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69dfba17f69ba07cd6e87dae_10381969_1.jpeg",
+    image: siteImages.rosemontRobertson,
     imageAlt: "1107 Robertson Avenue in Nelson",
     artId: "rosemont",
   },
@@ -432,7 +445,7 @@ export const signatureAreas: Area[] = [
     href: "/nelson/north-shore",
     cta: "Study North Shore",
     feature: true,
-    image: brandImages.westArmKootenayLake,
+    image: headerImages.westArmKootenayLake,
     imageAlt: "West Arm of Kootenay Lake on the North Shore",
     artId: "northshore",
   },
@@ -444,7 +457,7 @@ export const signatureAreas: Area[] = [
     intent: "For deep-water second homes, legacy lake holdings, and buyers who value easy access over downtown proximity.",
     href: "/nelson/balfour",
     cta: "Study Balfour",
-    image: brandImages.balfourKootenayLake,
+    image: headerImages.balfourKootenayLake,
     imageAlt: "Balfour and Kootenay Lake",
     artId: "balfour",
   },
@@ -456,7 +469,7 @@ export const signatureAreas: Area[] = [
     intent: "For retreat buyers who want timber, river frontage, mountain quiet, and a wider radius than Nelson proper.",
     href: "/nelson/slocan-valley",
     cta: "Study Retreat Areas",
-    image: brandImages.slocanLake,
+    image: headerImages.slocanLake,
     imageAlt: "Slocan Lake in British Columbia",
     artId: "kaslo",
   },
@@ -1195,21 +1208,21 @@ export const homeTourVideos: HomeTourVideo[] = [
     title: "664 Ainslie Road",
     meta: "Waterfront home presentation",
     href: "https://www.youtube.com/watch?v=ItcMSmhyMxw",
-    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69f05d3851101693059b1a50_10384831_1.jpeg",
+    image: siteImages.homeTourAinslie,
     imageAlt: "Waterfront home at 664 Ainslie Road",
   },
   {
     title: "3179 Heddle Road",
     meta: "Timber-frame home with in-law suite",
     href: "https://www.youtube.com/watch?v=Xd0u7gQ0Qm0",
-    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69dfb9ee6a414f4f0dd7670c_10380904_1.jpeg",
+    image: siteImages.homeTourHeddle,
     imageAlt: "Timber-frame home at 3179 Heddle Road",
   },
   {
     title: "6890 Harrop Procter Road",
     meta: "Modern Kootenay home presentation",
     href: "https://www.youtube.com/watch?v=xJhNYaokEzA",
-    image: "https://cdn.prod.website-files.com/63f2f1893f4efb1d4755a829/69dfb91c9d095c231a5988bd_10372962_1.jpeg",
+    image: siteImages.homeTourHarrop,
     imageAlt: "Modern Kootenay home at 6890 Harrop Procter Road",
   },
 ];

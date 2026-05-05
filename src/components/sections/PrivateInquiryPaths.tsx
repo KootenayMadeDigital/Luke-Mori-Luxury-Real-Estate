@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { contact, inquiryPaths } from "@/lib/data";
+import { siteImages, contact, inquiryPaths } from "@/lib/data";
 
 type Props = {
   id?: string;
@@ -33,7 +33,7 @@ export function PrivateInquiryPaths({
         aria-hidden
       >
         <Image
-          src="/generated/private-office-texture.webp"
+          src={siteImages.privateOfficeTexture}
           alt=""
           fill
           sizes="46vw"

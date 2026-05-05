@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { brandImages, contact, sellerPromises } from "@/lib/data";
+import { headerImages, siteImages, contact, sellerPromises } from "@/lib/data";
 
 const sellerSignals = [
   {
@@ -71,7 +71,7 @@ export function SellerSection() {
                 <div className="grid grid-cols-[1.15fr_0.85fr] gap-px bg-[var(--color-line)]">
                   <div className="relative min-h-[230px] bg-[var(--color-bg)]">
                     <Image
-                      src={brandImages.sellerDining}
+                      src={headerImages.sellerDining}
                       alt="Staged dining room ready for a premium property launch"
                       fill
                       sizes="(min-width: 1024px) 34vw, 100vw"
@@ -83,7 +83,7 @@ export function SellerSection() {
                     </span>
                   </div>
                   <div className="grid grid-rows-2 gap-px bg-[var(--color-line)]">
-                    {[brandImages.lukeSellerSign, brandImages.sellerStudy].map((src, i) => (
+                    {[siteImages.lukeSellerSign, siteImages.sellerStudy].map((src, i) => (
                       <div key={src} className="relative min-h-[114px] bg-[var(--color-bg)]">
                         <Image
                           src={src}

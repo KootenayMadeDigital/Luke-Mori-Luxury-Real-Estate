@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { headerImages, brandImages } from "@/lib/data";
+import { headerImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Moving to Nelson BC · Relocation Real Estate Guide",
@@ -50,7 +50,7 @@ const scoutingRoutes = [
   {
     href: "/nelson/nelson",
     title: "Walkable Nelson",
-    image: brandImages.bakerStreet,
+    image: headerImages.bakerStreet,
     imageAlt: "Baker Street in Nelson BC",
     fit: "Best when daily life should orbit Baker Street, Lakeside Park, schools, restaurants, and a short town rhythm.",
     test: "Walk it in the rain, park twice, climb the grade, then decide if the charm still feels easy.",
@@ -58,7 +58,7 @@ const scoutingRoutes = [
   {
     href: "/nelson/north-shore",
     title: "North Shore Privacy",
-    image: brandImages.westArmKootenayLake,
+    image: headerImages.westArmKootenayLake,
     imageAlt: "West Arm of Kootenay Lake on the North Shore",
     fit: "Best when lake access, quieter neighbours, and Highway 3A privacy matter more than being in the city grid.",
     test: "Drive the route at school-run time, check shoreline exposure, and compare summer access with winter maintenance.",
@@ -66,7 +66,7 @@ const scoutingRoutes = [
   {
     href: "/nelson/blewett",
     title: "Acreage Near Town",
-    image: brandImages.taghumBeach,
+    image: headerImages.taghumBeach,
     imageAlt: "Taghum Beach near Nelson BC",
     fit: "Best when you want timber, space, workshops, gardens, or family compound potential without losing Nelson completely.",
     test: "Measure the driveway, water system, outbuildings, road condition, and actual door-to-Baker time.",
@@ -74,7 +74,7 @@ const scoutingRoutes = [
   {
     href: "/nelson/slocan-valley",
     title: "Retreat Country",
-    image: brandImages.slocanLake,
+    image: headerImages.slocanLake,
     imageAlt: "Slocan Lake in British Columbia",
     fit: "Best when river frontage, timber, space, and distance from town are the point, not a compromise.",
     test: "Spend a full day there, not a drive-through. The valley rewards buyers who understand its pace.",
