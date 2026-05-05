@@ -25,6 +25,8 @@ type RevealCopy = {
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
+const isFirstListingPhoto = (photo: string) => /_1\.(?:jpe?g|png|webp)(?:\?|$)/i.test(photo);
+
 function WebGLCurtain({
   open,
   lift,
@@ -331,7 +333,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
   const stageRef = useRef<HTMLDivElement | null>(null);
   const dragStartRef = useRef({ x: 50, y: 50, progress: 0.16, side: 1 });
   const specs = buildSpecs(listing);
-  const galleryImages = Array.from(new Set([listing.heroPhoto, ...listing.photos.slice(1)].filter(Boolean)));
+  const galleryImages = Array.from(new Set([listing.heroPhoto, ...listing.photos.filter((photo) => !isFirstListingPhoto(photo))].filter(Boolean)));
   const [activeImage, setActiveImage] = useState(0);
   const imageCount = galleryImages.length;
   const currentImage = galleryImages[activeImage] ?? listing.heroPhoto;
