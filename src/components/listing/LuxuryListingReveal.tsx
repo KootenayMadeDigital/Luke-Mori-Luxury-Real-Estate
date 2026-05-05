@@ -159,7 +159,7 @@ function WebGLCurtain({
         float weave = sin(v_local.x * 380.0) * sin(v_local.y * 172.0) * 0.5 + 0.5;
         float sideRim = smoothstep(0.66, 1.0, v_local.x) * (0.38 + u_open * 0.74);
         float edgeKnife = smoothstep(0.88, 1.0, v_local.x);
-        float diagonalSheen = smoothstep(0.965, 1.0, sin((v_local.x * 11.0 + v_local.y * 7.5) * v_side - u_time * 0.16) * 0.5 + 0.5);
+        float diagonalSheen = 0.0;
         float hem = smoothstep(0.0, 0.045, v_local.y) + smoothstep(1.0, 0.955, v_local.y);
         float creaseShadow = smoothstep(0.0, 0.35, vertical) * (1.0 - smoothstep(0.35, 0.78, vertical));
         float outerDark = 1.0 - smoothstep(0.0, 0.22, v_local.x) * 0.38;
@@ -177,7 +177,7 @@ function WebGLCurtain({
         float velvetNap = pow(1.0 - abs(pleat - 0.5) * 2.0, 2.0);
         float napSheen = smoothstep(-0.65, 0.95, v_motion) * hand;
         float brushShadow = smoothstep(0.18, 0.82, hand) * smoothstep(0.82, 0.18, abs(v_motion));
-        float light = 0.18 + pleat * 0.46 + vertical * 0.18 + sideRim * 0.98 + edgeKnife * 0.55 + diagonalSheen * 0.16 + hand * 0.11 + napSheen * 0.22;
+        float light = 0.18 + pleat * 0.46 + vertical * 0.18 + sideRim * 0.98 + edgeKnife * 0.42 + hand * 0.11 + napSheen * 0.20;
         light -= creaseShadow * 0.34;
         light -= brushShadow * 0.05;
         light *= outerDark;
@@ -186,11 +186,10 @@ function WebGLCurtain({
         color = mix(color, espresso, brushShadow * 0.10);
         color = mix(color, bronze, sideRim * 0.30);
         color += warm * sideRim * 0.30;
-        color += warm * edgeKnife * 0.28;
-        color += warm * diagonalSheen * (0.07 + espressoMode * 0.04);
-        color += warm * napSheen * 0.12;
-        color += vec3(micro) * 0.018;
-        color += vec3(weave) * 0.014;
+        color += warm * edgeKnife * 0.18;
+        color += warm * napSheen * 0.10;
+        color += vec3(micro) * 0.010;
+        color += vec3(weave) * 0.006;
         color *= 0.76 + hem * 0.24;
         float openFade = 1.0 - smoothstep(0.76, 1.0, u_open) * 0.34;
         float alpha = (0.992 - sideRim * 0.028) * openFade;
@@ -484,7 +483,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
               style={{ opacity: imageFocus ? 0.18 : isDragging ? 0.28 + seamGlow * 0.14 : 0.22 }}
             />
             <div
-              className="pointer-events-none absolute inset-0 z-[11] mix-blend-screen bg-[radial-gradient(circle_at_var(--reveal-x)_var(--reveal-y),var(--curtain-glow),transparent_28%),linear-gradient(103deg,transparent_16%,var(--curtain-rim)_34%,transparent_46%,transparent_62%,var(--curtain-rim)_78%,transparent_90%)] transition-opacity duration-700 ease-[var(--ease-luxe)] motion-reduce:hidden"
+              className="pointer-events-none absolute inset-0 z-[11] mix-blend-screen bg-[radial-gradient(circle_at_var(--reveal-x)_var(--reveal-y),var(--curtain-glow),transparent_28%)] transition-opacity duration-700 ease-[var(--ease-luxe)] motion-reduce:hidden"
               style={{ opacity: imageFocus ? 0.28 : 0.1 + seamGlow * 0.16 }}
               aria-hidden
             />
