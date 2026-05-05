@@ -23,18 +23,18 @@ export function FeaturedEstates() {
       <Container className="relative z-10">
         <Reveal className="mb-14 grid grid-cols-1 gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-end md:gap-16">
           <div>
-            <Eyebrow>Featured Estates · Active</Eyebrow>
+            <Eyebrow>Featured Homes · Active</Eyebrow>
             <SectionHeading className="mt-7">
-              The active portfolio
+              A focused look at
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                without the noise.
+                the current market.
               </em>
             </SectionHeading>
           </div>
           <div className="md:ml-auto md:max-w-[620px] md:text-right">
             <SectionLede align="right">
-              A focused view of the active market: lakefront, acreage, timber frame, riverfront, and view properties. Enough to feel the range before opening the full feed.
+              A focused view of active lakefront, acreage, timber frame, riverfront, and view properties. Enough to understand the range before opening all listings.
             </SectionLede>
             <Link
               href="/listings/luxury"

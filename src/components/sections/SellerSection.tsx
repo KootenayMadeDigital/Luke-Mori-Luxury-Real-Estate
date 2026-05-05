@@ -8,12 +8,12 @@ import { siteImages, contact, sellerPromises } from "@/lib/data";
 
 const sellerSignals = [
   {
-    label: "Before market",
-    value: "Value, presentation, and showing risk are settled before the first public impression.",
+    label: "Before listing",
+    value: "Value, presentation, and showing plan are settled before buyers form an opinion.",
   },
   {
-    label: "During launch",
-    value: "Exposure starts with qualified buyers, trusted agents, and the channels most likely to reach the right person.",
+    label: "Once listed",
+    value: "The home is shared with serious buyers, trusted agents, and the channels most likely to reach the right person.",
   },
   {
     label: "After interest",
@@ -40,7 +40,7 @@ export function SellerSection() {
             </Reveal>
             <Reveal delay={120}>
               <SectionHeading className="mt-7">
-                High-value homes
+                Important homes
                 <br />
                 need a plan before
                 <br />
@@ -51,14 +51,14 @@ export function SellerSection() {
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-10">
-                Before a high-value home goes public, price, likely buyer, visuals, privacy, and showing plan should already be settled.
+                Before an important home is listed, price, likely buyer, visuals, privacy, and showing plan should already be clear.
               </SectionLede>
             </Reveal>
 
             <Reveal delay={340}>
               <div className="flex flex-wrap gap-4">
                 <Button href="#consult" variant="primary" size="lg">
-                  Talk Selling Strategy
+                  Plan Your Sale
                 </Button>
                 <Button href={contact.phoneHref} variant="ghost" size="lg" arrow>
                   Ask About Value
@@ -122,7 +122,7 @@ export function SellerSection() {
                         Seller Marketing Plan
                       </p>
                       <h3 className="m-0 mt-4 max-w-[620px] font-serif text-[30px] font-light leading-[1.12] tracking-[-0.01em] text-[var(--color-text)] sm:text-[38px]">
-                        How Luke brings a high-value property to market.
+                        How Luke brings an important property to market.
                       </h3>
                     </div>
                     <span className="rounded-full border border-[var(--color-line-strong)] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-dim)]">

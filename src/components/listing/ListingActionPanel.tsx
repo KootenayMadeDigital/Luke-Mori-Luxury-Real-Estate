@@ -94,10 +94,10 @@ export function ListingActionPanel(props: Props) {
       <div className="mb-4 flex items-center justify-between gap-4 border-b border-[var(--color-line)] pb-4">
         <div>
           <p className="m-0 text-[10px] font-medium uppercase tracking-[0.26em] text-[var(--color-bronze)]">
-            Share Desk
+            Share This Property
           </p>
           <p className="m-0 mt-1 text-[13px] leading-[1.5] text-[var(--color-text-muted)]">
-            Send the property to a partner, advisor, or family decision-maker.
+            Send the property to a partner, family member, or someone helping with the decision.
           </p>
         </div>
       </div>

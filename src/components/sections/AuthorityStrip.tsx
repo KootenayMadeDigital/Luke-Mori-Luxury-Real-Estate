@@ -19,7 +19,7 @@ export function AuthorityStrip() {
           </Reveal>
           <Reveal delay={120}>
             <p className="m-0 max-w-[620px] text-[15px] leading-[1.75] text-[var(--color-text-muted)] lg:ml-auto">
-              Sellers want value protected. Buyers want fewer wrong turns. Both need local knowledge, strong presentation, qualified conversations, and lake-specific experience before the first showing.
+              Sellers want value protected. Buyers want fewer wrong turns. Both need local knowledge, strong presentation, serious conversations, and lake-specific experience before the first showing.
             </p>
           </Reveal>
         </div>

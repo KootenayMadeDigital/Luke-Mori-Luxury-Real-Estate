@@ -96,8 +96,8 @@ export const authorityPillars: AuthorityPillar[] = [
   },
   {
     number: "02",
-    title: "Seller Representation",
-    body: "High-value homes need disciplined pricing, strong visuals, qualified showings, and exposure that does not cheapen the property.",
+    title: "Selling Guidance",
+    body: "Important homes need disciplined pricing, strong visuals, serious showings, and a plan that protects the property's value.",
   },
   {
     number: "03",
@@ -124,7 +124,7 @@ export const credentials: Credential[] = [
   { value: "$169M+", label: "Career Sales Volume" },
   { value: "2021 & 2024", label: "Best Luxury Broker BC" },
   { value: "10+ Yrs", label: "Nelson Market Knowledge" },
-  { value: "Private", label: "Representation" },
+  { value: "Personal", label: "Guidance" },
 ];
 
 /* ---------- Trust section ---------- */
@@ -176,7 +176,7 @@ export const trustPrinciples: TrustPrinciple[] = [
   },
   {
     title: "Privacy before attention",
-    body: "Your privacy, timeline, showing plan, and launch plan are settled before the market starts judging the home.",
+    body: "Your privacy, timeline, showing plan, and sale plan are settled before the home reaches buyers.",
   },
   {
     title: "Clarity before pressure",
@@ -202,7 +202,7 @@ export const inquiryPaths: InquiryPath[] = [
     body: "Share the address, timeline, privacy needs, and what you are hoping for. Luke can help you understand the right next step.",
     href: "/contact",
     cta: "Plan your sale",
-    proof: "$169M+ career volume, disciplined launch planning, qualified showings.",
+    proof: "$169M+ career volume, disciplined sale planning, serious showings.",
   },
   {
     audience: "Buyers",
@@ -436,7 +436,7 @@ export const signatureAreas: Area[] = [
   {
     index: "02 / 06",
     name: "Fairview & Uphill",
-    body: "Larger, newer builds with full city-and-lake exposure. Higher elevation, extended summer sun, and Baker Street culture a downhill walk away.",
+    body: "Larger, newer builds with wide city-and-lake views. Higher streets, extended summer sun, and Baker Street culture a downhill walk away.",
     tags: "View Homes · Architectural · Walk to Downtown",
     intent: "For buyers who want the daily Nelson rhythm, more view exposure, and a home that still feels connected to town.",
     href: "/nelson/nelson",
@@ -936,13 +936,13 @@ export const soldArchive: SoldArchiveItem[] = [
 export type Promise = { num: string; title: string; body: string };
 
 export const sellerPromises: Promise[] = [
-  { num: "01", title: "Value before launch", body: "A clear read on value, comparable pressure, buyer depth, and the price line worth protecting." },
-  { num: "02", title: "Buyer-facing story", body: "Before launch, the home is presented around what matters most to the likely buyer: lifestyle, design, land, privacy, and value." },
+  { num: "01", title: "Value before listing", body: "A clear read on value, nearby comparisons, buyer depth, and the price range worth protecting." },
+  { num: "02", title: "Buyer-facing story", body: "Before the home is listed, the presentation is built around what matters most to the likely buyer: daily life, design, land, privacy, and value." },
   { num: "03", title: "Film, photo, and copy", body: "Film, photography, floor-plan clarity, and writing that makes the home easy to understand and remember." },
   { num: "04", title: "Dedicated property page", body: "A dedicated page for the address, with the photos, facts, and story presented clearly." },
-  { num: "05", title: "Qualified buyer rollout", body: "Release to qualified buyers, relocation buyers, second-home families, and trusted agent networks, not casual traffic." },
+  { num: "05", title: "Serious buyer plan", body: "Share the home with serious buyers, relocation buyers, second-home families, and trusted agent networks, not casual traffic." },
   { num: "06", title: "Showing plan", body: "Showings are scheduled around privacy, readiness, and buyer fit, with casual traffic filtered before it reaches the door." },
-  { num: "07", title: "Negotiation", body: "Price, timing, terms, conditions, and leverage are handled together, not as a reaction to the loudest bidder." },
+  { num: "07", title: "Negotiation", body: "Price, timing, terms, conditions, and leverage are considered together, not as a reaction to the loudest bidder." },
   { num: "08", title: "Closing care", body: "From accepted offer to possession, the process stays calm, documented, and organized." },
 ];
 

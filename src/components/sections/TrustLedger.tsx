@@ -26,7 +26,7 @@ export function TrustLedger() {
             </SectionHeading>
           </div>
           <SectionLede align="right">
-            High-value sellers and buyers need three things early: a real record, a clear process, and advice that fits the property.
+            Sellers and buyers making important decisions need three things early: a real record, a clear process, and advice that fits the property.
           </SectionLede>
         </Reveal>
 
@@ -79,7 +79,7 @@ export function TrustLedger() {
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col">
                 <Button href="/testimonials" variant="ghost" size="md" arrow>
-                  Read client voice
+                  Read client stories
                 </Button>
                 <Button href={contact.phoneHref} variant="primary" size="md">
                   Call {contact.phone}

@@ -107,7 +107,7 @@ export function MoriStandard() {
                   />
                 </div>
                 <span className="text-microcopy font-sans uppercase text-[var(--color-text-muted)]">
-                  Luke Mori, Luxury Division
+                  Luke Mori, Nelson and Kootenay Lake
                 </span>
               </div>
             </Reveal>

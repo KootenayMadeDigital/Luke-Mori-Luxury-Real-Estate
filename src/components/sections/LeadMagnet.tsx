@@ -7,7 +7,7 @@ import { ConsultForm } from "@/components/forms/ConsultForm";
 const guideContents = [
   "Which Nelson and Kootenay Lake areas fit your plans",
   "What to check before buying waterfront, acreage, or a view home",
-  "How to prepare a high-value home before listing",
+  "How to prepare an important home before listing",
   "When a quiet introduction may be possible",
 ];
 
@@ -34,7 +34,7 @@ export function LeadMagnet() {
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-9">
-                Tell Luke what you are weighing: buying, selling, relocating, waterfront, acreage,
+                Tell Luke what you are considering: buying, selling, relocating, waterfront, acreage,
                 or a second home. He will help you find the clearest first step.
               </SectionLede>
             </Reveal>
