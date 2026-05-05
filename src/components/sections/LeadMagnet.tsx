@@ -3,7 +3,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ConsultForm } from "@/components/forms/ConsultForm";
-import { PrivateAccessSeal } from "@/components/sections/PrivateAccessSeal";
 
 const guideContents = [
   "Which Nelson and Kootenay Lake areas fit your plans",
@@ -48,9 +47,6 @@ export function LeadMagnet() {
                   {g}
                 </li>
               ))}
-            </Reveal>
-            <Reveal delay={440}>
-              <PrivateAccessSeal />
             </Reveal>
           </div>
 
