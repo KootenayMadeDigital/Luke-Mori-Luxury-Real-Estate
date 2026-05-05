@@ -96,7 +96,7 @@ function WebGLCurtain({
         float hand = 1.0 - smoothstep(0.0, 0.24, length(handDelta));
         float handWide = 1.0 - smoothstep(0.0, 0.46, length(handDelta));
         float pointerSpeed = clamp(length(u_pointer_velocity) * 3.0, 0.0, 1.0);
-        float wake = 1.0 - smoothstep(0.0, 0.42, length(handDelta + u_pointer_velocity * vec2(1.1, -0.72)));
+        float wake = 0.0;
         float ridge = sin(a_local.x * 52.0 + a_local.y * 5.0 + u_time * 0.68);
         float ridge2 = sin(a_local.x * 23.0 - a_local.y * 2.0 - u_time * 0.28);
         float slow = sin(a_local.x * 10.0 - u_time * 0.28 + a_side * 0.7);
@@ -252,10 +252,7 @@ function WebGLCurtain({
       settledRef.current = clamp(settledRef.current + velocityRef.current, 0.035, 1);
       const clothVelocity = clamp(settledRef.current - lastSettledRef.current, -0.08, 0.08);
       lastSettledRef.current = settledRef.current;
-      smoothPointerRef.current = {
-        x: smoothPointerRef.current.x + (pointerRef.current.x - smoothPointerRef.current.x) * 0.18,
-        y: smoothPointerRef.current.y + (pointerRef.current.y - smoothPointerRef.current.y) * 0.18,
-      };
+      smoothPointerRef.current = pointerRef.current;
       const pointerVelocity = {
         x: clamp((pointerRef.current.x - lastPointerRef.current.x) / 100, -0.08, 0.08),
         y: clamp((pointerRef.current.y - lastPointerRef.current.y) / 100, -0.08, 0.08),
@@ -434,8 +431,8 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
             )}
 
             <div
-              className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_var(--reveal-x)_var(--reveal-y),rgba(255,255,255,0.25),transparent_18%),linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.58))] transition-opacity duration-300"
-              style={{ opacity: imageFocus ? 0.22 : 0.34 + seamGlow * 0.28 }}
+              className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(10,11,13,0.08),rgba(10,11,13,0.58))] transition-opacity duration-300"
+              style={{ opacity: imageFocus ? 0.18 : isDragging ? 0.28 + seamGlow * 0.14 : 0.22 }}
             />
             <div
               className="pointer-events-none absolute inset-y-0 left-1/2 z-20 w-[28%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(224,192,154,0.2),rgba(255,255,255,0.08)_18%,transparent_62%)] blur-xl transition-opacity duration-300 motion-reduce:hidden"

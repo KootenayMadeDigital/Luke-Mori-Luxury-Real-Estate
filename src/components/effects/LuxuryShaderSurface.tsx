@@ -76,14 +76,21 @@ void main() {
   float alpha = 0.0;
 
   if (u_effect < 0.5) {
-    float gridA = 1.0 - smoothstep(0.0, 0.012, abs(fract(uv.x * 22.0) - 0.5));
-    float gridB = 1.0 - smoothstep(0.0, 0.012, abs(fract(uv.y * 16.0) - 0.5));
-    float glass = (gridA + gridB) * 0.018;
-    float rim = smoothstep(0.68, 1.0, lens) * (1.0 - smoothstep(0.96, 1.0, lens));
-    float sweep = sin((uv.x * 1.8 + uv.y * 0.7 - u_time * 0.22) * 6.28318) * 0.5 + 0.5;
-    color = vec3(0.88, 0.82, 0.72) * (glass + grain * 0.026 + lensWide * 0.034 + rim * 0.28 + sweep * lens * 0.035);
-    color += vec3(1.0, 0.86, 0.58) * rim * 0.20;
-    alpha = (0.12 + lensWide * 0.15 + rim * 0.44 + grain * 0.022) * u_intensity * (1.0 - u_revealed * 0.82) * vignette;
+    vec2 glassUv = uv - pointer;
+    glassUv.x *= u_resolution.x / max(u_resolution.y, 1.0);
+    float plate = 1.0 - smoothstep(0.225, 0.255, length(glassUv));
+    float edge = smoothstep(0.18, 0.235, length(glassUv)) * (1.0 - smoothstep(0.235, 0.258, length(glassUv)));
+    float bevel = smoothstep(0.09, 0.0, abs(glassUv.x + glassUv.y * 0.42));
+    float reflection = smoothstep(0.012, 0.0, abs((uv.x * 0.72 + uv.y * 0.44) - (pointer.x * 0.72 + pointer.y * 0.44) - 0.05));
+    float lowerReflection = smoothstep(0.018, 0.0, abs((uv.x * 0.55 + uv.y * 0.62) - (pointer.x * 0.55 + pointer.y * 0.62) + 0.12));
+    vec3 warmGlass = vec3(0.92, 0.84, 0.70);
+    vec3 coolGlass = vec3(0.72, 0.88, 0.92);
+    color = warmGlass * edge * 0.22;
+    color += warmGlass * reflection * plate * 0.13;
+    color += coolGlass * lowerReflection * plate * 0.055;
+    color += warmGlass * bevel * plate * 0.035;
+    color += vec3(grain) * plate * 0.010;
+    alpha = (plate * 0.045 + edge * 0.34 + reflection * plate * 0.16 + lowerReflection * plate * 0.08) * u_intensity * (1.0 - u_revealed * 0.92) * vignette;
   } else if (u_effect < 1.5) {
     float caustic = sin((uv.x * 9.0 + sin(uv.y * 5.0 + u_time * 0.42)) + u_time * 0.55);
     caustic += sin((uv.x * 17.0 - uv.y * 7.0) - u_time * 0.32) * 0.55;
@@ -206,7 +213,7 @@ function render(timestamp: number) {
     gl.uniform1f(locEffect, effectToUniform(entry.effect));
     gl.uniform1f(locIntensity, entry.intensity);
     gl.uniform1f(locRevealed, entry.revealed ? 1 : 0);
-    gl.uniform2f(locPointer, entry.pointer.x / 100, entry.pointer.y / 100);
+    gl.uniform2f(locPointer, entry.pointer.x / 100, 1 - entry.pointer.y / 100);
     gl.uniform2f(locResolution, width, height);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 
