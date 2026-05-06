@@ -225,12 +225,14 @@ export default function TestimonialsPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {facebookReviews.slice(6).map((review, i) => (
+            {facebookReviews.slice(6).map((review, i, reviews) => (
               <Reveal
                 key={`${review.context}-${i}`}
                 as="article"
                 delay={(i % 3) * 70}
-                className="relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors duration-500 hover:border-[var(--color-line-strong)] sm:p-8"
+                className={`relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors duration-500 hover:border-[var(--color-line-strong)] sm:p-8 ${
+                  i === reviews.length - 1 && reviews.length % 3 === 1 ? "md:col-start-2" : ""
+                }`}
               >
                 <div className="mb-5 flex items-center justify-between gap-4">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
