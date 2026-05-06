@@ -96,7 +96,7 @@ export function ListingCompareTool({ listings }: Props) {
                     >
                       Remove
                     </button>
-                    <p className="absolute bottom-4 left-4 m-0 font-serif text-[24px] italic text-[var(--color-text)]">{l.price}</p>
+                    <p className="absolute bottom-4 left-4 m-0 font-serif text-[24px] italic text-[rgba(255,252,246,0.96)] drop-shadow-[0_3px_14px_rgba(0,0,0,0.95)] [text-shadow:0_2px_14px_rgba(0,0,0,0.95)]">{l.price}</p>
                   </div>
                   <div className="p-6">
                     <h3 className="m-0 font-serif text-[28px] font-light leading-[1.08] text-[var(--color-text)]">{l.address}</h3>
