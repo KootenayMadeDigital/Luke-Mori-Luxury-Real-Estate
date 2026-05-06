@@ -36,6 +36,49 @@ const riskSources: GuideSource[] = [
 
 const rdckSource = { label: "Regional District of Central Kootenay", href: "https://www.rdck.ca/" };
 
+const ltsaSources: GuideSource[] = [
+  { label: "LTSA title search", href: "https://ltsa.ca/property-owners/how-can-i/search-for-a-title/" },
+  { label: "LTSA land title records", href: "https://ltsa.ca/property-owners/about-land-records/" },
+];
+
+const permitSources: GuideSource[] = [
+  rdckSource,
+  { label: "RDCK building permits", href: "https://www.rdck.ca/development-community-sustainability-services/building/" },
+  { label: "RDCK mapping and GIS", href: "https://www.rdck.ca/development-community-sustainability-services/mapping/" },
+  { label: "Kaslo planning and permits", href: "https://www.kaslo.ca/p/planning-permits" },
+  { label: "BC permits and licences", href: "https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/permits-licences" },
+];
+
+const riskReviewSources: GuideSource[] = [
+  { label: "FireSmart BC", href: "https://firesmartbc.ca/" },
+  { label: "BC wildfire map", href: "https://wildfiresituation.nrs.gov.bc.ca/map" },
+  { label: "BC flood maps", href: "https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/drought-flooding-dikes-dams/integrated-flood-hazard-management/flood-hazard-land-use-management/floodplain-mapping" },
+  { label: "BC climate and hazard data", href: "https://climatedata.ca/" },
+];
+
+const buyerProcessSources: GuideSource[] = [
+  { label: "BC home buying and selling", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/buying-selling" },
+  { label: "BC Financial Services Authority", href: "https://www.bcfsa.ca/" },
+  { label: "CMHC homebuying", href: "https://www.cmhc-schl.gc.ca/consumers/home-buying" },
+];
+
+const inspectionSources: GuideSource[] = [
+  { label: "Consumer Protection BC home inspectors", href: "https://www.consumerprotectionbc.ca/consumer-help/home-inspectors/" },
+  { label: "BC water quality", href: "https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/water-quality" },
+  { label: "BC onsite sewerage", href: "https://www2.gov.bc.ca/gov/content/environment/waste-management/sewage/onsite-sewage-systems" },
+];
+
+const alrSources: GuideSource[] = [
+  { label: "Agricultural Land Commission", href: "https://www.alc.gov.bc.ca/" },
+  { label: "Agricultural Land Reserve maps", href: "https://www.alc.gov.bc.ca/alr-maps/" },
+];
+
+const shortTermRentalSources: GuideSource[] = [
+  { label: "BC short-term rental rules", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/short-term-rentals" },
+  { label: "City of Nelson short-term rentals", href: "https://www.nelson.ca/" },
+  rdckSource,
+];
+
 export const buyerGuides: BuyerGuide[] = [
   {
     slug: "buying-kootenay-lake-waterfront-property",
@@ -377,6 +420,263 @@ export const buyerGuides: BuyerGuide[] = [
     questions: ["What do I need verified before I can own this confidently?", "Where is the seller likely flexible?", "What price is supported by evidence, not adrenaline?"],
     sources: [{ label: "BC Financial Services Authority", href: "https://www.bcfsa.ca/" }, ...bcTaxSources],
   },
+  {
+    slug: "bc-property-transfer-tax-closing-costs-kootenay-buyers",
+    category: "Buyer Guides",
+    title: "BC Property Transfer Tax and Closing Costs for Kootenay Buyers",
+    dek: "A plain guide to property transfer tax, deposits, legal fees, adjustments, GST questions, and the costs buyers should plan for before writing.",
+    intent: "For buyers who want the full purchase picture before falling in love with a Kootenay home.",
+    image: "/generated/guide-headers/bc-property-transfer-tax-closing-costs-kootenay-buyers.webp",
+    readTime: "7 min read",
+    sections: [
+      { title: "The price is not the full cash need", body: ["A purchase price is only one part of the money conversation. Buyers should also plan for deposit timing, property transfer tax, legal fees, title searches, inspections, insurance, lender requirements, moving costs, utility adjustments, and any property-specific review that needs a professional.", "For higher-value homes, the property transfer tax can be material. It should be estimated before offer strategy, not discovered after the property feels like the one."] },
+      { title: "Taxes and exemptions need current advice", body: ["BC property transfer tax rules, exemptions, GST questions, and speculation or vacancy tax questions can change or depend on buyer status, property type, intended use, and location. Use official provincial sources and confirm with a lawyer or tax professional before relying on a number."] },
+      { title: "Closing costs affect offer confidence", body: ["A buyer who understands the full closing picture can write with more confidence and fewer surprises. This matters most on waterfront, acreage, second homes, and unique properties where inspections, insurance, title, water, septic, or zoning review may add steps."] },
+    ],
+    checklist: ["Estimate property transfer tax before writing", "Confirm deposit timing and available funds", "Budget for legal, inspection, insurance, title, and adjustment costs", "Ask whether GST, exemptions, or tax advice may apply"],
+    questions: ["What costs are due before closing and on closing day?", "Could GST, property transfer tax, or speculation tax affect this purchase?", "Which costs should be confirmed by my lawyer, lender, accountant, or insurer?"],
+    sources: [...bcTaxSources, ...ltsaSources, { label: "BC home buyer information", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/buying-selling" }],
+  },
+  {
+    slug: "short-term-rental-rules-second-homes-bc",
+    category: "Due Diligence",
+    title: "Short-Term Rental Rules for Second Homes in BC",
+    dek: "What second-home buyers should understand before assuming a Kootenay property can be rented nightly or seasonally.",
+    intent: "For second-home buyers, waterfront owners, and investors who want occasional rental income without guessing at the rules.",
+    image: "/generated/guide-headers/short-term-rental-rules-second-homes-bc.webp",
+    readTime: "6 min read",
+    sections: [
+      { title: "Do not assume rental use is allowed", body: ["A beautiful second home is not automatically a short-term rental. Provincial rules, municipal rules, regional district requirements, strata bylaws, insurance, financing, tax treatment, and platform obligations can all affect what is allowed.", "If rental income is part of the ownership plan, confirm the rules before writing or removing conditions."] },
+      { title: "Location changes the answer", body: ["A home inside a municipality, a rural RDCK area, a strata property, or a lake community may face different rules and practical limits. The correct question is not whether similar homes are online. The correct question is whether this property can legally and practically be used the way you intend."] },
+      { title: "Income plans need conservative math", body: ["Even where rental use is possible, buyers should think about management, cleaning, caretaker support, winter access, guest parking, neighbours, insurance, repairs, taxes, and periods when the property may not be rentable."] },
+    ],
+    checklist: ["Check provincial short-term rental rules", "Confirm local government and strata rules", "Ask your insurer and lender about rental use", "Build conservative numbers for management, cleaning, repairs, and vacancy"],
+    questions: ["Is short-term rental use legal for this property?", "Who enforces the rules here?", "Would rental use change insurance, financing, taxes, or neighbours' expectations?"],
+    sources: shortTermRentalSources,
+  },
+  {
+    slug: "does-speculation-tax-apply-nelson-kootenay-lake",
+    category: "Buyer Guides",
+    title: "Does Speculation Tax Apply in Nelson or Kootenay Lake?",
+    dek: "A careful starting point for second-home buyers trying to understand BC speculation and vacancy tax without guessing by region.",
+    intent: "For non-local buyers and second-home buyers comparing Nelson, Kootenay Lake, Kaslo, and rural properties.",
+    image: "/generated/guide-headers/speculation-vacancy-tax-nelson-kootenay-lake.webp",
+    readTime: "5 min read",
+    sections: [
+      { title: "The tax is location-specific", body: ["BC's speculation and vacancy tax applies only in designated taxable regions. Buyers should check the current provincial map and property address rather than assuming the tax applies everywhere in British Columbia.", "This question comes up often for second-home buyers because the wrong assumption can change how a property feels financially."] },
+      { title: "Use matters too", body: ["Tax exposure can depend on ownership, residency, use, rental, exemptions, and reporting obligations. A realtor can help frame the property question, but a buyer should confirm tax treatment with official provincial sources and qualified tax advice."] },
+      { title: "Confirm before comparing homes", body: ["Two homes at the same price can have different carrying-cost pictures if one has different tax, insurance, rental, strata, or maintenance realities. Sort the tax question early so the shortlist stays honest."] },
+    ],
+    checklist: ["Check the official taxable-region map", "Confirm the exact property address", "Ask a tax professional about ownership and exemption questions", "Compare carrying costs after tax questions are clear"],
+    questions: ["Is this address in a taxable region?", "Could my ownership or use change the answer?", "What other annual carrying costs should I compare with this tax question?"],
+    sources: [{ label: "BC speculation and vacancy tax", href: "https://www2.gov.bc.ca/gov/content/taxes/speculation-vacancy-tax" }, { label: "BC taxable regions", href: "https://www2.gov.bc.ca/gov/content/taxes/speculation-vacancy-tax/how-tax-works/taxable-regions" }],
+  },
+  {
+    slug: "can-you-build-expand-rural-kootenay-property",
+    category: "Due Diligence",
+    title: "Can You Build or Expand on Rural Kootenay Property?",
+    dek: "How to think about zoning, permits, servicing, ALR questions, riparian setbacks, outbuildings, and future use before buying rural land.",
+    intent: "For buyers who see future potential in acreage, waterfront, shops, cabins, studios, guest space, or a larger renovation.",
+    image: "/generated/guide-headers/building-expanding-rural-kootenay-property.webp",
+    readTime: "8 min read",
+    sections: [
+      { title: "Potential is not permission", body: ["Land can feel flexible because there is space around it, but future use depends on zoning, permits, building code, septic capacity, water, access, environmental constraints, ALR status where applicable, and local authority review.", "The phrase 'room for a shop' is not the same as permission to build one."] },
+      { title: "Waterfront and creeks add another layer", body: ["Riparian areas, floodplain questions, slope, erosion, foreshore structures, and water licences can affect where and how work is possible. These questions deserve early review on lake, creek, and river properties."] },
+      { title: "Ask before value gets priced in", body: ["If future expansion is part of the reason to buy, verify it before valuing the property as if the expansion is certain. A lawyer, local planner, building official, septic professional, surveyor, and insurer may all have a role depending on the plan."] },
+    ],
+    checklist: ["Check zoning and permitted uses", "Review ALR, riparian, floodplain, and environmental constraints where relevant", "Confirm septic, water, access, and power capacity", "Ask the local authority which permits would be required"],
+    questions: ["Can I legally do what I imagine here?", "What professional needs to verify the plan?", "What would make the project slower, more expensive, or impossible?"],
+    sources: [...permitSources, { label: "Agricultural Land Commission", href: "https://www.alc.gov.bc.ca/" }, ...waterSources, ...riskReviewSources],
+  },
+  {
+    slug: "wildfire-flood-insurance-kootenay-property",
+    category: "Due Diligence",
+    title: "Wildfire, Flood, and Insurance Questions for Kootenay Property",
+    dek: "A practical risk-review guide for rural, waterfront, forested, and second-home buyers in the Kootenays.",
+    intent: "For cautious buyers who want the setting without ignoring insurance, wildfire, flood, access, and maintenance realities.",
+    image: "/generated/guide-headers/wildfire-flood-insurance-kootenay-property.webp",
+    readTime: "7 min read",
+    sections: [
+      { title: "Beautiful settings still need risk review", body: ["Forested privacy, lake access, creeks, slopes, and rural roads are part of the Kootenay appeal. They can also affect wildfire exposure, flood questions, drainage, insurance, access, and annual maintenance.", "Risk review does not mean fear. It means understanding ownership clearly before the property becomes emotional."] },
+      { title: "Insurance should be checked early", body: ["Buyers should speak with an insurer before removing conditions, especially on rural, waterfront, older, remote, or heavily treed properties. Insurance availability, coverage, exclusions, premiums, and required mitigation can affect the real cost of ownership."] },
+      { title: "Mitigation is part of ownership", body: ["FireSmart work, roof and gutter maintenance, defensible space, drainage, snow load, driveway access, and local emergency planning can all matter. A strong showing plan asks how the property is managed in hard seasons, not only how it looks on a good day."] },
+    ],
+    checklist: ["Check wildfire and flood context", "Speak with an insurer early", "Review access, drainage, roof, trees, and emergency routes", "Ask what mitigation or maintenance the property already has"],
+    questions: ["Can this property be insured on terms I can accept?", "What wildfire, flood, drainage, or access risks should I understand?", "What annual maintenance protects the home and the value?"],
+    sources: riskReviewSources,
+  },
+
+  {
+    slug: "nelson-kootenay-home-carrying-costs",
+    category: "Buyer Guides",
+    title: "Carrying Costs for Nelson and Kootenay Lake Homes",
+    dek: "How to think about property tax, insurance, utilities, snow, lake systems, rural maintenance, and caretaker costs before buying.",
+    intent: "For second-home, relocation, waterfront, and acreage buyers who want to understand the real cost of ownership.",
+    image: "/generated/guide-headers/nelson-kootenay-home-carrying-costs.webp",
+    readTime: "7 min read",
+    sections: [
+      { title: "The mortgage is not the whole ownership cost", body: ["A Kootenay home can come with ordinary costs and property-specific costs. Property tax, utilities, insurance, maintenance, snow removal, road care, septic, water systems, docks, drainage, tree work, caretaker help, and travel can all shape the annual picture.", "This matters most for second homes, rural properties, waterfront, and homes with outbuildings or private access."] },
+      { title: "Remote ownership needs a local plan", body: ["If you are not living in the home full time, someone needs to notice small problems before they become expensive. Heat, alarms, frozen pipes, storm damage, snow load, driveway access, and insurance requirements deserve a plan."] },
+      { title: "Compare homes by annual reality", body: ["Two homes at the same purchase price can feel very different after tax, insurance, utilities, access, and maintenance. Carrying-cost clarity makes the shortlist more honest."] },
+    ],
+    checklist: ["Estimate annual property tax and utilities", "Ask about insurance before removing conditions", "Budget snow, road, dock, septic, water, tree, and caretaker costs", "Compare annual ownership costs, not only purchase price"],
+    questions: ["What does this home cost to own in a normal year?", "Who handles the property when I am away?", "Which systems are likely to need specialist maintenance?"],
+    sources: [...bcTaxSources, ...riskReviewSources, rdckSource],
+  },
+  {
+    slug: "first-time-home-buyer-nelson-bc",
+    category: "Buyer Guides",
+    title: "First-Time Home Buyer Guide for Nelson, BC",
+    dek: "A simple first step guide to pre-approval, deposits, conditions, inspections, lawyers, costs, and possession day.",
+    intent: "For first-time buyers in Nelson or the Kootenays who want the process explained clearly before they start touring.",
+    image: "/generated/guide-headers/first-time-home-buyer-nelson-bc.webp",
+    readTime: "7 min read",
+    sections: [
+      { title: "Start with readiness, not listings", body: ["A first search should begin with financing, down payment, monthly comfort, deposit access, and the type of home you can responsibly pursue. Browsing before readiness can make the process louder than it needs to be."] },
+      { title: "Understand the steps", body: ["Most buyers move through pre-approval, search, showing, offer, deposit, conditions, inspection, insurance, legal work, and possession. Each step has timing and decisions attached to it."] },
+      { title: "Ask early, not when you are rushed", body: ["The best first-time buyer questions are simple: what can I afford, what should I avoid, what costs are coming, and what should I verify before I get attached? A calm start protects the whole process."] },
+    ],
+    checklist: ["Get mortgage pre-approval", "Confirm deposit funds and closing-cost budget", "Understand subjects and timelines", "Choose a lawyer before you need one"],
+    questions: ["What can I afford without stretching too far?", "What costs come after the price?", "Which conditions protect me?"],
+    sources: [...buyerProcessSources, ...bcTaxSources],
+  },
+  {
+    slug: "buying-with-conditions-bc-real-estate",
+    category: "Buyer Guides",
+    title: "Buying With Conditions in BC Real Estate",
+    dek: "How buyers should think about financing, inspection, insurance, title, strata, septic, water, and other subjects before writing.",
+    intent: "For buyers preparing to write an offer and wanting to understand what must be verified first.",
+    image: "/generated/guide-headers/buying-with-conditions-bc-real-estate.webp",
+    readTime: "6 min read",
+    sections: [
+      { title: "Conditions should match the property", body: ["A downtown home, rural acreage, waterfront property, strata home, and older house may need different review. Conditions are not boilerplate. They should reflect what a buyer needs to verify before becoming firm."] },
+      { title: "Speed and protection both matter", body: ["A strong offer is not always the shortest offer. It is the offer that fits the property, market, seller, and buyer risk tolerance. The work is knowing what can be checked before writing and what needs a condition."] },
+      { title: "Plan professionals before the deadline", body: ["Inspectors, insurers, lawyers, lenders, septic professionals, well specialists, and strata document reviewers may all need time. The condition period should be realistic for the property."] },
+    ],
+    checklist: ["Identify must-check items before writing", "Confirm financing and insurance timing", "Match conditions to the property type", "Book professionals early"],
+    questions: ["What must be verified before I can go firm?", "Which conditions are standard and which are property-specific?", "Can any work be done before offer day?"],
+    sources: [...buyerProcessSources, ...inspectionSources, ...ltsaSources],
+  },
+  {
+    slug: "home-inspection-rural-waterfront-kootenays",
+    category: "Due Diligence",
+    title: "Home Inspection Guide for Rural and Waterfront Property",
+    dek: "What standard inspections may miss and when to bring in septic, well, roof, structural, insurance, or waterfront specialists.",
+    intent: "For buyers considering homes where systems, water, slope, access, or age make the inspection more important.",
+    image: "/generated/guide-headers/home-inspection-rural-waterfront-kootenays.webp",
+    readTime: "7 min read",
+    sections: [
+      { title: "A normal inspection may not be enough", body: ["General home inspections are useful, but rural and waterfront properties can involve extra systems and site questions. Septic, water, wells, drainage, docks, roofs, retaining walls, access, outbuildings, and insurance may need separate review."] },
+      { title: "Specialists answer specialist questions", body: ["A good inspection plan asks who is qualified to answer each risk. A home inspector, septic professional, well specialist, structural engineer, roofer, insurer, and local authority may all have different roles."] },
+      { title: "Use the inspection to decide, not negotiate blindly", body: ["Inspection findings should help the buyer understand ownership, timing, repair risk, insurance, and whether the property still fits. Not every issue is fatal, but hidden systems should not be ignored."] },
+    ],
+    checklist: ["Book a licensed home inspector", "Decide if septic, well, roof, structural, or dock review is needed", "Ask the insurer about property-specific issues", "Review inspection findings against price and ownership plans"],
+    questions: ["What does a normal inspection not cover here?", "Which systems need specialist review?", "Would any finding change my offer, insurance, or maintenance plan?"],
+    sources: [...inspectionSources, ...waterSources, ...riskReviewSources],
+  },
+  {
+    slug: "title-easements-rights-of-way-rural-bc",
+    category: "Due Diligence",
+    title: "Title, Easements, and Rights-of-Way in Rural BC",
+    dek: "A guide to shared roads, utility access, lake paths, covenants, title documents, and the legal rights that can shape rural ownership.",
+    intent: "For buyers who need to understand access and legal rights before trusting what a property appears to offer.",
+    image: "/generated/guide-headers/title-easements-rights-of-way-rural-bc.webp",
+    readTime: "7 min read",
+    sections: [
+      { title: "Physical access is not the same as legal access", body: ["A driveway, lake path, road, gate, or utility route may look simple at a showing. The title and supporting documents explain what rights and obligations actually exist."] },
+      { title: "Shared roads need clear responsibilities", body: ["If access depends on a shared road, easement, right-of-way, strata road, or informal neighbour arrangement, understand who maintains it, who pays, who plows, and what happens when repairs are needed."] },
+      { title: "Let the lawyer review the documents", body: ["Title documents, charges, covenants, easements, rights-of-way, and plans should be reviewed by a lawyer. A realtor can help identify questions early, but legal interpretation belongs with legal counsel."] },
+    ],
+    checklist: ["Order and review title documents", "Ask about easements, covenants, and rights-of-way", "Confirm road, utility, and lake-access responsibilities", "Have a lawyer review documents before going firm"],
+    questions: ["Do I have legal access to everything I expect to use?", "Who pays for shared roads or utilities?", "Are there covenants or charges that limit future use?"],
+    sources: [...ltsaSources, rdckSource],
+  },
+  {
+    slug: "alr-agricultural-land-kootenays",
+    category: "Due Diligence",
+    title: "ALR and Agricultural Land in the Kootenays",
+    dek: "What buyers should understand about Agricultural Land Reserve properties, permitted uses, restrictions, and future plans before buying acreage.",
+    intent: "For acreage buyers looking at pasture, farms, rural estates, and properties with agricultural potential or restrictions.",
+    image: "/generated/guide-headers/alr-agricultural-land-kootenays.webp",
+    readTime: "6 min read",
+    sections: [
+      { title: "ALR can affect what land can become", body: ["Agricultural Land Reserve status can shape subdivision, non-farm uses, dwellings, soil, and long-term plans. Buyers should not assume rural land can be used however they want because it is large or private."] },
+      { title: "Maps and rules come first", body: ["Before pricing future potential into a property, check whether the land is in the ALR and what local zoning also says. ALC rules and local government rules can both matter."] },
+      { title: "Farm potential and estate potential are different", body: ["Some buyers want productive land. Others want privacy and space. Those goals can overlap, but they are not the same. The ownership plan should fit the rules and the land itself."] },
+    ],
+    checklist: ["Check ALR status", "Review local zoning", "Confirm permitted dwellings, structures, and uses", "Get advice before assuming subdivision or non-farm use"],
+    questions: ["Is this property in the ALR?", "What uses are permitted?", "Could my future plan require approval?"],
+    sources: [...alrSources, ...permitSources],
+  },
+  {
+    slug: "remote-buying-kootenay-property",
+    category: "Buyer Guides",
+    title: "Remote Buying Guide for Kootenay Property",
+    dek: "How out-of-town buyers can use video, local scouting, document review, inspections, and travel timing without rushing a major decision.",
+    intent: "For Vancouver, Calgary, Ontario, US, and international buyers trying to evaluate Kootenay homes from a distance.",
+    image: "/generated/guide-headers/remote-buying-kootenay-property.webp",
+    readTime: "6 min read",
+    sections: [
+      { title: "Remote buying needs a better filter", body: ["Photos are not enough when roads, slope, sun, privacy, lake access, noise, and winter all matter. A remote buyer needs a clear scouting process before spending time and money travelling."] },
+      { title: "Video should answer practical questions", body: ["A useful remote preview should show approach, road, driveway, neighbours, grade, water access, mechanical areas, storage, internet context, and anything the listing photos avoid."] },
+      { title: "Do not compress due diligence", body: ["Distance can create pressure to move quickly. The answer is preparation: financing, lawyer, inspector, insurance, document review, and local questions lined up before the right property appears."] },
+    ],
+    checklist: ["Define must-have daily-life fit before touring remotely", "Ask for practical video, not only beauty shots", "Line up lawyer, lender, inspector, and insurer early", "Plan travel around serious contenders"],
+    questions: ["What can I trust from photos and what needs local eyes?", "Which properties deserve a trip?", "How do we keep speed without skipping review?"],
+    sources: [...buyerProcessSources, ...ltsaSources],
+  },
+  {
+    slug: "downsizing-nelson-kootenay-lake",
+    category: "Seller Guides",
+    title: "Downsizing in Nelson or Kootenay Lake",
+    dek: "A guide for owners moving from a larger home, acreage, or waterfront property into a simpler next chapter.",
+    intent: "For sellers who want less maintenance, more convenience, or a different daily rhythm without rushing the decision.",
+    image: "/generated/guide-headers/downsizing-nelson-kootenay-lake.webp",
+    readTime: "6 min read",
+    sections: [
+      { title: "Downsizing is usually about life, not square footage", body: ["Many owners are not just selling space. They are changing maintenance, stairs, snow, access, gardens, guest needs, travel, and how close they want to be to services or family."] },
+      { title: "The sale and next purchase should work together", body: ["A good plan considers timing, market preparation, where you will go next, what needs to be handled privately, and how to avoid being rushed by either side of the move."] },
+      { title: "The home still deserves a strong presentation", body: ["A long-held home, acreage, or waterfront property should be prepared with care. The story should help the next buyer understand the setting, upkeep, improvements, and daily life."] },
+    ],
+    checklist: ["Decide what daily life should get easier", "Plan sale timing and next-home timing together", "Prepare documents and maintenance history", "Choose what to handle before photography and showings"],
+    questions: ["What am I trying to simplify?", "Should I buy first, sell first, or prepare both paths?", "What will help buyers understand the value of this home?"],
+    sources: [{ label: "BC home buying and selling", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/buying-selling" }, ...localSources],
+  },
+  {
+    slug: "estate-legacy-property-sale-kootenays",
+    category: "Seller Guides",
+    title: "Selling an Estate or Legacy Property in the Kootenays",
+    dek: "How families can approach privacy, preparation, documents, timing, multiple decision-makers, and a respectful sale plan.",
+    intent: "For families handling inherited, long-held, waterfront, acreage, or emotionally important properties.",
+    image: "/generated/guide-headers/estate-legacy-property-sale-kootenays.webp",
+    readTime: "7 min read",
+    sections: [
+      { title: "Legacy sales need patience and structure", body: ["A long-held property can carry family history, deferred decisions, incomplete documents, and multiple voices. The sale plan should create clarity before the property reaches the market."] },
+      { title: "Documents reduce stress", body: ["Useful preparation can include title, surveys or plans if available, permits, maintenance records, utility information, water and septic records, rental history, and any family decisions about timing or privacy."] },
+      { title: "Presentation should respect the property", body: ["A legacy property should not be rushed into generic marketing. Buyers need to understand what is special, what needs work, and how the property could live for the next owner."] },
+    ],
+    checklist: ["Clarify decision-makers and timing", "Gather title, plans, permits, and maintenance records", "Decide privacy and showing boundaries", "Prepare the property story before pricing"],
+    questions: ["Who needs to approve decisions?", "What documents are missing?", "How do we honour the property while still selling clearly?"],
+    sources: [...ltsaSources, { label: "BC home buying and selling", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/buying-selling" }],
+  },
+  {
+    slug: "when-to-sell-waterfront-acreage-kootenays",
+    category: "Seller Guides",
+    title: "When to Sell Waterfront or Acreage in the Kootenays",
+    dek: "How seasonality, photography, lake access, snow, buyer travel, and preparation affect the timing of an important listing.",
+    intent: "For sellers deciding when to bring a waterfront, acreage, or unique Kootenay property to market.",
+    image: "/generated/guide-headers/when-to-sell-waterfront-acreage-kootenays.webp",
+    readTime: "6 min read",
+    sections: [
+      { title: "Timing should show the property honestly", body: ["Some homes photograph best when gardens, water, docks, approach, and outdoor rooms are visible. Others need winter context because access, heat, and snow are part of the ownership story."] },
+      { title: "Preparation can matter more than the month", body: ["A rushed listing in the right season can still underperform. Documents, cleanup, repairs, photography, film, pricing, and buyer targeting should be ready before launch."] },
+      { title: "Buyer travel shapes showing quality", body: ["Waterfront, acreage, and second-home buyers may need time to travel. A good sale plan respects that timing and builds enough clarity online to make showings serious."] },
+    ],
+    checklist: ["Choose the season that shows the property's strengths", "Prepare documents before photography", "Plan photography and film around weather and access", "Give serious buyers enough information to travel"],
+    questions: ["What season shows this property best?", "What should be ready before we list?", "Which buyers need time to plan a showing?"],
+    sources: [...localSources, ...riskReviewSources],
+  },
+
 ];
 
 export const guideCategories = ["Buyer Guides", "Due Diligence", "Seller Guides"] as const;
