@@ -41,6 +41,10 @@ export function ListingCompareTool({ listings }: Props) {
     });
   }
 
+  function removeSelected(slug: string) {
+    setSelected((current) => current.filter((item) => item !== slug));
+  }
+
   return (
     <section id="compare" className="tone-lake tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
       <div className="mx-auto w-full max-w-[1540px] px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14">
@@ -69,7 +73,7 @@ export function ListingCompareTool({ listings }: Props) {
                     <span>
                       <span className="block text-[13px] font-semibold leading-[1.3] text-[var(--color-text)]">{l.address}</span>
                       <span className="mt-1 block text-[11px] leading-[1.4] text-[var(--color-text-muted)]">{l.price} · {l.location || "Kootenays"}</span>
-                      <span className="mt-2 block text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-bronze)]">{on ? "Selected" : selected.length >= MAX ? "Replace oldest" : "Add"}</span>
+                      <span className="mt-2 block text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--color-bronze)]">{on ? "Remove" : selected.length >= MAX ? "Replace oldest" : "Add"}</span>
                     </span>
                   </button>
                 );
@@ -83,7 +87,15 @@ export function ListingCompareTool({ listings }: Props) {
                 <article key={l.slug} className="bg-[var(--color-bg)]">
                   <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-surface)]">
                     {l.heroPhoto && <Image src={l.heroPhoto} alt={l.address} fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(10,11,13,0.72)]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,11,13,0.2)] via-transparent to-[rgba(10,11,13,0.72)]" />
+                    <button
+                      type="button"
+                      onClick={() => removeSelected(l.slug)}
+                      className="absolute right-3 top-3 rounded-full border border-[rgba(245,239,229,0.34)] bg-[rgba(10,11,13,0.56)] px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[rgba(245,239,229,0.9)] backdrop-blur transition-colors hover:border-[var(--color-bronze-light)] hover:text-[var(--color-bronze-light)]"
+                      aria-label={`Remove ${l.address} from compare`}
+                    >
+                      Remove
+                    </button>
                     <p className="absolute bottom-4 left-4 m-0 font-serif text-[24px] italic text-[var(--color-text)]">{l.price}</p>
                   </div>
                   <div className="p-6">
