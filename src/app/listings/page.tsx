@@ -5,10 +5,13 @@ import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { ListingCompareTool } from "@/components/listing/ListingCompareTool";
 import { allListings, lukesOwnListings, luxuryListings, sortByPriceDesc } from "@/lib/listings";
-import { brandImages } from "@/lib/data";
+import { brandImages, facebookReviews, facebookReviewsUrl } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Nelson BC Real Estate Listings & Homes for Sale",
@@ -60,6 +63,25 @@ export default function ListingsIndexPage() {
       <section className="tone-office tonal-section pb-24 pt-10 md:pt-12">
         <Container>
           <ListingsBrowser listings={sortByPriceDesc(allListings)} />
+        </Container>
+      </section>
+
+      <section className="tone-walnut tonal-section border-t border-[var(--color-line)] py-20 md:py-24">
+        <Container>
+          <Reveal className="grid grid-cols-1 gap-8 border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-8 shadow-[0_32px_90px_-68px_rgba(0,0,0,0.9)] md:grid-cols-[1fr_auto] md:items-center md:p-10">
+            <div>
+              <Eyebrow>Buyer Confidence</Eyebrow>
+              <blockquote className="m-0 mt-5 max-w-[880px] font-serif text-[24px] font-light leading-[1.45] tracking-[-0.005em] text-[var(--color-text)] sm:text-[30px]">
+                &ldquo;{facebookReviews[12].quote}&rdquo;
+              </blockquote>
+              <p className="m-0 mt-5 text-[12px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                {facebookReviews[12].context}
+              </p>
+            </div>
+            <Button href={facebookReviewsUrl} variant="ghost" size="md" arrow>
+              Read Reviews
+            </Button>
+          </Reveal>
         </Container>
       </section>
 

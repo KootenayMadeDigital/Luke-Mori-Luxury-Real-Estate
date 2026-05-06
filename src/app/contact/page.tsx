@@ -5,9 +5,10 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 import { ConsultForm } from "@/components/forms/ConsultForm";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
-import { headerImages, contact } from "@/lib/data";
+import { headerImages, contact, facebookReviews, facebookReviewsUrl } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Contact · Nelson BC Realtor",
@@ -124,7 +125,25 @@ export default function ContactPage() {
             </div>
 
             <Reveal delay={300}>
-              <ConsultForm />
+              <div className="space-y-6">
+                <div className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.6)] sm:p-8">
+                  <p className="m-0 mb-5 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
+                    Before You Reach Out
+                  </p>
+                  <blockquote className="m-0 font-serif text-[24px] font-light leading-[1.4] tracking-[-0.005em] text-[var(--color-text)] sm:text-[28px]">
+                    &ldquo;{facebookReviews[10].quote}&rdquo;
+                  </blockquote>
+                  <div className="mt-6 flex flex-col gap-4 border-t border-[var(--color-line)] pt-5 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+                      Public client review
+                    </span>
+                    <Button href={facebookReviewsUrl} variant="ghost" size="md" arrow>
+                      Read Reviews
+                    </Button>
+                  </div>
+                </div>
+                <ConsultForm />
+              </div>
             </Reveal>
           </div>
         </Container>
