@@ -8,6 +8,7 @@ const staticRoutes = [
   "",
   "/about",
   "/buyers",
+  "/buyers/area-fit-quiz",
   "/buyers/relocation",
   "/buyers/international",
   "/contact",

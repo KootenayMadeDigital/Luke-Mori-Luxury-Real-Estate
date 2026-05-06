@@ -18,6 +18,7 @@ const navGroups: NavGroup[] = [
     href: "/buyers",
     items: [
       { label: "For Buyers", href: "/buyers", description: "Listings, daily-life fit, and fewer wrong tours." },
+      { label: "Area Fit Quiz", href: "/buyers/area-fit-quiz", description: "Find the Kootenay buyer path before touring." },
       { label: "For Sellers", href: "/sellers", description: "Pricing, sale plan, serious showings, and privacy." },
       { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
       { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." }
@@ -38,6 +39,7 @@ const navGroups: NavGroup[] = [
     href: "/listings",
     items: [
       { label: "All Active Listings", href: "/listings", description: "The current market, easier to compare." },
+      { label: "Compare Listings", href: "/listings#compare", description: "Build a shortlist before asking Luke." },
       { label: "Luxury Listings", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
       { label: "Waterfront Listings", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },
       { label: "Acreage", href: "/listings/acreage", description: "Rural homes, land parcels, and larger holdings." },

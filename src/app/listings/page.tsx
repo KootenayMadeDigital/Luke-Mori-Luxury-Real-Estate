@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { Container } from "@/components/ui/Container";
 import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
+import { ListingCompareTool } from "@/components/listing/ListingCompareTool";
 import { allListings, lukesOwnListings, luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { brandImages } from "@/lib/data";
 
@@ -53,6 +54,8 @@ export default function ListingsIndexPage() {
         terms={["nelson bc real estate", "nelson bc homes for sale", "nelson bc mls listings"]}
         tone="ivory"
       />
+
+      <ListingCompareTool listings={sortByPriceDesc(allListings).slice(0, 80)} />
 
       <section className="tone-office tonal-section pb-24 pt-10 md:pt-12">
         <Container>

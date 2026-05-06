@@ -6,6 +6,7 @@ import { ProcessSteps } from "@/components/layout/ProcessSteps";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
 import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { SellerSection } from "@/components/sections/SellerSection";
+import { SellerReadinessChecklist } from "@/components/conversion/SellerReadinessChecklist";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -94,6 +95,8 @@ export default function SellersPage() {
           </div>
         </Container>
       </section>
+
+      <SellerReadinessChecklist />
 
       <ProcessSteps
         eyebrow="The Seller Process"
