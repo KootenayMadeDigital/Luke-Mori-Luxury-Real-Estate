@@ -19,7 +19,7 @@ export const metadata = buildPageMetadata({
   description:
     "Kootenay Lake waterfront real estate guide for Nelson BC buyers comparing lakefront homes, North Shore settings, Balfour, Procter, shoreline access, docks, sun, and resale questions.",
   path: "/kootenay-lake-waterfront-real-estate",
-  image: "/og/listings-waterfront.png",
+  image: "/og/kootenay-lake-waterfront.png",
 });
 
 const questions = [

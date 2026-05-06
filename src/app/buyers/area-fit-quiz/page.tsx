@@ -14,7 +14,7 @@ export const metadata = buildPageMetadata({
   description:
     "A simple Nelson BC and Kootenay Lake real estate quiz that matches lifestyle answers with Nelson, North Shore, Balfour, Blewett, Slocan Valley, or Kaslo.",
   path: "/buyers/area-fit-quiz",
-  image: "/og/relocation.png",
+  image: "/og/area-fit-quiz.png",
 });
 
 export default function AreaFitQuizPage() {
