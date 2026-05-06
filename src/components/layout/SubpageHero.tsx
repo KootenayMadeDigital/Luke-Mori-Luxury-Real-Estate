@@ -23,7 +23,7 @@ type Props = {
 export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, meta, imageTreatment = "standard", imageClassName = "" }: Props) {
   const showcase = imageTreatment === "showcase";
   return (
-    <section className="tone-dark tonal-section min-h-[100svh] overflow-hidden border-b border-[var(--color-line)] pb-10 pt-36 sm:min-h-0 sm:pb-20 sm:pt-32 md:pb-28 md:pt-40">
+    <section className="tone-dark tonal-section min-h-[100svh] overflow-hidden border-b border-[var(--color-line)] pb-10 pt-36 [--tone-grain-opacity:0] sm:min-h-0 sm:pb-20 sm:pt-32 md:pb-28 md:pt-40">
       {image && (
         <div className="absolute inset-0 z-0" aria-hidden>
           <Image
