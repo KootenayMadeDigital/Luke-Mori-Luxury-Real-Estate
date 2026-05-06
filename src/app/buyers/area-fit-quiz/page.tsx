@@ -24,14 +24,14 @@ export default function AreaFitQuizPage() {
         eyebrow="Area Fit Quiz"
         title="Find the Kootenay path"
         emphasis="that fits the life."
-        lede="Answer plain lifestyle questions about daily routine, water, space, winter, services, and quiet. Then see which Nelson-area community best fits the way you want to live."
+        lede="Answer plain lifestyle questions about daily routine, water, space, winter, services, social pace, future plans, and quiet. Then see which Nelson-area community best fits the way you want to live."
         image={headerImages.nelsonLandscape}
         imageTreatment="showcase"
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers", href: "/buyers" }, { label: "Area Fit Quiz" }]}
         meta={[
           { value: "6", label: "Area Matches" },
           { value: "Local", label: "Area Fit" },
-          { value: "Fast", label: "First Read" },
+          { value: "8", label: "Questions" },
           { value: "Luke", label: "Next Step" },
         ]}
       />
@@ -43,7 +43,7 @@ export default function AreaFitQuizPage() {
               <Eyebrow>Lifestyle Match</Eyebrow>
               <SectionHeading className="mt-7">Answer the easy questions,<br /><em className="font-light not-italic italic text-[var(--color-bronze-light)]">then test the fit.</em></SectionHeading>
             </div>
-            <SectionLede align="right">The quiz does not replace a local conversation. It gives buyers a cleaner area match so Luke can help compare the right places and avoid the wrong showings.</SectionLede>
+            <SectionLede align="right">The quiz does not replace a local conversation. It gives buyers a sharper area match, explains why it fits, and shows what to watch before planning the first scouting route.</SectionLede>
           </Reveal>
           <BuyerFitQuiz />
         </Container>

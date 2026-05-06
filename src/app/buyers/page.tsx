@@ -102,7 +102,7 @@ export default function BuyersPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Answer simple lifestyle questions about daily rhythm, water, space, winter, services, and quiet. The result points buyers toward the Nelson-area fit that deserves the first scouting day.
+              Answer simple lifestyle questions about daily rhythm, water, space, winter, services, social pace, future plans, and quiet. The result points buyers toward the Nelson-area fit that deserves the first scouting day.
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />

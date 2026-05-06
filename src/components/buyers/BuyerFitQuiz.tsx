@@ -144,9 +144,31 @@ const questions: Question[] = [
     ],
   },
   {
-    eyebrow: "Identity",
+    eyebrow: "People",
+    title: "How much community do you want around you?",
+    helper: "Some buyers want familiar faces nearby. Others want space first and social life when they choose it.",
+    options: [
+      { label: "I want to bump into people, know the town, and feel connected quickly.", note: "Community close by.", scores: { nelson: 5, kaslo: 2 } },
+      { label: "I like neighbours, but I want home to feel quiet.", note: "Social when chosen.", scores: { "north-shore": 4, balfour: 3, blewett: 2 } },
+      { label: "I want privacy most days, with community available when I want it.", note: "Privacy first.", scores: { blewett: 4, "slocan-valley": 4, kaslo: 2 } },
+      { label: "I want a small-place feel, not a busy town feel.", note: "Village pace.", scores: { kaslo: 5, balfour: 3, "slocan-valley": 3 } },
+    ],
+  },
+  {
+    eyebrow: "Future Plans",
+    title: "What might change in the next few years?",
+    helper: "The best fit should handle the life you are planning, not just the life you have today.",
+    options: [
+      { label: "Schools, work, services, or aging parents may matter more over time.", note: "Future convenience.", scores: { nelson: 5, "north-shore": 2 } },
+      { label: "I may want guests, a second-home setup, or easier lock-and-leave ownership.", note: "Flexible retreat use.", scores: { balfour: 4, "north-shore": 4, kaslo: 2 } },
+      { label: "I may want gardens, animals, a shop, a studio, or room to expand.", note: "Room to grow.", scores: { blewett: 5, "slocan-valley": 4 } },
+      { label: "I want something quieter and more permanent, even if it is less convenient.", note: "Long-term quiet.", scores: { kaslo: 4, "slocan-valley": 4, balfour: 2 } },
+    ],
+  },
+  {
+    eyebrow: "Gut Check",
     title: "Which sentence sounds most like you?",
-    helper: "This usually reveals the area faster than a price range does.",
+    helper: "This last question catches the emotional fit after the practical answers.",
     options: [
       { label: "I want to feel part of Nelson life.", note: "Community and town rhythm.", scores: { nelson: 5 } },
       { label: "I want a beautiful private base near Nelson.", note: "Privacy with access.", scores: { "north-shore": 5, blewett: 2 } },
@@ -175,10 +197,18 @@ export function BuyerFitQuiz() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>(Array(questions.length).fill(-1));
   const complete = answers.every((answer) => answer >= 0);
+  const answeredCount = answers.filter((answer) => answer >= 0).length;
   const current = questions[step];
   const ranked = useMemo(() => rankAreas(answers), [answers]);
   const top = ranked[0];
-  const progress = Math.round((answers.filter((answer) => answer >= 0).length / questions.length) * 100);
+  const runnerUp = ranked[1];
+  const progress = Math.round((answeredCount / questions.length) * 100);
+  const topGap = top.score - (runnerUp?.score ?? 0);
+  const confidence = complete ? (topGap >= 8 ? "Strong fit" : topGap >= 4 ? "Good fit" : "Close call") : "Still learning";
+  const selectedSignals = answers
+    .map((answer, index) => answer >= 0 ? questions[index]?.options[answer]?.note : undefined)
+    .filter(Boolean)
+    .slice(-5) as string[];
 
   function choose(optionIndex: number) {
     setAnswers((currentAnswers) => currentAnswers.map((answer, index) => (index === step ? optionIndex : answer)));
@@ -241,9 +271,23 @@ export function BuyerFitQuiz() {
         </div>
 
         <div className="bg-[var(--color-bg-2)] p-6 sm:p-8 lg:p-10 xl:p-12">
-          <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">Best Match</p>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">Best Match</p>
+            <span className="rounded-full border border-[var(--color-line-strong)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)]">{confidence}</span>
+          </div>
           <h3 className="m-0 mt-5 font-serif text-[44px] font-light leading-[1.02] tracking-[-0.015em] text-[var(--color-text)] sm:text-[68px]">{top.area.name}</h3>
           <p className="m-0 mt-5 max-w-[760px] text-[17px] leading-[1.78] text-[var(--color-text-muted)]">{complete ? top.area.plainAnswer : "Answer the lifestyle questions and the match will sharpen as you go. The result is directional, not a substitute for a local conversation."}</p>
+
+          {selectedSignals.length > 0 && (
+            <div className="mt-7 border border-[var(--color-line)] bg-[var(--color-bg)] p-5">
+              <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Signals you gave us</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {selectedSignals.map((signal) => (
+                  <span key={signal} className="rounded-full border border-[var(--color-line-strong)] px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-text-muted)]">{signal}</span>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-8 grid gap-3">
             {ranked.slice(0, 4).map((match, index) => (
