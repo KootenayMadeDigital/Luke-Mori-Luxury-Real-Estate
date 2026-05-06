@@ -23,11 +23,10 @@ export function HeroVideo() {
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
     const saveData = Boolean(connection?.saveData);
     const slowConnection = connection?.effectiveType === "slow-2g" || connection?.effectiveType === "2g";
-    const desktopWidth = window.matchMedia("(min-width: 768px)").matches;
 
     const frame = window.requestAnimationFrame(() => {
       setShouldUsePoster(reduceMotion || saveData || slowConnection);
-      setShouldLoadFullVideo(desktopWidth && !reduceMotion && !saveData && !slowConnection);
+      setShouldLoadFullVideo(!reduceMotion && !saveData && !slowConnection);
     });
 
     return () => window.cancelAnimationFrame(frame);
