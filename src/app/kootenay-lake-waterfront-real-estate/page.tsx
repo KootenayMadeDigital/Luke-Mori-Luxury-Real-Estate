@@ -5,6 +5,7 @@ import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -192,6 +193,18 @@ export default function KootenayLakeWaterfrontPage() {
           <ListingsBrowser listings={listings} initialFilter="all" initialSort="price-desc" filterMode="waterfront" />
         </Container>
       </section>
+
+      <GuideLinkPanel
+        eyebrow="Waterfront Guide Path"
+        title="Understand the lake before the offer."
+        lede="Kootenay Lake value depends on rights, shoreline, access, insurance, systems, second-home use, and how the setting works outside summer."
+        tone="ivory"
+        links={[
+          { title: "Buying Kootenay Lake waterfront", body: "A buyer guide to shoreline access, water rights, docks, services, and showing questions.", href: "/guides/buying-kootenay-lake-waterfront-property" },
+          { title: "Kootenay Lake market guide", body: "How to read lakefront, lake access, view, acreage, and town properties as separate markets.", href: "/guides/kootenay-lake-real-estate-market-guide" },
+          { title: "Selling waterfront property", body: "For owners preparing shoreline, access, systems, documents, privacy, and buyer questions.", href: "/guides/selling-waterfront-property-kootenay-lake" },
+        ]}
+      />
 
       <InquiryCTA
         eyebrow="Waterfront Buyer Call"

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { nelsonAreas } from "@/lib/data";
+import { buyerGuides } from "@/lib/guides";
 import { allListings, isLukesOwn } from "@/lib/listings";
 import { siteUrl } from "@/lib/seo";
 
@@ -11,9 +12,11 @@ const staticRoutes = [
   "/buyers/international",
   "/contact",
   "/faq",
+  "/guides",
   "/listings",
   "/listings/luxury",
   "/listings/waterfront",
+  "/listings/acreage",
   "/listings/sold",
   "/kootenay-lake-waterfront-real-estate",
   "/nelson",
@@ -36,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.82,
+    } as const)),
+    ...buyerGuides.map((guide) => ({
+      url: `${siteUrl}/guides/${guide.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: guide.slug.includes("nelson") || guide.slug.includes("kootenay-lake") ? 0.84 : 0.78,
     } as const)),
     ...allListings.map((listing) => ({
       url: `${siteUrl}/listings/${listing.slug}`,

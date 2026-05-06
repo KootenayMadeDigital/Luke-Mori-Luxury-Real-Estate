@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -205,6 +206,18 @@ export default function RelocationPage() {
 
         </Container>
       </section>
+
+      <GuideLinkPanel
+        eyebrow="Relocation Guide Path"
+        title="Choose the area before the address."
+        lede="Relocation buyers need a plain read on neighbourhoods, daily routine, costs, winter, and whether the property still works after the first beautiful weekend."
+        tone="office"
+        links={[
+          { title: "Moving to Nelson", body: "A practical relocation guide for daily life, services, seasons, and the first scouting visit.", href: "/guides/moving-to-nelson-bc" },
+          { title: "Best areas to live in Nelson", body: "Compare town, lake, acreage, and nearby communities by the life they support.", href: "/guides/best-areas-to-live-nelson-bc" },
+          { title: "Second homes in the Kootenays", body: "Caretaker plans, winterization, insurance, guests, and remote ownership questions.", href: "/guides/buying-second-home-kootenays" },
+        ]}
+      />
 
       <InquiryCTA
         eyebrow="Relocation Inquiry"

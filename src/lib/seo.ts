@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { brandImages, contact } from "@/lib/data";
+import type { BuyerGuide } from "@/lib/guides";
 import type { Listing } from "@/lib/listings";
 
 export const siteUrl = "https://luke-mori-luxury-real-estate.vercel.app";
@@ -252,6 +253,49 @@ export function buildPageGraphJsonLd({
     "@graph": [
       buildWebPageJsonLd({ path, title, description, image, breadcrumbs }),
       buildBreadcrumbJsonLd(breadcrumbs, path),
+    ],
+  };
+}
+
+export function buildGuideJsonLd(guide: BuyerGuide) {
+  const path = `/guides/${guide.slug}`;
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Guides", path: "/guides" },
+    { name: guide.title, path },
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildWebPageJsonLd({ path, title: guide.title, description: guide.dek, image: guide.image, breadcrumbs }),
+      buildBreadcrumbJsonLd(breadcrumbs, path),
+      cleanUndefined({
+        "@type": "Article",
+        "@id": `${absoluteUrl(path)}#article`,
+        headline: guide.title,
+        description: guide.dek,
+        image: absoluteUrl(guide.image),
+        mainEntityOfPage: { "@id": `${absoluteUrl(path)}#webpage` },
+        author: { "@id": absoluteUrl("/#agent") },
+        publisher: { "@id": absoluteUrl("/#agent") },
+        articleSection: guide.category,
+        inLanguage: "en-CA",
+        about: guide.intent,
+        mentions: guide.sources.map((source) => source.label),
+      }),
+      {
+        "@type": "FAQPage",
+        "@id": `${absoluteUrl(path)}#questions`,
+        mainEntity: guide.questions.map((question) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Luke can help frame this question for the specific property, then the right lawyer, inspector, insurer, lender, tax professional, or local authority should confirm the final answer where needed.",
+          },
+        })),
+      },
     ],
   };
 }

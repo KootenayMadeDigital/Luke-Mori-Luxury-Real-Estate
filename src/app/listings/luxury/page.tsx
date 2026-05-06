@@ -4,6 +4,7 @@ import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -135,6 +136,18 @@ export default function LuxuryListingsPage() {
           <ListingsBrowser listings={luxe} filterMode="luxury" />
         </Container>
       </section>
+
+      <GuideLinkPanel
+        eyebrow="Luxury Guide Path"
+        title="Important homes need better questions."
+        lede="For Nelson luxury homes, the real review is setting, proof of value, access, systems, privacy, and resale confidence."
+        tone="ivory"
+        links={[
+          { title: "Nelson BC luxury homes guide", body: "What makes an important Nelson home valuable beyond finish level.", href: "/guides/nelson-bc-luxury-homes-guide" },
+          { title: "Offer strategy", body: "How serious buyers should handle timing, conditions, evidence, and negotiation.", href: "/guides/offer-strategy-luxury-homes-nelson-kootenay-lake" },
+          { title: "Market guide", body: "How to read the Kootenay Lake market without relying on stale averages.", href: "/guides/kootenay-lake-real-estate-market-guide" },
+        ]}
+      />
 
       <InquiryCTA
         eyebrow="Buyer Inquiry"

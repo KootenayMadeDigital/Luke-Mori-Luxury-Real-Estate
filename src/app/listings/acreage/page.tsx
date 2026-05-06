@@ -4,6 +4,7 @@ import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -114,6 +115,17 @@ export default function AcreageListingsPage() {
           <ListingsBrowser listings={acreage} initialFilter="all" initialSort="price-desc" filterMode="acreage" />
         </Container>
       </section>
+
+      <GuideLinkPanel
+        eyebrow="Acreage Guide Path"
+        title="Land needs a careful look."
+        lede="Acreage buyers need to understand usable land, access, water, septic, title, permits, and long-term maintenance before the offer feels urgent."
+        links={[
+          { title: "Buying acreage in the Kootenays", body: "How to review usable land, privacy, services, slope, and future use.", href: "/guides/buying-acreage-in-the-kootenays" },
+          { title: "Title and easements", body: "Shared roads, rights-of-way, covenants, and legal access before going firm.", href: "/guides/title-easements-rights-of-way-rural-bc" },
+          { title: "Build or expand", body: "Zoning, permits, water, septic, ALR, and future-use questions for rural property.", href: "/guides/can-you-build-expand-rural-kootenay-property" },
+        ]}
+      />
 
       <InquiryCTA
         eyebrow="Acreage Inquiry"

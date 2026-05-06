@@ -5,6 +5,7 @@ import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ProcessSteps } from "@/components/layout/ProcessSteps";
 import { BuyerFitQuiz } from "@/components/buyers/BuyerFitQuiz";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -215,6 +216,19 @@ export default function BuyersPage() {
           </div>
         </Container>
       </section>
+
+      <GuideLinkPanel
+        eyebrow="Buyer Guide Path"
+        title="Start with the questions that narrow the search."
+        lede="Use these guides to compare areas, costs, property types, and offer questions before the showing schedule gets crowded."
+        tone="ivory"
+        links={[
+          { title: "Best areas to live in Nelson", body: "Compare Nelson neighbourhoods and nearby communities by daily life, access, and winter routine.", href: "/guides/best-areas-to-live-nelson-bc" },
+          { title: "Kootenay Lake market guide", body: "Read the market by property type, current competition, and real comparison sets.", href: "/guides/kootenay-lake-real-estate-market-guide" },
+          { title: "Closing costs and transfer tax", body: "Plan property transfer tax, deposits, legal costs, adjustments, and other purchase costs.", href: "/guides/bc-property-transfer-tax-closing-costs-kootenay-buyers" },
+        ]}
+      />
+
 
       <InquiryCTA
         eyebrow="Buyer Inquiry"

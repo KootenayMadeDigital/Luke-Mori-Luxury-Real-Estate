@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -217,6 +218,18 @@ export default function NelsonHubPage() {
           </div>
         </Container>
       </section>
+
+      <GuideLinkPanel
+        eyebrow="Nelson Guide Path"
+        title="Narrow the area before the shortlist."
+        lede="Nelson searches get cleaner when buyers understand the difference between walkability, lake access, privacy, acreage, slope, sun, and winter routine."
+        tone="ivory"
+        links={[
+          { title: "Best areas to live in Nelson", body: "A plain comparison of Nelson neighbourhoods and nearby Kootenay communities.", href: "/guides/best-areas-to-live-nelson-bc" },
+          { title: "Nelson BC luxury homes", body: "What makes an important Nelson home valuable beyond finish level.", href: "/guides/nelson-bc-luxury-homes-guide" },
+          { title: "Moving to Nelson", body: "Relocation questions around winter, schools, healthcare, services, and daily rhythm.", href: "/guides/moving-to-nelson-bc" },
+        ]}
+      />
 
       <InquiryCTA
         eyebrow="Local Knowledge"

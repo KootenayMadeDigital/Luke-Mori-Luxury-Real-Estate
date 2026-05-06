@@ -4,6 +4,7 @@ import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { ListingsBrowser } from "@/components/listing/ListingsBrowser";
 import { waterfrontListings, sortByPriceDesc } from "@/lib/listings";
@@ -54,6 +55,18 @@ export default function WaterfrontPage() {
         answer="The strongest Nelson waterfront searches usually begin on Kootenay Lake's West Arm, the Highway 3A North Shore corridor, Balfour, Procter, Harrop, and select riverfront or Slocan Valley properties. Before paying more for waterfront, buyers should compare shoreline access, dock questions, road noise, sun, privacy, winter use, and resale confidence."
         terms={["nelson bc waterfront real estate", "kootenay lake waterfront property", "lakefront homes for sale"]}
         tone="lake"
+      />
+
+      <GuideLinkPanel
+        eyebrow="Waterfront Guide Path"
+        title="Check the water before you chase the view."
+        lede="Waterfront value depends on access, rights, shoreline, insurance, systems, and daily use. These guides keep that review close to the listings."
+        tone="ivory"
+        links={[
+          { title: "Buying Kootenay Lake waterfront", body: "What to confirm about shoreline, docks, water, septic, access, and insurance before writing.", href: "/guides/buying-kootenay-lake-waterfront-property" },
+          { title: "Waterfront vs. lake access", body: "A clear comparison of private shoreline, shared access, and view-only properties.", href: "/guides/kootenay-lake-waterfront-vs-lake-access" },
+          { title: "Wildfire, flood, and insurance", body: "The risk questions that matter most for rural and waterfront Kootenay homes.", href: "/guides/wildfire-flood-insurance-kootenay-property" },
+        ]}
       />
 
       <section className="tone-ivory tonal-section pb-24 pt-10 md:pt-12">

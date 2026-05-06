@@ -4,6 +4,7 @@ import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ProcessSteps } from "@/components/layout/ProcessSteps";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { SellerSection } from "@/components/sections/SellerSection";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -142,6 +143,17 @@ export default function SellersPage() {
           </div>
         </Container>
       </section>
+
+      <GuideLinkPanel
+        eyebrow="Seller Guide Path"
+        title="Prepare the sale before the market judges it."
+        lede="These guides help owners of important Nelson, Kootenay Lake, waterfront, acreage, and long-held homes plan pricing, preparation, privacy, and buyer questions."
+        links={[
+          { title: "Selling a luxury home in Nelson", body: "How to prepare, price, explain, and protect the sale of an important home.", href: "/guides/selling-luxury-home-nelson-bc" },
+          { title: "Selling waterfront property", body: "How to prepare shoreline, access, systems, documents, and buyer questions.", href: "/guides/selling-waterfront-property-kootenay-lake" },
+          { title: "Pricing a unique property", body: "Why waterfront, acreage, view, and legacy homes need more than ordinary comparables.", href: "/guides/pricing-unique-kootenay-property" },
+        ]}
+      />
 
       <InquiryCTA
         eyebrow="Seller Strategy Call"

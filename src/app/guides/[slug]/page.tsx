@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildGuideJsonLd, buildPageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
@@ -30,6 +31,7 @@ export default async function BuyerGuidePage({ params }: { params: Promise<{ slu
 
   return (
     <PageLayout>
+      <JsonLd data={buildGuideJsonLd(guide)} />
       <SubpageHero eyebrow={guide.category} title={guide.title} lede={guide.dek} image={guide.image} crumbs={[{ label: "Home", href: "/" }, { label: "Guides", href: "/guides" }, { label: guide.title }]} meta={[{ value: guide.readTime.replace(" read", ""), label: "Read Time" }, { value: "BC", label: "Context" }, { value: "Sources", label: "Links" }, { value: "Local", label: "Next Step" }]} />
 
       <section className="tone-ivory tonal-section py-24 md:py-28">
@@ -39,6 +41,10 @@ export default async function BuyerGuidePage({ params }: { params: Promise<{ slu
               <aside className="sticky top-32 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
                 <Eyebrow>Who this helps</Eyebrow>
                 <p className="m-0 mt-6 font-serif text-[28px] font-light leading-[1.18] text-[var(--color-text)]">{guide.intent}</p>
+                <div className="mt-8 border-t border-[var(--color-line)] pt-6">
+                  <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">Plain answer</p>
+                  <p className="m-0 mt-3 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{guide.sections[0]?.body[0] ?? guide.dek}</p>
+                </div>
                 <div className="mt-8 border-t border-[var(--color-line)] pt-6">
                   <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">Confirm locally</p>
                   <p className="m-0 mt-3 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">This is general information. Property facts, taxes, approvals, insurance, title, zoning, and legal rights should be confirmed with the right professional or authority.</p>
