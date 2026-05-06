@@ -13,10 +13,11 @@ export function Hero() {
         <HeroVideo />
         <div className="absolute inset-0 bg-[rgba(10,11,13,0.05)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(212,184,150,0.11),transparent_27%),radial-gradient(circle_at_82%_36%,rgba(255,255,255,0.05),transparent_24%),linear-gradient(90deg,rgba(10,11,13,0.78)_0%,rgba(10,11,13,0.25)_44%,rgba(10,11,13,0.66)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.36)_0%,rgba(10,11,13,0)_42%,rgba(10,11,13,0.68)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.42)_0%,rgba(10,11,13,0.08)_35%,rgba(10,11,13,0.78)_100%)] sm:bg-[linear-gradient(180deg,rgba(10,11,13,0.36)_0%,rgba(10,11,13,0)_42%,rgba(10,11,13,0.68)_100%)]" />
+        <div className="absolute inset-x-0 top-[30%] h-[36%] bg-[radial-gradient(ellipse_at_18%_45%,rgba(5,6,7,0.62),rgba(5,6,7,0.34)_38%,transparent_72%)] blur-[2px] sm:hidden" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1320px] translate-y-[clamp(54px,7svh,76px)] grid-cols-1 items-start gap-10 px-5 sm:translate-y-0 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1320px] translate-y-[clamp(70px,8.2svh,92px)] grid-cols-1 items-start gap-10 px-5 sm:translate-y-0 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
         <div>
           <Reveal className="is-in">
             <h1 className="m-0 max-w-[11.5ch] font-serif font-light leading-[0.92] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(43px,8.6vw,132px)] sm:max-w-[12.5ch] sm:[font-size:clamp(50px,8.6vw,132px)]">
@@ -29,13 +30,13 @@ export function Hero() {
           </Reveal>
 
           <Reveal className="is-in" delay={180}>
-            <p className="m-0 mt-5 max-w-[560px] font-light leading-[1.6] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7 sm:leading-[1.68]">
+            <p className="m-0 mt-7 max-w-[560px] font-light leading-[1.62] text-[rgba(245,239,229,0.9)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.95)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7 sm:leading-[1.68]">
               Buy or sell around Nelson and Kootenay Lake with clear local guidance from day one.
             </p>
           </Reveal>
 
           <Reveal className="is-in" delay={260}>
-            <ul className="mt-5 grid max-w-[620px] grid-cols-3 gap-2 border-y border-[var(--color-line)] py-3 sm:mt-7 sm:py-4 lg:hidden">
+            <ul className="mt-6 grid max-w-[620px] grid-cols-3 gap-2 border-y border-[rgba(212,184,150,0.18)] bg-[rgba(5,6,7,0.12)] py-3.5 sm:mt-7 sm:bg-transparent sm:py-4 lg:hidden">
               {heroProofSignals.map((signal) => (
                 <li key={signal.label} className="min-w-0">
                   <span className="block font-serif text-[18px] font-light leading-none text-[var(--color-bronze-light)] sm:text-[20px]">
