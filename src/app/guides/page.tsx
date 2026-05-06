@@ -117,21 +117,26 @@ export default function BuyerGuidesPage() {
 
           <Reveal className="mb-16 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
             {guidePathways.map((pathway) => (
-              <div key={pathway.title} className="luxury-card flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-7 sm:p-8">
+              <div key={pathway.title} className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-surface)] sm:p-8">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{pathway.eyebrow}</span>
                 <h2 className="m-0 mt-5 font-serif text-[30px] font-light leading-[1.08] text-[var(--color-text)]">{pathway.title}</h2>
                 <p className="m-0 mt-5 flex-1 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">{pathway.body}</p>
-                <Link href={pathway.href} className="mt-7 inline-flex text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Start here</Link>
+                <Link href={pathway.href} className="mt-7 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                  Start here
+                  <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
+                    <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
+                  </svg>
+                </Link>
                 <div className="mt-5 flex flex-wrap gap-2 border-t border-[var(--color-line)] pt-5">
                   {pathway.links.map((link) => (
-                    <Link key={link.href} href={link.href} className="rounded-full border border-[var(--color-line)] px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze)]">{link.label}</Link>
+                    <Link key={link.href} href={link.href} className="luxury-button rounded-full border border-[var(--color-line)] px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze)]">{link.label}</Link>
                   ))}
                 </div>
               </div>
             ))}
           </Reveal>
 
-          <Reveal className="mb-16 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-9">
+          <Reveal className="luxury-card group mb-16 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-9">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-start">
               <div>
                 <Eyebrow>Common Searches</Eyebrow>
@@ -139,7 +144,7 @@ export default function BuyerGuidesPage() {
               </div>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {priorityGuideLinks.map((guide) => (
-                  <Link key={guide.slug} href={`/guides/${guide.slug}`} className="group border border-[var(--color-line)] bg-[var(--color-bg)] p-5 transition-colors hover:border-[var(--color-bronze)]">
+                  <Link key={guide.slug} href={`/guides/${guide.slug}`} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-bg)] p-5 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)]">
                     <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">{guide.category}</span>
                     <h3 className="m-0 mt-3 text-[16px] font-semibold leading-[1.35] text-[var(--color-text)]">{guide.title}</h3>
                     <p className="m-0 mt-3 text-[13px] leading-[1.65] text-[var(--color-text-muted)]">{guide.dek}</p>
@@ -166,11 +171,16 @@ export default function BuyerGuidesPage() {
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                     {guides.map((guide, index) => (
                       <Reveal key={guide.slug} delay={index * 60}>
-                        <Link href={`/guides/${guide.slug}`} className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-7 transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)] sm:p-8">
+                        <Link href={`/guides/${guide.slug}`} className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)] sm:p-8">
                           <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{guide.readTime}</span>
                           <h3 className="m-0 font-serif text-[30px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)]">{guide.title}</h3>
                           <p className="m-0 mt-5 flex-1 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">{guide.dek}</p>
-                          <span className="mt-7 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Read this guide</span>
+                          <span className="mt-7 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                            Read this guide
+                            <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
+                              <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
+                            </svg>
+                          </span>
                         </Link>
                       </Reveal>
                     ))}

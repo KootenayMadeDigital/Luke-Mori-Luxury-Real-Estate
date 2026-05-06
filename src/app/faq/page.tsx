@@ -51,7 +51,7 @@ export default function FaqPage() {
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr] lg:gap-14">
             <Reveal>
-              <aside className="sticky top-32 hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 lg:block">
+              <aside className="luxury-card group sticky top-32 hidden rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] lg:block">
                 <div className="mb-5 text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
                   Categories
                 </div>
@@ -60,7 +60,7 @@ export default function FaqPage() {
                     <a
                       key={category}
                       href={`#${categoryId(category)}`}
-                      className="rounded-full border border-[var(--color-line)] px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background] duration-500 hover:border-[var(--color-bronze)] hover:bg-[rgba(176,138,91,0.08)] hover:text-[var(--color-bronze)]"
+                      className="luxury-button rounded-full border border-[var(--color-line)] px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(176,138,91,0.08)] hover:text-[var(--color-bronze)]"
                     >
                       {category}
                     </a>
@@ -94,7 +94,7 @@ export default function FaqPage() {
                           key={f.q}
                           as="li"
                           delay={(i % 4) * 60}
-                          className="luxury-card rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-[border-color,background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,255,255,0.62)] md:p-8"
+                          className="luxury-card group rounded-[1.5rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 transition-[border-color,background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,255,255,0.62)] md:p-8"
                         >
                           <div className="grid grid-cols-1 gap-4 md:grid-cols-[58px_1fr] md:gap-8">
                             <span className="font-serif text-[16px] italic tracking-[0.1em] text-[var(--color-bronze)]">

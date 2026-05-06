@@ -38,7 +38,7 @@ export default async function BuyerGuidePage({ params }: { params: Promise<{ slu
         <Container>
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
             <Reveal>
-              <aside className="sticky top-32 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 sm:p-8">
+              <aside className="luxury-card group sticky top-32 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-8">
                 <Eyebrow>Who this helps</Eyebrow>
                 <p className="m-0 mt-6 font-serif text-[28px] font-light leading-[1.18] text-[var(--color-text)]">{guide.intent}</p>
                 <div className="mt-8 border-t border-[var(--color-line)] pt-6">
@@ -53,7 +53,7 @@ export default async function BuyerGuidePage({ params }: { params: Promise<{ slu
             </Reveal>
             <div>
               {guide.sections.map((section, index) => (
-                <Reveal key={section.title} delay={index * 70} className="border-b border-[var(--color-line)] py-10 first:pt-0 last:border-b-0">
+                <Reveal key={section.title} delay={index * 70} className="luxury-card group border-b border-[var(--color-line)] px-4 py-10 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] first:pt-0 last:border-b-0 hover:-translate-y-1 hover:bg-[rgba(176,138,91,0.055)] sm:px-6">
                   <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">{String(index + 1).padStart(2, "0")}</span>
                   <h2 className="m-0 font-serif text-[36px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)] md:text-[48px]">{section.title}</h2>
                   <div className="mt-7 space-y-5 text-[16px] leading-[1.82] text-[var(--color-text-muted)]">
@@ -73,14 +73,14 @@ export default async function BuyerGuidePage({ params }: { params: Promise<{ slu
               <Eyebrow>Checklist</Eyebrow>
               <SectionHeading className="mt-7">What to confirm<br /><em className="font-light not-italic italic text-[var(--color-bronze-light)]">before moving forward.</em></SectionHeading>
               <ul className="mt-9 space-y-4">
-                {guide.checklist.map((item) => <li key={item} className="flex gap-4 border border-[var(--color-line)] bg-[var(--color-surface)] p-5 text-[15px] leading-[1.7] text-[var(--color-text-muted)]"><span className="mt-2 size-1.5 shrink-0 rounded-full bg-[var(--color-bronze)]" />{item}</li>)}
+                {guide.checklist.map((item) => <li key={item} className="luxury-card group flex gap-4 border border-[var(--color-line)] bg-[var(--color-surface)] p-5 text-[15px] leading-[1.7] text-[var(--color-text-muted)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]"><span className="mt-2 size-1.5 shrink-0 rounded-full bg-[var(--color-bronze)]" />{item}</li>)}
               </ul>
             </Reveal>
             <Reveal delay={120}>
               <Eyebrow>Ask Luke</Eyebrow>
               <SectionHeading className="mt-7">Better questions,<br /><em className="font-light not-italic italic text-[var(--color-bronze-light)]">cleaner decisions.</em></SectionHeading>
               <div className="mt-9 grid grid-cols-1 gap-px bg-[var(--color-line)]">
-                {guide.questions.map((question, index) => <div key={question} className="grid grid-cols-[44px_1fr] gap-4 bg-[var(--color-bg)] p-6"><span className="font-serif text-[22px] italic text-[var(--color-bronze-light)]">{String(index + 1).padStart(2, "0")}</span><p className="m-0 text-[15px] leading-[1.75] text-[var(--color-text)]">{question}</p></div>)}
+                {guide.questions.map((question, index) => <div key={question} className="luxury-card group grid grid-cols-[44px_1fr] gap-4 bg-[var(--color-bg)] p-6 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]"><span className="font-serif text-[22px] italic text-[var(--color-bronze-light)]">{String(index + 1).padStart(2, "0")}</span><p className="m-0 text-[15px] leading-[1.75] text-[var(--color-text)]">{question}</p></div>)}
               </div>
             </Reveal>
           </div>
@@ -95,12 +95,12 @@ export default async function BuyerGuidePage({ params }: { params: Promise<{ slu
             <SectionLede>Source links help you check the policy and agency context behind the guide. Always confirm the current rule and how it applies to the specific property.</SectionLede>
           </Reveal>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {guide.sources.map((source) => <Reveal key={source.href}><a href={source.href} target={source.href.startsWith("http") ? "_blank" : undefined} rel={source.href.startsWith("http") ? "noreferrer" : undefined} className="block border border-[var(--color-line)] bg-[var(--color-surface)] p-6 text-[14px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">{source.label}</a></Reveal>)}
+            {guide.sources.map((source) => <Reveal key={source.href}><a href={source.href} target={source.href.startsWith("http") ? "_blank" : undefined} rel={source.href.startsWith("http") ? "noreferrer" : undefined} className="luxury-card group block border border-[var(--color-line)] bg-[var(--color-surface)] p-6 text-[14px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text)] transition-[transform,border-color,background,box-shadow,color] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-bg)] hover:text-[var(--color-bronze-light)]">{source.label}</a></Reveal>)}
           </div>
         </Container>
       </section>
 
-      {related.length > 0 && <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28"><Container><Reveal className="mb-12"><Eyebrow>Related Guides</Eyebrow><SectionHeading className="mt-7">Keep going<br /><em className="font-light not-italic italic text-[var(--color-bronze-light)]">with the next useful question.</em></SectionHeading></Reveal><div className="grid grid-cols-1 gap-6 md:grid-cols-3">{related.map((item) => <Reveal key={item.slug}><Link href={`/guides/${item.slug}`} className="luxury-card block h-full border border-[var(--color-line)] bg-[var(--color-bg)] p-7 transition-[transform,border-color] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"><span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{item.category}</span><h3 className="m-0 mt-5 font-serif text-[28px] font-light leading-[1.12] text-[var(--color-text)]">{item.title}</h3><p className="m-0 mt-4 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{item.dek}</p></Link></Reveal>)}</div></Container></section>}
+      {related.length > 0 && <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28"><Container><Reveal className="mb-12"><Eyebrow>Related Guides</Eyebrow><SectionHeading className="mt-7">Keep going<br /><em className="font-light not-italic italic text-[var(--color-bronze-light)]">with the next useful question.</em></SectionHeading></Reveal><div className="grid grid-cols-1 gap-6 md:grid-cols-3">{related.map((item) => <Reveal key={item.slug}><Link href={`/guides/${item.slug}`} className="luxury-card group block h-full border border-[var(--color-line)] bg-[var(--color-bg)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)]"><span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{item.category}</span><h3 className="m-0 mt-5 font-serif text-[28px] font-light leading-[1.12] text-[var(--color-text)]">{item.title}</h3><p className="m-0 mt-4 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{item.dek}</p></Link></Reveal>)}</div></Container></section>}
 
       <InquiryCTA eyebrow="Ask Luke" title="Have a property or sale in mind?" emphasis="Bring the questions early." body="Send Luke the property, area, or selling situation you are considering. A few clear questions before a showing, offer, or sale plan can save time and prevent expensive surprises." />
     </PageLayout>
