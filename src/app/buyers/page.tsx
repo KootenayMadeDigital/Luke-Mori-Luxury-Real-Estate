@@ -22,6 +22,13 @@ export const metadata = buildPageMetadata({
 
 const buyerResourceCards = [
   {
+    href: "/buyers/area-fit-quiz",
+    eyebrow: "Area Fit",
+    title: "Find the Right Nelson Area",
+    body: "Use the dedicated quiz to compare daily rhythm, water, space, winter access, services, privacy, and the kind of life you want here.",
+    cta: "Take the quiz",
+  },
+  {
     href: "/buyers/international",
     eyebrow: "International",
     title: "Non-Canadian Buyers",
@@ -312,7 +319,7 @@ export default function BuyersPage() {
             </SectionLede>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
             {buyerResourceCards.map((card) => (
               <Reveal key={card.title}>
                 <Link
