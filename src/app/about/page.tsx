@@ -15,7 +15,7 @@ import { siteImages, headerImages, lukeBio, brandImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Nelson BC Realtor and Local Real Estate Guide",
   description:
-    "Luke Mori is a Nelson BC realtor for Kootenay Lake homes, waterfront property, relocation buyers, sellers, and second homes.",
+    "Meet Luke Mori, a Nelson BC realtor born and raised in the Kootenays, helping buyers and sellers make clear real estate decisions.",
   path: "/about",
   image: "/og/about.png",
 });
@@ -25,8 +25,8 @@ export default function AboutPage() {
     <PageLayout>
       <SubpageHero
         eyebrow="About Luke"
-        title="A local"
-        emphasis="who's on your side."
+        title="I grew up here"
+        emphasis="and I still care how this feels."
         lede={lukeBio.short}
         image={headerImages.lukeLeaningPortrait}
         imageClassName="scale-[1.08] translate-y-10 object-[72%_50%] md:translate-y-14"
@@ -41,13 +41,13 @@ export default function AboutPage() {
 
       <SeoAnswerBlock
         eyebrow="Nelson Realtor"
-        question="Who is Luke Mori?"
-        answer="Luke Mori is a Nelson BC realtor focused on important real estate decisions, waterfront property, Kootenay Lake homes, relocation buyers, second-home owners, and sellers who need local knowledge before a major decision. He was voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and 2024."
+        question="How do I work with clients?"
+        answer="I am a Nelson BC realtor, born and raised here, and I work with people making important decisions around Kootenay Lake homes, waterfront property, relocation, second homes, acreage, and selling in a thoughtful way. I have helped clients buy and sell millions of dollars in real estate, and Luxury Lifestyle Awards named my brokerage Best Luxury Real Estate Broker in British Columbia in 2021 and 2024."
         terms={["nelson bc realtor", "nelson bc real estate agent", "best realtor in nelson bc"]}
         tone="ivory"
       />
 
-      <CredentialsStrip />
+      <CredentialsStrip firstPerson />
 
       {/* Portrait + bio */}
       <section className="tone-lake tonal-section py-24 md:py-32">
@@ -80,14 +80,14 @@ export default function AboutPage() {
 
             <div>
               <Reveal>
-                <Eyebrow>Philosophy</Eyebrow>
+                <Eyebrow>My Approach</Eyebrow>
               </Reveal>
               <Reveal delay={120}>
                 <SectionHeading className="mt-7">
                   Local knowledge,
                   <br />
                   <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                    backed by better tools.
+                    handled personally.
                   </em>
                 </SectionHeading>
               </Reveal>
@@ -97,9 +97,17 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={360}>
-                <p className="m-0 mb-12 max-w-[600px] text-[17px] font-medium leading-[1.75] text-[var(--color-text-muted)]">
-                  {lukeBio.philosophy}
-                </p>
+                <div className="mb-12 max-w-[650px] space-y-5 text-[17px] font-medium leading-[1.75] text-[var(--color-text-muted)]">
+                  <p className="m-0">
+                    I am proud to be from Nelson. I know the neighbourhoods, roads, lake access, views, seasons, and small local details that do not always show up in a listing description, but often shape whether a property is the right fit.
+                  </p>
+                  <p className="m-0">
+                    Over the years, I have helped clients buy and sell millions of dollars in real estate across the Kootenays and built my work around local knowledge, strong marketing, and steady representation. I have also been recognized by Luxury Lifestyle Awards as Best Luxury Real Estate Broker in British Columbia in 2021 and 2024. I am grateful for that recognition, but the real work is still one client, one property, and one decision at a time.
+                  </p>
+                  <p className="m-0">
+                    I use modern marketing, property film, strong photography, and useful technology because they help people understand a home faster. I never want that to replace the personal side of the work. Trust still matters most.
+                  </p>
+                </div>
               </Reveal>
 
               <ul className="space-y-7">
@@ -150,9 +158,81 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-32">
+        <Container>
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-20">
+            <Reveal>
+              <div>
+                <Eyebrow>Behind The Work</Eyebrow>
+                <SectionHeading className="mt-7">
+                  The details I care about
+                  <br />
+                  <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                    before the sign goes up.
+                  </em>
+                </SectionHeading>
+                <div className="mt-7 max-w-[590px] space-y-5 text-[16px] leading-[1.75] text-[var(--color-text-muted)]">
+                  <p className="m-0">
+                    A strong result usually starts before anyone sees the listing. I care about how the home is prepared, how it is photographed, what the story should be, and which buyers are most likely to understand it.
+                  </p>
+                  <p className="m-0">
+                    Recognition and media help build trust, but they are not the point. The point is doing the work carefully enough that a buyer can feel the value and a seller can feel represented.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={140}>
+              <div className="relative min-h-[720px] sm:min-h-[760px] lg:min-h-[700px]">
+                <div className="absolute left-0 top-0 w-[68%] rounded-[2rem] border border-[var(--color-line)] bg-[rgba(244,239,230,0.42)] p-1.5 shadow-[0_34px_90px_-62px_rgba(0,0,0,0.34)]">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)]">
+                    <Image
+                      src={siteImages.lukeFrame}
+                      alt="Luke Mori preparing a home presentation detail"
+                      fill
+                      sizes="(min-width: 1024px) 34vw, 68vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="absolute right-0 top-[22%] w-[62%] rounded-[1.65rem] border border-[rgba(212,184,150,0.36)] bg-[rgba(9,10,11,0.86)] p-1.5 shadow-[0_36px_110px_-54px_rgba(0,0,0,0.72)]">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(1.65rem-0.375rem)]">
+                    <Image
+                      src={siteImages.lukeAward}
+                      alt="Luxury Lifestyle Awards certificate for Luke Mori"
+                      fill
+                      sizes="(min-width: 1024px) 30vw, 62vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="absolute bottom-0 left-[8%] w-[58%] rounded-[1.8rem] border border-[rgba(245,239,229,0.22)] bg-[rgba(10,11,13,0.9)] p-1.5 shadow-[0_30px_100px_-58px_rgba(0,0,0,0.82)]">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[calc(1.8rem-0.375rem)]">
+                    <Image
+                      src={headerImages.lukeContact}
+                      alt="Luke Mori speaking with a client"
+                      fill
+                      sizes="(min-width: 1024px) 28vw, 58vw"
+                      className="object-cover object-[50%_44%]"
+                    />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
       <PressStrip />
 
-      <InquiryCTA />
+      <InquiryCTA
+        eyebrow="Contact Me"
+        title="Tell me what you are weighing."
+        emphasis="I will help you sort the next step."
+        body="Share the property, the move, the timeline, or the question that has been sitting in the back of your mind. I will help you understand what matters, what to check, and what to do next."
+      />
     </PageLayout>
   );
 }

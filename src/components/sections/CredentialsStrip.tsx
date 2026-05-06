@@ -2,7 +2,11 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { credentials } from "@/lib/data";
 
-export function CredentialsStrip() {
+type Props = {
+  firstPerson?: boolean;
+};
+
+export function CredentialsStrip({ firstPerson = false }: Props) {
   return (
     <section className="tone-office tonal-section py-12 md:py-14">
       <Container>
@@ -15,11 +19,13 @@ export function CredentialsStrip() {
                     At a Glance
                   </span>
                   <h2 className="m-0 mt-4 max-w-[14ch] font-serif text-[31px] font-light leading-[1.02] tracking-[-0.01em] text-[var(--color-text)] md:text-[38px]">
-                    Confidence before the first call.
+                    {firstPerson ? "My record before the first call." : "Confidence before the first call."}
                   </h2>
                 </div>
                 <p className="m-0 mt-7 max-w-[380px] text-[13px] leading-[1.75] text-[var(--color-text-muted)]">
-                  Before you share an address or book a tour, you can see the sales record, awards, press, and local experience behind the guidance.
+                  {firstPerson
+                    ? "Before you share an address or book a tour, you can see the sales record, awards, press, and local experience behind my guidance."
+                    : "Before you share an address or book a tour, you can see the sales record, awards, press, and local experience behind the guidance."}
                 </p>
               </div>
 

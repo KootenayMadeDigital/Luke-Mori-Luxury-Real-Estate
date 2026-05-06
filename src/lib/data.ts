@@ -381,8 +381,8 @@ export const siteImages = {
   homeTourHeddle: "/generated/site-images/home-tour-heddle-enhanced.webp",
   homeTourHarrop: "/generated/site-images/home-tour-harrop-enhanced.webp",
   privateOfficeTexture: "/generated/site-images/private-office-texture-enhanced.webp",
-  lukeFrame: "/generated/site-images/luke-frame-enhanced.webp",
-  lukeAward: "/generated/site-images/luke-award-enhanced.webp",
+  lukeFrame: "/generated/site-images/luke-frame-4k.webp",
+  lukeAward: "/generated/site-images/luke-award-4k.webp",
   buyerInterior: "/generated/site-images/buyer-interior-enhanced.webp",
   relocationBaker: "/generated/site-images/relocation-baker-card.webp",
   relocationNorthshore: "/generated/site-images/relocation-northshore-card.webp",
@@ -1128,28 +1128,28 @@ export const nelsonAreas: NelsonArea[] = [
 
 export const lukeBio = {
   short:
-    "Born and raised in Nelson, BC. Founder of the Luke Mori division at Fair Realty. Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
+    "I was born and raised in Nelson, BC, and I still believe the best advice starts with knowing the place. I help people buy and sell homes around Nelson, Kootenay Lake, Kaslo, Balfour, acreage, and waterfront property with clear guidance, strong marketing, and steady communication.",
   philosophy:
-    "Local knowledge, privacy, strong photography, clear copy, and steady representation for the property and the people behind it.",
+    "I use better tools, stronger photography, property film, and clear writing to help the right people understand a home. But the heart of the work is still personal: trust, timing, privacy, and helping people make a major decision with fewer surprises.",
   approach:
-    "Good technology helps, but real estate is still personal. The goal is better advice, better communication, and fewer surprises.",
+    "Technology helps me show a property properly, but real estate is still personal. My job is to give you better advice, better communication, and fewer surprises.",
   bornAndRaised: "Born and raised in Nelson, BC",
   brokerage: "Founder, Luke Mori at Fair Realty",
   pillars: [
     {
       k: "I.",
-      title: "Local knowledge over generic advice.",
-      body: "Knowing the lots, roads, views, owners, and what each property may be worth to the right buyer.",
+      title: "I know the local details buyers actually ask about.",
+      body: "Roads, sun, water, neighbourhoods, access, privacy, views, and what a property may be worth to the right buyer. Those details matter here.",
     },
     {
       k: "II.",
-      title: "Privacy from the start.",
-      body: "Clear representation, careful exposure, and serious showings. Your home needs the right buyer, not an audience.",
+      title: "I keep the process clear and personal.",
+      body: "Buying or selling a home can feel big because it is big. I try to make each step easier to understand, from the first conversation to the final decision.",
     },
     {
       k: "III.",
-      title: "Marketing that respects the home.",
-      body: "Film, photography, and writing that make the property clear, attractive, and easy to trust.",
+      title: "I market homes with care, not noise.",
+      body: "Strong photography, drone work, property film, clear copy, and thoughtful exposure help buyers understand the home before they book the showing.",
     },
   ],
 };
