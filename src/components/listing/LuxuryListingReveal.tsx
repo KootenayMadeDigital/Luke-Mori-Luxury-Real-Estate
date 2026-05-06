@@ -535,12 +535,6 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
                 unoptimized
               />
             </div>
-            <div
-              className="pointer-events-none absolute left-1/2 top-[9%] z-[39] size-[44px] -translate-x-1/2 rounded-full border border-[rgba(255,224,170,0.18)] transition-opacity duration-700 motion-reduce:hidden md:top-[14%] md:size-[68px]"
-              style={{ opacity: ceremonyOpacity * (0.58 - openPercent * 0.5) }}
-              aria-hidden
-            />
-
             <div className="pointer-events-none absolute inset-x-0 top-0 z-[38] h-16 bg-[linear-gradient(180deg,rgba(7,6,5,0.98),rgba(31,20,13,0.92)_40%,rgba(190,133,70,0.42)_51%,rgba(10,8,7,0.78)_64%,rgba(7,6,5,0.18)_100%)] shadow-[0_18px_42px_-26px_rgba(0,0,0,0.95)] transition-opacity duration-500" style={{ opacity: imageFocus ? 0.64 : 1 }} aria-hidden>
               <div className="absolute inset-x-5 top-4 h-px bg-[linear-gradient(90deg,transparent,rgba(224,192,154,0.58),transparent)]" />
               <div className="absolute inset-x-8 top-7 h-[4px] rounded-full bg-[linear-gradient(90deg,rgba(43,28,18,0.48),rgba(128,84,48,0.58)_22%,rgba(224,181,118,0.66)_50%,rgba(128,84,48,0.58)_78%,rgba(43,28,18,0.48))] shadow-[0_0_14px_rgba(224,192,154,0.12)]" />
