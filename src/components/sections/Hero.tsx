@@ -36,7 +36,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal className="is-in" delay={260}>
-            <ul className="mt-6 grid max-w-[620px] grid-cols-3 gap-2 border-y border-[rgba(212,184,150,0.18)] bg-[rgba(5,6,7,0.12)] py-3.5 sm:mt-7 sm:bg-transparent sm:py-4 lg:hidden">
+            <ul className="absolute inset-x-5 bottom-[13.25rem] grid max-w-[620px] grid-cols-3 gap-2 border-y border-[rgba(212,184,150,0.18)] bg-[rgba(5,6,7,0.12)] py-3.5 sm:static sm:mt-7 sm:bg-transparent sm:py-4 lg:hidden">
               {heroProofSignals.map((signal) => (
                 <li key={signal.label} className="min-w-0">
                   <span className="block font-serif text-[18px] font-light leading-none text-[var(--color-bronze-light)] sm:text-[20px]">
