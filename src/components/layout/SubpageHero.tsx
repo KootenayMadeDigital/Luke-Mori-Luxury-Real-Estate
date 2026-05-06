@@ -23,7 +23,7 @@ type Props = {
 export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, meta, imageTreatment = "standard", imageClassName = "" }: Props) {
   const showcase = imageTreatment === "showcase";
   return (
-    <section className="tone-dark tonal-section overflow-hidden border-b border-[var(--color-line)] pb-14 pt-36 sm:pb-20 sm:pt-32 md:pb-28 md:pt-40">
+    <section className="tone-dark tonal-section min-h-[100svh] overflow-hidden border-b border-[var(--color-line)] pb-10 pt-36 sm:min-h-0 sm:pb-20 sm:pt-32 md:pb-28 md:pt-40">
       {image && (
         <div className="absolute inset-0 z-0" aria-hidden>
           <Image
@@ -49,7 +49,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
         </svg>
       </div>
 
-      <Container className="relative z-10">
+      <Container className="relative z-10 flex min-h-[calc(100svh-11.5rem)] flex-col sm:block sm:min-h-0">
         {crumbs && crumbs.length > 0 && (
           <Reveal>
             <nav className="mb-7 flex flex-wrap items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[rgba(239,234,226,0.76)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] sm:mb-8" aria-label="Breadcrumb">
@@ -101,8 +101,8 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
         )}
 
         {meta && meta.length > 0 && (
-          <Reveal delay={460}>
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-7 pt-[3.25rem] sm:mt-12 sm:grid-cols-4 sm:gap-x-10 sm:border-t sm:border-[var(--color-line)] sm:pt-8">
+          <Reveal delay={460} className="mt-auto">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-7 pt-12 sm:mt-12 sm:grid-cols-4 sm:gap-x-10 sm:border-t sm:border-[var(--color-line)] sm:pt-8">
               {meta.map((m) => (
                 <li key={m.label} className="flex flex-col gap-1.5">
                   <span className="font-serif text-[24px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-[28px]">
