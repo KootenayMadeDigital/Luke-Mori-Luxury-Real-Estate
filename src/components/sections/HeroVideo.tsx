@@ -26,7 +26,7 @@ export function HeroVideo() {
     const desktopWidth = window.matchMedia("(min-width: 768px)").matches;
 
     const frame = window.requestAnimationFrame(() => {
-      setShouldUsePoster(reduceMotion || saveData || slowConnection);
+      setShouldUsePoster(!desktopWidth || reduceMotion || saveData || slowConnection);
       setShouldLoadFullVideo(desktopWidth && !reduceMotion && !saveData && !slowConnection);
     });
 

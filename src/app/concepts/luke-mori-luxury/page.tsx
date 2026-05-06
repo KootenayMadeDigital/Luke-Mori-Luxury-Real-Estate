@@ -12,7 +12,7 @@ import { SellerSection } from "@/components/sections/SellerSection";
 import { RecentlyConcluded } from "@/components/sections/RecentlyConcluded";
 import { LeadMagnet } from "@/components/sections/LeadMagnet";
 import { ConceptFooter } from "@/components/sections/ConceptFooter";
-import { LuxuryListingReveal } from "@/components/listing/LuxuryListingReveal";
+import { LazyLuxuryListingReveal } from "@/components/listing/LazyLuxuryListingReveal";
 import { getListingBySlug, luxuryListings, sortByPriceDesc } from "@/lib/listings";
 import { buildPageGraphJsonLd, buildPageMetadata } from "@/lib/seo";
 
@@ -57,7 +57,7 @@ export default function LukeMoriLuxuryExperience() {
         <MoriStandard />
         <SellerSection />
         {launchReveal && (
-          <LuxuryListingReveal
+          <LazyLuxuryListingReveal
             listing={launchReveal}
             variant="sellerLaunch"
             copy={{

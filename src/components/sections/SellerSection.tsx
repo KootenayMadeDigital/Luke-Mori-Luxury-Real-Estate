@@ -142,9 +142,9 @@ export function SellerSection() {
                       <span className="mb-8 inline-flex size-11 items-center justify-center rounded-full border border-[var(--color-line-strong)] font-serif text-[15px] italic tracking-[0.05em] text-[var(--color-bronze-light)] transition-colors duration-300 group-hover:border-[var(--color-bronze)]">
                         {p.num}
                       </span>
-                      <h4 className="m-0 mb-3 font-serif text-[23px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
+                      <h3 className="m-0 mb-3 font-serif text-[23px] font-normal leading-[1.15] tracking-[-0.005em] text-[var(--color-text)]">
                         {p.title}
-                      </h4>
+                      </h3>
                       <p className="m-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
                         {p.body}
                       </p>

@@ -27,7 +27,7 @@ export function Brand({ href = "#top", className = "" }: WordmarkProps) {
   return (
     <a
       href={href}
-      aria-label="Luke Mori Luxury home"
+      aria-label="Luke Mori Luxury"
       className={`group inline-flex shrink-0 items-center gap-3.5 text-[var(--color-text)] ${className}`}
     >
       <span className="relative grid size-14 shrink-0 place-items-center rounded-full border border-[rgba(212,184,150,0.36)] bg-[#08090a] shadow-[0_0_34px_-18px_rgba(212,184,150,0.95)] ring-1 ring-black/60 transition-[border-color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[1px] group-hover:border-[var(--color-bronze-light)] group-hover:shadow-[0_0_46px_-14px_rgba(212,184,150,0.95)]">
