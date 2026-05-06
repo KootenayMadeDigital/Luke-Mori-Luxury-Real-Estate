@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { credentials } from "@/lib/data";
+import { credentials, facebookReviews, facebookReviewsUrl } from "@/lib/data";
 
 export function PublicReceipts() {
   return (
@@ -36,6 +36,25 @@ export function PublicReceipts() {
               </div>
             ))}
           </div>
+        </Reveal>
+
+        <Reveal delay={220} className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-[1fr_1fr_auto] md:items-stretch">
+          {facebookReviews.slice(5, 7).map((review) => (
+            <article key={review.quote} className="border border-[var(--color-line)] bg-[rgba(255,255,255,0.045)] p-6">
+              <p className="m-0 mb-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                Facebook Review
+              </p>
+              <blockquote className="m-0 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
+                &ldquo;{review.quote}&rdquo;
+              </blockquote>
+            </article>
+          ))}
+          <a
+            href={facebookReviewsUrl}
+            className="flex items-center justify-center border border-[var(--color-bronze)] px-6 py-5 text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze-light)] transition-[background,color] duration-500 hover:bg-[var(--color-bronze)] hover:text-[#18120c]"
+          >
+            Read More Reviews
+          </a>
         </Reveal>
 
       </Container>

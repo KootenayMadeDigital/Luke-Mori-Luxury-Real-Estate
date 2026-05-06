@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { siteImages, contact, sellerPromises } from "@/lib/data";
+import { siteImages, sellerPromises, facebookReviews, facebookReviewsUrl } from "@/lib/data";
 
 const sellerSignals = [
   {
@@ -60,8 +60,8 @@ export function SellerSection() {
                 <Button href="#consult" variant="primary" size="lg">
                   Plan Your Sale
                 </Button>
-                <Button href={contact.phoneHref} variant="ghost" size="lg" arrow>
-                  Ask About Value
+                <Button href={facebookReviewsUrl} variant="ghost" size="lg" arrow>
+                  Read Seller Reviews
                 </Button>
               </div>
             </Reveal>
@@ -107,6 +107,9 @@ export function SellerSection() {
                 <p className="m-0 mt-5 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">
                   Price with discipline, present the home well, qualify interest early, and keep the process calm through closing.
                 </p>
+                <blockquote className="m-0 mt-6 border-l border-[var(--color-bronze)] pl-5 text-[14px] italic leading-[1.65] text-[var(--color-text-muted)]">
+                  &ldquo;{facebookReviews[7].quote}&rdquo;
+                </blockquote>
                 </div>
               </div>
             </Reveal>

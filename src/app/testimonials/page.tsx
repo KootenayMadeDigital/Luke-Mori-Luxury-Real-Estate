@@ -7,7 +7,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { headerImages, testimonials, brandImages, pressLogos } from "@/lib/data";
+import { Button } from "@/components/ui/Button";
+import { headerImages, testimonials, brandImages, pressLogos, facebookReviews, facebookReviewsUrl } from "@/lib/data";
 
 
 const mediaLogoScale: Record<string, string> = {
@@ -25,7 +26,7 @@ const mediaLogoScale: Record<string, string> = {
 export const metadata = buildPageMetadata({
   title: "Luke Mori Reviews, Awards & Nelson BC Real Estate Proof",
   description:
-    "LukeMori.com states he is the winner of Best Luxury Real Estate Broker in 2021 and 2024. Verbatim client testimonials from buyers and sellers across Nelson and the Kootenay region.",
+    "Winner of Best Luxury Real Estate Broker in 2021 and 2024, with verbatim client testimonials from buyers and sellers across Nelson and the Kootenay region.",
   path: "/testimonials",
   image: "/og/testimonials.png",
 });
@@ -43,7 +44,7 @@ export default function TestimonialsPage() {
         meta={[
           { value: "2021 / 2024", label: "Best Luxury Broker BC" },
           { value: "Client", label: "Testimonials" },
-          { value: "9", label: "Media Logos" },
+          { value: "9", label: "Press Mentions" },
           { value: "$169M+", label: "Lifetime Sales" },
         ]}
       />
@@ -61,7 +62,7 @@ export default function TestimonialsPage() {
               </em>
             </SectionHeading>
             <SectionLede align="center" className="mx-auto mb-12 max-w-[820px] text-[20px] md:text-[22px]">
-              LukeMori.com states he is the winner of Best Luxury Real Estate Broker in 2021 and 2024, with the 2021 award shown on his awards page.
+              Winner of Best Luxury Real Estate Broker in 2021 and 2024, backed by client trust and local experience across Nelson and the Kootenays.
             </SectionLede>
 
             <div className="mx-auto max-w-[900px] rounded-[2rem] border border-[var(--color-line-strong)] bg-[linear-gradient(135deg,rgba(255,248,237,0.72),rgba(212,184,150,0.2))] p-4 shadow-[0_34px_110px_-70px_rgba(63,46,31,0.42)] sm:p-6 md:p-8">
@@ -74,7 +75,7 @@ export default function TestimonialsPage() {
                     2021 & 2024
                   </h2>
                   <p className="m-0 mt-5 max-w-[520px] text-[15px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
-                    Recognition stated on LukeMori.com, backed by local experience in Nelson and the Kootenays.
+                    Recognition backed by local experience in Nelson and the Kootenays.
                   </p>
                 </div>
 
@@ -163,9 +164,9 @@ export default function TestimonialsPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
-            {testimonials.map((t, i) => (
+            {[...testimonials, ...facebookReviews.slice(0, 6)].map((t, i) => (
               <Reveal
-                key={t.attribution}
+                key={`${t.attribution}-${i}`}
                 as="article"
                 delay={(i % 2) * 100}
                 className="relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-9 transition-colors duration-500 hover:border-[var(--color-line-strong)] sm:p-10"
@@ -189,6 +190,63 @@ export default function TestimonialsPage() {
                   </div>
                   <div className="mt-1.5 text-[12px] text-[var(--color-text-dim)]">
                     {t.context}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+
+      <section className="tone-ivory tonal-section border-t border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.82fr_1fr] md:items-end">
+            <div>
+              <Eyebrow>Facebook Reviews</Eyebrow>
+              <SectionHeading className="mt-7">
+                More public reviews,
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  straight from clients.
+                </em>
+              </SectionHeading>
+            </div>
+            <div className="md:text-right">
+              <SectionLede align="right">
+                Sellers and buyers repeatedly mention the same themes: clear communication, strong marketing, video, fast answers, and steady guidance through stressful decisions.
+              </SectionLede>
+              <div className="mt-7 flex justify-start md:justify-end">
+                <Button href={facebookReviewsUrl} variant="ghost" size="md" arrow>
+                  Read Facebook Reviews
+                </Button>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {facebookReviews.slice(6).map((review, i) => (
+              <Reveal
+                key={`${review.context}-${i}`}
+                as="article"
+                delay={(i % 3) * 70}
+                className="relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors duration-500 hover:border-[var(--color-line-strong)] sm:p-8"
+              >
+                <div className="mb-5 flex items-center justify-between gap-4">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                    Public Review
+                  </span>
+                  <span className="font-serif text-[22px] leading-none text-[var(--color-bronze-light)]">★★★★★</span>
+                </div>
+                <blockquote className="m-0 mb-8 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">
+                  &ldquo;{review.quote}&rdquo;
+                </blockquote>
+                <div className="mt-auto border-t border-[var(--color-line)] pt-5">
+                  <div className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-text)]">
+                    {review.attribution}
+                  </div>
+                  <div className="mt-1.5 text-[12px] text-[var(--color-text-dim)]">
+                    {review.context}
                   </div>
                 </div>
               </Reveal>

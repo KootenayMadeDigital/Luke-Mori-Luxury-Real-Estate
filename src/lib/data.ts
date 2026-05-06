@@ -28,12 +28,12 @@ export const heroProofSignals: HeroProofSignal[] = [
   {
     value: "$169M+",
     label: "Lifetime real estate sales",
-    detail: "A public figure stated in Luke Mori materials.",
+    detail: "A public sales figure behind years of pricing, offers, negotiations, and closings.",
   },
   {
     value: "2021 & 2024",
     label: "Best Luxury Broker BC",
-    detail: "LukeMori.com names Luke winner of Best Luxury Real Estate Broker in 2021 and 2024.",
+    detail: "Best Luxury Real Estate Broker recognition in 2021 and 2024.",
   },
   {
     value: "Nelson born",
@@ -140,14 +140,14 @@ export const trustProofs: TrustProof[] = [
   {
     eyebrow: "Track Record",
     title: "Sales volume with real negotiation experience.",
-    proof: "$169M+ lifetime real estate sales, as stated in public Luke Mori materials.",
+    proof: "$169M+ lifetime real estate sales across Nelson and the Kootenays.",
     meaning:
       "The number matters because it points to real pricing, offers, negotiations, and closings, not empty decoration.",
   },
   {
     eyebrow: "Recognition",
     title: "Recognized in BC. Grounded in Nelson.",
-    proof: "LukeMori.com names Luke winner of Best Luxury Real Estate Broker in 2021 and 2024.",
+    proof: "Best Luxury Real Estate Broker recognition in 2021 and 2024.",
     meaning:
       "Awards help, but the useful work is local: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
   },
@@ -990,6 +990,90 @@ export const testimonials: Testimonial[] = [
       "Many thanks Luke for the dedication and patience you applied to our experience.",
     attribution: "Ron Coles",
     context: "Home Buyer",
+  },
+];
+
+
+export const facebookReviewsUrl = "https://www.facebook.com/lukemorirealestate/reviews/?id=100058796053031&sk=reviews";
+
+export const facebookReviews: Testimonial[] = [
+  {
+    quote:
+      "That all realtors would be like Luke. He is professional, personal, kind and caring. Went over and above to help us sell in less than a week. Exceeded expectations. Highly recommend.",
+    attribution: "Facebook Review",
+    context: "Home Seller",
+  },
+  {
+    quote:
+      "Selling our lakeside property took longer than expected but Luke’s confidence and perseverance was reassuring. We liked that he had connections far beyond the local region. He made an amazing video for social media.",
+    attribution: "Kent and Sharon",
+    context: "Lakeside Seller",
+  },
+  {
+    quote:
+      "Luke was so easy to work with and made things so seamless, despite coordinating our purchase from another city. He gave us invaluable advice and helped make it all work.",
+    attribution: "Facebook Review",
+    context: "Relocation Buyer",
+  },
+  {
+    quote:
+      "After living there for thirty years, it was a hard decision to sell, but Luke’s positive thoughts, input, and vibes helped to make things easier. He was only a phone call, text, or email away.",
+    attribution: "Bonnie and Glenn Loeppky",
+    context: "Balfour Sellers",
+  },
+  {
+    quote:
+      "I contacted Luke to help with selling my property and was extremely impressed with his services. He is professional, honest and accurate with his value assessment. The photos were beautiful and generated a lot of interest.",
+    attribution: "Facebook Review",
+    context: "Home Seller",
+  },
+  {
+    quote:
+      "Luke was very professional, easy to work with and made staging and selling our home enjoyable. The video and photos were incredible. His marketing is the best there is.",
+    attribution: "Facebook Review",
+    context: "Home Seller",
+  },
+  {
+    quote:
+      "He approached our real estate transaction in a very professional manner, and set forth a marketing program that we believe few in the area could offer.",
+    attribution: "Kurt and Trudy Balkenhol",
+    context: "Home Sellers",
+  },
+  {
+    quote:
+      "Our house sold in less than one week. Luke and his expert team are professional, talented, and effective. This is no cookie-cutter real estate service.",
+    attribution: "Facebook Review",
+    context: "Home Seller",
+  },
+  {
+    quote:
+      "Luke was very professional and supportive during our decision to sell our beautiful home here in Nelson. His marketing approach was what we were looking for, reaching out globally for prospective buyers.",
+    attribution: "Facebook Review",
+    context: "Nelson Seller",
+  },
+  {
+    quote:
+      "Never in our wildest dream did we think our house would sell in less than a day, and over asking price. Outstanding service.",
+    attribution: "Facebook Review",
+    context: "Home Seller",
+  },
+  {
+    quote:
+      "Luke was amazing to work with and a true professional. He was organized, efficient, honest and always available to answer questions.",
+    attribution: "Facebook Review",
+    context: "First-Time Buyer",
+  },
+  {
+    quote:
+      "Working with Luke was wonderful. We had our house on the market for over two years and when he stepped in it changed everything.",
+    attribution: "Facebook Review",
+    context: "Home Seller",
+  },
+  {
+    quote:
+      "Luke was outstanding to work with. He was always available to speak with and handled all our needs with enthusiasm and professionalism. He made an intimidating process so much easier on us.",
+    attribution: "Facebook Review",
+    context: "First-Time Buyer",
   },
 ];
 

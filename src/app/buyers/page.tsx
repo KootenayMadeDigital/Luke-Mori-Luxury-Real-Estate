@@ -10,7 +10,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
-import { headerImages, buyerSteps } from "@/lib/data";
+import { Button } from "@/components/ui/Button";
+import { headerImages, buyerSteps, facebookReviews, facebookReviewsUrl } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Nelson BC Buyer Guidance · Homes, Lakefront and Relocation",
@@ -229,6 +230,25 @@ export default function BuyersPage() {
         ]}
       />
 
+
+      <section className="tone-lake tonal-section border-t border-[var(--color-line)] py-20 md:py-24">
+        <Container>
+          <Reveal className="grid grid-cols-1 gap-8 border border-[var(--color-line)] bg-[var(--color-surface)] p-8 shadow-[0_30px_90px_-70px_rgba(0,0,0,0.55)] md:grid-cols-[1fr_auto] md:items-center md:p-10">
+            <div>
+              <Eyebrow>Buyer Review</Eyebrow>
+              <blockquote className="m-0 mt-5 max-w-[860px] font-serif text-[24px] font-light leading-[1.45] tracking-[-0.005em] text-[var(--color-text)] sm:text-[30px]">
+                &ldquo;{facebookReviews[2].quote}&rdquo;
+              </blockquote>
+              <p className="m-0 mt-5 text-[12px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
+                {facebookReviews[2].context}
+              </p>
+            </div>
+            <Button href={facebookReviewsUrl} variant="ghost" size="md" arrow>
+              Read Reviews
+            </Button>
+          </Reveal>
+        </Container>
+      </section>
 
       <InquiryCTA
         eyebrow="Buyer Inquiry"

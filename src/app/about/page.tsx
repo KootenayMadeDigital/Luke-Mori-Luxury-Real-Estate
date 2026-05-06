@@ -42,7 +42,7 @@ export default function AboutPage() {
       <SeoAnswerBlock
         eyebrow="Nelson Realtor"
         question="How do I work with clients?"
-        answer="I am a Nelson BC realtor, born and raised here, and I work with people making careful decisions around Kootenay Lake homes, waterfront property, relocation, second homes, acreage, and selling in a thoughtful way. LukeMori.com states more than $169 million in lifetime real estate sales and names him winner of Best Luxury Real Estate Broker in 2021 and 2024."
+        answer="I am a Nelson BC realtor, born and raised here, and I work with people making careful decisions around Kootenay Lake homes, waterfront property, relocation, second homes, acreage, and selling in a thoughtful way. My work is backed by more than $169 million in lifetime real estate sales and Best Luxury Real Estate Broker recognition in 2021 and 2024."
         terms={["nelson bc realtor", "nelson bc real estate agent", "best realtor in nelson bc"]}
         tone="ivory"
       />
@@ -102,7 +102,7 @@ export default function AboutPage() {
                     I am proud to be from Nelson. I know the neighbourhoods, roads, lake access, views, seasons, and small local details that do not always show up in a listing description, but often shape whether a property is the right fit.
                   </p>
                   <p className="m-0">
-                    Over the years, I have helped clients buy and sell millions of dollars in real estate across the Kootenays and built my work around local knowledge, strong marketing, and steady representation. LukeMori.com states more than $169 million in lifetime real estate sales and names him winner of Best Luxury Real Estate Broker in 2021 and 2024. I am grateful for that recognition, but the real work is still one client, one property, and one decision at a time.
+                    Over the years, I have helped clients buy and sell millions of dollars in real estate across the Kootenays and built my work around local knowledge, strong marketing, and steady representation. My work is backed by more than $169 million in lifetime real estate sales and Best Luxury Real Estate Broker recognition in 2021 and 2024. I am grateful for that recognition, but the real work is still one client, one property, and one decision at a time.
                   </p>
                   <p className="m-0">
                     I use modern marketing, property film, strong photography, and useful technology because they help people understand a home faster. I never want that to replace the personal side of the work. Trust still matters most.
