@@ -84,7 +84,7 @@ export function ConceptFooter() {
                   Nelson and Kootenay Lake real estate
                 </div>
                 <h2 className="m-0 max-w-[680px] font-serif font-light leading-[1.02] tracking-[-0.018em] text-[var(--color-text)] [font-size:clamp(32px,4.8vw,62px)]">
-                  Move with a clear plan
+                  Move with clear local guidance
                   <br />
                   in Nelson and Kootenay Lake.
                 </h2>
