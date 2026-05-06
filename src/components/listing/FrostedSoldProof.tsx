@@ -17,7 +17,7 @@ type Props = {
 
 export function FrostedSoldProof({ lead }: Props) {
   return (
-    <article aria-label={`${lead.address}, recently sold`} className="luxury-card group relative min-h-[560px] overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_34px_100px_-62px_rgba(0,0,0,0.95)]">
+    <article aria-label={`${lead.address}, recently sold`} className="luxury-card group relative min-h-[560px] overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_34px_100px_-62px_rgba(0,0,0,0.95)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)]">
       <div className="relative h-full min-h-[548px] overflow-hidden rounded-[calc(2rem-0.375rem)]">
         <Image
           src={lead.image}

@@ -664,14 +664,14 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
           <div className="flex flex-col gap-3 border-t border-[var(--color-line)] bg-[rgba(12,13,14,0.92)] p-5 sm:hidden">
             <Link
               href={`/listings/${listing.slug}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[rgba(255,224,170,0.46)] bg-[rgba(8,7,6,0.72)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_42px_-28px_rgba(0,0,0,0.95)] transition-[border-color,background,color] duration-300 hover:border-[var(--color-bronze-light)] hover:bg-[rgba(8,7,6,0.9)] hover:text-[var(--color-bronze-light)]"
+              className="luxury-button inline-flex min-h-12 items-center justify-center rounded-full border border-[rgba(255,224,170,0.46)] bg-[rgba(8,7,6,0.72)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_14px_42px_-28px_rgba(0,0,0,0.95)] transition-[transform,border-color,background,color] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze-light)] hover:bg-[rgba(8,7,6,0.9)] hover:text-[var(--color-bronze-light)]"
             >
               View property
             </Link>
             <button
               type="button"
               onClick={toggleReveal}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[rgba(255,224,170,0.36)] bg-[rgba(212,184,150,0.9)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-button-text)] shadow-[0_14px_42px_-28px_rgba(0,0,0,0.95)] transition-[background,border-color] duration-300 hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)] motion-reduce:hidden"
+              className="luxury-button inline-flex min-h-12 items-center justify-center rounded-full border border-[rgba(255,224,170,0.36)] bg-[rgba(212,184,150,0.9)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-button-text)] shadow-[0_14px_42px_-28px_rgba(0,0,0,0.95)] transition-[transform,background,border-color] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)] motion-reduce:hidden"
             >
               {revealLabel}
             </button>
@@ -705,7 +705,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
               {specs.length > 0 && (
                 <ul className="mt-8 grid grid-cols-2 gap-px bg-[var(--color-line)]">
                   {specs.map((spec) => (
-                    <li key={spec.label} className="bg-[var(--color-surface)] p-4">
+                    <li key={spec.label} className="luxury-card group bg-[var(--color-surface)] p-4 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-bg)]">
                       <span className="block font-serif text-[24px] font-light italic text-[var(--color-text)]">
                         {spec.value}
                       </span>

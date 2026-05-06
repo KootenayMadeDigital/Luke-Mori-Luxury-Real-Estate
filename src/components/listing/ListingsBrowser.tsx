@@ -210,7 +210,7 @@ export function ListingsBrowser({
                   setFilter(f.key);
                   setPage(1);
                 }}
-                className={`shrink-0 rounded-[1px] border px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
+                className={`luxury-button shrink-0 rounded-full border px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.18em] transition-[transform,border-color,color,background] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 ${
                   filter === f.key
                     ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]"
                     : "border-[var(--color-line-strong)] text-[var(--color-text-muted)] hover:border-[var(--color-bronze)] hover:text-[var(--color-text)]"
@@ -230,7 +230,7 @@ export function ListingsBrowser({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={searchPlaceholder}
-                className="w-full rounded-[1px] border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pl-10 font-sans text-[14px] font-light text-[var(--color-text)] outline-none transition-colors duration-200 placeholder:text-[var(--color-text-dim)] focus:border-[var(--color-bronze)]"
+                className="w-full rounded-full border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pl-10 font-sans text-[14px] font-light text-[var(--color-text)] outline-none transition-[border-color,background,box-shadow] duration-500 ease-[var(--ease-luxe)] placeholder:text-[var(--color-text-dim)] focus:border-[var(--color-bronze)] focus:bg-[rgba(212,184,150,0.045)] focus:shadow-[0_0_0_3px_rgba(212,184,150,0.08)]"
               />
               <svg
                 viewBox="0 0 16 16"
@@ -251,7 +251,7 @@ export function ListingsBrowser({
                   setSort(e.target.value as SortKey);
                   setPage(1);
                 }}
-                className="w-full appearance-none rounded-[1px] border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pr-10 font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--color-text)] outline-none transition-colors duration-200 focus:border-[var(--color-bronze)]"
+                className="w-full appearance-none rounded-full border border-[var(--color-line-strong)] bg-transparent px-4 py-3 pr-10 font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--color-text)] outline-none transition-[border-color,background,box-shadow] duration-500 ease-[var(--ease-luxe)] focus:border-[var(--color-bronze)] focus:bg-[rgba(212,184,150,0.045)] focus:shadow-[0_0_0_3px_rgba(212,184,150,0.08)]"
               >
                 {sorts.map((s) => (
                   <option key={s.key} value={s.key} className="bg-[var(--color-bg)]">
@@ -285,7 +285,7 @@ export function ListingsBrowser({
       {/* GRID */}
       <div className="pt-2 md:pt-4">
       {paged.length === 0 ? (
-        <div className="border border-[var(--color-line)] bg-[var(--color-surface)] p-16 text-center">
+        <div className="luxury-card border border-[var(--color-line)] bg-[var(--color-surface)] p-16 text-center transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]">
           <p className="m-0 mb-3 font-serif text-[24px] font-light text-[var(--color-text)]">
             No properties match this search yet.
           </p>
@@ -310,7 +310,7 @@ export function ListingsBrowser({
             type="button"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="inline-flex size-10 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] disabled:opacity-30"
+            className="luxury-button inline-flex size-10 items-center justify-center rounded-full border border-[var(--color-line-strong)] text-[var(--color-text)] transition-[transform,border-color,color,background] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)] disabled:opacity-30"
             aria-label="Previous page"
           >
             <svg viewBox="0 0 16 16" aria-hidden className="size-3.5">
@@ -324,7 +324,7 @@ export function ListingsBrowser({
             type="button"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="inline-flex size-10 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] disabled:opacity-30"
+            className="luxury-button inline-flex size-10 items-center justify-center rounded-full border border-[var(--color-line-strong)] text-[var(--color-text)] transition-[transform,border-color,color,background] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)] disabled:opacity-30"
             aria-label="Next page"
           >
             <svg viewBox="0 0 16 16" aria-hidden className="size-3.5">
@@ -370,7 +370,7 @@ function PageNumbers({
             key={n}
             type="button"
             onClick={() => onSelect(n)}
-            className={`size-10 rounded-[1px] border text-[12px] font-medium transition-colors ${
+            className={`size-10 rounded-full border text-[12px] font-medium transition-[transform,border-color,color,background] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 ${
               n === page
                 ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]"
                 : "border-transparent text-[var(--color-text-muted)] hover:border-[var(--color-line-strong)] hover:text-[var(--color-text)]"

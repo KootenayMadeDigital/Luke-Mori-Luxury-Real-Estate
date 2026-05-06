@@ -77,10 +77,10 @@ export function RecentlyConcluded() {
             </SectionLede>
             <Link
               href="/listings/sold"
-              className="mt-6 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]"
+              className="luxury-button mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-[transform,border-color,color,background] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)]"
             >
               View sold properties
-              <svg viewBox="0 0 16 16" aria-hidden className="size-[14px]">
+              <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                 <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
               </svg>
             </Link>
@@ -90,7 +90,7 @@ export function RecentlyConcluded() {
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6">
           <div className="grid grid-cols-1 gap-5">
             <Reveal>
-              <article className="luxury-card group relative min-h-[560px] overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_34px_100px_-62px_rgba(0,0,0,0.95)]">
+              <article className="luxury-card group relative min-h-[560px] overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_34px_100px_-62px_rgba(0,0,0,0.95)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)]">
                 <div className="relative h-full min-h-[548px] overflow-hidden rounded-[calc(2rem-0.375rem)]">
                   <Image
                     src={lead.image}

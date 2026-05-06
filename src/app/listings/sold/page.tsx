@@ -91,7 +91,7 @@ export default function SoldPage() {
 
               {leftSupport && (
                 <Reveal delay={280}>
-                  <article className="luxury-card group grid overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] sm:grid-cols-[0.92fr_1.08fr]">
+                  <article className="luxury-card group grid overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:grid-cols-[0.92fr_1.08fr]">
                     <div className="relative min-h-[230px] overflow-hidden bg-[var(--color-bg)]">
                       <Image
                         src={leftSupport.image}
@@ -132,7 +132,7 @@ export default function SoldPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
               {rightSupport.map((c, i) => (
                 <Reveal key={c.address} delay={i * 70}>
-                  <article className="luxury-card group grid h-full grid-cols-[0.9fr_1.1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)] sm:grid-cols-1 lg:grid-cols-[0.88fr_1.12fr]">
+                  <article className="luxury-card group grid h-full grid-cols-[0.9fr_1.1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:grid-cols-1 lg:grid-cols-[0.88fr_1.12fr]">
                     <div className="relative min-h-[210px] overflow-hidden bg-[var(--color-bg)]">
                       <Image
                         src={c.image}
@@ -203,7 +203,7 @@ export default function SoldPage() {
               { value: "3", label: "Main Areas" },
               { value: "$2.24M", label: "Highest Shown" },
             ].map((stat) => (
-              <Reveal key={stat.label} className="bg-[var(--color-bg)] p-6 text-center md:p-7">
+              <Reveal key={stat.label} className="luxury-card group bg-[var(--color-bg)] p-6 text-center transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] md:p-7">
                 <div className="font-serif text-[30px] font-light leading-none tracking-[-0.01em] text-[var(--color-text)] md:text-[38px]">
                   {stat.value}
                 </div>
@@ -217,7 +217,7 @@ export default function SoldPage() {
           <div className="mb-7 grid grid-cols-1 gap-5 lg:grid-cols-3">
             {archiveFeatured.map((item, index) => (
               <Reveal key={`${item.address}-featured`} delay={index * 70}>
-                <article className="luxury-card group overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]">
+                <article className="luxury-card group overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-bg)]">
                   <div className="relative aspect-[16/10] overflow-hidden bg-[var(--color-bg)]">
                     <Image
                       src={item.image}
@@ -258,7 +258,7 @@ export default function SoldPage() {
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {archiveRest.map((item, index) => (
               <Reveal key={`${item.address}-${index}`} delay={(index % 6) * 35}>
-                <article className="luxury-card group flex h-full overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)]">
+                <article className="luxury-card group flex h-full overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]">
                   <div className="relative w-[42%] min-w-[130px] overflow-hidden bg-[var(--color-bg)]">
                     <Image
                       src={item.image}

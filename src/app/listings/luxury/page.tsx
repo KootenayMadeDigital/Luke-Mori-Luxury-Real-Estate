@@ -119,7 +119,7 @@ export default function LuxuryListingsPage() {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 lg:grid-cols-4">
             {luxuryPockets.map((pocket, index) => (
-              <Reveal key={pocket.name} delay={index * 60} className="bg-[var(--color-bg)] p-7">
+              <Reveal key={pocket.name} delay={index * 60} className="luxury-card group bg-[var(--color-bg)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
                 <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                   Pocket {String(index + 1).padStart(2, "0")}
                 </span>

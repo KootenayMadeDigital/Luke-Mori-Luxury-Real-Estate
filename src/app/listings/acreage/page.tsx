@@ -98,7 +98,7 @@ export default function AcreageListingsPage() {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
             {acreageNotes.map((note, index) => (
-              <Reveal key={note.title} delay={index * 70} className="bg-[var(--color-bg)] p-7 md:p-8">
+              <Reveal key={note.title} delay={index * 70} className="luxury-card group bg-[var(--color-bg)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] md:p-8">
                 <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                   {note.label}
                 </span>

@@ -58,7 +58,7 @@ export function RecentlyViewedRail({ currentSlug }: Props) {
   if (visible.length === 0) return null;
 
   return (
-    <div className="mt-14 border border-[var(--color-line)] bg-[var(--color-surface)] p-5 sm:p-6">
+    <div className="luxury-card group mt-14 border border-[var(--color-line)] bg-[var(--color-surface)] p-5 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-6">
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="m-0 text-[10px] font-medium uppercase tracking-[0.26em] text-[var(--color-bronze)]">
@@ -78,7 +78,7 @@ export function RecentlyViewedRail({ currentSlug }: Props) {
           <Link
             key={listing.slug}
             href={`/listings/${listing.slug}`}
-            className="luxury-card group grid grid-cols-[86px_1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-bg)] transition-[border-color,transform,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
+            className="luxury-card group grid grid-cols-[86px_1fr] overflow-hidden border border-[var(--color-line)] bg-[var(--color-bg)] transition-[border-color,background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)]"
           >
             <div className="relative min-h-[88px] bg-[var(--color-bg-2)]">
               {listing.heroPhoto && (

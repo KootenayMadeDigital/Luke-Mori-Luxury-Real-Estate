@@ -70,7 +70,7 @@ export function PhotoGallery({ photos, alt }: Props) {
             e.stopPropagation();
             close();
           }}
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.76)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text)] shadow-[0_18px_50px_-32px_rgba(0,0,0,0.95)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+          className="luxury-button inline-flex items-center gap-2 rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.76)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-text)] shadow-[0_18px_50px_-32px_rgba(0,0,0,0.95)] backdrop-blur-md transition-[transform,border-color,color,background] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)]"
           aria-label="Close gallery"
         >
           Close
@@ -104,7 +104,7 @@ export function PhotoGallery({ photos, alt }: Props) {
             prev();
           }}
           aria-label="Previous photo"
-          className="group absolute left-3 top-1/2 z-[4] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:left-6"
+          className="group absolute left-3 top-1/2 z-[4] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:scale-105 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)] sm:left-6"
         >
           <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:-translate-x-0.5">
             <path d="M13 8 H3 M7 4 L3 8 L7 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -117,7 +117,7 @@ export function PhotoGallery({ photos, alt }: Props) {
             next();
           }}
           aria-label="Next photo"
-          className="group absolute right-3 top-1/2 z-[4] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-[1px] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)] sm:right-6"
+          className="group absolute right-3 top-1/2 z-[4] -translate-y-1/2 inline-flex size-12 items-center justify-center rounded-full border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.68)] text-[var(--color-text)] backdrop-blur-md transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:scale-105 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)] sm:right-6"
         >
           <svg viewBox="0 0 16 16" aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5">
             <path d="M3 8 H13 M9 4 L13 8 L9 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -146,7 +146,7 @@ export function PhotoGallery({ photos, alt }: Props) {
               key={src + i}
               type="button"
               onClick={() => setOpenIndex(i)}
-              className={`luxury-card group relative aspect-[4/3] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] ${span}`}
+              className={`luxury-card group relative aspect-[4/3] overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] ${span}`}
               aria-label={`View photo ${i + 1} of ${total}`}
             >
               <Image

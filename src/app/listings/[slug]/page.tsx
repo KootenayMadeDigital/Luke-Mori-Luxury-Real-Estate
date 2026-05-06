@@ -317,7 +317,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 <Reveal delay={280}>
                   <div className="mt-10 grid grid-cols-1 gap-px bg-[var(--color-line)] sm:grid-cols-2 xl:grid-cols-3">
                     {listingHighlights.map((item) => (
-                      <div key={item.label} className="bg-[var(--color-bg)] p-5 sm:p-6">
+                      <div key={item.label} className="luxury-card group bg-[var(--color-bg)] p-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-6">
                         <p className="m-0 text-[9px] font-bold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{item.label}</p>
                         <p className="m-0 mt-3 font-serif text-[21px] font-light leading-[1.2] text-[var(--color-text)]">{item.value}</p>
                       </div>
@@ -330,7 +330,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 <Reveal delay={300}>
                   <dl className="mt-10 grid grid-cols-2 gap-px bg-[var(--color-line)] sm:grid-cols-4">
                     {editorialFacts.map((fact) => (
-                      <div key={fact.label} className="bg-[var(--color-surface)] p-5 sm:p-6">
+                      <div key={fact.label} className="luxury-card group bg-[var(--color-surface)] p-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-bg)] sm:p-6">
                         <dt className="mb-3 text-[9px] font-medium uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                           {fact.label}
                         </dt>
@@ -352,7 +352,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                   </h2>
                   {buildStorySegments(l).length > 0 && (
                     <div className="mt-9 rounded-[2rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.34)] p-2 shadow-[0_30px_90px_-75px_rgba(0,0,0,0.55)] lg:w-[calc(100vw-4rem)] lg:max-w-[1180px] xl:w-[calc(100vw-7rem)]">
-                      <div className="rounded-[calc(2rem-0.5rem)] bg-[var(--color-surface)] p-6 sm:p-8 lg:p-10">
+                      <div className="luxury-card group rounded-[calc(2rem-0.5rem)] bg-[var(--color-surface)] p-6 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-bg)] sm:p-8 lg:p-10">
                         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
                           {buildStorySegments(l).map((sentence, i) => (
                             <p
@@ -387,7 +387,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
             </div>
 
             <Reveal delay={300}>
-              <aside className="sticky top-32 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.9)] sm:p-8">
+              <aside className="luxury-card group sticky top-32 border border-[var(--color-line)] bg-[var(--color-surface)] p-7 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.9)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-8">
                 {l.price && (
                   <div className="mb-6 border-b border-[var(--color-line)] pb-6">
                     <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
@@ -475,7 +475,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<Pa
                 <Reveal
                   key={row.label + i}
                   delay={(i % 6) * 40}
-                  className="grid grid-cols-[140px_1fr] items-baseline gap-4 bg-[var(--color-bg)] px-6 py-5 transition-colors hover:bg-[var(--color-surface)] sm:grid-cols-[180px_1fr] sm:px-8 sm:py-6"
+                  className="luxury-card group grid grid-cols-[140px_1fr] items-baseline gap-4 bg-[var(--color-bg)] px-6 py-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:grid-cols-[180px_1fr] sm:px-8 sm:py-6"
                 >
                   <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     {row.label}

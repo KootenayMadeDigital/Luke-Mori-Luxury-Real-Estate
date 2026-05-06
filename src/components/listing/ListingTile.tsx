@@ -19,7 +19,7 @@ export function ListingTile({ listing: l, variant = "default", showAgent = false
   return (
     <Link
       href={`/listings/${l.slug}`}
-      className="luxury-card group flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
+      className="luxury-card group flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]"
     >
       <div className={`tone-dark relative overflow-hidden ${compact ? "aspect-[5/4]" : "aspect-[4/3]"}`}>
         {l.heroPhoto ? (

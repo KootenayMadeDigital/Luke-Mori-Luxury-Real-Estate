@@ -57,7 +57,7 @@ export function ListingCompareTool({ listings }: Props) {
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[380px_1fr]">
-          <div className="border border-[var(--color-line-strong)] bg-[var(--color-bg)] p-5 sm:p-6 lg:sticky lg:top-32 lg:h-fit">
+          <div className="luxury-card group border border-[var(--color-line-strong)] bg-[var(--color-bg)] p-5 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-surface)] sm:p-6 lg:sticky lg:top-32 lg:h-fit">
             <label className="block">
               <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Find a listing</span>
               <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Address, area, property type" className="w-full border border-[var(--color-line-strong)] bg-transparent px-4 py-3 text-[14px] text-[var(--color-text)] outline-none placeholder:text-[var(--color-text-dim)] focus:border-[var(--color-bronze)]" />
@@ -66,7 +66,7 @@ export function ListingCompareTool({ listings }: Props) {
               {results.map((l) => {
                 const on = selected.includes(l.slug);
                 return (
-                  <button key={l.slug} type="button" onClick={() => toggle(l.slug)} className={`grid grid-cols-[72px_1fr] gap-3 border p-2 text-left transition-colors ${on ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.12)]" : "border-[var(--color-line)] bg-[var(--color-surface)] hover:border-[var(--color-line-strong)]"}`}>
+                  <button key={l.slug} type="button" onClick={() => toggle(l.slug)} className={`luxury-card group grid grid-cols-[72px_1fr] gap-3 border p-2 text-left transition-[border-color,background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 ${on ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.12)]" : "border-[var(--color-line)] bg-[var(--color-surface)] hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]"}`}>
                     <span className="relative block aspect-[4/3] overflow-hidden bg-[var(--color-bg)]">
                       {l.heroPhoto && <Image src={l.heroPhoto} alt="" fill sizes="72px" className="object-cover" />}
                     </span>
@@ -84,7 +84,7 @@ export function ListingCompareTool({ listings }: Props) {
           <div className="overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
             <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
               {selectedListings.map((l) => (
-                <article key={l.slug} className="bg-[var(--color-bg)]">
+                <article key={l.slug} className="luxury-card group bg-[var(--color-bg)] transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
                   <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-surface)]">
                     {l.heroPhoto && <Image src={l.heroPhoto} alt={l.address} fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />}
                     <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,11,13,0.2)] via-transparent to-[rgba(10,11,13,0.72)]" />
@@ -101,7 +101,12 @@ export function ListingCompareTool({ listings }: Props) {
                   <div className="p-6">
                     <h3 className="m-0 font-serif text-[28px] font-light leading-[1.08] text-[var(--color-text)]">{l.address}</h3>
                     <p className="m-0 mt-3 text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-dim)]">{l.location || "Kootenays"}</p>
-                    <Link href={`/listings/${l.slug}`} className="mt-5 inline-flex text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronze)]">View property</Link>
+                    <Link href={`/listings/${l.slug}`} className="mt-5 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronze)]">
+                      View property
+                      <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[13px]">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
+                      </svg>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -130,7 +135,7 @@ export function ListingCompareTool({ listings }: Props) {
 
             <div className="flex flex-wrap items-center justify-between gap-4 bg-[var(--color-bg)] p-6">
               <p className="m-0 max-w-[720px] text-[14px] leading-[1.7] text-[var(--color-text-muted)]">A compare table does not replace local judgment. It makes the first conversation sharper: why this home, why this area, why this price, and what should be checked before touring.</p>
-              <Link href="/contact#consultation" className="rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)] hover:bg-[var(--color-bronze-light)]">Ask Luke to compare</Link>
+              <Link href="/contact#consultation" className="luxury-button rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)] transition-[transform,background,border-color] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]">Ask Luke to compare</Link>
             </div>
           </div>
         </div>

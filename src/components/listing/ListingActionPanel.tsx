@@ -90,7 +90,7 @@ export function ListingActionPanel(props: Props) {
   }
 
   return (
-    <div className="rounded-[1.35rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-4 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.9)] sm:p-5">
+    <div className="luxury-card group rounded-[1.35rem] border border-[var(--color-line)] bg-[var(--color-surface)] p-4 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.9)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-5">
       <div className="mb-4 flex items-center justify-between gap-4 border-b border-[var(--color-line)] pb-4">
         <div>
           <p className="m-0 text-[10px] font-medium uppercase tracking-[0.26em] text-[var(--color-bronze)]">
@@ -124,9 +124,10 @@ export function ListingActionPanel(props: Props) {
           font-weight: 600;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          transition: border-color 220ms ease, color 220ms ease, background 220ms ease;
+          transition: transform 500ms var(--ease-luxe), border-color 500ms var(--ease-luxe), color 500ms var(--ease-luxe), background 500ms var(--ease-luxe);
         }
         .action-button:hover {
+          transform: translateY(-2px);
           border-color: var(--color-bronze);
           color: var(--color-bronze-light);
           background: rgba(212, 184, 150, 0.08);

@@ -68,7 +68,7 @@ export default function ListingsIndexPage() {
 
       <section className="tone-walnut tonal-section border-t border-[var(--color-line)] py-20 md:py-24">
         <Container>
-          <Reveal className="grid grid-cols-1 gap-8 border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-8 shadow-[0_32px_90px_-68px_rgba(0,0,0,0.9)] md:grid-cols-[1fr_auto] md:items-center md:p-10">
+          <Reveal className="luxury-card group grid grid-cols-1 gap-8 border border-[var(--color-line-strong)] bg-[rgba(255,255,255,0.035)] p-8 shadow-[0_32px_90px_-68px_rgba(0,0,0,0.9)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.055)] md:grid-cols-[1fr_auto] md:items-center md:p-10">
             <div>
               <Eyebrow>Buyer Confidence</Eyebrow>
               <blockquote className="m-0 mt-5 max-w-[880px] font-serif text-[24px] font-light leading-[1.45] tracking-[-0.005em] text-[var(--color-text)] sm:text-[30px]">
