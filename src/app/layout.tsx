@@ -54,11 +54,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400,500,600&f[]=satoshi@300,400,500,600,700&display=swap"
+          rel="preload"
+          href="https://cdn.fontshare.com/wf/54LXI2OCUZKIGXGLIPZLVAKCWLEVCWJ5/SMBRL4FXBYZFKSDA2XRPY55FMWX246T3/XV7ESZCVQJEU7XKHJW4AOX3XECHBBT2B.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
       </head>
       <body>

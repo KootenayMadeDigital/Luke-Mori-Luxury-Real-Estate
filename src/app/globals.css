@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Gambetta";
+  src: url("https://cdn.fontshare.com/wf/54LXI2OCUZKIGXGLIPZLVAKCWLEVCWJ5/SMBRL4FXBYZFKSDA2XRPY55FMWX246T3/XV7ESZCVQJEU7XKHJW4AOX3XECHBBT2B.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("https://cdn.fontshare.com/wf/UZPXFLPCL3LPXEMLR5DTVJKV74OXXAV4/6OFIA3NPHGHWKE52SKZL7EQ4WH22JUMB/ODDSCHC7OZCRRQJDJV5LMJKTGF7URFO4.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ============================================================
    LUKE MORI LUXURY
    Design Tokens
