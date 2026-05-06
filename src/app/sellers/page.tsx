@@ -48,7 +48,7 @@ export default function SellersPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Sellers" }]}
         meta={[
           { value: "Planned", label: "Not Rushed" },
-          { value: "$169M+", label: "Career Volume" },
+          { value: "$169M+", label: "Lifetime Sales" },
           { value: "2-4 wks", label: "Prep Window" },
           { value: "Clear", label: "Showing Plan" },
         ]}
@@ -114,25 +114,23 @@ export default function SellersPage() {
           <Reveal className="mx-auto max-w-[760px] text-center">
             <Eyebrow centered>The Marketing Standard</Eyebrow>
             <SectionHeading centered className="mt-7">
-              What every property gets,
+              The core marketing package,
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                regardless of price.
+                shown plainly.
               </em>
             </SectionHeading>
             <SectionLede align="center">
-              Professional photography. Drone film. A 60-second property film. Clear copy.
-              Targeted distribution into Vancouver, Calgary, and select international markets when the property calls for it.
-              The standard is not the upgrade.
+              Luke&apos;s seller materials describe professional photography, video tours using drone and indoor equipment, room measurements, and careful property details. For homes with broader buyer appeal, the plan can also include targeted reach beyond Nelson.
             </SectionLede>
           </Reveal>
 
           <div className="mx-auto mt-14 grid max-w-[1100px] grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
             {[
-              { value: "500+", label: "YouTube Subscribers" },
+              { value: "350+", label: "YouTube Subscribers" },
               { value: "9K+", label: "Instagram Followers" },
-              { value: "250K+", label: "Property Film Views" },
-              { value: "250+", label: "Property Films" },
+              { value: "200K+", label: "Property Film Views" },
+              { value: "100+", label: "Property Videos" },
             ].map((s) => (
               <Reveal key={s.label} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 text-center">
                 <div className="mb-2 font-serif text-[28px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] md:text-[34px]">

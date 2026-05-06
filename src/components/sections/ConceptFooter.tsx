@@ -60,7 +60,7 @@ const navLists: { heading: string; links: { label: string; href: string }[] }[] 
 ];
 
 const footerSignals = [
-  { value: "$169M+", label: "Career sales volume" },
+  { value: "$169M+", label: "Lifetime sales" },
   { value: "2021 & 2024", label: "Best Luxury Broker BC" },
   { value: "Nelson born", label: "Local market knowledge" },
 ];

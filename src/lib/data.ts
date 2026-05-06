@@ -27,13 +27,13 @@ export type HeroProofSignal = { value: string; label: string; detail: string };
 export const heroProofSignals: HeroProofSignal[] = [
   {
     value: "$169M+",
-    label: "Career sales volume",
-    detail: "Important sales across Nelson, Kootenay Lake, and the surrounding region.",
+    label: "Lifetime real estate sales",
+    detail: "A public figure stated in Luke Mori materials.",
   },
   {
     value: "2021 & 2024",
     label: "Best Luxury Broker BC",
-    detail: "Provincial recognition backed by deep local experience.",
+    detail: "LukeMori.com names Luke winner of Best Luxury Real Estate Broker in 2021 and 2024.",
   },
   {
     value: "Nelson born",
@@ -121,7 +121,7 @@ export const authorityPillars: AuthorityPillar[] = [
 export type Credential = { value: string; label: string };
 
 export const credentials: Credential[] = [
-  { value: "$169M+", label: "Career Sales Volume" },
+  { value: "$169M+", label: "Lifetime Sales" },
   { value: "2021 & 2024", label: "Best Luxury Broker BC" },
   { value: "10+ Yrs", label: "Nelson Market Knowledge" },
   { value: "Personal", label: "Guidance" },
@@ -140,14 +140,14 @@ export const trustProofs: TrustProof[] = [
   {
     eyebrow: "Track Record",
     title: "Sales volume with real negotiation experience.",
-    proof: "$169M+ career sales volume across Nelson and the Kootenays.",
+    proof: "$169M+ lifetime real estate sales, as stated in public Luke Mori materials.",
     meaning:
-      "The number matters because it comes from real pricing, offers, negotiations, and closings, not claims on a brochure.",
+      "The number matters because it points to real pricing, offers, negotiations, and closings, not empty decoration.",
   },
   {
     eyebrow: "Recognition",
     title: "Recognized in BC. Grounded in Nelson.",
-    proof: "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards in 2021 and again in 2024.",
+    proof: "LukeMori.com names Luke winner of Best Luxury Real Estate Broker in 2021 and 2024.",
     meaning:
       "Awards help, but the useful work is local: Nelson, Kootenay Lake, the North Shore, and the roads buyers underestimate.",
   },
@@ -172,7 +172,7 @@ export type TrustPrinciple = { title: string; body: string };
 export const trustPrinciples: TrustPrinciple[] = [
   {
     title: "Facts before adjectives",
-    body: "Sales volume, awards, press visibility, local experience, and client voice make trust easier before the first conversation.",
+    body: "Public sales figures, awards, press visibility, local experience, and client voice make trust easier before the first conversation.",
   },
   {
     title: "Privacy before attention",
@@ -202,7 +202,7 @@ export const inquiryPaths: InquiryPath[] = [
     body: "Share the address, timeline, privacy needs, and what you are hoping for. Luke can help you understand the right next step.",
     href: "/contact",
     cta: "Plan your sale",
-    proof: "$169M+ career volume, disciplined sale planning, serious showings.",
+    proof: "$169M+ lifetime sales figure, disciplined sale planning, serious showings.",
   },
   {
     audience: "Buyers",

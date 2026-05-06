@@ -67,8 +67,8 @@ export default function NelsonRealtorPage() {
         image={siteImages.realtorHeaderLuke}
         crumbs={[{ label: "Home", href: "/" }, { label: "Nelson BC Realtor" }]}
         meta={[
-          { value: "150+", label: "Lifetime Clients" },
-          { value: "$169M+", label: "Career Volume" },
+          { value: "Client", label: "Testimonials" },
+          { value: "$169M+", label: "Lifetime Sales" },
           { value: "2021/24", label: "BC Awards" },
           { value: "Nelson", label: "Local Focus" },
         ]}

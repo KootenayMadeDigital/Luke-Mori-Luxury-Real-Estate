@@ -25,7 +25,7 @@ const mediaLogoScale: Record<string, string> = {
 export const metadata = buildPageMetadata({
   title: "Luke Mori Reviews, Awards & Nelson BC Real Estate Proof",
   description:
-    "Voted Best Luxury Real Estate Broker in British Columbia by the Luxury Lifestyle Awards (2021 & 2024). Verbatim client testimonials from buyers and sellers across Nelson and the Kootenay region.",
+    "LukeMori.com states he is the winner of Best Luxury Real Estate Broker in 2021 and 2024. Verbatim client testimonials from buyers and sellers across Nelson and the Kootenay region.",
   path: "/testimonials",
   image: "/og/testimonials.png",
 });
@@ -42,9 +42,9 @@ export default function TestimonialsPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Awards & Testimonials" }]}
         meta={[
           { value: "2021 / 2024", label: "Best Luxury Broker BC" },
-          { value: "150+", label: "Lifetime Clients" },
-          { value: "9+", label: "Press Features" },
-          { value: "$169M+", label: "Career Volume" },
+          { value: "Client", label: "Testimonials" },
+          { value: "9", label: "Media Logos" },
+          { value: "$169M+", label: "Lifetime Sales" },
         ]}
       />
 
@@ -61,28 +61,27 @@ export default function TestimonialsPage() {
               </em>
             </SectionHeading>
             <SectionLede align="center" className="mx-auto mb-12 max-w-[820px] text-[20px] md:text-[22px]">
-              Awarded by the Luxury Lifestyle Awards in both 2021 and again in 2024, the only
-              two-time recipient in the Nelson and Kootenay region.
+              LukeMori.com states he is the winner of Best Luxury Real Estate Broker in 2021 and 2024, with the 2021 award shown on his awards page.
             </SectionLede>
 
             <div className="mx-auto max-w-[900px] rounded-[2rem] border border-[var(--color-line-strong)] bg-[linear-gradient(135deg,rgba(255,248,237,0.72),rgba(212,184,150,0.2))] p-4 shadow-[0_34px_110px_-70px_rgba(63,46,31,0.42)] sm:p-6 md:p-8">
               <div className="grid grid-cols-1 items-center gap-8 rounded-[calc(2rem-0.75rem)] border border-[rgba(83,59,36,0.12)] bg-[rgba(255,252,246,0.74)] p-6 sm:p-8 md:grid-cols-[1.15fr_0.85fr] md:text-left">
                 <div>
                   <p className="m-0 text-[11px] font-bold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
-                    Luxury Lifestyle Awards
+                    Best Luxury Broker Record
                   </p>
                   <h2 className="m-0 mt-4 font-serif text-[42px] font-light leading-[0.98] tracking-[-0.02em] text-[var(--color-text)] sm:text-[56px] md:text-[68px]">
                     2021 & 2024
                   </h2>
                   <p className="m-0 mt-5 max-w-[520px] text-[15px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
-                    Recognized twice at the provincial level, backed by local experience in Nelson and the Kootenays.
+                    Recognition stated on LukeMori.com, backed by local experience in Nelson and the Kootenays.
                   </p>
                 </div>
 
                 <div className="relative mx-auto h-40 w-full max-w-[520px] sm:h-48 md:h-56">
                   <Image
                     src={brandImages.awardBadge}
-                    alt="Best Luxury Real Estate Broker, Luxury Lifestyle Awards"
+                    alt="Best Luxury Real Estate Broker award badge for Luke Mori"
                     fill
                     sizes="(min-width: 768px) 420px, 88vw"
                     className="object-contain drop-shadow-[0_18px_34px_rgba(63,46,31,0.28)]"

@@ -138,8 +138,8 @@ export function buildAgentJsonLd() {
       "Seller guidance",
     ],
     award: [
-      "Best Luxury Real Estate Broker in British Columbia, Luxury Lifestyle Awards, 2021",
-      "Best Luxury Real Estate Broker in British Columbia, Luxury Lifestyle Awards, 2024",
+      "Winner of Best Luxury Real Estate Broker in 2021 and 2024, as stated on LukeMori.com",
+      "Best Luxury Real Estate Broker award from Luxury Lifestyle Awards, 2021",
     ],
   };
 }
