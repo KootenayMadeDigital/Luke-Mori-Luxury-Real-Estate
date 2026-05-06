@@ -8,13 +8,12 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { buyerGuides, guideCategories } from "@/lib/guides";
-import { headerImages } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
   title: "Kootenay Real Estate Guides",
   description: "Practical buyer and seller guides for Kootenay Lake, Nelson, Kaslo, rural acreage, waterfront review, and important property decisions in BC.",
   path: "/guides",
-  image: headerImages.westArmKootenayLake,
+  image: "/generated/guide-headers/guides-hub.webp",
 });
 
 export default function BuyerGuidesPage() {
@@ -25,7 +24,7 @@ export default function BuyerGuidesPage() {
         title="Know the market"
         emphasis="before the showing."
         lede="Practical guidance for buyers comparing Kootenay Lake, Nelson, Kaslo, waterfront, acreage, rural systems, and important property decisions."
-        image={headerImages.westArmKootenayLake}
+        image="/generated/guide-headers/guides-hub.webp"
         crumbs={[{ label: "Home", href: "/" }, { label: "Guides" }]}
         meta={[
           { value: buyerGuides.length.toString(), label: "Guides" },
