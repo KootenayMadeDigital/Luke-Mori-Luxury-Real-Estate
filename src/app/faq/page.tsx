@@ -10,14 +10,15 @@ import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { headerImages, faqs } from "@/lib/data";
 
 export const metadata = buildPageMetadata({
-  title: "Nelson BC Real Estate FAQ · Buyers, Sellers & Relocation",
+  title: "Nelson BC Real Estate FAQ · Quick Buyer & Seller Answers",
   description:
-    "Answers to Nelson BC real estate questions about buying, selling, waterfront homes, Kootenay Lake, relocation, second homes, and quieter opportunities.",
+    "Quick answers to important Nelson BC and Kootenay Lake real estate questions about buying, selling, waterfront, acreage, relocation, taxes, risk review, and working with Luke Mori.",
   path: "/faq",
   image: "/og/faq.png",
 });
 
 const categories = Array.from(new Set(faqs.map((faq) => faq.category)));
+const categoryId = (category: string) => category.toLowerCase().replace(/\s+/g, "-");
 
 export default function FaqPage() {
   return (
@@ -25,9 +26,9 @@ export default function FaqPage() {
       <JsonLd data={buildFaqJsonLd(faqs.map((faq) => ({ question: faq.q, answer: faq.a })), "/faq")} />
       <SubpageHero
         eyebrow="FAQ"
-        title="The questions"
-        emphasis="worth asking first."
-        lede="Straight answers for sellers, buyers, relocating clients, second-home owners, and off-market questions."
+        title="Quick answers for Kootenay real estate"
+        emphasis="before the bigger decision."
+        lede="The short version of what buyers and sellers ask most: areas, offers, waterfront, acreage, taxes, ownership rules, selling, relocation, and when to bring Luke in."
         image={headerImages.orangeBridge}
         crumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
@@ -35,16 +36,16 @@ export default function FaqPage() {
       <section className="tone-ivory tonal-section py-24 md:py-28">
         <Container>
           <Reveal className="mb-16 max-w-[780px]">
-            <Eyebrow>Process Guide</Eyebrow>
+            <Eyebrow>Fast Answers</Eyebrow>
             <SectionHeading className="mt-7">
-              Sorted by phase,
+              The concerns people need settled
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                not dumped in a pile.
+                before they keep reading.
               </em>
             </SectionHeading>
             <SectionLede>
-              Start with the category that matches the decision in front of you: selling, buying, relocation, second-home ownership, or off-market access.
+              Use this page when you need a clear answer first. If the decision is bigger, the guide library goes deeper from here.
             </SectionLede>
           </Reveal>
 
@@ -58,7 +59,7 @@ export default function FaqPage() {
                   {categories.map((category) => (
                     <a
                       key={category}
-                      href={`#${category.toLowerCase()}`}
+                      href={`#${categoryId(category)}`}
                       className="rounded-full border border-[var(--color-line)] px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background] duration-500 hover:border-[var(--color-bronze)] hover:bg-[rgba(176,138,91,0.08)] hover:text-[var(--color-bronze)]"
                     >
                       {category}
@@ -72,7 +73,7 @@ export default function FaqPage() {
               {categories.map((category, categoryIndex) => {
                 const items = faqs.filter((faq) => faq.category === category);
                 return (
-                  <section key={category} id={category.toLowerCase()} className="scroll-mt-32">
+                  <section key={category} id={categoryId(category)} className="scroll-mt-32">
                     <Reveal className="mb-6 flex items-end justify-between gap-6 border-b border-[var(--color-line)] pb-5">
                       <div>
                         <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
@@ -120,10 +121,10 @@ export default function FaqPage() {
       </section>
 
       <InquiryCTA
-        eyebrow="Ask Anything"
-        title="Still unsure?"
-        emphasis="Ask before the wrong move costs you."
-        body="If your question depends on a property, timeline, relocation plan, or sale decision, the useful answer depends on the details. Start there."
+        eyebrow="Ask Luke"
+        title="Need the answer for a real property?"
+        emphasis="Send the address."
+        body="If the question depends on a home, timeline, sale plan, legal detail, tax rule, insurance issue, or local condition, the useful answer depends on the facts. Start with the property and Luke will help narrow the next step."
       />
     </PageLayout>
   );
