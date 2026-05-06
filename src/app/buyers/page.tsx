@@ -4,7 +4,6 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { ProcessSteps } from "@/components/layout/ProcessSteps";
-import { BuyerFitQuiz } from "@/components/buyers/BuyerFitQuiz";
 import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -61,6 +60,33 @@ const advantageChecks = [
   {
     title: "Clear next step",
     body: "Every serious buyer should know what comes next: scout the area, study the shoreline, line up advisors, watch quiet opportunities, or book the right tour.",
+  },
+];
+
+const buyerDecisionChecks = [
+  {
+    title: "Cost beyond the offer",
+    body: "Price is only one number. Budget for property transfer tax, legal fees, inspection, insurance, adjustments, moving costs, repairs, utilities, snow removal, strata fees, rural maintenance, and the carrying cost of waiting.",
+    href: "/guides/bc-property-transfer-tax-closing-costs-kootenay-buyers",
+    cta: "Plan closing costs",
+  },
+  {
+    title: "Condition and systems",
+    body: "Older Nelson homes, lake homes, and rural properties can hide different risks. Match inspection scope to the property: roof, drainage, electrical, heat, wells, septic, docks, outbuildings, slope, and access.",
+    href: "/guides/home-inspection-rural-waterfront-kootenays",
+    cta: "Review inspection questions",
+  },
+  {
+    title: "Title, access, and use",
+    body: "Before a beautiful property becomes the favourite, understand easements, rights-of-way, shared roads, strata rules, waterfront access, ALR, zoning, rental rules, and whether your intended use is actually allowed.",
+    href: "/guides/title-easements-rights-of-way-rural-bc",
+    cta: "Check title issues",
+  },
+  {
+    title: "Offer timing and conditions",
+    body: "The right offer protects momentum without skipping judgment. Decide what must be verified, who needs to review it, how much time is needed, and when a strong clean offer is safer than a rushed one.",
+    href: "/guides/buying-with-conditions-bc-real-estate",
+    cta: "Study offer conditions",
   },
 ];
 
@@ -133,24 +159,38 @@ export default function BuyersPage() {
         ]}
       />
 
-      <section id="buyer-fit" className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Area Fit Quiz</Eyebrow>
+              <Eyebrow>Buyer Due Diligence</Eyebrow>
               <SectionHeading className="mt-7">
-                Match the area
+                Know what to check
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  to the life.
+                  before the offer.
                 </em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Answer simple lifestyle questions about daily rhythm, water, space, winter, services, social pace, future plans, and quiet. The result points buyers toward the Nelson-area fit that deserves the first scouting day.
+              A good buyer page should help people avoid expensive surprises. These are the checks that come up again and again around Nelson, Kootenay Lake, rural acreage, older homes, and second-home purchases.
             </SectionLede>
           </Reveal>
-          <BuyerFitQuiz />
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2">
+            {buyerDecisionChecks.map((item, index) => (
+              <Reveal key={item.title} delay={(index % 2) * 70} className="flex h-full flex-col bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  Check {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 font-serif text-[30px] font-light leading-[1.12] text-[var(--color-text)]">{item.title}</h3>
+                <p className="m-0 mt-5 flex-1 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">{item.body}</p>
+                <Link href={item.href} className="mt-7 inline-flex text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+                  {item.cta}
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
