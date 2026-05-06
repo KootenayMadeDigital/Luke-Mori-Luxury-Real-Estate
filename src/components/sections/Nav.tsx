@@ -272,18 +272,7 @@ export function Nav() {
         aria-hidden={!mobileOpen}
       >
         <div className="pointer-events-none absolute inset-x-6 top-32 h-px bg-[linear-gradient(90deg,transparent,rgba(212,184,150,0.42),transparent)]" aria-hidden />
-        <div className="flex h-full flex-col overflow-y-auto pr-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <div className="mb-6 mt-2 rounded-[2rem] border border-[rgba(212,184,150,0.18)] bg-[rgba(255,255,255,0.025)] p-1.5 shadow-[0_34px_100px_-70px_rgba(0,0,0,0.95)]">
-            <div className="rounded-[calc(2rem-0.375rem)] bg-[linear-gradient(135deg,rgba(14,16,18,0.92),rgba(9,10,11,0.96))] px-5 py-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
-              <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
-                Private Directory
-              </p>
-              <p className="m-0 mt-2 max-w-[28ch] font-serif text-[24px] font-light leading-[1.1] text-[var(--color-text)]">
-                Start with properties, places, or the question in front of you.
-              </p>
-            </div>
-          </div>
-
+        <div className="flex h-full flex-col overflow-y-auto pr-1 pt-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="grid gap-3 pb-4">
             {navGroups.map((g, groupIndex) => (
               <div
