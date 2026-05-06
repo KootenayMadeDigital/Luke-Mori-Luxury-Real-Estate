@@ -95,7 +95,7 @@ export default function NelsonHubPage() {
                 href: "/nelson-bc-realtor",
               },
             ].map((card) => (
-              <Link key={card.href} href={card.href} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] p-8 transition-[transform,border-color] duration-500 hover:-translate-y-1 hover:border-[var(--color-line-strong)]">
+              <Link key={card.href} href={card.href} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] p-8 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]">
                 <h2 className="m-0 font-serif text-[28px] font-light leading-[1.15] text-[var(--color-text)]">{card.title}</h2>
                 <p className="m-0 mt-4 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">{card.body}</p>
                 <span className="mt-7 inline-flex text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Read the guide</span>
@@ -126,7 +126,7 @@ export default function NelsonHubPage() {
               <Reveal key={a.slug} delay={i * 60}>
                 <Link
                   href={`/nelson/${a.slug}`}
-                  className="luxury-card group flex h-full flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1.5 hover:border-[var(--color-line-strong)]"
+                  className="luxury-card group flex h-full flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]"
                 >
                   <div className="tone-dark relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -195,7 +195,7 @@ export default function NelsonHubPage() {
               <Reveal key={item.area}>
                 <Link
                   href={item.href}
-                  className="group grid grid-cols-1 gap-5 border-b border-[var(--color-line)] p-7 transition-colors duration-500 last:border-b-0 hover:bg-[rgba(212,184,150,0.055)] md:grid-cols-[0.62fr_1fr_1fr_auto] md:items-center md:p-8"
+                  className="luxury-card group grid grid-cols-1 gap-5 border-b border-[var(--color-line)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] last:border-b-0 hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.055)] md:grid-cols-[0.62fr_1fr_1fr_auto] md:items-center md:p-8"
                 >
                   <div>
                     <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">

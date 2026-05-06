@@ -129,7 +129,7 @@ export default function KootenayLakeWaterfrontPage() {
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               {dueDiligence.map((item, index) => (
-                <Reveal key={item} delay={index * 70} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7">
+                <Reveal key={item} delay={index * 70} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]">
                   <div className="mb-5 font-serif text-[28px] italic text-[var(--color-bronze)]">0{index + 1}</div>
                   <p className="m-0 text-[16px] leading-[1.65] text-[var(--color-text-muted)]">{item}</p>
                 </Reveal>
@@ -158,7 +158,7 @@ export default function KootenayLakeWaterfrontPage() {
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] lg:grid-cols-4">
             {waterfrontCorridors.map((corridor, index) => (
               <Reveal key={corridor.title} delay={index * 70}>
-                <Link href={corridor.href} className="group flex h-full flex-col bg-[var(--color-bg)] p-7 transition-colors duration-300 hover:bg-[var(--color-surface)]">
+                <Link href={corridor.href} className="luxury-card group flex h-full flex-col bg-[var(--color-bg)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
                   <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                     Corridor {String(index + 1).padStart(2, "0")}
                   </span>

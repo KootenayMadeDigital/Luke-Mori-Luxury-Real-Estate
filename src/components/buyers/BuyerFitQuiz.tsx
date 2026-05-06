@@ -254,7 +254,7 @@ export function BuyerFitQuiz() {
                     key={option.label}
                     type="button"
                     onClick={() => choose(index)}
-                    className={`group border p-5 text-left transition-[border-color,background,transform] duration-300 hover:-translate-y-0.5 ${selected ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.12)]" : "border-[var(--color-line)] bg-[var(--color-bg)] hover:border-[var(--color-line-strong)]"}`}
+                    className={`luxury-card group border p-5 text-left transition-[border-color,background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 ${selected ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.12)]" : "border-[var(--color-line)] bg-[var(--color-bg)] hover:border-[var(--color-line-strong)] hover:bg-[var(--color-surface)]"}`}
                   >
                     <span className="flex items-start gap-4">
                       <span className={`mt-1 grid size-7 shrink-0 place-items-center rounded-full border text-[11px] font-semibold ${selected ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]" : "border-[var(--color-line-strong)] text-[var(--color-text-dim)]"}`}>{String.fromCharCode(65 + index)}</span>
@@ -291,7 +291,7 @@ export function BuyerFitQuiz() {
 
           <div className="mt-8 grid gap-3">
             {ranked.slice(0, 4).map((match, index) => (
-              <div key={match.area.key} className="border border-[var(--color-line)] bg-[var(--color-bg)] p-5">
+              <div key={match.area.key} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-bg)] p-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
                 <div className="mb-3 flex items-center justify-between gap-4">
                   <div>
                     <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Match {String(index + 1).padStart(2, "0")}</p>
@@ -308,13 +308,13 @@ export function BuyerFitQuiz() {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2">
-            <div className="bg-[var(--color-bg)] p-6">
+            <div className="luxury-card group bg-[var(--color-bg)] p-6 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
               <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Best for</p>
               <ul className="m-0 mt-4 grid list-none gap-2 p-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
                 {top.area.bestFor.map((item) => <li key={item}>• {item}</li>)}
               </ul>
             </div>
-            <div className="bg-[var(--color-bg)] p-6">
+            <div className="luxury-card group bg-[var(--color-bg)] p-6 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
               <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Watch for</p>
               <ul className="m-0 mt-4 grid list-none gap-2 p-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
                 {top.area.watch.map((item) => <li key={item}>• {item}</li>)}

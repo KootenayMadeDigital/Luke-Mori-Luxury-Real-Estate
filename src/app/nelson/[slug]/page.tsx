@@ -115,7 +115,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] sm:grid-cols-3">
             {area.highlights.map((h) => (
-              <Reveal key={h.title} className="bg-[var(--color-bg)] p-9 sm:p-10">
+              <Reveal key={h.title} className="luxury-card group bg-[var(--color-bg)] p-9 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-10">
                 <h3 className="m-0 mb-4 font-serif text-[24px] font-normal leading-[1.2] tracking-[-0.005em] text-[var(--color-text)] sm:text-[26px]">
                   {h.title}
                 </h3>
@@ -158,7 +158,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
                   key={n.name}
                   as="li"
                   delay={i * 60}
-                  className="luxury-card grid grid-cols-1 gap-2 border-b border-[var(--color-line)] py-9 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:grid-cols-[60px_220px_1fr] sm:items-baseline sm:gap-10 md:py-10"
+                  className="luxury-card group grid grid-cols-1 gap-2 border-b border-[var(--color-line)] px-4 py-9 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:grid-cols-[60px_220px_1fr] sm:items-baseline sm:gap-10 sm:px-6 md:py-10"
                 >
                   <span className="hidden font-serif text-[14px] italic tracking-[0.1em] text-[var(--color-bronze)] sm:block">
                     {String(i + 1).padStart(2, "0")}
@@ -194,7 +194,7 @@ export default async function NelsonAreaPage({ params }: { params: Promise<Param
               <Reveal key={o.slug}>
                 <Link
                   href={`/nelson/${o.slug}`}
-                  className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[var(--color-bronze)]"
+                  className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[var(--color-bg)]"
                 >
                   <span className="mb-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)]">
                     {o.population} · Avg {o.avgPrice}

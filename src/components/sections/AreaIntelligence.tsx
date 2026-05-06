@@ -74,7 +74,7 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-4">
             {intelligence.propertyTypes.map((type, i) => (
-              <Reveal key={type} delay={i * 60} className="luxury-card bg-[var(--color-bg)] p-7 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-8">
+              <Reveal key={type} delay={i * 60} className="luxury-card group bg-[var(--color-bg)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-8">
                 <span className="mb-8 block font-serif text-[18px] italic text-[var(--color-bronze)]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -105,7 +105,7 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {intelligence.microPockets.map((pocket, i) => (
-              <Reveal key={pocket.name} delay={i * 55} className="luxury-card border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-bg)] sm:p-8">
+              <Reveal key={pocket.name} delay={i * 55} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[background,border-color,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-8">
                 <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                   Pocket {String(i + 1).padStart(2, "0")}
                 </span>
@@ -141,7 +141,7 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
 
           <div className="border-y border-[var(--color-line)]">
             {intelligence.dueDiligence.map((item, i) => (
-              <Reveal key={item.label} delay={i * 60} className="grid grid-cols-1 gap-5 border-b border-[var(--color-line)] py-8 last:border-b-0 md:grid-cols-[80px_0.7fr_1.5fr] md:items-baseline md:gap-8">
+              <Reveal key={item.label} delay={i * 60} className="luxury-card group grid grid-cols-1 gap-5 border-b border-[var(--color-line)] px-4 py-8 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] last:border-b-0 hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.045)] md:grid-cols-[80px_0.7fr_1.5fr] md:items-baseline md:gap-8">
                 <span className="hidden font-serif text-[18px] italic tracking-[0.08em] text-[var(--color-bronze)] md:block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -177,7 +177,7 @@ export function AreaIntelligence({ areaName, intelligence }: Props) {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] lg:grid-cols-3">
             {intelligence.faqs.map((faq, i) => (
-              <Reveal key={faq.question} delay={i * 70} className="bg-[var(--color-bg)] p-8 sm:p-9">
+              <Reveal key={faq.question} delay={i * 70} className="luxury-card group bg-[var(--color-bg)] p-8 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-9">
                 <h3 className="m-0 mb-4 font-serif text-[24px] font-light leading-[1.2] tracking-[-0.005em] text-[var(--color-text)]">
                   {faq.question}
                 </h3>
