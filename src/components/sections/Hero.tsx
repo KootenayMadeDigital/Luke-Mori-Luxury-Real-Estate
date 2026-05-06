@@ -19,8 +19,8 @@ export function Hero() {
       <div className="relative z-10 mx-auto grid w-full max-w-[1320px] translate-y-[clamp(54px,7svh,76px)] grid-cols-1 items-start gap-10 px-5 sm:translate-y-0 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
         <div>
           <Reveal>
-            <h1 className="m-0 max-w-[12.5ch] font-serif font-light leading-[0.93] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(50px,8.6vw,132px)]">
-              Move with a clear plan,
+            <h1 className="m-0 max-w-[11.5ch] font-serif font-light leading-[0.92] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(43px,8.6vw,132px)] sm:max-w-[12.5ch] sm:[font-size:clamp(50px,8.6vw,132px)]">
+              Move wisely
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
                 in the Kootenays.
@@ -29,19 +29,19 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={180}>
-            <p className="m-0 mt-6 max-w-[650px] font-light leading-[1.68] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7">
-              Buy or sell lakefront homes, view properties, acreage, and second homes across Nelson and Kootenay Lake with clear local guidance from the start.
+            <p className="m-0 mt-5 max-w-[560px] font-light leading-[1.6] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7 sm:leading-[1.68]">
+              Buy or sell around Nelson and Kootenay Lake with clear local guidance from day one.
             </p>
           </Reveal>
 
           <Reveal delay={260}>
-            <ul className="mt-7 grid max-w-[620px] grid-cols-3 gap-2 border-y border-[var(--color-line)] py-4 lg:hidden">
+            <ul className="mt-5 grid max-w-[620px] grid-cols-3 gap-2 border-y border-[var(--color-line)] py-3 sm:mt-7 sm:py-4 lg:hidden">
               {heroProofSignals.map((signal) => (
                 <li key={signal.label} className="min-w-0">
-                  <span className="block font-serif text-[20px] font-light leading-none text-[var(--color-bronze-light)]">
+                  <span className="block font-serif text-[18px] font-light leading-none text-[var(--color-bronze-light)] sm:text-[20px]">
                     {signal.value}
                   </span>
-                  <span className="mt-2 block text-[9px] font-semibold uppercase leading-[1.3] tracking-[0.08em] text-[rgba(245,239,229,0.72)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                  <span className="mt-1.5 block text-[8px] font-semibold uppercase leading-[1.25] tracking-[0.08em] text-[rgba(245,239,229,0.72)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] sm:mt-2 sm:text-[9px]">
                     {signal.label}
                   </span>
                 </li>
