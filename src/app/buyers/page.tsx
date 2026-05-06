@@ -92,17 +92,17 @@ export default function BuyersPage() {
         <Container>
           <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Buyer Route Finder</Eyebrow>
+              <Eyebrow>Area Fit Quiz</Eyebrow>
               <SectionHeading className="mt-7">
-                Choose the buying path
+                Match the area
                 <br />
                 <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
-                  before the tour list.
+                  to the life.
                 </em>
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Buyers are not choosing between similar homes. They are choosing a way to live: lakefront, walkable Nelson, North Shore privacy, acreage, ski rhythm, relocation, second-home ownership, or a clean remote purchase.
+              Answer simple lifestyle questions about daily rhythm, water, space, winter, services, and quiet. The result points buyers toward the Nelson-area fit that deserves the first scouting day.
             </SectionLede>
           </Reveal>
           <BuyerFitQuiz />
@@ -234,7 +234,7 @@ export default function BuyersPage() {
         eyebrow="Buyer Inquiry"
         title="Tell Luke what"
         emphasis="matters most."
-        body="Whether you are three years out or three weeks, start with what you want life here to feel like: lakefront, town, acreage, ski access, second home, or a clean relocation path."
+        body="Whether you are three years out or three weeks, start with what you want life here to feel like: walkable town, lake views, acreage, quiet village life, or a slower rural rhythm."
       />
     </PageLayout>
   );

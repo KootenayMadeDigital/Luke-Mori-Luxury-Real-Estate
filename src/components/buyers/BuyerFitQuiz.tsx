@@ -2,287 +2,291 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-type PathKey = "lakefront" | "walkable" | "privacy" | "acreage" | "ski" | "relocation" | "second" | "international";
-
-type Option = {
-  key: PathKey;
-  label: string;
-  intent: string;
-  short: string;
-};
-
-type Recommendation = {
-  eyebrow: string;
-  title: string;
-  summary: string;
-  route: string;
-  checks: string[];
-  avoid: string;
-  nextMove: string;
+type AreaKey = "nelson" | "north-shore" | "balfour" | "blewett" | "slocan-valley" | "kaslo";
+type Option = { label: string; note: string; scores: Partial<Record<AreaKey, number>> };
+type Question = { eyebrow: string; title: string; helper: string; options: Option[] };
+type Area = {
+  key: AreaKey;
+  name: string;
+  fit: string;
+  plainAnswer: string;
+  bestFor: string[];
+  watch: string[];
+  nextStep: string;
   href: string;
   cta: string;
-  image: string;
-  imageAlt: string;
 };
 
-const options: Option[] = [
-  { key: "lakefront", label: "Lakefront", intent: "I want the lake to shape daily life.", short: "Water access, dock questions, sun" },
-  { key: "walkable", label: "Walkable Nelson", intent: "I want culture, errands, and dinner close.", short: "Baker Street, schools, heritage homes" },
-  { key: "privacy", label: "North Shore", intent: "I want views, quiet, and town nearby.", short: "Arrival, sightlines, neighbour distance" },
-  { key: "acreage", label: "Acreage", intent: "I want land, workshops, gardens, or dogs.", short: "Systems, access, upkeep, privacy" },
-  { key: "ski", label: "Ski Access", intent: "I want Whitewater to fit the routine.", short: "Winter roads, storage, guests, seasonality" },
-  { key: "relocation", label: "Relocation", intent: "I need to know if the move works.", short: "Schools, services, commute, community" },
-  { key: "second", label: "Second Home", intent: "I want a base that works when I am away.", short: "Caretaker, security, winterisation" },
-  { key: "international", label: "International", intent: "I need clean remote purchase logistics.", short: "Legal, tax, currency, financing" },
+const areas: Record<AreaKey, Area> = {
+  nelson: {
+    key: "nelson",
+    name: "Nelson",
+    fit: "Walkable town life with culture, schools, restaurants, parks, and daily convenience close by.",
+    plainAnswer: "Nelson is the best fit when you want the Kootenay life without giving up town rhythm. The tradeoff is that slope, parking, noise, heritage condition, and winter streets matter more than they look online.",
+    bestFor: ["Walkability", "Schools and services", "Restaurants and culture", "Lake access near town"],
+    watch: ["Parking and slope", "Heritage maintenance", "Street noise", "Winter street rhythm"],
+    nextStep: "Tour Fairview, Uphill, Rosemont, and downtown patterns before choosing listings.",
+    href: "/nelson/nelson",
+    cta: "Study Nelson",
+  },
+  "north-shore": {
+    key: "north-shore",
+    name: "North Shore",
+    fit: "Lake views, privacy, quieter living, and Nelson close enough for ordinary life.",
+    plainAnswer: "North Shore is the best fit when you want the lake and more breathing room, but still want town nearby. The details are driveway, highway sound, sightlines, winter access, and whether lake access is real or just visual.",
+    bestFor: ["Lake views", "Privacy near town", "Quieter arrival", "Second-home appeal"],
+    watch: ["Highway sound", "Driveway grade", "Shoreline rights", "Winter maintenance"],
+    nextStep: "Drive the route at real-life times and compare privacy from road, water, and neighbours.",
+    href: "/nelson/north-shore",
+    cta: "Study North Shore",
+  },
+  balfour: {
+    key: "balfour",
+    name: "Balfour",
+    fit: "Main-lake energy, marina and golf access, second-home rhythm, and a quieter pace east of Nelson.",
+    plainAnswer: "Balfour fits buyers who want Kootenay Lake to feel bigger and quieter. It can be excellent for second homes and slower living, as long as distance from Nelson, wind, services, and lock-and-leave care are understood.",
+    bestFor: ["Main-lake setting", "Second homes", "Golf and marina access", "Quieter pace"],
+    watch: ["Distance to Nelson", "Wind and exposure", "Services and trades", "Care when away"],
+    nextStep: "Compare Balfour with North Shore and Kaslo before deciding how quiet is right.",
+    href: "/nelson/balfour",
+    cta: "Study Balfour",
+  },
+  blewett: {
+    key: "blewett",
+    name: "Blewett",
+    fit: "Acreage, privacy, gardens, dogs, shops, workshops, and land close enough to Nelson.",
+    plainAnswer: "Blewett is the best fit when land is part of the dream. It gives more space without losing Nelson completely, but water, septic, internet, outbuildings, snow, and maintenance appetite have to be real checks.",
+    bestFor: ["Acreage near town", "Workshops and gardens", "Dogs and privacy", "Family compound potential"],
+    watch: ["Water and septic", "Internet", "Snow and roads", "Outbuilding condition"],
+    nextStep: "Define how you want to use the land, then tour only properties whose systems support that plan.",
+    href: "/nelson/blewett",
+    cta: "Study Blewett",
+  },
+  "slocan-valley": {
+    key: "slocan-valley",
+    name: "Slocan Valley",
+    fit: "More space, slower pace, river and mountain settings, creative retreat energy, and a quieter rural life.",
+    plainAnswer: "Slocan Valley fits buyers who want the slower rhythm to be the point. It can offer more space and quiet, but distance, winter roads, services, trades, and social rhythm should be tested before falling in love with the setting.",
+    bestFor: ["Retreat property", "Space and quiet", "River and mountain settings", "Creative rural life"],
+    watch: ["Distance", "Winter roads", "Service access", "Trades and maintenance"],
+    nextStep: "Spend a real day there, not a drive-through, and test the routine you would actually live.",
+    href: "/nelson/slocan-valley",
+    cta: "Study Slocan Valley",
+  },
+  kaslo: {
+    key: "kaslo",
+    name: "Kaslo",
+    fit: "Small village life on Kootenay Lake with heritage charm, quiet, scenery, and a more removed pace.",
+    plainAnswer: "Kaslo fits buyers who want quiet lake-and-mountain life more than fast access to Nelson. It is beautiful and calm, but the practical question is how often you need larger services, travel, trades, and winter flexibility.",
+    bestFor: ["Quiet village life", "Lake and mountain setting", "Heritage character", "Retreat energy"],
+    watch: ["Distance to larger services", "Winter travel", "Medical and trades access", "Resale buyer pool"],
+    nextStep: "Compare Kaslo with Balfour and Slocan Valley if quiet living is high on the list.",
+    href: "/guides/moving-to-kaslo-bc",
+    cta: "Read Kaslo guide",
+  },
+};
+
+const questions: Question[] = [
+  {
+    eyebrow: "Daily Rhythm",
+    title: "How do you want an ordinary Tuesday to feel?",
+    helper: "Pick the answer that sounds easiest to live with, not the one that sounds best on vacation.",
+    options: [
+      { label: "Walk to coffee, dinner, school, parks, and errands.", note: "Town convenience matters most.", scores: { nelson: 5, "north-shore": 1 } },
+      { label: "Quiet at home, but Nelson still close enough.", note: "Privacy near town matters most.", scores: { "north-shore": 5, blewett: 2, nelson: 1 } },
+      { label: "A slower rural day with more space and fewer neighbours.", note: "Quiet and land matter most.", scores: { blewett: 4, "slocan-valley": 4, kaslo: 2 } },
+      { label: "Lake and retreat energy first, services second.", note: "Setting matters more than convenience.", scores: { balfour: 5, kaslo: 4, "north-shore": 2 } },
+    ],
+  },
+  {
+    eyebrow: "Water",
+    title: "What role should the lake play?",
+    helper: "Waterfront, lake access, and lake views are different buying decisions.",
+    options: [
+      { label: "I want the lake close to daily life, but I still want town.", note: "Lake plus services.", scores: { nelson: 3, "north-shore": 4 } },
+      { label: "I want big lake energy and a quieter second-home feeling.", note: "Main-lake setting.", scores: { balfour: 5, kaslo: 4 } },
+      { label: "A view is enough if the home and area fit.", note: "Setting without shoreline pressure.", scores: { nelson: 3, "north-shore": 3, blewett: 1 } },
+      { label: "The lake is nice, but land and privacy matter more.", note: "Land over water.", scores: { blewett: 4, "slocan-valley": 4 } },
+    ],
+  },
+  {
+    eyebrow: "Space",
+    title: "How much property do you actually want to manage?",
+    helper: "More land can be freedom. It can also be equipment, systems, snow, and weekend work.",
+    options: [
+      { label: "A low-maintenance home close to services.", note: "Less upkeep.", scores: { nelson: 5, "north-shore": 1 } },
+      { label: "Some privacy, garden space, or a larger lot is enough.", note: "Balanced space.", scores: { "north-shore": 4, nelson: 2, balfour: 2 } },
+      { label: "I want acreage, dogs, gardens, shops, or room to build a life around land.", note: "Acreage appetite.", scores: { blewett: 5, "slocan-valley": 4 } },
+      { label: "I want retreat space, but I need it to stay manageable from away.", note: "Second-home reality.", scores: { balfour: 4, kaslo: 3, "north-shore": 2 } },
+    ],
+  },
+  {
+    eyebrow: "Winter",
+    title: "How much winter complexity are you willing to own?",
+    helper: "Driveways, snow, shade, roads, and distance feel different in February.",
+    options: [
+      { label: "Keep winter simple. I want services and plowed streets close.", note: "Convenience wins.", scores: { nelson: 5 } },
+      { label: "Some driveway and road care is fine if the setting is worth it.", note: "Balanced winter tolerance.", scores: { "north-shore": 4, balfour: 2, blewett: 2 } },
+      { label: "I can handle rural systems if I get space and privacy.", note: "High winter tolerance.", scores: { blewett: 4, "slocan-valley": 4, kaslo: 2 } },
+      { label: "I may be away often, so I need manageable winter care.", note: "Care plan matters.", scores: { balfour: 4, "north-shore": 3, nelson: 2 } },
+    ],
+  },
+  {
+    eyebrow: "Services",
+    title: "How close do you want help, healthcare, trades, and errands?",
+    helper: "Beautiful places are easier to love when the logistics fit your life.",
+    options: [
+      { label: "Close. I want the easiest possible daily logistics.", note: "Services first.", scores: { nelson: 5 } },
+      { label: "Close enough. A short drive is fine.", note: "Near-town balance.", scores: { "north-shore": 4, blewett: 3, nelson: 2 } },
+      { label: "I can trade convenience for quiet if the fit is right.", note: "Quiet over services.", scores: { balfour: 4, kaslo: 3, "slocan-valley": 3 } },
+      { label: "I want fewer people around, even if planning takes more effort.", note: "Privacy first.", scores: { "slocan-valley": 5, kaslo: 4, blewett: 3 } },
+    ],
+  },
+  {
+    eyebrow: "Identity",
+    title: "Which sentence sounds most like you?",
+    helper: "This usually reveals the area faster than a price range does.",
+    options: [
+      { label: "I want to feel part of Nelson life.", note: "Community and town rhythm.", scores: { nelson: 5 } },
+      { label: "I want a beautiful private base near Nelson.", note: "Privacy with access.", scores: { "north-shore": 5, blewett: 2 } },
+      { label: "I want lake life that feels like an escape.", note: "Retreat and water.", scores: { balfour: 5, kaslo: 4 } },
+      { label: "I want space, quiet, and room to make something my own.", note: "Rural ownership.", scores: { blewett: 5, "slocan-valley": 5 } },
+    ],
+  },
 ];
 
-const recommendations: Record<PathKey, Recommendation> = {
-  lakefront: {
-    eyebrow: "Lakefront Buyer Path",
-    title: "Understand the shoreline before you pay more.",
-    summary: "Lakefront value is not only the view. The best fit depends on how you reach the water, how the property handles weather, and whether the shoreline supports the life you are buying.",
-    route: "Waterfront homes on Kootenay Lake, the West Arm, Balfour, Procter, Harrop, and select private lake settings.",
-    checks: ["Walkable water access and usable shoreline", "Dock, sun, road noise, and winter access", "Long-term demand and resale confidence"],
-    avoid: "Paying for lakefront photography before the shoreline, privacy, grade, and seasonal use are understood.",
-    nextMove: "Start with a waterfront brief, then shortlist only the homes where the land and shoreline match the life you want.",
-    href: "/listings/waterfront",
-    cta: "View waterfront homes",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc3e63cf060ba15246859_procter-lake-house-nelson-bc.webp",
-    imageAlt: "Kootenay Lake waterfront home near Nelson",
-  },
-  walkable: {
-    eyebrow: "Nelson Buyer Path",
-    title: "Choose the version of town life first.",
-    summary: "Walkable Nelson can mean different things: heritage character, easier school routes, Baker Street energy, quieter streets, or a hillside view. The right pocket matters before the right house.",
-    route: "Downtown, Uphill, Fairview, Rosemont, Mountain Station, and nearby Nelson pockets with different grades, parking, sun, and rhythm.",
-    checks: ["Parking, slope, snow, and daily errands", "Heritage condition and renovation appetite", "Noise, schools, parks, and walkability in winter"],
-    avoid: "Buying charm online, then discovering the street, parking, maintenance, or winter routine does not fit.",
-    nextMove: "Compare Nelson pockets first, then tour homes that match the daily rhythm you actually want.",
-    href: "/nelson/nelson",
-    cta: "Explore Nelson pockets",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbe517afaca9df83bb128_baker-street-nelson-bc.jpg",
-    imageAlt: "Baker Street in Nelson BC",
-  },
-  privacy: {
-    eyebrow: "North Shore Buyer Path",
-    title: "Find privacy that holds up in person.",
-    summary: "North Shore buyers usually want lake views, quiet arrival, and Nelson within reach. The key is knowing which homes feel private, not just which ones look private online.",
-    route: "North Shore properties east of the bridge, lake-view homes, quieter rural-residential pockets, and addresses with better arrival and sightlines.",
-    checks: ["Approach, driveway, and road rhythm", "Sightlines from neighbours, road, and water", "Sun, lake orientation, and guest access"],
-    avoid: "Mistaking distance for privacy. Some homes are farther out but still feel exposed from the highway, water, or neighbouring approaches.",
-    nextMove: "Map the drive and privacy conditions before spending tour time on homes that only look secluded in photos.",
-    href: "/nelson/north-shore",
-    cta: "Explore North Shore",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbd01452436a306385f19_west-arm-kootenay-lake.webp",
-    imageAlt: "West Arm of Kootenay Lake on the North Shore",
-  },
-  acreage: {
-    eyebrow: "Acreage Buyer Path",
-    title: "Match the land to the life you will actually live.",
-    summary: "Acreage can be freedom, privacy, and room for the whole family. It can also be systems, maintenance, snow, insurance, and trades. The right search starts with appetite for ownership reality.",
-    route: "Blewett, rural Nelson, Slocan Valley, and select acreages with land, workshops, gardens, guest capacity, or family-compound potential.",
-    checks: ["Water, septic, access, internet, and insurance", "Outbuildings, equipment, and maintenance load", "Winter care, trades, privacy, and usable land"],
-    avoid: "Falling for acreage as an idea before knowing whether the systems and maintenance fit your time, budget, and tolerance.",
-    nextMove: "Set the land-use brief first, then screen only the acreages whose systems support that plan.",
-    href: "/nelson/blewett",
-    cta: "Study acreage near Nelson",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645c49ba6e6e26c70b04aa56_morning-mountain-biking-blewett.jpeg",
-    imageAlt: "Wooded mountain trail near Blewett BC",
-  },
-  ski: {
-    eyebrow: "Ski Access Path",
-    title: "Build the search around the winter routine.",
-    summary: "A ski-oriented home should make winter easier, not just look good in January. The right fit handles guests, gear, roads, storage, and four-season value.",
-    route: "Nelson, Mountain Station, rural pockets with better Whitewater access, and homes that still make sense outside ski season.",
-    checks: ["Driveway grade, plowing, and winter road confidence", "Gear storage, guest flow, and vehicle space", "Shoulder-season use and four-season resale"],
-    avoid: "Buying a ski fantasy that becomes awkward with guests, expensive in winter, or underused outside peak season.",
-    nextMove: "Define the winter routine first, then shortlist homes that work when roads, guests, and gear complicate the day.",
-    href: "/nelson",
-    cta: "Review area guide",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/644c985ba7eb5cd68b85251e_skiiing-whitewater-powder.webp",
-    imageAlt: "Powder skiing at Whitewater near Nelson",
-  },
-  relocation: {
-    eyebrow: "Relocation Buyer Path",
-    title: "Test the life before chasing the listing.",
-    summary: "Relocation buyers are not only buying a home. They are testing schools, healthcare access, work rhythm, climate, community fit, and the first six months of life in Nelson or Kootenay Lake.",
-    route: "A scouting path across Nelson, North Shore, Balfour, Blewett, Slocan Valley, and select lake or acreage options based on how you actually live.",
-    checks: ["Schools, services, healthcare, and commute reality", "Neighbourhood rhythm, weather, and winter routines", "First-week and first-six-month fit"],
-    avoid: "Booking random showings before knowing which areas could actually support the move.",
-    nextMove: "Build a one-day or two-day scouting route that tests daily life before narrowing to homes.",
-    href: "/buyers/relocation",
-    cta: "Plan relocation path",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5bb50e2b484db46c921_nelson-bc-looking-north.webp",
-    imageAlt: "Nelson BC and Kootenay Lake",
-  },
-  second: {
-    eyebrow: "Second-Home Buyer Path",
-    title: "Solve ownership before falling for the view.",
-    summary: "A second home has to work when you are there and stay protected when you are not. The best property is the one with the right local support around it.",
-    route: "Kootenay Lake bases, lock-and-leave homes, waterfront retreats, ski-weekend properties, and family gathering places with manageable systems.",
-    checks: ["Caretaker coverage, security, and emergency contacts", "Winterisation, access, utilities, and maintenance", "Guest use, family rhythm, and local support"],
-    avoid: "Depending on luck, neighbours, or last-minute trades every time weather, guests, or repairs change the plan.",
-    nextMove: "Define the ownership system first, then choose homes that can be confidently managed from afar.",
-    href: "/buyers/relocation",
-    cta: "Ask second-home questions",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dbf4350d03715e52475f0_balfour-kootenay-lake.webp",
-    imageAlt: "Balfour and Kootenay Lake",
-  },
-  international: {
-    eyebrow: "International Buyer Path",
-    title: "Put the purchase team in place early.",
-    summary: "International and out-of-province buyers need clean representation, remote diligence, legal and tax timing, currency planning, financing clarity, and calm local execution.",
-    route: "A remote-ready purchase plan for serious buyers comparing Nelson, Kootenay Lake, waterfront, acreage, second-home, or relocation options.",
-    checks: ["Legal, tax, currency, and financing timing", "Remote inspections, signing, and decision support", "Local representation before the right home appears"],
-    avoid: "Trying to solve tax, legal, financing, travel, and property diligence after the right home is already moving.",
-    nextMove: "Send the buyer brief first so Luke can line up the right local steps before pressure starts.",
-    href: "/buyers/international",
-    cta: "Read international guide",
-    image: "https://cdn.prod.website-files.com/63888566469799b04b55cbf8/645dc5047afaca9df841c013_procter-lake-house-living-room.webp",
-    imageAlt: "Luxury lake house living room near Nelson",
-  },
-};
+function rankAreas(answers: number[]) {
+  const totals = Object.keys(areas).reduce((acc, key) => ({ ...acc, [key]: 0 }), {} as Record<AreaKey, number>);
+  answers.forEach((optionIndex, questionIndex) => {
+    const option = questions[questionIndex]?.options[optionIndex];
+    if (!option) return;
+    Object.entries(option.scores).forEach(([key, value]) => {
+      totals[key as AreaKey] += value ?? 0;
+    });
+  });
+  const max = Math.max(...Object.values(totals), 1);
+  return (Object.keys(areas) as AreaKey[])
+    .map((key) => ({ area: areas[key], score: totals[key], percent: Math.round((totals[key] / max) * 100) }))
+    .sort((a, b) => b.score - a.score);
+}
 
 export function BuyerFitQuiz() {
-  const [selected, setSelected] = useState<PathKey>("lakefront");
-  const result = useMemo(() => recommendations[selected], [selected]);
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState<number[]>(Array(questions.length).fill(-1));
+  const complete = answers.every((answer) => answer >= 0);
+  const current = questions[step];
+  const ranked = useMemo(() => rankAreas(answers), [answers]);
+  const top = ranked[0];
+  const progress = Math.round((answers.filter((answer) => answer >= 0).length / questions.length) * 100);
+
+  function choose(optionIndex: number) {
+    setAnswers((currentAnswers) => currentAnswers.map((answer, index) => (index === step ? optionIndex : answer)));
+    if (step < questions.length - 1) window.setTimeout(() => setStep((currentStep) => Math.min(currentStep + 1, questions.length - 1)), 160);
+  }
 
   return (
     <div className="overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-[0_36px_110px_-72px_rgba(0,0,0,0.95)]">
-      <div className="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr]">
+      <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="border-b border-[var(--color-line)] bg-[rgba(10,11,13,0.42)] p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
           <div className="mb-7 border-b border-[var(--color-line)] pb-6">
-            <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
-              Step 1: Pick the closest starting point
-            </p>
-            <h3 className="m-0 mt-3 max-w-[560px] font-serif text-[30px] font-light leading-[1.08] tracking-[-0.01em] text-[var(--color-text)] sm:text-[38px]">
-              What are you really trying to buy?
-            </h3>
-            <p className="m-0 mt-4 max-w-[560px] text-[15px] leading-[1.7] text-[var(--color-text-muted)]">
-              Choose the answer that feels closest. This turns a broad luxury search into a useful first route for Luke to qualify, protect, and tour.
-            </p>
+            <div className="mb-5 flex items-center justify-between gap-4">
+              <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">Area Fit Quiz</p>
+              <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-dim)]">{progress}% complete</p>
+            </div>
+            <div className="h-1 overflow-hidden bg-[var(--color-line)]" aria-hidden>
+              <div className="h-full bg-[var(--color-bronze)] transition-[width] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" style={{ width: `${progress}%` }} />
+            </div>
+            <div className="mt-7 flex flex-wrap gap-2">
+              {questions.map((question, index) => (
+                <button
+                  key={question.eyebrow}
+                  type="button"
+                  onClick={() => setStep(index)}
+                  className={`size-9 rounded-full border text-[11px] font-semibold transition-colors ${step === index ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]" : answers[index] >= 0 ? "border-[var(--color-bronze)] text-[var(--color-bronze-light)]" : "border-[var(--color-line-strong)] text-[var(--color-text-dim)]"}`}
+                  aria-label={`Go to question ${index + 1}`}
+                >
+                  {answers[index] >= 0 ? "✓" : index + 1}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {options.map((option, index) => {
-              const active = selected === option.key;
-              return (
-                <button
-                  key={option.key}
-                  type="button"
-                  onClick={() => setSelected(option.key)}
-                  aria-pressed={active}
-                  className={`group min-h-[146px] border p-4 text-left transition-[background,border-color,transform,box-shadow] duration-300 hover:-translate-y-0.5 ${
-                    active
-                      ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.16)] shadow-[0_20px_56px_-38px_rgba(212,184,150,0.85)]"
-                      : "border-[var(--color-line)] bg-[rgba(7,8,10,0.52)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.06)]"
-                  }`}
-                >
-                  <span className="mb-4 flex items-center justify-between gap-4">
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronze)]">
-                      {String(index + 1).padStart(2, "0")}
+          <div className="transition-opacity duration-300" key={step}>
+            <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">{current.eyebrow}</p>
+            <h3 className="m-0 mt-4 font-serif text-[34px] font-light leading-[1.06] tracking-[-0.015em] text-[var(--color-text)] sm:text-[46px]">{current.title}</h3>
+            <p className="m-0 mt-5 text-[15px] leading-[1.7] text-[var(--color-text-muted)]">{current.helper}</p>
+            <div className="mt-8 grid gap-3">
+              {current.options.map((option, index) => {
+                const selected = answers[step] === index;
+                return (
+                  <button
+                    key={option.label}
+                    type="button"
+                    onClick={() => choose(index)}
+                    className={`group border p-5 text-left transition-[border-color,background,transform] duration-300 hover:-translate-y-0.5 ${selected ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.12)]" : "border-[var(--color-line)] bg-[var(--color-bg)] hover:border-[var(--color-line-strong)]"}`}
+                  >
+                    <span className="flex items-start gap-4">
+                      <span className={`mt-1 grid size-7 shrink-0 place-items-center rounded-full border text-[11px] font-semibold ${selected ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]" : "border-[var(--color-line-strong)] text-[var(--color-text-dim)]"}`}>{String.fromCharCode(65 + index)}</span>
+                      <span>
+                        <span className="block text-[16px] leading-[1.4] text-[var(--color-text)]">{option.label}</span>
+                        <span className="mt-2 block text-[12px] font-semibold uppercase leading-[1.55] tracking-[0.12em] text-[var(--color-text-dim)]">{option.note}</span>
+                      </span>
                     </span>
-                    <span className={`h-px flex-1 ${active ? "bg-[var(--color-bronze)]" : "bg-[var(--color-line)]"}`} />
-                  </span>
-                  <span className="block text-[12px] font-semibold uppercase tracking-[0.17em] text-[var(--color-text)]">
-                    {option.label}
-                  </span>
-                  <span className="mt-3 block text-[16px] leading-[1.35] text-[var(--color-text)]">
-                    {option.intent}
-                  </span>
-                  <span className="mt-3 block text-[11px] font-semibold uppercase leading-[1.55] tracking-[0.12em] text-[var(--color-text-dim)]">
-                    {option.short}
-                  </span>
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
         <div className="bg-[var(--color-bg-2)] p-6 sm:p-8 lg:p-10 xl:p-12">
-          <div className="relative mb-9 aspect-[16/9] overflow-hidden border border-[var(--color-line)] bg-[var(--color-bg)] shadow-[0_28px_90px_-60px_rgba(0,0,0,0.9)]">
-            <Image
-              key={selected}
-              src={result.image}
-              alt={result.imageAlt}
-              fill
-              sizes="(min-width: 1024px) 48vw, 100vw"
-              className="object-cover opacity-90 saturate-[1.08] transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.02),rgba(10,11,13,0.52))]" aria-hidden />
-            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-5">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]">
-                {result.eyebrow}
-              </span>
-              <span className="hidden text-right text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)] sm:block">
-                Visual fit first
-              </span>
+          <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">Best Match</p>
+          <h3 className="m-0 mt-5 font-serif text-[44px] font-light leading-[1.02] tracking-[-0.015em] text-[var(--color-text)] sm:text-[68px]">{top.area.name}</h3>
+          <p className="m-0 mt-5 max-w-[760px] text-[17px] leading-[1.78] text-[var(--color-text-muted)]">{complete ? top.area.plainAnswer : "Answer the lifestyle questions and the match will sharpen as you go. The result is directional, not a substitute for a local conversation."}</p>
+
+          <div className="mt-8 grid gap-3">
+            {ranked.slice(0, 4).map((match, index) => (
+              <div key={match.area.key} className="border border-[var(--color-line)] bg-[var(--color-bg)] p-5">
+                <div className="mb-3 flex items-center justify-between gap-4">
+                  <div>
+                    <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Match {String(index + 1).padStart(2, "0")}</p>
+                    <h4 className="m-0 mt-2 font-serif text-[28px] font-light leading-[1.08] text-[var(--color-text)]">{match.area.name}</h4>
+                  </div>
+                  <span className="font-serif text-[32px] font-light text-[var(--color-text)]">{match.percent}%</span>
+                </div>
+                <div className="h-1 bg-[var(--color-line)]" aria-hidden>
+                  <div className="h-full bg-[var(--color-bronze)] transition-[width] duration-500" style={{ width: `${match.percent}%` }} />
+                </div>
+                <p className="m-0 mt-4 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{match.area.fit}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2">
+            <div className="bg-[var(--color-bg)] p-6">
+              <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Best for</p>
+              <ul className="m-0 mt-4 grid list-none gap-2 p-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
+                {top.area.bestFor.map((item) => <li key={item}>• {item}</li>)}
+              </ul>
+            </div>
+            <div className="bg-[var(--color-bg)] p-6">
+              <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Watch for</p>
+              <ul className="m-0 mt-4 grid list-none gap-2 p-0 text-[14px] leading-[1.65] text-[var(--color-text-muted)]">
+                {top.area.watch.map((item) => <li key={item}>• {item}</li>)}
+              </ul>
             </div>
           </div>
 
-          <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
-            Step 2: Use the right route
-          </p>
-          <p className="m-0 mt-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text-dim)]">
-            {result.eyebrow}
-          </p>
-          <h3 className="m-0 mt-5 max-w-[14ch] font-serif text-[36px] font-light leading-[1.04] tracking-[-0.015em] text-[var(--color-text)] sm:text-[48px]">
-            {result.title}
-          </h3>
-          <p className="m-0 mt-6 max-w-[680px] text-[16px] leading-[1.75] text-[var(--color-text-muted)]">
-            {result.summary}
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 gap-px bg-[var(--color-line)]">
-            <div className="bg-[var(--color-bg)] p-5 sm:p-6">
-              <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                Where this search usually leads
-              </span>
-              <p className="m-0 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
-                {result.route}
-              </p>
-            </div>
-            <div className="bg-[var(--color-bg)] p-5 sm:p-6">
-              <span className="mb-4 block text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                Luke checks before touring
-              </span>
-              <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-3">
-                {result.checks.map((check) => (
-                  <li key={check} className="border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-4 text-[12px] font-semibold uppercase leading-[1.55] tracking-[0.12em] text-[var(--color-text-dim)]">
-                    {check}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2">
-              <div className="bg-[var(--color-bg)] p-5 sm:p-6">
-                <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                  Avoid
-                </span>
-                <p className="m-0 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
-                  {result.avoid}
-                </p>
-              </div>
-              <div className="bg-[var(--color-bg)] p-5 sm:p-6">
-                <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">
-                  Best next step
-                </span>
-                <p className="m-0 text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
-                  {result.nextMove}
-                </p>
-              </div>
-            </div>
+          <div className="mt-8 border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.08)] p-6">
+            <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Next move</p>
+            <p className="m-0 mt-3 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">{top.area.nextStep}</p>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href={result.href} className="rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)] transition-colors hover:border-[var(--color-bronze-light)] hover:bg-[var(--color-bronze-light)]">
-              {result.cta}
-            </Link>
-            <Link href="/contact" className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
-              Send buyer brief
-            </Link>
+            <Link href={top.area.href} className="rounded-full border border-[var(--color-bronze)] bg-[var(--color-bronze)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-button-text)] transition-colors hover:bg-[var(--color-bronze-light)]">{top.area.cta}</Link>
+            <Link href="/contact#consultation" className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">Send result to Luke</Link>
+            <button type="button" onClick={() => { setAnswers(Array(questions.length).fill(-1)); setStep(0); }} className="rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text-muted)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-text)]">Start over</button>
           </div>
         </div>
       </div>

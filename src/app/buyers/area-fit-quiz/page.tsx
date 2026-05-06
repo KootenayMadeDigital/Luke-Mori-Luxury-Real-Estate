@@ -12,7 +12,7 @@ import { headerImages } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Nelson BC Area Fit Quiz · Kootenay Real Estate",
   description:
-    "A simple Nelson BC and Kootenay Lake real estate quiz to compare waterfront, walkable Nelson, North Shore, acreage, relocation, ski, second-home, and international buyer paths.",
+    "A simple Nelson BC and Kootenay Lake real estate quiz that matches lifestyle answers with Nelson, North Shore, Balfour, Blewett, Slocan Valley, or Kaslo.",
   path: "/buyers/area-fit-quiz",
   image: "/og/relocation.png",
 });
@@ -24,12 +24,12 @@ export default function AreaFitQuizPage() {
         eyebrow="Area Fit Quiz"
         title="Find the Kootenay path"
         emphasis="that fits the life."
-        lede="A quick way to sort waterfront, walkable Nelson, North Shore privacy, acreage, ski access, relocation, second-home, and international buyer paths before the search gets noisy."
+        lede="Answer plain lifestyle questions about daily routine, water, space, winter, services, and quiet. Then see which Nelson-area community best fits the way you want to live."
         image={headerImages.nelsonLandscape}
         imageTreatment="showcase"
         crumbs={[{ label: "Home", href: "/" }, { label: "Buyers", href: "/buyers" }, { label: "Area Fit Quiz" }]}
         meta={[
-          { value: "8", label: "Buyer Paths" },
+          { value: "6", label: "Area Matches" },
           { value: "Local", label: "Area Fit" },
           { value: "Fast", label: "First Read" },
           { value: "Luke", label: "Next Step" },
@@ -40,10 +40,10 @@ export default function AreaFitQuizPage() {
         <Container>
           <Reveal className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-[0.82fr_1fr] md:items-end">
             <div>
-              <Eyebrow>Buyer Path</Eyebrow>
-              <SectionHeading className="mt-7">Choose the starting point,<br /><em className="font-light not-italic italic text-[var(--color-bronze-light)]">then test the fit.</em></SectionHeading>
+              <Eyebrow>Lifestyle Match</Eyebrow>
+              <SectionHeading className="mt-7">Answer the easy questions,<br /><em className="font-light not-italic italic text-[var(--color-bronze-light)]">then test the fit.</em></SectionHeading>
             </div>
-            <SectionLede align="right">The quiz does not replace a local conversation. It gives buyers a cleaner first route so Luke can help compare the right areas and avoid the wrong showings.</SectionLede>
+            <SectionLede align="right">The quiz does not replace a local conversation. It gives buyers a cleaner area match so Luke can help compare the right places and avoid the wrong showings.</SectionLede>
           </Reveal>
           <BuyerFitQuiz />
         </Container>
@@ -51,7 +51,7 @@ export default function AreaFitQuizPage() {
 
       <InquiryCTA
         eyebrow="Buyer Brief"
-        title="Have a path in mind?"
+        title="Have an area match?"
         emphasis="Send it to Luke."
         body="Share the result, the property type, and what you want daily life to feel like. Luke can help turn that into a smarter first shortlist."
       />
