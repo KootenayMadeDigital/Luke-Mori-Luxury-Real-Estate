@@ -102,7 +102,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
 
         {meta && meta.length > 0 && (
           <Reveal delay={460} className="mt-auto sm:mt-24 md:mt-28">
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-7 pt-12 sm:grid-cols-4 sm:gap-x-10 sm:border-t sm:border-[var(--color-line)] sm:pt-10">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-7 pt-12 sm:grid-cols-4 sm:gap-x-10 sm:border-t sm:border-[var(--color-line)] sm:pt-14">
               {meta.map((m) => (
                 <li key={m.label} className="flex flex-col gap-1.5">
                   <span className="font-serif text-[24px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-[28px]">
