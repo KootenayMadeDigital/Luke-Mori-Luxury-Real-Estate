@@ -264,58 +264,81 @@ export function Nav() {
         id="mobile-navigation"
         role="navigation"
         aria-label="Mobile navigation"
-        className={`fixed inset-0 z-[95] bg-[rgba(10,11,13,0.96)] px-5 pb-8 pt-40 backdrop-blur-2xl transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-8 sm:pt-44 lg:hidden ${
+        className={`fixed inset-0 z-[95] overflow-hidden bg-[radial-gradient(circle_at_18%_14%,rgba(212,184,150,0.12),transparent_32%),radial-gradient(circle_at_86%_78%,rgba(132,162,166,0.08),transparent_34%),rgba(7,8,10,0.98)] px-4 pb-6 pt-36 backdrop-blur-2xl transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-8 sm:pt-44 lg:hidden ${
           mobileOpen ? "pointer-events-auto visible translate-y-0 opacity-100" : "pointer-events-none invisible -translate-y-3 opacity-0"
         }`}
         aria-hidden={!mobileOpen}
       >
-        <div className="flex h-full flex-col overflow-y-auto">
-          <div className="grid gap-4 pb-4">
+        <div className="pointer-events-none absolute inset-x-6 top-32 h-px bg-[linear-gradient(90deg,transparent,rgba(212,184,150,0.42),transparent)]" aria-hidden />
+        <div className="flex h-full flex-col overflow-y-auto pr-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="mb-6 mt-2 rounded-[2rem] border border-[rgba(212,184,150,0.18)] bg-[rgba(255,255,255,0.025)] p-1.5 shadow-[0_34px_100px_-70px_rgba(0,0,0,0.95)]">
+            <div className="rounded-[calc(2rem-0.375rem)] bg-[linear-gradient(135deg,rgba(14,16,18,0.92),rgba(9,10,11,0.96))] px-5 py-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
+              <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
+                Private Directory
+              </p>
+              <p className="m-0 mt-2 max-w-[28ch] font-serif text-[24px] font-light leading-[1.1] text-[var(--color-text)]">
+                Find the right next step with Luke.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-3 pb-4">
             {navGroups.map((g, groupIndex) => (
               <div
                 key={g.label}
-                className={`rounded-[1.4rem] border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-6 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] first:mt-2 ${
+                className={`group rounded-[1.65rem] border border-[rgba(212,184,150,0.16)] bg-[rgba(255,255,255,0.022)] p-1.5 shadow-[0_26px_76px_-64px_rgba(0,0,0,0.95)] transition-[opacity,transform,border-color,background] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   mobileOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
                 style={{ transitionDelay: mobileOpen ? `${120 + groupIndex * 70}ms` : "0ms" }}
               >
-                <Link
-                  href={g.href ?? "#"}
-                  onClick={() => setMobileOpen(false)}
-                  className="block font-serif text-[30px] font-light leading-none text-[var(--color-text)]"
-                >
-                  {g.label}
-                </Link>
-                <ul className="mt-4 grid gap-2">
-                  {g.items.map((it) => {
-                    const external = it.href.startsWith("http");
-                    return (
-                      <li key={it.href}>
-                        <Link
-                          href={it.href}
-                          target={external ? "_blank" : undefined}
-                          rel={external ? "noreferrer" : undefined}
-                          onClick={() => setMobileOpen(false)}
-                          className="block rounded-full px-3 py-2 text-[13px] font-medium text-[var(--color-text-muted)] transition-[background,color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
-                        >
-                          {it.label}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <div className="rounded-[calc(1.65rem-0.375rem)] bg-[linear-gradient(145deg,rgba(15,17,19,0.88),rgba(8,9,10,0.96))] p-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.045)]">
+                  <div className="mb-4 flex items-center justify-between gap-4 border-b border-[rgba(212,184,150,0.13)] pb-4">
+                    <Link
+                      href={g.href ?? "#"}
+                      onClick={() => setMobileOpen(false)}
+                      className="font-serif text-[30px] font-light leading-none tracking-[-0.01em] text-[var(--color-text)] transition-colors duration-500 hover:text-[var(--color-bronze-light)]"
+                    >
+                      {g.label}
+                    </Link>
+                    <span className="grid size-8 shrink-0 place-items-center rounded-full border border-[rgba(212,184,150,0.24)] text-[var(--color-bronze-light)]">
+                      <svg viewBox="0 0 16 16" aria-hidden className="size-3.5">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
+                      </svg>
+                    </span>
+                  </div>
+                  <ul className="grid gap-1.5">
+                    {g.items.map((it) => {
+                      const external = it.href.startsWith("http");
+                      return (
+                        <li key={it.href}>
+                          <Link
+                            href={it.href}
+                            target={external ? "_blank" : undefined}
+                            rel={external ? "noreferrer" : undefined}
+                            onClick={() => setMobileOpen(false)}
+                            className="group/item flex items-center justify-between gap-4 rounded-[1rem] px-3 py-3 text-[14px] font-medium text-[var(--color-text-muted)] transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-0.5 hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
+                          >
+                            <span>{it.label}</span>
+                            <span className="h-px w-5 bg-[rgba(212,184,150,0.22)] transition-[width,background] duration-500 group-hover/item:w-8 group-hover/item:bg-[var(--color-bronze)]" />
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 space-y-3 border-t border-[var(--color-line)] pt-8 text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-            <a href={contact.emailHref} className="block hover:text-[var(--color-bronze-light)]">
+          <div className="mt-6 rounded-[1.5rem] border border-[rgba(212,184,150,0.16)] bg-[rgba(255,255,255,0.022)] p-5 text-[11px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] shadow-[0_24px_70px_-62px_rgba(0,0,0,0.95)]">
+            <div className="mb-4 h-px bg-[linear-gradient(90deg,rgba(212,184,150,0.4),transparent)]" />
+            <a href={contact.emailHref} className="block py-2 transition-colors hover:text-[var(--color-bronze-light)]">
               <span className="text-[var(--color-bronze)]">E</span> {contact.email}
             </a>
-            <a href={contact.phoneHref} className="block hover:text-[var(--color-bronze-light)]">
+            <a href={contact.phoneHref} className="block py-2 transition-colors hover:text-[var(--color-bronze-light)]">
               <span className="text-[var(--color-bronze)]">P</span> {contact.phone}
             </a>
-            <span className="block text-[var(--color-text-dim)]">{contact.office}</span>
+            <span className="block py-2 text-[var(--color-text-dim)]">{contact.office}</span>
           </div>
         </div>
       </div>

@@ -183,8 +183,8 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={140}>
-              <div className="relative min-h-[720px] sm:min-h-[760px] lg:min-h-[700px]">
-                <div className="absolute left-0 top-0 w-[68%] rounded-[2rem] border border-[var(--color-line)] bg-[rgba(244,239,230,0.42)] p-1.5 shadow-[0_34px_90px_-62px_rgba(0,0,0,0.34)]">
+              <div className="relative min-h-[560px] sm:min-h-[640px] lg:min-h-[700px]">
+                <div className="absolute left-0 top-0 w-[64%] rounded-[2rem] border border-[var(--color-line)] bg-[rgba(244,239,230,0.42)] p-1.5 shadow-[0_34px_90px_-62px_rgba(0,0,0,0.34)] sm:w-[68%]">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)]">
                     <Image
                       src={siteImages.lukeFrame}
@@ -196,7 +196,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="absolute right-0 top-[22%] w-[62%] rounded-[1.65rem] border border-[rgba(212,184,150,0.36)] bg-[rgba(9,10,11,0.86)] p-1.5 shadow-[0_36px_110px_-54px_rgba(0,0,0,0.72)]">
+                <div className="absolute right-0 top-[18%] w-[62%] rounded-[1.65rem] border border-[rgba(212,184,150,0.36)] bg-[rgba(9,10,11,0.86)] p-1.5 shadow-[0_36px_110px_-54px_rgba(0,0,0,0.72)] sm:top-[20%] lg:top-[22%]">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(1.65rem-0.375rem)]">
                     <Image
                       src={siteImages.lukeAward}
@@ -208,7 +208,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-[8%] w-[58%] rounded-[1.8rem] border border-[rgba(245,239,229,0.22)] bg-[rgba(10,11,13,0.9)] p-1.5 shadow-[0_30px_100px_-58px_rgba(0,0,0,0.82)]">
+                <div className="absolute bottom-0 left-[10%] w-[58%] rounded-[1.8rem] border border-[rgba(245,239,229,0.22)] bg-[rgba(10,11,13,0.9)] p-1.5 shadow-[0_30px_100px_-58px_rgba(0,0,0,0.82)] sm:left-[8%]">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-[calc(1.8rem-0.375rem)]">
                     <Image
                       src={headerImages.lukeContact}
