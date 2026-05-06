@@ -122,41 +122,45 @@ export function ConceptFooter() {
           ))}
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-10 border-t border-[var(--color-line)] pt-12 lg:grid-cols-[0.9fr_1.4fr] lg:gap-20">
-          <Reveal>
-            <Brand href="/" />
-            <p className="mt-6 max-w-[360px] text-[15px] leading-[1.78] text-[var(--color-text-muted)]">
-              Nelson and Kootenay Lake real estate guidance for people who want clear advice, local knowledge, and a thoughtful plan. {contact.brokerage}.
-            </p>
-
-            <div className="mt-8 flex items-center gap-5">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">Brokerage</span>
-              <div className="relative h-8 w-32 opacity-80">
-                <Image src={brandImages.fairRealty} alt="Fair Realty" fill sizes="140px" className="object-contain object-left" />
+        <div className="relative mt-14 overflow-hidden rounded-[2rem] border border-[var(--color-line)] bg-[linear-gradient(135deg,rgba(255,247,235,0.04),rgba(255,247,235,0.012)_38%,rgba(176,138,91,0.05))] p-1 shadow-[0_40px_120px_-86px_rgba(0,0,0,0.95)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(212,184,150,0.12),transparent_34%),radial-gradient(circle_at_92%_18%,rgba(132,162,166,0.08),transparent_32%)]" aria-hidden />
+          <div className="relative grid grid-cols-1 gap-px overflow-hidden rounded-[calc(2rem-0.25rem)] bg-[var(--color-line)] lg:grid-cols-[0.86fr_1.44fr]">
+            <Reveal className="luxury-card group bg-[rgba(7,8,10,0.9)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(18,18,17,0.96)] sm:p-9 lg:p-10">
+              <div className="inline-flex rounded-[1.4rem] border border-[rgba(212,184,150,0.22)] bg-[rgba(212,184,150,0.045)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                <Brand href="/" />
               </div>
-            </div>
+              <p className="mt-7 max-w-[410px] text-[15px] leading-[1.82] text-[var(--color-text-muted)]">
+                Nelson and Kootenay Lake real estate guidance for people who want clear advice, local knowledge, and a thoughtful plan. {contact.brokerage}.
+              </p>
 
-            <div className="mt-9">
-              <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">Social</span>
-              <div className="flex flex-wrap gap-2.5">
-                {socialLinks.map((link) => (
-                  <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="rounded-full border border-[var(--color-line)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]">
-                    {link.label}
-                  </a>
-                ))}
+              <div className="mt-9 grid gap-4 sm:grid-cols-[auto_1fr] sm:items-center">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">Brokerage</span>
+                <div className="luxury-card group/fair relative h-14 max-w-[210px] rounded-full border border-[var(--color-line)] bg-[rgba(255,247,235,0.035)] px-5 transition-[border-color,background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,247,235,0.06)]">
+                  <Image src={brandImages.fairRealty} alt="Fair Realty" fill sizes="210px" className="object-contain object-left px-5 py-3 opacity-85 transition-opacity duration-500 group-hover/fair:opacity-100" />
+                </div>
               </div>
-            </div>
-          </Reveal>
 
-          <div>
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+              <div className="mt-10">
+                <span className="mb-4 block text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">Social</span>
+                <div className="flex flex-wrap gap-2.5">
+                  {socialLinks.map((link) => (
+                    <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="luxury-button rounded-full border border-[var(--color-line)] bg-[rgba(255,247,235,0.025)] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-text-muted)] transition-[border-color,color,background,transform,box-shadow] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.09)] hover:text-[var(--color-bronze-light)] hover:shadow-[0_18px_55px_-42px_rgba(212,184,150,0.8)]">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            <div className="grid grid-cols-2 gap-px bg-[var(--color-line)] md:grid-cols-4">
               {navLists.map((list) => (
-                <Reveal key={list.heading} className="luxury-card group rounded-[1.2rem] border border-transparent p-4 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line)] hover:bg-[rgba(212,184,150,0.04)]">
-                  <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{list.heading}</span>
-                  <ul className="space-y-3">
+                <Reveal key={list.heading} className="luxury-card group bg-[rgba(7,8,10,0.86)] p-6 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(24,21,18,0.94)] sm:p-7 lg:p-8">
+                  <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">{list.heading}</span>
+                  <ul className="space-y-4">
                     {list.links.map((link) => (
                       <li key={link.href}>
-                        <Link href={link.href} className="inline-flex text-[14px] leading-none text-[var(--color-text-muted)] transition-[color,transform] duration-500 ease-[var(--ease-luxe)] hover:translate-x-1 hover:text-[var(--color-text)]">
+                        <Link href={link.href} className="group/link inline-flex items-center gap-2 text-[14px] leading-none text-[var(--color-text-muted)] transition-[color,transform] duration-500 ease-[var(--ease-luxe)] hover:translate-x-1 hover:text-[var(--color-text)]">
+                          <span className="h-px w-0 bg-[var(--color-bronze)] transition-[width] duration-500 ease-[var(--ease-luxe)] group-hover/link:w-4" aria-hidden />
                           {link.label}
                         </Link>
                       </li>
