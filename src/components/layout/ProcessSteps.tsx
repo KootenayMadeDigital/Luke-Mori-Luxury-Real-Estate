@@ -48,9 +48,9 @@ export function ProcessSteps({ eyebrow, title, emphasis, lede, steps, tone = "iv
               key={s.num}
               as="li"
               delay={i * 80}
-              className="grid grid-cols-[80px_1fr] items-baseline gap-6 border-b border-[var(--color-line)] py-9 sm:grid-cols-[120px_1fr_2fr] sm:gap-10 md:py-10"
+              className="luxury-card group grid grid-cols-[80px_1fr] items-baseline gap-6 border-b border-[var(--color-line)] px-4 py-9 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.045)] sm:grid-cols-[120px_1fr_2fr] sm:gap-10 sm:px-6 md:py-10"
             >
-              <span className="font-serif text-[28px] italic tracking-[0.05em] text-[var(--color-bronze)] sm:text-[32px]">
+              <span className="font-serif text-[28px] italic tracking-[0.05em] text-[var(--color-bronze)] transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:-translate-y-1 sm:text-[32px]">
                 {s.num}
               </span>
               <h3 className="m-0 font-serif font-light leading-[1.15] tracking-[-0.005em] text-[var(--color-text)] [font-size:clamp(22px,2.6vw,34px)]">

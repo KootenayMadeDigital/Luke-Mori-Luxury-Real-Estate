@@ -127,7 +127,7 @@ export default function SellersPage() {
 
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {sellerLeverage.map((item, index) => (
-              <Reveal key={item.title} delay={index * 80} className="border border-[var(--color-line)] bg-[var(--color-surface)] p-8">
+              <Reveal key={item.title} delay={index * 80} className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] p-8 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]">
                 <span className="mb-6 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                   Leverage {String(index + 1).padStart(2, "0")}
                 </span>
@@ -171,7 +171,7 @@ export default function SellersPage() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {sellerScenarioCards.map((card, index) => (
-              <Reveal key={card.title} delay={(index % 2) * 70} className="flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 sm:p-9">
+              <Reveal key={card.title} delay={(index % 2) * 70} className="luxury-card group flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-surface)] sm:p-9">
                 <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                   Sale type {String(index + 1).padStart(2, "0")}
                 </span>
@@ -258,7 +258,7 @@ export default function SellersPage() {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-3">
             {sellerResearchLinks.map((link) => (
-              <Reveal key={link.href} className="bg-[var(--color-bg)] p-7">
+              <Reveal key={link.href} className="luxury-card group bg-[var(--color-bg)] p-7 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
                 <a href={link.href} target="_blank" rel="noreferrer" className="group block">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Research Link</span>
                   <h3 className="m-0 mt-4 font-serif text-[25px] font-light leading-[1.16] text-[var(--color-text)] group-hover:text-[var(--color-bronze-light)]">{link.label}</h3>

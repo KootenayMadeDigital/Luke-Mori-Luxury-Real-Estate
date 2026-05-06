@@ -175,7 +175,7 @@ export default function RelocationPage() {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] sm:grid-cols-2">
             {facets.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 2) * 60} className="bg-[var(--color-bg)] p-9 sm:p-10">
+              <Reveal key={f.title} delay={(i % 2) * 60} className="luxury-card group bg-[var(--color-bg)] p-9 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-10">
                 <h3 className="m-0 mb-4 font-serif text-[24px] font-normal leading-[1.2] tracking-[-0.005em] text-[var(--color-text)] sm:text-[28px]">
                   {f.title}
                 </h3>
@@ -271,7 +271,7 @@ export default function RelocationPage() {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2">
             {relocationTimeline.map((step, index) => (
-              <Reveal key={step.title} delay={(index % 2) * 70} className="flex h-full flex-col bg-[var(--color-bg)] p-8 sm:p-9">
+              <Reveal key={step.title} delay={(index % 2) * 70} className="luxury-card group flex h-full flex-col bg-[var(--color-bg)] p-8 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-9">
                 <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                   Stage {String(index + 1).padStart(2, "0")}
                 </span>
@@ -320,7 +320,7 @@ export default function RelocationPage() {
 
           <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-3">
             {relocationResearchLinks.map((link) => (
-              <Reveal key={link.href} className="bg-[var(--color-bg)] p-7">
+              <Reveal key={link.href} className="luxury-card group bg-[var(--color-bg)] p-7 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)]">
                 <a href={link.href} target="_blank" rel="noreferrer" className="group block">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Local Resource</span>
                   <h3 className="m-0 mt-4 font-serif text-[25px] font-light leading-[1.16] text-[var(--color-text)] group-hover:text-[var(--color-bronze-light)]">{link.label}</h3>

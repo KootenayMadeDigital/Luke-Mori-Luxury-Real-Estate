@@ -43,7 +43,7 @@ export function SellerReadinessChecklist() {
             {items.map((item, index) => {
               const on = checked.includes(item.key);
               return (
-                <button key={item.key} type="button" onClick={() => toggle(item.key)} className={`group border p-6 text-left transition-[border-color,background,transform] hover:-translate-y-0.5 ${on ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.12)]" : "border-[var(--color-line)] bg-[var(--color-surface)] hover:border-[var(--color-line-strong)]"}`}>
+                <button key={item.key} type="button" onClick={() => toggle(item.key)} className={`luxury-card group border p-6 text-left transition-[border-color,background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 ${on ? "border-[var(--color-bronze)] bg-[rgba(212,184,150,0.12)]" : "border-[var(--color-line)] bg-[var(--color-surface)] hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]"}`}>
                   <span className="mb-5 flex items-center gap-4">
                     <span className={`grid size-7 place-items-center rounded-full border text-[11px] font-semibold ${on ? "border-[var(--color-bronze)] bg-[var(--color-bronze)] text-[var(--color-button-text)]" : "border-[var(--color-line-strong)] text-[var(--color-text-dim)]"}`}>{on ? "✓" : String(index + 1)}</span>
                     <span className="h-px flex-1 bg-[var(--color-line)]" />
