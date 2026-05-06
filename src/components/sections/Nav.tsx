@@ -14,57 +14,57 @@ type NavGroup = {
 
 const navGroups: NavGroup[] = [
   {
-    label: "Clients",
-    href: "/buyers",
+    label: "Properties",
+    href: "/listings",
     items: [
-      { label: "For Buyers", href: "/buyers", description: "Listings, daily-life fit, and fewer wrong tours." },
-      { label: "Area Fit Quiz", href: "/buyers/area-fit-quiz", description: "Find the Kootenay buyer path before touring." },
-      { label: "For Sellers", href: "/sellers", description: "Pricing, sale plan, serious showings, and privacy." },
-      { label: "Relocation", href: "/buyers/relocation", description: "Nelson, North Shore, schools, seasons, and scouting routes." },
-      { label: "International Buyers", href: "/buyers/international", description: "Foreign-buyer questions, advisors, financing, and remote ownership." }
+      { label: "All Active Listings", href: "/listings", description: "Browse the full current market first." },
+      { label: "Compare Listings", href: "/listings#compare", description: "Build a shortlist before asking Luke." },
+      { label: "Waterfront", href: "/listings/waterfront", description: "Lake, river, shoreline, and access questions." },
+      { label: "Acreage", href: "/listings/acreage", description: "Land, rural homes, shops, and larger holdings." },
+      { label: "$1M+ Homes", href: "/listings/luxury", description: "Important homes at the top of the market." },
+      { label: "Recently Sold", href: "/listings/sold", description: "Public sold-property archive and proof." },
     ],
   },
   {
     label: "Guides",
     href: "/guides",
     items: [
-      { label: "All Guides", href: "/guides", description: "Clear buyer, seller, and property review guides for Kootenay real estate." },
-      { label: "Buyer Guides", href: "/guides#buyer-guides", description: "Waterfront, relocation, second homes, and offer questions." },
-      { label: "Property Review", href: "/guides#due-diligence", description: "Acreage, strata, access, water, winter, and rural systems." },
-      { label: "Seller Guides", href: "/guides#seller-guides", description: "Preparation, pricing, marketing, and showing quality." },
-    ],
-  },
-  {
-    label: "Properties",
-    href: "/listings",
-    items: [
-      { label: "All Active Listings", href: "/listings", description: "The current market, easier to compare." },
-      { label: "Compare Listings", href: "/listings#compare", description: "Build a shortlist before asking Luke." },
-      { label: "Luxury Listings", href: "/listings/luxury", description: "Properties at the top of the Kootenay market." },
-      { label: "Waterfront Listings", href: "/listings/waterfront", description: "Lake, river, and dock-access estates." },
-      { label: "Acreage", href: "/listings/acreage", description: "Rural homes, land parcels, and larger holdings." },
-      { label: "Recently Sold", href: "/listings/sold", description: "Recent sales across the region." },
+      { label: "All Guides", href: "/guides", description: "40 plainspoken buyer, seller, and property review guides." },
+      { label: "Quick Answers", href: "/faq", description: "Important concerns answered without digging." },
+      { label: "Buyer Guides", href: "/guides#buyer-guides", description: "Areas, offers, costs, relocation, and second homes." },
+      { label: "Property Review", href: "/guides#due-diligence", description: "Waterfront, acreage, title, access, risk, and systems." },
+      { label: "Seller Guides", href: "/guides#seller-guides", description: "Preparation, pricing, privacy, and showing quality." },
     ],
   },
   {
     label: "Places",
     href: "/nelson",
     items: [
-      { label: "Nelson", href: "/nelson/nelson", description: "The Queen City, Baker Street, and the West Arm." },
-      { label: "North Shore", href: "/nelson/north-shore", description: "Highway 3A, where the lake opens." },
-      { label: "Balfour", href: "/nelson/balfour", description: "Where the West Arm meets the main lake." },
-      { label: "Blewett", href: "/nelson/blewett", description: "Country acreage, ten minutes from town." },
-      { label: "Slocan Valley", href: "/nelson/slocan-valley", description: "Riverfront, timber, space, and quiet towns." },
+      { label: "Area Fit Quiz", href: "/buyers/area-fit-quiz", description: "Answer lifestyle questions and match the right area." },
+      { label: "Nelson", href: "/nelson/nelson", description: "Walkability, culture, schools, and town rhythm." },
+      { label: "North Shore", href: "/nelson/north-shore", description: "Lake views, privacy, and town nearby." },
+      { label: "Balfour", href: "/nelson/balfour", description: "Main-lake pace, marina, golf, and retreat life." },
+      { label: "Blewett", href: "/nelson/blewett", description: "Acreage, gardens, dogs, shops, and privacy." },
+      { label: "Slocan Valley", href: "/nelson/slocan-valley", description: "Space, quiet, rivers, timber, and slower days." },
     ],
   },
   {
-    label: "About Luke",
+    label: "Buy & Sell",
+    href: "/buyers",
+    items: [
+      { label: "For Buyers", href: "/buyers", description: "Daily-life fit, fewer wrong tours, clearer offers." },
+      { label: "For Sellers", href: "/sellers", description: "Pricing, preparation, privacy, and serious showings." },
+      { label: "Relocation", href: "/buyers/relocation", description: "Scouting routes, schools, services, and seasons." },
+      { label: "International Buyers", href: "/buyers/international", description: "Remote purchase, advisors, tax, and financing questions." },
+    ],
+  },
+  {
+    label: "Luke Mori",
     href: "/about",
     items: [
       { label: "About Luke", href: "/about", description: "Born and raised in Nelson. Founder, Luke Mori at Fair Realty." },
-      { label: "Awards & Testimonials", href: "/testimonials", description: "Voted Best Luxury Broker BC, 2021 and 2024." },
-      { label: "YouTube Home Tours", href: "/#home-tours", description: "Property films and home tours." },
-      { label: "FAQ", href: "/faq", description: "Answers before you call." },
+      { label: "Awards & Testimonials", href: "/testimonials", description: "Best Luxury Broker BC, 2021 and 2024." },
+      { label: "Property Films", href: "/#home-tours", description: "More than 250 property videos and home tours." },
       { label: "Contact", href: "/contact", description: "Phone, email, office, and direct inquiry." },
     ],
   },
@@ -279,7 +279,7 @@ export function Nav() {
                 Private Directory
               </p>
               <p className="m-0 mt-2 max-w-[28ch] font-serif text-[24px] font-light leading-[1.1] text-[var(--color-text)]">
-                Find the right next step with Luke.
+                Start with properties, places, or the question in front of you.
               </p>
             </div>
           </div>
@@ -318,10 +318,13 @@ export function Nav() {
                             target={external ? "_blank" : undefined}
                             rel={external ? "noreferrer" : undefined}
                             onClick={() => setMobileOpen(false)}
-                            className="group/item flex items-center justify-between gap-4 rounded-[1rem] px-3 py-3 text-[14px] font-medium text-[var(--color-text-muted)] transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-0.5 hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
+                            className="group/item flex items-start justify-between gap-4 rounded-[1rem] px-3 py-3 text-[14px] font-medium text-[var(--color-text-muted)] transition-[background,color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-0.5 hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
                           >
-                            <span>{it.label}</span>
-                            <span className="h-px w-5 bg-[rgba(212,184,150,0.22)] transition-[width,background] duration-500 group-hover/item:w-8 group-hover/item:bg-[var(--color-bronze)]" />
+                            <span>
+                              <span className="block text-[15px] text-[var(--color-text)]">{it.label}</span>
+                              {it.description && <span className="mt-1 block text-[12px] leading-[1.45] text-[var(--color-text-dim)]">{it.description}</span>}
+                            </span>
+                            <span className="mt-2 h-px w-5 shrink-0 bg-[rgba(212,184,150,0.22)] transition-[width,background] duration-500 group-hover/item:w-8 group-hover/item:bg-[var(--color-bronze)]" />
                           </Link>
                         </li>
                       );
