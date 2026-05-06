@@ -81,9 +81,9 @@ export function MoriStandard() {
                     {item.k}
                   </span>
                   <div>
-                    <h4 className="m-0 mb-2 font-serif text-[22px] font-light leading-[1.25] tracking-[-0.005em] text-[var(--color-text)]">
+                    <h3 className="m-0 mb-2 font-serif text-[22px] font-light leading-[1.25] tracking-[-0.005em] text-[var(--color-text)]">
                       {item.title}
-                    </h4>
+                    </h3>
                     <p className="m-0 max-w-[540px] text-[16px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
                       {item.body}
                     </p>
