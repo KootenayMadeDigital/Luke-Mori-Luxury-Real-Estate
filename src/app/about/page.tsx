@@ -26,7 +26,7 @@ export default function AboutPage() {
       <SubpageHero
         eyebrow="About Luke"
         title="Nelson is home"
-        emphasis="and I know the tradeoffs."
+        emphasis="and I’ll help you feel at ease."
         lede={lukeBio.short}
         image={headerImages.lukeLeaningPortrait}
         imageClassName="scale-[1.08] translate-y-10 object-[72%_50%] md:translate-y-14"
