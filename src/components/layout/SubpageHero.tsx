@@ -23,7 +23,7 @@ type Props = {
 export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, meta, imageTreatment = "standard", imageClassName = "" }: Props) {
   const showcase = imageTreatment === "showcase";
   return (
-    <section className="tone-dark tonal-section overflow-hidden border-b border-[var(--color-line)] pb-16 pt-28 sm:pb-20 sm:pt-32 md:pb-28 md:pt-40">
+    <section className="tone-dark tonal-section overflow-hidden border-b border-[var(--color-line)] pb-14 pt-36 sm:pb-20 sm:pt-32 md:pb-28 md:pt-40">
       {image && (
         <div className="absolute inset-0 z-0" aria-hidden>
           <Image
@@ -52,7 +52,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
       <Container className="relative z-10">
         {crumbs && crumbs.length > 0 && (
           <Reveal>
-            <nav className="mb-8 flex flex-wrap items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[rgba(239,234,226,0.76)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)]" aria-label="Breadcrumb">
+            <nav className="mb-7 flex flex-wrap items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[rgba(239,234,226,0.76)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] sm:mb-8" aria-label="Breadcrumb">
               {crumbs.map((c, i) => (
                 <span key={i} className="flex items-center gap-2.5">
                   {c.href ? (
@@ -72,14 +72,14 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
         )}
 
         <Reveal delay={80}>
-          <div className="mb-7 flex items-center gap-[18px] text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] sm:mb-8">
+          <div className="mb-6 flex items-center gap-[18px] text-[11px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] sm:mb-8">
             <span className="inline-block h-px w-12 bg-[var(--color-bronze)]" />
             {eyebrow}
           </div>
         </Reveal>
 
         <Reveal delay={180}>
-          <h1 className="m-0 max-w-[20ch] font-serif font-light leading-[1.03] tracking-[-0.015em] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] [font-size:clamp(38px,7vw,96px)] sm:leading-[1.05]">
+          <h1 className="m-0 max-w-[20ch] font-serif font-light leading-[1.02] tracking-[-0.015em] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] [font-size:clamp(36px,6.7vw,96px)] sm:leading-[1.05]">
             {title}
             {emphasis && (
               <>
@@ -94,7 +94,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
 
         {lede && (
           <Reveal delay={320}>
-            <p className="m-0 mt-8 max-w-[640px] font-medium leading-[1.6] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_20px_rgba(0,0,0,0.92)] [font-size:clamp(15.5px,1.3vw,18px)] sm:mt-9 sm:leading-[1.65]">
+            <p className="m-0 mt-7 max-w-[640px] font-medium leading-[1.54] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_20px_rgba(0,0,0,0.92)] [font-size:clamp(15px,1.3vw,18px)] sm:mt-9 sm:leading-[1.65]">
               {lede}
             </p>
           </Reveal>
@@ -102,7 +102,7 @@ export function SubpageHero({ eyebrow, title, emphasis, lede, image, crumbs, met
 
         {meta && meta.length > 0 && (
           <Reveal delay={460}>
-            <ul className="mt-11 grid grid-cols-2 gap-x-7 gap-y-6 rounded-[1.25rem] border border-[rgba(245,239,229,0.14)] bg-[rgba(8,9,10,0.2)] p-5 backdrop-blur-[2px] sm:mt-12 sm:grid-cols-4 sm:gap-x-10 sm:rounded-none sm:border-x-0 sm:border-b-0 sm:bg-transparent sm:p-0 sm:pt-8 sm:backdrop-blur-none">
+            <ul className="mt-[3.25rem] grid grid-cols-2 gap-x-8 gap-y-7 sm:mt-12 sm:grid-cols-4 sm:gap-x-10 sm:border-t sm:border-[var(--color-line)] sm:pt-8">
               {meta.map((m) => (
                 <li key={m.label} className="flex flex-col gap-1.5">
                   <span className="font-serif text-[24px] font-light leading-none tracking-[-0.005em] text-[var(--color-text)] drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-[28px]">
