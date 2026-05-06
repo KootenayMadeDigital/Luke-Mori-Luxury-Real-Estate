@@ -33,7 +33,7 @@ export function TrustLedger() {
         <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] lg:grid-cols-4">
           {trustProofs.map((item, i) => (
             <Reveal key={item.eyebrow} delay={i * 80}>
-              <article className="flex h-full min-h-[360px] flex-col bg-[var(--color-bg)] p-8 transition-colors duration-500 hover:bg-[var(--color-surface)] sm:p-9">
+              <article className="luxury-card group flex h-full min-h-[360px] flex-col bg-[var(--color-bg)] p-8 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-9">
                 <span className="mb-6 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
                   {item.eyebrow}
                 </span>
@@ -55,7 +55,7 @@ export function TrustLedger() {
           <Reveal>
             <div className="grid h-full grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-3">
               {trustPrinciples.map((principle) => (
-                <article key={principle.title} className="bg-[rgba(255,255,255,0.025)] p-7 sm:p-8">
+                <article key={principle.title} className="luxury-card group bg-[rgba(255,255,255,0.025)] p-7 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.055)] sm:p-8">
                   <h4 className="m-0 mb-3 font-serif text-[22px] font-light leading-[1.2] text-[var(--color-text)]">
                     {principle.title}
                   </h4>
@@ -68,7 +68,7 @@ export function TrustLedger() {
           </Reveal>
 
           <Reveal delay={120}>
-            <aside className="flex h-full flex-col justify-between border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.72)] p-8 sm:p-9">
+            <aside className="luxury-card group flex h-full flex-col justify-between border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.72)] p-8 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[rgba(18,18,17,0.88)] sm:p-9">
               <div>
                 <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">
                   Simple test

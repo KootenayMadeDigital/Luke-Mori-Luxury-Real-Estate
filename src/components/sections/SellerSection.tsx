@@ -67,7 +67,7 @@ export function SellerSection() {
             </Reveal>
 
             <Reveal delay={430}>
-              <div className="mt-12 overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_30px_90px_-70px_rgba(0,0,0,0.9)]">
+              <div className="luxury-card group mt-12 overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_30px_90px_-70px_rgba(0,0,0,0.9)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]">
                 <div className="grid grid-cols-[1.15fr_0.85fr] gap-px bg-[var(--color-line)]">
                   <div className="relative min-h-[230px] bg-[var(--color-bg)]">
                     <Image
@@ -75,7 +75,7 @@ export function SellerSection() {
                       alt="Staged dining room ready for a thoughtful property listing"
                       fill
                       sizes="(min-width: 1024px) 34vw, 100vw"
-                      className="object-cover opacity-90 saturate-[1.04]"
+                      className="luxury-media object-cover opacity-90 saturate-[1.04]"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.02),rgba(10,11,13,0.56))]" aria-hidden />
                     <span className="absolute bottom-5 left-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze-light)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.78)]">
@@ -90,7 +90,7 @@ export function SellerSection() {
                           alt={i === 0 ? "Luke Mori seller sign" : "Prepared study room for real estate presentation"}
                           fill
                           sizes="(min-width: 1024px) 16vw, 50vw"
-                          className="object-cover opacity-86 saturate-[1.05]"
+                          className="luxury-media object-cover opacity-86 saturate-[1.05]"
                         />
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.05),rgba(10,11,13,0.46))]" aria-hidden />
                       </div>
@@ -117,7 +117,7 @@ export function SellerSection() {
 
           <div>
             <Reveal>
-            <div className="border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_40px_120px_-80px_rgba(0,0,0,0.45)]">
+            <div className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_40px_120px_-80px_rgba(0,0,0,0.45)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)]">
                 <div className="border-b border-[var(--color-line)] p-7 sm:p-9 lg:p-10">
                   <div className="flex flex-wrap items-center justify-between gap-5">
                     <div>
@@ -140,7 +140,7 @@ export function SellerSection() {
                       key={p.title}
                       as="li"
                       delay={(i % 4) * 70}
-                      className="luxury-card group min-h-[230px] border-b border-[var(--color-line)] p-7 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:border-r sm:p-8 sm:even:border-r-0 lg:p-9"
+                      className="luxury-card group min-h-[230px] border-b border-[var(--color-line)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:border-r sm:p-8 sm:even:border-r-0 lg:p-9"
                     >
                       <span className="mb-8 inline-flex size-11 items-center justify-center rounded-full border border-[var(--color-line-strong)] font-serif text-[15px] italic tracking-[0.05em] text-[var(--color-bronze-light)] transition-colors duration-300 group-hover:border-[var(--color-bronze)]">
                         {p.num}
@@ -164,7 +164,7 @@ export function SellerSection() {
             <Reveal
               key={signal.label}
               delay={i * 90}
-              className={`p-7 sm:p-8 ${i > 0 ? "border-t border-[var(--color-line)] md:border-l md:border-t-0" : ""}`}
+              className={`luxury-card group p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.045)] sm:p-8 ${i > 0 ? "border-t border-[var(--color-line)] md:border-l md:border-t-0" : ""}`}
             >
               <p className="m-0 mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-bronze)]">
                 {signal.label}

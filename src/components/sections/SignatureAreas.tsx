@@ -37,7 +37,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
               key={a.name}
               delay={i * 60}
               as="article"
-              className={`luxury-card group relative flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)] ${
+              className={`luxury-card group relative flex flex-col overflow-hidden border border-[var(--color-line)] bg-[var(--color-surface)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1.5 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] ${
                 !preview && a.feature ? "lg:col-span-2" : ""
               }`}
             >
@@ -71,7 +71,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
                   </div>
                   <a
                     href={a.href}
-                    className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]"
+                    className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-[color,transform] duration-500 ease-[var(--ease-luxe)] hover:translate-x-1 hover:text-[var(--color-bronze-light)]"
                   >
                     {a.cta}
                     <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
@@ -84,7 +84,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
           ))}
         </div>
 
-        <Reveal delay={220} className="mt-12 border border-[var(--color-line)] bg-[var(--color-surface)] p-8 md:p-10">
+        <Reveal delay={220} className="luxury-card group mt-12 border border-[var(--color-line)] bg-[var(--color-surface)] p-8 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] md:p-10">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
             <div>
               <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
@@ -101,7 +101,7 @@ export function SignatureAreas({ preview = false }: SignatureAreasProps) {
               {preview ? (
                 <Link
                   href="/nelson"
-                  className="mt-7 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]"
+                  className="mt-7 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-[color,transform] duration-500 ease-[var(--ease-luxe)] hover:translate-x-1 hover:text-[var(--color-bronze-light)]"
                 >
                   Explore all Nelson areas
                   <svg viewBox="0 0 16 16" aria-hidden className="size-[14px]">

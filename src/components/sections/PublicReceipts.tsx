@@ -23,10 +23,10 @@ export function PublicReceipts() {
           </h2>
         </Reveal>
 
-        <Reveal delay={120} className="mt-12 overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.56)] shadow-[0_34px_90px_-62px_rgba(0,0,0,0.95)]">
+        <Reveal delay={120} className="luxury-card group mt-12 overflow-hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(10,11,13,0.56)] shadow-[0_34px_90px_-62px_rgba(0,0,0,0.95)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[rgba(18,18,17,0.72)]">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {credentials.map((c) => (
-              <div key={c.label} className="border-b border-r border-[var(--color-line)] p-6 last:border-r-0 md:border-b-0 md:p-8">
+              <div key={c.label} className="border-b border-r border-[var(--color-line)] p-6 transition-[background,transform] duration-700 ease-[var(--ease-luxe)] last:border-r-0 hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.055)] md:border-b-0 md:p-8">
                 <span className="block font-serif text-[32px] font-light leading-none tracking-[-0.01em] text-[var(--color-bronze-light)] md:text-[42px]">
                   {c.value}
                 </span>
@@ -40,7 +40,7 @@ export function PublicReceipts() {
 
         <Reveal delay={220} className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-[1fr_1fr_auto] md:items-stretch">
           {facebookReviews.slice(5, 7).map((review) => (
-            <article key={review.quote} className="border border-[var(--color-line)] bg-[rgba(255,255,255,0.045)] p-6">
+            <article key={review.quote} className="luxury-card group border border-[var(--color-line)] bg-[rgba(255,255,255,0.045)] p-6 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(212,184,150,0.06)]">
               <p className="m-0 mb-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
                 Facebook Review
               </p>
@@ -51,7 +51,7 @@ export function PublicReceipts() {
           ))}
           <a
             href={facebookReviewsUrl}
-            className="flex items-center justify-center border border-[var(--color-bronze)] px-6 py-5 text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze-light)] transition-[background,color] duration-500 hover:bg-[var(--color-bronze)] hover:text-[#18120c]"
+            className="luxury-button flex items-center justify-center rounded-[1.1rem] border border-[var(--color-bronze)] px-6 py-5 text-center text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze-light)] transition-[transform,background,color,border-color,box-shadow] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-bronze)] hover:text-[#18120c] hover:shadow-[0_24px_70px_-48px_rgba(212,184,150,0.9)]"
           >
             Read More Reviews
           </a>

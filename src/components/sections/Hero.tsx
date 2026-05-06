@@ -62,7 +62,7 @@ export function Hero() {
         </div>
 
         <Reveal delay={160}>
-          <aside className="hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.055)] p-1.5 shadow-[0_34px_90px_-54px_rgba(0,0,0,0.95)] lg:block lg:translate-y-2 xl:translate-y-4">
+          <aside className="luxury-card group hidden rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.055)] p-1.5 shadow-[0_34px_90px_-54px_rgba(0,0,0,0.95)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.075)] lg:block lg:translate-y-2 lg:hover:translate-y-1 xl:translate-y-4 xl:hover:translate-y-3">
             <div className="rounded-[calc(2rem-0.375rem)] bg-[rgba(10,11,13,0.76)] p-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.07)] sm:p-6 lg:p-7">
               <div className="flex items-start justify-between gap-6 border-b border-[var(--color-line)] pb-6">
                 <div>
@@ -82,7 +82,7 @@ export function Hero() {
 
               <ul className="divide-y divide-[var(--color-line)]">
                 {heroProofSignals.map((signal) => (
-                  <li key={signal.label} className="grid grid-cols-[0.46fr_1fr] gap-5 py-5">
+                  <li key={signal.label} className="grid grid-cols-[0.46fr_1fr] gap-5 py-5 transition-[background,transform] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:bg-[rgba(212,184,150,0.045)]">
                     <span className="font-serif text-[28px] font-light leading-none tracking-[-0.01em] text-[var(--color-bronze-light)]">
                       {signal.value}
                     </span>
@@ -101,13 +101,13 @@ export function Hero() {
               <div className="mt-2 grid grid-cols-1 gap-3 border-t border-[var(--color-line)] pt-5 sm:grid-cols-2">
                 <a
                   href={contact.phoneHref}
-                  className="rounded-full border border-[var(--color-line)] px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-[border-color,color,background] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
+                  className="luxury-button rounded-full border border-[var(--color-line)] px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-[transform,border-color,color,background,box-shadow] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
                 >
                   {contact.phone}
                 </a>
                 <a
                   href={contact.emailHref}
-                  className="rounded-full border border-[var(--color-line)] px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-[border-color,color,background] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
+                  className="luxury-button rounded-full border border-[var(--color-line)] px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] transition-[transform,border-color,color,background,box-shadow] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.07)] hover:text-[var(--color-bronze-light)]"
                 >
                   Direct email
                 </a>

@@ -42,7 +42,7 @@ export function LeadMagnet() {
               {guideContents.map((g) => (
                 <li
                   key={g}
-                  className="relative pl-6 text-[15px] font-light text-[var(--color-text)] before:absolute before:left-0 before:top-3 before:h-px before:w-3 before:bg-[var(--color-bronze)] before:content-['']"
+                  className="luxury-card group relative border border-transparent py-2 pl-6 pr-3 text-[15px] font-light text-[var(--color-text)] transition-[transform,background,border-color] duration-700 ease-[var(--ease-luxe)] before:absolute before:left-0 before:top-5 before:h-px before:w-3 before:bg-[var(--color-bronze)] before:content-[''] hover:-translate-y-0.5 hover:border-[var(--color-line)] hover:bg-[rgba(212,184,150,0.045)]"
                 >
                   {g}
                 </li>

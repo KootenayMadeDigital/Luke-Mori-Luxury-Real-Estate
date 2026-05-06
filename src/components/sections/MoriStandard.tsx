@@ -20,14 +20,14 @@ export function MoriStandard() {
       <Container className="relative">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <Reveal>
-            <div className="rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.05)] p-1.5">
+            <div className="luxury-card group rounded-[2rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.05)] p-1.5 transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)]">
               <div className="tone-dark relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-surface)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]">
                 <Image
                   src={siteImages.lukePortrait}
                   alt="Luke Mori"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover"
+                  className="luxury-media object-cover"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,11,13,0.88)] via-[rgba(10,11,13,0.1)] to-transparent" />
                 <div className="pointer-events-none absolute inset-4 rounded-[1.45rem] border border-[rgba(212,184,150,0.2)]" />
@@ -75,7 +75,7 @@ export function MoriStandard() {
                   key={item.k}
                   delay={300 + i * 100}
                   as="li"
-                  className="grid grid-cols-[40px_1fr] gap-6 border-t border-[var(--color-line)] pt-7"
+                  className="luxury-card group grid grid-cols-[40px_1fr] gap-6 border-t border-[var(--color-line)] px-4 pb-5 pt-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.045)]"
                 >
                   <span className="font-serif text-[18px] italic text-[var(--color-bronze)]">
                     {item.k}
@@ -92,7 +92,7 @@ export function MoriStandard() {
               ))}
             </ul>
 
-            <Reveal delay={620} className="mt-12 border-t border-[var(--color-line)] pt-8">
+            <Reveal delay={620} className="luxury-card group mt-12 border-t border-[var(--color-line)] px-4 pb-4 pt-8 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.045)]">
               <div className="flex flex-col gap-5 rounded-2xl border border-[var(--color-line)] bg-[rgba(255,247,235,0.42)] p-5 shadow-[0_18px_50px_rgba(63,46,31,0.08)] sm:flex-row sm:items-center sm:gap-6">
                 <div className="relative h-14 w-52 shrink-0">
                   <Image
