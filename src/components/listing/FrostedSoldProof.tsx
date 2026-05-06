@@ -27,8 +27,8 @@ export function FrostedSoldProof({ lead }: Props) {
           className="luxury-media object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.12),rgba(10,11,13,0.2)_36%,rgba(10,11,13,0.88))]" />
-        <div className="absolute left-6 top-6 rounded-full border border-[rgba(245,239,229,0.34)] bg-[rgba(10,11,13,0.58)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-text)] shadow-[0_18px_60px_-40px_rgba(0,0,0,0.95)]">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,11,13,0.1),rgba(10,11,13,0.18)_34%,rgba(10,11,13,0.94))]" />
+        <div className="absolute left-6 top-6 rounded-full border border-[rgba(245,239,229,0.34)] bg-[rgba(10,11,13,0.58)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(255,252,246,0.96)] shadow-[0_18px_60px_-40px_rgba(0,0,0,0.95)]">
           {lead.status}
         </div>
         <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9">
@@ -37,14 +37,14 @@ export function FrostedSoldProof({ lead }: Props) {
           </div>
           <div className="grid grid-cols-1 gap-5 border-t border-[rgba(245,239,229,0.2)] pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
             <div>
-              <h2 className="m-0 font-serif text-[34px] font-light leading-[1.04] tracking-[-0.01em] text-[var(--color-text)] sm:text-[46px]">
+              <h2 className="m-0 font-serif text-[34px] font-light leading-[1.04] tracking-[-0.01em] text-[rgba(255,252,246,0.96)] drop-shadow-[0_3px_18px_rgba(0,0,0,0.95)] sm:text-[46px]">
                 {lead.address}
               </h2>
-              <p className="m-0 mt-3 text-[13px] font-semibold uppercase tracking-[0.2em] text-[var(--color-bronze-light)]">
+              <p className="m-0 mt-3 text-[13px] font-semibold uppercase tracking-[0.2em] text-[rgba(255,252,246,0.86)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                 {lead.area} · {lead.type}
               </p>
             </div>
-            <div className="font-serif text-[30px] italic text-[var(--color-bronze-light)]">
+            <div className="font-serif text-[30px] italic text-[rgba(255,252,246,0.94)] drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)]">
               {lead.offered}
             </div>
           </div>
