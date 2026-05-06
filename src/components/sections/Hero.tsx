@@ -35,21 +35,6 @@ export function Hero() {
             </p>
           </Reveal>
 
-          <Reveal className="is-in" delay={260}>
-            <ul className="absolute inset-x-5 bottom-[13.25rem] grid max-w-[620px] grid-cols-3 gap-2 border-y border-[rgba(212,184,150,0.18)] bg-[rgba(5,6,7,0.12)] py-3.5 sm:static sm:mt-7 sm:bg-transparent sm:py-4 lg:hidden">
-              {heroProofSignals.map((signal) => (
-                <li key={signal.label} className="min-w-0">
-                  <span className="block font-serif text-[18px] font-light leading-none text-[var(--color-bronze-light)] sm:text-[20px]">
-                    {signal.value}
-                  </span>
-                  <span className="mt-1.5 block text-[8px] font-semibold uppercase leading-[1.25] tracking-[0.08em] text-[rgba(245,239,229,0.72)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] sm:mt-2 sm:text-[9px]">
-                    {signal.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
           <Reveal delay={340}>
             <div className="mt-5 hidden flex-col gap-3 sm:mt-8 sm:flex sm:flex-row sm:flex-wrap">
               <Button href="#sellers" variant="primary" size="lg" arrow>
@@ -131,6 +116,19 @@ export function Hero() {
           </aside>
         </Reveal>
       </div>
+
+      <ul className="absolute inset-x-5 bottom-[13rem] z-20 grid grid-cols-3 gap-2 border-y border-[rgba(212,184,150,0.18)] bg-[rgba(5,6,7,0.12)] py-3.5 sm:hidden">
+        {heroProofSignals.map((signal) => (
+          <li key={signal.label} className="min-w-0">
+            <span className="block font-serif text-[18px] font-light leading-none text-[var(--color-bronze-light)]">
+              {signal.value}
+            </span>
+            <span className="mt-1.5 block text-[8px] font-semibold uppercase leading-[1.25] tracking-[0.08em] text-[rgba(245,239,229,0.72)] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              {signal.label}
+            </span>
+          </li>
+        ))}
+      </ul>
 
       <div className="absolute inset-x-5 bottom-8 z-20 flex flex-col gap-3 sm:hidden">
         <Button href="#sellers" variant="primary" size="lg" arrow full>
