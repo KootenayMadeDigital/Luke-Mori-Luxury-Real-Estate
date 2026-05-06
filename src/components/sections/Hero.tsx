@@ -18,7 +18,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1320px] translate-y-[clamp(54px,7svh,76px)] grid-cols-1 items-start gap-10 px-5 sm:translate-y-0 sm:px-8 md:px-10 lg:grid-cols-[1.02fr_0.74fr] lg:gap-18 lg:px-12 xl:px-14">
         <div>
-          <Reveal>
+          <Reveal className="is-in">
             <h1 className="m-0 max-w-[11.5ch] font-serif font-light leading-[0.92] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(43px,8.6vw,132px)] sm:max-w-[12.5ch] sm:[font-size:clamp(50px,8.6vw,132px)]">
               Move wisely
               <br />
@@ -28,13 +28,13 @@ export function Hero() {
             </h1>
           </Reveal>
 
-          <Reveal delay={180}>
+          <Reveal className="is-in" delay={180}>
             <p className="m-0 mt-5 max-w-[560px] font-light leading-[1.6] text-[rgba(245,239,229,0.84)] drop-shadow-[0_4px_22px_rgba(0,0,0,0.9)] [font-size:clamp(15px,1.45vw,20px)] sm:mt-7 sm:leading-[1.68]">
               Buy or sell around Nelson and Kootenay Lake with clear local guidance from day one.
             </p>
           </Reveal>
 
-          <Reveal delay={260}>
+          <Reveal className="is-in" delay={260}>
             <ul className="mt-5 grid max-w-[620px] grid-cols-3 gap-2 border-y border-[var(--color-line)] py-3 sm:mt-7 sm:py-4 lg:hidden">
               {heroProofSignals.map((signal) => (
                 <li key={signal.label} className="min-w-0">
