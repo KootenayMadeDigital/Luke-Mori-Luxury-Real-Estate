@@ -64,7 +64,7 @@ export default function ContactPage() {
 
               <Reveal delay={360}>
                 <ul className="space-y-7">
-                  <li className="border-t border-[var(--color-line)] pt-7">
+                  <li className="luxury-card group border-t border-[var(--color-line)] px-4 pt-7 pb-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.05)]">
                     <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
                       Phone
                     </span>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                       {contact.phone}
                     </a>
                   </li>
-                  <li className="border-t border-[var(--color-line)] pt-7">
+                  <li className="luxury-card group border-t border-[var(--color-line)] px-4 pt-7 pb-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.05)]">
                     <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
                       Email
                     </span>
@@ -86,7 +86,7 @@ export default function ContactPage() {
                       {contact.email}
                     </a>
                   </li>
-                  <li className="border-t border-[var(--color-line)] pt-7">
+                  <li className="luxury-card group border-t border-[var(--color-line)] px-4 pt-7 pb-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.05)]">
                     <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
                       Office
                     </span>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                       Brokerage · {contact.brokerage}
                     </p>
                   </li>
-                  <li className="border-t border-[var(--color-line)] pt-7">
+                  <li className="luxury-card group border-t border-[var(--color-line)] px-4 pt-7 pb-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.05)]">
                     <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--color-bronze)]">
                       Social
                     </span>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                           href={s.href}
                           target="_blank"
                           rel="noreferrer"
-                          className="rounded-[1px] border border-[var(--color-line-strong)] px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--color-text)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]"
+                          className="luxury-button rounded-full border border-[var(--color-line-strong)] px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--color-text)] transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)]"
                         >
                           {s.label}
                         </a>
@@ -126,7 +126,7 @@ export default function ContactPage() {
 
             <Reveal delay={300}>
               <div className="space-y-6">
-                <div className="border border-[var(--color-line)] bg-[var(--color-surface)] p-7 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.6)] sm:p-8">
+                <div className="luxury-card group border border-[var(--color-line)] bg-[var(--color-surface)] p-7 shadow-[0_24px_70px_-58px_rgba(0,0,0,0.6)] transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-8">
                   <p className="m-0 mb-5 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
                     Before You Reach Out
                   </p>

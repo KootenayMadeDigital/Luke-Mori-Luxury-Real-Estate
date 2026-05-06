@@ -37,7 +37,7 @@ export function PrivateInquiryPaths({
           alt=""
           fill
           sizes="46vw"
-          className="object-cover"
+          className="luxury-media object-cover"
         />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,var(--color-bg)_0%,rgba(219,229,223,0.94)_56%,rgba(219,229,223,0.74)_100%)]" aria-hidden />
@@ -69,7 +69,7 @@ export function PrivateInquiryPaths({
                   href={path.href}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noreferrer" : undefined}
-                  className="luxury-card group flex h-full min-h-[320px] flex-col bg-[var(--color-bg-2)] p-7 transition-[background,transform,box-shadow] duration-500 hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-8"
+                  className="luxury-card group flex h-full min-h-[320px] flex-col bg-[var(--color-bg-2)] p-7 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[var(--color-surface)] sm:p-8"
                 >
                   <div className="mb-7 flex items-center justify-between gap-5">
                     <span className="text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">
@@ -100,7 +100,7 @@ export function PrivateInquiryPaths({
           })}
         </div>
 
-        <Reveal delay={180} className="mt-10 flex flex-col gap-4 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+        <Reveal delay={180} className="luxury-card group mt-10 flex flex-col gap-4 border border-[var(--color-line)] bg-[rgba(255,255,255,0.025)] p-5 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,255,255,0.045)] sm:flex-row sm:items-center sm:justify-between sm:p-6">
           <p className="m-0 max-w-[640px] text-[13px] leading-[1.7] text-[var(--color-text-muted)]">
             Prefer direct? Call Luke or send a note. The goal is one useful next step, not a generic follow-up.
           </p>

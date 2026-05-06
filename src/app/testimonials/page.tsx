@@ -65,7 +65,7 @@ export default function TestimonialsPage() {
               Winner of Best Luxury Real Estate Broker in 2021 and 2024, backed by client trust and local experience across Nelson and the Kootenays.
             </SectionLede>
 
-            <div className="mx-auto max-w-[900px] rounded-[2rem] border border-[var(--color-line-strong)] bg-[linear-gradient(135deg,rgba(255,248,237,0.72),rgba(212,184,150,0.2))] p-4 shadow-[0_34px_110px_-70px_rgba(63,46,31,0.42)] sm:p-6 md:p-8">
+            <div className="luxury-card group mx-auto max-w-[900px] rounded-[2rem] border border-[var(--color-line-strong)] bg-[linear-gradient(135deg,rgba(255,248,237,0.72),rgba(212,184,150,0.2))] p-4 shadow-[0_34px_110px_-70px_rgba(63,46,31,0.42)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] sm:p-6 md:p-8">
               <div className="grid grid-cols-1 items-center gap-8 rounded-[calc(2rem-0.75rem)] border border-[rgba(83,59,36,0.12)] bg-[rgba(255,252,246,0.74)] p-6 sm:p-8 md:grid-cols-[1.15fr_0.85fr] md:text-left">
                 <div>
                   <p className="m-0 text-[11px] font-bold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
@@ -169,7 +169,7 @@ export default function TestimonialsPage() {
                 key={`${t.attribution}-${i}`}
                 as="article"
                 delay={(i % 2) * 100}
-                className="relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-9 transition-colors duration-500 hover:border-[var(--color-line-strong)] sm:p-10"
+                className="luxury-card group relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-9 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-10"
               >
                 <svg
                   aria-hidden
@@ -230,7 +230,7 @@ export default function TestimonialsPage() {
                 key={`${review.context}-${i}`}
                 as="article"
                 delay={(i % 3) * 70}
-                className={`relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-colors duration-500 hover:border-[var(--color-line-strong)] sm:p-8 ${
+                className={`luxury-card group relative flex flex-col border border-[var(--color-line)] bg-[var(--color-surface)] p-7 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[var(--color-bg)] sm:p-8 ${
                   i === reviews.length - 1 && reviews.length % 3 === 1 ? "md:col-start-2" : ""
                 }`}
               >

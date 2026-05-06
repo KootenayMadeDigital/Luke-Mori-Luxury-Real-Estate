@@ -33,10 +33,10 @@ export function HomeTourVideos() {
               href={contact.social.youtube}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-colors hover:text-[var(--color-bronze-light)]"
+              className="luxury-button group mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-line-strong)] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)] transition-[border-color,color,background,transform] duration-500 ease-[var(--ease-luxe)] hover:-translate-y-0.5 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.08)] hover:text-[var(--color-bronze-light)]"
             >
               Visit Luke on YouTube
-              <svg viewBox="0 0 16 16" aria-hidden className="size-[14px]">
+              <svg viewBox="0 0 16 16" aria-hidden className="luxury-arrow size-[14px]">
                 <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.1" />
               </svg>
             </a>

@@ -24,7 +24,7 @@ export function ConsultForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="relative overflow-hidden rounded-[2rem] border border-[rgba(212,184,150,0.55)] bg-[linear-gradient(135deg,#f7efe2,#e3d1b8_58%,#b99162)] p-1.5 shadow-[0_34px_110px_-62px_rgba(212,184,150,0.72)]"
+      className="luxury-card group relative overflow-hidden rounded-[2rem] border border-[rgba(212,184,150,0.55)] bg-[linear-gradient(135deg,#f7efe2,#e3d1b8_58%,#b99162)] p-1.5 shadow-[0_34px_110px_-62px_rgba(212,184,150,0.72)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[rgba(212,184,150,0.78)]"
       noValidate
     >
       <div className="rounded-[calc(2rem-0.375rem)] border border-[rgba(255,255,255,0.42)] bg-[rgba(255,252,246,0.96)] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] sm:p-10 lg:p-12">

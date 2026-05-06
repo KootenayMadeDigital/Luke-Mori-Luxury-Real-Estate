@@ -54,13 +54,13 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
             <Reveal>
-              <div className="tone-dark relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)]">
+              <div className="luxury-card group tone-dark relative aspect-[4/5] overflow-hidden border border-[var(--color-line-strong)] bg-[var(--color-surface)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)]">
                 <Image
                   src={siteImages.lukePortrait}
                   alt="Luke Mori"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover"
+                  className="luxury-media object-cover"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(10,11,13,0.85)] via-[rgba(10,11,13,0.1)] to-transparent" />
                 <div className="pointer-events-none absolute inset-3 border border-[rgba(212,184,150,0.2)]" />
@@ -116,7 +116,7 @@ export default function AboutPage() {
                     key={p.k}
                     delay={460 + i * 100}
                     as="li"
-                    className="grid grid-cols-[40px_1fr] gap-6 border-t border-[var(--color-line)] pt-7"
+                    className="luxury-card group grid grid-cols-[40px_1fr] gap-6 border-t border-[var(--color-line)] px-4 pt-7 pb-5 transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.045)]"
                   >
                     <span className="font-serif text-[18px] italic text-[var(--color-bronze)]">
                       {p.k}
@@ -133,7 +133,7 @@ export default function AboutPage() {
                 ))}
               </ul>
 
-              <Reveal delay={780} className="mt-12 border-t border-[var(--color-line)] pt-8">
+              <Reveal delay={780} className="luxury-card group mt-12 border-t border-[var(--color-line)] pt-8 transition-[transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1">
                 <div className="flex flex-col gap-5 rounded-2xl border border-[var(--color-line)] bg-[rgba(244,239,230,0.58)] p-5 shadow-[0_18px_50px_rgba(35,55,50,0.08)] sm:flex-row sm:items-center sm:gap-6">
                   <div className="relative h-14 w-52 shrink-0">
                     <Image
@@ -184,38 +184,38 @@ export default function AboutPage() {
 
             <Reveal delay={140}>
               <div className="relative min-h-[560px] sm:min-h-[640px] lg:min-h-[700px]">
-                <div className="absolute left-0 top-0 w-[64%] rounded-[2rem] border border-[var(--color-line)] bg-[rgba(244,239,230,0.42)] p-1.5 shadow-[0_34px_90px_-62px_rgba(0,0,0,0.34)] sm:w-[68%]">
+                <div className="luxury-card group absolute left-0 top-0 w-[64%] rounded-[2rem] border border-[var(--color-line)] bg-[rgba(244,239,230,0.42)] p-1.5 shadow-[0_34px_90px_-62px_rgba(0,0,0,0.34)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] sm:w-[68%]">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(2rem-0.375rem)]">
                     <Image
                       src={siteImages.lukeFrame}
                       alt="Luke Mori preparing a home presentation detail"
                       fill
                       sizes="(min-width: 1024px) 34vw, 68vw"
-                      className="object-cover"
+                      className="luxury-media object-cover"
                     />
                   </div>
                 </div>
 
-                <div className="absolute right-0 top-[18%] w-[62%] rounded-[1.65rem] border border-[rgba(212,184,150,0.36)] bg-[rgba(9,10,11,0.86)] p-1.5 shadow-[0_36px_110px_-54px_rgba(0,0,0,0.72)] sm:top-[20%] lg:top-[22%]">
+                <div className="luxury-card group absolute right-0 top-[18%] w-[62%] rounded-[1.65rem] border border-[rgba(212,184,150,0.36)] bg-[rgba(9,10,11,0.86)] p-1.5 shadow-[0_36px_110px_-54px_rgba(0,0,0,0.72)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] sm:top-[20%] lg:top-[22%]">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[calc(1.65rem-0.375rem)]">
                     <Image
                       src={siteImages.lukeAward}
                       alt="Luxury Lifestyle Awards certificate for Luke Mori"
                       fill
                       sizes="(min-width: 1024px) 30vw, 62vw"
-                      className="object-cover"
+                      className="luxury-media object-cover"
                     />
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-[10%] w-[58%] rounded-[1.8rem] border border-[rgba(245,239,229,0.22)] bg-[rgba(10,11,13,0.9)] p-1.5 shadow-[0_30px_100px_-58px_rgba(0,0,0,0.82)] sm:left-[8%]">
+                <div className="luxury-card group absolute bottom-0 left-[10%] w-[58%] rounded-[1.8rem] border border-[rgba(245,239,229,0.22)] bg-[rgba(10,11,13,0.9)] p-1.5 shadow-[0_30px_100px_-58px_rgba(0,0,0,0.82)] transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] sm:left-[8%]">
                   <div className="relative aspect-[4/3] overflow-hidden rounded-[calc(1.8rem-0.375rem)]">
                     <Image
                       src={headerImages.lukeContact}
                       alt="Luke Mori speaking with a client"
                       fill
                       sizes="(min-width: 1024px) 28vw, 58vw"
-                      className="object-cover object-[50%_44%]"
+                      className="luxury-media object-cover object-[50%_44%]"
                     />
                   </div>
                 </div>

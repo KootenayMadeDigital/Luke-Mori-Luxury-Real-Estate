@@ -11,7 +11,7 @@ export function CredentialsStrip({ firstPerson = false }: Props) {
     <section className="tone-office tonal-section py-12 md:py-14">
       <Container>
         <Reveal>
-          <div className="rounded-[2rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.045)] p-1.5">
+          <div className="luxury-card group rounded-[2rem] border border-[var(--color-line)] bg-[rgba(212,184,150,0.045)] p-1.5 transition-[transform,border-color,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)]">
             <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-[calc(2rem-0.375rem)] bg-[var(--color-bg)] md:grid-cols-[0.72fr_1.28fr]">
               <div className="flex flex-col justify-between border-b border-[var(--color-line)] p-6 md:border-b-0 md:border-r md:p-8">
                 <div>
@@ -33,7 +33,7 @@ export function CredentialsStrip({ firstPerson = false }: Props) {
                 {credentials.map((c, i) => (
                   <li
                     key={c.label}
-                    className="border-b border-r border-[var(--color-line)] p-5 last:border-r-0 md:border-b-0 md:p-7"
+                    className="border-b border-r border-[var(--color-line)] p-5 transition-[background,transform] duration-700 ease-[var(--ease-luxe)] last:border-r-0 hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.055)] md:border-b-0 md:p-7"
                   >
                     <Reveal delay={i * 70}>
                       <span className="block font-serif text-[30px] font-light leading-none tracking-[-0.01em] text-[var(--color-bronze-light)] md:text-[36px]">
