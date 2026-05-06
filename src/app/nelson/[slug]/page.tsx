@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return buildPageMetadata({
     title: `${a.name} BC Real Estate & Relocation Guide`,
     description: intelligence
-      ? `${a.name} BC real estate guide for buyers making an important move: ${intelligence.thesis}`
+      ? `${a.name} BC real estate guide for buyers planning a serious move: ${intelligence.thesis}`
       : a.intro,
     path: `/nelson/${a.slug}`,
     image: `/og/nelson-${a.slug}.png`,

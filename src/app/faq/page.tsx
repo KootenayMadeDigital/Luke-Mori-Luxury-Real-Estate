@@ -12,7 +12,7 @@ import { headerImages, faqs } from "@/lib/data";
 export const metadata = buildPageMetadata({
   title: "Nelson BC Real Estate FAQ · Quick Buyer & Seller Answers",
   description:
-    "Quick answers to important Nelson BC and Kootenay Lake real estate questions about buying, selling, waterfront, acreage, relocation, taxes, risk review, and working with Luke Mori.",
+    "Quick answers to common Nelson BC and Kootenay Lake real estate questions about buying, selling, waterfront, acreage, relocation, taxes, risk review, and working with Luke Mori.",
   path: "/faq",
   image: "/og/faq.png",
 });

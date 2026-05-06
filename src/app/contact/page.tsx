@@ -36,7 +36,7 @@ export default function ContactPage() {
         eyebrow="Inquiry Routing"
         title="Tell Luke what"
         emphasis="you are hoping for."
-        body="Share what you are considering, what feels important, and what questions are still unanswered. You will get a thoughtful reply that helps you move forward with more confidence."
+        body="Share what you are considering, what matters most, and what questions are still unanswered. You will get a thoughtful reply that helps you move forward with more confidence."
       />
 
       <section id="contact-form" className="tone-ivory tonal-section scroll-mt-28 py-24 md:py-28">

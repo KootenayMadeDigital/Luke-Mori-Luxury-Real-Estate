@@ -26,7 +26,7 @@ export function TrustLedger() {
             </SectionHeading>
           </div>
           <SectionLede align="right">
-            Sellers and buyers making important decisions need three things early: a real record, a clear process, and advice that fits the property.
+            Sellers and buyers making serious decisions need three things early: a real record, a clear process, and advice that fits the property.
           </SectionLede>
         </Reveal>
 

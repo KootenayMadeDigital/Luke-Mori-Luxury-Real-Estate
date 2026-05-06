@@ -42,7 +42,7 @@ export default function AboutPage() {
       <SeoAnswerBlock
         eyebrow="Nelson Realtor"
         question="How do I work with clients?"
-        answer="I am a Nelson BC realtor, born and raised here, and I work with people making important decisions around Kootenay Lake homes, waterfront property, relocation, second homes, acreage, and selling in a thoughtful way. I have helped clients buy and sell millions of dollars in real estate, and Luxury Lifestyle Awards named my brokerage Best Luxury Real Estate Broker in British Columbia in 2021 and 2024."
+        answer="I am a Nelson BC realtor, born and raised here, and I work with people making careful decisions around Kootenay Lake homes, waterfront property, relocation, second homes, acreage, and selling in a thoughtful way. I have helped clients buy and sell millions of dollars in real estate, and Luxury Lifestyle Awards named my brokerage Best Luxury Real Estate Broker in British Columbia in 2021 and 2024."
         terms={["nelson bc realtor", "nelson bc real estate agent", "best realtor in nelson bc"]}
         tone="ivory"
       />

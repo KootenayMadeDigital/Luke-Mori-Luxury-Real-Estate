@@ -15,7 +15,7 @@ const soldProofNotes = [
   "North Shore lakefront, where shoreline, access, and privacy are the story behind the price.",
   "A rare lakefront property where the value needed to read clearly before the showing.",
   "An architectural Nelson view home where presentation had to make the setting easy to trust.",
-  "Walk-to-water living, sold on lifestyle clarity as much as the address itself.",
+  "Walk-to-water living, sold on daily-life fit as much as the address itself.",
 ];
 
 export const metadata = buildPageMetadata({

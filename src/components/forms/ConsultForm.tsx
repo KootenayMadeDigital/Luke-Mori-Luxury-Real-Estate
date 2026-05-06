@@ -108,7 +108,7 @@ export function ConsultForm() {
         </button>
 
         <p className="mt-5 text-center text-[13px] font-semibold leading-[1.6] text-[#4f3929]">
-          Your note is held in confidence. Luke or his team will help you move forward with more clarity.
+          Your note is held in confidence. Luke or his team will help you understand the right next step.
         </p>
 
         {submitted && (

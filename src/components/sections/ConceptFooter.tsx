@@ -78,12 +78,12 @@ export function ConceptFooter() {
                   Nelson and Kootenay Lake real estate
                 </div>
                 <h2 className="m-0 max-w-[680px] font-serif font-light leading-[1.02] tracking-[-0.018em] text-[var(--color-text)] [font-size:clamp(32px,4.8vw,62px)]">
-                  Move with clarity
+                  Move with a clear plan
                   <br />
                   in Nelson and Kootenay Lake.
                 </h2>
                 <p className="m-0 mt-5 max-w-[560px] text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
-                  Clear local guidance for lakefront, acreage, view homes, relocation, and important selling decisions in the Kootenays.
+                  Clear local guidance for lakefront, acreage, view homes, relocation, and selling decisions in the Kootenays.
                 </p>
               </div>
 
@@ -172,7 +172,7 @@ export function ConceptFooter() {
           </p>
           <div className="mt-7">
             <Button href="mailto:hello@kootenaymade.ca" variant="ghost">
-              Build a private luxury experience for your brand
+              Build a private real estate experience for your brand
             </Button>
           </div>
         </Reveal>

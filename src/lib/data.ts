@@ -33,7 +33,7 @@ export const heroProofSignals: HeroProofSignal[] = [
   {
     value: "2021 & 2024",
     label: "Best Luxury Broker BC",
-    detail: "Provincial luxury recognition backed by deep local experience.",
+    detail: "Provincial recognition backed by deep local experience.",
   },
   {
     value: "Nelson born",
@@ -938,7 +938,7 @@ export type Promise = { num: string; title: string; body: string };
 export const sellerPromises: Promise[] = [
   { num: "01", title: "Value before listing", body: "A clear read on value, nearby comparisons, buyer depth, and the price range worth protecting." },
   { num: "02", title: "Buyer-facing story", body: "Before the home is listed, the presentation is built around what matters most to the likely buyer: daily life, design, land, privacy, and value." },
-  { num: "03", title: "Film, photo, and copy", body: "Film, photography, floor-plan clarity, and writing that makes the home easy to understand and remember." },
+  { num: "03", title: "Film, photo, and copy", body: "Film, photography, floor plans, and writing that makes the home easy to understand and remember." },
   { num: "04", title: "Dedicated property page", body: "A dedicated page for the address, with the photos, facts, and story presented clearly." },
   { num: "05", title: "Serious buyer plan", body: "Share the home with serious buyers, relocation buyers, second-home families, and trusted agent networks, not casual traffic." },
   { num: "06", title: "Showing plan", body: "Showings are scheduled around privacy, readiness, and buyer fit, with casual traffic filtered before it reaches the door." },
@@ -1315,8 +1315,8 @@ export const faqs: FAQ[] = [
   },
   {
     category: "Property Review",
-    q: "How important are title, easements, and rights-of-way?",
-    a: "Very important. Title can show mortgages, charges, covenants, easements, shared access, rights-of-way, and other items that affect use. A lawyer should confirm legal meaning, but buyers should know early if the property depends on shared roads, access routes, or restrictions.",
+    q: "How much do title, easements, and rights-of-way matter?",
+    a: "They matter a lot. Title can show mortgages, charges, covenants, easements, shared access, rights-of-way, and other items that affect use. A lawyer should confirm legal meaning, but buyers should know early if the property depends on shared roads, access routes, or restrictions.",
   },
   {
     category: "Property Review",
@@ -1330,7 +1330,7 @@ export const faqs: FAQ[] = [
   },
   {
     category: "Selling",
-    q: "What should I do before listing an important home?",
+    q: "What should I do before listing a home that needs care?",
     a: "Clarify timing, likely buyer, price range, privacy needs, property strengths, likely objections, documents, repairs, photography, film, and showing plan. A strong listing starts before the home goes public.",
   },
   {
@@ -1346,17 +1346,17 @@ export const faqs: FAQ[] = [
   {
     category: "Selling",
     q: "Does every property need the same marketing plan?",
-    a: "No. A walkable Nelson home, Kootenay Lake waterfront property, acreage estate, view home, and legacy property each need a different buyer story. The likely buyer should shape the photos, film, copy, showing plan, and launch timing.",
+    a: "No. A walkable Nelson home, Kootenay Lake waterfront property, acreage estate, view home, and legacy property each need a different buyer story. The likely buyer should shape the photos, film, copy, showing plan, and timing.",
   },
   {
     category: "Selling",
     q: "How do I protect privacy while selling?",
-    a: "Privacy should be planned before listing. That can mean careful public copy, controlled showing access, serious-buyer screening, limited sensitive details online, and a clear plan for what is shared publicly versus after a qualified inquiry.",
+    a: "Privacy should be planned before listing. That can mean careful public copy, controlled showing access, serious-buyer screening, limited sensitive details online, and a clear plan for what is shared publicly versus after a serious inquiry.",
   },
   {
     category: "Selling",
     q: "What should sellers ask before hiring a listing agent?",
-    a: "Ask how the price will be defended, who the likely buyer is, what objections are expected, how the home will be marketed, how privacy will be handled, what happens after launch, and how the strategy changes if the market pushes back.",
+    a: "Ask how the price will be defended, who the likely buyer is, what objections are expected, how the home will be marketed, how privacy will be handled, what happens after the home goes public, and how the strategy changes if the market pushes back.",
   },
   {
     category: "Relocation",
@@ -1401,6 +1401,6 @@ export const faqs: FAQ[] = [
   {
     category: "Working With Luke",
     q: "What if my question depends on legal, tax, insurance, or building rules?",
-    a: "Luke can help identify the right question and where it affects the real estate decision. Final answers on legal rights, taxes, financing, insurance, permits, inspections, and engineering should come from the qualified professional or authority responsible for that area.",
+    a: "Luke can help identify the right question and where it affects the real estate decision. Final answers on legal rights, taxes, financing, insurance, permits, inspections, and engineering should come from the right professional or authority responsible for that area.",
   },
 ];

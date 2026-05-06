@@ -18,8 +18,8 @@ export function SellerReadinessChecklist() {
   const [checked, setChecked] = useState<string[]>(["timeline", "buyer", "media"]);
   const score = checked.length;
   const status = useMemo(() => {
-    if (score >= 7) return { title: "Close to ready", body: "The plan is mostly in place. Luke can help sharpen pricing, presentation, and showing control before launch." };
-    if (score >= 4) return { title: "Worth preparing now", body: "There is enough clarity to start. The next value is filling the gaps before the market sees the home." };
+    if (score >= 7) return { title: "Close to ready", body: "The plan is mostly in place. Luke can help sharpen pricing, presentation, and showing control before the home goes public." };
+    if (score >= 4) return { title: "Worth preparing now", body: "There is enough to start. The next value is filling the gaps before the market sees the home." };
     return { title: "Start before listing", body: "The property may still sell, but the first impression could be stronger with more preparation." };
   }, [score]);
 
@@ -35,7 +35,7 @@ export function SellerReadinessChecklist() {
             <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-bronze)]">Seller Readiness</p>
             <h2 className="m-0 mt-6 font-serif text-[42px] font-light leading-[1.05] tracking-[-0.015em] text-[var(--color-text)] md:text-[60px]">Is the property ready for market?</h2>
           </div>
-          <p className="m-0 text-[17px] leading-[1.78] text-[var(--color-text-muted)]">A quick readiness check for waterfront, acreage, view, legacy, and important Nelson homes. The goal is not more tasks. The goal is knowing what protects value before the first buyer forms an opinion.</p>
+          <p className="m-0 text-[17px] leading-[1.78] text-[var(--color-text-muted)]">A quick readiness check for waterfront, acreage, view, legacy, and Nelson homes that need care. The goal is not more tasks. The goal is knowing what protects value before the first buyer forms an opinion.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_380px]">

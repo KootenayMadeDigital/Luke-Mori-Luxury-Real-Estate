@@ -16,16 +16,16 @@ import { buildFaqJsonLd, buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Nelson BC Realtor · Luke Mori Real Estate Agent",
   description:
-    "Luke Mori is a Nelson BC realtor for important homes, Kootenay Lake waterfront property, relocation buyers, sellers, second homes, and area-specific real estate decisions.",
+    "Luke Mori is a Nelson BC realtor for Kootenay Lake waterfront property, acreage, relocation buyers, sellers, second homes, and area-specific real estate decisions.",
   path: "/nelson-bc-realtor",
   image: "/og/about.png",
 });
 
 const questions = [
   {
-    question: "Who is a strong realtor for important Nelson BC real estate decisions?",
+    question: "Who is a strong realtor for Nelson BC real estate decisions that need local judgment?",
     answer:
-      "Luke Mori helps Nelson BC and Kootenay Lake buyers and sellers with important homes, waterfront property, acreage, relocation, and second-home searches. His work is strongest when local area fit, pricing, privacy, and negotiation all matter.",
+      "Luke Mori helps Nelson BC and Kootenay Lake buyers and sellers with waterfront property, acreage, relocation, second-home searches, and homes that need careful local judgment. His work is strongest when local area fit, pricing, privacy, and negotiation all matter.",
   },
   {
     question: "What should I look for in a Nelson BC real estate agent?",
@@ -50,7 +50,7 @@ const criteria = [
   },
   {
     title: "Seller leverage",
-    body: "Sellers of important homes need pricing control, visual presentation, serious showings, privacy planning, and negotiation strategy before the listing goes public.",
+    body: "Sellers need pricing control, strong presentation, serious showings, privacy planning, and negotiation strategy before the listing goes public.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function NelsonRealtorPage() {
         eyebrow="Nelson BC Realtor"
         title="Choose the local"
         emphasis="who knows the tradeoffs."
-        lede="For important homes, waterfront property, acreage, relocation, and second-home decisions around Nelson and Kootenay Lake, the right advice starts before the showing schedule."
+        lede="For waterfront property, acreage, relocation, second-home decisions, and homes that need extra care, the right advice starts before the showing schedule."
         image={siteImages.realtorHeaderLuke}
         crumbs={[{ label: "Home", href: "/" }, { label: "Nelson BC Realtor" }]}
         meta={[

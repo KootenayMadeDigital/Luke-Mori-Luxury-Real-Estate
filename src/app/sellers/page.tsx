@@ -20,7 +20,7 @@ const sellerLeverage = [
   },
   {
     title: "Privacy should be planned.",
-    body: "An important home should not become entertainment for casual traffic. Serious interest, thoughtful showings, and clear boundaries protect both the seller and the result.",
+    body: "A private home should not become entertainment for casual traffic. Serious interest, thoughtful showings, and clear boundaries protect both the seller and the result.",
   },
   {
     title: "The buyer has to understand the home fast.",
@@ -41,7 +41,7 @@ export default function SellersPage() {
     <PageLayout>
       <SubpageHero
         eyebrow="For Sellers"
-        title="Sell with clarity,"
+        title="Sell with a clear plan,"
         emphasis="not guesswork."
         lede="Protect the sale with clear pricing advice, strong photography, property film, serious showings, and a sale plan built around your timeline."
         image={headerImages.sellerDining}
@@ -56,8 +56,8 @@ export default function SellersPage() {
 
       <SeoAnswerBlock
         eyebrow="Seller Strategy"
-        question="How should an important Nelson BC home be sold?"
-        answer="A serious Nelson or Kootenay Lake property should not be treated like a quick MLS upload. Before listing, sellers need clear pricing, strong visuals, privacy planning, buyer screening, showing control, and negotiation advice that protects the result from the first conversation."
+        question="How should a Nelson BC home be sold when privacy, price, and timing matter?"
+        answer="A Nelson or Kootenay Lake property with real value should not be treated like a quick MLS upload. Before listing, sellers need clear pricing, strong visuals, privacy planning, buyer screening, showing control, and negotiation advice that protects the result from the first conversation."
         terms={["selling house nelson bc", "sell luxury home nelson bc", "kootenay lake waterfront seller"]}
         tone="office"
       />
@@ -150,9 +150,9 @@ export default function SellersPage() {
       <GuideLinkPanel
         eyebrow="Seller Guide Path"
         title="Prepare the sale before the market judges it."
-        lede="These guides help owners of important Nelson, Kootenay Lake, waterfront, acreage, and long-held homes plan pricing, preparation, privacy, and buyer questions."
+        lede="These guides help owners of Nelson, Kootenay Lake, waterfront, acreage, and long-held homes plan pricing, preparation, privacy, and buyer questions."
         links={[
-          { title: "Selling a luxury home in Nelson", body: "How to prepare, price, explain, and protect the sale of an important home.", href: "/guides/selling-luxury-home-nelson-bc" },
+          { title: "Selling a luxury home in Nelson", body: "How to prepare, price, explain, and protect the sale.", href: "/guides/selling-luxury-home-nelson-bc" },
           { title: "Selling waterfront property", body: "How to prepare shoreline, access, systems, documents, and buyer questions.", href: "/guides/selling-waterfront-property-kootenay-lake" },
           { title: "Pricing a unique property", body: "Why waterfront, acreage, view, and legacy homes need more than ordinary comparables.", href: "/guides/pricing-unique-kootenay-property" },
         ]}

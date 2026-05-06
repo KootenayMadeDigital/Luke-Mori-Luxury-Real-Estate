@@ -20,7 +20,7 @@ export function Hero() {
         <div>
           <Reveal>
             <h1 className="m-0 max-w-[12.5ch] font-serif font-light leading-[0.93] tracking-[-0.025em] text-[var(--color-text)] drop-shadow-[0_8px_34px_rgba(0,0,0,0.92)] [font-size:clamp(50px,8.6vw,132px)]">
-              Move with clarity,
+              Move with a clear plan,
               <br />
               <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
                 in the Kootenays.

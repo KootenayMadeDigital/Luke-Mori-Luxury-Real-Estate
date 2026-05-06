@@ -12,7 +12,7 @@ import { buyerGuides, guideCategories } from "@/lib/guides";
 
 export const metadata = buildPageMetadata({
   title: "Kootenay Real Estate Guides",
-  description: "Practical buyer and seller guides for Kootenay Lake, Nelson, Kaslo, rural acreage, waterfront review, and important property decisions in BC.",
+  description: "Practical buyer and seller guides for Kootenay Lake, Nelson, Kaslo, rural acreage, waterfront review, and careful property decisions in BC.",
   path: "/guides",
   image: "/generated/guide-headers/guides-hub.webp",
 });
@@ -41,7 +41,7 @@ const guidePathways = [
   {
     eyebrow: "Selling well",
     title: "Prepare the story before the listing",
-    body: "For owners of important homes, long-held properties, waterfront, acreage, and homes that need a clearer sale plan.",
+    body: "For owners of long-held properties, waterfront, acreage, and homes that need a clearer sale plan.",
     href: "/guides/selling-luxury-home-nelson-bc",
     links: [
       { label: "Seller guidance", href: "/sellers" },
@@ -111,7 +111,7 @@ export default function BuyerGuidesPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Buyer, seller, and property review guides for important real estate decisions across Nelson, Kaslo, Kootenay Lake, and rural BC. Use them to ask better questions, then confirm property-specific details with the right professional.
+              Buyer, seller, and property review guides for careful real estate decisions across Nelson, Kaslo, Kootenay Lake, and rural BC. Use them to ask better questions, then confirm property-specific details with the right professional.
             </SectionLede>
           </Reveal>
 

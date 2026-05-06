@@ -91,7 +91,7 @@ export default function NelsonHubPage() {
               },
               {
                 title: "Nelson BC realtor guide",
-                body: "How to choose local guidance for important homes, waterfront property, acreage, relocation, second homes, and selling decisions.",
+                body: "How to choose local guidance for waterfront, acreage, relocation, second homes, selling, and homes that need extra care.",
                 href: "/nelson-bc-realtor",
               },
             ].map((card) => (
@@ -186,7 +186,7 @@ export default function NelsonHubPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Million-dollar buyers usually do not need more listings first. They need to know which parts of Nelson and Kootenay Lake match the way they want to live.
+              Buyers usually do not need more listings first. They need to know which parts of Nelson and Kootenay Lake match the way they want to live.
             </SectionLede>
           </Reveal>
 
@@ -226,7 +226,7 @@ export default function NelsonHubPage() {
         tone="ivory"
         links={[
           { title: "Best areas to live in Nelson", body: "A plain comparison of Nelson neighbourhoods and nearby Kootenay communities.", href: "/guides/best-areas-to-live-nelson-bc" },
-          { title: "Nelson BC luxury homes", body: "What makes an important Nelson home valuable beyond finish level.", href: "/guides/nelson-bc-luxury-homes-guide" },
+          { title: "Nelson BC luxury homes", body: "What makes a Nelson home valuable beyond finish level.", href: "/guides/nelson-bc-luxury-homes-guide" },
           { title: "Moving to Nelson", body: "Relocation questions around winter, schools, healthcare, services, and daily rhythm.", href: "/guides/moving-to-nelson-bc" },
         ]}
       />

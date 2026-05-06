@@ -75,7 +75,7 @@ export default function TestimonialsPage() {
                     2021 & 2024
                   </h2>
                   <p className="m-0 mt-5 max-w-[520px] text-[15px] font-medium leading-[1.7] text-[var(--color-text-muted)]">
-                    Recognized twice at the provincial level for luxury real estate representation, backed by local experience in Nelson and the Kootenays.
+                    Recognized twice at the provincial level, backed by local experience in Nelson and the Kootenays.
                   </p>
                 </div>
 
@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
               </SectionHeading>
             </div>
             <SectionLede align="right">
-              Recognition across luxury, design, lifestyle, and regional publications, gathered for buyers and sellers doing their homework.
+              Recognition across real estate, design, lifestyle, and regional publications, gathered for buyers and sellers doing their homework.
             </SectionLede>
           </Reveal>
 

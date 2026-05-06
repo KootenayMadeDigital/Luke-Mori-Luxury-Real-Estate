@@ -7,7 +7,7 @@ import { ConsultForm } from "@/components/forms/ConsultForm";
 const guideContents = [
   "Which Nelson and Kootenay Lake areas fit your plans",
   "What to check before buying waterfront, acreage, or a view home",
-  "How to prepare an important home before listing",
+  "How to prepare a home before listing",
   "When a quiet introduction may be possible",
 ];
 

@@ -51,7 +51,7 @@ export function SellerSection() {
             </Reveal>
             <Reveal delay={240}>
               <SectionLede className="mb-10">
-                Before an important home is listed, price, likely buyer, visuals, privacy, and showing plan should already be clear.
+                Before a home is listed, price, likely buyer, visuals, privacy, and showing plan should already be clear.
               </SectionLede>
             </Reveal>
 
@@ -122,7 +122,7 @@ export function SellerSection() {
                         Seller Marketing Plan
                       </p>
                       <h3 className="m-0 mt-4 max-w-[620px] font-serif text-[30px] font-light leading-[1.12] tracking-[-0.01em] text-[var(--color-text)] sm:text-[38px]">
-                        How Luke brings an important property to market.
+                        How Luke brings a property to market.
                       </h3>
                     </div>
                     <span className="rounded-full border border-[var(--color-line-strong)] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-dim)]">
