@@ -86,16 +86,16 @@ export default function BuyerGuidesPage() {
       />
       <SubpageHero
         eyebrow="Guides"
-        title="Know the market"
-        emphasis="before the showing."
-        lede="Practical guidance for buyers comparing Kootenay Lake, Nelson, Kaslo, waterfront, acreage, rural systems, and important property decisions."
+        title="40 guides for Kootenay real estate"
+        emphasis="without the guesswork."
+        lede="Buyer, seller, and property review guides for Nelson, Kootenay Lake, waterfront, acreage, relocation, taxes, ownership rules, local risks, and the questions worth asking before you move."
         image="/generated/guide-headers/guides-hub.webp"
         crumbs={[{ label: "Home", href: "/" }, { label: "Guides" }]}
         meta={[
           { value: buyerGuides.length.toString(), label: "Guides" },
+          { value: "Buyer", label: "Search Help" },
+          { value: "Seller", label: "Sale Planning" },
           { value: "BC", label: "Property Review" },
-          { value: "Local", label: "Kootenay Context" },
-          { value: "Local", label: "Next Step" },
         ]}
       />
 
