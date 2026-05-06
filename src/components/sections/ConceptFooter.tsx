@@ -75,7 +75,7 @@ export function ConceptFooter() {
       </div>
 
       <Container className="relative">
-        <Reveal className="rounded-[1.75rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.045)] p-1.5 shadow-[0_36px_110px_-76px_rgba(0,0,0,0.95)]">
+        <Reveal className="luxury-card group rounded-[1.75rem] border border-[var(--color-line-strong)] bg-[rgba(212,184,150,0.045)] p-1.5 shadow-[0_36px_110px_-76px_rgba(0,0,0,0.95)] transition-[transform,border-color,box-shadow,background] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-bronze)] hover:bg-[rgba(212,184,150,0.065)]">
           <div className="overflow-hidden rounded-[calc(1.75rem-0.375rem)] border border-[rgba(255,247,235,0.06)] bg-[linear-gradient(135deg,rgba(19,21,23,0.94),rgba(10,11,13,0.98)_58%,rgba(31,24,18,0.92))] p-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.07)] sm:p-7 lg:p-8">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
               <div>
@@ -93,11 +93,11 @@ export function ConceptFooter() {
                 </p>
               </div>
 
-              <div className="rounded-[1.35rem] border border-[var(--color-line)] bg-[rgba(255,247,235,0.035)] p-5 sm:p-6">
+              <div className="luxury-card group rounded-[1.35rem] border border-[var(--color-line)] bg-[rgba(255,247,235,0.035)] p-5 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line-strong)] hover:bg-[rgba(255,247,235,0.055)] sm:p-6">
                 <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.26em] text-[var(--color-bronze)]">Direct line</p>
                 <div className="mt-5 space-y-3 text-[18px] font-medium text-[var(--color-text)]">
-                  <a href={contact.phoneHref} className="block transition-colors hover:text-[var(--color-bronze-light)]">{contact.phone}</a>
-                  <a href={contact.emailHref} className="block transition-colors hover:text-[var(--color-bronze-light)]">{contact.email}</a>
+                  <a href={contact.phoneHref} className="block transition-[color,transform] duration-500 ease-[var(--ease-luxe)] hover:translate-x-1 hover:text-[var(--color-bronze-light)]">{contact.phone}</a>
+                  <a href={contact.emailHref} className="block transition-[color,transform] duration-500 ease-[var(--ease-luxe)] hover:translate-x-1 hover:text-[var(--color-bronze-light)]">{contact.email}</a>
                 </div>
                 <p className="m-0 mt-5 text-[13px] leading-[1.65] text-[var(--color-text-muted)]">{contact.office}</p>
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row">
@@ -115,7 +115,7 @@ export function ConceptFooter() {
 
         <Reveal className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-[1.6rem] border border-[var(--color-line)] bg-[var(--color-line)] md:grid-cols-3">
           {footerSignals.map((signal) => (
-            <div key={signal.label} className="bg-[rgba(10,11,13,0.82)] p-6 sm:p-7">
+            <div key={signal.label} className="luxury-card group bg-[rgba(10,11,13,0.82)] p-6 transition-[transform,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.065)] sm:p-7">
               <p className="m-0 font-serif text-[34px] font-light italic leading-none text-[var(--color-text)]">{signal.value}</p>
               <p className="m-0 mt-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{signal.label}</p>
             </div>
@@ -151,12 +151,12 @@ export function ConceptFooter() {
           <div>
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
               {navLists.map((list) => (
-                <Reveal key={list.heading}>
+                <Reveal key={list.heading} className="luxury-card group rounded-[1.2rem] border border-transparent p-4 transition-[transform,border-color,background,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:border-[var(--color-line)] hover:bg-[rgba(212,184,150,0.04)]">
                   <span className="mb-5 block text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">{list.heading}</span>
                   <ul className="space-y-3">
                     {list.links.map((link) => (
                       <li key={link.href}>
-                        <Link href={link.href} className="text-[14px] leading-none text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]">
+                        <Link href={link.href} className="inline-flex text-[14px] leading-none text-[var(--color-text-muted)] transition-[color,transform] duration-500 ease-[var(--ease-luxe)] hover:translate-x-1 hover:text-[var(--color-text)]">
                           {link.label}
                         </Link>
                       </li>
@@ -168,7 +168,7 @@ export function ConceptFooter() {
           </div>
         </div>
 
-        <Reveal className="mx-auto mt-14 max-w-[900px] border-t border-[var(--color-line)] pt-12 text-center">
+        <Reveal className="luxury-card group mx-auto mt-14 max-w-[900px] border-t border-[var(--color-line)] px-5 pt-12 text-center transition-[background,transform,box-shadow] duration-700 ease-[var(--ease-luxe)] hover:-translate-y-1 hover:bg-[rgba(212,184,150,0.035)] sm:px-8">
           <div className="mb-6 inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--color-bronze)]">
             <span className="size-1.5 rounded-full bg-[var(--color-bronze)]" />
             Kootenay Made Digital
