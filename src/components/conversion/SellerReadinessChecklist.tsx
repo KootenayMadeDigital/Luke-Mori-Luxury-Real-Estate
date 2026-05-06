@@ -15,7 +15,7 @@ const items = [
 ];
 
 export function SellerReadinessChecklist() {
-  const [checked, setChecked] = useState<string[]>(["timeline", "buyer", "media"]);
+  const [checked, setChecked] = useState<string[]>([]);
   const score = checked.length;
   const status = useMemo(() => {
     if (score >= 7) return { title: "Close to ready", body: "The plan is mostly in place. Luke can help sharpen pricing, presentation, and showing control before the home goes public." };
