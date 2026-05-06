@@ -71,6 +71,50 @@ const buyerBriefPrompts = [
   "What has to be true before you would tour, offer, or wait?",
 ];
 
+const buyerScenarioCards = [
+  {
+    title: "First-time or first-BC buyer",
+    body: "Start with mortgage comfort, deposit timing, property transfer tax, inspection conditions, strata or rural-system risk, and what you can safely decide before the offer clock starts.",
+    links: [
+      { label: "First-time buyer guide", href: "/guides/first-time-home-buyer-nelson-bc" },
+      { label: "Buying with conditions", href: "/guides/buying-with-conditions-bc-real-estate" },
+    ],
+  },
+  {
+    title: "Lakefront or water-view buyer",
+    body: "Separate true waterfront, lake access, and lake view. Then verify title, foreshore, dock status, water rights, septic location, flood questions, insurance, slope, sun, and year-round use.",
+    links: [
+      { label: "Waterfront due diligence", href: "/guides/buying-kootenay-lake-waterfront-property" },
+      { label: "Waterfront vs. lake access", href: "/guides/kootenay-lake-waterfront-vs-lake-access" },
+    ],
+  },
+  {
+    title: "Acreage or rural buyer",
+    body: "The land is only the start. Check usable acreage, access, wells, septic, drainage, wildfire exposure, ALR status, outbuildings, snow removal, internet, and what future use is actually allowed.",
+    links: [
+      { label: "Acreage questions", href: "/guides/buying-acreage-in-the-kootenays" },
+      { label: "Rural due diligence", href: "/guides/rural-luxury-property-due-diligence-bc" },
+    ],
+  },
+  {
+    title: "Second-home or remote buyer",
+    body: "Plan the caretaker system before you buy: winter checks, heat, alarms, guests, insurance, short-term rental rules, local trades, emergency access, and who can open the door when you are not here.",
+    links: [
+      { label: "Second-home ownership", href: "/guides/buying-second-home-kootenays" },
+      { label: "Remote buying", href: "/guides/remote-buying-kootenay-property" },
+    ],
+  },
+];
+
+const buyerResearchLinks = [
+  { label: "BCFSA real estate resources", href: "https://www.bcfsa.ca/public-resources/real-estate", note: "Consumer guidance, licensed professional checks, and complaint resources." },
+  { label: "BC property transfer tax", href: "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/property-transfer-tax", note: "Rates, exemptions, and added tax questions for higher-value or foreign buyers." },
+  { label: "LTSA title search", href: "https://ltsa.ca/property-owners/how-can-i/search-for-a-title/", note: "How title, charges, liens, legal description, and PID searches work." },
+  { label: "BC water licensing and rights", href: "https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/water-licensing-rights", note: "Important for wells, irrigation, creeks, and non-domestic water use." },
+  { label: "BC onsite sewage systems", href: "https://www2.gov.bc.ca/gov/content/environment/waste-management/sewage/onsite-sewage-systems", note: "Useful when evaluating rural homes, acreage, waterfront, and older systems." },
+  { label: "FireSmart BC", href: "https://firesmartbc.ca/", note: "Wildfire-risk preparation for forested, rural, and interface properties." },
+];
+
 export default function BuyersPage() {
   return (
     <PageLayout>
@@ -171,6 +215,45 @@ export default function BuyersPage() {
         steps={buyerSteps}
       />
 
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.88fr_1.12fr] md:items-end">
+            <div>
+              <Eyebrow>Buyer Scenario Desk</Eyebrow>
+              <SectionHeading className="mt-7">
+                The right questions
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  change by buyer.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              A first-time buyer, a waterfront buyer, an acreage buyer, and a second-home buyer should not be using the same checklist. Start with the scenario, then decide what needs proof before an offer.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {buyerScenarioCards.map((card, index) => (
+              <Reveal key={card.title} delay={(index % 2) * 70} className="flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  Situation {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 font-serif text-[30px] font-light leading-[1.12] text-[var(--color-text)]">{card.title}</h3>
+                <p className="m-0 mt-5 flex-1 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">{card.body}</p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  {card.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="rounded-full border border-[var(--color-line-strong)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-bronze)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Buyer-type sub-routes */}
       <section className="tone-ivory tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
         <Container>
@@ -229,6 +312,36 @@ export default function BuyersPage() {
           { title: "Closing costs and transfer tax", body: "Plan property transfer tax, deposits, legal costs, adjustments, and other purchase costs.", href: "/guides/bc-property-transfer-tax-closing-costs-kootenay-buyers" },
         ]}
       />
+
+      <section className="tone-ivory tonal-section border-t border-[var(--color-line)] py-20 md:py-24">
+        <Container>
+          <Reveal className="mb-12 max-w-[760px]">
+            <Eyebrow>Outside Research</Eyebrow>
+            <SectionHeading className="mt-7">
+              Links worth opening
+              <br />
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                before you commit.
+              </em>
+            </SectionHeading>
+            <SectionLede>
+              Luke can help frame the decision. These outside resources help buyers verify tax, title, water, septic, consumer, and wildfire questions with the right public source.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-3">
+            {buyerResearchLinks.map((link) => (
+              <Reveal key={link.href} className="bg-[var(--color-bg)] p-7">
+                <a href={link.href} target="_blank" rel="noreferrer" className="group block">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Official Resource</span>
+                  <h3 className="m-0 mt-4 font-serif text-[25px] font-light leading-[1.16] text-[var(--color-text)] group-hover:text-[var(--color-bronze-light)]">{link.label}</h3>
+                  <p className="m-0 mt-4 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{link.note}</p>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
 
       <section className="tone-lake tonal-section border-t border-[var(--color-line)] py-20 md:py-24">

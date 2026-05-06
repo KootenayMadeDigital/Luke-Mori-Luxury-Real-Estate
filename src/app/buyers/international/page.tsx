@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { SubpageHero } from "@/components/layout/SubpageHero";
 import { InquiryCTA } from "@/components/layout/InquiryCTA";
 import { SeoAnswerBlock } from "@/components/seo/SeoAnswerBlock";
+import { GuideLinkPanel } from "@/components/seo/GuideLinkPanel";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -72,6 +73,51 @@ const absenteeDesk = [
     imageAlt: "Balfour and Kootenay Lake waterfront",
     body: "Focused tour days around waterfront, Balfour, North Shore, Nelson, acreage, or retreat properties, with only strong contenders on the route.",
   },
+];
+
+const internationalPathways = [
+  {
+    title: "Non-Canadian buyer",
+    body: "Confirm current federal purchase rules, exemptions, entity ownership, immigration status, additional property transfer tax, financing, currency, and who must review the deal before an offer is written.",
+    links: [
+      { label: "PTT and additional tax", href: "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/property-transfer-tax" },
+      { label: "Remote buying guide", href: "/guides/remote-buying-kootenay-property" },
+    ],
+  },
+  {
+    title: "U.S. buyer or cross-border family",
+    body: "Think beyond the exchange rate. Ask about tax residency, financing, insurance, funds transfer timing, local signing logistics, border travel, estate planning, and who manages the home when you are away.",
+    links: [
+      { label: "Out-of-province buyers", href: "/guides/out-of-province-buyers-buying-in-bc" },
+      { label: "Carrying costs", href: "/guides/nelson-kootenay-home-carrying-costs" },
+    ],
+  },
+  {
+    title: "Second-home buyer",
+    body: "Verify short-term rental rules, caretaker access, winterization, heat monitoring, snow removal, insurance, guest use, local trades, and whether the home is easy to own from a distance.",
+    links: [
+      { label: "Second-home guide", href: "/guides/buying-second-home-kootenays" },
+      { label: "STR rules", href: "/guides/short-term-rental-rules-second-homes-bc" },
+    ],
+  },
+  {
+    title: "Remote purchase without a scouting trip",
+    body: "Use video, mapping, document review, local eyes, inspection scope, title review, road and service checks, and a clear condition strategy so the first physical visit does not reveal the wrong surprise.",
+    links: [
+      { label: "Inspection guide", href: "/guides/home-inspection-rural-waterfront-kootenays" },
+      { label: "Title and easements", href: "/guides/title-easements-rights-of-way-rural-bc" },
+    ],
+  },
+];
+
+const internationalResearchLinks = [
+  { label: "Non-Canadian purchase rules", href: "https://laws-lois.justice.gc.ca/eng/acts/P-25.2/", note: "Federal law text for the Prohibition on the Purchase of Residential Property by Non-Canadians Act." },
+  { label: "BC property transfer tax", href: "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/property-transfer-tax", note: "General rates, further tax on high-value residential property, exemptions, and additional tax questions." },
+  { label: "BC speculation and vacancy tax", href: "https://www2.gov.bc.ca/gov/content/taxes/speculation-vacancy-tax", note: "Annual declaration and taxable-area rules should be checked for second-home or non-resident ownership." },
+  { label: "BC short-term rental rules", href: "https://www2.gov.bc.ca/gov/content/housing-tenancy/short-term-rentals", note: "Registration, provincial regulation, and local bylaw questions for homes that may be rented." },
+  { label: "LTSA title search", href: "https://ltsa.ca/property-owners/how-can-i/search-for-a-title/", note: "Title, PID, legal description, and professional title-search support." },
+  { label: "BCFSA real estate resources", href: "https://www.bcfsa.ca/public-resources/real-estate", note: "Consumer resources, licensed professional search, and transaction-risk guidance." },
+  { label: "BC water licensing and rights", href: "https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/water-licensing-rights", note: "Important for waterfront, creek, well, irrigation, and rural properties." },
 ];
 
 export default function InternationalBuyersPage() {
@@ -200,6 +246,87 @@ export default function InternationalBuyersPage() {
               </Link>
             ))}
           </Reveal>
+        </Container>
+      </section>
+
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.88fr_1.12fr] md:items-end">
+            <div>
+              <Eyebrow>Buyer Pathways</Eyebrow>
+              <SectionHeading className="mt-7">
+                Different buyers need
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  different safeguards.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              A non-Canadian purchase, cross-border family move, second home, and fully remote purchase all need different pre-flight checks. The safest path is to solve those questions before a property becomes emotional.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {internationalPathways.map((pathway, index) => (
+              <Reveal key={pathway.title} delay={(index % 2) * 70} className="flex h-full flex-col border border-[var(--color-line)] bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  Path {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 font-serif text-[30px] font-light leading-[1.12] text-[var(--color-text)]">{pathway.title}</h3>
+                <p className="m-0 mt-5 flex-1 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">{pathway.body}</p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  {pathway.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="rounded-full border border-[var(--color-line-strong)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-bronze)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <GuideLinkPanel
+        eyebrow="Remote Buyer Guide Path"
+        title="Set the legal, tax, and ownership questions early."
+        lede="These guides help out-of-town, second-home, and remote buyers understand purchase costs, title, conditions, ownership systems, and rules that can change the decision."
+        tone="ivory"
+        links={[
+          { title: "Out-of-province buyers", body: "How buyers coming from elsewhere in Canada should think about costs, timing, financing, and conditions.", href: "/guides/out-of-province-buyers-buying-in-bc" },
+          { title: "Remote buying guide", body: "A practical framework for virtual tours, local verification, documents, and offer conditions.", href: "/guides/remote-buying-kootenay-property" },
+          { title: "Does speculation tax apply?", body: "How to start checking whether annual vacancy or speculation rules may affect ownership.", href: "/guides/does-speculation-tax-apply-nelson-kootenay-lake" },
+        ]}
+      />
+
+      <section className="tone-ivory tonal-section border-t border-[var(--color-line)] py-20 md:py-24">
+        <Container>
+          <Reveal className="mb-12 max-w-[760px]">
+            <Eyebrow>Outside Research</Eyebrow>
+            <SectionHeading className="mt-7">
+              The boring links
+              <br />
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                that protect the deal.
+              </em>
+            </SectionHeading>
+            <SectionLede>
+              These public resources are not a substitute for legal, tax, financing, or immigration advice. They are the right starting points before travel, offer timing, or money movement becomes urgent.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-3">
+            {internationalResearchLinks.map((link) => (
+              <Reveal key={link.href} className="bg-[var(--color-bg)] p-7">
+                <a href={link.href} target="_blank" rel="noreferrer" className="group block">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Research Link</span>
+                  <h3 className="m-0 mt-4 font-serif text-[25px] font-light leading-[1.16] text-[var(--color-text)] group-hover:text-[var(--color-bronze-light)]">{link.label}</h3>
+                  <p className="m-0 mt-4 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{link.note}</p>
+                </a>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 

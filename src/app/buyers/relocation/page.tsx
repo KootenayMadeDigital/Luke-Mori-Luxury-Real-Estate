@@ -82,6 +82,50 @@ const scoutingRoutes = [
   },
 ];
 
+const relocationTimeline = [
+  {
+    title: "Before the first trip",
+    body: "Set budget, mortgage comfort, work-from-home needs, school or healthcare priorities, winter tolerance, and whether town, lake, acreage, or village life is the real goal.",
+    links: [
+      { label: "Area quiz", href: "/buyers/area-fit-quiz" },
+      { label: "Best areas", href: "/guides/best-areas-to-live-nelson-bc" },
+    ],
+  },
+  {
+    title: "During the scouting trip",
+    body: "Drive the routes, park downtown, test grocery and school runs, check cell service, walk the grade, visit at night, compare winter road reality, and see more than one area in the same day.",
+    links: [
+      { label: "Nelson areas", href: "/nelson" },
+      { label: "Compare listings", href: "/listings#compare" },
+    ],
+  },
+  {
+    title: "Before writing an offer",
+    body: "Confirm financing, insurance, title, inspection scope, water, septic, strata, access, school boundaries, commute reality, internet, and what professional advice is needed before conditions are removed.",
+    links: [
+      { label: "Buying with conditions", href: "/guides/buying-with-conditions-bc-real-estate" },
+      { label: "Inspection guide", href: "/guides/home-inspection-rural-waterfront-kootenays" },
+    ],
+  },
+  {
+    title: "First ninety days here",
+    body: "Plan doctors, schools, snow tires, trades, utilities, insurance, waste and recycling, emergency routes, childcare or elder care, recreation passes, and the local contacts that make the move settle faster.",
+    links: [
+      { label: "Moving to Nelson", href: "/guides/moving-to-nelson-bc" },
+      { label: "Second homes", href: "/guides/buying-second-home-kootenays" },
+    ],
+  },
+];
+
+const relocationResearchLinks = [
+  { label: "School District 8 Kootenay Lake", href: "https://www.sd8.bc.ca/", note: "School news, district information, board updates, and public-school starting point." },
+  { label: "Kootenay Lake Hospital", href: "https://www.interiorhealth.ca/locations/kootenay-lake-hospital", note: "Interior Health lists Nelson hospital services including emergency, surgical, and inpatient care." },
+  { label: "DriveBC", href: "https://www.drivebc.ca/", note: "Road conditions, highway events, webcams, mountain passes, and winter travel checks." },
+  { label: "City of Nelson", href: "https://www.nelson.ca/", note: "City services, recycling, notifications, parking, local government, and community links." },
+  { label: "Regional District of Central Kootenay", href: "https://www.rdck.ca/", note: "Regional services, rural property questions, recreation, emergency information, and local governance." },
+  { label: "FireSmart BC", href: "https://firesmartbc.ca/", note: "Wildfire preparedness and home assessment resources for forest-edge and rural living." },
+];
+
 export default function RelocationPage() {
   return (
     <PageLayout>
@@ -207,6 +251,45 @@ export default function RelocationPage() {
         </Container>
       </section>
 
+      <section className="tone-office tonal-section border-y border-[var(--color-line)] py-24 md:py-28">
+        <Container>
+          <Reveal className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-[0.88fr_1.12fr] md:items-end">
+            <div>
+              <Eyebrow>Relocation Timeline</Eyebrow>
+              <SectionHeading className="mt-7">
+                The move should feel
+                <br />
+                <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                  less mysterious.
+                </em>
+              </SectionHeading>
+            </div>
+            <SectionLede align="right">
+              Relocation buyers need more than listings. They need a plan for scouting, decision-making, professional checks, and the first practical months after arrival.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2">
+            {relocationTimeline.map((step, index) => (
+              <Reveal key={step.title} delay={(index % 2) * 70} className="flex h-full flex-col bg-[var(--color-bg)] p-8 sm:p-9">
+                <span className="mb-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-bronze)]">
+                  Stage {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="m-0 font-serif text-[30px] font-light leading-[1.12] text-[var(--color-text)]">{step.title}</h3>
+                <p className="m-0 mt-5 flex-1 text-[15px] leading-[1.75] text-[var(--color-text-muted)]">{step.body}</p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  {step.links.map((link) => (
+                    <Link key={link.href} href={link.href} className="rounded-full border border-[var(--color-line-strong)] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-bronze)] transition-colors hover:border-[var(--color-bronze)] hover:text-[var(--color-bronze-light)]">
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <GuideLinkPanel
         eyebrow="Relocation Guide Path"
         title="Choose the area before the address."
@@ -218,6 +301,36 @@ export default function RelocationPage() {
           { title: "Second homes in the Kootenays", body: "Caretaker plans, winterization, insurance, guests, and remote ownership questions.", href: "/guides/buying-second-home-kootenays" },
         ]}
       />
+
+      <section className="tone-ivory tonal-section border-t border-[var(--color-line)] py-20 md:py-24">
+        <Container>
+          <Reveal className="mb-12 max-w-[760px]">
+            <Eyebrow>Relocation Research</Eyebrow>
+            <SectionHeading className="mt-7">
+              Check the life
+              <br />
+              <em className="font-light not-italic italic text-[var(--color-bronze-light)]">
+                outside the listing.
+              </em>
+            </SectionHeading>
+            <SectionLede>
+              Use these public resources to research schools, healthcare, winter roads, city services, rural services, and wildfire preparation before the move becomes real.
+            </SectionLede>
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-px bg-[var(--color-line)] md:grid-cols-2 xl:grid-cols-3">
+            {relocationResearchLinks.map((link) => (
+              <Reveal key={link.href} className="bg-[var(--color-bg)] p-7">
+                <a href={link.href} target="_blank" rel="noreferrer" className="group block">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-bronze)]">Local Resource</span>
+                  <h3 className="m-0 mt-4 font-serif text-[25px] font-light leading-[1.16] text-[var(--color-text)] group-hover:text-[var(--color-bronze-light)]">{link.label}</h3>
+                  <p className="m-0 mt-4 text-[14px] leading-[1.7] text-[var(--color-text-muted)]">{link.note}</p>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <InquiryCTA
         eyebrow="Relocation Inquiry"
