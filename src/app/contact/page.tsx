@@ -6,7 +6,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, SectionLede } from "@/components/ui/SectionHeading";
 import { ConsultForm } from "@/components/forms/ConsultForm";
-import { PropertyReviewIntake } from "@/components/conversion/PropertyReviewIntake";
 import { PrivateInquiryPaths } from "@/components/sections/PrivateInquiryPaths";
 import { headerImages, contact } from "@/lib/data";
 
@@ -30,8 +29,6 @@ export default function ContactPage() {
         imageClassName="scale-[1.06] translate-y-8 object-[72%_50%] md:translate-y-12"
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
-
-      <PropertyReviewIntake />
 
       <PrivateInquiryPaths
         id="consultation"
