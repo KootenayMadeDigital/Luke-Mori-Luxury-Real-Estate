@@ -84,12 +84,12 @@ export function ConceptFooter() {
                   Nelson and Kootenay Lake real estate
                 </div>
                 <h2 className="m-0 max-w-[680px] font-serif font-light leading-[1.02] tracking-[-0.018em] text-[var(--color-text)] [font-size:clamp(32px,4.8vw,62px)]">
-                  Move with clear local guidance
+                  Nelson is home.
                   <br />
-                  in Nelson and Kootenay Lake.
+                  I’ll help you find yours.
                 </h2>
                 <p className="m-0 mt-5 max-w-[560px] text-[15px] leading-[1.72] text-[var(--color-text-muted)]">
-                  Clear local guidance for lakefront, acreage, view homes, relocation, and selling decisions in the Kootenays.
+                  For lakefront homes, acreage, view properties, relocation, and thoughtful selling across the Kootenays.
                 </p>
               </div>
 
