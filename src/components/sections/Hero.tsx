@@ -37,7 +37,7 @@ export function Hero() {
 
           <Reveal delay={340}>
             <div className="mt-5 hidden flex-col gap-3 sm:mt-8 sm:flex sm:flex-row sm:flex-wrap">
-              <Button href="#sellers" variant="primary" size="lg" arrow>
+              <Button href="#consult-form" variant="primary" size="lg" arrow>
                 Plan a Sale
               </Button>
               <Button href="/listings/luxury" variant="ghost" size="lg" arrow>
@@ -131,7 +131,7 @@ export function Hero() {
       </ul>
 
       <div className="absolute inset-x-5 bottom-8 z-20 flex flex-col gap-3 sm:hidden">
-        <Button href="#sellers" variant="primary" size="lg" arrow full>
+        <Button href="#consult-form" variant="primary" size="lg" arrow full>
           Plan a Sale
         </Button>
         <Button href="/listings/luxury" variant="ghost" size="lg" arrow full>

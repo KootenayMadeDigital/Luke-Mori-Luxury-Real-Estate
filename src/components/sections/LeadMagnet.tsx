@@ -50,9 +50,11 @@ export function LeadMagnet() {
             </Reveal>
           </div>
 
-          <Reveal delay={200}>
-            <ConsultForm />
-          </Reveal>
+          <div id="consult-form" className="scroll-mt-28 lg:scroll-mt-32">
+            <Reveal delay={200}>
+              <ConsultForm />
+            </Reveal>
+          </div>
         </div>
       </Container>
     </section>

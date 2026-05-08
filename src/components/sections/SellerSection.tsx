@@ -57,7 +57,7 @@ export function SellerSection() {
 
             <Reveal delay={340}>
               <div className="flex flex-wrap gap-4">
-                <Button href="#consult" variant="primary" size="lg">
+                <Button href="#consult-form" variant="primary" size="lg">
                   Plan Your Sale
                 </Button>
                 <Button href={facebookReviewsUrl} variant="ghost" size="lg" arrow>

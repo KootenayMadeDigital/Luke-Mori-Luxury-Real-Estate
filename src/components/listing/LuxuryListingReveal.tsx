@@ -401,7 +401,7 @@ export function LuxuryListingReveal({ listing, variant = "buyerPreview", copy }:
         panelTitle: "Your listing should feel considered before anyone asks the price.",
         panelBody: "This is the standard sellers are really buying: a first impression that protects value, slows the scroll, and makes the right buyer want the next conversation.",
         primaryCta: "Plan Your Sale",
-        primaryHref: "/sellers",
+        primaryHref: "#consult-form",
       }
     : {
         eyebrow: "Featured Estate Preview",
